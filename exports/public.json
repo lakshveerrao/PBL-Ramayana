@@ -1,0 +1,713 @@
+{
+  "_doc": "Public export. Carries locators, never source text. Every accepted claim prints how it was accepted.",
+  "built": "2026-09-20",
+  "arc": {
+    "id": "ARC7",
+    "name": "Visvamitra at Ayodhya",
+    "kanda": "BALA",
+    "sarga_range": "18-22",
+    "films": [
+      "M1",
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M6",
+      "M7"
+    ],
+    "continuous_joins": [
+      {
+        "from": "M2",
+        "to": "M3"
+      },
+      {
+        "from": "M3",
+        "to": "M4"
+      },
+      {
+        "from": "M4",
+        "to": "M5"
+      },
+      {
+        "from": "M5",
+        "to": "M6"
+      },
+      {
+        "from": "M6",
+        "to": "M7"
+      }
+    ],
+    "join_rule": "A continuous join opens on the same frame the previous film closed on, and room tone carries across with no reseat. A visible cut or an audible reseat means the assembly is wrong."
+  },
+  "films": [
+    {
+      "id": "M1",
+      "story_id": "STORY.BALA.SAGE-AT-THE-GATE",
+      "title": {
+        "en": "A Sage at the Gate",
+        "hi": "द्वार पर ऋषि",
+        "te": "ద్వారం వద్ద ముని"
+      },
+      "kanda": "BALA",
+      "sarga": 18,
+      "duration_s": 44,
+      "status": "claims-only",
+      "shots": 0,
+      "gate": null,
+      "narration": null,
+      "claims": [
+        {
+          "id": "CLM.BALA.18.SAGE-ARRIVES",
+          "text": "Visvamitra comes to the gate of Ayodhya and is announced.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "40-48",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        }
+      ]
+    },
+    {
+      "id": "M2",
+      "story_id": "STORY.BALA.ASK-AND-I-GIVE",
+      "title": {
+        "en": "Ask, and I Give",
+        "hi": "माँगिए, मैं दूँगा",
+        "te": "అడగండి, ఇస్తాను"
+      },
+      "kanda": "BALA",
+      "sarga": 18,
+      "duration_s": 44,
+      "status": "claims-only",
+      "shots": 0,
+      "gate": null,
+      "narration": null,
+      "claims": [
+        {
+          "id": "CLM.BALA.18.KING-OFFERS-ANYTHING",
+          "text": "Dasaratha receives the sage with honour and offers him whatever he asks.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "DASARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "50-59",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        }
+      ]
+    },
+    {
+      "id": "M3",
+      "story_id": "STORY.BALA.FATHER-REFUSES",
+      "title": {
+        "en": "A Father Says No",
+        "hi": "एक पिता ने मना किया",
+        "te": "ఒక తండ్రి వారించాడు"
+      },
+      "kanda": "BALA",
+      "sarga": 20,
+      "duration_s": 44,
+      "status": "directed",
+      "shots": 18,
+      "gate": {
+        "blocked": 15,
+        "of": 18
+      },
+      "narration": {
+        "L1": {
+          "shot": "01-02",
+          "en": "The sage asked for the boy.",
+          "hi": "ऋषि ने लड़के को माँगा।",
+          "te": "ముని ఆ కుర్రాడిని అడిగాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L2": {
+          "shot": "02-01",
+          "en": "The king heard it and lost himself.",
+          "hi": "राजा ने सुना और होश खो बैठा।",
+          "te": "రాజు విని స్పృహ కోల్పోయాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L3": {
+          "shot": "03-05",
+          "en": "He said he had waited a long time for this son.",
+          "hi": "उसने कहा कि इस बेटे के लिए बहुत इंतज़ार किया।",
+          "te": "ఈ కొడుకు కోసం చాలా కాలం ఎదురుచూశానని అతను అన్నాడు.",
+          "speaker": "DASARATHA",
+          "attribution_required": true
+        },
+        "L4": {
+          "shot": "03-09",
+          "en": "He said the boy was not yet sixteen.",
+          "hi": "उसने कहा कि लड़का अभी सोलह का नहीं हुआ।",
+          "te": "కుర్రాడికి ఇంకా పదహారు నిండలేదని అతను అన్నాడు.",
+          "speaker": "DASARATHA",
+          "attribution_required": true
+        },
+        "L5": {
+          "shot": "04-01",
+          "en": "He offered his army instead. And himself.",
+          "hi": "उसने बदले में अपनी सेना दी। और खुद को।",
+          "te": "బదులుగా తన సైన్యాన్ని ఇచ్చాడు. తననూ.",
+          "speaker": "DASARATHA",
+          "attribution_required": true
+        },
+        "L6": {
+          "shot": "06-01",
+          "en": "The sage waited.",
+          "hi": "ऋषि रुका रहा।",
+          "te": "ముని ఆగాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L7": {
+          "shot": "07-02",
+          "en": "He said no.",
+          "hi": "उसने मना किया।",
+          "te": "అతను వద్దన్నాడు.",
+          "speaker": "DASARATHA",
+          "attribution_required": true
+        }
+      },
+      "claims": [
+        {
+          "id": "CLM.BALA.20.REQUEST-LANDS",
+          "text": "Visvamitra asks Dasaratha to give him Rama.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "1-2",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Model knowledge of Balakanda sarga 20. No digitised edition was open: this environment's egress policy blocks the hosts carrying the public-domain translation, and the GRETIL text is restricted and must not be ingested.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.KING-STUNNED",
+          "text": "Hearing the request, Dasaratha loses his senses and falls.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "3-4",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Model knowledge of Balakanda sarga 20: the king is described as losing consciousness (murcchita) on hearing the request. No digitised edition was open.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.NOT-YET-SIXTEEN",
+          "text": "Dasaratha states that Rama is not yet sixteen.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "9-10",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Model knowledge of Balakanda sarga 20, the una-sodasa-varsa line, spoken by Dasaratha. No digitised edition was open.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.SON-CAME-LATE",
+          "text": "Dasaratha states that he obtained Rama late, after long childlessness and great austerity.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "5-8",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Model knowledge of Balakanda sarga 20: the king pleads his age and the lateness of his sons. No digitised edition was open.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.OFFERS-HIMSELF",
+          "text": "Dasaratha offers his own army and himself in Rama's place.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "11-14",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Model knowledge of Balakanda sarga 20: the king offers the aksauhini and his own person. No digitised edition was open.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.NAMES-THE-ENEMY",
+          "text": "Visvamitra names Marica and Subahu, servants of Ravana, as the rakshasas troubling the sacrifice.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "6-9",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Model knowledge of Balakanda sarga 19, where the sage names the two rakshasas and their master. Carried into M3 as the pressure the refusal answers. No digitised edition was open.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.REFUSAL",
+          "text": "Dasaratha refuses to give Rama.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "15-20",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Model knowledge of Balakanda sarga 20: the refusal is explicit and is the sarga's outcome. No digitised edition was open.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.S.LAMP-HELD",
+          "text": "A lamp stands at the king's right hand through the refusal, and does not move.",
+          "evidence_class": "S",
+          "state": "accepted",
+          "speaker": null,
+          "locator": null,
+          "restricted_source": false,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": "Ours. The text specifies no lamp. Declared as a staging choice so the Ledger can show it as ours and not as the text's.",
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "No source claimed. This is a declared staging choice under class S and is accepted as ours, not as text.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.I.COURT-INTERIOR",
+          "text": "The refusal is staged in a pillared court interior, post-and-lintel, on a raised plinth.",
+          "evidence_class": "I",
+          "state": "accepted",
+          "speaker": null,
+          "locator": null,
+          "restricted_source": false,
+          "inferred_from": "SRC.AMARAVATI",
+          "inference_basis": "Amaravati, 2nd-3rd c. CE, court panels: pillared hall, raised plinth, post-and-lintel construction, vedika railing motif. The inference rests on those named panels and their dated vocabulary, not on a region or an era.",
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": false,
+            "basis": "Inference is recorded against a named visual source, not a text locator. Accepted as an inference, never as text.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM.BALA.20.TR.KING-WEEPS",
+          "text": "The king weeps as he refuses.",
+          "evidence_class": "Tr",
+          "state": "disputed",
+          "speaker": null,
+          "locator": null,
+          "restricted_source": false,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": "Commentarial and performance tradition (Ramayana katha performance, various). Not the Valmiki spine.",
+          "silence_note": null,
+          "accepted_how": null
+        },
+        {
+          "id": "CLM.BALA.20.U.RAMA-PRESENT",
+          "text": "Whether Rama is present in the hall during the refusal.",
+          "evidence_class": "T",
+          "state": "unresolved",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "1-20",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": "The passage does not settle it. We say so rather than choosing and calling it text. The direction may show the hall without resolving the question.",
+          "accepted_how": null
+        }
+      ]
+    },
+    {
+      "id": "M4",
+      "story_id": "STORY.BALA.THE-PRIEST-SPEAKS",
+      "title": {
+        "en": "The Priest Speaks",
+        "hi": "गुरु बोले",
+        "te": "గురువు మాట్లాడు"
+      },
+      "kanda": "BALA",
+      "sarga": 21,
+      "duration_s": 44,
+      "status": "claims-only",
+      "shots": 0,
+      "gate": null,
+      "narration": null,
+      "claims": [
+        {
+          "id": "CLM.BALA.21.VASISTHA-COUNSELS",
+          "text": "Vasistha counsels Dasaratha to let Rama go.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "VASISTHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "1-20",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        }
+      ]
+    },
+    {
+      "id": "M5",
+      "story_id": "STORY.BALA.THE-KING-YIELDS",
+      "title": {
+        "en": "The King Yields",
+        "hi": "राजा मान गए",
+        "te": "రాజు అంగీకరించాడు"
+      },
+      "kanda": "BALA",
+      "sarga": 22,
+      "duration_s": 44,
+      "status": "claims-only",
+      "shots": 0,
+      "gate": null,
+      "narration": null,
+      "claims": [
+        {
+          "id": "CLM.BALA.22.KING-YIELDS",
+          "text": "Dasaratha gives Rama to Visvamitra.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 22,
+            "verses": "1-5",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        }
+      ]
+    },
+    {
+      "id": "M6",
+      "story_id": "STORY.BALA.TWO-BOYS-LEAVE",
+      "title": {
+        "en": "Two Boys Leave",
+        "hi": "दो बालक चले",
+        "te": "ఇద్దరు బాలురు బయలుదేరారు"
+      },
+      "kanda": "BALA",
+      "sarga": 22,
+      "duration_s": 44,
+      "status": "claims-only",
+      "shots": 0,
+      "gate": null,
+      "narration": null,
+      "claims": [
+        {
+          "id": "CLM.BALA.22.LAKSMANA-GOES-TOO",
+          "text": "Laksmana goes with Rama.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 22,
+            "verses": "6-10",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        },
+        {
+          "id": "CLM.BALA.22.BALA-ATIBALA",
+          "text": "Visvamitra gives Rama the vidyas Bala and Atibala.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 22,
+            "verses": "11-20",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        }
+      ]
+    },
+    {
+      "id": "M7",
+      "story_id": "STORY.BALA.THE-ROAD-SOUTH",
+      "title": {
+        "en": "The Road South",
+        "hi": "दक्षिण का मार्ग",
+        "te": "దక్షిణ మార్గం"
+      },
+      "kanda": "BALA",
+      "sarga": 24,
+      "duration_s": 44,
+      "status": "claims-only",
+      "shots": 0,
+      "gate": null,
+      "narration": null,
+      "claims": [
+        {
+          "id": "CLM.BALA.24.THE-ROAD",
+          "text": "They travel south along the Sarayu and come to a wood.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 24,
+            "verses": "1-12",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "SRC.VR.CRITICAL",
+      "work": "Valmiki Ramayana",
+      "edition": "Critical Edition, Oriental Institute, Baroda, 1960-1975",
+      "licence": "in-copyright",
+      "restricted": true,
+      "what_travels": "locators only",
+      "restriction_reason": "Critical edition apparatus is in copyright. Locators only."
+    },
+    {
+      "id": "SRC.GRETIL.VR",
+      "work": "Valmiki Ramayana",
+      "edition": "GRETIL digitisation (Goettingen Register of Electronic Texts in Indian Languages)",
+      "licence": "CC BY-NC-SA",
+      "restricted": true,
+      "what_travels": "locators only",
+      "restriction_reason": "CC BY-NC-SA. Verse text must never enter a public payload, a generation input, or an export. Locators travel; text does not. Verification against it remains valid - verification is not redistribution."
+    },
+    {
+      "id": "SRC.DUTT.1891",
+      "work": "Ramayana of Valmiki",
+      "edition": "Manmatha Nath Dutt, Calcutta, 1891",
+      "licence": "public-domain",
+      "restricted": false,
+      "what_travels": "text and locators",
+      "restriction_reason": null
+    },
+    {
+      "id": "SRC.AMARAVATI",
+      "work": "Amaravati stupa relief panels",
+      "edition": "2nd-3rd c. CE, Andhra. Government Museum Chennai / British Museum holdings.",
+      "licence": "museum-photography-varies",
+      "restricted": false,
+      "what_travels": "text and locators",
+      "restriction_reason": null
+    },
+    {
+      "id": "SRC.SANCHI",
+      "work": "Sanchi stupa gateway reliefs",
+      "edition": "1st c. BCE - 1st c. CE, Madhya Pradesh",
+      "licence": "museum-photography-varies",
+      "restricted": false,
+      "what_travels": "text and locators",
+      "restriction_reason": null
+    }
+  ],
+  "promise": [
+    "No invented events, motives or consequences.",
+    "Every line comes from somewhere, and we can show where.",
+    "Where the text is silent, we say so.",
+    "What we chose for the screen, we declare as ours.",
+    "We do not claim authentic, definitive, faithful or scholarly."
+  ]
+}

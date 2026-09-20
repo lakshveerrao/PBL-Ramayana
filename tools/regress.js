@@ -14,6 +14,8 @@ import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
 import { chain as gradeChain, grainChain } from '../lib/grade.js';
 import { plan as assemblePlan } from '../lib/assemble.js';
+import { reconcile, parseJson, briefFor } from '../lib/direct.js';
+import { checkNarration } from '../lib/register.js';
 import { uploadSheet, approveSheet } from '../lib/sheets.js';
 
 // A 1x1 PNG and a 1x1 GIF - enough bytes to exercise storage and hashing without
@@ -439,6 +441,79 @@ t('a reuse resolves to the frame it points at, not its own', () => {
   const p = assemblePlan('M3');
   const reuse = p.shots.find((s) => s.source === 'reuse');
   ok(reuse.frame.from === reuse.reuse_of, `shot ${reuse.id} resolves to ${reuse.frame.from}, not ${reuse.reuse_of}`);
+});
+
+// --- the director harness: fix the harness, not the treatment -----------------------
+t('uneven durations are quantised to whole frames', () => {
+  const r = reconcile({ shots: [{ id: 'a', duration_s: 20.017 }, { id: 'b', duration_s: 23.1 }], narration: {} }, 'M3');
+  for (const s of r.shots) ok(Number.isInteger(s.duration_frames), `shot ${s.id} is not a whole number of frames`);
+  ok(r.total_frames === 1320, `total is ${r.total_frames} frames, not 1320`);
+});
+t('a total that does not sum is reconciled exactly, and the repair is reported', () => {
+  const r = reconcile({ shots: [{ id: 'a', duration_s: 10 }, { id: 'b', duration_s: 10 }], narration: {} }, 'M3');
+  ok(r.total_frames === 1320, `total is ${r.total_frames}`);
+  ok(r.repairs.some((x) => /absorbed/.test(x)), 'the reconciliation was silent');
+});
+t('starts are recomputed from durations, not trusted', () => {
+  const r = reconcile({ shots: [{ id: 'a', duration_s: 22, start_s: 999 }, { id: 'b', duration_s: 22, start_s: 999 }], narration: {} }, 'M3');
+  ok(r.shots[0].start_s === 0 && r.shots[1].start_s === 22, 'the model\'s bogus starts were trusted');
+});
+t('fenced JSON is parsed rather than rejected', () => {
+  ok(parseJson('```json\n{"a":1}\n```')?.a === 1, 'a fenced response was rejected');
+  ok(parseJson('here you go: {"a":2} hope that helps')?.a === 2, 'a wrapped response was rejected');
+  ok(parseJson('not json at all') === null, 'garbage was accepted as JSON');
+});
+t('a duplicate shot id is reported', () => {
+  const r = reconcile({ shots: [{ id: 'a', duration_s: 22 }, { id: 'a', duration_s: 22 }], narration: {} }, 'M3');
+  ok(r.problems.some((p) => /appears twice/.test(p)), 'a duplicate shot id passed');
+});
+t('a reuse pointing forward or nowhere is reported', () => {
+  const r = reconcile({ shots: [{ id: 'a', duration_s: 22, source: 'reuse', reuse_of: 'b' }, { id: 'b', duration_s: 22 }], narration: {} }, 'M3');
+  ok(r.problems.some((p) => /comes later/.test(p)), 'a forward reuse passed');
+  const r2 = reconcile({ shots: [{ id: 'a', duration_s: 44, source: 'reuse', reuse_of: 'zz' }], narration: {} }, 'M3');
+  ok(r2.problems.some((p) => /does not exist/.test(p)), 'a dangling reuse passed');
+});
+t('narration returned as a bare string is normalised', () => {
+  const r = reconcile({ shots: [{ id: 'a', duration_s: 44, narration: 'L1' }], narration: { L1: 'He said no.' } }, 'M3');
+  ok(r.narration.L1.en === 'He said no.', 'a bare-string narration was lost');
+  ok(r.narration.L1.shot === 'a', 'the narration was not bound to its shot');
+});
+t('the register is checked offline, before any critic is paid for', () => {
+  const bad = checkNarration({ L1: { en: 'Behold, the great sage did come unto the king.', shot: 'a' } });
+  ok(bad.verdict === 'fail', 'fake-epic narration passed the offline register check');
+  ok(bad.findings.some((f) => /fake-epic/.test(f.problem)), 'the finding does not name the problem');
+  ok(bad.findings[0].quote, 'the finding does not quote the line');
+});
+t('the test line passes the register check', () => {
+  ok(checkNarration({ L7: { en: 'He said no.', speaker: 'DASARATHA', shot: 'z' } }).verdict === 'pass',
+    'the test line failed its own register check');
+});
+t('a marketing adjective is caught', () => {
+  ok(checkNarration({ L1: { en: 'An epic refusal.', shot: 'a' } }).verdict === 'fail', 'a marketing adjective passed');
+});
+t('an attributed line that drops its attribution is caught', () => {
+  const r = checkNarration({ L1: { en: 'The boy was not yet sixteen.', speaker: 'DASARATHA', shot: 'a' } });
+  ok(r.verdict === 'fail', 'a statement rendered as narrator fact passed');
+  ok(r.findings.some((f) => /narrator fact/.test(f.suggestion)), 'the finding does not explain why it matters');
+});
+t('the same line WITH its attribution passes', () => {
+  ok(checkNarration({ L1: { en: 'He said the boy was not yet sixteen.', speaker: 'DASARATHA', shot: 'a' } }).verdict === 'pass',
+    'a properly attributed line was rejected');
+});
+t('the whole treatment passes its own register check', () => {
+  const t3 = treatment('M3');
+  const r = checkNarration(Object.fromEntries(Object.entries(t3.narration).map(([k, v]) => [k, { en: v.en, speaker: v.speaker, shot: v.shot }])));
+  ok(r.verdict === 'pass', `the standard fails its own check: ${JSON.stringify(r.findings)}`);
+});
+t('the director brief carries locators and never text', () => {
+  const b = briefFor('M3');
+  ok(/BALA 20\./.test(b), 'the brief carries no locators');
+  ok(!/[\u0900-\u097F]{40,}/.test(b), 'the brief carries a long Devanagari run');
+  assertNoRestrictedText({ user: b }, 'director brief');
+});
+t('the director brief names the speaker on every attributed claim', () => {
+  const b = briefFor('M3');
+  ok(/SPOKEN BY DASARATHA/.test(b), 'the brief does not carry speaker attribution');
 });
 
 // --- the treatment holds -----------------------------------------------------------

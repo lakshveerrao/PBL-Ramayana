@@ -50,11 +50,11 @@
     },
     "L3": {
       "shot": "03-05",
-      "en": "He had waited a long time for this son.",
-      "hi": "इस बेटे के लिए उसने बहुत लंबा इंतज़ार किया था।",
-      "te": "ఈ కొడుకు కోసం అతను చాలా కాలం ఎదురుచూశాడు.",
+      "en": "He said he had waited a long time for this son.",
+      "hi": "उसने कहा कि इस बेटे के लिए बहुत इंतज़ार किया।",
+      "te": "ఈ కొడుకు కోసం చాలా కాలం ఎదురుచూశానని అతను అన్నాడు.",
       "speaker": "DASARATHA",
-      "speaker_rule": "His account of himself. Attributed, not asserted."
+      "speaker_rule": "MANDATORY attribution. This is Dasaratha's account of himself, not the narrator's. Without 'He said' it reads as narrator fact, which it is not."
     },
     "L4": {
       "shot": "03-09",

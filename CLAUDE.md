@@ -140,3 +140,20 @@ caching is on; the system block never varies between films.
 Plain speech. Short sentences. No fake-epic vocabulary, no translation register
 ("rained upon his altar"), no marketing adjectives. The test line is *He said no.* —
 three level words. If a line could not be said aloud to a friend, it is written wrong.
+
+---
+
+## What is verified, and how
+
+Four checks measure rather than assert. Run them with `npm run check` (the first two) or
+individually.
+
+| | |
+|---|---|
+| `npm run typecheck` | Burns every conjunct and every narration line through the real libass path at 1080×1920 and measures the ink box against the per-script line box. Telugu conjuncts really are the tallest, which is why the line boxes differ. |
+| `npm run gradecheck` | Pushes every locked skin albedo through the real grade chain and measures L\* out against the lock, **in both directions**. Lightening is the colourism defect; drifting dark is a consistency defect against the same lock. |
+| `npm run cutcheck` | Pulls each shot boundary out of the finished video and confirms the cut lands on the frame the shot list names, and that no face drifts outside its lock through grade, grain and encode. |
+| `node tools/joincheck.js` | Checks that continuous joins actually join. Reports "not checkable" rather than passing vacuously when a film has no treatment yet. |
+
+`lib/register.js` runs the register check offline, so the Opus critic is only paid for an
+opinion on something that already passes deterministically.

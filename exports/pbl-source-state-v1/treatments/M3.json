@@ -4,7 +4,10 @@
   "title_en": "A Father Says No",
   "duration_s": 44.0,
   "fps": 30,
-  "frame": [1080, 1920],
+  "frame": [
+    1080,
+    1920
+  ],
   "_doc": "The treatment is the film. It is not changed to make a render easier. A directed output is judged against this: shot count, durations to the frame, and the register of the narration.",
   "register_standard": {
     "rule": "Plain speech. Short sentences. No fake-epic vocabulary, no translation register, no marketing adjectives.",
@@ -12,38 +15,381 @@
     "test_note": "Three level words. A direction that returns anything more ornate than this for the closing line has failed, and the harness is what gets fixed - not this line."
   },
   "shots": [
-    { "id": "01-01", "start_s": 0.0,  "duration_s": 2.4, "size": "WIDE",   "lens_mm": 35,  "height": "eye",        "camera_move": "locked", "expression": "n/a",                 "source": "generate", "entities": ["VISVAMITRA"],              "claims": ["CLM.BALA.20.I.COURT-INTERIOR"], "narration": null },
-    { "id": "01-02", "start_s": 2.4,  "duration_s": 2.2, "size": "CU",     "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "settled, unhurried",  "source": "generate", "entities": ["VISVAMITRA"],              "claims": ["CLM.BALA.20.REQUEST-LANDS"],    "narration": "L1" },
-    { "id": "01-03", "start_s": 4.6,  "duration_s": 1.6, "size": "INSERT", "lens_mm": 100, "height": "high",       "camera_move": "locked", "expression": "n/a",                 "source": "generate", "entities": ["DASARATHA"],               "claims": ["CLM.BALA.20.REQUEST-LANDS"],    "narration": null },
-
-    { "id": "02-01", "start_s": 6.2,  "duration_s": 2.8, "size": "MS",     "lens_mm": 50,  "height": "eye",        "camera_move": "locked", "expression": "hearing it",          "source": "generate", "entities": ["DASARATHA"],               "claims": ["CLM.BALA.20.KING-STUNNED"],     "narration": "L2" },
-    { "id": "02-02", "start_s": 9.0,  "duration_s": 2.6, "size": "MCU",    "lens_mm": 85,  "height": "slightly low","camera_move": "locked", "expression": "gone out of himself", "source": "generate", "entities": ["DASARATHA"],               "claims": ["CLM.BALA.20.KING-STUNNED"],     "narration": null },
-
-    { "id": "03-01", "start_s": 11.6, "duration_s": 1.8, "size": "INSERT", "lens_mm": 100, "height": "high",       "camera_move": "locked", "expression": "n/a",                 "source": "reuse",    "reuse_of": "01-03", "entities": [],             "claims": [],                                "narration": null },
-    { "id": "03-02", "start_s": 13.4, "duration_s": 2.0, "size": "MS",     "lens_mm": 50,  "height": "eye",        "camera_move": "locked", "expression": "not intervening",     "source": "generate", "entities": ["VASISTHA"],                "claims": ["CLM.BALA.20.I.COURT-INTERIOR"], "narration": null },
-    { "id": "03-03", "start_s": 15.4, "duration_s": 1.6, "size": "CU",     "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "n/a",                 "source": "generate", "entities": [],                          "claims": ["CLM.BALA.20.S.LAMP-HELD"],      "narration": null },
-    { "id": "03-04", "start_s": 17.0, "duration_s": 1.4, "size": "MCU",    "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "gathering himself",   "source": "crop",     "crop_of": "02-02", "entities": ["DASARATHA"],   "claims": [],                                "narration": null },
-    { "id": "03-05", "start_s": 18.4, "duration_s": 2.4, "size": "MS",     "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "level, decided",      "source": "generate", "entities": ["DASARATHA"],               "claims": ["CLM.BALA.20.SON-CAME-LATE"],    "narration": "L3", "note": "The king stands. The standing is not announced." },
-    { "id": "03-09", "start_s": 20.8, "duration_s": 2.6, "size": "CU",     "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "speaking, contained",  "source": "generate", "entities": ["DASARATHA"],               "claims": ["CLM.BALA.20.NOT-YET-SIXTEEN"],  "narration": "L4" },
-
-    { "id": "04-01", "start_s": 23.4, "duration_s": 2.2, "size": "WIDE",   "lens_mm": 35,  "height": "eye",        "camera_move": "locked", "expression": "n/a",                 "source": "generate", "entities": ["DASARATHA", "VISVAMITRA"], "claims": ["CLM.BALA.20.OFFERS-HIMSELF"],   "narration": "L5" },
-    { "id": "04-02", "start_s": 25.6, "duration_s": 2.0, "size": "MCU",    "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "unmoved",             "source": "reuse",    "reuse_of": "01-02", "entities": ["VISVAMITRA"], "claims": ["CLM.BALA.20.NAMES-THE-ENEMY"],  "narration": null },
-
-    { "id": "05-06", "start_s": 27.6, "duration_s": 2.8, "size": "MS",     "lens_mm": 50,  "height": "low",        "camera_move": "locked", "expression": "n/a",                 "source": "generate", "entities": ["VISVAMITRA"],              "claims": [],                                "narration": null, "note": "The staff meets the stone. NO MOTION - the stillness is the effect." },
-
-    { "id": "06-01", "start_s": 30.4, "duration_s": 2.4, "size": "MS",     "lens_mm": 50,  "height": "eye",        "camera_move": "locked", "expression": "waiting",             "source": "crop",     "crop_of": "04-01", "entities": ["VISVAMITRA"],  "claims": [],                                "narration": "L6" },
-    { "id": "06-02", "start_s": 32.8, "duration_s": 2.2, "size": "CU",     "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "decided",             "source": "reuse",    "reuse_of": "03-09", "entities": ["DASARATHA"],  "claims": ["CLM.BALA.20.REFUSAL"],          "narration": null },
-
-    { "id": "07-01", "start_s": 35.0, "duration_s": 1.0, "size": "INSERT", "lens_mm": 100, "height": "eye",        "camera_move": "locked", "expression": "n/a",                 "source": "reuse",    "reuse_of": "03-03", "entities": [],             "claims": ["CLM.BALA.20.S.LAMP-HELD"],      "narration": null },
-    { "id": "07-02", "start_s": 36.0, "duration_s": 8.0, "size": "CU",     "lens_mm": 85,  "height": "eye",        "camera_move": "locked", "expression": "does not change",     "source": "generate", "entities": ["DASARATHA"],               "claims": ["CLM.BALA.20.REFUSAL"],          "narration": "L7", "note": "Eight seconds on a face that does not move. Nothing happens and that is the shot." }
+    {
+      "id": "01-01",
+      "start_s": 0.0,
+      "duration_s": 2.4,
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "entities": [
+        "VISVAMITRA"
+      ],
+      "claims": [
+        "CLM.BALA.20.I.COURT-INTERIOR"
+      ],
+      "narration": null
+    },
+    {
+      "id": "01-02",
+      "start_s": 2.4,
+      "duration_s": 2.2,
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "settled, unhurried",
+      "source": "generate",
+      "entities": [
+        "VISVAMITRA"
+      ],
+      "claims": [
+        "CLM.BALA.20.REQUEST-LANDS"
+      ],
+      "narration": "L1"
+    },
+    {
+      "id": "01-03",
+      "start_s": 4.6,
+      "duration_s": 1.6,
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "high",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.REQUEST-LANDS"
+      ],
+      "narration": null
+    },
+    {
+      "id": "02-01",
+      "start_s": 6.2,
+      "duration_s": 2.8,
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "hearing it",
+      "source": "generate",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.KING-STUNNED"
+      ],
+      "narration": "L2"
+    },
+    {
+      "id": "02-02",
+      "start_s": 9.0,
+      "duration_s": 2.6,
+      "size": "MCU",
+      "lens_mm": 85,
+      "height": "slightly low",
+      "camera_move": "locked",
+      "expression": "gone out of himself",
+      "source": "generate",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.KING-STUNNED"
+      ],
+      "narration": null
+    },
+    {
+      "id": "03-01",
+      "start_s": 11.6,
+      "duration_s": 1.8,
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "high",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "reuse",
+      "reuse_of": "01-03",
+      "entities": [],
+      "claims": [],
+      "narration": null
+    },
+    {
+      "id": "03-02",
+      "start_s": 13.4,
+      "duration_s": 2.0,
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "not intervening",
+      "source": "generate",
+      "entities": [
+        "VASISTHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.I.COURT-INTERIOR"
+      ],
+      "narration": null
+    },
+    {
+      "id": "03-03",
+      "start_s": 15.4,
+      "duration_s": 1.6,
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "entities": [],
+      "claims": [
+        "CLM.BALA.20.S.LAMP-HELD"
+      ],
+      "narration": null
+    },
+    {
+      "id": "03-04",
+      "start_s": 17.0,
+      "duration_s": 1.4,
+      "size": "MCU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "gathering himself",
+      "source": "crop",
+      "crop_of": "02-02",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [],
+      "narration": null
+    },
+    {
+      "id": "03-05",
+      "start_s": 18.4,
+      "duration_s": 2.4,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "level, decided",
+      "source": "generate",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.SON-CAME-LATE"
+      ],
+      "narration": "L3",
+      "note": "The king stands. The standing is not announced."
+    },
+    {
+      "id": "03-09",
+      "start_s": 20.8,
+      "duration_s": 2.6,
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "speaking, contained",
+      "source": "generate",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.NOT-YET-SIXTEEN"
+      ],
+      "narration": "L4"
+    },
+    {
+      "id": "04-01",
+      "start_s": 23.4,
+      "duration_s": 2.2,
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "entities": [
+        "DASARATHA",
+        "VISVAMITRA"
+      ],
+      "claims": [
+        "CLM.BALA.20.OFFERS-HIMSELF"
+      ],
+      "narration": "L5"
+    },
+    {
+      "id": "04-02",
+      "start_s": 25.6,
+      "duration_s": 2.0,
+      "size": "MCU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "unmoved",
+      "source": "reuse",
+      "reuse_of": "01-02",
+      "entities": [
+        "VISVAMITRA"
+      ],
+      "claims": [
+        "CLM.BALA.20.NAMES-THE-ENEMY"
+      ],
+      "narration": null
+    },
+    {
+      "id": "05-06",
+      "start_s": 27.6,
+      "duration_s": 2.8,
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "entities": [
+        "VISVAMITRA"
+      ],
+      "claims": [],
+      "narration": null,
+      "note": "The staff meets the stone. NO MOTION - the stillness is the effect."
+    },
+    {
+      "id": "06-01",
+      "start_s": 30.4,
+      "duration_s": 2.4,
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "waiting",
+      "source": "crop",
+      "crop_of": "04-01",
+      "entities": [
+        "VISVAMITRA"
+      ],
+      "claims": [],
+      "narration": "L6"
+    },
+    {
+      "id": "06-02",
+      "start_s": 32.8,
+      "duration_s": 2.2,
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "decided",
+      "source": "reuse",
+      "reuse_of": "03-09",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.REFUSAL"
+      ],
+      "narration": null
+    },
+    {
+      "id": "07-01",
+      "start_s": 35.0,
+      "duration_s": 1.0,
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "reuse",
+      "reuse_of": "03-03",
+      "entities": [],
+      "claims": [
+        "CLM.BALA.20.S.LAMP-HELD"
+      ],
+      "narration": null
+    },
+    {
+      "id": "07-02",
+      "start_s": 36.0,
+      "duration_s": 8.0,
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "does not change",
+      "source": "generate",
+      "entities": [
+        "DASARATHA"
+      ],
+      "claims": [
+        "CLM.BALA.20.REFUSAL"
+      ],
+      "narration": "L7",
+      "note": "Eight seconds on a face that does not move. Nothing happens and that is the shot."
+    }
   ],
   "narration": {
-    "L1": { "shot": "01-02", "en": "The sage asked for the boy.",                 "hi": "ऋषि ने लड़के को माँगा।", "te": "ముని ఆ కుర్రాడిని అడిగాడు.", "speaker": null },
-    "L2": { "shot": "02-01", "en": "The king heard it and lost himself.",         "hi": "राजा ने सुना और होश खो बैठा।", "te": "రాజు విని స్పృహ కోల్పోయాడు.", "speaker": null },
-    "L3": { "shot": "03-05", "en": "He had waited a long time for this son.",     "hi": "इस बेटे के लिए उसने बहुत लंबा इंतज़ार किया था।", "te": "ఈ కొడుకు కోసం అతను చాలా కాలం ఎదురుచూశాడు.", "speaker": "DASARATHA", "speaker_rule": "His account of himself. Attributed, not asserted." },
-    "L4": { "shot": "03-09", "en": "He said the boy was not yet sixteen.",        "hi": "उसने कहा कि लड़का अभी सोलह का नहीं हुआ।", "te": "కుర్రాడికి ఇంకా పదహారు నిండలేదని అతను అన్నాడు.", "speaker": "DASARATHA", "speaker_rule": "MANDATORY attribution. 'He said' may never be dropped. Without it this becomes narrator fact, which it is not." },
-    "L5": { "shot": "04-01", "en": "He offered his army instead. And himself.",   "hi": "उसने बदले में अपनी सेना दी। और खुद को।", "te": "బదులుగా తన సైన్యాన్ని ఇచ్చాడు. తననూ.", "speaker": "DASARATHA", "speaker_rule": "Attributed." },
-    "L6": { "shot": "06-01", "en": "The sage waited.",                            "hi": "ऋषि रुका रहा।", "te": "ముని ఆగాడు.", "speaker": null },
-    "L7": { "shot": "07-02", "en": "He said no.",                                 "hi": "उसने मना किया।", "te": "అతను వద్దన్నాడు.", "speaker": "DASARATHA", "speaker_rule": "Attributed.", "is_test_line": true }
+    "L1": {
+      "shot": "01-02",
+      "en": "The sage asked for the boy.",
+      "hi": "ऋषि ने लड़के को माँगा।",
+      "te": "ముని ఆ కుర్రాడిని అడిగాడు.",
+      "speaker": null
+    },
+    "L2": {
+      "shot": "02-01",
+      "en": "The king heard it and lost himself.",
+      "hi": "राजा ने सुना और होश खो बैठा।",
+      "te": "రాజు విని స్పృహ కోల్పోయాడు.",
+      "speaker": null
+    },
+    "L3": {
+      "shot": "03-05",
+      "en": "He said he had waited a long time for this son.",
+      "hi": "उसने कहा कि इस बेटे के लिए बहुत इंतज़ार किया।",
+      "te": "ఈ కొడుకు కోసం చాలా కాలం ఎదురుచూశానని అతను అన్నాడు.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "MANDATORY attribution. This is Dasaratha's account of himself, not the narrator's. Without 'He said' it reads as narrator fact, which it is not."
+    },
+    "L4": {
+      "shot": "03-09",
+      "en": "He said the boy was not yet sixteen.",
+      "hi": "उसने कहा कि लड़का अभी सोलह का नहीं हुआ।",
+      "te": "కుర్రాడికి ఇంకా పదహారు నిండలేదని అతను అన్నాడు.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "MANDATORY attribution. 'He said' may never be dropped. Without it this becomes narrator fact, which it is not."
+    },
+    "L5": {
+      "shot": "04-01",
+      "en": "He offered his army instead. And himself.",
+      "hi": "उसने बदले में अपनी सेना दी। और खुद को।",
+      "te": "బదులుగా తన సైన్యాన్ని ఇచ్చాడు. తననూ.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "Attributed."
+    },
+    "L6": {
+      "shot": "06-01",
+      "en": "The sage waited.",
+      "hi": "ऋषि रुका रहा।",
+      "te": "ముని ఆగాడు.",
+      "speaker": null
+    },
+    "L7": {
+      "shot": "07-02",
+      "en": "He said no.",
+      "hi": "उसने मना किया।",
+      "te": "అతను వద్దన్నాడు.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "Attributed.",
+      "is_test_line": true
+    }
   }
 }

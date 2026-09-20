@@ -19,8 +19,8 @@
   "estimate_usd": {
     "image": 0.3,
     "motion": 0.25,
-    "voice": 0.10944,
-    "total": 0.65944
+    "voice": 0.11232,
+    "total": 0.66232
   },
   "gate": {
     "allowed": false,
