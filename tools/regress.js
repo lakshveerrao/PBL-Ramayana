@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 // regress - behaviour, not data shape. Every regression that guards a rule pairs the
 // allowed case with the blocked one, so a rule cannot be loosened without a test noticing.
-import { read, write, treatment, clearCache } from '../lib/store.js';
+import { read, write, treatment, clearCache, ROOT } from '../lib/store.js';
+import { writeFileSync, rmSync } from 'node:fs';
+import { join } from 'node:path';
 import { checkShot, checkFilm, entityCleared, assertNoMemoBlocked, GateRefusal, stillAllowed } from '../lib/consistency.js';
 import { assertNoRestrictedText, RightsError, isRestricted, locatorOf } from '../lib/sources.js';
 import { normaliseImage, normaliseVideo } from '../lib/fal.js';
@@ -10,6 +12,14 @@ import { assemble } from '../lib/prompt.js';
 import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox } from '../lib/subtitle.js';
+import { uploadSheet, approveSheet } from '../lib/sheets.js';
+
+// A 1x1 PNG and a 1x1 GIF - enough bytes to exercise storage and hashing without
+// pretending to be a model sheet. Real sheets are drawn by an artist.
+const PNG = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==';
+const PNG2 = 'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+const FOUR_VIEWS = ['front', 'three_quarter', 'profile', 'in_world']
+  .map((slot) => ({ slot, filename: `${slot}.png`, data_base64: PNG }));
 
 const tests = [];
 const t = (name, fn) => tests.push({ name, fn });
@@ -81,6 +91,112 @@ t('an entity with no memo passes the memo gate', () => {
 t('assembling a prompt for a memo-blocked entity refuses', async () => {
   const fake = { ...shotOf('M3', '03-05'), entities: ['TATAKA'] };
   await throws(() => assemble(fake, 'M3'), 'GateRefusal', 'a prompt was assembled for TATAKA');
+});
+
+// --- sheet intake: upload records evidence, only a human approves -----------------
+t('uploading four views records angle and leaves the other three axes outstanding', () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    const r = uploadSheet('VASISTHA', { files: FOUR_VIEWS });
+    ok(r.files.length === 4, `expected 4 files, got ${r.files.length}`);
+    ok(r.hashes.length === 4, 'one hash per file was not recorded');
+    ok(r.twenty_frame_test.evidence_held.includes('angle'), 'a four-view sheet did not satisfy angle');
+    for (const axis of ['lighting', 'distance', 'expression']) {
+      ok(r.twenty_frame_test.outstanding.includes(axis), `${axis} should still be outstanding after a four-view upload`);
+    }
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('uploading fewer than four views does NOT satisfy angle', () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    const r = uploadSheet('VASISTHA', { files: FOUR_VIEWS.slice(0, 2) });
+    ok(!r.twenty_frame_test.evidence_held.includes('angle'), 'two views satisfied the angle axis');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('upload never approves', () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    const r = uploadSheet('VASISTHA', { files: FOUR_VIEWS });
+    ok(r.approved === false, 'uploading files approved the sheet');
+    ok(!entityCleared('VASISTHA').cleared, 'an uploaded but unapproved sheet cleared the consistency gate');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('approval requires a human name', async () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    uploadSheet('VASISTHA', { files: FOUR_VIEWS });
+    await throws(() => approveSheet('VASISTHA', {}), 'Error', 'a sheet was approved with no name');
+    await throws(() => approveSheet('VASISTHA', { approver: ' ' }), 'Error', 'a sheet was approved by whitespace');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('a sheet with no files cannot be approved', async () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    await throws(() => approveSheet('VASISTHA', { approver: 'A Human' }), 'Error', 'an empty sheet was approved');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('four uploaded and approved files pass the gate; an unapproved principal still fails', () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    uploadSheet('VASISTHA', { files: FOUR_VIEWS });
+    const a = approveSheet('VASISTHA', { approver: 'Test Approver' });
+    ok(a.approved_by === 'Test Approver', 'the approver name was not recorded');
+    ok(entityCleared('VASISTHA').cleared, 'an approved four-file sheet did not pass the gate');
+    // The blocked case, beside the allowed one.
+    ok(!entityCleared('DASARATHA').cleared, 'an unapproved principal passed the gate');
+    // And the shot-level consequence: 03-02 is Vasistha alone, so it should now clear.
+    ok(checkShot(shotOf('M3', '03-02')).allowed, 'a shot whose only principal is approved did not clear');
+    ok(!checkShot(shotOf('M3', '03-05')).allowed, 'a shot with an unapproved principal cleared');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('an approved sheet still reports its outstanding axes', () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    uploadSheet('VASISTHA', { files: FOUR_VIEWS });
+    const a = approveSheet('VASISTHA', { approver: 'Test Approver' });
+    ok(a.twenty_frame_test.outstanding.length === 3, 'approval silently cleared the outstanding axes');
+    ok(/remain outstanding/i.test(a.note), 'approval does not surface the outstanding axes');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('an unknown slot is refused', async () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    await throws(() => uploadSheet('VASISTHA', { files: [{ slot: 'back', filename: 'b.png', data_base64: PNG }] }),
+      'Error', 'an unknown sheet slot was accepted');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('a sheet path that escapes the repository is refused', async () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    await throws(() => uploadSheet('VASISTHA', { files: [{ slot: 'front', path: '../../../etc/hostname' }] }),
+      'Error', 'a path outside the repository was accepted');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('a sheet file inside the repository is accepted by path', () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  const probe = 'assets/sheets/.probe.png';
+  try {
+    writeFileSync(join(ROOT, probe), Buffer.from(PNG, 'base64'));
+    const r = uploadSheet('VASISTHA', { files: [{ slot: 'front', filename: 'front.png', path: probe }] });
+    ok(r.files.length === 1 && r.hashes.length === 1, 'a path-based upload did not record the file');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); rmSync(join(ROOT, probe), { force: true }); }
+});
+t('an empty sheet file is refused', async () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    await throws(() => uploadSheet('VASISTHA', { files: [{ slot: 'front', filename: 'f.png', data_base64: '' }] }),
+      'Error', 'an empty file was accepted');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
+});
+t('the same bytes always hash the same, and different bytes do not', () => {
+  const snapshot = JSON.stringify(read('sheets', { fresh: true }));
+  try {
+    const a = uploadSheet('VASISTHA', { files: FOUR_VIEWS }).hashes;
+    const b = uploadSheet('VASISTHA', { files: FOUR_VIEWS }).hashes;
+    ok(JSON.stringify(a) === JSON.stringify(b), 'the same file hashed differently twice');
+    const c = uploadSheet('VASISTHA', { files: [{ slot: 'front', filename: 'f.png', data_base64: PNG2 }] }).hashes;
+    ok(c[0] !== a[0], 'different bytes produced the same hash');
+  } finally { write('sheets', JSON.parse(snapshot)); clearCache(); }
 });
 
 // --- the motion refusal -----------------------------------------------------------

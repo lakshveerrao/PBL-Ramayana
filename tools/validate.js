@@ -232,6 +232,18 @@ check('gates', 'no axis is both held and outstanding', () => {
     for (const o of s.twenty_frame_test.outstanding) T(!held.has(o), `sheet ${s.id} has ${o} both held and outstanding`);
   }
 });
+check('gates', 'the upload spec names the four slots and says upload never approves', () => {
+  const u = read('sheets')._upload_spec;
+  T(u, 'the upload spec has been deleted');
+  T(JSON.stringify(u.slots) === JSON.stringify(['front', 'three_quarter', 'profile', 'in_world']), `slots are ${u.slots.join(',')}`);
+  T(u.axis_satisfied_by_full_four_view === 'angle', 'a four-view sheet no longer maps to the angle axis alone');
+  T(/never approves/i.test(u.note), 'the spec no longer says upload never approves');
+});
+check('gates', 'no sheet has been approved by a process rather than a person', () => {
+  for (const s of read('sheets').sheets) {
+    if (s.approved_by) T(!/^(system|auto|process|script|ci|bot)$/i.test(s.approved_by.trim()), `sheet ${s.id} is approved by "${s.approved_by}", which is not a person`);
+  }
+});
 check('gates', 'every memo-blocked entity is listed', () => {
   const need = ['TATAKA', 'RAVANA', 'SURPANAKHA', 'MANTHARA', 'AHALYA', 'SITA', 'VANARAS', 'LANKA', 'ASTRAS', 'FIGURE-FROM-THE-FIRE'];
   const have = new Set(read('memos').memos.map((m) => m.entity));
