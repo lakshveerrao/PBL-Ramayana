@@ -1,0 +1,15 @@
+{
+  "_doc": "An entity with an outstanding memo may not be designed, prompted or shown in frame. The memo is written first. This is a hard gate and no packet, prompt or render may pass it.",
+  "memos": [
+    { "entity": "TATAKA", "state": "outstanding", "reason": "A woman turned monstrous. How she is shown decides what the series says about women and monstrousness. Written before drawn." },
+    { "entity": "RAVANA", "state": "outstanding", "reason": "Ten heads are a design problem and a theological one. Not a costume." },
+    { "entity": "SURPANAKHA", "state": "outstanding", "reason": "The mutilation scene. The memo settles what is shown and what is not, before any line is drawn." },
+    { "entity": "MANTHARA", "state": "outstanding", "reason": "Deformity has been used as moral signal for a century of illustration. We will not." },
+    { "entity": "AHALYA", "state": "outstanding", "reason": "The curse and the stone. Consent is at issue in the passage and in every retelling." },
+    { "entity": "SITA", "state": "outstanding", "reason": "The largest design decision in the project. Not taken in passing." },
+    { "entity": "VANARAS", "state": "outstanding", "reason": "The line between person and animal. Every choice here is read racially whether we intend it or not." },
+    { "entity": "LANKA", "state": "outstanding", "reason": "Gold city. Every prior depiction imports an orientalism we have to decide about first." },
+    { "entity": "ASTRAS", "state": "outstanding", "reason": "Weapons that are also persons. A VFX answer would be the wrong answer." },
+    { "entity": "FIGURE-FROM-THE-FIRE", "state": "outstanding", "reason": "The being that rises from the sacrificial fire in Bala. Its form is not settled in the text." }
+  ]
+}

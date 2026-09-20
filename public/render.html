@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PBL Ramayana - render</title><link rel="stylesheet" href="/_style.css"></head><body>
+<header><h1>PBL RAMAYANA / RENDER</h1>
+<nav><a href="/index.html">pipeline</a><a href="/render.html" class="on">render</a></nav>
+<select id="film"></select><span class="pill" id="spend">-</span></header>
+<main>
+<section><h2>Estimate - before anything is spent</h2><div id="est" class="d">loading</div>
+<div class="bar"><i id="gatebar" style="width:0"></i></div>
+<div id="gate" class="note"></div></section>
+
+<section><h2>Narration - delivery notes beside the button</h2><div id="narr" class="d">loading</div></section>
+
+<section><h2>Shots</h2><table id="shots"><tr><td class="d">loading</td></tr></table>
+<p class="note">A refused shot names what refused it. A gate never blocks unrelated work.</p></section>
+
+<section><h2>Output</h2><pre id="out">Pick an action above. Nothing runs on load.</pre></section>
+</main>
+<script type="module">
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const out=t=>$('#out').textContent=typeof t==='string'?t:JSON.stringify(t,null,2);
+const st=await (await fetch('/api/state')).json();
+$('#spend').textContent=`$${st.spend.usd.toFixed(4)} spent`;
+
+const withT=st.films.filter(f=>f.has_treatment);
+$('#film').innerHTML=withT.map(f=>`<option value="${f.id}">${f.id} - ${esc(f.title)}</option>`).join('');
+$('#film').onchange=()=>load($('#film').value);
+
+async function load(id){
+  const f=await (await fetch(`/api/films/${id}`)).json();
+  const story=f.film.story_id;
+  const est=await (await fetch(`/api/render/${story}/estimate`)).json();
+  const nar=await (await fetch(`/api/narrator/${id}`)).json();
+
+  $('#est').innerHTML=`<span class="pill">generate <b>${est.shots_to_generate}</b></span>
+   <span class="pill">reuse <b>${est.shots_reused}</b></span>
+   <span class="pill">images <b>$${est.usd.image.toFixed(4)}</b></span>
+   <span class="pill">motion <b>$${est.usd.motion.toFixed(4)}</b></span>
+   <span class="pill">voice <b>$${est.usd.voice.toFixed(4)}</b></span>
+   <span class="pill w">total <b>$${est.usd.total.toFixed(4)}</b></span>`;
+
+  const pct=Math.round((est.gate.of-est.gate.blocked)/est.gate.of*100);
+  $('#gatebar').style.width=pct+'%';
+  $('#gate').innerHTML=est.gate.blocked
+    ? `<b class="no">${est.gate.blocked} of ${est.gate.of} shots refused by the consistency gate.</b> Still allowed: ${est.gate.still_allowed.map(esc).join(' &middot; ')}`
+    : `<b class="ok">all ${est.gate.of} shots clear the consistency gate.</b>`;
+
+  $('#narr').innerHTML=`<div class="d">${esc(nar.overall_delivery??'')}</div>
+   <div class="row">${['en','hi','te'].map(l=>`<button data-voice="${l}">voice ${l}</button>`).join('')}
+   <span class="pill">stability ${nar.settings.stability}</span>
+   <span class="pill">${esc(nar.per_line_rule)}</span></div>
+   <table>${Object.entries(nar.delivery?.lines??{}).map(([shot,note])=>
+     `<tr><td class="w">${shot}</td><td class="d">${esc(note)}</td></tr>`).join('')}</table>`;
+
+  $('#shots').innerHTML='<tr><th>shot</th><th>dur</th><th>size/lens</th><th>src</th><th>in frame</th><th>gate</th><th></th></tr>'+
+   f.treatment.shots.map(s=>{
+     const g=f.gate.results.find(r=>r.shot===s.id);
+     return `<tr><td>${s.id}</td><td class="d">${s.duration_s}s</td><td class="d">${s.size} ${s.lens_mm}mm</td>
+     <td class="${s.source==='generate'?'w':'d'}">${s.source}</td>
+     <td class="d">${(s.entities||[]).join(', ')||'-'}</td>
+     <td class="${g.allowed?'ok':'no'}">${g.allowed?'clear':'refused'}</td>
+     <td><button data-prompt="${s.id}">prompt</button>
+     ${s.source==='generate'?`<button data-shot="${s.id}">render</button>`:''}
+     <button data-motion="${s.id}">motion</button></td></tr>`;
+   }).join('');
+
+  document.querySelectorAll('[data-prompt]').forEach(b=>b.onclick=async()=>{
+    out(await (await fetch(`/api/prompt/${id}/${b.dataset.prompt}`)).json());});
+  document.querySelectorAll('[data-shot]').forEach(b=>b.onclick=async()=>{
+    out('running '+b.dataset.shot+'...');
+    out(await (await fetch(`/api/render/${story}/shot/${b.dataset.shot}`,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json());});
+  document.querySelectorAll('[data-motion]').forEach(b=>b.onclick=async()=>{
+    out(await (await fetch(`/api/render/${story}/motion/${b.dataset.motion}`,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json());});
+  document.querySelectorAll('[data-voice]').forEach(b=>b.onclick=async()=>{
+    out(await (await fetch(`/api/render/${story}/voice/${b.dataset.voice}`,{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json());});
+}
+load(withT[0].id);
+</script></body></html>

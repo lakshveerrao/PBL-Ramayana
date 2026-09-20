@@ -1,0 +1,27 @@
+{
+  "_doc": "The narrator. Plain speech, short sentences, no fake-epic vocabulary, no translation register. The test line is 'He said no.' - three level words. If a line could not be said aloud to a friend, it is written wrong. Speaker attribution survives everywhere: a statement by a character is never rendered as narrator fact.",
+  "voice_settings": {
+    "stability": 0.82,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": false,
+    "rule": "High stability on purpose. Low stability lets the model perform, and the direction forbids performance. If a read sounds performed, the settings or the voice are wrong - do not fix it by rewriting the line."
+  },
+  "per_line_rule": "Lines are generated one at a time, never the whole script in one call. The edit owns the silences, not the model.",
+  "delivery_notes": {
+    "M3": {
+      "overall": "A room where something is being refused. The narrator does not plead and does not judge. Level.",
+      "lines": {
+        "03-05": "Flat. The king is standing; do not announce it.",
+        "03-09": "This is Dasaratha's statement, not ours. Attribute it in the read - a shade of quotation, not an impersonation.",
+        "05-06": "The staff strike. Say nothing over it. The line before ends clean and the line after starts late.",
+        "07-02": "'He said no.' Three level words. No fall on 'no'. Do not land it."
+      }
+    }
+  },
+  "languages": {
+    "en": { "voice_env": "ELEVEN_VOICE_EN", "register": "plain modern English. No archaism, no 'thee', no inversion." },
+    "hi": { "voice_env": "ELEVEN_VOICE_HI", "register": "plain spoken Hindi. Not Sanskritised, not Urdu-leaning. The register of speech, not of recitation." },
+    "te": { "voice_env": "ELEVEN_VOICE_TE", "register": "plain spoken Telugu. Not grandhika. The register of speech." }
+  }
+}

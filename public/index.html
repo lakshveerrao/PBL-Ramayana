@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PBL Ramayana - pipeline</title><link rel="stylesheet" href="/_style.css"></head><body>
+<header><h1>PBL RAMAYANA / PIPELINE</h1>
+<nav><a href="/index.html" class="on">pipeline</a><a href="/render.html">render</a></nav>
+<span class="pill" id="spend">-</span></header>
+<main>
+<section><h2>Providers</h2><div id="prov" class="d">checking...</div>
+<p class="note">Preflight makes one cheap call per provider. Nothing is generated. A blocked host is reported, never worked around.</p></section>
+
+<section><h2>Films - arc 7</h2><table id="films"><tr><td class="d">loading</td></tr></table></section>
+
+<section><h2>Claims</h2><div id="claims" class="d">loading</div>
+<p class="note"><b>accepted</b> means an AI-assisted passage check has been recorded, with the method and whether a text was consulted. It is not qualified human review.</p></section>
+
+<section><h2>Model sheets - the consistency gate</h2><table id="sheets"><tr><td class="d">loading</td></tr></table>
+<p class="note">The twenty-frame test is identity evidence across four axes - angle, lighting, distance, expression. It is not twenty paid generations. A four-view sheet satisfies angle only.</p></section>
+
+<section><h2>Entities with an outstanding memo</h2><div id="memos" class="d">loading</div>
+<p class="note">No entity here may be designed, prompted or shown in frame. The memo is written first.</p></section>
+
+<section><h2>What a round costs</h2><div id="cost" class="d">loading</div>
+<p class="note">Every route answers "what will this cost" before it runs. Nothing spends without an estimate first.</p></section>
+</main>
+<script type="module">
+const $=s=>document.querySelector(s), esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+const st=await (await fetch('/api/state')).json();
+
+$('#spend').textContent=`$${st.spend.usd.toFixed(4)} spent / ${st.spend.calls} calls`;
+
+$('#films').innerHTML='<tr><th>film</th><th>title</th><th>sarga</th><th>status</th><th>treatment</th></tr>'+
+ st.films.map(f=>`<tr><td>${f.id}</td><td>${esc(f.title)}</td><td class="d">${f.sarga}</td><td>${f.status}</td>
+ <td class="${f.has_treatment?'ok':'d'}">${f.has_treatment?'directed':'none'}</td></tr>`).join('');
+
+$('#claims').innerHTML=Object.entries(st.claims).map(([k,v])=>
+ `<span class="pill">${k} <b class="${k==='accepted'?'ok':k==='proposed'?'w':'d'}">${v}</b></span>`).join(' ');
+
+$('#sheets').innerHTML='<tr><th>principal</th><th>files</th><th>approved</th><th>by</th><th>axes outstanding</th></tr>'+
+ st.sheets.map(s=>`<tr><td>${s.id}</td><td>${s.files}</td>
+ <td class="${s.approved?'ok':'no'}">${s.approved?'yes':'no'}</td><td class="d">${s.approved_by??'-'}</td>
+ <td class="w">${s.outstanding.join(', ')||'none'}</td></tr>`).join('');
+
+$('#memos').innerHTML=st.memos.map(m=>`<span class="pill no">${m}</span>`).join(' ');
+
+$('#cost').innerHTML=`<span class="pill">one film, cached <b>$${st.estimates.film_cached.toFixed(4)}</b></span>
+ <span class="pill">all of arc 7 <b>$${st.estimates.arc7.toFixed(2)}</b></span>`;
+
+const pf=await (await fetch('/api/preflight')).json();
+$('#prov').innerHTML='<table><tr><th>concern</th><th>provider</th><th>status</th><th>reason</th></tr>'+
+ pf.providers.map(p=>`<tr><td>${p.concern}</td><td>${p.provider}</td>
+ <td class="${p.ok?'ok':'no'}">${p.ok?'ok':'FAIL'}</td><td class="d">${esc(p.reason)}</td></tr>`).join('')+'</table>';
+</script></body></html>

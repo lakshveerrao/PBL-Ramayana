@@ -1,0 +1,122 @@
+{
+  "_doc": "Model sheets. No principal may be rendered until their sheet is approved by a named human. The consistency gate reads this file and nothing else.",
+  "_twenty_frame_spec": {
+    "name": "The twenty-frame test",
+    "what_it_is": "A requirement for identity evidence across four axes. It is NOT a requirement for twenty paid generations, and must never be reinterpreted as one, nor deleted to make production green.",
+    "axes": {
+      "angle": "The face is resolved from more than one direction. A four-view sheet (front, three-quarter, profile, in-world) satisfies this axis on its own.",
+      "lighting": "The face holds identity under at least two lighting conditions - not one key repeated. A sheet shot under a single light does not satisfy this.",
+      "distance": "Identity survives at close and at wide. A sheet that is all head-and-shoulders does not satisfy this.",
+      "expression": "The face is still the same face when it is not neutral. A sheet of four neutral views does not satisfy this."
+    },
+    "why_twenty": "Twenty is the number of frames it took, in practice, to see a drift the eye missed at four. It is a description of how much evidence tends to be needed, not a purchase order.",
+    "satisfaction_rule": "A four-view artist-drawn sheet satisfies ANGLE. lighting, distance and expression remain outstanding until evidence for each is supplied. Production may proceed on an approved sheet with outstanding axes, but the outstanding axes stay visible in every surface that shows the sheet."
+  },
+  "sheets": [
+    {
+      "id": "DASARATHA",
+      "entity": "DASARATHA",
+      "approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "files": [],
+      "hashes": [],
+      "uploaded_at": null,
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
+      }
+    },
+    {
+      "id": "VISVAMITRA",
+      "entity": "VISVAMITRA",
+      "approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "files": [],
+      "hashes": [],
+      "uploaded_at": null,
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
+      }
+    },
+    {
+      "id": "RAMA",
+      "entity": "RAMA",
+      "approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "files": [],
+      "hashes": [],
+      "uploaded_at": null,
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
+      }
+    },
+    {
+      "id": "LAKSMANA",
+      "entity": "LAKSMANA",
+      "approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "files": [],
+      "hashes": [],
+      "uploaded_at": null,
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
+      }
+    },
+    {
+      "id": "VASISTHA",
+      "entity": "VASISTHA",
+      "approved": false,
+      "approved_by": null,
+      "approved_at": null,
+      "files": [],
+      "hashes": [],
+      "uploaded_at": null,
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
+      }
+    }
+  ],
+  "_upload_spec": {
+    "slots": [
+      "front",
+      "three_quarter",
+      "profile",
+      "in_world"
+    ],
+    "axis_satisfied_by_full_four_view": "angle",
+    "note": "Uploading four files records evidence for ANGLE only. approved stays false until a named human approves. Upload never approves."
+  }
+}

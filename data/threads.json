@@ -1,0 +1,8 @@
+{
+  "_doc": "Threads run across films. A thread is a thing the audience is holding, not a plot summary.",
+  "threads": [
+    { "id": "THR.THE-ASK", "name": "The ask", "films": ["M2", "M3", "M4", "M5"], "note": "Opened when the king offers anything. Closed when he yields." },
+    { "id": "THR.THE-AGE", "name": "Not yet sixteen", "films": ["M3", "M6", "M7"], "note": "Dasaratha's statement about his son's age. Carried as his statement, never as fact." },
+    { "id": "THR.THE-LAMP", "name": "The lamp", "films": ["M3", "M4", "M5"], "note": "Declared staging. It does not move in M3." }
+  ]
+}

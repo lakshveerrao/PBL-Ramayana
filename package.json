@@ -1,0 +1,22 @@
+{
+  "name": "pbl-ramayana-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "PBL Ramayana Studio - the Ramayana as ~900 micro-episodes of ~44s, in English, Hindi and Telugu.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "validate": "node tools/validate.js",
+    "regress": "node tools/regress.js",
+    "dryrun": "node tools/dryrun.js",
+    "preflight": "node tools/preflight.js",
+    "start": "node server.js",
+    "check": "node tools/validate.js && node tools/regress.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.127.0",
+    "playwright": "^1.63.0"
+  }
+}

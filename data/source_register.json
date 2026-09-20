@@ -1,0 +1,58 @@
+{
+  "_doc": "Every edition, translation and visual reference the project may cite. 'restricted' sources may be cited by locator but their text must never enter a payload, a generation input or an export.",
+  "sources": [
+    {
+      "id": "SRC.VR.CRITICAL",
+      "kind": "text",
+      "work": "Valmiki Ramayana",
+      "edition": "Critical Edition, Oriental Institute, Baroda, 1960-1975",
+      "language": "sa",
+      "licence": "in-copyright",
+      "restricted": true,
+      "restriction_reason": "Critical edition apparatus is in copyright. Locators only.",
+      "text_may_travel": false
+    },
+    {
+      "id": "SRC.GRETIL.VR",
+      "kind": "text",
+      "work": "Valmiki Ramayana",
+      "edition": "GRETIL digitisation (Goettingen Register of Electronic Texts in Indian Languages)",
+      "language": "sa",
+      "licence": "CC BY-NC-SA",
+      "restricted": true,
+      "restriction_reason": "CC BY-NC-SA. Verse text must never enter a public payload, a generation input, or an export. Locators travel; text does not. Verification against it remains valid - verification is not redistribution.",
+      "text_may_travel": false
+    },
+    {
+      "id": "SRC.DUTT.1891",
+      "kind": "translation",
+      "work": "Ramayana of Valmiki",
+      "edition": "Manmatha Nath Dutt, Calcutta, 1891",
+      "language": "en",
+      "licence": "public-domain",
+      "restricted": false,
+      "text_may_travel": true,
+      "availability": "NOT INGESTED. No digitised copy is present in this repository and this environment's egress policy blocks the hosts that carry it. See corpus/README.md."
+    },
+    {
+      "id": "SRC.AMARAVATI",
+      "kind": "visual",
+      "work": "Amaravati stupa relief panels",
+      "edition": "2nd-3rd c. CE, Andhra. Government Museum Chennai / British Museum holdings.",
+      "licence": "museum-photography-varies",
+      "restricted": false,
+      "text_may_travel": true,
+      "note": "Primary relief vocabulary for ornament, drape and posture. An inference citing this must name the panel, not the period."
+    },
+    {
+      "id": "SRC.SANCHI",
+      "kind": "visual",
+      "work": "Sanchi stupa gateway reliefs",
+      "edition": "1st c. BCE - 1st c. CE, Madhya Pradesh",
+      "licence": "museum-photography-varies",
+      "restricted": false,
+      "text_may_travel": true,
+      "note": "Architecture: post-and-lintel, railing, torana. No arch, no dome, no marble."
+    }
+  ]
+}

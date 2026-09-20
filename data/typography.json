@@ -1,0 +1,51 @@
+{
+  "_doc": "Per-script subtitle metrics. Scripts are not interchangeable: Devanagari stacks conjuncts above and below the line, Telugu stacks further still. A single line-height for all three clips the tall scripts, and the clip never shows up in the English cut.",
+  "frame": { "width": 1080, "height": 1920, "fps": 30 },
+  "scripts": {
+    "en": {
+      "script": "Latin",
+      "font_family": "Noto Sans",
+      "font_file_candidates": ["NotoSans-Regular.ttf", "DejaVuSans.ttf", "LiberationSans-Regular.ttf"],
+      "size_px": 44,
+      "line_height": 1.30,
+      "line_box_px": 58,
+      "max_chars_per_line": 42,
+      "max_lines": 2,
+      "safe_bottom_px": 220
+    },
+    "hi": {
+      "script": "Devanagari",
+      "font_family": "Noto Sans Devanagari",
+      "font_file_candidates": ["NotoSansDevanagari-Regular.ttf", "Lohit-Devanagari.ttf"],
+      "size_px": 46,
+      "line_height": 1.55,
+      "line_box_px": 72,
+      "max_chars_per_line": 38,
+      "max_lines": 2,
+      "safe_bottom_px": 220,
+      "conjunct_probe": ["ष्ट्र", "क्ष", "ज्ञ", "र्क", "ह्म"],
+      "probe_note": "These must render without clipping at the top or bottom of the line box. ra-repha rides above; the ya-phala and u-matra hang below."
+    },
+    "te": {
+      "script": "Telugu",
+      "font_family": "Noto Sans Telugu",
+      "font_file_candidates": ["NotoSansTelugu-Regular.ttf", "Lohit-Telugu.ttf"],
+      "size_px": 48,
+      "line_height": 1.70,
+      "line_box_px": 82,
+      "max_chars_per_line": 34,
+      "max_lines": 2,
+      "safe_bottom_px": 220,
+      "conjunct_probe": ["ఖ్య", "్ర", "ై", "స్త్ర", "ఙ్క"],
+      "probe_note": "Telugu stacks the subscript consonant below the base and the vowel sign above. This is the script most likely to clip and the one least likely to be checked."
+    }
+  },
+  "style": {
+    "colour": "#F2EBE0",
+    "outline": "#000000",
+    "outline_px": 3,
+    "shadow": false,
+    "alignment": "bottom-centre",
+    "rule": "No box, no plate, no drop shadow. Outline only, so the frame stays visible behind the line."
+  }
+}

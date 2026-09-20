@@ -1,0 +1,14 @@
+node_modules/
+.env
+.DS_Store
+assets/sheets/**/*.png
+assets/sheets/**/*.jpg
+assets/sheets/**/*.jpeg
+assets/sheets/**/*.webp
+renders/
+out/
+*.mp4
+*.mp3
+*.wav
+!exports/**/*.mp4
+corpus/restricted/

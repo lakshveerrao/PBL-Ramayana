@@ -1,0 +1,12 @@
+{
+  "_doc": "The webapp. Not built yet. This file is the standing design so that nothing is invented later.",
+  "status": "not-built",
+  "surfaces": {
+    "player": "One film at a time, vertical, three languages.",
+    "chain": "The next film, and the one before. A continuous join plays without a seam.",
+    "doors": "Sideways moves into related beats.",
+    "ledger": "Every claim behind the film on screen, with its evidence class and state, and its verification record shown in full. An accepted claim shows the method that accepted it and whether a text was consulted.",
+    "trail": "What the viewer has watched."
+  },
+  "ledger_copy_rule": "The Ledger never implies human review for a claim accepted by an AI passage check. It prints the method verbatim."
+}

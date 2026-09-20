@@ -1,0 +1,11 @@
+{
+  "kandas": [
+    { "id": "BALA", "name": "Bala-kanda", "order": 1, "sargas": 77, "status": "in-production" },
+    { "id": "AYODHYA", "name": "Ayodhya-kanda", "order": 2, "sargas": 119, "status": "not-started" },
+    { "id": "ARANYA", "name": "Aranya-kanda", "order": 3, "sargas": 75, "status": "not-started" },
+    { "id": "KISHKINDHA", "name": "Kishkindha-kanda", "order": 4, "sargas": 67, "status": "not-started" },
+    { "id": "SUNDARA", "name": "Sundara-kanda", "order": 5, "sargas": 68, "status": "not-started" },
+    { "id": "YUDDHA", "name": "Yuddha-kanda", "order": 6, "sargas": 128, "status": "not-started" },
+    { "id": "UTTARA", "name": "Uttara-kanda", "order": 7, "sargas": 111, "status": "not-started", "note": "Later stratum. Flagged at the arc level, never silently folded into the spine." }
+  ]
+}
