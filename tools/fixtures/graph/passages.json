@@ -1,0 +1,15 @@
+{
+  "_doc": "Locators only. Bala 18-26. No verse text lives here: the Sanskrit source is restricted (CC BY-NC-SA) and text must never enter a payload, a generation input or an export. Locators travel; text does not. Nothing is proposed from memory - a passage appears here only when a claim cites it.",
+  "_range_note": "This file holds only Bala 18-26. That is correct, not an omission. Films 8-10 have proposed claims and no treatment because an editor has not disposed of them.",
+  "passages": [
+    { "id": "PSG.BALA.18", "kanda": "BALA", "sarga": 18, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage comes to Ayodhya; the king receives him and offers him what he asks." },
+    { "id": "PSG.BALA.19", "kanda": "BALA", "sarga": 19, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage states his need and names the two rakshasas and their master." },
+    { "id": "PSG.BALA.20", "kanda": "BALA", "sarga": 20, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The king is stunned, pleads his son's youth and his own late fatherhood, offers himself and his army, and refuses." },
+    { "id": "PSG.BALA.21", "kanda": "BALA", "sarga": 21, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage's anger; Vasistha counsels the king." },
+    { "id": "PSG.BALA.22", "kanda": "BALA", "sarga": 22, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The king yields. The boys are given the vidyas and set out." },
+    { "id": "PSG.BALA.23", "kanda": "BALA", "sarga": 23, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The first night on the road; the confluence." },
+    { "id": "PSG.BALA.24", "kanda": "BALA", "sarga": 24, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The road south; the wood is described." },
+    { "id": "PSG.BALA.25", "kanda": "BALA", "sarga": 25, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage tells the history of the wood.", "design_block": "TATAKA" },
+    { "id": "PSG.BALA.26", "kanda": "BALA", "sarga": 26, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The encounter in the wood.", "design_block": "TATAKA" }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "_doc": "Principals of arc 7. Every visual fact here is either locked (see locks.json) or declared as inference or staging. Nothing is anglicised: cloth is woven, cut from the loom and draped, never tailored. Ornament comes from the relief vocabulary. Skin is never lightened and fair-equals-good coding is forbidden outright.",
+  "entities": [
+    {
+      "id": "DASARATHA",
+      "name_en": "Dasaratha",
+      "name_hi": "दशरथ",
+      "name_te": "దశరథుడు",
+      "role": "principal",
+      "memo": null,
+      "appears_in": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6"
+      ],
+      "design": {
+        "age_reading": "old. The lateness of his fatherhood is the point of M3 and must be legible in the face.",
+        "build": "heavy through the shoulders, gone soft. A body that was a warrior's.",
+        "skin_albedo": "LOCK.SKIN.DASARATHA",
+        "hair": "grey, oiled, bound at the nape. No crown in the private hall.",
+        "garment": {
+          "lower": "antariya - unstitched cloth, draped and tucked, falling to mid-calf",
+          "upper": "uttariya - a single length over the left shoulder",
+          "construction": "draped. Cut from the loom. Not tailored, not sewn, no fitted seam anywhere.",
+          "weave": "fine cotton, undyed to pale ochre"
+        },
+        "ornament": {
+          "vocabulary": "SRC.AMARAVATI",
+          "items": [
+            "broad flat torque at the base of the throat",
+            "plain armlets, high on the upper arm",
+            "heavy ear ornament distending the lobe"
+          ],
+          "rule": "Relief vocabulary. Flat planes, broad forms, worn into the body. Never a jewellery-shop object with faceted stones."
+        }
+      }
+    },
+    {
+      "id": "VISVAMITRA",
+      "name_en": "Visvamitra",
+      "name_hi": "विश्वामित्र",
+      "name_te": "విశ్వామిత్రుడు",
+      "role": "principal",
+      "memo": null,
+      "appears_in": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "design": {
+        "age_reading": "old, but not soft. A king who became an ascetic and kept the bearing.",
+        "build": "spare, upright, long-boned",
+        "skin_albedo": "LOCK.SKIN.VISVAMITRA",
+        "hair": "matted and bound high (jata), grey-brown",
+        "garment": {
+          "lower": "bark-cloth or coarse undyed cotton, draped short",
+          "upper": "one length across the chest, often off the shoulder",
+          "construction": "draped. Never tailored.",
+          "weave": "coarse, unbleached"
+        },
+        "ornament": {
+          "vocabulary": "SRC.AMARAVATI",
+          "items": [
+            "none - a rudraksa string only"
+          ],
+          "rule": "The absence of ornament is the characterisation. Do not add."
+        }
+      }
+    },
+    {
+      "id": "RAMA",
+      "name_en": "Rama",
+      "name_hi": "राम",
+      "name_te": "రాముడు",
+      "role": "principal",
+      "memo": null,
+      "appears_in": [
+        "M3",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "design": {
+        "age_reading": "a boy under sixteen by his father's statement. Not a young man. Not a hero yet.",
+        "build": "unfinished. Shoulders not filled out.",
+        "skin_albedo": "LOCK.SKIN.RAMA",
+        "complexion_claim": {
+          "state": "not-established",
+          "note": "The project makes NO claim to a source-mandated complexion for Rama. The gate blocks CLAIMING one. It does not block depicting him: he may be shown under an approved design like any principal. Any code or copy that reads this as 'Rama may not be drawn' is wrong."
+        },
+        "hair": "dark, loose or lightly bound",
+        "garment": {
+          "lower": "antariya, draped short as a boy's",
+          "upper": "uttariya, light",
+          "construction": "draped, never tailored",
+          "weave": "fine cotton"
+        },
+        "ornament": {
+          "vocabulary": "SRC.AMARAVATI",
+          "items": [
+            "light armlet",
+            "simple ear ornament"
+          ],
+          "rule": "Less than his father's. He is not yet the court's centre."
+        }
+      }
+    },
+    {
+      "id": "LAKSMANA",
+      "name_en": "Laksmana",
+      "name_hi": "लक्ष्मण",
+      "name_te": "లక్ష్మణుడు",
+      "role": "principal",
+      "memo": null,
+      "appears_in": [
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "design": {
+        "age_reading": "a boy, near Rama's age",
+        "build": "slighter than Rama",
+        "skin_albedo": "LOCK.SKIN.LAKSMANA",
+        "hair": "dark, bound",
+        "garment": {
+          "lower": "antariya, draped short",
+          "upper": "uttariya",
+          "construction": "draped, never tailored",
+          "weave": "fine cotton"
+        },
+        "ornament": {
+          "vocabulary": "SRC.AMARAVATI",
+          "items": [
+            "light armlet"
+          ],
+          "rule": "Matches Rama's register, one step plainer."
+        }
+      }
+    },
+    {
+      "id": "VASISTHA",
+      "name_en": "Vasistha",
+      "name_hi": "वसिष्ठ",
+      "name_te": "వసిష్టుడు",
+      "role": "principal",
+      "memo": null,
+      "appears_in": [
+        "M2",
+        "M3",
+        "M4",
+        "M5"
+      ],
+      "design": {
+        "age_reading": "old, settled, unhurried. The house priest, not a visitor.",
+        "build": "upright, contained",
+        "skin_albedo": "LOCK.SKIN.VASISTHA",
+        "hair": "white, bound, beard trimmed close",
+        "garment": {
+          "lower": "antariya, white",
+          "upper": "uttariya over the left shoulder",
+          "construction": "draped, never tailored",
+          "weave": "fine white cotton"
+        },
+        "ornament": {
+          "vocabulary": "SRC.AMARAVATI",
+          "items": [
+            "sacred thread",
+            "plain ring"
+          ],
+          "rule": "Priestly plainness, not poverty."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "_doc": "Incidents are discrete events a claim can attach to.",
+  "incidents": [
+    { "id": "INC.REQUEST", "name": "The request for Rama", "sarga": 20, "films": ["M3"] },
+    { "id": "INC.REFUSAL", "name": "The refusal", "sarga": 20, "films": ["M3"] },
+    { "id": "INC.YIELD", "name": "The yielding", "sarga": 22, "films": ["M5"] }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "_doc": "FROZEN TEST FIXTURE. Not the graph. tools/regress.js runs against this so the regressions stay meaningful whatever graph is installed in data/. Do not replace this with a handoff.",
+  "arcs": [
+    {
+      "id": "ARC7",
+      "name": "Visvamitra at Ayodhya",
+      "kanda": "BALA",
+      "sarga_range": "18-22",
+      "films": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "continuous_joins": [
+        {
+          "from": "M2",
+          "to": "M3"
+        },
+        {
+          "from": "M3",
+          "to": "M4"
+        },
+        {
+          "from": "M4",
+          "to": "M5"
+        },
+        {
+          "from": "M5",
+          "to": "M6"
+        },
+        {
+          "from": "M6",
+          "to": "M7"
+        }
+      ],
+      "join_rule": "A continuous join opens on the same frame the previous film closed on, and room tone carries across with no reseat. A visible cut or an audible reseat means the assembly is wrong."
+    }
+  ],
+  "films": [
+    {
+      "id": "M1",
+      "story_id": "STORY.BALA.SAGE-AT-THE-GATE",
+      "title_en": "A Sage at the Gate",
+      "title_hi": "द्वार पर ऋषि",
+      "title_te": "ద్వారం వద్ద ముని",
+      "kanda": "BALA",
+      "sarga": 18,
+      "duration_s": 44,
+      "order": 1,
+      "status": "claims-only",
+      "treatment": null
+    },
+    {
+      "id": "M2",
+      "story_id": "STORY.BALA.ASK-AND-I-GIVE",
+      "title_en": "Ask, and I Give",
+      "title_hi": "माँगिए, मैं दूँगा",
+      "title_te": "అడగండి, ఇస్తాను",
+      "kanda": "BALA",
+      "sarga": 18,
+      "duration_s": 44,
+      "order": 2,
+      "status": "claims-only",
+      "treatment": null
+    },
+    {
+      "id": "M3",
+      "story_id": "STORY.BALA.FATHER-REFUSES",
+      "title_en": "A Father Says No",
+      "title_hi": "एक पिता ने मना किया",
+      "title_te": "ఒక తండ్రి వారించాడు",
+      "kanda": "BALA",
+      "sarga": 20,
+      "duration_s": 44,
+      "order": 3,
+      "status": "directed",
+      "treatment": "tools/fixtures/graph/treatments/M3.json",
+      "note": "The film the studio is built to finish. Dasaratha refuses Visvamitra."
+    },
+    {
+      "id": "M4",
+      "story_id": "STORY.BALA.THE-PRIEST-SPEAKS",
+      "title_en": "The Priest Speaks",
+      "title_hi": "गुरु बोले",
+      "title_te": "గురువు మాట్లాడు",
+      "kanda": "BALA",
+      "sarga": 21,
+      "duration_s": 44,
+      "order": 4,
+      "status": "claims-only",
+      "treatment": null
+    },
+    {
+      "id": "M5",
+      "story_id": "STORY.BALA.THE-KING-YIELDS",
+      "title_en": "The King Yields",
+      "title_hi": "राजा मान गए",
+      "title_te": "రాజు అంగీకరించాడు",
+      "kanda": "BALA",
+      "sarga": 22,
+      "duration_s": 44,
+      "order": 5,
+      "status": "claims-only",
+      "treatment": null
+    },
+    {
+      "id": "M6",
+      "story_id": "STORY.BALA.TWO-BOYS-LEAVE",
+      "title_en": "Two Boys Leave",
+      "title_hi": "दो बालक चले",
+      "title_te": "ఇద్దరు బాలురు బయలుదేరారు",
+      "kanda": "BALA",
+      "sarga": 22,
+      "duration_s": 44,
+      "order": 6,
+      "status": "claims-only",
+      "treatment": null
+    },
+    {
+      "id": "M7",
+      "story_id": "STORY.BALA.THE-ROAD-SOUTH",
+      "title_en": "The Road South",
+      "title_hi": "दक्षिण का मार्ग",
+      "title_te": "దక్షిణ మార్గం",
+      "kanda": "BALA",
+      "sarga": 24,
+      "duration_s": 44,
+      "order": 7,
+      "status": "claims-only",
+      "treatment": null,
+      "note": "The road only. Tataka is not designed, shown or named in frame - she carries an outstanding memo."
+    }
+  ]
+}

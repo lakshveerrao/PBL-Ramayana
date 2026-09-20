@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 // cutcheck - do the cuts land on the frames the shot list says, and does skin survive
 // the whole pipeline? Measured on the finished video, not on a test patch.
-import { read, treatment, ROOT } from '../lib/store.js';
+import { read, treatment, ROOT, firstDirected } from '../lib/store.js';
 import { plan } from '../lib/assemble.js';
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-const film = process.argv[2] ?? 'M3';
+const film = process.argv[2] ?? firstDirected();
 const file = process.argv[3] ?? `out/${film}.en.mp4`;
-const W = 1080, H = 1920;
+const W = read('typography').frame.width, H = read('typography').frame.height;
 
 // Pull one exact frame by index and sample the middle of the swatch band.
 function sampleFrame(idx) {

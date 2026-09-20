@@ -13,6 +13,7 @@ import { join } from 'node:path';
 const films = read('films');
 const claims = read('claims').claims;
 const sources = read('source_register').sources;
+const LANGS = Object.keys(read('narrator').languages);
 
 const payload = {
   _doc: 'Public export. Carries locators, never source text. Every accepted claim prints how it was accepted.',
@@ -23,12 +24,13 @@ const payload = {
     const fc = claims.filter((c) => c.film === f.id);
     return {
       id: f.id, story_id: f.story_id,
-      title: { en: f.title_en, hi: f.title_hi, te: f.title_te },
+      title: Object.fromEntries(Object.entries(f).filter(([k]) => k.startsWith('title_')).map(([k, v]) => [k.slice(6), v])),
       kanda: f.kanda, sarga: f.sarga, duration_s: f.duration_s, status: f.status,
       shots: t ? t.shots.length : 0,
       gate: t ? { blocked: checkFilm(t.shots).blocked, of: t.shots.length } : null,
       narration: t ? Object.fromEntries(Object.entries(t.narration).map(([k, v]) => [k, {
-        shot: v.shot, en: v.en, hi: v.hi, te: v.te,
+        shot: v.shot,
+        ...Object.fromEntries(LANGS.map((l) => [l, v[l]])),
         speaker: v.speaker ?? null,
         // Attribution travels with the line. A surface that drops it turns a
         // character's statement into narrator fact.

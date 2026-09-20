@@ -20,15 +20,51 @@
   "languages": {
     "en": {
       "voice_env": "ELEVEN_VOICE_EN",
-      "register": "plain modern English. No archaism, no 'thee', no inversion."
+      "register": "plain modern English. No archaism, no 'thee', no inversion.",
+      "attribution_markers": [
+        "said",
+        "says",
+        "told",
+        "asked",
+        "answered",
+        "replied",
+        "offered",
+        "refused",
+        "begged",
+        "pleaded",
+        "promised",
+        "warned",
+        "called",
+        "admitted",
+        "claimed",
+        "insisted"
+      ]
     },
     "hi": {
       "voice_env": "ELEVEN_VOICE_HI",
-      "register": "plain spoken Hindi. Not Sanskritised, not Urdu-leaning. The register of speech, not of recitation."
+      "register": "plain spoken Hindi. Not Sanskritised, not Urdu-leaning. The register of speech, not of recitation.",
+      "attribution_markers": [
+        "कहा",
+        "बोला",
+        "बोले",
+        "पूछा",
+        "जवाब",
+        "मना किया",
+        "दी",
+        "वापस"
+      ]
     },
     "te": {
       "voice_env": "ELEVEN_VOICE_TE",
-      "register": "plain spoken Telugu. Not grandhika. The register of speech."
+      "register": "plain spoken Telugu. Not grandhika. The register of speech.",
+      "attribution_markers": [
+        "అన్నాడు",
+        "అంటూ",
+        "అడిగాడు",
+        "చెప్పాడు",
+        "వద్దన్నాడు",
+        "ఇచ్చాడు"
+      ]
     }
   },
   "lines": {
@@ -37,16 +73,14 @@
       "en": "The sage asked for the boy.",
       "hi": "ऋषि ने लड़के को माँगा।",
       "te": "ముని ఆ కుర్రాడిని అడిగాడు.",
-      "speaker": null,
-      "speaker_rule": null
+      "speaker": null
     },
     "L2": {
       "shot": "02-01",
       "en": "The king heard it and lost himself.",
       "hi": "राजा ने सुना और होश खो बैठा।",
       "te": "రాజు విని స్పృహ కోల్పోయాడు.",
-      "speaker": null,
-      "speaker_rule": null
+      "speaker": null
     },
     "L3": {
       "shot": "03-05",
@@ -77,8 +111,7 @@
       "en": "The sage waited.",
       "hi": "ऋषि रुका रहा।",
       "te": "ముని ఆగాడు.",
-      "speaker": null,
-      "speaker_rule": null
+      "speaker": null
     },
     "L7": {
       "shot": "07-02",
@@ -86,7 +119,8 @@
       "hi": "उसने मना किया।",
       "te": "అతను వద్దన్నాడు.",
       "speaker": "DASARATHA",
-      "speaker_rule": "Attributed."
+      "speaker_rule": "Attributed.",
+      "is_test_line": true
     }
   }
 }

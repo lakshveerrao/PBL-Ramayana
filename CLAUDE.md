@@ -65,6 +65,27 @@ never lightened, and fair-equals-good coding is forbidden outright.
 
 ---
 
+## The graph is not ours to write
+
+`data/` is the **live graph** and arrives by handoff. `HANDOFF.md` is the contract:
+what files, what fields, what the gates read. What ships in `data/` today is
+**scaffold** (`data/_SCAFFOLD.md`) — it exists so the studio could be built and proven,
+and it is meant to be replaced:
+
+```bash
+node tools/import_graph.js <path-to-graph>            # check, change nothing
+node tools/import_graph.js <path-to-graph> --install  # back up, then replace
+npm run validate && node tools/regress.js
+```
+
+Nothing in the studio is coupled to graph content. All 120 invariants iterate over
+whatever is installed; not one names a claim, film or entity. `tools/regress.js` runs
+against the frozen fixture in `tools/fixtures/graph/`, never against `data/`, so the
+regressions hold whatever graph is loaded. This was proven by running the whole studio
+against a second, unrelated graph in Tamil.
+
+---
+
 ## Layout
 
 ```

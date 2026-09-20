@@ -3,7 +3,7 @@
 // Measured through the REAL burn path: the same libass `subtitles` filter, the same
 // force_style, the same font, onto the same 1080x1920 frame the film is cut at.
 // Measuring through drawtext would test a renderer the film never uses.
-import { read, treatment } from '../lib/store.js';
+import { read, treatment, firstDirected } from '../lib/store.js';
 import { burnPlan, burnFilter, wrap, assDoc } from '../lib/subtitle.js';
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
@@ -44,11 +44,12 @@ function burnBox(text, lang) {
   } finally { rmSync(dir, { recursive: true, force: true }); }
 }
 
-const t = treatment('M3');
+const filmId = process.argv[2] ?? firstDirected();
+const t = treatment(filmId);
 let failures = 0, checked = 0;
-console.log('\nTYPECHECK - burned through libass at 1080x1920, measured\n');
+console.log(`\nTYPECHECK ${filmId} - burned through libass at ${W}x${H}, measured\n`);
 
-for (const lang of ['en', 'hi', 'te']) {
+for (const lang of Object.keys(typo.scripts)) {
   const spec = typo.scripts[lang];
   const plan = burnPlan(lang);
   console.log(`  ${lang}  ${spec.script}  ${spec.size_px}px x ${spec.line_height}  line box ${spec.line_box_px}px  ${plan.font_file.split('/').pop()}`);

@@ -41,7 +41,7 @@ def build(film_id):
     data = node_json(f"""
       import {{ assemble }} from './lib/prompt.js';
       import {{ checkFilm }} from './lib/consistency.js';
-      import {{ treatment }} from './lib/store.js';
+      import {{ treatment, read }} from './lib/store.js';
       import {{ estimate }} from './lib/render.js';
       import {{ srt, burnPlan }} from './lib/subtitle.js';
       const t = treatment('{film_id}');
@@ -52,7 +52,7 @@ def build(film_id):
         catch (e) {{ prompts[s.id] = 'REFUSED: ' + e.message; }}
       }}
       const subs = {{}};
-      for (const l of ['en','hi','te']) subs[l] = srt(t, l);
+      for (const l of Object.keys(read('narrator').languages)) subs[l] = srt(t, l);
       console.log(JSON.stringify({{ prompts, gate: checkFilm(t.shots), estimate: estimate('{film_id}'), subs }}));
     """)
 
@@ -66,7 +66,7 @@ def build(film_id):
         "built": datetime.date.today().isoformat(),
         "film": film_id,
         "story_id": film["story_id"],
-        "title": {"en": film["title_en"], "hi": film["title_hi"], "te": film["title_te"]},
+        "title": {k[len("title_"):]: v for k, v in film.items() if k.startswith("title_")},
         "duration_s": t["duration_s"], "fps": t["fps"], "frame": t["frame"],
         "shots": len(t["shots"]),
         "to_generate": sum(1 for s in t["shots"] if s["source"] == "generate"),
@@ -109,9 +109,9 @@ def build(film_id):
         lines += [f"--- {sid} " + "-" * (66 - len(sid)), p, ""]
     (out / "prompts.txt").write_text("\n".join(lines))
 
-    # subtitles
-    for lang in ("en", "hi", "te"):
-        (out / f"subtitles.{lang}.srt").write_text(data["subs"][lang])
+    # subtitles - one per language the graph declares
+    for lang, body in data["subs"].items():
+        (out / f"subtitles.{lang}.srt").write_text(body)
 
     # stems - one brief per department
     write_stems(out / "stems", film_id, film, t, data, effects)
@@ -143,9 +143,7 @@ def write_stems(d, film_id, film, t, data, effects):
                 "per_line_rule": n["per_line_rule"],
                 "delivery": n["delivery_notes"].get(film_id),
                 "languages": n["languages"],
-                "lines": {k: {"shot": v["shot"], "en": v["en"], "hi": v["hi"], "te": v["te"],
-                              "speaker": v.get("speaker"), "speaker_rule": v.get("speaker_rule")}
-                          for k, v in t["narration"].items()}})
+                "lines": {k: v for k, v in t["narration"].items()}})
 
     w("subtitles", {"_generated": BANNER, "per_script": ty["scripts"], "style": ty["style"],
                     "rule": "Burned from ASS with PlayRes pinned to 1080x1920. An SRT with force_style is "

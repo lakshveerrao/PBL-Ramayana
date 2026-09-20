@@ -1,8 +1,11 @@
 #!/usr/bin/env node
+// Point the store at the frozen test fixture BEFORE anything imports it, so the
+// regressions never depend on whatever graph is installed in data/.
+process.env.PBL_GRAPH ??= 'tools/fixtures/graph';
 // regress - behaviour, not data shape. Every regression that guards a rule pairs the
 // allowed case with the blocked one, so a rule cannot be loosened without a test noticing.
-import { read, write, treatment, clearCache, ROOT } from '../lib/store.js';
-import { writeFileSync, rmSync } from 'node:fs';
+import { read, write, treatment, clearCache, ROOT, dataDir, firstDirected } from '../lib/store.js';
+import { writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { checkShot, checkFilm, entityCleared, assertNoMemoBlocked, GateRefusal, stillAllowed } from '../lib/consistency.js';
 import { assertNoRestrictedText, RightsError, isRestricted, locatorOf } from '../lib/sources.js';
@@ -514,6 +517,46 @@ t('the director brief carries locators and never text', () => {
 t('the director brief names the speaker on every attributed claim', () => {
   const b = briefFor('M3');
   ok(/SPOKEN BY DASARATHA/.test(b), 'the brief does not carry speaker attribution');
+});
+
+// --- graph independence: the studio must run on a graph it has never seen ---------
+t('the store reads whichever graph is pointed at, not a captured one', () => {
+  const before = process.env.PBL_GRAPH;
+  ok(before === 'tools/fixtures/graph', 'the regressions are not running against the frozen fixture');
+  // ESM evaluates imports before the importing module's body, so a const DATA captured
+  // at load would have pinned data/ and this whole suite would test production data.
+  ok(dataDir().endsWith('tools/fixtures/graph'), `the store resolved to ${dataDir()}, not the fixture`);
+});
+t('firstDirected finds a film without being told its id', () => {
+  ok(firstDirected() === 'M3', `firstDirected returned ${firstDirected()}`);
+});
+t('no tool hardcodes a language triple', () => {
+  // The graph declares its languages; nothing downstream may assume three, or these.
+  const langs = Object.keys(read('narrator').languages);
+  ok(langs.length >= 1, 'the graph declares no languages');
+  for (const f of ['lib/render.js', 'tools/build_export.js', 'tools/dryrun.js', 'tools/build_packets.py']) {
+    const src = readFileSync(join(ROOT, f), 'utf8');
+    ok(!/'en',\s*'hi',\s*'te'|"en",\s*"hi",\s*"te"/.test(src), `${f} hardcodes the en/hi/te triple`);
+  }
+});
+t('no tool hardcodes a film id as its default', () => {
+  for (const f of ['tools/dryrun.js', 'tools/typecheck.js', 'tools/cutcheck.js', 'tools/assemble.js']) {
+    const src = readFileSync(join(ROOT, f), 'utf8');
+    ok(!/process\.argv\[2\]\s*\?\?\s*'M3'/.test(src), `${f} defaults to the hardcoded film M3`);
+  }
+});
+t('validate.js references no specific claim, film or entity id', () => {
+  const src = readFileSync(join(ROOT, 'tools/validate.js'), 'utf8');
+  for (const bad of ["'M3'", "'CLM.", "'DASARATHA'", "'TATAKA'", "'05-06'"]) {
+    ok(!src.includes(bad), `tools/validate.js hardcodes ${bad} - it would fail on a real graph`);
+  }
+});
+t('the handoff contract exists and names the required files', () => {
+  const h = readFileSync(join(ROOT, 'HANDOFF.md'), 'utf8');
+  for (const f of ['films.json', 'claims.json', 'entities.json', 'locks.json', 'sheets.json', 'memos.json']) {
+    ok(h.includes(f), `HANDOFF.md does not name ${f}`);
+  }
+  ok(/import_graph/.test(h), 'HANDOFF.md does not say how to hand a graph over');
 });
 
 // --- the treatment holds -----------------------------------------------------------

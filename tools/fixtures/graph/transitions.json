@@ -1,0 +1,12 @@
+{
+  "_doc": "How films join. A continuous join opens on the frame the previous film closed on and carries room tone across with no reseat.",
+  "default": { "kind": "cut", "duration_frames": 0 },
+  "joins": [
+    { "from": "M2", "to": "M3", "kind": "continuous", "shared_frame": true, "room_tone": "carry", "note": "M3 opens on M2's closing frame. No reseat." },
+    { "from": "M3", "to": "M4", "kind": "continuous", "shared_frame": true, "room_tone": "carry" },
+    { "from": "M4", "to": "M5", "kind": "continuous", "shared_frame": true, "room_tone": "carry" },
+    { "from": "M5", "to": "M6", "kind": "continuous", "shared_frame": true, "room_tone": "carry" },
+    { "from": "M6", "to": "M7", "kind": "continuous", "shared_frame": true, "room_tone": "carry" }
+  ],
+  "room_tone": { "id": "TONE.COURT.INTERIOR", "lufs": -38, "rule": "One continuous bed across a continuous join. A reseat - a restart of the tone at the join - is audible and is a defect." }
+}

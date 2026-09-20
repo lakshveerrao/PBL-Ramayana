@@ -1,0 +1,33 @@
+{
+  "_doc": "The physical world the films are made of. Every prompt is assembled from this file and entities.json. Prompts are never written by hand.",
+  "architecture": {
+    "system": "post-and-lintel",
+    "reference": "SRC.SANCHI",
+    "allowed": ["squared stone pillar with flat bracket capital", "flat stone lintel", "raised plinth with moulded edge", "vedika railing with lens-shaped uprights", "flat corbelled ceiling", "timber roof beams"],
+    "forbidden": ["arch", "true arch", "cusped arch", "dome", "onion dome", "vault", "marble", "minaret", "pointed window", "scalloped niche"],
+    "surface": "dressed sandstone and lime plaster, warm buff, worn at the edges. Never polished marble."
+  },
+  "cloth": {
+    "construction": "unstitched. Woven, cut from the loom, draped and tucked.",
+    "forbidden": ["tailored", "sewn", "fitted bodice", "stitched seam", "button", "collar", "lapel", "zip"],
+    "garments": {
+      "antariya": "lower cloth, wrapped at the waist, tucked, falling between knee and mid-calf",
+      "uttariya": "upper cloth, one length, over a shoulder or across the chest",
+      "kayabandha": "a sash at the waist, tied, ends hanging"
+    },
+    "weaves": ["fine cotton, undyed", "fine cotton, pale ochre", "coarse unbleached cotton", "bark cloth"]
+  },
+  "ornament": {
+    "vocabulary": "SRC.AMARAVATI",
+    "forms": ["broad flat torque", "plain high armlet", "heavy lobe-distending ear ornament", "flat beaded girdle", "anklet, plain"],
+    "rule": "Flat planes and broad forms, worn into the body. No faceted stones, no filigree, no jewellery-shop sparkle."
+  },
+  "light": {
+    "sources": ["oil lamp, terracotta, single wick", "daylight through a pillared opening", "brazier"],
+    "rule": "Warm, low, directional. Light falls; it is never sourceless fill."
+  },
+  "forbidden_globally": {
+    "anglicisation": ["tailored clothing", "european court posture", "arches and domes", "marble", "gothic or mughal ornament"],
+    "colourism": ["lightened skin", "fair-equals-good coding", "villain darkened relative to hero", "hero lit brighter than his household for moral reasons"]
+  }
+}

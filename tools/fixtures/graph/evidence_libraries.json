@@ -1,0 +1,8 @@
+{
+  "_doc": "Visual evidence an inference may cite. An inference must name what it is inferred from. 'Period-appropriate' is not a source.",
+  "libraries": [
+    { "id": "LIB.AMARAVATI.COURT", "source": "SRC.AMARAVATI", "subject": "court and palace panels", "holds": ["pillared hall", "raised plinth", "seated king with attendants", "drape and tuck of the antariya", "torque and armlet forms"], "date": "2nd-3rd c. CE", "place": "Amaravati, Andhra" },
+    { "id": "LIB.SANCHI.ARCH", "source": "SRC.SANCHI", "subject": "gateway and railing architecture", "holds": ["post-and-lintel", "vedika railing", "torana", "bracket capital"], "date": "1st c. BCE - 1st c. CE", "place": "Sanchi, Madhya Pradesh" }
+  ],
+  "rule": "An inference record must name a library id and a specific holding. A bare period or region is rejected by validate."
+}

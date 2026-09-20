@@ -1,0 +1,7 @@
+{
+  "_doc": "Named traditions. A tradition is cited by name and is never promoted to Text.",
+  "traditions": [
+    { "id": "TRD.KATHA-PERFORMANCE", "name": "Ramayana katha performance tradition", "note": "Oral performance. Named, dated where possible, never folded into the spine." },
+    { "id": "TRD.COMMENTARIAL", "name": "Sanskrit commentarial tradition on the Valmiki Ramayana", "note": "Tilaka, Bhusana and others. Cited individually, never as 'tradition says'." }
+  ]
+}

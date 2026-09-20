@@ -1,0 +1,17 @@
+{
+  "_doc": "Named beats across the whole Ramayana. Most are grey: a named beat, not an authored film. A grey node is correct, not missing work, and every surface that draws one says so when it is opened.",
+  "episodes": [
+    { "id": "EP.BALA.18.A", "kanda": "BALA", "sarga": 18, "name": "The sage at the gate", "authored": true, "film": "M1" },
+    { "id": "EP.BALA.18.B", "kanda": "BALA", "sarga": 18, "name": "The king's offer", "authored": true, "film": "M2" },
+    { "id": "EP.BALA.20.A", "kanda": "BALA", "sarga": 20, "name": "The refusal", "authored": true, "film": "M3" },
+    { "id": "EP.BALA.21.A", "kanda": "BALA", "sarga": 21, "name": "The priest speaks", "authored": true, "film": "M4" },
+    { "id": "EP.BALA.22.A", "kanda": "BALA", "sarga": 22, "name": "The king yields", "authored": true, "film": "M5" },
+    { "id": "EP.BALA.22.B", "kanda": "BALA", "sarga": 22, "name": "Departure", "authored": true, "film": "M6" },
+    { "id": "EP.BALA.24.A", "kanda": "BALA", "sarga": 24, "name": "The road south", "authored": true, "film": "M7" },
+    { "id": "EP.BALA.19.A", "kanda": "BALA", "sarga": 19, "name": "The sage states his need", "authored": false, "film": null },
+    { "id": "EP.BALA.23.A", "kanda": "BALA", "sarga": 23, "name": "The first night", "authored": false, "film": null },
+    { "id": "EP.BALA.25.A", "kanda": "BALA", "sarga": 25, "name": "The history of the wood", "authored": false, "film": null, "design_block": "TATAKA" },
+    { "id": "EP.BALA.26.A", "kanda": "BALA", "sarga": 26, "name": "The encounter in the wood", "authored": false, "film": null, "design_block": "TATAKA" }
+  ],
+  "grey_node_copy": "A named beat. Not an authored film yet. Nothing has been written for this and nothing is claimed."
+}

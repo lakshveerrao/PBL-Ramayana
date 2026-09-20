@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // dryrun - exercise the pipeline end to end with mock responses. No key, no spend.
 // This is what proves the wiring before a key is ever used.
-import { read, treatment } from '../lib/store.js';
+import { read, treatment, firstDirected } from '../lib/store.js';
 import { estimate, shotOf, renderMotion } from '../lib/render.js';
 import { assemble } from '../lib/prompt.js';
 import { checkFilm } from '../lib/consistency.js';
@@ -10,7 +10,7 @@ import { estimateFilm, estimateArc, priceOf } from '../lib/cost.js';
 import { srt, fitsBox, burnPlan } from '../lib/subtitle.js';
 import { assertNoRestrictedText } from '../lib/sources.js';
 
-const FILM = process.argv[2] ?? 'M3';
+const FILM = process.argv[2] ?? firstDirected();
 const line = (s = '') => console.log(s);
 const head = (s) => { line(); line(`== ${s}`); };
 
@@ -68,7 +68,7 @@ line(`   writing one film (cached)     = $${estimateFilm({ first_film: false }).
 line(`   writing all of arc 7          = $${estimateArc(7).usd.toFixed(2)}`);
 
 head('8. subtitles, per script');
-for (const lang of ['en', 'hi', 'te']) {
+for (const lang of Object.keys(read('narrator').languages)) {
   const p = burnPlan(lang);
   const cues = srt(t, lang).trim().split('\n\n').length;
   const bad = Object.values(t.narration).filter((n) => !fitsBox(n[lang], lang).fits);
