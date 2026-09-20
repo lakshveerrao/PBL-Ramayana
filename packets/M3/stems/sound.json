@@ -1,0 +1,26 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "room_tone": {
+    "id": "TONE.COURT.INTERIOR",
+    "lufs": -38,
+    "rule": "One continuous bed across a continuous join. A reseat - a restart of the tone at the join - is audible and is a defect."
+  },
+  "joins": [
+    {
+      "from": "M2",
+      "to": "M3",
+      "kind": "continuous",
+      "shared_frame": true,
+      "room_tone": "carry",
+      "note": "M3 opens on M2's closing frame. No reseat."
+    },
+    {
+      "from": "M3",
+      "to": "M4",
+      "kind": "continuous",
+      "shared_frame": true,
+      "room_tone": "carry"
+    }
+  ],
+  "rule": "One continuous bed across a continuous join. A reseat at the join is audible and is a defect."
+}

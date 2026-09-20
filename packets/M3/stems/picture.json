@@ -1,0 +1,185 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": [
+    {
+      "id": "01-01",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-02",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "settled, unhurried",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-03",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "high",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-01",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "hearing it",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-02",
+      "size": "MCU",
+      "lens_mm": 85,
+      "height": "slightly low",
+      "camera_move": "locked",
+      "expression": "gone out of himself",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-01",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "high",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "reuse",
+      "gate": "clear"
+    },
+    {
+      "id": "03-02",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "not intervening",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-03",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "03-04",
+      "size": "MCU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "gathering himself",
+      "source": "crop",
+      "gate": "refused"
+    },
+    {
+      "id": "03-05",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "level, decided",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-09",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "speaking, contained",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "04-01",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "04-02",
+      "size": "MCU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "unmoved",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-06",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-01",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "waiting",
+      "source": "crop",
+      "gate": "refused"
+    },
+    {
+      "id": "06-02",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "decided",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "07-01",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "n/a",
+      "source": "reuse",
+      "gate": "clear"
+    },
+    {
+      "id": "07-02",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "does not change",
+      "source": "generate",
+      "gate": "refused"
+    }
+  ]
+}

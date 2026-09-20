@@ -1,11 +1,6 @@
 {
-  "_doc": "Per-script subtitle metrics. Scripts are not interchangeable: Devanagari stacks conjuncts above and below the line, Telugu stacks further still. A single line-height for all three clips the tall scripts, and the clip never shows up in the English cut.",
-  "frame": {
-    "width": 1080,
-    "height": 1920,
-    "fps": 30
-  },
-  "scripts": {
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "per_script": {
     "en": {
       "script": "Latin",
       "font_family": "Noto Sans",
@@ -75,5 +70,6 @@
     "shadow": false,
     "alignment": "bottom-centre",
     "rule": "No box, no plate, no drop shadow. Outline only, so the frame stays visible behind the line."
-  }
+  },
+  "rule": "Burned from ASS with PlayRes pinned to 1080x1920. An SRT with force_style is scaled by libass against an assumed resolution and renders at roughly three times the specified size."
 }

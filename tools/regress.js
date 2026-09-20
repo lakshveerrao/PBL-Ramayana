@@ -11,7 +11,9 @@ import { renderMotion, MotionRefusal, estimate, shotOf } from '../lib/render.js'
 import { assemble } from '../lib/prompt.js';
 import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
-import { burnPlan, fitsBox } from '../lib/subtitle.js';
+import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
+import { chain as gradeChain, grainChain } from '../lib/grade.js';
+import { plan as assemblePlan } from '../lib/assemble.js';
 import { uploadSheet, approveSheet } from '../lib/sheets.js';
 
 // A 1x1 PNG and a 1x1 GIF - enough bytes to exercise storage and hashing without
@@ -352,6 +354,91 @@ t('every burn plan resolves to a font file that exists', () => {
     const p = burnPlan(l);
     ok(p.font_file, `no font resolved for ${l}`);
   }
+});
+
+// --- captions, the grade, and the cut ----------------------------------------------
+t('wrapping never leaves a one-word widow', () => {
+  for (const [, n] of Object.entries(treatment('M3').narration)) {
+    for (const lang of ['en', 'hi', 'te']) {
+      const lines = wrap(n[lang], burnPlan(lang).max_chars_per_line);
+      if (lines.length < 2) continue;
+      const lens = lines.map((l) => l.length);
+      ok(Math.max(...lens) - Math.min(...lens) <= Math.max(...lens) * 0.6,
+        `${lang} wraps badly: ${lines.join(' | ')}`);
+    }
+  }
+});
+t('wrapping respects the per-script character limit', () => {
+  for (const [, n] of Object.entries(treatment('M3').narration)) {
+    for (const lang of ['en', 'hi', 'te']) {
+      const max = burnPlan(lang).max_chars_per_line;
+      for (const l of wrap(n[lang], max)) ok(l.length <= max, `${lang} line over ${max}: "${l}"`);
+    }
+  }
+});
+t('the ASS script pins PlayRes to the real frame', () => {
+  const doc = ass(treatment('M3'), 'te');
+  ok(doc.includes('PlayResX: 1080'), 'PlayResX is not pinned to the frame width');
+  ok(doc.includes('PlayResY: 1920'), 'PlayResY is not pinned to the frame height');
+  // Without this libass scales every FontSize against an assumed resolution and the
+  // caption renders at roughly three times its specified size, at the top of frame.
+  ok(new RegExp(`Style: Default,[^,]+,${burnPlan('te').size_px},`).test(doc), 'the style font size is not the per-script size');
+});
+t('each language gets its own font in the ASS style', () => {
+  for (const lang of ['en', 'hi', 'te']) {
+    ok(ass(treatment('M3'), lang).includes(burnPlan(lang).font_family), `${lang} does not name its own font family`);
+  }
+});
+t('ASS cue times match the shot windows', () => {
+  const doc = ass(treatment('M3'), 'en');
+  const t3 = treatment('M3');
+  const shots = new Map(t3.shots.map((s) => [s.id, s]));
+  for (const [, n] of Object.entries(t3.narration)) {
+    const shot = shots.get(n.shot);
+    const h = Math.floor(shot.start_s / 3600), m = Math.floor((shot.start_s % 3600) / 60);
+    const sec = Math.floor(shot.start_s % 60), cs = Math.round((shot.start_s % 1) * 100);
+    const stamp = `${h}:${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}.${String(cs).padStart(2,'0')}`;
+    ok(doc.includes(stamp), `no cue starts at ${stamp} for shot ${n.shot}`);
+  }
+});
+t('the shadow tint curve returns to the diagonal before it reaches skin', () => {
+  const g = read('grade');
+  ok(typeof g.shadow_tint.rejoin === 'number', 'the tint curve has no rejoin point');
+  // Skin sits around 0.40-0.46 encoded. A tint still lifting there lightens every face.
+  ok(g.shadow_tint.rejoin >= 0.55, `rejoin is ${g.shadow_tint.rejoin}, which is inside the skin band`);
+  ok(g.shadow_tint.pivot < g.shadow_tint.rejoin, 'the pivot is not below the rejoin');
+});
+t('the grade chain never emits a curve point outside 0..1', () => {
+  const pts = gradeChain().match(/\d*\.?\d+\/-?\d*\.?\d+/g) ?? [];
+  ok(pts.length > 0, 'the grade chain has no curve points at all');
+  for (const p of pts) {
+    const [x, y] = p.split('/').map(Number);
+    ok(x >= 0 && x <= 1 && y >= 0 && y <= 1, `curve point ${p} is outside 0..1 and ffmpeg will reject it`);
+  }
+});
+t('the grade never tints shadows blue', () => {
+  const ch = gradeChain();
+  const b = ch.match(/b='0\/0 ([\d.]+)\/([\d.]+)/);
+  ok(b, 'no blue shadow curve found');
+  ok(Number(b[2]) < Number(b[1]), 'the blue shadow curve lifts rather than pulls - that is a blue shadow');
+});
+t('grain is applied and is subtle', () => {
+  const g = grainChain();
+  ok(g && /noise=/.test(g), 'grain is not applied');
+  ok(read('grade').grain.strength < 0.1, 'grain strength is no longer subtle');
+});
+t('the assemble plan totals the declared frame count', () => {
+  const p = assemblePlan('M3');
+  ok(p.totalFrames === p.expected_frames, `plan totals ${p.totalFrames} frames, declared ${p.expected_frames}`);
+  ok(p.totalFrames === 1320, `expected 1320 frames, got ${p.totalFrames}`);
+});
+t('every shot resolves to a frame, real or placeholder', () => {
+  for (const s of assemblePlan('M3').shots) ok(s.frame, `shot ${s.id} resolves to no frame at all`);
+});
+t('a reuse resolves to the frame it points at, not its own', () => {
+  const p = assemblePlan('M3');
+  const reuse = p.shots.find((s) => s.source === 'reuse');
+  ok(reuse.frame.from === reuse.reuse_of, `shot ${reuse.id} resolves to ${reuse.frame.from}, not ${reuse.reuse_of}`);
 });
 
 // --- the treatment holds -----------------------------------------------------------

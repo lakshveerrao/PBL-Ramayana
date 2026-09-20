@@ -1,0 +1,19 @@
+shot,start_s,duration_s,frames,size,lens_mm,height,camera_move,expression,source,reuse_of,entities,claims,narration,motion,gate
+01-01,0.0,2.4,72,WIDE,35,eye,locked,n/a,generate,,VISVAMITRA,CLM.BALA.20.I.COURT-INTERIOR,,,refused
+01-02,2.4,2.2,66,CU,85,eye,locked,"settled, unhurried",generate,,VISVAMITRA,CLM.BALA.20.REQUEST-LANDS,L1,,refused
+01-03,4.6,1.6,48,INSERT,100,high,locked,n/a,generate,,DASARATHA,CLM.BALA.20.REQUEST-LANDS,,,refused
+02-01,6.2,2.8,84,MS,50,eye,locked,hearing it,generate,,DASARATHA,CLM.BALA.20.KING-STUNNED,L2,,refused
+02-02,9.0,2.6,78,MCU,85,slightly low,locked,gone out of himself,generate,,DASARATHA,CLM.BALA.20.KING-STUNNED,,,refused
+03-01,11.6,1.8,54,INSERT,100,high,locked,n/a,reuse,01-03,,,,,clear
+03-02,13.4,2.0,60,MS,50,eye,locked,not intervening,generate,,VASISTHA,CLM.BALA.20.I.COURT-INTERIOR,,,refused
+03-03,15.4,1.6,48,CU,85,eye,locked,n/a,generate,,,CLM.BALA.20.S.LAMP-HELD,,,clear
+03-04,17.0,1.4,42,MCU,85,eye,locked,gathering himself,crop,02-02,DASARATHA,,,,refused
+03-05,18.4,2.4,72,MS,85,eye,locked,"level, decided",generate,,DASARATHA,CLM.BALA.20.SON-CAME-LATE,L3,motion,refused
+03-09,20.8,2.6,78,CU,85,eye,locked,"speaking, contained",generate,,DASARATHA,CLM.BALA.20.NOT-YET-SIXTEEN,L4,,refused
+04-01,23.4,2.2,66,WIDE,35,eye,locked,n/a,generate,,DASARATHA VISVAMITRA,CLM.BALA.20.OFFERS-HIMSELF,L5,,refused
+04-02,25.6,2.0,60,MCU,85,eye,locked,unmoved,reuse,01-02,VISVAMITRA,CLM.BALA.20.NAMES-THE-ENEMY,,,refused
+05-06,27.6,2.8,84,MS,50,low,locked,n/a,generate,,VISVAMITRA,,,NO MOTION,refused
+06-01,30.4,2.4,72,MS,50,eye,locked,waiting,crop,04-01,VISVAMITRA,,L6,,refused
+06-02,32.8,2.2,66,CU,85,eye,locked,decided,reuse,03-09,DASARATHA,CLM.BALA.20.REFUSAL,,,refused
+07-01,35.0,1.0,30,INSERT,100,eye,locked,n/a,reuse,03-03,,CLM.BALA.20.S.LAMP-HELD,,,clear
+07-02,36.0,8.0,240,CU,85,eye,locked,does not change,generate,,DASARATHA,CLM.BALA.20.REFUSAL,L7,NO MOTION,refused

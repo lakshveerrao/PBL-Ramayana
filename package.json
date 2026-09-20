@@ -13,7 +13,11 @@
     "dryrun": "node tools/dryrun.js",
     "preflight": "node tools/preflight.js",
     "start": "node server.js",
-    "check": "node tools/validate.js && node tools/regress.js"
+    "check": "node tools/validate.js && node tools/regress.js && node tools/typecheck.js && node tools/gradecheck.js",
+    "typecheck": "node tools/typecheck.js",
+    "gradecheck": "node tools/gradecheck.js",
+    "cutcheck": "node tools/cutcheck.js",
+    "assemble": "node tools/assemble.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.127.0",

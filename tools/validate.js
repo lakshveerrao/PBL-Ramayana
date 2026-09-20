@@ -321,6 +321,19 @@ check('grade', 'skin is protected by a qualifier', () => {
   T(q.protection === 'hold', 'the skin qualifier no longer holds');
   T(/lab_L|skin lock/i.test(q.rule), 'the qualifier no longer defers to the skin locks');
 });
+check('grade', 'the shadow tint curve rejoins the diagonal before skin', () => {
+  const st = read('grade').shadow_tint;
+  T(typeof st.pivot === 'number' && typeof st.rejoin === 'number', 'the tint curve has no pivot/rejoin');
+  T(st.rejoin >= 0.55, `rejoin ${st.rejoin} sits inside the skin band and would lighten faces`);
+  T(st.pivot < st.rejoin, 'pivot is not below rejoin');
+  T(/lightens every face|before it reaches skin/i.test(st.shape_note ?? ''), 'the shape note no longer explains why');
+});
+check('grade', 'the skin qualifier records what it measured', () => {
+  const q = read('grade').skin_qualifier;
+  T(typeof q.hold_black === 'number', 'the skin hold has no value');
+  T(/either direction/i.test(q.rule), 'the skin rule is no longer two-sided');
+  T(q.measured && /L\*/.test(q.measured), 'the qualifier records no measurement');
+});
 check('grade', 'grain is applied before the subtitle burn', () => {
   T(/before the subtitle/i.test(read('grade').grain.note), 'grain order note changed - a caption sitting in grain is a defect');
 });
@@ -575,6 +588,39 @@ check('repo', 'the generated graph is not hand-edited', () => {
   for (const f of readdirSync(dir).filter((x) => x.endsWith('.html'))) {
     const blob = require_text(`graph/${f}`);
     T(/GENERATED FILE/.test(blob), `graph/${f} has lost its generated-file banner - it may have been hand-edited`);
+  }
+});
+check('repo', 'generated packets carry their banner', () => {
+  const dir = join(ROOT, 'packets');
+  if (!existsSync(dir)) return;
+  for (const film of readdirSync(dir)) {
+    const pj = join(dir, film, 'packet.json');
+    if (!existsSync(pj)) continue;
+    const p = JSON.parse(readFileSync(pj, 'utf8'));
+    T(/GENERATED/.test(p._generated ?? ''), `packets/${film}/packet.json has lost its generated banner`);
+  }
+});
+check('repo', 'a packet never disagrees with its treatment', () => {
+  const dir = join(ROOT, 'packets');
+  if (!existsSync(dir)) return;
+  for (const film of readdirSync(dir)) {
+    const pj = join(dir, film, 'packet.json');
+    if (!existsSync(pj)) continue;
+    const p = JSON.parse(readFileSync(pj, 'utf8'));
+    const t = treatment(film);
+    T(t, `packets/${film} exists but ${film} has no treatment`);
+    T(p.shots === t.shots.length, `packets/${film} says ${p.shots} shots, the treatment has ${t.shots.length} - rebuild`);
+    T(p.duration_s === t.duration_s, `packets/${film} says ${p.duration_s}s, the treatment says ${t.duration_s}s - rebuild`);
+  }
+});
+check('repo', 'a packet carries no restricted verse text', () => {
+  const dir = join(ROOT, 'packets');
+  if (!existsSync(dir)) return;
+  for (const film of readdirSync(dir)) {
+    const canon = join(dir, film, 'stems', 'canon.json');
+    if (!existsSync(canon)) continue;
+    const blob = readFileSync(canon, 'utf8');
+    T(!/[\u0900-\u097F\s]{60,}/.test(blob), `packets/${film}/stems/canon.json carries a long Devanagari run`);
   }
 });
 check('repo', 'the agents directory holds system prompts', () => {

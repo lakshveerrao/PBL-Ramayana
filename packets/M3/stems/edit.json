@@ -1,0 +1,98 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "fps": 30,
+  "total_frames": 1320,
+  "cuts": [
+    {
+      "at_frame": 0,
+      "shot": "01-01",
+      "frames": 72
+    },
+    {
+      "at_frame": 72,
+      "shot": "01-02",
+      "frames": 66
+    },
+    {
+      "at_frame": 138,
+      "shot": "01-03",
+      "frames": 48
+    },
+    {
+      "at_frame": 186,
+      "shot": "02-01",
+      "frames": 84
+    },
+    {
+      "at_frame": 270,
+      "shot": "02-02",
+      "frames": 78
+    },
+    {
+      "at_frame": 348,
+      "shot": "03-01",
+      "frames": 54
+    },
+    {
+      "at_frame": 402,
+      "shot": "03-02",
+      "frames": 60
+    },
+    {
+      "at_frame": 462,
+      "shot": "03-03",
+      "frames": 48
+    },
+    {
+      "at_frame": 510,
+      "shot": "03-04",
+      "frames": 42
+    },
+    {
+      "at_frame": 552,
+      "shot": "03-05",
+      "frames": 72
+    },
+    {
+      "at_frame": 624,
+      "shot": "03-09",
+      "frames": 78
+    },
+    {
+      "at_frame": 702,
+      "shot": "04-01",
+      "frames": 66
+    },
+    {
+      "at_frame": 768,
+      "shot": "04-02",
+      "frames": 60
+    },
+    {
+      "at_frame": 828,
+      "shot": "05-06",
+      "frames": 84
+    },
+    {
+      "at_frame": 912,
+      "shot": "06-01",
+      "frames": 72
+    },
+    {
+      "at_frame": 984,
+      "shot": "06-02",
+      "frames": 66
+    },
+    {
+      "at_frame": 1050,
+      "shot": "07-01",
+      "frames": 30
+    },
+    {
+      "at_frame": 1080,
+      "shot": "07-02",
+      "frames": 240
+    }
+  ],
+  "rule": "Timings are frame counts, not seconds. A 44s film that ends at 44.03s is a defect."
+}

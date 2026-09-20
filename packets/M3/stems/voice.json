@@ -1,0 +1,92 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "settings": {
+    "stability": 0.82,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "use_speaker_boost": false,
+    "rule": "High stability on purpose. Low stability lets the model perform, and the direction forbids performance. If a read sounds performed, the settings or the voice are wrong - do not fix it by rewriting the line."
+  },
+  "per_line_rule": "Lines are generated one at a time, never the whole script in one call. The edit owns the silences, not the model.",
+  "delivery": {
+    "overall": "A room where something is being refused. The narrator does not plead and does not judge. Level.",
+    "lines": {
+      "03-05": "Flat. The king is standing; do not announce it.",
+      "03-09": "This is Dasaratha's statement, not ours. Attribute it in the read - a shade of quotation, not an impersonation.",
+      "05-06": "The staff strike. Say nothing over it. The line before ends clean and the line after starts late.",
+      "07-02": "'He said no.' Three level words. No fall on 'no'. Do not land it."
+    }
+  },
+  "languages": {
+    "en": {
+      "voice_env": "ELEVEN_VOICE_EN",
+      "register": "plain modern English. No archaism, no 'thee', no inversion."
+    },
+    "hi": {
+      "voice_env": "ELEVEN_VOICE_HI",
+      "register": "plain spoken Hindi. Not Sanskritised, not Urdu-leaning. The register of speech, not of recitation."
+    },
+    "te": {
+      "voice_env": "ELEVEN_VOICE_TE",
+      "register": "plain spoken Telugu. Not grandhika. The register of speech."
+    }
+  },
+  "lines": {
+    "L1": {
+      "shot": "01-02",
+      "en": "The sage asked for the boy.",
+      "hi": "ऋषि ने लड़के को माँगा।",
+      "te": "ముని ఆ కుర్రాడిని అడిగాడు.",
+      "speaker": null,
+      "speaker_rule": null
+    },
+    "L2": {
+      "shot": "02-01",
+      "en": "The king heard it and lost himself.",
+      "hi": "राजा ने सुना और होश खो बैठा।",
+      "te": "రాజు విని స్పృహ కోల్పోయాడు.",
+      "speaker": null,
+      "speaker_rule": null
+    },
+    "L3": {
+      "shot": "03-05",
+      "en": "He had waited a long time for this son.",
+      "hi": "इस बेटे के लिए उसने बहुत लंबा इंतज़ार किया था।",
+      "te": "ఈ కొడుకు కోసం అతను చాలా కాలం ఎదురుచూశాడు.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "His account of himself. Attributed, not asserted."
+    },
+    "L4": {
+      "shot": "03-09",
+      "en": "He said the boy was not yet sixteen.",
+      "hi": "उसने कहा कि लड़का अभी सोलह का नहीं हुआ।",
+      "te": "కుర్రాడికి ఇంకా పదహారు నిండలేదని అతను అన్నాడు.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "MANDATORY attribution. 'He said' may never be dropped. Without it this becomes narrator fact, which it is not."
+    },
+    "L5": {
+      "shot": "04-01",
+      "en": "He offered his army instead. And himself.",
+      "hi": "उसने बदले में अपनी सेना दी। और खुद को।",
+      "te": "బదులుగా తన సైన్యాన్ని ఇచ్చాడు. తననూ.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "Attributed."
+    },
+    "L6": {
+      "shot": "06-01",
+      "en": "The sage waited.",
+      "hi": "ऋषि रुका रहा।",
+      "te": "ముని ఆగాడు.",
+      "speaker": null,
+      "speaker_rule": null
+    },
+    "L7": {
+      "shot": "07-02",
+      "en": "He said no.",
+      "hi": "उसने मना किया।",
+      "te": "అతను వద్దన్నాడు.",
+      "speaker": "DASARATHA",
+      "speaker_rule": "Attributed."
+    }
+  }
+}

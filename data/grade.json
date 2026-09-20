@@ -2,17 +2,52 @@
   "_doc": "The grade. Black point sits at IRE 3, shadows run warm, and the image is never blue. Skin is protected by a qualifier so that no global move lightens a face - the skin locks in locks.json are the authority and the grade may not override them.",
   "black_point_ire": 3,
   "white_point_ire": 92,
-  "shadow_tint": { "direction": "warm", "hue_deg": 38, "strength": 0.14, "rule": "Never blue. A blue shadow is a rejection, not a taste difference." },
-  "highlight_rolloff": { "knee": 0.78, "softness": 0.35 },
-  "saturation": { "global": 0.94, "shadows": 0.88 },
+  "shadow_tint": {
+    "direction": "warm",
+    "hue_deg": 38,
+    "strength": 0.14,
+    "pivot": 0.18,
+    "rejoin": 0.6,
+    "rule": "Never blue. A blue shadow is a rejection, not a taste difference.",
+    "shape_note": "The tint curve is pinned at 0 and at 1, lifted at the pivot, and RETURNED to the diagonal at the rejoin point. A three-point curve stays above the diagonal all the way through the midtones and lightens every face in the film. A shadow tint must be finished before it reaches skin."
+  },
+  "highlight_rolloff": {
+    "knee": 0.78,
+    "softness": 0.35
+  },
+  "saturation": {
+    "global": 0.94,
+    "shadows": 0.88
+  },
   "skin_qualifier": {
     "enabled": true,
-    "hue_range_deg": [18, 44],
-    "sat_range": [0.18, 0.62],
-    "luma_range": [0.12, 0.55],
+    "hue_range_deg": [
+      18,
+      44
+    ],
+    "sat_range": [
+      0.18,
+      0.62
+    ],
+    "luma_range": [
+      0.12,
+      0.55
+    ],
     "protection": "hold",
-    "rule": "Inside the qualifier the global lift and the global gain are held at unity. No global move may raise skin lab_L beyond the tolerance in the entity's skin lock."
+    "hold_black": -0.03,
+    "rule": "Inside the qualifier the global move is compensated back out, so skin leaves the grade at the albedo it entered with. No global move may take skin outside the tolerance in the entity's skin lock, in either direction. tools/gradecheck.js measures this; it is not a promise.",
+    "measured": "With the current chain every locked albedo lands between -0.65 and +1.48 L* of its lock, inside the +/-2.0 tolerance."
   },
-  "grain": { "enabled": true, "strength": 0.035, "size": 1.4, "note": "Applied last, after the grade and before the subtitle burn, so the caption does not sit in the grain." },
-  "forbidden": ["blue shadows", "global lift applied through skin", "bleach bypass", "teal-and-orange split tone"]
+  "grain": {
+    "enabled": true,
+    "strength": 0.035,
+    "size": 1.4,
+    "note": "Applied last, after the grade and before the subtitle burn, so the caption does not sit in the grain."
+  },
+  "forbidden": [
+    "blue shadows",
+    "global lift applied through skin",
+    "bleach bypass",
+    "teal-and-orange split tone"
+  ]
 }

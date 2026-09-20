@@ -1,0 +1,23 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "provider": "none",
+  "status": "brief-only",
+  "brief": {
+    "instrumentation": [
+      "one bowed string, low",
+      "one flute, breath audible",
+      "a single struck metal tone, rare"
+    ],
+    "forbidden": [
+      "orchestral swell",
+      "choir",
+      "taiko",
+      "synthesised drone pad",
+      "anything that tells the audience how to feel"
+    ],
+    "density": "Almost nothing. Long stretches carry no music at all. M3 has music under roughly eleven seconds of its forty-four.",
+    "M3": "Nothing under the refusal itself. One low bowed note enters after the king has spoken and does not resolve."
+  },
+  "for_this_film": "Nothing under the refusal itself. One low bowed note enters after the king has spoken and does not resolve.",
+  "rule": "If a render route is ever asked for music it returns 'none' and says why. It does not fall back to a generator. The theme is written by a composer, a person, and this file is their brief."
+}
