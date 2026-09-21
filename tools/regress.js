@@ -9,7 +9,7 @@ import { writeFileSync, rmSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { checkShot, checkFilm, entityCleared, assertNoMemoBlocked, GateRefusal, stillAllowed } from '../lib/consistency.js';
 import { assertNoRestrictedText, RightsError, isRestricted, locatorOf } from '../lib/sources.js';
-import { normaliseImage, normaliseVideo } from '../lib/fal.js';
+import { normaliseImage, normaliseVideo, buildImagePayload, decodeInline } from '../lib/fal.js';
 import { renderMotion, MotionRefusal, estimate, shotOf } from '../lib/render.js';
 import { assemble, applyOverrides, directionOverrides } from '../lib/prompt.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder,
@@ -261,6 +261,50 @@ t('locatorOf never returns text', () => {
   ok(l.text === null, 'locatorOf returned text');
   ok(l.sarga === 20, 'locatorOf lost the locator');
   ok(isRestricted(l.source), 'the source should be a restricted one in this case');
+});
+
+// --- what is actually SENT ---------------------------------------------------------
+t('the negative prompt reaches the payload, not just the assembly', () => {
+  // It was assembled, validated and regression-tested for weeks, then dropped at the
+  // request body - because every check looked at the assembly and none at the payload.
+  const p = buildImagePayload({ prompt: 'a hall', negative: 'dome, arch, marble', seed: 7 });
+  ok(p.negative_prompt === 'dome, arch, marble', `negative_prompt is ${JSON.stringify(p.negative_prompt)} - it is not being sent`);
+  ok(p.prompt === 'a hall', 'the prompt was altered');
+  ok(p.seed === 7, 'the seed was not sent');
+});
+t('an empty negative is omitted rather than sent blank', () => {
+  for (const n of [null, '', '   ']) {
+    ok(!('negative_prompt' in buildImagePayload({ prompt: 'x', negative: n })), `a blank negative (${JSON.stringify(n)}) was sent`);
+  }
+});
+t('a real shot is sent with EXACTLY the negative it assembled', () => {
+  // The invariant is not which words are in the list - that is the graph's business -
+  // but that the list assembled is the list sent, unchanged and not dropped.
+  const a = assemble(shotOf('M3', '03-05'), 'M3');
+  const p = buildImagePayload({ prompt: a.prompt, negative: a.negative });
+  ok(a.negative && a.negative.length > 20, 'the shot assembled no negative at all');
+  ok(p.negative_prompt === a.negative, 'the assembled negative is not what gets sent');
+  ok(p.prompt === a.prompt, 'the assembled prompt is not what gets sent');
+  // Whatever the graph forbids about cloth must survive into the payload.
+  ok(/stitch|sewn|tailor/i.test(p.negative_prompt), 'the sent negative says nothing about stitched cloth');
+});
+t('a sheet is sent with EXACTLY the negative it assembled', () => {
+  const v = viewPrompt('VISHVAMITRA', 'front');
+  const p = buildImagePayload({ prompt: v.prompt, negative: v.negative });
+  ok(v.negative && v.negative.length > 20, 'the sheet assembled no negative at all');
+  ok(p.negative_prompt === v.negative, 'the assembled sheet negative is not what gets sent');
+  // The character's own never-list must reach the payload, whatever the graph adds.
+  ok(/glow|aura/i.test(p.negative_prompt), "the sent negative does not carry the character's own never-list");
+});
+t('inline mode asks for the image in the response, not on a media host', () => {
+  ok(buildImagePayload({ prompt: 'x', inline: true }).sync_mode === true, 'inline mode does not set sync_mode');
+  ok(!('sync_mode' in buildImagePayload({ prompt: 'x', inline: false })), 'sync_mode leaks into non-inline requests');
+});
+t('a data URI decodes to bytes', () => {
+  const tiny = 'data:image/png;base64,iVBORw0KGgo=';
+  const d = decodeInline(tiny);
+  ok(d && d.contentType === 'image/png' && d.bytes.length > 0, 'a data URI did not decode');
+  ok(decodeInline('https://example.com/a.png') === null, 'a plain URL decoded as inline');
 });
 
 // --- the fal adapter: the caller never learns a provider's shape ------------------

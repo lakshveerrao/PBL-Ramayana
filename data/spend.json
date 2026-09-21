@@ -149,10 +149,160 @@
       },
       "estimate_usd": 0.025,
       "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:42:10.159Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-1-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:42:21.014Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-2-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:42:29.493Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-3-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:42:38.910Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-4-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:42:47.931Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-5-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:42:56.993Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-6-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:43:05.866Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-7-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:43:14.676Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-8-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:43:23.016Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-9-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:43:31.500Z",
+      "provider": "fal",
+      "route": "sheet-anchor-refetch",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-10-inline",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
     }
   ],
   "totals": {
-    "usd": 0.25,
-    "calls": 10
+    "usd": 0.5,
+    "calls": 20
   }
 }

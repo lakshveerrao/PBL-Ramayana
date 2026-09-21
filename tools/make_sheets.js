@@ -76,7 +76,7 @@ const dir = ensureDir(`assets/sheets/${who}/candidates`);
 console.log(`\n  generating ${p.step_1_anchor.candidates} anchor candidates for ${who}...`);
 const made = [];
 for (let i = 1; i <= p.step_1_anchor.candidates; i++) {
-  const out = await providers.image.generate({ prompt: p.step_1_anchor.prompt, width: 1080, height: 1920 });
+  const out = await providers.image.generate({ prompt: p.step_1_anchor.prompt, negative: p.step_1_anchor.negative, width: 1080, height: 1920 });
   recordSpend({ provider: 'fal', route: 'sheet-anchor', model: out.model_version, label: `${who}/anchor-${i}`, usd: UNIT.image.usd, estimate_usd: UNIT.image.usd });
   made.push({ n: i, url: out.url, seed: out.seed, model_version: out.model_version });
   console.log(`    ${i}/${p.step_1_anchor.candidates}  seed ${out.seed ?? '-'}  ${out.url}`);
