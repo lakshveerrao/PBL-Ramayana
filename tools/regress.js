@@ -11,7 +11,7 @@ import { checkShot, checkFilm, entityCleared, assertNoMemoBlocked, GateRefusal, 
 import { assertNoRestrictedText, RightsError, isRestricted, locatorOf } from '../lib/sources.js';
 import { normaliseImage, normaliseVideo } from '../lib/fal.js';
 import { renderMotion, MotionRefusal, estimate, shotOf } from '../lib/render.js';
-import { assemble } from '../lib/prompt.js';
+import { assemble, applyOverrides, directionOverrides } from '../lib/prompt.js';
 import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
@@ -520,6 +520,37 @@ t('the director brief carries locators and never text', () => {
 t('the director brief names the speaker on every attributed claim', () => {
   const b = briefFor('M3');
   ok(/SPOKEN BY DASARATHA/.test(b), 'the brief does not carry speaker attribution');
+});
+
+// --- creative direction may correct how a thing is shown, never what is true ------
+t('an override replaces the phrase it names', () => {
+  const r = applyOverrides('07-06', 'a woman\'s hand releasing the edge of a sleeve - hand only');
+  ok(!r.text.includes('sleeve'), 'the sleeve survived the override');
+  ok(r.text.includes('draped upper cloth'), 'the correction was not applied');
+  ok(r.applied.length === 1 && r.applied[0].reason, 'the override was applied without recording why');
+});
+t('an override leaves other shots alone', () => {
+  const r = applyOverrides('01-01', 'a wide shot with a sleeve in it');
+  ok(r.text.includes('sleeve'), 'an override for 07-06 altered a different shot');
+  ok(r.applied.length === 0, 'an override reported itself applied to the wrong shot');
+});
+t('an override that claims to change truth is refused', async () => {
+  const o = directionOverrides();
+  const snapshot = JSON.stringify(o.prompt_overrides);
+  try {
+    o.prompt_overrides.push({ shot: 'ZZ-99', find: 'a', replace: 'b', changes_truth: true, reason: 'x', class: 'creative' });
+    await throws(() => applyOverrides('ZZ-99', 'a'), 'Error', 'an override declaring changes_truth was applied');
+  } finally { o.prompt_overrides.length = 0; o.prompt_overrides.push(...JSON.parse(snapshot)); }
+});
+t('every shipped override is creative, reasoned, and changes no truth', () => {
+  const o = directionOverrides();
+  const all = [...(o.prompt_overrides ?? []), ...(o.action_overrides ?? [])];
+  ok(all.length > 0, 'no overrides are shipped at all');
+  for (const x of all) {
+    ok(x.changes_truth === false, `override for ${x.shot} does not declare changes_truth: false`);
+    ok(x.class === 'creative', `override for ${x.shot} is not classed creative`);
+    ok((x.reason ?? '').length > 20, `override for ${x.shot} states no reason`);
+  }
 });
 
 // --- the contract: every loosened rule keeps its blocked case ----------------------

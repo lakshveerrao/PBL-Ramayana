@@ -12,6 +12,7 @@ import { read, treatment, ROOT, dataDir } from '../lib/store.js';
 import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifiesAPlace,
          locatorKind, hasDesign, skinGovernance, forbidsLightening, isLatinScript,
          filmNeedsDuration } from '../lib/contract.js';
+import { assemble, directionOverrides } from '../lib/prompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
          roomTone, memoReason, materialSays, forbiddenEverywhere } from '../lib/graph.js';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -24,6 +25,22 @@ const text = (rel) => { const p = join(ROOT, rel); return existsSync(p) ? readFi
 // Optional files: absent is fine, present must be correct.
 const opt = (name) => existsSync(join(dataDir(), `${name}.json`)) ? read(name) : null;
 const round = (n) => Math.round(n * 1e6) / 1e6;
+
+// Is a forbidden word ASSERTED, or merely negated? A prompt reading "No arch of later
+// vocabulary - a flat lintel" is correct; one reading "the edge of a sleeve" is not.
+// Returns the offending clause, or null.
+function asserted(prompt, word) {
+  const re = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
+  for (const m of String(prompt).matchAll(re)) {
+    const before = String(prompt).slice(Math.max(0, m.index - 44), m.index).toLowerCase();
+    // A negation anywhere in the short run before the word makes it an instruction
+    // against the thing, not a description of it.
+    if (/\b(no|not|never|without|avoid|forbidden|absolutely not present:)\s*[\w\s,-]{0,24}$/.test(before)) continue;
+    const clause = String(prompt).slice(Math.max(0, m.index - 40), m.index + word.length + 24).replace(/\s+/g, ' ').trim();
+    return clause;
+  }
+  return null;
+}
 
 // Every film that actually has a treatment on disk. All treatment checks run over
 // this set, so a graph with seven directed films is checked seven times over.
@@ -685,6 +702,67 @@ check('treatment', 'every narration line fits its own caption box', () => {
       const longest = Math.max(0, ...words.map((w) => w.length));
       T(longest <= s.max_chars_per_line, `${film} narration ${id} has a ${l} word of ${longest} characters, over the ${s.max_chars_per_line} line limit - it cannot be wrapped`);
     }
+  }
+});
+
+// ---------------------------------------------------------------- prompts
+check('prompt', 'no assembled prompt contradicts its own negative list', () => {
+  // The package shipped a prompt reading "the edge of a sleeve" whose own negatives
+  // said "no stitched garment". A model given both draws the sleeve. This catches the
+  // whole class, not just that one shot.
+  const offenders = [];
+  for (const { film, t } of directed()) {
+    for (const shot of t.shots) {
+      if (shot.source !== 'generate') continue;
+      let a;
+      try { a = assemble(shot, film.id); } catch { continue; }   // gate refusals are not this check's business
+      for (const neg of a.negatives) {
+        const word = neg.trim().toLowerCase();
+        if (word.length < 4) continue;
+        const hit = asserted(a.prompt, word);
+        if (hit) offenders.push(`${film.id} ${shot.id}: prompt asserts "${word}" while its own negatives forbid it - "${hit}"`);
+      }
+    }
+  }
+  T(offenders.length === 0, offenders.slice(0, 6).join('; '));
+});
+check('prompt', 'no prompt describes cloth that is stitched', () => {
+  const sewn = ['sleeve', 'sleeves', 'blouse', 'shirt', 'coat', 'trousers', 'buttons', 'lapel'];
+  const offenders = [];
+  for (const { film, t } of directed()) {
+    for (const shot of t.shots) {
+      if (shot.source !== 'generate') continue;
+      let a;
+      try { a = assemble(shot, film.id); } catch { continue; }
+      for (const w of sewn) {
+        const hit = asserted(a.prompt, w);
+        if (hit) offenders.push(`${film.id} ${shot.id}: "${w}" in "${hit}"`);
+      }
+    }
+  }
+  T(offenders.length === 0, `cloth described as stitched: ${offenders.join(', ')}`);
+});
+check('prompt', 'every direction override declares a reason and changes no truth', () => {
+  const o = directionOverrides();
+  for (const kind of ['prompt_overrides', 'action_overrides']) {
+    for (const x of o[kind] ?? []) {
+      T(x.shot && x.find && x.replace !== undefined, `an override in ${kind} is incomplete`);
+      T(x.reason && x.reason.length > 20, `override for ${x.shot} states no reason`);
+      T(x.changes_truth === false, `override for ${x.shot} does not declare changes_truth: false - direction may never change what is true`);
+      T(x.class === 'creative', `override for ${x.shot} is classed ${x.class}, not creative`);
+    }
+  }
+});
+check('prompt', 'every direction override still finds its target', () => {
+  // A package version bump could make an override a silent no-op. Better to fail.
+  for (const x of directionOverrides().prompt_overrides ?? []) {
+    const t = treatment(x.film);
+    if (!t) continue;
+    const shot = t.shots.find((s) => s.id === x.shot);
+    T(shot, `override names shot ${x.shot}, which is not in ${x.film}`);
+    const raw = shot.image_prompt ?? '';
+    const hits = [x.find, ...(x.also_find ?? [])].some((f) => raw.includes(f));
+    T(hits || raw.includes(x.replace), `override for ${x.shot} matches nothing - the package may have changed and the override is now a silent no-op`);
   }
 });
 
