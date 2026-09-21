@@ -857,6 +857,100 @@ t('BLOCKED: an approved-but-fileless sheet refuses rather than falling back to t
   ok(r.use === false && /no file to send/.test(r.refusal ?? ''), 'a missing sheet file silently became a text-only render');
 });
 
+t('an adjustment changes how a thing is shown, and reaches the assembled prompt', async () => {
+  const sp = await import('../lib/sheetprompt.js');
+  const a = sp.adjustments();
+  if (!a.characters || !Object.keys(a.characters).length) return;   // no adjustments declared
+  const [id, spec] = Object.entries(a.characters)[0];
+  const before = sp.unadjustedCharacter(id);
+  const after = sp.character(id);
+  const field = Object.keys(spec).find((k) => !k.startsWith('_') && k !== 'never_add');
+  ok(after[field] !== before[field], `the adjustment to ${id}.${field} never reached the character`);
+  ok(sp.viewPrompt(id, 'front').prompt.includes(String(after[field]).split('.')[0].slice(0, 40)),
+     `the adjustment to ${id}.${field} never reached the prompt`);
+});
+
+t('BLOCKED: an adjustment that does not declare class S refuses', async () => {
+  // Everything we chose for the screen is ours and says so. An undeclared adjustment
+  // is a staging choice smuggled in as if it came from the brief.
+  const { readFileSync, writeFileSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { ROOT } = await import('../lib/store.js');
+  const f = join(ROOT, 'direction', 'anchor-adjustments.json');
+  const original = readFileSync(f, 'utf8');
+  const d = JSON.parse(original);
+  const id = Object.keys(d.characters)[0];
+  const field = Object.keys(d.characters[id]).find((k) => !k.startsWith('_') && k !== 'never_add');
+  d.characters[id][field] = { value: 'x', reason: 'y' };            // class removed
+  writeFileSync(f, JSON.stringify(d));
+  let threw = null;
+  try {
+    const sp = await import('../lib/sheetprompt.js?nocache=' + Date.now());
+    sp.character(id);
+  } catch (e) { threw = e; }
+  writeFileSync(f, original);
+  ok(threw && /class S/.test(threw.message), 'an adjustment with no declared class was applied silently');
+});
+
+t('BLOCKED: an adjustment cannot reach a field that is not descriptive', async () => {
+  const { readFileSync, writeFileSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { ROOT } = await import('../lib/store.js');
+  const f = join(ROOT, 'direction', 'anchor-adjustments.json');
+  const original = readFileSync(f, 'utf8');
+  const d = JSON.parse(original);
+  const id = Object.keys(d.characters)[0];
+  d.characters[id].evidence_class = { class: 'S', value: 'T', reason: 'promote it' };
+  writeFileSync(f, JSON.stringify(d));
+  let threw = null;
+  try {
+    const sp = await import('../lib/sheetprompt.js?nocache2=' + Date.now());
+    sp.character(id);
+  } catch (e) { threw = e; }
+  writeFileSync(f, original);
+  ok(threw && /not a descriptive field/.test(threw.message),
+     'an adjustment reached a field that is not about how a thing is shown');
+});
+
+t('BLOCKED: a world-line replacement that no longer matches the brief refuses', async () => {
+  const { readFileSync, writeFileSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { ROOT } = await import('../lib/store.js');
+  const f = join(ROOT, 'direction', 'anchor-adjustments.json');
+  const original = readFileSync(f, 'utf8');
+  const d = JSON.parse(original);
+  if (!d._world) return;
+  d._world.replaces = 'a line that is not in the brief';
+  writeFileSync(f, JSON.stringify(d));
+  let threw = null;
+  try {
+    const sp = await import('../lib/sheetprompt.js?nocache3=' + Date.now());
+    sp.viewPrompt(Object.keys(d.characters)[0], 'front');
+  } catch (e) { threw = e; }
+  writeFileSync(f, original);
+  ok(threw && /drifted apart/.test(threw.message),
+     'the adjustment and the brief drifted apart and the replacement silently did nothing');
+});
+
+t('platecheck finds a frame with no picture in it', async () => {
+  // fal bills for a black frame when its filter rejects a generation. One of ten came
+  // back black and was filed as a candidate because nothing looked at the bytes.
+  const { execFileSync } = await import('node:child_process');
+  const { mkdtempSync, existsSync } = await import('node:fs');
+  const { tmpdir } = await import('node:os');
+  const { join } = await import('node:path');
+  let ffmpeg = true;
+  try { execFileSync('ffmpeg', ['-version'], { stdio: 'ignore' }); } catch { ffmpeg = false; }
+  if (!ffmpeg) return;
+  const dir = mkdtempSync(join(tmpdir(), 'plate-'));
+  execFileSync('ffmpeg', ['-v', 'error', '-f', 'lavfi', '-i', 'color=c=black:s=216x384:d=1', '-frames:v', '1', join(dir, 'black.jpg')]);
+  execFileSync('ffmpeg', ['-v', 'error', '-f', 'lavfi', '-i', 'testsrc=s=216x384:d=1', '-frames:v', '1', join(dir, 'picture.jpg')]);
+  const { platecheck } = await import('../tools/platecheck.js');
+  const rows = platecheck(dir);
+  ok(rows.find((r) => r.file === 'black.jpg')?.blank === true, 'a black frame was not reported as blank');
+  ok(rows.find((r) => r.file === 'picture.jpg')?.blank === false, 'a frame with a picture in it was called blank');
+});
+
 t('every reference-conditioned endpoint is priced and the guesses are marked', async () => {
   const { ENDPOINTS, referenceConditioned } = await import('../lib/endpoints.js');
   const { endpointCost } = await import('../lib/cost.js');

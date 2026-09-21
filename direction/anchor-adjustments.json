@@ -1,0 +1,82 @@
+{
+  "_doc": "Declared adjustments to direction/sheet-briefs.json, applied at assembly time so the brief itself stays as it arrived and every change is readable beside its reason. Same pattern as direction/overrides.json for shot prompts. Every entry is class S - our staging - because none of it is established by the text.",
+  "_rule": "An adjustment may change how something is SHOWN. It may never change what is claimed, who said it, or which evidence class a thing belongs to.",
+  "_framing": {
+    "class": "S",
+    "reason": "Probe C proved the register: the phrase 'character model sheet' pulls the flux family toward concept art even on a photographic endpoint, and 'photographic reference plate' does not. The sheet is still a sheet - the four views, the neutral light, the identity lock. It is photographed rather than drawn.",
+    "replaces": "Character model sheet, {shot}. 9:16 vertical.",
+    "with": "A photographic reference plate: a real photograph, {shot}. Not concept art, not an illustration, not a painting, not a render. 9:16 vertical."
+  },
+  "characters": {
+    "VISHVAMITRA": {
+      "_reason": "The three probes found the failure the brief warned about, arriving from the other side. Probe C was photographic and correct in the jaṭā, and dressed him as a MODERN sadhu: saffron head wrap, red tilak, layered mālās. All three were already in the negative and all three came through, which is what settled that the negative cannot be the only guard. These adjustments move the guard into the prompt body, where the model reads it as description rather than exclusion.",
+      "hair": {
+        "class": "S",
+        "value": "matted and piled high in a jaṭā, coiled rope-like locks, ash-grey beard. The head is UNCOVERED - no turban, no wrap, no cap, nothing tied over the hair.",
+        "reason": "Probe C wrapped his head in saffron cloth. A covered head hides the jaṭā, which is the one feature that separates him from Vasiṣṭha at a glance."
+      },
+      "complexion": {
+        "class": "S",
+        "value": "deep warm brown, sun-weathered, and NONE LIGHTER. A plain dusting of pale wood-ash on the skin, shoulders and forearms - the residue of sitting by a fire, uneven and powdery, not applied and not a mark",
+        "reason": "The brief wants the ash. 'Ash on the skin' alone read as painted stripes on one candidate. Naming it as residue rather than application separates it from a tilak. 'None lighter' is the LOCK.SKIN.POLICY direction stated in the prompt body, not only in the negative."
+      },
+      "markings": {
+        "class": "S",
+        "value": "No painted marks anywhere on him: no red tilak, no forehead stripes, no tripuṇḍra, no coloured paste, no sandal lines. The only thing on his skin is plain pale ash.",
+        "reason": "A new field. 'red tilak' in the negative did not stop probe C from painting one. Stating the absence positively, and naming what IS on the skin instead, gives the model something to render rather than something to avoid."
+      },
+      "dress": {
+        "class": "S",
+        "value": "cloth draped at the waist, a single upper cloth over one shoulder, bare torso otherwise. The cloth is UNDYED BUT WORN: grey-brown, dust in the weave, thin at the folds, the colour of cloth that has been slept in on the ground. Never clean, never bright, never saffron or orange, and never the clean undyed white that belongs to Vasiṣṭha",
+        "reason": "Replaces 'ochre cloth'. Ochre reads to the model as modern saffron and brought synthetic orange back in every probe. Dust-grey-brown holds the ascetic reading without the modern one, and keeps the contrast against Vasiṣṭha on a stronger axis: dirty against clean, rather than one dye against another."
+      },
+      "ornament": {
+        "class": "S",
+        "value": "one thin strand of worn rudrākṣa, half-hidden under the upper cloth, never displayed. No other ornament at all - no layered mālās, no beads at the wrist, no rings",
+        "reason": "Probe C layered three mālās over his chest, which reads as a modern temple figure. Naming the strand as half-hidden makes it a detail rather than a feature."
+      },
+      "distinct_from": {
+        "class": "S",
+        "value": {
+          "who": "VASISHTHA",
+          "how": "matted piled jaṭā against combed and tied hair; ash-grey against white; lean and sun-dark against fuller and softer; cloth grey-brown with dust against cloth clean and undyed white"
+        },
+        "reason": "The old line carried the contrast on ochre-against-white. Ochre is gone, so the axis moves to dusty-against-clean, which is the stronger of the two and survives at thumbnail size."
+      },
+      "never_add": [
+        "saffron",
+        "bright orange",
+        "a dyed robe",
+        "a red tilak",
+        "painted forehead stripes",
+        "tripundra",
+        "coloured paste on the skin",
+        "a turban",
+        "a head wrap",
+        "a cap",
+        "layered malas",
+        "beads displayed on the chest",
+        "clean white cloth",
+        "synthetic fabric",
+        "a marigold garland",
+        "a modern sadhu"
+      ]
+    }
+  },
+  "judging": {
+    "_doc": "How a candidate is chosen, and in what order. Recorded because the order is a decision: a plate can be right in every listed particular and still be the wrong man.",
+    "order": [
+      "THE FACE FIRST. Before cloth, ash, staff or ornament: is this a face that can carry fourteen shots and still be one person? Age in the neck and hands, eyes that REST rather than search, no beatific smile, no narrowed eyes. A candidate with the right face and wrong cloth is fixable; the reverse is not.",
+      "Then the jaṭā: matted rope-like locks piled, head uncovered.",
+      "Then the skin: deep warm brown, none lighter, ash as residue and not as a mark.",
+      "Then the cloth: grey-brown, dusty, draped, not tailored, not saffron, not clean white.",
+      "Then the never-list sweep."
+    ]
+  },
+  "_world": {
+    "class": "S",
+    "reason": "The universal world line reads 'Ornament from the relief vocabulary - heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams.' On a king that is right. On a renunciate it contradicts his own brief in the same prompt - 'No other ornament at all' and 'heavy kundala earrings' are both in there, and the model splits the difference. The line governs what ornament LOOKS LIKE when a character has any; it was never meant to require some. Made conditional, so it still binds Dasaratha and stops arguing with Visvamitra.",
+    "replaces": "Ornament from the relief vocabulary - Bharhut, Sanchi, Amaravati: heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems.",
+    "with": "Any ornament a character wears comes from the relief vocabulary - Bharhut, Sanchi, Amaravati: heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems. A character whose dress names no ornament wears none."
+  }
+}
