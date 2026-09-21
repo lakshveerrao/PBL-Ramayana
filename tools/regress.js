@@ -760,6 +760,112 @@ t('the not-yet-sixteen line keeps its attribution in all three languages', () =>
   ok(n.te.includes('అన్నాడు'), 'Telugu lost the attribution');
 });
 
+// --- reference conditioning ---------------------------------------------------------
+// The blocked case beside the allowed one, for a defect that has now happened twice in
+// this file's history: a value assembled, recorded, and never sent.
+
+t('a reference-conditioned endpoint carries the sheet in image_url', async () => {
+  const fal = await import('../lib/fal.js');
+  const p = fal.buildReferencePayload({ prompt: 'x', references: ['SHEET-A'], endpoint: 'fal-ai/flux-pro/kontext/max' });
+  ok(p.image_url === 'SHEET-A', 'the single-reference field did not carry the sheet');
+  ok(!('image_urls' in p), 'the wrong reference field was also sent');
+});
+
+t('an endpoint that reads image_urls is given image_urls, not image_url', async () => {
+  const fal = await import('../lib/fal.js');
+  const p = fal.buildReferencePayload({ prompt: 'x', references: ['SHEET-A'], endpoint: 'fal-ai/nano-banana/edit' });
+  ok(Array.isArray(p.image_urls) && p.image_urls[0] === 'SHEET-A', 'the multi-reference field did not carry the sheet');
+  ok(!('image_url' in p), 'image_url was sent to an endpoint that ignores it - fal would return 200 and a text-only picture');
+});
+
+t('BLOCKED: a text-to-image endpoint refuses a reference', async () => {
+  const fal = await import('../lib/fal.js');
+  let threw = null;
+  try { fal.buildReferencePayload({ prompt: 'x', references: ['SHEET-A'], endpoint: 'fal-ai/flux-pro/v1.1' }); }
+  catch (e) { threw = e; }
+  ok(threw, 'flux-pro v1.1 has no reference field and accepted one silently');
+  ok(/text-to-image/.test(threw.message), 'the refusal does not say why');
+});
+
+t('BLOCKED: an unregistered endpoint refuses rather than guessing', async () => {
+  const fal = await import('../lib/fal.js');
+  let threw = null;
+  try { fal.buildReferencePayload({ prompt: 'x', references: ['S'], endpoint: 'fal-ai/something-new' }); }
+  catch (e) { threw = e; }
+  ok(threw && /not in lib\/endpoints\.js/.test(threw.message), 'an unknown endpoint was assumed to take a reference');
+});
+
+t('BLOCKED: two principals refuse a single-reference endpoint', async () => {
+  const fal = await import('../lib/fal.js');
+  let threw = null;
+  try { fal.buildReferencePayload({ prompt: 'x', references: ['A', 'B'], endpoint: 'fal-ai/flux-pro/kontext' }); }
+  catch (e) { threw = e; }
+  ok(threw && /takes one reference/.test(threw.message), 'two sheets were silently collapsed to one');
+});
+
+t('BLOCKED: reference conditioning with no reference sends nothing', async () => {
+  const fal = await import('../lib/fal.js');
+  let threw = null;
+  try { fal.buildReferencePayload({ prompt: 'x', references: [], endpoint: 'fal-ai/flux-pro/kontext' }); }
+  catch (e) { threw = e; }
+  ok(threw && /no reference/.test(threw.message), 'an empty reference list was sent as a text-only request');
+});
+
+t('the negative prompt still travels on the reference route', async () => {
+  const fal = await import('../lib/fal.js');
+  const p = fal.buildReferencePayload({ prompt: 'x', references: ['S'], negative: 'plastic skin', endpoint: 'fal-ai/flux-pro/kontext' });
+  ok(p.negative_prompt === 'plastic skin', 'the reference route dropped the negative prompt - the exact bug the text route had');
+});
+
+t('the endpoint is read per call, not captured at import', async () => {
+  const fal = await import('../lib/fal.js');
+  const before = process.env.FAL_IMAGE_MODEL;
+  process.env.FAL_IMAGE_MODEL = 'fal-ai/bytedance/seedream/v4/edit';
+  const got = fal.imageEndpoint();
+  if (before === undefined) delete process.env.FAL_IMAGE_MODEL; else process.env.FAL_IMAGE_MODEL = before;
+  ok(got === 'fal-ai/bytedance/seedream/v4/edit', 'FAL_IMAGE_MODEL was captured at module load and cannot be changed');
+});
+
+t('BLOCKED: a mandated graph plus a text-only endpoint refuses the render', async () => {
+  const { referencePlan } = await import('../lib/render.js');
+  const policy = { reference_conditioned: true, method: 'reference-conditioned; never text-only', rule: 'r' };
+  const cond = { people: ['P'], missing: [], files: ['sheet.png'], usable: [{}] };
+  const r = referencePlan({ policy, cond, endpoint: 'fal-ai/flux-pro/v1.1' });
+  ok(r.use === false, 'a text-only endpoint was allowed to render a person under a reference-conditioned policy');
+  ok(/text-to-image/.test(r.refusal ?? ''), 'the refusal does not name the cause');
+});
+
+t('ALLOWED: the same graph on a reference-conditioned endpoint renders', async () => {
+  const { referencePlan } = await import('../lib/render.js');
+  const policy = { reference_conditioned: true, method: 'reference-conditioned; never text-only', rule: 'r' };
+  const cond = { people: ['P'], missing: [], files: ['sheet.png'], usable: [{}] };
+  const r = referencePlan({ policy, cond, endpoint: 'fal-ai/flux-pro/kontext/max' });
+  ok(r.use === true && !r.refusal, 'a reference-conditioned endpoint with an approved sheet was refused');
+});
+
+t('a graph that declares no identity policy is not forced onto the reference route', async () => {
+  const { referencePlan } = await import('../lib/render.js');
+  // The bundled fixture has no render_policy.json. Absence means unconstrained.
+  const r = referencePlan({ policy: { reference_conditioned: false }, cond: { people: ['P'], missing: [], files: [] }, endpoint: 'fal-ai/flux/dev' });
+  ok(r.use === false && !r.refusal, 'a graph with no identity policy was refused anyway');
+});
+
+t('BLOCKED: an approved-but-fileless sheet refuses rather than falling back to text-only', async () => {
+  const { referencePlan } = await import('../lib/render.js');
+  const policy = { reference_conditioned: true, method: 'reference-conditioned; never text-only' };
+  const r = referencePlan({ policy, cond: { people: ['P'], missing: ['P'], files: [] }, endpoint: 'fal-ai/flux-pro/kontext/max' });
+  ok(r.use === false && /no file to send/.test(r.refusal ?? ''), 'a missing sheet file silently became a text-only render');
+});
+
+t('every reference-conditioned endpoint is priced and the guesses are marked', async () => {
+  const { ENDPOINTS, referenceConditioned } = await import('../lib/endpoints.js');
+  const { endpointCost } = await import('../lib/cost.js');
+  for (const ep of referenceConditioned()) {
+    ok(endpointCost(ep).usd > 0, `${ep} prices at zero`);
+    ok(typeof ENDPOINTS[ep].estimated === 'boolean', `${ep} does not say whether its price was confirmed`);
+  }
+});
+
 // --- run ---------------------------------------------------------------------------
 let pass = 0; const failures = [];
 for (const test of tests) {

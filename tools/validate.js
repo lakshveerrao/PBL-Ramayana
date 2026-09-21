@@ -12,6 +12,10 @@ import { read, treatment, ROOT, dataDir } from '../lib/store.js';
 import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifiesAPlace,
          locatorKind, hasDesign, skinGovernance, forbidsLightening, isLatinScript,
          filmNeedsDuration } from '../lib/contract.js';
+import * as fal from '../lib/fal.js';
+import { ENDPOINTS, referenceConditioned, textToImage } from '../lib/endpoints.js';
+import { endpointCost } from '../lib/cost.js';
+import { identityPolicy } from '../lib/render.js';
 import { assemble, directionOverrides } from '../lib/prompt.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
@@ -1020,6 +1024,58 @@ check('repo', 'the agents directory holds system prompts', () => {
 });
 check('repo', 'the handoff contract is present', () => {
   T(text('HANDOFF.md').length > 500, 'HANDOFF.md is missing - the studio must state what it needs from a graph');
+});
+
+check('render', 'a graph that mandates reference-conditioning is served by a studio that can do it', () => {
+  // Only fires if the graph says so. A graph with no render_policy.json - the bundled
+  // fixture has none - is unconstrained, and that is not a failure.
+  const pol = identityPolicy();
+  if (!pol.reference_conditioned) return;
+  T(typeof fal.imageFromReference === 'function',
+    'render_policy.identity says reference-conditioned, and the provider has no route that sends a reference');
+  T(typeof fal.buildReferencePayload === 'function',
+    'the reference payload cannot be inspected, so nothing can prove the sheet is sent rather than assembled and dropped');
+  const refConditioned = referenceConditioned();
+  T(refConditioned.length > 0, 'no reference-conditioned endpoint is registered in lib/endpoints.js');
+});
+
+check('render', 'the reference actually reaches the payload', () => {
+  const pol = identityPolicy();
+  if (!pol.reference_conditioned) return;
+  for (const ep of referenceConditioned()) {
+    const payload = fal.buildReferencePayload({ prompt: 'p', references: ['REF-ONE'], endpoint: ep });
+    const sent = JSON.stringify(payload);
+    T(sent.includes('REF-ONE'), `${ep}: the reference was given and does not appear in the payload`);
+  }
+});
+
+check('render', 'a text-to-image endpoint refuses a reference rather than dropping it', () => {
+  // fal accepts unknown fields and ignores them. Sending image_url to flux-pro would
+  // return 200 and a text-only picture, which is the failure this check exists for.
+  for (const ep of textToImage()) {
+    let threw = false;
+    try { fal.buildReferencePayload({ prompt: 'p', references: ['REF'], endpoint: ep }); }
+    catch { threw = true; }
+    T(threw, `${ep} is text-to-image and accepted a reference silently`);
+  }
+});
+
+check('render', 'every registered endpoint has a price and says whether it is a guess', () => {
+  for (const [ep, d] of Object.entries(ENDPOINTS)) {
+    T(typeof d.usd === 'number' && d.usd > 0, `${ep} has no price`);
+    T(typeof d.estimated === 'boolean', `${ep} does not say whether its price was confirmed`);
+    const priced = endpointCost(ep);
+    T(priced.usd > 0, `${ep} prices at zero through cost.js`);
+  }
+});
+
+check('render', 'a render record separates what was sent from what merely exists', () => {
+  // conditioned_on is the claim that the sheet travelled. references is the claim that
+  // a sheet record exists. Collapsing them is how a text-only render was recorded as
+  // reference-conditioned for the whole of arc 7's preparation.
+  const src = text('lib/render.js');
+  T(/conditioned_on/.test(src), 'the render record does not record what was actually sent');
+  T(/text_only/.test(src), 'the render record does not say when a still was generated text-only');
 });
 
 // ---------------------------------------------------------------- run
