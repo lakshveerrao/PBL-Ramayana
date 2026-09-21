@@ -299,10 +299,55 @@
       },
       "estimate_usd": 0.025,
       "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:52:57.433Z",
+      "provider": "fal",
+      "route": "probe",
+      "model": "fal-ai/flux/dev",
+      "label": "probe-A",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.05,
+      "usd": 0.05
+    },
+    {
+      "at": "2026-09-21T17:53:06.704Z",
+      "provider": "fal",
+      "route": "probe",
+      "model": "fal-ai/flux/dev",
+      "label": "probe-B",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.05,
+      "usd": 0.05
+    },
+    {
+      "at": "2026-09-21T17:53:12.477Z",
+      "provider": "fal",
+      "route": "probe",
+      "model": "fal-ai/flux-pro/v1.1",
+      "label": "probe-C",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.05,
+      "usd": 0.05
     }
   ],
   "totals": {
-    "usd": 0.5,
-    "calls": 20
+    "usd": 0.65,
+    "calls": 23
   }
 }
