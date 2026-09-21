@@ -13,6 +13,7 @@ import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifies
          locatorKind, hasDesign, skinGovernance, forbidsLightening, isLatinScript,
          filmNeedsDuration } from '../lib/contract.js';
 import { assemble, directionOverrides } from '../lib/prompt.js';
+import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
          roomTone, memoReason, materialSays, forbiddenEverywhere } from '../lib/graph.js';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
@@ -32,10 +33,14 @@ const round = (n) => Math.round(n * 1e6) / 1e6;
 function asserted(prompt, word) {
   const re = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi');
   for (const m of String(prompt).matchAll(re)) {
-    const before = String(prompt).slice(Math.max(0, m.index - 44), m.index).toLowerCase();
-    // A negation anywhere in the short run before the word makes it an instruction
-    // against the thing, not a description of it.
+    const src = String(prompt);
+    const before = src.slice(Math.max(0, m.index - 44), m.index).toLowerCase();
+    const after = src.slice(m.index + word.length, m.index + word.length + 30).toLowerCase();
+    // A negation before the word - "no arch of later vocabulary".
     if (/\b(no|not|never|without|avoid|forbidden|absolutely not present:)\s*[\w\s,-]{0,24}$/.test(before)) continue;
+    // Or after it - "her face is never shown", "the face NOT shown".
+    if (/^\s*(is|are|was)?\s*(never|not|no)\b/.test(after)) continue;
+    if (/^\s*(withheld|not shown|never shown)\b/.test(after)) continue;
     const clause = String(prompt).slice(Math.max(0, m.index - 40), m.index + word.length + 24).replace(/\s+/g, ' ').trim();
     return clause;
   }
@@ -764,6 +769,90 @@ check('prompt', 'every direction override still finds its target', () => {
     const hits = [x.find, ...(x.also_find ?? [])].some((f) => raw.includes(f));
     T(hits || raw.includes(x.replace), `override for ${x.shot} matches nothing - the package may have changed and the override is now a silent no-op`);
   }
+});
+
+// ---------------------------------------------------------------- model sheets
+check('sheets', 'every design decision is recorded, classed and reasoned', () => {
+  const d = sheetDecisions();
+  T(d.decided_on && d.decided_by, 'the decisions record no date or decider');
+  T(d.decisions.length >= 4, `expected at least four decisions, found ${d.decisions.length}`);
+  for (const x of d.decisions) {
+    T(x.id && x.subject && x.chosen, `a decision is incomplete: ${x.id ?? '(no id)'}`);
+    if (x.subject !== 'PROCESS') T(x.class === 'S', `decision ${x.id} is classed ${x.class}, not S - a design choice is ours, never the text's`);
+  }
+});
+check('sheets', 'a complexion chosen from tradition is declared as ours, never as the text', () => {
+  for (const x of sheetDecisions().decisions.filter((y) => /complexion/i.test(y.question ?? ''))) {
+    T(x.class === 'S', `complexion decision ${x.id} is classed ${x.class} - a tradition informs a staging choice and is never promoted to Text`);
+    const blob = JSON.stringify(x).toLowerCase();
+    T(/never presented as|ours|our choice/.test(blob), `complexion decision ${x.id} is not declared as ours`);
+  }
+});
+check('sheets', 'no sheet brief or prompt presents a complexion as the source\'s', () => {
+  const bad = /(the (text|source) (says|mandates|establishes)[^.]{0,40}(complexion|colour|skin))|((complexion|colour) (is )?(mandated|established) by the (text|source))/i;
+  T(!bad.test(JSON.stringify(sheetBriefs())), 'a sheet brief presents a complexion as the source\'s');
+  for (const id of sheetOrder()) {
+    for (const slot of ['front', 'three_quarter', 'profile', 'in_world']) {
+      T(!bad.test(viewPrompt(id, slot).prompt), `${id} ${slot} prompt presents a complexion as the source's`);
+    }
+  }
+});
+check('sheets', 'no principal is made lighter than another', () => {
+  // The colourism rule, at the point it would actually be broken: the sheet prompt.
+  const blob = JSON.stringify(sheetBriefs()) + sheetOrder().map((id) => viewPrompt(id, 'front').prompt).join(' ');
+  const bad = /\b(lighter|fairer|paler)\s+(than|skin than|complexion than)\b/i;
+  const m = blob.match(bad);
+  T(!m || /never|not|no\s/i.test(blob.slice(Math.max(0, blob.indexOf(m[0]) - 30), blob.indexOf(m[0]))),
+    `a sheet brief makes one principal lighter than another: "${m?.[0]}"`);
+});
+check('sheets', 'the brothers share a complexion range, per the recorded decision', () => {
+  const dd3 = sheetDecisions().decisions.find((x) => x.subject === 'LAKSHMANA');
+  T(dd3, 'no decision is recorded for how Lakshmana is distinguished from Rama');
+  const c = sheetBriefs().characters.find((x) => x.id === 'LAKSHMANA');
+  T(c, 'no sheet brief for LAKSHMANA');
+  T(/same range|same complexion/i.test(c.complexion + ' ' + (c.complexion_declaration ?? '')),
+    'the Lakshmana brief no longer puts him in the same complexion range as Rama');
+  T(/build and hair/i.test(c.distinct_from?.how ?? ''), 'Lakshmana is no longer distinguished by build and hair');
+  T((c.never ?? []).some((n) => /lighter/i.test(n)), 'the Lakshmana brief no longer forbids lighter skin than Rama');
+});
+check('sheets', 'every sheet prompt carries the mandatory cloth line and a negative', () => {
+  const line = sheetBriefs()._universal.mandatory_line;
+  T(line && /no stitched garment/i.test(line), 'the mandatory cloth line is missing from the universal spec');
+  for (const id of sheetOrder()) {
+    for (const slot of ['front', 'three_quarter', 'profile', 'in_world']) {
+      const v = viewPrompt(id, slot);
+      T(v.prompt.includes(line), `${id} ${slot} prompt is missing the mandatory cloth line`);
+      T(v.negative && v.negative.length > 40, `${id} ${slot} prompt carries no negative`);
+    }
+  }
+});
+check('sheets', 'no sheet prompt contradicts its own negative list', () => {
+  const offenders = [];
+  for (const id of sheetOrder()) {
+    for (const slot of ['front', 'three_quarter', 'profile', 'in_world']) {
+      const v = viewPrompt(id, slot);
+      for (const neg of v.negative.split(/,\s*/)) {
+        const word = neg.trim().toLowerCase();
+        if (word.length < 5) continue;
+        const hit = asserted(v.prompt, word);
+        if (hit) offenders.push(`${id}/${slot}: "${word}" in "${hit}"`);
+      }
+    }
+  }
+  T(offenders.length === 0, offenders.slice(0, 4).join('; '));
+});
+check('sheets', 'a character whose face is withheld never gets a face prompt', () => {
+  for (const c of sheetBriefs().characters.filter((x) => x.face_withheld)) {
+    for (const slot of ['front', 'three_quarter', 'profile', 'in_world']) {
+      const p = viewPrompt(c.id, slot).prompt;
+      T(/FACE NOT SHOWN|face is never shown|hands only/i.test(p), `${c.id} ${slot} prompt does not withhold the face`);
+    }
+  }
+});
+check('sheets', 'the sheet order starts with the character the arc leans on', () => {
+  const first = sheetOrder()[0];
+  const c = sheetBriefs().characters.find((x) => x.id === first);
+  T(c.why_first, `${first} is generated first but the brief does not say why`);
 });
 
 // ---------------------------------------------------------------- register

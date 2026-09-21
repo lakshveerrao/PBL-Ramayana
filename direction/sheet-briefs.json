@@ -1,0 +1,131 @@
+{
+  "_doc": "Per-character sheet specifications, taken from direction/pbl-ramayana-arc7-character-briefs.md with direction/design-decisions.json applied. tools/sheet_prompts.js assembles prompts from this; nothing is written by hand at generation time.",
+  "_authority": "Creative proposals. Once a sheet is approved by a named person, the APPROVED SHEET governs every frame and this file has done its job.",
+
+  "_universal": {
+    "mandatory_line": "uncut draped handloom - no stitched garment.",
+    "world": [
+      "Cloth is woven, cut from the loom, and draped: antariya at the waist, uttariya over the shoulder. Never tailored, never buttoned.",
+      "Ornament from the relief vocabulary - Bharhut, Sanchi, Amaravati: heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems.",
+      "Faces from the real range of the subcontinent. Nose bridges, eye shapes, jaws and cheeks that vary. Pores, oil sheen, sun on skin that has lived outdoors, age in the neck and hands.",
+      "Bodies are real. No gym physiques. Barefoot on stone.",
+      "Never sharpen features to read noble or broaden them to read lowly.",
+      "photoreal, film grain."
+    ],
+    "in_world_light": "the hall's light: pierced lattice from frame-left, one brass lamp. Post-and-lintel timber and lime plaster.",
+    "views": [
+      { "slot": "front", "shot": "front view, full figure and head-and-shoulders, neutral standing, even light" },
+      { "slot": "three_quarter", "shot": "three-quarter view, the angle most shots use" },
+      { "slot": "profile", "shot": "profile view" },
+      { "slot": "in_world", "shot": "in-world frame, the character in the hall's light" }
+    ],
+    "anchor_rule": "The FRONT view is the anchor. Three-quarter, profile and in-world are conditioned on the anchor image, never on another generated view. A variation of a variation is a cousin.",
+    "candidates_per_anchor": 10
+  },
+
+  "characters": [
+    {
+      "id": "VISHVAMITRA",
+      "order": 1,
+      "why_first": "The still sage seated is reused or cropped in fourteen shots across four films. M1's checkpoint depends on him. Design him for stillness first.",
+      "subject": "an ascetic sage in his sixties, of the line of Kusika",
+      "build": "lean and physically hard - the shoulders of a man who once trained",
+      "hair": "matted and piled high in a jata, ash-grey beard",
+      "complexion": "deep warm brown, sun-weathered, ash on the skin",
+      "dress": "ochre cloth draped at the waist, a single upper cloth, bare torso otherwise",
+      "ornament": "a worn string of rudraksha, never displayed. No other ornament.",
+      "props": "a plain dark dense-wood staff, shoulder-height, worn pale at the grip, blunt and splayed at the base from years on stone. No carving, no finial.",
+      "the_one_thing": "his eyes REST on what they look at. They do not search.",
+      "expressions": [
+        "seated, composed, unreadable - the still sage",
+        "about to speak, a smallest intake of breath",
+        "two fingers raised, once",
+        "eyes down and back up",
+        "rising",
+        "standing, speaking - anger as control",
+        "walking away, back to camera",
+        "turning back slowly, no smile"
+      ],
+      "distinct_from": { "who": "VASISHTHA", "how": "matted, ash-grey, lean, sun-dark, ochre - against combed, white, softer, undyed white" },
+      "never": ["a glow or aura", "floating", "wind in the hair", "a trident", "a rosary held up", "a beatific smile", "narrowed eyes", "a shadowed face", "a low menacing angle", "villain coding"],
+      "never_note": "He is a man with a problem, not a threat."
+    },
+    {
+      "id": "DASHARATHA",
+      "order": 2,
+      "subject": "the king of Ayodhya, old - Rama is the son of his old age",
+      "build": "a broad frame gone soft, a man long a king who has not fought in years. Age in the hands and neck, not only the face.",
+      "hair": "long, oiled, silver-white, bound. A full grey-white beard, trimmed.",
+      "complexion": "warm mid-brown",
+      "dress": "a near-white antariya; a deep red uttariya with a thin woven gold border",
+      "ornament": "kundala, a flat collar, armlets, bangles, one ring - relief vocabulary",
+      "headdress": "a wound relief-period royal turban with a crest ornament, in the Bharhut and Sanchi vocabulary",
+      "headdress_decision": "DD-1",
+      "headdress_fallback": "a low mukuta - a band rising to a modest crest - if candidates read as a later regional turban",
+      "the_one_thing": "a face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-set eyes.",
+      "expressions": ["composed on the throne", "shock - the moment the request lands", "the silent king", "the spent king", "palms joined", "bending to his son's crown", "glad, at the giving"],
+      "never": ["tears streaming", "a hand clutched to the chest", "a faint to the floor", "a youthful face", "a sword at his hip", "a robe", "a peaked European crown", "a tiara", "a jewelled tower"]
+    },
+    {
+      "id": "VASISHTHA",
+      "order": 3,
+      "subject": "the family priest of the Raghus, in his seventies, older than the king",
+      "build": "upright, contained, sits lower than everyone and is listened to by all of them",
+      "hair": "white, combed, tied at the crown. A white beard cut short. Clean where Vishvamitra is matted.",
+      "complexion": "warm mid-brown, aged, softer than the sage's",
+      "dress": "undyed white, draped, one shoulder bare. The sacred thread across the chest.",
+      "ornament": "one plain ring and the thread. Nothing else.",
+      "the_one_thing": "when he finally stands, the whole room registers it.",
+      "expressions": ["seated, listening", "counselling the king", "standing - the room registers it", "uttering the mantras at the blessing rite"],
+      "distinct_from": { "who": "VISHVAMITRA", "how": "combed white and undyed white, softer - against matted ash-grey and ochre" },
+      "never": ["a staff", "a crown", "a throne of his own", "an oracular expression", "a raised voice", "standing over the king"]
+    },
+    {
+      "id": "RAMA",
+      "order": 4,
+      "subject": "a boy of fifteen - not yet sixteen by his father's statement",
+      "build": "slight, not yet filled out. A boy, not a youth, and never a man's body in a boy's role.",
+      "hair": "long, with the boy's side-locks - kakapakshadhara - clearly visible from every angle INCLUDING FROM BEHIND",
+      "complexion": "deep brown",
+      "complexion_decision": "DD-2",
+      "complexion_declaration": "OURS, from the syama tradition. Never presented as what the text says.",
+      "dress": "plain undyed cloth, shorter at the knee for walking. A small quiver at the back. Bare feet.",
+      "props": "a recurved bow of wood and horn, UNSTRUNG, carried - never drawn",
+      "the_one_thing": "open, unguarded, a boy's face. Neither sweet nor stern.",
+      "expressions": ["a bowed head, face withheld", "plain, a boy - the first face reveal", "looking back once, then facing forward"],
+      "from_behind_matters": "In seven of his M7 shots we see his back. The side-locks and the bow must identify him from behind.",
+      "distinct_from": { "who": "LAKSHMANA", "how": "quicker and slighter; side-locks worn higher; SAME complexion range" },
+      "never": ["a heroic image", "a low angle", "rim light", "wind", "a halo", "blue skin", "a crown", "a drawn bow", "a smile to camera", "a man's physique"]
+    },
+    {
+      "id": "LAKSHMANA",
+      "order": 5,
+      "subject": "Sumitra's son, a year or so younger than Rama - it shows in the jaw, not the height",
+      "build": "slightly sturdier than Rama. Where Rama is quick, he is planted.",
+      "hair": "long, side-locks too, worn differently enough to tell them apart from behind - tied lower, or fuller",
+      "complexion": "the same range as Rama - deep brown",
+      "complexion_decision": "DD-3",
+      "complexion_declaration": "The same range as Rama. He is told apart by BUILD AND HAIR ONLY. He is never lighter than Rama.",
+      "dress": "plain uncut cloth like his brother's. Bare feet.",
+      "props": "his own bow, unstrung; an archer's finger guard",
+      "the_one_thing": "the face of someone who has already decided.",
+      "expressions": ["half a step behind, already", "a mouth that sets rather than softens"],
+      "distinct_from": { "who": "RAMA", "how": "BUILD AND HAIR ONLY - sturdier, planted, rounder face, heavier brow, side-locks tied lower or fuller. NOT by complexion." },
+      "never": ["ahead of Rama in frame", "a heroic beat of his own", "a drawn bow", "speaking", "lighter skin than Rama"]
+    },
+    {
+      "id": "KAUSALYA",
+      "order": 6,
+      "subject": "the queen mother - HANDS ONLY, her face is never shown",
+      "build": "hands of a woman who has raised a son to fifteen - not young hands, not ornamental hands",
+      "complexion": "warm mid-brown",
+      "dress": "a draped upper cloth at the wrist, fine, undyed",
+      "ornament": "bangles, relief vocabulary, worn not displayed",
+      "the_one_thing": "she isn't these films' subject, and withholding her is what makes her moments land.",
+      "expressions": ["hands beside the father's at the blessing rite", "a hand releasing the edge of her son's draped upper cloth"],
+      "face_withheld": true,
+      "never": ["her face", "a portrait", "jewelled or manicured hands"],
+      "plates_only": ["hands, palms and backs", "a hand at the edge of draped cloth"]
+    }
+  ]
+}

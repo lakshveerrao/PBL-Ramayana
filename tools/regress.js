@@ -12,6 +12,8 @@ import { assertNoRestrictedText, RightsError, isRestricted, locatorOf } from '..
 import { normaliseImage, normaliseVideo } from '../lib/fal.js';
 import { renderMotion, MotionRefusal, estimate, shotOf } from '../lib/render.js';
 import { assemble, applyOverrides, directionOverrides } from '../lib/prompt.js';
+import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder,
+         viewPrompt, plan as sheetPlan } from '../lib/sheetprompt.js';
 import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
@@ -520,6 +522,59 @@ t('the director brief carries locators and never text', () => {
 t('the director brief names the speaker on every attributed claim', () => {
   const b = briefFor('M3');
   ok(/SPOKEN BY DASARATHA/.test(b), 'the brief does not carry speaker attribution');
+});
+
+// --- model sheets: the decisions must not drift -----------------------------------
+t('the four design decisions are recorded and classed as ours', () => {
+  const d = sheetDecisions();
+  ok(d.decisions.length >= 4, `only ${d.decisions.length} decisions recorded`);
+  for (const x of d.decisions) {
+    if (x.subject === 'PROCESS') continue;
+    ok(x.class === 'S', `${x.id} is classed ${x.class}, not S - a design choice is ours, never the text's`);
+  }
+});
+t('Rama\'s complexion is declared ours, never the text\'s', () => {
+  const dd = sheetDecisions().decisions.find((x) => x.subject === 'RAMA');
+  ok(dd, 'no complexion decision recorded for Rama');
+  ok(dd.class === 'S', 'the complexion decision is not classed S');
+  ok(/never/i.test(dd.never_presented_as ?? '') || /never/i.test(JSON.stringify(dd)), 'it is not declared as never the text\'s');
+  const p = viewPrompt('RAMA', 'front').prompt;
+  ok(/OURS/i.test(p), 'the Rama prompt does not declare the complexion as ours');
+  ok(!/the text says.{0,30}(complexion|colour)/i.test(p), 'the Rama prompt attributes a complexion to the text');
+});
+t('the brothers share a complexion range, and Lakshmana is never lighter', () => {
+  const c = sheetBriefs().characters.find((x) => x.id === 'LAKSHMANA');
+  ok(/same range|same complexion/i.test(c.complexion + ' ' + (c.complexion_declaration ?? '')),
+    'Lakshmana is no longer in the same complexion range as Rama');
+  ok(/build and hair/i.test(c.distinct_from.how), 'Lakshmana is no longer told apart by build and hair');
+  ok(c.never.some((n) => /lighter/i.test(n)), 'the brief no longer forbids lighter skin than Rama');
+  // And the generated prompt must carry it.
+  const p = viewPrompt('LAKSHMANA', 'front').prompt;
+  ok(/same range|same complexion/i.test(p), 'the Lakshmana prompt does not put him in Rama\'s range');
+  ok(!/lighter than/i.test(p.replace(/never lighter than[^.]*/gi, '')), 'the Lakshmana prompt makes him lighter');
+});
+t('every sheet prompt carries the mandatory cloth line', () => {
+  const line = sheetBriefs()._universal.mandatory_line;
+  for (const id of sheetOrder()) {
+    ok(viewPrompt(id, 'front').prompt.includes(line), `${id} is missing the mandatory cloth line`);
+  }
+});
+t('a character whose face is withheld never gets a face prompt', () => {
+  for (const c of sheetBriefs().characters.filter((x) => x.face_withheld)) {
+    const p = viewPrompt(c.id, 'front').prompt;
+    ok(/FACE NOT SHOWN|hands only|never shown/i.test(p), `${c.id} does not withhold the face`);
+  }
+});
+t('only the front view is an anchor; the others are conditioned on it', () => {
+  const p = sheetPlan('VISHVAMITRA');
+  ok(p.step_1_anchor.conditioned_on === null, 'the front view is conditioned on something');
+  for (const v of p.step_2_views) {
+    ok(/anchor/i.test(v.conditioned_on ?? ''), `${v.slot} is not conditioned on the anchor - drift compounds`);
+  }
+});
+t('the sheet order starts with Vishvamitra and says why', () => {
+  ok(sheetOrder()[0] === 'VISHVAMITRA', `order starts with ${sheetOrder()[0]}`);
+  ok(/fourteen shots|four films/i.test(sheetPlan('VISHVAMITRA').why_first ?? ''), 'the reason for going first is not recorded');
 });
 
 // --- creative direction may correct how a thing is shown, never what is true ------

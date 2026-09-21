@@ -1,0 +1,66 @@
+{
+  "_doc": "The four design decisions the character briefs require before any sheet is generated. Every frame generated from a sheet inherits a later revision, which is why these are settled first.",
+  "decided_on": "2026-09-21",
+  "decided_by": "Laksh",
+  "authority": "Creative. These are OUR choices. None of them is a claim about what the source says, and none may be presented as one.",
+  "source_brief": "direction/pbl-ramayana-arc7-character-briefs.md, Part 4",
+
+  "decisions": [
+    {
+      "id": "DD-1",
+      "subject": "DASHARATHA",
+      "question": "Headdress",
+      "chosen": "The relief-period royal turban with a crest ornament, in the Bharhut and Sanchi vocabulary.",
+      "brief_option": "A (recommended)",
+      "fallback": {
+        "condition": "If early candidates read as a later regional turban rather than a relief-period one.",
+        "then": "A low mukuta - a band rising to a modest crest."
+      },
+      "never": ["a peaked European crown", "a tiara", "a jewelled tower"],
+      "class": "S",
+      "note": "Ours. The source establishes no headdress."
+    },
+    {
+      "id": "DD-2",
+      "subject": "RAMA",
+      "question": "Complexion",
+      "chosen": "Deep brown.",
+      "brief_option": "recommended",
+      "basis": "The syama tradition - Rama held as dark. Tulsidas, and the older iconographic habit whose blue we exclude as a later convention.",
+      "class": "S",
+      "declared_as": "OURS, FROM TRADITION",
+      "never_presented_as": "what the text says",
+      "binding_rule": "No caption, narration, share copy or Ask may state Rama's colour, or imply the source mandates one. The package records his complexion as not established and that does not change.",
+      "note": "A tradition informs a staging choice here; it is never promoted to Text. Evidence class S, not Tr and not T."
+    },
+    {
+      "id": "DD-3",
+      "subject": "LAKSHMANA",
+      "question": "How he is distinguished from Rama",
+      "chosen": "By BUILD AND HAIR ONLY. Same complexion range as Rama.",
+      "brief_option": "the second option - a deliberate departure from the brief's first suggestion",
+      "rejected": "Tulsidas's syama/gaura pairing, which would sit Lakshmana lighter than Rama.",
+      "why_rejected": "It is the one choice here that reads as colourism however carefully it is hedged. Build and hair give the same legibility - including from behind, which is what seven of his shots need - with none of that risk.",
+      "class": "S",
+      "binding_rule": "No sheet, prompt or frame may make Lakshmana lighter than Rama. They sit in the same complexion range and are told apart by build, hair and how each carries his bow.",
+      "note": "This decision reverses a recommendation in the brief. It is recorded here so it cannot drift back by default."
+    },
+    {
+      "id": "DD-4",
+      "subject": "PROCESS",
+      "question": "Route to the sheets",
+      "chosen": "Generate, anchor-first, per Part 3 Route A of the briefs.",
+      "fallback": {
+        "condition": "If identity will not hold across the four views.",
+        "then": "Commission an artist - Route B. Work-for-hire, company-owned, with the right to use the sheets as generation references."
+      },
+      "order": ["VISHVAMITRA", "DASHARATHA", "VASISHTHA", "RAMA", "LAKSHMANA", "KAUSALYA"],
+      "order_reason": "Vishvamitra first: the still sage seated is reused or cropped in fourteen shots across four films, and M1's checkpoint depends on him."
+    }
+  ],
+
+  "_colourism_guard": {
+    "rule": "Skin is never lightened, and fair-equals-good coding is forbidden outright. DD-3 is the operative decision here: the brothers share a complexion range.",
+    "checked_by": "tools/validate.js - no sheet prompt may make one principal lighter than another, and none may state Rama's colour as the source's."
+  }
+}
