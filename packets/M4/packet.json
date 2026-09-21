@@ -1,0 +1,86 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "built": "2026-09-21",
+  "film": "M4",
+  "story_id": "M4",
+  "title": {
+    "en": "The Name Behind Them"
+  },
+  "duration_s": 48.7,
+  "fps": 30,
+  "frame": [
+    1080,
+    1920
+  ],
+  "shots": 18,
+  "to_generate": 7,
+  "estimate_usd": {
+    "image": 0.175,
+    "motion": 1.75,
+    "voice": 0.17838,
+    "total": 2.10338
+  },
+  "gate": {
+    "allowed": false,
+    "blocked": 18,
+    "of": 18
+  },
+  "claims": [
+    {
+      "id": "CLM-0020",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "DASHARATHA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 19,
+        "verses": "12",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Daśaratha asks who the rākṣasas are, whose sons they are, and how strong."
+    },
+    {
+      "id": "CLM-0031",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 19,
+        "verses": "18",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra says that Rāvaṇa, not acting himself, incites Mārīca and Subāhu to obstruct the sacrifice."
+    },
+    {
+      "id": "CLM-0034",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "DASHARATHA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 19,
+        "verses": "19-22",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Daśaratha says he cannot stand in battle against Rāvaṇa or his forces, even with his army."
+    },
+    {
+      "id": "CLM-0035",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "DASHARATHA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 19,
+        "verses": "23-24",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Daśaratha says again that he will not give his young son."
+    }
+  ]
+}

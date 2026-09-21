@@ -1,19 +1,24 @@
 shot,start_s,duration_s,frames,size,lens_mm,height,camera_move,expression,source,reuse_of,entities,claims,narration,motion,gate
-01-01,0.0,2.4,72,WIDE,35,eye,locked,n/a,generate,,VISVAMITRA,CLM.BALA.20.I.COURT-INTERIOR,,,refused
-01-02,2.4,2.2,66,CU,85,eye,locked,"settled, unhurried",generate,,VISVAMITRA,CLM.BALA.20.REQUEST-LANDS,L1,,refused
-01-03,4.6,1.6,48,INSERT,100,high,locked,n/a,generate,,DASARATHA,CLM.BALA.20.REQUEST-LANDS,,,refused
-02-01,6.2,2.8,84,MS,50,eye,locked,hearing it,generate,,DASARATHA,CLM.BALA.20.KING-STUNNED,L2,,refused
-02-02,9.0,2.6,78,MCU,85,slightly low,locked,gone out of himself,generate,,DASARATHA,CLM.BALA.20.KING-STUNNED,,,refused
-03-01,11.6,1.8,54,INSERT,100,high,locked,n/a,reuse,01-03,,,,,clear
-03-02,13.4,2.0,60,MS,50,eye,locked,not intervening,generate,,VASISTHA,CLM.BALA.20.I.COURT-INTERIOR,,,refused
-03-03,15.4,1.6,48,CU,85,eye,locked,n/a,generate,,,CLM.BALA.20.S.LAMP-HELD,,,clear
-03-04,17.0,1.4,42,MCU,85,eye,locked,gathering himself,crop,02-02,DASARATHA,,,,refused
-03-05,18.4,2.4,72,MS,85,eye,locked,"level, decided",generate,,DASARATHA,CLM.BALA.20.SON-CAME-LATE,L3,motion,refused
-03-09,20.8,2.6,78,CU,85,eye,locked,"speaking, contained",generate,,DASARATHA,CLM.BALA.20.NOT-YET-SIXTEEN,L4,,refused
-04-01,23.4,2.2,66,WIDE,35,eye,locked,n/a,generate,,DASARATHA VISVAMITRA,CLM.BALA.20.OFFERS-HIMSELF,L5,,refused
-04-02,25.6,2.0,60,MCU,85,eye,locked,unmoved,reuse,01-02,VISVAMITRA,CLM.BALA.20.NAMES-THE-ENEMY,,,refused
-05-06,27.6,2.8,84,MS,50,low,locked,n/a,generate,,VISVAMITRA,,,NO MOTION,refused
-06-01,30.4,2.4,72,MS,50,eye,locked,waiting,crop,04-01,VISVAMITRA,,L6,,refused
-06-02,32.8,2.2,66,CU,85,eye,locked,decided,reuse,03-09,DASARATHA,CLM.BALA.20.REFUSAL,,,refused
-07-01,35.0,1.0,30,INSERT,100,eye,locked,n/a,reuse,03-03,,CLM.BALA.20.S.LAMP-HELD,,,clear
-07-02,36.0,8.0,240,CU,85,eye,locked,does not change,generate,,DASARATHA,CLM.BALA.20.REFUSAL,L7,NO MOTION,refused
+03-01,0.0,4.0,120,CU,85,eye,locked,"shock, settling",reuse,,DASHARATHA,,,NO MOTION,refused
+03-02,4.0,2.2,66,MS,85,eye,locked,calm authority,reuse,,VISHVAMITRA,CLM-0008,L1,NO MOTION,refused
+03-03,6.2,1.9,57,INSERT,100,eye,locked,calm authority,reuse,,VISHVAMITRA,,L2,NO MOTION,refused
+03-04,8.1,1.8,54,MS,85,eye,locked,confidence,reuse,03-02,VISHVAMITRA,,L3,NO MOTION,refused
+03-05,9.9,2.4,72,MS,50,eye,locked,concern → fear,generate,,DASHARATHA SABHA THRONE,,,motion,refused
+03-06,12.3,1.2,36,INSERT,50,eye,locked,—,generate,,THRONE,,,motion,clear
+03-07,13.5,1.7,51,CU,85,eye,locked,fatherly fear,generate,,DASHARATHA,,L4,motion,refused
+03-08,15.2,2.2,66,MS,85,eye,locked,fear,generate,,DASHARATHA,CLM-0010,L5,motion,refused
+03-09,17.4,2.6,78,MS,85,eye,locked,restrained patience,reuse,03-02,VISHVAMITRA,,L6,NO MOTION,refused
+03-10,20.0,2.1,63,WIDE,35,eye,locked,—,generate,,COURT SABHA,,,motion,refused
+03-11,22.1,2.2,66,MS,50,eye,locked,kingly resolve,generate,,DASHARATHA SABHA,CLM-0012,L7,motion,refused
+03-12,24.3,2.4,72,WIDE,24,eye,locked,kingly resolve,generate,,COURT SABHA,,,motion,refused
+03-13,26.7,1.1,33,CU,85,eye,locked,resolve,crop,03-11,DASHARATHA,,,NO MOTION,refused
+03-14,27.8,2.0,60,MS,50,eye,locked,resolve,generate,,DASHARATHA,CLM-0013,L8,motion,refused
+03-15,29.8,1.4,42,MS,85,eye,locked,restrained patience,reuse,03-02,VISHVAMITRA,,,NO MOTION,refused
+03-16,31.2,1.0,30,CU,85,eye,locked,resolve breaking,generate,,DASHARATHA,,L9,motion,refused
+03-17,32.2,1.9,57,INSERT,100,eye,locked,the break,generate,,DASHARATHA,,,motion,refused
+03-18,34.1,1.6,48,CU,85,eye,locked,seriousness,generate,,VISHVAMITRA,,,motion,refused
+03-19,35.7,2.2,66,CU,85,eye,locked,fatherly fear at full,generate,,DASHARATHA,CLM-0014,L10,motion,refused
+03-20,37.9,3.1,93,MS,85,eye,locked,—,generate,,DASHARATHA,,,motion,refused
+03-21,41.0,1.4,42,MS,85,eye,locked,firm refusal,reuse,03-20,DASHARATHA,CLM-0015,L11,NO MOTION,refused
+03-22,42.4,1.0,30,INSERT,100,eye,locked,refusal complete,generate,,DASHARATHA,,,motion,refused
+03-23,43.4,8.0,240,MS,85,eye,locked,—,reuse,03-02,VISHVAMITRA,,,NO MOTION,refused

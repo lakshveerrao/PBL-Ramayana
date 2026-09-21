@@ -1,182 +1,1522 @@
 {
-  "_doc": "Principals of arc 7. Every visual fact here is either locked (see locks.json) or declared as inference or staging. Nothing is anglicised: cloth is woven, cut from the loom and draped, never tailored. Ornament comes from the relief vocabulary. Skin is never lightened and fair-equals-good coding is forbidden outright.",
   "entities": [
     {
-      "id": "DASARATHA",
-      "name_en": "Dasaratha",
-      "name_hi": "दशरथ",
-      "name_te": "దశరథుడు",
-      "role": "principal",
-      "memo": null,
-      "appears_in": [
-        "M1",
-        "M2",
-        "M3",
-        "M4",
-        "M5",
-        "M6"
-      ],
-      "design": {
-        "age_reading": "old. The lateness of his fatherhood is the point of M3 and must be legible in the face.",
-        "build": "heavy through the shoulders, gone soft. A body that was a warrior's.",
-        "skin_albedo": "LOCK.SKIN.DASARATHA",
-        "hair": "grey, oiled, bound at the nape. No crown in the private hall.",
-        "garment": {
-          "lower": "antariya - unstitched cloth, draped and tucked, falling to mid-calf",
-          "upper": "uttariya - a single length over the left shoulder",
-          "construction": "draped. Cut from the loom. Not tailored, not sewn, no fitted seam anywhere.",
-          "weave": "fine cotton, undyed to pale ochre"
+      "id": "DASHARATHA",
+      "name": "Daśaratha",
+      "kind": "person",
+      "devanagari": "दशरथ",
+      "description": {
+        "T": [
+          "Aged; Rāma is the son of his old age (Bāla 19)",
+          "Sixty thousand years since his birth — an epic idiom for great age, not a literal figure to render",
+          "On hearing the request he is seized by great fear and lurches from his seat (18.20: ⟨Bāla 18.20, GRETIL — text withheld⟩).",
+          "For a moment he is as if senseless, then recovers and speaks (19.1: ⟨Bāla 19.1, GRETIL — text withheld⟩)."
+        ],
+        "Tr": [],
+        "I": [
+          "Aged — Rāma is the son of his old age (source).",
+          "Dress: uncut draped handloom, never tailored (material world).",
+          "Ornament: from the relief vocabulary; no European regalia (material world). Specific pieces: production design."
+        ],
+        "S": [
+          "His tell: the right hand on the carved armrest. It closes before he speaks.",
+          "From film 3: stepped down from the dais, palms joined."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "uncut draped cloth, its weight and fall",
+          "from": "MAT-AMARAVATI",
+          "note": "court panels — the best record of how a drape actually moves on a seated figure"
         },
-        "ornament": {
-          "vocabulary": "SRC.AMARAVATI",
-          "items": [
-            "broad flat torque at the base of the throat",
-            "plain armlets, high on the upper arm",
-            "heavy ear ornament distending the lobe"
-          ],
-          "rule": "Relief vocabulary. Flat planes, broad forms, worn into the body. Never a jewellery-shop object with faceted stones."
+        {
+          "for": "kuṇḍala, niṣka, keyūra forms",
+          "from": "MAT-BHARHUT",
+          "note": "2nd c. BCE — the earliest clear ornament vocabulary on royal bodies"
+        },
+        {
+          "for": "how a king sits and who sits where",
+          "from": "MAT-SANCHI",
+          "note": "court and assembly composition"
+        },
+        {
+          "for": "skin modelling and palette under lamp",
+          "from": "MAT-AJANTA"
         }
-      }
+      ],
+      "face": null,
+      "never": [
+        "European regalia",
+        "a robe",
+        "a sword at the hip",
+        "a youthful face",
+        "a melodramatic faint to the floor",
+        "clutching the chest",
+        "streaming tears"
+      ],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
     },
     {
-      "id": "VISVAMITRA",
-      "name_en": "Visvamitra",
-      "name_hi": "विश्वामित्र",
-      "name_te": "విశ్వామిత్రుడు",
-      "role": "principal",
-      "memo": null,
-      "appears_in": [
-        "M1",
-        "M2",
-        "M3",
-        "M4",
-        "M5",
-        "M6",
-        "M7"
-      ],
-      "design": {
-        "age_reading": "old, but not soft. A king who became an ascetic and kept the bearing.",
-        "build": "spare, upright, long-boned",
-        "skin_albedo": "LOCK.SKIN.VISVAMITRA",
-        "hair": "matted and bound high (jata), grey-brown",
-        "garment": {
-          "lower": "bark-cloth or coarse undyed cotton, draped short",
-          "upper": "one length across the chest, often off the shoulder",
-          "construction": "draped. Never tailored.",
-          "weave": "coarse, unbleached"
+      "id": "VISHVAMITRA",
+      "name": "Viśvāmitra",
+      "kind": "person",
+      "devanagari": "विश्वामित्र",
+      "description": {
+        "T": [
+          "An ascetic under an observance that prevents him cursing his attackers (Bāla 18)",
+          "Of the line of Kuśika; called Kauśika and Gādhi's son",
+          "At the king's promise he is thrilled — hair standing on end (18.1: hṛṣṭaromā).",
+          "At the refusal he is seized by wrath (20.1 samanyuḥ; 20.4 roṣaparīta); the whole earth shakes and fear enters the gods (20.4)."
+        ],
+        "Tr": [
+          "Iconographic traditions show matted hair and a staff"
+        ],
+        "I": [
+          "An ascetic under an observance (source).",
+          "Dress: uncut, undyed or ochre, draped (material world).",
+          "Specific appearance: production design."
+        ],
+        "S": [
+          "A plain wooden staff, worn at the base, no carving, no finial.",
+          "He sits and does not move through four films. That stillness is the performance."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "forest hermitage rather than wandering mendicant",
+          "from": "TRD-TULSI",
+          "id": "TV-02"
         },
-        "ornament": {
-          "vocabulary": "SRC.AMARAVATI",
-          "items": [
-            "none - a rudraksa string only"
-          ],
-          "rule": "The absence of ornament is the characterisation. Do not add."
+        {
+          "for": "matted hair, ash, bare torso, single cloth",
+          "from": "MAT-AJANTA",
+          "note": "ascetic figures in the murals"
+        },
+        {
+          "for": "standing and seated poise",
+          "from": "MAT-CHOLA",
+          "note": "posture only — never costume"
         }
-      }
+      ],
+      "face": null,
+      "never": [
+        "glow",
+        "aura",
+        "floating",
+        "wind in the hair",
+        "trident",
+        "rosary held up",
+        "VILLAIN CODING of any kind — narrowed eyes, shadowed face, low menacing angle"
+      ],
+      "kanda": [
+        "BALA"
+      ]
     },
     {
       "id": "RAMA",
-      "name_en": "Rama",
-      "name_hi": "राम",
-      "name_te": "రాముడు",
-      "role": "principal",
-      "memo": null,
-      "appears_in": [
-        "M3",
-        "M5",
-        "M6",
-        "M7"
-      ],
-      "design": {
-        "age_reading": "a boy under sixteen by his father's statement. Not a young man. Not a hero yet.",
-        "build": "unfinished. Shoulders not filled out.",
-        "skin_albedo": "LOCK.SKIN.RAMA",
-        "complexion_claim": {
-          "state": "not-established",
-          "note": "The project makes NO claim to a source-mandated complexion for Rama. The gate blocks CLAIMING one. It does not block depicting him: he may be shown under an approved design like any principal. Any code or copy that reads this as 'Rama may not be drawn' is wrong."
+      "name": "Rāma",
+      "kind": "person",
+      "devanagari": "राम",
+      "description": {
+        "T": [
+          "Not yet sixteen — AS HIS FATHER SAYS IT (Bāla 19). A character's statement, never narrator fact.",
+          "kākapakṣadhara — wearing the boy's side-locks — at the moment he is asked for (Bāla 18). The clearest signal that he is a child.",
+          "The spine elsewhere uses a term for his colour. NOT LOCATED. No complexion may be presented as source-mandated."
+        ],
+        "Tr": [
+          "Tulsīdās: ⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩ — the two brothers, dark and fair. Tradition, not text."
+        ],
+        "I": [
+          "A boy, not yet sixteen as his father says it (source).",
+          "Wears the boy's side-locks — kākapakṣadhara, 18.8 and 21.6 (source).",
+          "Carries a bow at the departure — dhanvī, 21.6 (source).",
+          "Complexion: not established by the source; production design governs. Never presented as source-mandated."
+        ],
+        "S": [
+          "First appearance is film 7, on the road — plain medium, eye level, no light finding him."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "a visible contrast between the brothers",
+          "from": "TRD-TULSI",
+          "id": "TV-01",
+          "note": "śyāma and gaura. Tradition's contrast, not a spine mandate. Supports difference without asserting a sourced complexion."
         },
-        "hair": "dark, loose or lightly bound",
-        "garment": {
-          "lower": "antariya, draped short as a boy's",
-          "upper": "uttariya, light",
-          "construction": "draped, never tailored",
-          "weave": "fine cotton"
+        {
+          "for": "a boy's body and bearing at fifteen",
+          "from": "MAT-AMARAVATI",
+          "note": "youth figures, proportion"
         },
-        "ornament": {
-          "vocabulary": "SRC.AMARAVATI",
-          "items": [
-            "light armlet",
-            "simple ear ornament"
-          ],
-          "rule": "Less than his father's. He is not yet the court's centre."
+        {
+          "for": "side-locks visible",
+          "from": "SPINE",
+          "note": "kākapakṣadhara, Bāla 18 — Text, not inference"
         }
-      }
+      ],
+      "face": null,
+      "never": [
+        "a heroic image before film 7",
+        "a halo",
+        "a drawn bow before arc 9",
+        "a man's body on a boy's role",
+        "blue skin — a much later iconographic convention"
+      ],
+      "kanda": [
+        "ALL"
+      ]
     },
     {
-      "id": "LAKSMANA",
-      "name_en": "Laksmana",
-      "name_hi": "लक्ष्मण",
-      "name_te": "లక్ష్మణుడు",
-      "role": "principal",
-      "memo": null,
-      "appears_in": [
-        "M5",
-        "M6",
-        "M7"
-      ],
-      "design": {
-        "age_reading": "a boy, near Rama's age",
-        "build": "slighter than Rama",
-        "skin_albedo": "LOCK.SKIN.LAKSMANA",
-        "hair": "dark, bound",
-        "garment": {
-          "lower": "antariya, draped short",
-          "upper": "uttariya",
-          "construction": "draped, never tailored",
-          "weave": "fine cotton"
+      "id": "LAKSHMANA",
+      "name": "Lakṣmaṇa",
+      "kind": "person",
+      "devanagari": "लक्ष्मण",
+      "description": {
+        "T": [
+          "Sumitrā's son. Named by matronymic at the departure (Bāla 21)."
+        ],
+        "Tr": [],
+        "I": [
+          "Sumitrā's son; follows Rāma (source).",
+          "Dress: uncut, draped, plain (material world)."
+        ],
+        "S": [
+          "Half a step behind Rāma, always. The order is fixed by the source.",
+          "He watches Rāma more than he watches the road.",
+          "He does not speak in this arc. His attention is the performance."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "the fixed walking order and the archer's guard",
+          "from": "SRC.DUTT.VR",
+          "note": "Bāla SECTION XXII"
         },
-        "ornament": {
-          "vocabulary": "SRC.AMARAVATI",
-          "items": [
-            "light armlet"
-          ],
-          "rule": "Matches Rama's register, one step plainer."
+        {
+          "for": "youth proportion and bearing",
+          "from": "MAT-AMARAVATI"
         }
-      }
+      ],
+      "face": null,
+      "never": [
+        "ahead of Rāma in frame",
+        "his own heroic beat in Bāla",
+        "a drawn bow",
+        "speaking",
+        "a separate colour palette from Rāma"
+      ],
+      "kanda": [
+        "ALL"
+      ]
     },
     {
-      "id": "VASISTHA",
-      "name_en": "Vasistha",
-      "name_hi": "वसिष्ठ",
-      "name_te": "వసిష్టుడు",
-      "role": "principal",
-      "memo": null,
-      "appears_in": [
-        "M2",
-        "M3",
-        "M4",
-        "M5"
-      ],
-      "design": {
-        "age_reading": "old, settled, unhurried. The house priest, not a visitor.",
-        "build": "upright, contained",
-        "skin_albedo": "LOCK.SKIN.VASISTHA",
-        "hair": "white, bound, beard trimmed close",
-        "garment": {
-          "lower": "antariya, white",
-          "upper": "uttariya over the left shoulder",
-          "construction": "draped, never tailored",
-          "weave": "fine white cotton"
+      "id": "BHARATA",
+      "name": "Bharata",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Near Rāma; a gentler bearing."
+        ],
+        "S": [
+          "In Ayodhyā he wears what a man wears who is ruling from outside the city — plain, unadorned."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA",
+        "UTTARA"
+      ]
+    },
+    {
+      "id": "SHATRUGHNA",
+      "name": "Śatrughna",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "With Bharata, always."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "KAUSALYA",
+      "name": "Kausalyā",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "She performs the rite at the aśvamedha and passes a night with the horse (Bāla 13)."
+        ],
+        "Tr": [],
+        "I": [
+          "Eldest queen. Older, composed. Fine dyed cotton with a border, restrained gold."
+        ],
+        "S": [
+          "Grief held in, never performed."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "queen's dress register, border, ornament count",
+          "from": "MAT-AMARAVATI"
         },
-        "ornament": {
-          "vocabulary": "SRC.AMARAVATI",
-          "items": [
-            "sacred thread",
-            "plain ring"
-          ],
-          "rule": "Priestly plainness, not poverty."
+        {
+          "for": "textile border design",
+          "from": "MAT-LEPAKSHI",
+          "caution": "16th c. — pattern reference only"
         }
-      }
+      ],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "KAIKEYI",
+      "name": "Kaikeyī",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Youngest queen."
+        ],
+        "S": [
+          "In Bāla she is simply a queen."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [
+        "pre-loading Ayodhyā's villainy into a Bāla frame",
+        "harder features than the other queens — the oldest and laziest visual lie in every screen Rāmāyaṇa"
+      ],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "SUMITRA",
+      "name": "Sumitrā",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Middle queen. Quiet presence."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "VASISHTHA",
+      "name": "Vasiṣṭha",
+      "kind": "person",
+      "devanagari": "वसिष्ठ",
+      "description": {
+        "T": [
+          "Family priest of the Raghus. He counsels the king to keep his word (Bāla 20)."
+        ],
+        "Tr": [],
+        "I": [
+          "Family priest of the Raghus (source).",
+          "Brahmin dress: undyed, draped; the sacred thread (material world)."
+        ],
+        "S": [
+          "Among the ministers, frame-right and deeper, in films 1–4.",
+          "Rises once, in film 5, and the whole room registers it.",
+          "Speaks once, in film 6. That is the arc's turn.",
+          "He never raises his voice, never gestures, never leans forward."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "brahmin dress, thread, restraint of ornament",
+          "from": "MAT-AJANTA"
+        },
+        {
+          "for": "seated position in a court",
+          "from": "MAT-AMARAVATI"
+        },
+        {
+          "for": "he counsels the king to keep his word",
+          "from": "SRC.DUTT.VR",
+          "note": "Bāla SECTION XXI"
+        }
+      ],
+      "face": null,
+      "never": [
+        "a staff",
+        "a throne of his own",
+        "an oracular expression",
+        "raising his voice",
+        "standing over the king",
+        "a second line of dialogue"
+      ],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "SUMANTRA",
+      "name": "Sumantra",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Eighth minister; charioteer."
+        ],
+        "Tr": [],
+        "I": [
+          "Older, capable, plain dress — a man who drives."
+        ],
+        "S": [
+          "In Ayodhyā he returns with an empty chariot. That is his whole performance."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "COURT",
+      "name": "The ministers and court",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Eight ministers, named (Bāla 7)."
+        ],
+        "Tr": [],
+        "I": [
+          "Eight to twelve men; cream and undyed antarīya, dark shawls; a range of ages, builds and complexions; oiled bound hair; minimal ornament."
+        ],
+        "S": [
+          "Seated on the floor or low stools — no chairs with backs. They react once per film, never more."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "how many, at what density, doing what",
+          "from": "MAT-SANCHI",
+          "note": "crowd panels — the corrective to a wall of extras facing camera"
+        },
+        {
+          "for": "individual faces rather than types",
+          "from": "MAT-AJANTA"
+        }
+      ],
+      "face": null,
+      "never": [
+        "uniform costume",
+        "matched faces",
+        "a crowd that moves together"
+      ],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "RISHYASHRINGA",
+      "name": "Ṛśyaśṛṅga",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Vibhāṇḍaka's son, forest-raised, who has never seen a woman (Bāla 9)."
+        ],
+        "Tr": [],
+        "I": [
+          "Young, unworldly, bark cloth."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "SHANTA",
+      "name": "Śāntā",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Daughter of Daśaratha's line, given to Ṛśyaśṛṅga."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "SHATANANDA",
+      "name": "Śatānanda",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Janaka's priest; he tells Rāma Viśvāmitra's history in arc 13."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Middle-aged brahmin, seated, a narrator's stillness."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "JANAKA",
+      "name": "Janaka",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "King of Mithilā; keeper of the bow; Sītā's father."
+        ],
+        "Tr": [],
+        "I": [
+          "A king with a scholar's bearing — Mithilā is known for it."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "SITA",
+      "name": "Sītā",
+      "kind": "person",
+      "devanagari": "सीता",
+      "description": {
+        "T": [
+          "Janaka's daughter, found in a furrow."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Human and specific. NO divine radiance."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA",
+        "ARANYA",
+        "SUNDARA",
+        "YUDDHA",
+        "UTTARA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "AHALYA",
+      "name": "Ahalyā",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [
+        "eroticised",
+        "a statue turning to flesh",
+        "shown as at fault"
+      ],
+      "kanda": [
+        "BALA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "TATAKA",
+      "name": "Tāṭakā",
+      "kind": "person",
+      "devanagari": "ताटका",
+      "description": {
+        "T": [
+          "A yakṣī with the strength of a thousand elephants (Bāla 23); Sunda's wife, Mārīca's mother; cursed by Agastya."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [
+        {
+          "for": "she is SHOWN to them on the road, not an ambush",
+          "from": "TRD-TULSI",
+          "id": "TV-03"
+        },
+        {
+          "for": "liberation granted at death",
+          "from": "TRD-TULSI",
+          "id": "TRD-T-006",
+          "handling": "memo input only — not adopted"
+        }
+      ],
+      "face": null,
+      "never": [
+        "designing her before the memo",
+        "using her form to justify the killing"
+      ],
+      "kanda": [
+        "BALA"
+      ],
+      "gate": "DO NOT DEPICT until the memo is written."
+    },
+    {
+      "id": "MARICHA",
+      "name": "Mārīca & Subāhu",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "They break the rite and defile the altar (Bāla 18); incited by Rāvaṇa (Bāla 19.18)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "ARANYA"
+      ],
+      "gate": "DO NOT DEPICT in Bāla 18–22. Named in two films, seen in neither."
+    },
+    {
+      "id": "RAVANA",
+      "name": "Rāvaṇa",
+      "kind": "person",
+      "devanagari": "रावण",
+      "description": {
+        "T": [
+          "Of the Paulastya line; brother of Vaiśravaṇa; son of Viśravas; holds a boon from Brahmā (Bāla 19)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "ARANYA",
+        "SUNDARA",
+        "YUDDHA",
+        "UTTARA"
+      ],
+      "gate": "DO NOT DEPICT in Bāla. No silhouette, no shadow, no hand, no throne, no Laṅkā. The room widening on the name is the whole effect.",
+      "memo": true
+    },
+    {
+      "id": "HANUMAN",
+      "name": "Hanumān",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [
+        "a costumed human",
+        "a cartoon monkey",
+        "a comic register"
+      ],
+      "kanda": [
+        "KISHKINDHA",
+        "SUNDARA",
+        "YUDDHA",
+        "UTTARA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "MANTHARA",
+      "name": "Mantharā",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [
+        "hunchback grotesque",
+        "ugliness as moral signal — that reading is tradition and television, not a fact to render"
+      ],
+      "kanda": [
+        "AYODHYA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "SURPANAKHA",
+      "name": "Śūrpaṇakhā",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "ARANYA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "PARASHURAMA",
+      "name": "Paraśurāma",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Arrives with an axe on the road home (Bāla 15)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Heavy, used, unglamorous — the axe and the man both."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "VALMIKI",
+      "name": "Vālmīki",
+      "kind": "person",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "The poet. The krauñca birds, the hunter, the first śloka (Bāla 2)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "The only figure who may be shown writing or reciting."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "UTTARA"
+      ]
+    },
+    {
+      "id": "AYODHYA",
+      "name": "Ayodhyā",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "On the Sarayū; founded by Manu; twelve yojanas long; broad well-laid highways, watered and strewn with flowers; gates and bolts; shops in rows; theatres, gardens, mango groves; a moat (Bāla 5–6)."
+        ],
+        "Tr": [],
+        "I": [
+          "Timber and plaster over brick. Packed earth streets. Water tanks. Gardens within walls. A rammed-earth and brick wall with timber gates."
+        ],
+        "S": [
+          "Prosperous, ordinary, alive — not a golden fantasy skyline."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "street, gate, cart, building-in-section",
+          "from": "MAT-SANCHI"
+        },
+        {
+          "for": "what the spine actually specifies",
+          "from": "SPINE",
+          "note": "Bāla 5–6 — length, highways, moat, shops, gardens. Rare specificity; follow it."
+        }
+      ],
+      "face": null,
+      "never": [
+        "a fantasy skyline",
+        "a golden city",
+        "domes",
+        "marble"
+      ],
+      "kanda": [
+        "BALA",
+        "AYODHYA",
+        "UTTARA"
+      ]
+    },
+    {
+      "id": "SABHA",
+      "name": "The assembly hall of Ayodhyā",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "The spine describes NONE of this. Every line below is inference or staging, declared."
+        ],
+        "Tr": [],
+        "I": [
+          "Timber posts and carved beams; mud-brick and lime plaster; worn sandstone floor; post-and-lintel throughout.",
+          "High pierced lattice openings on one side.",
+          "Brass oil lamps on stands; undyed unpatterned drapes."
+        ],
+        "S": [
+          "Light enters from frame-left, always. The hall runs away from camera to a low dais."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "post-and-lintel timber vocabulary, toraṇa, railings",
+          "from": "MAT-BHARHUT"
+        },
+        {
+          "for": "hall geometry, seating, attendance",
+          "from": "MAT-AMARAVATI"
+        },
+        {
+          "for": "interior colour, lamps, drapes, painted plaster",
+          "from": "MAT-AJANTA",
+          "note": "our palette reference — if a grade cannot sit beside an Ajanta plate it is wrong"
+        }
+      ],
+      "face": null,
+      "never": [
+        "domes",
+        "later-vocabulary arches",
+        "marble",
+        "carpets",
+        "chandeliers",
+        "glass",
+        "pedestal thrones",
+        "gopurams indoors"
+      ],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "GATE",
+      "name": "The gate of Ayodhyā",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Timber leaves, twice the height of a man, in a rammed-earth and brick wall.",
+          "Iron strap hinges and a drawbar. No arch of later vocabulary — a flat lintel of heavy beam.",
+          "The road outside is packed earth, rutted by carts, not paved.",
+          "Bharhut and Sanchi show exactly this: gateway as post-and-lintel timber, rendered in stone."
+        ],
+        "S": [
+          "Opened inward, by two men, without ceremony.",
+          "It is a gate, not a monument. Nothing about the shot should announce a departure.",
+          "Afternoon light, the sun lower in the west."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "gateway form, hinge, lintel",
+          "from": "MAT-BHARHUT",
+          "note": "2nd c. BCE railings — timber vocabulary in stone"
+        },
+        {
+          "for": "toraṇa proportion and carved crossbar",
+          "from": "MAT-SANCHI"
+        }
+      ],
+      "face": null,
+      "never": [
+        "a ceremonial arch",
+        "carved deities on the jamb",
+        "a crowd gathered to watch",
+        "banners",
+        "torchlight",
+        "anything that makes leaving look grand"
+      ],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "SARAYU",
+      "name": "The Sarayū",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "They reach its bank at the departure (Bāla 21)."
+        ],
+        "Tr": [],
+        "I": [
+          "Wide, shallow, sandy banks, earth ghats, timber boats."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "ROAD",
+      "name": "The road out",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Afternoon light, the sun lower in the west."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "FOREST_DRY",
+      "name": "Tāṭakā's forest",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Once the prosperous countries of Malada and Karūṣa; ruined by her (Bāla 23).",
+          "Loud with cicadas; big cats, boar, elephants; dhava, aśvakarṇa, bilva, tinduka, pāṭala, badarī trees."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Thorn, bare branch, hard shadow, dust. Silent rather than lush."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "named trees and the soundscape",
+          "from": "SPINE",
+          "note": "Bāla 23 — dhava, aśvakarṇa, bilva, tinduka, pāṭala, badarī; cicadas"
+        },
+        {
+          "for": "landscape as emotional register",
+          "from": "TRD-KAMBAN",
+          "id": "KV-02",
+          "caution": "attested, not verified"
+        }
+      ],
+      "face": null,
+      "never": [
+        "mist",
+        "vines",
+        "rainforest",
+        "anything that reads as fantasy wilderness"
+      ],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "SIDDHASHRAMA",
+      "name": "Siddhāśrama",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Vāmana's former hermitage (Bāla 28)."
+        ],
+        "Tr": [],
+        "I": [
+          "A clearing, thatched huts, a brick fire altar, cattle, students."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "GANGA",
+      "name": "The Gaṅgā",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Wide, shallow, sandy banks, earth ghats, timber boats."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA",
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "MITHILA",
+      "name": "Mithilā",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Must read as a DIFFERENT place from Ayodhyā — different timber, different plaster colour, different light."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "CHITRAKUT",
+      "name": "Chitrakūṭ",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Rock, river, green shade."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "PANCHAVATI",
+      "name": "Pañcavaṭī",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Deep forest; a built hut."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "ARANYA"
+      ]
+    },
+    {
+      "id": "KISHKINDHA",
+      "name": "Kiṣkindhā",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "KISHKINDHA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "LANKA",
+      "name": "Laṅkā",
+      "kind": "place",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "SUNDARA",
+        "YUDDHA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "THRONE",
+      "name": "The throne",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Low teak seat, knee height — this world sits near the floor, not on a dais chair.",
+          "Carved armrests with gold leaf worn thin where hands have rested for forty years.",
+          "A single sandstone step, not a pedestal.",
+          "Amarāvatī court panels show the geometry: the seated king barely above those around him."
+        ],
+        "S": [
+          "Deep red cloth over the seat, the same red as his uttarīya.",
+          "Occupied in films 1–2. EMPTY from film 3 onward, and never re-occupied.",
+          "The empty seat is a character in films 3–6. Frame it as one."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "seat height, armrest form, court geometry",
+          "from": "MAT-AMARAVATI"
+        },
+        {
+          "for": "gold-leaf treatment on timber",
+          "from": "MAT-BHARHUT"
+        }
+      ],
+      "face": null,
+      "never": [
+        "high-backed",
+        "jewelled",
+        "a pedestal",
+        "a canopy",
+        "steps of more than one",
+        "European throne silhouette",
+        "re-occupied after film 3"
+      ],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "STAFF",
+      "name": "Viśvāmitra's staff",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Plain dark wood — dense, close-grained, the kind cut from a hard tree and kept.",
+          "Shoulder height on a tall man. Worn pale and smooth at the grip.",
+          "The base is blunt and splayed from years of being set down on stone.",
+          "No carving, no binding, no finial. An ascetic's staff is a walking stick that has walked."
+        ],
+        "S": [
+          "Planted at his right through films 1–4. It does not move.",
+          "Raised once, in film 5, and set down on sandstone — the only percussive sound in the arc.",
+          "In the strike frame it is the only thing in focus."
+        ]
+      },
+      "evidence": [
+        {
+          "for": "ascetic staff form",
+          "from": "MAT-AJANTA",
+          "note": "ascetic figures in the murals"
+        },
+        {
+          "for": "how a standing figure holds it",
+          "from": "MAT-CHOLA",
+          "caution": "posture only"
+        }
+      ],
+      "face": null,
+      "never": [
+        "ornament",
+        "a finial",
+        "a trident",
+        "metal binding",
+        "glow",
+        "a second staff",
+        "being carried horizontally",
+        "leaning against anything"
+      ],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "LAMP",
+      "name": "Brass oil lamp",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Standing lamp, shallow oil dish, single wick, small flame."
+        ],
+        "S": []
+      },
+      "evidence": [
+        {
+          "for": "form and how its light falls",
+          "from": "MAT-AJANTA"
+        },
+        {
+          "for": "stand profile",
+          "from": "MAT-AMARAVATI"
+        }
+      ],
+      "face": null,
+      "never": [
+        "candles",
+        "glass",
+        "lanterns"
+      ],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "RING",
+      "name": "Daśaratha's ring",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "One plain gold band, right hand — the continuity anchor in every hand detail."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [
+        "gemstones",
+        "multiple rings"
+      ],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "BOW",
+      "name": "A bow",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Recurved Indian form, wood and horn, unstrung at rest."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "SHIVA_BOW",
+      "name": "Śiva's bow",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Kept by Janaka; no one can string it (Bāla 30)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Enormous, ancient, covered, on a wheeled chest. Its WEIGHT is the point, not its decoration."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "PAYASA",
+      "name": "The vessel from the fire",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Golden, silver-lidded, carried by a being that rises from the fire (Bāla 15)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ],
+      "memo": true
+    },
+    {
+      "id": "HORSE",
+      "name": "The sacrificial horse",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Released for a year; returns (Bāla 13)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "An animal, garlanded. Not a spectacle."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "AXE",
+      "name": "Paraśurāma's axe",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": [
+          "Heavy, used, unglamorous."
+        ]
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "SANDALS",
+      "name": "The sandals",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [
+          "Plain wood."
+        ],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "AYODHYA"
+      ]
+    },
+    {
+      "id": "YUPA",
+      "name": "The sacrificial post",
+      "kind": "object",
+      "devanagari": null,
+      "description": {
+        "T": [
+          "Twenty-one posts of bilva, khadira, palāśa, śleṣmātaka and devadāru; eight-angled, smoothed, wrapped in cloth, garlanded (Bāla 13)."
+        ],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [
+        {
+          "for": "everything",
+          "from": "SPINE",
+          "note": "Bāla 13 names the woods, the count, the eight angles, the cloth and garlands. Follow exactly."
+        }
+      ],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "THREAD_PROMISE",
+      "name": "The promise",
+      "kind": "thread",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "THREAD_OBSERVANCE",
+      "name": "The sage's observance",
+      "kind": "thread",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "THREAD_WHO_IS_VIS",
+      "name": "Who is Viśvāmitra?",
+      "kind": "thread",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
+    },
+    {
+      "id": "THREAD_BOONS",
+      "name": "The boons owed to Kaikeyī",
+      "kind": "thread",
+      "devanagari": null,
+      "description": {
+        "T": [],
+        "Tr": [],
+        "I": [],
+        "S": []
+      },
+      "evidence": [],
+      "face": null,
+      "never": [],
+      "kanda": [
+        "BALA"
+      ]
     }
   ]
 }

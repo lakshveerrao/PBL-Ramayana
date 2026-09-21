@@ -1,0 +1,62 @@
+GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.
+
+Prompts are ASSEMBLED from data/entities.json, data/material_world.json and
+data/locks.json by lib/prompt.js. They are never written by hand. If a frame
+comes back wrong, the fix is in the data.
+
+--- 07-02 -------------------------------------------------------------
+insert shot, 100mm, floor — lens at 30cm, 9:16 vertical. IN FRAME: two pairs of young bare feet on stone, from behind — feet only, no faces. Rāma: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. Lakṣmaṇa: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-03 -------------------------------------------------------------
+ms shot, 50mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). Rāma: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Rāma (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-04 -------------------------------------------------------------
+ms shot, 85mm, standing eye level, 9:16 vertical. Rāma: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Rāma (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-05 -------------------------------------------------------------
+ms shot, 85mm, standing eye level, 9:16 vertical. Lakṣmaṇa: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Lakṣmaṇa (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-06 -------------------------------------------------------------
+insert shot, 100mm, standing eye level, 9:16 vertical. IN FRAME: a woman's hand releasing the edge of a sleeve — hand only, NO FACE. Kausalyā: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-07 -------------------------------------------------------------
+wide shot, 35mm, standing eye level, 9:16 vertical. Viśvāmitra: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Viśvāmitra (studio reference package). The assembly hall of Ayodhyā: Light enters from frame-left, always; The hall runs away from camera to a low dais; Timber posts and carved beams; mud-brick and lime plaster; worn sandstone floor; post-and-lintel throughout; High pierced lattice openings on one side. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-08 -------------------------------------------------------------
+wide shot, 35mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). The assembly hall of Ayodhyā: Light enters from frame-left, always; The hall runs away from camera to a low dais; Timber posts and carved beams; mud-brick and lime plaster; worn sandstone floor; post-and-lintel throughout; High pierced lattice openings on one side. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-09 -------------------------------------------------------------
+ms shot, 50mm, standing eye level, 9:16 vertical. Viśvāmitra: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Viśvāmitra (studio reference package). one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-10 -------------------------------------------------------------
+ms shot, 50mm, standing eye level, 9:16 vertical. IN FRAME: Rāma crossing the threshold, from behind — his back, no face. Rāma: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-11 -------------------------------------------------------------
+ms shot, 50mm, standing eye level, 9:16 vertical. IN FRAME: Lakṣmaṇa crossing the threshold, from behind — his back, no face. Lakṣmaṇa: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-12 -------------------------------------------------------------
+wide shot, 35mm, standing eye level, 9:16 vertical. The gate of Ayodhyā: Opened inward, by two men, without ceremony; It is a gate, not a monument; Nothing about the shot should announce a departure; Afternoon light, the sun lower in the west; Timber leaves, twice the height of a man, in a rammed-earth and brick wall; Iron strap hinges and a drawbar; No arch of later vocabulary — a flat lintel of heavy beam. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-13 -------------------------------------------------------------
+wide shot, 24mm, standing eye level, 9:16 vertical. Ayodhyā: Prosperous, ordinary, alive — not a golden fantasy skyline; Timber and plaster over brick; Packed earth streets; Water tanks; Gardens within walls; A rammed-earth and brick wall with timber gates. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-14 -------------------------------------------------------------
+wide shot, 35mm, standing eye level, 9:16 vertical. IN FRAME: three men walking away in order, from behind — backs only, no faces. Viśvāmitra: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. Rāma: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. Lakṣmaṇa: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-15 -------------------------------------------------------------
+insert shot, 100mm, standing eye level, 9:16 vertical. IN FRAME: a bow carried on a shoulder, from behind — no face. Rāma: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-16 -------------------------------------------------------------
+wide shot, 24mm, standing eye level, 9:16 vertical. The road out: Afternoon light, the sun lower in the west. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-17 -------------------------------------------------------------
+cu shot, 85mm, standing eye level, 9:16 vertical. Rāma: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Rāma (studio reference package). one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-18 -------------------------------------------------------------
+wide shot, 24mm, standing eye level, 9:16 vertical. Ayodhyā: Prosperous, ordinary, alive — not a golden fantasy skyline; Timber and plaster over brick; Packed earth streets; Water tanks; Gardens within walls; A rammed-earth and brick wall with timber gates. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-19 -------------------------------------------------------------
+wide shot, 35mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). The assembly hall of Ayodhyā: Light enters from frame-left, always; The hall runs away from camera to a low dais; Timber posts and carved beams; mud-brick and lime plaster; worn sandstone floor; post-and-lintel throughout; High pierced lattice openings on one side. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 07-21 -------------------------------------------------------------
+wide shot, 24mm, standing eye level, 9:16 vertical. IN FRAME: three small figures walking away down the road, far off — no faces discernible. Viśvāmitra: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. Rāma: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. Lakṣmaṇa: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. The road out: Afternoon light, the sun lower in the west. one motivated source: afternoon sun from frame-left, lower in the west (artistic). palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.

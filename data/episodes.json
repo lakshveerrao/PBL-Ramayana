@@ -1,17 +1,2364 @@
 {
-  "_doc": "Named beats across the whole Ramayana. Most are grey: a named beat, not an authored film. A grey node is correct, not missing work, and every surface that draws one says so when it is opened.",
   "episodes": [
-    { "id": "EP.BALA.18.A", "kanda": "BALA", "sarga": 18, "name": "The sage at the gate", "authored": true, "film": "M1" },
-    { "id": "EP.BALA.18.B", "kanda": "BALA", "sarga": 18, "name": "The king's offer", "authored": true, "film": "M2" },
-    { "id": "EP.BALA.20.A", "kanda": "BALA", "sarga": 20, "name": "The refusal", "authored": true, "film": "M3" },
-    { "id": "EP.BALA.21.A", "kanda": "BALA", "sarga": 21, "name": "The priest speaks", "authored": true, "film": "M4" },
-    { "id": "EP.BALA.22.A", "kanda": "BALA", "sarga": 22, "name": "The king yields", "authored": true, "film": "M5" },
-    { "id": "EP.BALA.22.B", "kanda": "BALA", "sarga": 22, "name": "Departure", "authored": true, "film": "M6" },
-    { "id": "EP.BALA.24.A", "kanda": "BALA", "sarga": 24, "name": "The road south", "authored": true, "film": "M7" },
-    { "id": "EP.BALA.19.A", "kanda": "BALA", "sarga": 19, "name": "The sage states his need", "authored": false, "film": null },
-    { "id": "EP.BALA.23.A", "kanda": "BALA", "sarga": 23, "name": "The first night", "authored": false, "film": null },
-    { "id": "EP.BALA.25.A", "kanda": "BALA", "sarga": 25, "name": "The history of the wood", "authored": false, "film": null, "design_block": "TATAKA" },
-    { "id": "EP.BALA.26.A", "kanda": "BALA", "sarga": 26, "name": "The encounter in the wood", "authored": false, "film": null, "design_block": "TATAKA" }
-  ],
-  "grey_node_copy": "A named beat. Not an authored film yet. Nothing has been written for this and nothing is claimed."
+    {
+      "id": "BALA.A1.1",
+      "kanda": "BALA",
+      "arc": "A1",
+      "n": 1,
+      "title": "The question: who is such a man?",
+      "authored": false
+    },
+    {
+      "id": "BALA.A1.2",
+      "kanda": "BALA",
+      "arc": "A1",
+      "n": 2,
+      "title": "Nārada answers in one breath",
+      "authored": false
+    },
+    {
+      "id": "BALA.A2.1",
+      "kanda": "BALA",
+      "arc": "A2",
+      "n": 1,
+      "title": "A hunter, two birds",
+      "authored": false
+    },
+    {
+      "id": "BALA.A2.2",
+      "kanda": "BALA",
+      "arc": "A2",
+      "n": 2,
+      "title": "Grief that comes out as metre",
+      "authored": false
+    },
+    {
+      "id": "BALA.A2.3",
+      "kanda": "BALA",
+      "arc": "A2",
+      "n": 3,
+      "title": "Brahmā's command",
+      "authored": false
+    },
+    {
+      "id": "BALA.A2.4",
+      "kanda": "BALA",
+      "arc": "A2",
+      "n": 4,
+      "title": "The sons who will sing it",
+      "authored": false
+    },
+    {
+      "id": "BALA.A3.1",
+      "kanda": "BALA",
+      "arc": "A3",
+      "n": 1,
+      "title": "A city with no one wanting",
+      "authored": false
+    },
+    {
+      "id": "BALA.A3.2",
+      "kanda": "BALA",
+      "arc": "A3",
+      "n": 2,
+      "title": "The king who has everything but one thing",
+      "authored": false
+    },
+    {
+      "id": "BALA.A4.1",
+      "kanda": "BALA",
+      "arc": "A4",
+      "n": 1,
+      "title": "Eight ministers, one silence",
+      "authored": false
+    },
+    {
+      "id": "BALA.A4.2",
+      "kanda": "BALA",
+      "arc": "A4",
+      "n": 2,
+      "title": "The sacrifice proposed",
+      "authored": false
+    },
+    {
+      "id": "BALA.A4.3",
+      "kanda": "BALA",
+      "arc": "A4",
+      "n": 3,
+      "title": "The story of Ṛśyaśṛṅga",
+      "authored": false
+    },
+    {
+      "id": "BALA.A4.4",
+      "kanda": "BALA",
+      "arc": "A4",
+      "n": 4,
+      "title": "Fetching him",
+      "authored": false
+    },
+    {
+      "id": "BALA.A5.1",
+      "kanda": "BALA",
+      "arc": "A5",
+      "n": 1,
+      "title": "A year of preparation",
+      "authored": false
+    },
+    {
+      "id": "BALA.A5.2",
+      "kanda": "BALA",
+      "arc": "A5",
+      "n": 2,
+      "title": "The horse released",
+      "authored": false
+    },
+    {
+      "id": "BALA.A5.3",
+      "kanda": "BALA",
+      "arc": "A5",
+      "n": 3,
+      "title": "The fire answers",
+      "authored": false
+    },
+    {
+      "id": "BALA.A5.4",
+      "kanda": "BALA",
+      "arc": "A5",
+      "n": 4,
+      "title": "The pāyasa divided",
+      "authored": false
+    },
+    {
+      "id": "BALA.A6.1",
+      "kanda": "BALA",
+      "arc": "A6",
+      "n": 1,
+      "title": "Four sons",
+      "authored": false
+    },
+    {
+      "id": "BALA.A6.2",
+      "kanda": "BALA",
+      "arc": "A6",
+      "n": 2,
+      "title": "Boyhood, briefly",
+      "authored": false
+    },
+    {
+      "id": "BALA.A6.3",
+      "kanda": "BALA",
+      "arc": "A6",
+      "n": 3,
+      "title": "Elsewhere: the forest fills with allies",
+      "authored": false
+    },
+    {
+      "id": "BALA.A7.1",
+      "kanda": "BALA",
+      "arc": "A7",
+      "n": 1,
+      "title": "M1",
+      "authored": true
+    },
+    {
+      "id": "BALA.A7.2",
+      "kanda": "BALA",
+      "arc": "A7",
+      "n": 2,
+      "title": "M2",
+      "authored": true
+    },
+    {
+      "id": "BALA.A7.3",
+      "kanda": "BALA",
+      "arc": "A7",
+      "n": 3,
+      "title": "M3",
+      "authored": true
+    },
+    {
+      "id": "BALA.A7.4",
+      "kanda": "BALA",
+      "arc": "A7",
+      "n": 4,
+      "title": "M4",
+      "authored": true
+    },
+    {
+      "id": "BALA.A7.5",
+      "kanda": "BALA",
+      "arc": "A7",
+      "n": 5,
+      "title": "M5",
+      "authored": true
+    },
+    {
+      "id": "BALA.A7.6",
+      "kanda": "BALA",
+      "arc": "A7",
+      "n": 6,
+      "title": "M6",
+      "authored": true
+    },
+    {
+      "id": "BALA.A7.7",
+      "kanda": "BALA",
+      "arc": "A7",
+      "n": 7,
+      "title": "M7",
+      "authored": true
+    },
+    {
+      "id": "BALA.A8.1",
+      "kanda": "BALA",
+      "arc": "A8",
+      "n": 1,
+      "title": "M8",
+      "authored": true
+    },
+    {
+      "id": "BALA.A8.2",
+      "kanda": "BALA",
+      "arc": "A8",
+      "n": 2,
+      "title": "M9",
+      "authored": true
+    },
+    {
+      "id": "BALA.A8.3",
+      "kanda": "BALA",
+      "arc": "A8",
+      "n": 3,
+      "title": "M10",
+      "authored": true
+    },
+    {
+      "id": "BALA.A8.4",
+      "kanda": "BALA",
+      "arc": "A8",
+      "n": 4,
+      "title": "The woman who was cursed",
+      "authored": false
+    },
+    {
+      "id": "BALA.A8.5",
+      "kanda": "BALA",
+      "arc": "A8",
+      "n": 5,
+      "title": "The first killing",
+      "authored": false
+    },
+    {
+      "id": "BALA.A9.1",
+      "kanda": "BALA",
+      "arc": "A9",
+      "n": 1,
+      "title": "The weapons given",
+      "authored": false
+    },
+    {
+      "id": "BALA.A9.2",
+      "kanda": "BALA",
+      "arc": "A9",
+      "n": 2,
+      "title": "The weapons recalled",
+      "authored": false
+    },
+    {
+      "id": "BALA.A10.1",
+      "kanda": "BALA",
+      "arc": "A10",
+      "n": 1,
+      "title": "The hermitage where Viṣṇu dwelt",
+      "authored": false
+    },
+    {
+      "id": "BALA.A10.2",
+      "kanda": "BALA",
+      "arc": "A10",
+      "n": 2,
+      "title": "Six days without sleep",
+      "authored": false
+    },
+    {
+      "id": "BALA.A10.3",
+      "kanda": "BALA",
+      "arc": "A10",
+      "n": 3,
+      "title": "They come",
+      "authored": false
+    },
+    {
+      "id": "BALA.A10.4",
+      "kanda": "BALA",
+      "arc": "A10",
+      "n": 4,
+      "title": "One thrown, one burnt",
+      "authored": false
+    },
+    {
+      "id": "BALA.A10.5",
+      "kanda": "BALA",
+      "arc": "A10",
+      "n": 5,
+      "title": "The rite completed",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.1",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 1,
+      "title": "Setting out at dawn",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.2",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 2,
+      "title": "The daughters of Kuśanābha",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.3",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 3,
+      "title": "Gaṅgā's two banks",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.4",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 4,
+      "title": "The sons of Sagara",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.5",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 5,
+      "title": "Digging to the sea",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.6",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 6,
+      "title": "Bhagīratha's penance",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.7",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 7,
+      "title": "The river comes down",
+      "authored": false
+    },
+    {
+      "id": "BALA.A11.8",
+      "kanda": "BALA",
+      "arc": "A11",
+      "n": 8,
+      "title": "The churning of the ocean",
+      "authored": false
+    },
+    {
+      "id": "BALA.A12.1",
+      "kanda": "BALA",
+      "arc": "A12",
+      "n": 1,
+      "title": "A hermitage nobody enters",
+      "authored": false
+    },
+    {
+      "id": "BALA.A12.2",
+      "kanda": "BALA",
+      "arc": "A12",
+      "n": 2,
+      "title": "What was done here",
+      "authored": false
+    },
+    {
+      "id": "BALA.A12.3",
+      "kanda": "BALA",
+      "arc": "A12",
+      "n": 3,
+      "title": "Dust becomes a woman",
+      "authored": false
+    },
+    {
+      "id": "BALA.A12.4",
+      "kanda": "BALA",
+      "arc": "A12",
+      "n": 4,
+      "title": "Gautama returns",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.1",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 1,
+      "title": "A king meets a sage",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.2",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 2,
+      "title": "The cow that would not be bought",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.3",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 3,
+      "title": "An army destroyed by a staff",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.4",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 4,
+      "title": "What a kṣatriya cannot buy",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.5",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 5,
+      "title": "A thousand years standing",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.6",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 6,
+      "title": "Menakā",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.7",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 7,
+      "title": "A thousand years more",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.8",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 8,
+      "title": "Rambhā, and the curse he does not use",
+      "authored": false
+    },
+    {
+      "id": "BALA.A13.9",
+      "kanda": "BALA",
+      "arc": "A13",
+      "n": 9,
+      "title": "The name he is finally given",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.1",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 1,
+      "title": "The bow nobody can string",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.2",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 2,
+      "title": "Whose daughter she is",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.3",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 3,
+      "title": "He lifts it",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.4",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 4,
+      "title": "It breaks",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.5",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 5,
+      "title": "Word sent to Ayodhyā",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.6",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 6,
+      "title": "Janaka's answer",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.7",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 7,
+      "title": "The lineage recited",
+      "authored": false
+    },
+    {
+      "id": "BALA.A14.8",
+      "kanda": "BALA",
+      "arc": "A14",
+      "n": 8,
+      "title": "Four brides",
+      "authored": false
+    },
+    {
+      "id": "BALA.A15.1",
+      "kanda": "BALA",
+      "arc": "A15",
+      "n": 1,
+      "title": "Omens on the road",
+      "authored": false
+    },
+    {
+      "id": "BALA.A15.2",
+      "kanda": "BALA",
+      "arc": "A15",
+      "n": 2,
+      "title": "The man who has killed kings",
+      "authored": false
+    },
+    {
+      "id": "BALA.A15.3",
+      "kanda": "BALA",
+      "arc": "A15",
+      "n": 3,
+      "title": "A second bow",
+      "authored": false
+    },
+    {
+      "id": "BALA.A15.4",
+      "kanda": "BALA",
+      "arc": "A15",
+      "n": 4,
+      "title": "The power leaves him",
+      "authored": false
+    },
+    {
+      "id": "BALA.A15.5",
+      "kanda": "BALA",
+      "arc": "A15",
+      "n": 5,
+      "title": "Home",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B1.1",
+      "kanda": "AYODHYA",
+      "arc": "B1",
+      "n": 1,
+      "title": "Twelve happy years",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B1.2",
+      "kanda": "AYODHYA",
+      "arc": "B1",
+      "n": 2,
+      "title": "The king decides",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B1.3",
+      "kanda": "AYODHYA",
+      "arc": "B1",
+      "n": 3,
+      "title": "A city decorating itself",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B1.4",
+      "kanda": "AYODHYA",
+      "arc": "B1",
+      "n": 4,
+      "title": "The night before",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B2.1",
+      "kanda": "AYODHYA",
+      "arc": "B2",
+      "n": 1,
+      "title": "Mantharā sees the flags",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B2.2",
+      "kanda": "AYODHYA",
+      "arc": "B2",
+      "n": 2,
+      "title": "She goes to Kaikeyī",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B2.3",
+      "kanda": "AYODHYA",
+      "arc": "B2",
+      "n": 3,
+      "title": "The argument that works",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B2.4",
+      "kanda": "AYODHYA",
+      "arc": "B2",
+      "n": 4,
+      "title": "Kaikeyī in the room of anger",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B3.1",
+      "kanda": "AYODHYA",
+      "arc": "B3",
+      "n": 1,
+      "title": "The king comes to her",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B3.2",
+      "kanda": "AYODHYA",
+      "arc": "B3",
+      "n": 2,
+      "title": "She names the two boons",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B3.3",
+      "kanda": "AYODHYA",
+      "arc": "B3",
+      "n": 3,
+      "title": "He cannot believe he heard it",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B3.4",
+      "kanda": "AYODHYA",
+      "arc": "B3",
+      "n": 4,
+      "title": "He begs",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B4.1",
+      "kanda": "AYODHYA",
+      "arc": "B4",
+      "n": 1,
+      "title": "A night on the floor",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B4.2",
+      "kanda": "AYODHYA",
+      "arc": "B4",
+      "n": 2,
+      "title": "He cannot say it aloud",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B4.3",
+      "kanda": "AYODHYA",
+      "arc": "B4",
+      "n": 3,
+      "title": "Sumantra sent for Rāma",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B5.1",
+      "kanda": "AYODHYA",
+      "arc": "B5",
+      "n": 1,
+      "title": "Rāma arrives",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B5.2",
+      "kanda": "AYODHYA",
+      "arc": "B5",
+      "n": 2,
+      "title": "Kaikeyī says it instead",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B5.3",
+      "kanda": "AYODHYA",
+      "arc": "B5",
+      "n": 3,
+      "title": "He accepts before his father finishes",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B5.4",
+      "kanda": "AYODHYA",
+      "arc": "B5",
+      "n": 4,
+      "title": "Telling Kausalyā",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B6.1",
+      "kanda": "AYODHYA",
+      "arc": "B6",
+      "n": 1,
+      "title": "Sītā is told to stay",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B6.2",
+      "kanda": "AYODHYA",
+      "arc": "B6",
+      "n": 2,
+      "title": "The argument she wins",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B6.3",
+      "kanda": "AYODHYA",
+      "arc": "B6",
+      "n": 3,
+      "title": "Lakṣmaṇa will not be left",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B7.1",
+      "kanda": "AYODHYA",
+      "arc": "B7",
+      "n": 1,
+      "title": "Lakṣmaṇa's rage",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B7.2",
+      "kanda": "AYODHYA",
+      "arc": "B7",
+      "n": 2,
+      "title": "Rāma answers him",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B8.1",
+      "kanda": "AYODHYA",
+      "arc": "B8",
+      "n": 1,
+      "title": "Bark cloth in the palace",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B8.2",
+      "kanda": "AYODHYA",
+      "arc": "B8",
+      "n": 2,
+      "title": "The city follows the chariot",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B8.3",
+      "kanda": "AYODHYA",
+      "arc": "B8",
+      "n": 3,
+      "title": "Left sleeping by a river",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B9.1",
+      "kanda": "AYODHYA",
+      "arc": "B9",
+      "n": 1,
+      "title": "Guha the boatman",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B9.2",
+      "kanda": "AYODHYA",
+      "arc": "B9",
+      "n": 2,
+      "title": "The crossing",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B9.3",
+      "kanda": "AYODHYA",
+      "arc": "B9",
+      "n": 3,
+      "title": "Matted hair",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B10.1",
+      "kanda": "AYODHYA",
+      "arc": "B10",
+      "n": 1,
+      "title": "Sumantra begs to stay",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B10.2",
+      "kanda": "AYODHYA",
+      "arc": "B10",
+      "n": 2,
+      "title": "The empty chariot turns back",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B10.3",
+      "kanda": "AYODHYA",
+      "arc": "B10",
+      "n": 3,
+      "title": "Ayodhyā sees it return",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B11.1",
+      "kanda": "AYODHYA",
+      "arc": "B11",
+      "n": 1,
+      "title": "The king asks for Kausalyā",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B11.2",
+      "kanda": "AYODHYA",
+      "arc": "B11",
+      "n": 2,
+      "title": "He tells the story of the boy at the river",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B11.3",
+      "kanda": "AYODHYA",
+      "arc": "B11",
+      "n": 3,
+      "title": "He dies calling a name",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B11.4",
+      "kanda": "AYODHYA",
+      "arc": "B11",
+      "n": 4,
+      "title": "A kingdom with no king",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B12.1",
+      "kanda": "AYODHYA",
+      "arc": "B12",
+      "n": 1,
+      "title": "Bharata fetched home",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B12.2",
+      "kanda": "AYODHYA",
+      "arc": "B12",
+      "n": 2,
+      "title": "He learns what was done for him",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B12.3",
+      "kanda": "AYODHYA",
+      "arc": "B12",
+      "n": 3,
+      "title": "He refuses it",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B12.4",
+      "kanda": "AYODHYA",
+      "arc": "B12",
+      "n": 4,
+      "title": "He will not touch his mother",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B13.1",
+      "kanda": "AYODHYA",
+      "arc": "B13",
+      "n": 1,
+      "title": "Bharata goes to the forest",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B13.2",
+      "kanda": "AYODHYA",
+      "arc": "B13",
+      "n": 2,
+      "title": "The argument at Chitrakūṭ",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B13.3",
+      "kanda": "AYODHYA",
+      "arc": "B13",
+      "n": 3,
+      "title": "The sandals given",
+      "authored": false
+    },
+    {
+      "id": "AYODHYA.B13.4",
+      "kanda": "AYODHYA",
+      "arc": "B13",
+      "n": 4,
+      "title": "Nandigrāma",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C1.1",
+      "kanda": "ARANYA",
+      "arc": "C1",
+      "n": 1,
+      "title": "Deeper in",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C1.2",
+      "kanda": "ARANYA",
+      "arc": "C1",
+      "n": 2,
+      "title": "Sages at Sutīkṣṇa's",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C1.3",
+      "kanda": "ARANYA",
+      "arc": "C1",
+      "n": 3,
+      "title": "Anasūyā and Sītā",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C1.4",
+      "kanda": "ARANYA",
+      "arc": "C1",
+      "n": 4,
+      "title": "Ten years of a life",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C2.1",
+      "kanda": "ARANYA",
+      "arc": "C2",
+      "n": 1,
+      "title": "The bones at the hermitage",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C2.2",
+      "kanda": "ARANYA",
+      "arc": "C2",
+      "n": 2,
+      "title": "The promise made",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C2.3",
+      "kanda": "ARANYA",
+      "arc": "C2",
+      "n": 3,
+      "title": "Sītā's warning about weapons",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C3.1",
+      "kanda": "ARANYA",
+      "arc": "C3",
+      "n": 1,
+      "title": "Agastya's gift",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C3.2",
+      "kanda": "ARANYA",
+      "arc": "C3",
+      "n": 2,
+      "title": "Pañcavaṭī built",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C3.3",
+      "kanda": "ARANYA",
+      "arc": "C3",
+      "n": 3,
+      "title": "Śūrpaṇakhā arrives",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C3.4",
+      "kanda": "ARANYA",
+      "arc": "C3",
+      "n": 4,
+      "title": "The refusal",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C3.5",
+      "kanda": "ARANYA",
+      "arc": "C3",
+      "n": 5,
+      "title": "What Lakṣmaṇa does",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C4.1",
+      "kanda": "ARANYA",
+      "arc": "C4",
+      "n": 1,
+      "title": "She goes to Khara",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C4.2",
+      "kanda": "ARANYA",
+      "arc": "C4",
+      "n": 2,
+      "title": "Fourteen thousand",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C4.3",
+      "kanda": "ARANYA",
+      "arc": "C4",
+      "n": 3,
+      "title": "Rāma alone against an army",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C4.4",
+      "kanda": "ARANYA",
+      "arc": "C4",
+      "n": 4,
+      "title": "Khara falls",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C5.1",
+      "kanda": "ARANYA",
+      "arc": "C5",
+      "n": 1,
+      "title": "She reaches Laṅkā",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C5.2",
+      "kanda": "ARANYA",
+      "arc": "C5",
+      "n": 2,
+      "title": "She describes Sītā",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C5.3",
+      "kanda": "ARANYA",
+      "arc": "C5",
+      "n": 3,
+      "title": "Rāvaṇa listens",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C6.1",
+      "kanda": "ARANYA",
+      "arc": "C6",
+      "n": 1,
+      "title": "Rāvaṇa goes to Mārīca",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C6.2",
+      "kanda": "ARANYA",
+      "arc": "C6",
+      "n": 2,
+      "title": "Mārīca refuses",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C6.3",
+      "kanda": "ARANYA",
+      "arc": "C6",
+      "n": 3,
+      "title": "He is made to go",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C6.4",
+      "kanda": "ARANYA",
+      "arc": "C6",
+      "n": 4,
+      "title": "The golden deer appears",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C7.1",
+      "kanda": "ARANYA",
+      "arc": "C7",
+      "n": 1,
+      "title": "Sītā asks for it",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C7.2",
+      "kanda": "ARANYA",
+      "arc": "C7",
+      "n": 2,
+      "title": "Rāma follows it",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C7.3",
+      "kanda": "ARANYA",
+      "arc": "C7",
+      "n": 3,
+      "title": "The voice calling Lakṣmaṇa's name",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C7.4",
+      "kanda": "ARANYA",
+      "arc": "C7",
+      "n": 4,
+      "title": "The line drawn",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C7.5",
+      "kanda": "ARANYA",
+      "arc": "C7",
+      "n": 5,
+      "title": "Lakṣmaṇa leaves",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C8.1",
+      "kanda": "ARANYA",
+      "arc": "C8",
+      "n": 1,
+      "title": "A mendicant at the door",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C8.2",
+      "kanda": "ARANYA",
+      "arc": "C8",
+      "n": 2,
+      "title": "The taking",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C8.3",
+      "kanda": "ARANYA",
+      "arc": "C8",
+      "n": 3,
+      "title": "Her ornaments fall",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C9.1",
+      "kanda": "ARANYA",
+      "arc": "C9",
+      "n": 1,
+      "title": "Jaṭāyu rises",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C9.2",
+      "kanda": "ARANYA",
+      "arc": "C9",
+      "n": 2,
+      "title": "An old bird against a chariot",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C9.3",
+      "kanda": "ARANYA",
+      "arc": "C9",
+      "n": 3,
+      "title": "Wings cut",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C9.4",
+      "kanda": "ARANYA",
+      "arc": "C9",
+      "n": 4,
+      "title": "He waits to tell them",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C10.1",
+      "kanda": "ARANYA",
+      "arc": "C10",
+      "n": 1,
+      "title": "The empty hut",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C10.2",
+      "kanda": "ARANYA",
+      "arc": "C10",
+      "n": 2,
+      "title": "Rāma searching",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C10.3",
+      "kanda": "ARANYA",
+      "arc": "C10",
+      "n": 3,
+      "title": "Jaṭāyu's last words",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C10.4",
+      "kanda": "ARANYA",
+      "arc": "C10",
+      "n": 4,
+      "title": "Kabandha",
+      "authored": false
+    },
+    {
+      "id": "ARANYA.C10.5",
+      "kanda": "ARANYA",
+      "arc": "C10",
+      "n": 5,
+      "title": "Śabarī's berries",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D1.1",
+      "kanda": "KISHKINDHA",
+      "arc": "D1",
+      "n": 1,
+      "title": "Hanumān in disguise",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D1.2",
+      "kanda": "KISHKINDHA",
+      "arc": "D1",
+      "n": 2,
+      "title": "The meeting on Ṛṣyamūka",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D1.3",
+      "kanda": "KISHKINDHA",
+      "arc": "D1",
+      "n": 3,
+      "title": "He carries them up the hill",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D2.1",
+      "kanda": "KISHKINDHA",
+      "arc": "D2",
+      "n": 1,
+      "title": "Sugrīva's story",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D2.2",
+      "kanda": "KISHKINDHA",
+      "arc": "D2",
+      "n": 2,
+      "title": "The friendship by fire",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D2.3",
+      "kanda": "KISHKINDHA",
+      "arc": "D2",
+      "n": 3,
+      "title": "The ornaments Sītā dropped",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D2.4",
+      "kanda": "KISHKINDHA",
+      "arc": "D2",
+      "n": 4,
+      "title": "Dundubhi's skeleton",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D2.5",
+      "kanda": "KISHKINDHA",
+      "arc": "D2",
+      "n": 5,
+      "title": "Seven sāla trees",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D3.1",
+      "kanda": "KISHKINDHA",
+      "arc": "D3",
+      "n": 1,
+      "title": "The first duel, indistinguishable",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D3.2",
+      "kanda": "KISHKINDHA",
+      "arc": "D3",
+      "n": 2,
+      "title": "The garland",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D3.3",
+      "kanda": "KISHKINDHA",
+      "arc": "D3",
+      "n": 3,
+      "title": "The second challenge",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D3.4",
+      "kanda": "KISHKINDHA",
+      "arc": "D3",
+      "n": 4,
+      "title": "The arrow from concealment",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D3.5",
+      "kanda": "KISHKINDHA",
+      "arc": "D3",
+      "n": 5,
+      "title": "Vālin's accusation",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D3.6",
+      "kanda": "KISHKINDHA",
+      "arc": "D3",
+      "n": 6,
+      "title": "Rāma's answer",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D4.1",
+      "kanda": "KISHKINDHA",
+      "arc": "D4",
+      "n": 1,
+      "title": "Tārā's lament",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D4.2",
+      "kanda": "KISHKINDHA",
+      "arc": "D4",
+      "n": 2,
+      "title": "Aṅgada",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D4.3",
+      "kanda": "KISHKINDHA",
+      "arc": "D4",
+      "n": 3,
+      "title": "Sugrīva crowned",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D5.1",
+      "kanda": "KISHKINDHA",
+      "arc": "D5",
+      "n": 1,
+      "title": "The rains",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D5.2",
+      "kanda": "KISHKINDHA",
+      "arc": "D5",
+      "n": 2,
+      "title": "Sugrīva forgets",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D5.3",
+      "kanda": "KISHKINDHA",
+      "arc": "D5",
+      "n": 3,
+      "title": "Lakṣmaṇa at the gate",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D5.4",
+      "kanda": "KISHKINDHA",
+      "arc": "D5",
+      "n": 4,
+      "title": "Tārā again",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D6.1",
+      "kanda": "KISHKINDHA",
+      "arc": "D6",
+      "n": 1,
+      "title": "The army summoned",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D6.2",
+      "kanda": "KISHKINDHA",
+      "arc": "D6",
+      "n": 2,
+      "title": "Four directions",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D6.3",
+      "kanda": "KISHKINDHA",
+      "arc": "D6",
+      "n": 3,
+      "title": "The ring given",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D6.4",
+      "kanda": "KISHKINDHA",
+      "arc": "D6",
+      "n": 4,
+      "title": "A month to return",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D7.1",
+      "kanda": "KISHKINDHA",
+      "arc": "D7",
+      "n": 1,
+      "title": "The cave of Svayamprabhā",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D7.2",
+      "kanda": "KISHKINDHA",
+      "arc": "D7",
+      "n": 2,
+      "title": "The fast unto death",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D7.3",
+      "kanda": "KISHKINDHA",
+      "arc": "D7",
+      "n": 3,
+      "title": "Sampāti hears the name",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D7.4",
+      "kanda": "KISHKINDHA",
+      "arc": "D7",
+      "n": 4,
+      "title": "He tells them where she is",
+      "authored": false
+    },
+    {
+      "id": "KISHKINDHA.D7.5",
+      "kanda": "KISHKINDHA",
+      "arc": "D7",
+      "n": 5,
+      "title": "Who will cross",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E1.1",
+      "kanda": "SUNDARA",
+      "arc": "E1",
+      "n": 1,
+      "title": "Jāmbavān reminds him what he is",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E1.2",
+      "kanda": "SUNDARA",
+      "arc": "E1",
+      "n": 2,
+      "title": "The mountain rises",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E1.3",
+      "kanda": "SUNDARA",
+      "arc": "E1",
+      "n": 3,
+      "title": "Surasā",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E1.4",
+      "kanda": "SUNDARA",
+      "arc": "E1",
+      "n": 4,
+      "title": "Siṃhikā",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E1.5",
+      "kanda": "SUNDARA",
+      "arc": "E1",
+      "n": 5,
+      "title": "The far shore",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E2.1",
+      "kanda": "SUNDARA",
+      "arc": "E2",
+      "n": 1,
+      "title": "Laṅkā from above",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E2.2",
+      "kanda": "SUNDARA",
+      "arc": "E2",
+      "n": 2,
+      "title": "Laṅkinī",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E2.3",
+      "kanda": "SUNDARA",
+      "arc": "E2",
+      "n": 3,
+      "title": "A city at night",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E2.4",
+      "kanda": "SUNDARA",
+      "arc": "E2",
+      "n": 4,
+      "title": "The palaces searched",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E2.5",
+      "kanda": "SUNDARA",
+      "arc": "E2",
+      "n": 5,
+      "title": "Rāvaṇa asleep",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E2.6",
+      "kanda": "SUNDARA",
+      "arc": "E2",
+      "n": 6,
+      "title": "Mandodarī mistaken for her",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E3.1",
+      "kanda": "SUNDARA",
+      "arc": "E3",
+      "n": 1,
+      "title": "The aśoka grove",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E3.2",
+      "kanda": "SUNDARA",
+      "arc": "E3",
+      "n": 2,
+      "title": "He sees her",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E3.3",
+      "kanda": "SUNDARA",
+      "arc": "E3",
+      "n": 3,
+      "title": "Rāvaṇa comes to her",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E3.4",
+      "kanda": "SUNDARA",
+      "arc": "E3",
+      "n": 4,
+      "title": "Her refusal",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E3.5",
+      "kanda": "SUNDARA",
+      "arc": "E3",
+      "n": 5,
+      "title": "The rākṣasīs threaten",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E4.1",
+      "kanda": "SUNDARA",
+      "arc": "E4",
+      "n": 1,
+      "title": "Trijaṭā's dream",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E4.2",
+      "kanda": "SUNDARA",
+      "arc": "E4",
+      "n": 2,
+      "title": "She asks for death",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E4.3",
+      "kanda": "SUNDARA",
+      "arc": "E4",
+      "n": 3,
+      "title": "The ring falls",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E4.4",
+      "kanda": "SUNDARA",
+      "arc": "E4",
+      "n": 4,
+      "title": "She knows the name",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E4.5",
+      "kanda": "SUNDARA",
+      "arc": "E4",
+      "n": 5,
+      "title": "The crest jewel",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E5.1",
+      "kanda": "SUNDARA",
+      "arc": "E5",
+      "n": 1,
+      "title": "The grove broken",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E5.2",
+      "kanda": "SUNDARA",
+      "arc": "E5",
+      "n": 2,
+      "title": "The kiṃkaras",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E5.3",
+      "kanda": "SUNDARA",
+      "arc": "E5",
+      "n": 3,
+      "title": "Akṣa",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E5.4",
+      "kanda": "SUNDARA",
+      "arc": "E5",
+      "n": 4,
+      "title": "Indrajit's noose",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E6.1",
+      "kanda": "SUNDARA",
+      "arc": "E6",
+      "n": 1,
+      "title": "Before Rāvaṇa",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E6.2",
+      "kanda": "SUNDARA",
+      "arc": "E6",
+      "n": 2,
+      "title": "Vibhīṣaṇa's counsel",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E6.3",
+      "kanda": "SUNDARA",
+      "arc": "E6",
+      "n": 3,
+      "title": "The tail set alight",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E6.4",
+      "kanda": "SUNDARA",
+      "arc": "E6",
+      "n": 4,
+      "title": "Laṅkā burns",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E6.5",
+      "kanda": "SUNDARA",
+      "arc": "E6",
+      "n": 5,
+      "title": "Was she burnt?",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E7.1",
+      "kanda": "SUNDARA",
+      "arc": "E7",
+      "n": 1,
+      "title": "The return leap",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E7.2",
+      "kanda": "SUNDARA",
+      "arc": "E7",
+      "n": 2,
+      "title": "The honey grove",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E7.3",
+      "kanda": "SUNDARA",
+      "arc": "E7",
+      "n": 3,
+      "title": "Seen her",
+      "authored": false
+    },
+    {
+      "id": "SUNDARA.E7.4",
+      "kanda": "SUNDARA",
+      "arc": "E7",
+      "n": 4,
+      "title": "Rāma is told",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F1.1",
+      "kanda": "YUDDHA",
+      "arc": "F1",
+      "n": 1,
+      "title": "The council in Laṅkā",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F1.2",
+      "kanda": "YUDDHA",
+      "arc": "F1",
+      "n": 2,
+      "title": "Vibhīṣaṇa speaks",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F1.3",
+      "kanda": "YUDDHA",
+      "arc": "F1",
+      "n": 3,
+      "title": "He is cast out",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F1.4",
+      "kanda": "YUDDHA",
+      "arc": "F1",
+      "n": 4,
+      "title": "He crosses",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F1.5",
+      "kanda": "YUDDHA",
+      "arc": "F1",
+      "n": 5,
+      "title": "Rāma accepts him",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F2.1",
+      "kanda": "YUDDHA",
+      "arc": "F2",
+      "n": 1,
+      "title": "The sea refuses",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F2.2",
+      "kanda": "YUDDHA",
+      "arc": "F2",
+      "n": 2,
+      "title": "Rāma draws on the sea",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F2.3",
+      "kanda": "YUDDHA",
+      "arc": "F2",
+      "n": 3,
+      "title": "Nala builds",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F2.4",
+      "kanda": "YUDDHA",
+      "arc": "F2",
+      "n": 4,
+      "title": "Five days",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F2.5",
+      "kanda": "YUDDHA",
+      "arc": "F2",
+      "n": 5,
+      "title": "The army crosses",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F3.1",
+      "kanda": "YUDDHA",
+      "arc": "F3",
+      "n": 1,
+      "title": "Aṅgada's embassy",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F3.2",
+      "kanda": "YUDDHA",
+      "arc": "F3",
+      "n": 2,
+      "title": "The siege set",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F3.3",
+      "kanda": "YUDDHA",
+      "arc": "F3",
+      "n": 3,
+      "title": "The first assault",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F3.4",
+      "kanda": "YUDDHA",
+      "arc": "F3",
+      "n": 4,
+      "title": "Indrajit's serpent arrows",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F3.5",
+      "kanda": "YUDDHA",
+      "arc": "F3",
+      "n": 5,
+      "title": "Garuḍa",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F4.1",
+      "kanda": "YUDDHA",
+      "arc": "F4",
+      "n": 1,
+      "title": "Kumbhakarṇa woken",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F4.2",
+      "kanda": "YUDDHA",
+      "arc": "F4",
+      "n": 2,
+      "title": "He tells his brother he is wrong",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F4.3",
+      "kanda": "YUDDHA",
+      "arc": "F4",
+      "n": 3,
+      "title": "He fights anyway",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F4.4",
+      "kanda": "YUDDHA",
+      "arc": "F4",
+      "n": 4,
+      "title": "He falls",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F5.1",
+      "kanda": "YUDDHA",
+      "arc": "F5",
+      "n": 1,
+      "title": "Indrajit unseen",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F5.2",
+      "kanda": "YUDDHA",
+      "arc": "F5",
+      "n": 2,
+      "title": "Lakṣmaṇa down",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F5.3",
+      "kanda": "YUDDHA",
+      "arc": "F5",
+      "n": 3,
+      "title": "The herb not found",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F5.4",
+      "kanda": "YUDDHA",
+      "arc": "F5",
+      "n": 4,
+      "title": "The mountain carried",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F5.5",
+      "kanda": "YUDDHA",
+      "arc": "F5",
+      "n": 5,
+      "title": "Indrajit killed",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F6.1",
+      "kanda": "YUDDHA",
+      "arc": "F6",
+      "n": 1,
+      "title": "Rāvaṇa's sons gone",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F6.2",
+      "kanda": "YUDDHA",
+      "arc": "F6",
+      "n": 2,
+      "title": "He comes out himself",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F6.3",
+      "kanda": "YUDDHA",
+      "arc": "F6",
+      "n": 3,
+      "title": "The first day",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F6.4",
+      "kanda": "YUDDHA",
+      "arc": "F6",
+      "n": 4,
+      "title": "Sent home unarmed",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F7.1",
+      "kanda": "YUDDHA",
+      "arc": "F7",
+      "n": 1,
+      "title": "The chariot of Indra",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F7.2",
+      "kanda": "YUDDHA",
+      "arc": "F7",
+      "n": 2,
+      "title": "The long duel",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F7.3",
+      "kanda": "YUDDHA",
+      "arc": "F7",
+      "n": 3,
+      "title": "The heads that return",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F7.4",
+      "kanda": "YUDDHA",
+      "arc": "F7",
+      "n": 4,
+      "title": "The arrow of Brahmā",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F7.5",
+      "kanda": "YUDDHA",
+      "arc": "F7",
+      "n": 5,
+      "title": "Rāvaṇa falls",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F7.6",
+      "kanda": "YUDDHA",
+      "arc": "F7",
+      "n": 6,
+      "title": "Mandodarī's lament",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F8.1",
+      "kanda": "YUDDHA",
+      "arc": "F8",
+      "n": 1,
+      "title": "Vibhīṣaṇa crowned",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F8.2",
+      "kanda": "YUDDHA",
+      "arc": "F8",
+      "n": 2,
+      "title": "She is sent for",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F8.3",
+      "kanda": "YUDDHA",
+      "arc": "F8",
+      "n": 3,
+      "title": "What is asked of her",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F8.4",
+      "kanda": "YUDDHA",
+      "arc": "F8",
+      "n": 4,
+      "title": "The fire",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F8.5",
+      "kanda": "YUDDHA",
+      "arc": "F8",
+      "n": 5,
+      "title": "Agni returns her",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F9.1",
+      "kanda": "YUDDHA",
+      "arc": "F9",
+      "n": 1,
+      "title": "The Puṣpaka",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F9.2",
+      "kanda": "YUDDHA",
+      "arc": "F9",
+      "n": 2,
+      "title": "Bharadvāja",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F9.3",
+      "kanda": "YUDDHA",
+      "arc": "F9",
+      "n": 3,
+      "title": "Hanumān sent ahead",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F9.4",
+      "kanda": "YUDDHA",
+      "arc": "F9",
+      "n": 4,
+      "title": "Nandigrāma",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F9.5",
+      "kanda": "YUDDHA",
+      "arc": "F9",
+      "n": 5,
+      "title": "The sandals returned",
+      "authored": false
+    },
+    {
+      "id": "YUDDHA.F9.6",
+      "kanda": "YUDDHA",
+      "arc": "F9",
+      "n": 6,
+      "title": "The coronation",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G1.1",
+      "kanda": "UTTARA",
+      "arc": "G1",
+      "n": 1,
+      "title": "Agastya tells who Rāvaṇa was",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G1.2",
+      "kanda": "UTTARA",
+      "arc": "G1",
+      "n": 2,
+      "title": "The boon",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G1.3",
+      "kanda": "UTTARA",
+      "arc": "G1",
+      "n": 3,
+      "title": "Kubera dispossessed",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G1.4",
+      "kanda": "UTTARA",
+      "arc": "G1",
+      "n": 4,
+      "title": "Vedavatī",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G1.5",
+      "kanda": "UTTARA",
+      "arc": "G1",
+      "n": 5,
+      "title": "Nalakūbara's curse",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G1.6",
+      "kanda": "UTTARA",
+      "arc": "G1",
+      "n": 6,
+      "title": "Vālin's humiliation of him",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G2.1",
+      "kanda": "UTTARA",
+      "arc": "G2",
+      "n": 1,
+      "title": "Hanumān's birth",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G2.2",
+      "kanda": "UTTARA",
+      "arc": "G2",
+      "n": 2,
+      "title": "The sun mistaken for fruit",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G2.3",
+      "kanda": "UTTARA",
+      "arc": "G2",
+      "n": 3,
+      "title": "The curse that hides his strength",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G2.4",
+      "kanda": "UTTARA",
+      "arc": "G2",
+      "n": 4,
+      "title": "Why he had to be reminded",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G3.1",
+      "kanda": "UTTARA",
+      "arc": "G3",
+      "n": 1,
+      "title": "Years of the good reign",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G3.2",
+      "kanda": "UTTARA",
+      "arc": "G3",
+      "n": 2,
+      "title": "The spies in the city",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G3.3",
+      "kanda": "UTTARA",
+      "arc": "G3",
+      "n": 3,
+      "title": "A washerman speaks",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G3.4",
+      "kanda": "UTTARA",
+      "arc": "G3",
+      "n": 4,
+      "title": "Rāma hears it",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G4.1",
+      "kanda": "UTTARA",
+      "arc": "G4",
+      "n": 1,
+      "title": "He tells Lakṣmaṇa",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G4.2",
+      "kanda": "UTTARA",
+      "arc": "G4",
+      "n": 2,
+      "title": "She is taken to the forest",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G4.3",
+      "kanda": "UTTARA",
+      "arc": "G4",
+      "n": 3,
+      "title": "Lakṣmaṇa cannot say it",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G4.4",
+      "kanda": "UTTARA",
+      "arc": "G4",
+      "n": 4,
+      "title": "Vālmīki takes her in",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G5.1",
+      "kanda": "UTTARA",
+      "arc": "G5",
+      "n": 1,
+      "title": "Two boys born",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G5.2",
+      "kanda": "UTTARA",
+      "arc": "G5",
+      "n": 2,
+      "title": "They learn the poem",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G5.3",
+      "kanda": "UTTARA",
+      "arc": "G5",
+      "n": 3,
+      "title": "The horse released",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G5.4",
+      "kanda": "UTTARA",
+      "arc": "G5",
+      "n": 4,
+      "title": "The boys stop it",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G5.5",
+      "kanda": "UTTARA",
+      "arc": "G5",
+      "n": 5,
+      "title": "They sing it to him",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G5.6",
+      "kanda": "UTTARA",
+      "arc": "G5",
+      "n": 6,
+      "title": "He knows",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G6.1",
+      "kanda": "UTTARA",
+      "arc": "G6",
+      "n": 1,
+      "title": "She is called",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G6.2",
+      "kanda": "UTTARA",
+      "arc": "G6",
+      "n": 2,
+      "title": "She asks the earth",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G6.3",
+      "kanda": "UTTARA",
+      "arc": "G6",
+      "n": 3,
+      "title": "The earth opens",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G6.4",
+      "kanda": "UTTARA",
+      "arc": "G6",
+      "n": 4,
+      "title": "Lakṣmaṇa's end",
+      "authored": false
+    },
+    {
+      "id": "UTTARA.G6.5",
+      "kanda": "UTTARA",
+      "arc": "G6",
+      "n": 5,
+      "title": "The Sarayū",
+      "authored": false
+    }
+  ]
 }

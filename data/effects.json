@@ -1,51 +1,1046 @@
 {
-  "_doc": "Motion instructions per shot, and the rules that reject a motion output. A shot marked no-motion refuses at the render layer, in code. It is not a note for the eye.",
-  "rejection_criteria": [
-    {
-      "id": "REJ.CAMERA-MOVED",
-      "test": "camera moves on a locked shot",
-      "rule": "A shot whose camera is locked must show zero camera translation or rotation."
+  "ambient": {
+    "rule": "Applied to EVERY shot that is not a hard-held detail. Amplitude is deliberately tiny — if you notice it, it is too much.",
+    "layers": [
+      {
+        "id": "FX-FLAME",
+        "what": "oil lamp flame",
+        "motion": "irregular, 1–3px lateral drift, never a loop",
+        "where": "every interior shot with a lamp in frame — which is almost all of arc 7",
+        "note": "The single highest-value effect in the product. One moving flame makes a whole still frame live."
+      },
+      {
+        "id": "FX-CLOTH",
+        "what": "draped cloth settling",
+        "motion": "1–2 seconds of decay after any body movement, then still",
+        "where": "after the king stands, after he joins his hands, after the sage turns",
+        "note": "Uncut cloth has weight. It keeps moving after the person stops. Nothing says 'handloom' like this."
+      },
+      {
+        "id": "FX-DUST",
+        "what": "dust in a light shaft",
+        "motion": "slow, near-random, drifting across the beam",
+        "where": "any shot with a lattice shaft — the sabhā, the gate, the road",
+        "note": "Makes light volumetric without god rays. The honest version of the thing we forbid."
+      },
+      {
+        "id": "FX-BREATH",
+        "what": "the chest rising",
+        "motion": "one slow breath across a held shot",
+        "where": "every hold longer than 3 seconds on a person",
+        "note": "The 8-second hold on Daśaratha lives or dies on this. Without it he is a photograph."
+      },
+      {
+        "id": "FX-EYE",
+        "what": "a blink, or the eyes moving",
+        "motion": "at most one blink in an 8-second hold; never on the beat",
+        "where": "holds only",
+        "note": "One blink, late. Two reads as animation."
+      },
+      {
+        "id": "FX-GRAIN",
+        "what": "film grain",
+        "motion": "per-frame, not a static overlay",
+        "where": "EVERY frame without exception",
+        "strength": 6
+      }
+    ]
+  },
+  "motivated": {
+    "rule": "Only when something in the scene causes it, and only where the source or our staging puts it. Never added for texture.",
+    "list": [
+      {
+        "id": "FX-SMOKE-LAMP",
+        "what": "a thin thread of smoke from a wick",
+        "when": "a lamp is close in frame",
+        "amplitude": "barely visible"
+      },
+      {
+        "id": "FX-SMOKE-YAJNA",
+        "what": "sacrificial fire smoke",
+        "when": "the rite is SHOWN — which in arc 7 is never. Spoken of only.",
+        "arc7": "not used"
+      },
+      {
+        "id": "FX-DUST-FEET",
+        "what": "dust lifted by a footfall",
+        "when": "bare feet on packed earth — the road films",
+        "films": [
+          "M7",
+          "M8",
+          "M9",
+          "M10"
+        ]
+      },
+      {
+        "id": "FX-LEAVES",
+        "what": "dry leaves moving",
+        "when": "the forest films only. Dry deciduous, not a shower of falling leaves.",
+        "films": [
+          "M9",
+          "M10"
+        ],
+        "note": "Leaves moving in wind, not leaves falling. Falling leaves are autumn and autumn is a European register."
+      },
+      {
+        "id": "FX-WATER",
+        "what": "water poured",
+        "when": "the honouring in M1, and the Sarayū",
+        "films": [
+          "M1",
+          "M7"
+        ]
+      },
+      {
+        "id": "FX-HEAT",
+        "what": "heat shimmer at distance",
+        "when": "the dry forest at midday only",
+        "films": [
+          "M9",
+          "M10"
+        ]
+      }
+    ]
+  },
+  "per_film": {
+    "M1": {
+      "ambient": [
+        "FX-FLAME",
+        "FX-CLOTH",
+        "FX-DUST",
+        "FX-BREATH",
+        "FX-GRAIN"
+      ],
+      "motivated": [
+        "FX-WATER",
+        "FX-SMOKE-LAMP"
+      ]
     },
-    {
-      "id": "REJ.EXPRESSION-CHANGED",
-      "test": "a face changes expression",
-      "rule": "Motion may not re-perform the face. The expression is set in the frame."
+    "M2": {
+      "ambient": [
+        "FX-FLAME",
+        "FX-CLOTH",
+        "FX-BREATH",
+        "FX-EYE",
+        "FX-GRAIN"
+      ],
+      "motivated": [
+        "FX-SMOKE-LAMP"
+      ]
     },
-    {
-      "id": "REJ.BODY-SHIFTED",
-      "test": "a body shifts position",
-      "rule": "Posture is a design fact. Motion does not restage it."
+    "M3": {
+      "ambient": [
+        "FX-FLAME",
+        "FX-CLOTH",
+        "FX-DUST",
+        "FX-BREATH",
+        "FX-EYE",
+        "FX-GRAIN"
+      ],
+      "motivated": [],
+      "note": "FX-CLOTH is essential at the beat where he stands — the cloth falling is how the audience registers that a king has come down off a dais."
     },
-    {
-      "id": "REJ.FRAME-ENTRY",
-      "test": "anything enters or leaves frame",
-      "rule": "Entry and exit are cuts, not motion."
+    "M4": {
+      "ambient": [
+        "FX-FLAME",
+        "FX-DUST",
+        "FX-BREATH",
+        "FX-GRAIN"
+      ],
+      "motivated": [],
+      "note": "On the high wide, FX-DUST in the lattice shafts is what gives the hall its true size. The scale is in the air, not in the cut."
     },
-    {
-      "id": "REJ.LOOP-VISIBLE",
-      "test": "the loop is visible",
-      "rule": "A visible seam at the loop point is a rejection."
+    "M5": {
+      "ambient": [
+        "FX-FLAME",
+        "FX-CLOTH",
+        "FX-BREATH",
+        "FX-GRAIN"
+      ],
+      "motivated": [],
+      "note": "NOTHING on the staff strike. The frame is absolutely still. That stillness is the effect."
+    },
+    "M6": {
+      "ambient": [
+        "FX-FLAME",
+        "FX-CLOTH",
+        "FX-DUST",
+        "FX-BREATH",
+        "FX-GRAIN"
+      ],
+      "motivated": [
+        "FX-SMOKE-LAMP"
+      ],
+      "note": "The final hold is an empty doorway with dust in the light and nothing else. Let it drift for four seconds."
+    },
+    "M7": {
+      "ambient": [
+        "FX-CLOTH",
+        "FX-DUST",
+        "FX-BREATH",
+        "FX-GRAIN"
+      ],
+      "motivated": [
+        "FX-DUST-FEET",
+        "FX-WATER"
+      ],
+      "note": "First exterior. FX-DUST-FEET on the road is where the world stops being a room."
     }
+  },
+  "forbidden": {
+    "spectacle": [
+      "camera shake of any kind",
+      "god rays",
+      "volumetric light beams",
+      "lens flare",
+      "bloom",
+      "halation",
+      "magical glow on a person or object",
+      "aura",
+      "particle sparkle",
+      "energy",
+      "trails",
+      "slow motion",
+      "speed ramps",
+      "freeze frames",
+      "debris in slow motion"
+    ],
+    "weather_as_mood": [
+      "rain on an emotional beat",
+      "wind rising on a line",
+      "thunder",
+      "lightning",
+      "mist",
+      "fog"
+    ],
+    "why": "Every one of these tells the audience how to feel. This arc's whole method is to state a fact and let them feel it themselves. An effect that editorialises is a lie in a different medium.",
+    "the_test": "If the effect exists to make a moment feel bigger, cut it. If it exists because a real room would do that, keep it."
+  },
+  "earth_shaking": {
+    "textual": "The spine says the earth trembled when the sage was angered — ⟨Bāla 20.4, GRETIL — text withheld⟩, Bāla 20.4.",
+    "our_staging": "ONE strike of wood on sandstone. Dry, close, un-reverbed, 4 dB above anything else in the arc. The frame does not move.",
+    "why": "A shaking camera makes the audience feel the equipment. A single hard sound in a quiet room makes them feel the man. We have spent five films earning silence; spending it on a rumble would be the worst trade in the product.",
+    "declared": "This is our staging, not the text's instruction. The text says the earth shook. We chose to render that as a sound. Ask says so when asked.",
+    "forbidden_here": [
+      "camera shake",
+      "dust falling from a ceiling",
+      "objects rattling",
+      "a low rumble",
+      "slow motion",
+      "a sub-drop"
+    ]
+  },
+  "rejection_criteria": [
+    "the camera moves when the shot is marked locked",
+    "a face changes expression",
+    "a body shifts position",
+    "anything enters or leaves frame",
+    "the motion loops visibly"
   ],
   "shots": {
-    "03-05": {
-      "film": "M3",
-      "instruction": "Lamp flame only. Two or three degrees of drift at the wick. Nothing else in frame moves. The king does not breathe visibly.",
+    "01-01": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, dust turning in the light shaft. The camera does not move.",
       "motion": true,
-      "camera_locked": true
+      "duration_s": 2.6,
+      "source": "generate"
+    },
+    "01-02": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "01-03": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "01-04": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "01-05": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "01-06": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, water pouring. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "01-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "01-08": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.7,
+      "source": "generate"
+    },
+    "01-09": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "01-10": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.3,
+      "source": "generate"
+    },
+    "01-11": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "01-12": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.1,
+      "source": "generate"
+    },
+    "01-13": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "01-14": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "01-15": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.0,
+      "source": "reuse"
+    },
+    "01-16": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 4.0,
+      "source": "reuse"
+    },
+    "02-01": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.8,
+      "source": "generate"
+    },
+    "02-02": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "02-03": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "02-04": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.2,
+      "source": "crop"
+    },
+    "02-05": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "02-06": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.5,
+      "source": "crop"
+    },
+    "02-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "02-08": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.9,
+      "source": "generate"
+    },
+    "02-09": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "02-10": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.6,
+      "source": "reuse"
+    },
+    "02-11": {
+      "instruction": "almost imperceptible life: a lamp flame drifting. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.1,
+      "source": "generate"
+    },
+    "02-12": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.4,
+      "source": "crop"
+    },
+    "02-13": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.8,
+      "source": "reuse"
+    },
+    "02-14": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "02-15": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.9,
+      "source": "reuse"
+    },
+    "02-16": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.2,
+      "source": "generate"
+    },
+    "02-17": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.1,
+      "source": "reuse"
+    },
+    "02-18": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, one slow breath, a single late blink. The camera does not move.",
+      "motion": true,
+      "duration_s": 8.0,
+      "source": "generate"
+    },
+    "03-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 4.0,
+      "source": "reuse"
+    },
+    "03-02": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.2,
+      "source": "reuse"
+    },
+    "03-03": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.9,
+      "source": "reuse"
+    },
+    "03-04": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.8,
+      "source": "reuse"
+    },
+    "03-05": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "03-06": {
+      "instruction": "almost imperceptible life: a lamp flame drifting. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.2,
+      "source": "generate"
+    },
+    "03-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.7,
+      "source": "generate"
+    },
+    "03-08": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "03-09": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.6,
+      "source": "reuse"
+    },
+    "03-10": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.1,
+      "source": "generate"
+    },
+    "03-11": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "03-12": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "03-13": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.1,
+      "source": "crop"
+    },
+    "03-14": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "03-15": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.4,
+      "source": "reuse"
+    },
+    "03-16": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "03-17": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.9,
+      "source": "generate"
+    },
+    "03-18": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "03-19": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "03-20": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, one slow breath. The camera does not move.",
+      "motion": true,
+      "duration_s": 3.1,
+      "source": "generate"
+    },
+    "03-21": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.4,
+      "source": "reuse"
+    },
+    "03-22": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "03-23": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 8.0,
+      "source": "reuse"
+    },
+    "04-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 3.0,
+      "source": "reuse"
+    },
+    "04-02": {
+      "instruction": "almost imperceptible life: a lamp flame drifting. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.1,
+      "source": "generate"
+    },
+    "04-03": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.7,
+      "source": "crop"
+    },
+    "04-04": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.2,
+      "source": "crop"
+    },
+    "04-05": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.9,
+      "source": "reuse"
+    },
+    "04-06": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.5,
+      "source": "reuse"
+    },
+    "04-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, one slow breath. The camera does not move.",
+      "motion": true,
+      "duration_s": 3.1,
+      "source": "generate"
+    },
+    "04-08": {
+      "instruction": "almost imperceptible life: dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 8.0,
+      "source": "generate"
+    },
+    "04-09": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.1,
+      "source": "reuse"
+    },
+    "04-10": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.7,
+      "source": "crop"
+    },
+    "04-11": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.9,
+      "source": "generate"
+    },
+    "04-12": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "04-13": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.2,
+      "source": "reuse"
+    },
+    "04-14": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.5,
+      "source": "generate"
+    },
+    "04-15": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.7,
+      "source": "generate"
+    },
+    "04-16": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.1,
+      "source": "crop"
+    },
+    "04-17": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.4,
+      "source": "reuse"
+    },
+    "04-18": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 8.0,
+      "source": "reuse"
+    },
+    "05-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 3.0,
+      "source": "reuse"
+    },
+    "05-02": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.4,
+      "source": "reuse"
+    },
+    "05-03": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "05-04": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.7,
+      "source": "generate"
+    },
+    "05-05": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
     },
     "05-06": {
-      "film": "M3",
       "instruction": "NO MOTION. The frame is absolutely still. The stillness is the effect.",
       "motion": false,
-      "camera_locked": true,
-      "refusal_note": "This shot must refuse motion at the render layer. If it does not refuse, that is a bug in lib/render.js, not a rule to relax."
+      "duration_s": 2.1,
+      "source": "reuse"
+    },
+    "05-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "05-08": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.6,
+      "source": "generate"
+    },
+    "05-09": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.9,
+      "source": "reuse"
+    },
+    "05-10": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.6,
+      "source": "reuse"
+    },
+    "05-11": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "05-12": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.4,
+      "source": "reuse"
+    },
+    "05-13": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.5,
+      "source": "reuse"
+    },
+    "05-14": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.8,
+      "source": "generate"
+    },
+    "05-15": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.6,
+      "source": "reuse"
+    },
+    "05-16": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, one slow breath. The camera does not move.",
+      "motion": true,
+      "duration_s": 8.0,
+      "source": "generate"
+    },
+    "06-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 3.0,
+      "source": "reuse"
+    },
+    "06-02": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "06-03": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "06-04": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.2,
+      "source": "reuse"
+    },
+    "06-05": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.8,
+      "source": "reuse"
+    },
+    "06-06": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.4,
+      "source": "reuse"
+    },
+    "06-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "06-08": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.6,
+      "source": "reuse"
+    },
+    "06-09": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "06-10": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "06-11": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.2,
+      "source": "reuse"
+    },
+    "06-12": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "06-13": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "06-14": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.2,
+      "source": "generate"
+    },
+    "06-15": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "06-16": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "06-17": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "06-18": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "06-19": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.6,
+      "source": "generate"
+    },
+    "06-20": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "06-21": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "06-22": {
+      "instruction": "almost imperceptible life: dust turning in the light shaft, one slow breath. The camera does not move.",
+      "motion": true,
+      "duration_s": 4.0,
+      "source": "generate"
+    },
+    "07-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 3.0,
+      "source": "reuse"
     },
     "07-02": {
-      "film": "M3",
-      "instruction": "NO MOTION. Eight seconds on a face that does not move.",
+      "instruction": "almost imperceptible life: dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-03": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "07-04": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "07-05": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "07-06": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "07-07": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust turning in the light shaft, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "07-08": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-09": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "07-10": {
+      "instruction": "almost imperceptible life: dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.2,
+      "source": "generate"
+    },
+    "07-11": {
+      "instruction": "almost imperceptible life: dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "07-12": {
+      "instruction": "almost imperceptible life: dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.6,
+      "source": "generate"
+    },
+    "07-13": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "07-14": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "07-15": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "07-16": {
+      "instruction": "almost imperceptible life: dust turning in the light shaft, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-17": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "07-18": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "07-19": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-20": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
       "motion": false,
-      "camera_locked": true
+      "duration_s": 1.0,
+      "source": "reuse"
+    },
+    "07-21": {
+      "instruction": "almost imperceptible life: draped cloth settling, one slow breath, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 4.0,
+      "source": "generate"
     }
   }
 }

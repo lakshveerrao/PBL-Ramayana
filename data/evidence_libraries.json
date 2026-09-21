@@ -1,8 +1,276 @@
 {
-  "_doc": "Visual evidence an inference may cite. An inference must name what it is inferred from. 'Period-appropriate' is not a source.",
   "libraries": [
-    { "id": "LIB.AMARAVATI.COURT", "source": "SRC.AMARAVATI", "subject": "court and palace panels", "holds": ["pillared hall", "raised plinth", "seated king with attendants", "drape and tuck of the antariya", "torque and armlet forms"], "date": "2nd-3rd c. CE", "place": "Amaravati, Andhra" },
-    { "id": "LIB.SANCHI.ARCH", "source": "SRC.SANCHI", "subject": "gateway and railing architecture", "holds": ["post-and-lintel", "vedika railing", "torana", "bracket capital"], "date": "1st c. BCE - 1st c. CE", "place": "Sanchi, Madhya Pradesh" }
-  ],
-  "rule": "An inference record must name a library id and a specific holding. A bare period or region is rejected by validate."
+    {
+      "id": "MAT-BHARHUT",
+      "kind": "material",
+      "what": "Bharhut relief railings",
+      "where": "Madhya Pradesh",
+      "c": "c. 2nd century BCE",
+      "supplies": [
+        "the earliest clear view of draped uncut cloth on ordinary and royal bodies",
+        "kuṇḍala, torque, armlet and girdle forms in use",
+        "timber-derived architectural vocabulary rendered in stone — posts, rails, toraṇa",
+        "hair bound in knots; turbans of wound cloth, not later stitched forms"
+      ],
+      "use_for": [
+        "SYS-DRESS",
+        "SYS-ORNAMENT",
+        "SYS-ARCH"
+      ],
+      "rights": "Museum photography — clear per image before use."
+    },
+    {
+      "id": "MAT-SANCHI",
+      "kind": "material",
+      "what": "Sanchi toraṇa reliefs",
+      "where": "Madhya Pradesh",
+      "c": "c. 1st century BCE – 1st century CE",
+      "supplies": [
+        "crowd composition — how many people, at what density, doing what",
+        "the toraṇa gateway itself, in detail",
+        "carts, animals, trees, water, buildings in section",
+        "narrative panel logic: how one Indian tradition staged a story in a frame"
+      ],
+      "use_for": [
+        "SYS-ARCH",
+        "SYS-CROWDS",
+        "SYS-LANDSCAPE",
+        "composition"
+      ]
+    },
+    {
+      "id": "MAT-AMARAVATI",
+      "kind": "material",
+      "what": "Amarāvatī limestone reliefs",
+      "where": "Andhra Pradesh",
+      "c": "c. 2nd–3rd century CE",
+      "supplies": [
+        "the finest record of cloth BEHAVIOUR — fall, weight, pleat, how a drape moves",
+        "elongated elegant figure proportion",
+        "court scenes: seating, attendance, the geometry of who sits where",
+        "southern ornament forms"
+      ],
+      "use_for": [
+        "SYS-DRESS",
+        "SYS-BODY",
+        "PLC-SABHA"
+      ],
+      "note": "The single best reference for making generated cloth look draped rather than sewn."
+    },
+    {
+      "id": "MAT-AJANTA",
+      "kind": "material",
+      "what": "Ajanta murals",
+      "where": "Maharashtra",
+      "c": "c. 5th century CE (later caves)",
+      "supplies": [
+        "COLOUR — the actual palette of earth pigment on plaster",
+        "skin rendered in a real range, with modelling",
+        "faces with individual expression, not types",
+        "interiors: lamps, drapes, floor seating, painted plaster",
+        "textile pattern as woven, not printed"
+      ],
+      "use_for": [
+        "SYS-LIGHT",
+        "SYS-BODY",
+        "SYS-ARCH",
+        "colour grade"
+      ],
+      "note": "Our palette reference. If a grade cannot sit beside an Ajanta plate, it is wrong."
+    },
+    {
+      "id": "MAT-CHOLA",
+      "kind": "material",
+      "what": "Chola bronzes",
+      "where": "Tamil Nadu",
+      "c": "9th–13th century CE",
+      "supplies": [
+        "figure poise and weight distribution — how an Indian body stands",
+        "hand gesture with precise meaning",
+        "the fall of a waist cloth on a standing figure"
+      ],
+      "use_for": [
+        "SYS-BODY",
+        "performance and posture"
+      ],
+      "caution": "Devotional sculpture of a much later period. Use for POSTURE, never for costume detail in a Bāla frame."
+    },
+    {
+      "id": "MAT-MINIATURE",
+      "kind": "material",
+      "what": "Rāmāyaṇa painting traditions — Mewar, Pahari and related schools",
+      "c": "17th–18th century CE",
+      "supplies": [
+        "how Indian painters staged these exact scenes — what they chose to show and omit",
+        "colour conventions for character and mood",
+        "the visual grammar most Indian viewers half-remember"
+      ],
+      "use_for": [
+        "staging reference",
+        "audience expectation"
+      ],
+      "caution": "VERY much later, and courtly. Read for what audiences RECOGNISE, never for period accuracy. Flat colour and perspective conventions are theirs, not ours."
+    },
+    {
+      "id": "MAT-LEPAKSHI",
+      "kind": "material",
+      "what": "Lepakshi murals",
+      "where": "Andhra Pradesh",
+      "c": "16th century CE",
+      "supplies": [
+        "textile pattern and border design at scale",
+        "southern costume convention"
+      ],
+      "use_for": [
+        "SYS-DRESS borders"
+      ],
+      "caution": "Late. Pattern reference only."
+    },
+    {
+      "id": "MAT-OWN-SHOOT",
+      "kind": "material",
+      "what": "Our own reference day",
+      "c": "to be shot",
+      "supplies": [
+        "real handloom draped on real bodies under real light",
+        "brass, teak, sandstone, lime plaster",
+        "hands, bare feet, dust",
+        "how oil lamp light actually falls on skin"
+      ],
+      "use_for": [
+        "everything"
+      ],
+      "note": "The only item here we will own outright, and worth more than a month of prompting. Highest-value acquisition in the project.",
+      "rights": "ours, work-for-hire, with releases"
+    },
+    {
+      "id": "MAT-PRIOR-SCREEN",
+      "kind": "material",
+      "what": "Earlier screen Rāmāyaṇas",
+      "use_for": [
+        "understanding what audiences RECOGNISE — written down in words as a list of expectations"
+      ],
+      "forbidden": "Never indexed, never prompted from, never traced. No identifiable costume, set, blocking or frame is copied from any production."
+    },
+    {
+      "id": "TRD-TULSI",
+      "kind": "tradition",
+      "work": "Rāmcaritmānas",
+      "author": "Tulsīdās",
+      "language": "Awadhi",
+      "c": "1574",
+      "loaded": true,
+      "visual_evidence": [
+        {
+          "id": "TV-01",
+          "class": "Tr-verified",
+          "about": "ENT-RAMA / ENT-LAKSHMANA",
+          "line": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "the two beautiful brothers, dark and fair",
+          "use": "Rāma śyāma, Lakṣmaṇa gaura. A tradition's contrast, not a spine mandate. Supports a visible difference between the brothers without asserting a sourced complexion for either."
+        },
+        {
+          "id": "TV-02",
+          "class": "Tr-verified",
+          "about": "ENT-VISHVAMITRA",
+          "line": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "the wise great sage dwelt in the forest, knowing it an auspicious hermitage",
+          "use": "Forest hermitage, not a wandering mendicant. His staff and seat belong to a place he keeps."
+        },
+        {
+          "id": "TV-03",
+          "class": "Tr-verified",
+          "about": "PLC-FOREST-DRY",
+          "line": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "as they walked the sage showed her to them",
+          "use": "Tāṭakā is SHOWN to them on the road — the encounter begins as pointing, not ambush."
+        }
+      ]
+    },
+    {
+      "id": "TRD-KAMBAN",
+      "kind": "tradition",
+      "work": "Irāmāvatāram",
+      "author": "Kampaṉ",
+      "language": "Tamil",
+      "c": "12th c.",
+      "loaded": false,
+      "why_it_matters": "The most visually generous of the major tellings. Where Vālmīki states, Kamban describes — seasons, ornament, ceremony, the fall of cloth. For a film, this is the richest respectable source of detail.",
+      "visual_evidence": [
+        {
+          "id": "KV-01",
+          "class": "Tr-attested",
+          "about": "SYS-ORNAMENT",
+          "attested": "Elaborate treatment of ornament and ceremonial gifting; jewelled description as a register of courtly abundance.",
+          "use": "Licenses a RICHER court than Vālmīki's bare account — but as Kamban's register, declared, and still bound by our relief-vocabulary rule.",
+          "verify_before": "quoting, or attributing any specific ornament to him"
+        },
+        {
+          "id": "KV-02",
+          "class": "Tr-attested",
+          "about": "SYS-LANDSCAPE",
+          "attested": "Extended seasonal and landscape description in the Tamil literary tradition of tiṇai — landscape as emotional register.",
+          "use": "The forest is not neutral ground; the land carries the mood. Supports our 'silent rather than lush' dry forest as a CHOICE within a tradition that thinks this way.",
+          "verify_before": "citing any specific passage"
+        }
+      ],
+      "acquisition": "Project Madurai holds the text. Load the Bāla padalam before any of this is quoted."
+    },
+    {
+      "id": "TRD-ADHYATMA",
+      "kind": "tradition",
+      "work": "Adhyātma Rāmāyaṇa",
+      "language": "Sanskrit",
+      "c": "14th–15th c.",
+      "loaded": false,
+      "why_it_matters": "The theological reading behind Tulsīdās and Ezhuthachan. Rāma as divinity throughout, not a man who is later understood to be one.",
+      "visual_evidence": [
+        {
+          "id": "AV-01",
+          "class": "Tr-attested",
+          "about": "ENT-RAMA",
+          "attested": "Rāma's divinity is foregrounded from the start.",
+          "use": "EXPLICITLY NOT ADOPTED. Our films follow the spine, where the sage asks for a capable boy and says nothing of divinity. Recorded so that a viewer raised on this reading can be answered, not so that we drift toward it.",
+          "handling": "answer-only"
+        }
+      ]
+    },
+    {
+      "id": "TRD-RANGANATHA",
+      "kind": "tradition",
+      "work": "Ranganātha Rāmāyaṇamu",
+      "language": "Telugu",
+      "c": "c. 1300",
+      "loaded": false,
+      "why_it_matters": "Primary Telugu tradition. Telugu is our wedge language; its audience's expectations come from here, not from Vālmīki.",
+      "acquisition": "Scanned only. Needs a Telugu reader."
+    },
+    {
+      "id": "TRD-MOLLA",
+      "kind": "tradition",
+      "work": "Molla Rāmāyaṇamu",
+      "author": "Ātukūri Molla",
+      "language": "Telugu",
+      "c": "16th c.",
+      "loaded": false,
+      "why_it_matters": "A woman poet's telling, and a shorter one. Her choices about what to keep are themselves evidence.",
+      "acquisition": "Scanned only."
+    },
+    {
+      "id": "TRD-KRITTIVASA",
+      "kind": "tradition",
+      "work": "Krittivāsī Rāmāyaṇ",
+      "language": "Bengali",
+      "c": "15th c.",
+      "loaded": false
+    },
+    {
+      "id": "TRD-EZHUTHACHAN",
+      "kind": "tradition",
+      "work": "Adhyātma Rāmāyaṇam Kiḷippāṭṭu",
+      "language": "Malayalam",
+      "c": "16th c.",
+      "loaded": false
+    }
+  ]
 }

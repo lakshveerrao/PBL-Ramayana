@@ -1,22 +1,118 @@
 {
-  "_doc": "A brief for a composer. MUSIC_PROVIDER=none is deliberate and is not a gap to fill with an API. No model writes this theme.",
   "provider": "none",
-  "status": "brief-only",
   "brief": {
-    "instrumentation": [
-      "one bowed string, low",
-      "one flute, breath audible",
-      "a single struck metal tone, rare"
-    ],
-    "forbidden": [
-      "orchestral swell",
-      "choir",
-      "taiko",
-      "synthesised drone pad",
-      "anything that tells the audience how to feel"
-    ],
-    "density": "Almost nothing. Long stretches carry no music at all. M3 has music under roughly eleven seconds of its forty-four.",
-    "M3": "Nothing under the refusal itself. One low bowed note enters after the king has spoken and does not resolve."
+    "ensemble": {
+      "core": [
+        {
+          "instrument": "sarangi",
+          "role": "the grief voice — closest to a human throat of any Indian instrument",
+          "use": "the father's fear, always; never the sage"
+        },
+        {
+          "instrument": "bansuri (bass, in a low register)",
+          "role": "air and distance",
+          "use": "the road, the forest, departures"
+        },
+        {
+          "instrument": "rudra veena or a low-tuned sitar drone",
+          "role": "the sustained floor",
+          "use": "the 'one low string' in every treatment — THIS is it"
+        },
+        {
+          "instrument": "tanpura",
+          "role": "tonal ground, felt not heard",
+          "use": "may sit under any interior beat at -30dB"
+        }
+      ],
+      "percussion": {
+        "rule": "NO tabla, no mridangam, no drums of any kind in arc 7.",
+        "why": "Percussion signals ritual or excitement, and this arc is neither. The only percussive sound in seven films is a wooden staff on sandstone.",
+        "later": "Percussion enters the product for the first time on the road, or at Mithila. Not before."
+      },
+      "never": [
+        "western strings",
+        "orchestral swell",
+        "choir",
+        "synth pad",
+        "taiko",
+        "sub-drop",
+        "anything with a downbeat"
+      ]
+    },
+    "theme": {
+      "name": "The Promise",
+      "shape": "Four notes, descending, unresolved — it never returns to the tonic. The promise is never paid inside the phrase.",
+      "raga_basis": "A Bhairav-family austerity — morning, ascetic, with a flattened second that refuses comfort. Treated as colour, not as a performed raga.",
+      "duration_s": 6,
+      "use": "The full four notes appear ONCE per film at most. Partial statements — two notes, or the first three — carry everything else.",
+      "resolution": "The theme resolves ONCE in the whole product: at the end of film 6, when the promise is paid. Nowhere else, ever."
+    },
+    "motifs": {
+      "rule": "Motifs attach to THREADS, never to characters. A character theme would make this a soap.",
+      "THR-PROMISE-VISHVAMITRA": "the four-note theme itself",
+      "THR-BOON-RAVANA": "no motif. The name is carried by the room opening, not by music.",
+      "THR-CURSE-SHRAVANA": "reserved — a single sarangi note, to be introduced only in Ayodhyā when the curse is told"
+    },
+    "per_film": {
+      "M1": {
+        "score": "NONE",
+        "why": "The only film in the arc with no music at all. It makes the first note in film 2 feel like weather changing."
+      },
+      "M2": {
+        "enters": "beat 4",
+        "leaves": "beat 15",
+        "what": "the drone alone, barely audible, two notes of the theme",
+        "reveal": "DRY — no music under 'Rāma'"
+      },
+      "M3": {
+        "enters": "beat 11",
+        "leaves": "beat 19",
+        "what": "sarangi, one held note, then a second a fifth above at beat 12; both fade across six seconds",
+        "reveal": "the refusal has no score"
+      },
+      "M4": {
+        "enters": "beat 5",
+        "leaves": "beat 8",
+        "what": "the drone, unresolved",
+        "reveal": "NO music on the name. The room opening is the effect."
+      },
+      "M5": {
+        "score": "NONE",
+        "why": "The strike of wood on stone is the only sound that matters. Music would halve it."
+      },
+      "M6": {
+        "enters": "beat 13",
+        "leaves": "beat 14",
+        "what": "THE FULL THEME, and it RESOLVES — the only resolution in the product",
+        "note": "It resolves BEFORE the decision, not under it. By the time he calls his son, the music is gone."
+      },
+      "M7": {
+        "enters": "beat 21",
+        "leaves": "end",
+        "what": "one sustained bansuri note under the walking figures, fading before the cut",
+        "rule": "If it feels like a send-off, cut it.",
+        "time_note": "Afternoon. Not in the Bhairav colour, whose association is morning. A raga's time of day is colour only."
+      }
+    },
+    "signatures": {
+      "entry": {
+        "sound": "one conch phrase with a temple bell on its attack",
+        "duration_s": 1.35,
+        "note": "Cut to the first frame on the settle; the tail runs under it. Recorded, never sampled."
+      },
+      "exit": {
+        "sound": "a single answering conch, softer, lower",
+        "duration_s": 1.1,
+        "rule": "NEVER between consecutive films in continuous play. Only at a standalone open and close."
+      }
+    },
+    "mix": {
+      "narration": "-6 dBFS peak, -18 LUFS integrated",
+      "score": "-24 dBFS, never above -20",
+      "room_tone": "-38 dBFS, continuous, never reseated across a continuous cut",
+      "foley": "-20 dBFS; the staff strike at -16, 4 dB above anything else in the arc",
+      "silence": "true digital silence only at a hard cut, 0.5-1.0s, then room tone returns"
+    }
   },
-  "note": "If a render route is ever asked for music it returns 'none' and says why. It does not fall back to a generator. The theme is written by a composer, a person, and this file is their brief."
+  "_note": "Composed by a person. No API writes the theme."
 }

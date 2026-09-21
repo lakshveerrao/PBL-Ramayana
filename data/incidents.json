@@ -1,8 +1,823 @@
 {
-  "_doc": "Incidents are discrete events a claim can attach to.",
   "incidents": [
-    { "id": "INC.REQUEST", "name": "The request for Rama", "sarga": 20, "films": ["M3"] },
-    { "id": "INC.REFUSAL", "name": "The refusal", "sarga": 20, "films": ["M3"] },
-    { "id": "INC.YIELD", "name": "The yielding", "sarga": 22, "films": ["M5"] }
-  ]
+    {
+      "id": "INC-KRAUNCHA",
+      "name": "The krauñca birds",
+      "kanda": "BALA",
+      "arc": "A2",
+      "film": null,
+      "entities": [
+        "VALMIKI"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": "The origin of the form itself. The epic begins with a bird dying and a man unable to say why it matters except in rhythm.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-PAYASA",
+      "name": "The vessel from the fire",
+      "kanda": "BALA",
+      "arc": "A5",
+      "film": null,
+      "entities": [
+        "DASHARATHA",
+        "KAUSALYA",
+        "KAIKEYI",
+        "SUMITRA"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": "Every son in the epic comes from one bowl, unequally divided. The division is never commented on and explains a great deal.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-ASK",
+      "name": "The sage asks for Rāma",
+      "kanda": "BALA",
+      "arc": "A7",
+      "film": "M2",
+      "entities": [
+        "VISHVAMITRA",
+        "DASHARATHA",
+        "RAMA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-PROMISE-VISHVAMITRA"
+      ],
+      "why": null,
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-REFUSAL",
+      "name": "The father refuses",
+      "kanda": "BALA",
+      "arc": "A7",
+      "film": "M3",
+      "entities": [
+        "DASHARATHA",
+        "VISHVAMITRA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-PROMISE-VISHVAMITRA"
+      ],
+      "why": "The emotional centre of the arc and the film we would send to a stranger.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-TATAKA-KILLED",
+      "name": "Tāṭakā killed",
+      "kanda": "BALA",
+      "arc": "A8",
+      "film": null,
+      "entities": [
+        "RAMA",
+        "TATAKA",
+        "VISHVAMITRA",
+        "LAKSHMANA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-CURSE-TATAKA"
+      ],
+      "why": "Rāma's first killing, and it is a woman, and he says so before he does it.",
+      "staging_note": null,
+      "memo": "ENT-TATAKA"
+    },
+    {
+      "id": "INC-AHALYA",
+      "name": "Ahalyā released",
+      "kanda": "BALA",
+      "arc": "A12",
+      "film": null,
+      "entities": [
+        "RAMA",
+        "AHALYA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-CURSE-AHALYA"
+      ],
+      "why": "The first thing he does after killing is release someone. The placement is the meaning.",
+      "staging_note": null,
+      "memo": "ENT-AHALYA"
+    },
+    {
+      "id": "INC-BOW",
+      "name": "The bow breaks",
+      "kanda": "BALA",
+      "arc": "A14",
+      "film": null,
+      "entities": [
+        "RAMA",
+        "SITA",
+        "JANAKA"
+      ],
+      "objects": [
+        "SHIVA_BOW"
+      ],
+      "threads": [],
+      "why": "The sound carries to Paraśurāma and brings him onto the road home.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-BOONS-NAMED",
+      "name": "Kaikeyī names the boons",
+      "kanda": "AYODHYA",
+      "arc": "B3",
+      "film": null,
+      "entities": [
+        "KAIKEYI",
+        "DASHARATHA",
+        "MANTHARA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-BOONS-KAIKEYI"
+      ],
+      "why": "The debt from before the epic, called in at the worst hour.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-EXILE",
+      "name": "Rāma accepts the exile",
+      "kanda": "AYODHYA",
+      "arc": "B5",
+      "film": null,
+      "entities": [
+        "RAMA",
+        "KAIKEYI",
+        "KAUSALYA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-BOONS-KAIKEYI"
+      ],
+      "why": "He accepts before his father can finish the sentence. That is the whole character in one beat.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-DASHARATHA-DIES",
+      "name": "Daśaratha dies",
+      "kanda": "AYODHYA",
+      "arc": "B11",
+      "film": null,
+      "entities": [
+        "DASHARATHA",
+        "KAUSALYA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-CURSE-SHRAVANA",
+        "THR-BOONS-KAIKEYI",
+        "THR-PROMISE-VISHVAMITRA"
+      ],
+      "why": "THE convergence point of the first two books. Three separate debts close on one man in one night.",
+      "staging_note": "He tells the story of the boy at the river himself, as he dies. It is never foreshadowed.",
+      "memo": null
+    },
+    {
+      "id": "INC-SANDALS",
+      "name": "The sandals taken to the throne",
+      "kanda": "AYODHYA",
+      "arc": "B13",
+      "film": null,
+      "entities": [
+        "BHARATA",
+        "RAMA"
+      ],
+      "objects": [
+        "SANDALS"
+      ],
+      "threads": [
+        "THR-SANDALS"
+      ],
+      "why": null,
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-SURPANAKHA",
+      "name": "Śūrpaṇakhā disfigured",
+      "kanda": "ARANYA",
+      "arc": "C3",
+      "film": null,
+      "entities": [
+        "SURPANAKHA",
+        "RAMA",
+        "LAKSHMANA",
+        "SITA"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": "The act that starts the war. The hardest thing in the epic to stage honestly.",
+      "staging_note": null,
+      "memo": "ENT-SURPANAKHA"
+    },
+    {
+      "id": "INC-DEER",
+      "name": "The golden deer",
+      "kanda": "ARANYA",
+      "arc": "C6",
+      "film": null,
+      "entities": [
+        "MARICHA",
+        "SITA",
+        "RAMA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-CURSE-MARICHA"
+      ],
+      "why": "The rākṣasa driven off in Bāla comes back to be the instrument.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-ABDUCTION",
+      "name": "Sītā taken",
+      "kanda": "ARANYA",
+      "arc": "C8",
+      "film": null,
+      "entities": [
+        "SITA",
+        "RAVANA",
+        "LAKSHMANA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-BOON-RAVANA",
+        "THR-CURSE-NALAKUBARA"
+      ],
+      "why": "The centre of the epic. Everything before is approach; everything after is consequence.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-JATAYU",
+      "name": "Jaṭāyu falls",
+      "kanda": "ARANYA",
+      "arc": "C9",
+      "film": null,
+      "entities": [
+        "RAVANA",
+        "SITA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-DEBT-JATAYU"
+      ],
+      "why": "Rāma performs the rites for a bird that he could not perform for his father.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-VALIN",
+      "name": "Vālin killed",
+      "kanda": "KISHKINDHA",
+      "arc": "D3",
+      "film": null,
+      "entities": [
+        "RAMA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-BOON-VALIN",
+        "THR-PROMISE-SUGRIVA"
+      ],
+      "why": "The most argued-about act in the epic, and the text lets the dying man make the case.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-RING-GIVEN",
+      "name": "The ring given",
+      "kanda": "KISHKINDHA",
+      "arc": "D6",
+      "film": null,
+      "entities": [
+        "RAMA",
+        "HANUMAN"
+      ],
+      "objects": [
+        "RING"
+      ],
+      "threads": [
+        "THR-RING"
+      ],
+      "why": null,
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-LEAP",
+      "name": "The leap",
+      "kanda": "SUNDARA",
+      "arc": "E1",
+      "film": null,
+      "entities": [
+        "HANUMAN"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": "He has to be reminded what he is before he can do it. The curse on his own strength is the point.",
+      "staging_note": null,
+      "memo": "ENT-HANUMAN"
+    },
+    {
+      "id": "INC-RING-DROPPED",
+      "name": "The ring falls",
+      "kanda": "SUNDARA",
+      "arc": "E4",
+      "film": null,
+      "entities": [
+        "HANUMAN",
+        "SITA"
+      ],
+      "objects": [
+        "RING"
+      ],
+      "threads": [
+        "THR-RING"
+      ],
+      "why": "The smallest object in the epic carrying the most. She knows the name before she looks up.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-LANKA-BURNS",
+      "name": "Laṅkā burns",
+      "kanda": "SUNDARA",
+      "arc": "E6",
+      "film": null,
+      "entities": [
+        "HANUMAN",
+        "RAVANA"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": null,
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-BRIDGE",
+      "name": "The bridge",
+      "kanda": "YUDDHA",
+      "arc": "F2",
+      "film": null,
+      "entities": [
+        "RAMA"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": null,
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-KUMBHAKARNA",
+      "name": "Kumbhakarṇa woken",
+      "kanda": "YUDDHA",
+      "arc": "F4",
+      "film": null,
+      "entities": [],
+      "objects": [],
+      "threads": [
+        "THR-BOON-KUMBHAKARNA"
+      ],
+      "why": "He tells his brother the war is wrong and fights it anyway. Loyalty as tragedy.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-RAVANA-FALLS",
+      "name": "Rāvaṇa falls",
+      "kanda": "YUDDHA",
+      "arc": "F7",
+      "film": null,
+      "entities": [
+        "RAMA",
+        "RAVANA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-BOON-RAVANA"
+      ],
+      "why": "Six kāṇḍas after the boon was named in a quiet room in Ayodhyā, a man kills him.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-FIRE",
+      "name": "The fire",
+      "kanda": "YUDDHA",
+      "arc": "F8",
+      "film": null,
+      "entities": [
+        "SITA",
+        "RAMA"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": "What is asked of her after she is recovered. A memo, not a staging decision to be improvised.",
+      "staging_note": null,
+      "memo": "ENT-SITA"
+    },
+    {
+      "id": "INC-SECOND-EXILE",
+      "name": "She is sent away",
+      "kanda": "UTTARA",
+      "arc": "G4",
+      "film": null,
+      "entities": [
+        "SITA",
+        "RAMA",
+        "LAKSHMANA"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": "The hardest thing in the epic, and the reason the Uttara Kāṇḍa's authorship is debated.",
+      "staging_note": null,
+      "memo": "required"
+    },
+    {
+      "id": "INC-BOYS-SING",
+      "name": "Two boys sing it to him",
+      "kanda": "UTTARA",
+      "arc": "G5",
+      "film": null,
+      "entities": [
+        "VALMIKI",
+        "RAMA"
+      ],
+      "objects": [],
+      "threads": [
+        "THR-WHO-IS-VISHVAMITRA"
+      ],
+      "why": "The epic closes by containing itself. A man hears his own life sung by his sons and does not know them.",
+      "staging_note": null,
+      "memo": null
+    },
+    {
+      "id": "INC-EARTH-OPENS",
+      "name": "The earth opens",
+      "kanda": "UTTARA",
+      "arc": "G6",
+      "film": null,
+      "entities": [
+        "SITA"
+      ],
+      "objects": [],
+      "threads": [],
+      "why": "The ending. She asks the earth and the earth takes her.",
+      "staging_note": null,
+      "memo": null
+    }
+  ],
+  "appearances": {
+    "RAMA": [
+      "A6",
+      "A7",
+      "A8",
+      "A9",
+      "A10",
+      "A11",
+      "A12",
+      "A13",
+      "A14",
+      "A15",
+      "B1",
+      "B5",
+      "B6",
+      "B7",
+      "B8",
+      "B9",
+      "B13",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "C6",
+      "C7",
+      "C10",
+      "D1",
+      "D2",
+      "D3",
+      "D6",
+      "F1",
+      "F2",
+      "F3",
+      "F7",
+      "F8",
+      "F9",
+      "G3",
+      "G4",
+      "G5",
+      "G6"
+    ],
+    "SITA": [
+      "A14",
+      "B6",
+      "B8",
+      "B9",
+      "C1",
+      "C3",
+      "C7",
+      "C8",
+      "E3",
+      "E4",
+      "F8",
+      "F9",
+      "G4",
+      "G5",
+      "G6"
+    ],
+    "LAKSHMANA": [
+      "A6",
+      "A7",
+      "A8",
+      "A9",
+      "A10",
+      "A11",
+      "A14",
+      "B6",
+      "B7",
+      "B8",
+      "C3",
+      "C7",
+      "D5",
+      "F5",
+      "G4",
+      "G6"
+    ],
+    "HANUMAN": [
+      "D1",
+      "D2",
+      "D6",
+      "D7",
+      "E1",
+      "E2",
+      "E3",
+      "E4",
+      "E5",
+      "E6",
+      "E7",
+      "F3",
+      "F5",
+      "F9",
+      "G2"
+    ],
+    "RAVANA": [
+      "C5",
+      "C6",
+      "C8",
+      "C9",
+      "E2",
+      "E3",
+      "E6",
+      "F1",
+      "F6",
+      "F7",
+      "G1"
+    ],
+    "DASHARATHA": [
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "A7",
+      "B1",
+      "B3",
+      "B4",
+      "B5",
+      "B8",
+      "B10",
+      "B11"
+    ],
+    "VISHVAMITRA": [
+      "A7",
+      "A8",
+      "A9",
+      "A10",
+      "A11",
+      "A12",
+      "A13",
+      "A14"
+    ],
+    "VASISHTHA": [
+      "A4",
+      "A7",
+      "B12",
+      "B13"
+    ],
+    "KAIKEYI": [
+      "A5",
+      "A6",
+      "B2",
+      "B3",
+      "B5",
+      "B12"
+    ],
+    "KAUSALYA": [
+      "A5",
+      "A6",
+      "B5",
+      "B8",
+      "B11"
+    ],
+    "SUMITRA": [
+      "A5",
+      "A6"
+    ],
+    "BHARATA": [
+      "A6",
+      "A14",
+      "B12",
+      "B13",
+      "F9"
+    ],
+    "SHATRUGHNA": [
+      "A6",
+      "A14",
+      "B12",
+      "F9"
+    ],
+    "SUMANTRA": [
+      "A4",
+      "A8",
+      "B4",
+      "B8",
+      "B10"
+    ],
+    "MARICHA": [
+      "A7",
+      "A8",
+      "A10",
+      "C6"
+    ],
+    "TATAKA": [
+      "A8"
+    ],
+    "AHALYA": [
+      "A12"
+    ],
+    "JANAKA": [
+      "A14",
+      "F9"
+    ],
+    "SHATANANDA": [
+      "A13"
+    ],
+    "PARASHURAMA": [
+      "A15"
+    ],
+    "VALMIKI": [
+      "A2",
+      "G4",
+      "G5"
+    ],
+    "RISHYASHRINGA": [
+      "A4",
+      "A5"
+    ],
+    "SHANTA": [
+      "A4"
+    ],
+    "MANTHARA": [
+      "B2"
+    ],
+    "SURPANAKHA": [
+      "C3",
+      "C4",
+      "C5"
+    ],
+    "COURT": [
+      "A3",
+      "A4",
+      "A7",
+      "B1",
+      "B11"
+    ],
+    "AYODHYA": [
+      "A3",
+      "A5",
+      "A6",
+      "A7",
+      "B1",
+      "B8",
+      "B10",
+      "B11",
+      "F9",
+      "G3",
+      "G5"
+    ],
+    "SABHA": [
+      "A4",
+      "A7",
+      "B3",
+      "B12"
+    ],
+    "GATE": [
+      "A7",
+      "B8"
+    ],
+    "SARAYU": [
+      "A5",
+      "A7",
+      "G6"
+    ],
+    "ROAD": [
+      "A8"
+    ],
+    "FOREST_DRY": [
+      "A8"
+    ],
+    "SIDDHASHRAMA": [
+      "A10"
+    ],
+    "GANGA": [
+      "A11",
+      "B9"
+    ],
+    "MITHILA": [
+      "A14"
+    ],
+    "CHITRAKUT": [
+      "B9",
+      "B13"
+    ],
+    "PANCHAVATI": [
+      "C3",
+      "C7",
+      "C8"
+    ],
+    "KISHKINDHA": [
+      "D2",
+      "D3",
+      "D4",
+      "D5",
+      "D6"
+    ],
+    "LANKA": [
+      "E2",
+      "E3",
+      "E6",
+      "F1",
+      "F3",
+      "F7",
+      "F8"
+    ],
+    "SHIVA_BOW": [
+      "A14"
+    ],
+    "SANDALS": [
+      "B13",
+      "F9"
+    ],
+    "RING": [
+      "D6",
+      "E4"
+    ],
+    "PAYASA": [
+      "A5"
+    ],
+    "HORSE": [
+      "A5",
+      "G5"
+    ],
+    "AXE": [
+      "A15"
+    ],
+    "YUPA": [
+      "A5"
+    ],
+    "THRONE": [
+      "A7",
+      "B1",
+      "B13",
+      "F9"
+    ],
+    "STAFF": [
+      "A7",
+      "A13"
+    ],
+    "LAMP": [
+      "A7",
+      "B3"
+    ],
+    "BOW": [
+      "A7",
+      "A9"
+    ]
+  }
 }

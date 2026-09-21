@@ -68,9 +68,10 @@ never lightened, and fair-equals-good coding is forbidden outright.
 ## The graph is not ours to write
 
 `data/` is the **live graph** and arrives by handoff. `HANDOFF.md` is the contract:
-what files, what fields, what the gates read. What ships in `data/` today is
-**scaffold** (`data/_SCAFFOLD.md`) — it exists so the studio could be built and proven,
-and it is meant to be replaced:
+what files, what fields, what the gates read. `data/` currently holds **pbl-source-state v1.0.6** (`data/_INSTALLED.md`) — the frozen
+Arc 7 package. Every file is byte-identical to the kit; never edit it. `lib/graph.js`
+presents a canonical view of whatever graph is installed, so the package never has to
+be reshaped to fit the studio. To replace it:
 
 ```bash
 node tools/import_graph.js <path-to-graph>            # check, change nothing
@@ -78,11 +79,11 @@ node tools/import_graph.js <path-to-graph> --install  # back up, then replace
 npm run validate && node tools/regress.js
 ```
 
-Nothing in the studio is coupled to graph content. All 120 invariants iterate over
+Nothing in the studio is coupled to graph content. All 125 invariants iterate over
 whatever is installed; not one names a claim, film or entity. `tools/regress.js` runs
 against the frozen fixture in `tools/fixtures/graph/`, never against `data/`, so the
-regressions hold whatever graph is loaded. This was proven by running the whole studio
-against a second, unrelated graph in Tamil.
+regressions hold whatever graph is loaded. Proven three ways: the bundled fixture, an
+unrelated graph in Tamil, and the real v1.0.6 package.
 
 ---
 
@@ -141,9 +142,16 @@ caching is on; the system block never varies between films.
 
 ## Things that will look like bugs and are not
 
-- **Films 1–2 and 4–7 have `proposed` claims and no treatment.** Correct. An editor has not
-  disposed.
-- **`data/passages.json` holds only Bāla 18–26, and holds no text.** Correct.
+- **M8–M10 have proposed claims, no treatment and no duration.** Correct. They are ledger
+  entries, not authored films, and must not be rendered.
+- **`data/passages.json` holds 140 locators and no text.** Correct — `verse: 1` is a verse
+  *number*, not verse text.
+- **No kāṇḍa declares a sarga count.** Correct and deliberate: counts differ between
+  editions and none is established. The brain view draws registered beats, never a
+  fabricated sarga grid.
+- **`gradecheck` reports NOT MEASURED.** Correct. Skin is governed by `LOCK.SKIN.POLICY`
+  and set by the studio's approved sheets; there is nothing numeric to measure until
+  they exist.
 - **`corpus/` is empty of text.** Correct. See `corpus/README.md`.
 - **Every accepted claim says `text_consulted: false`.** Correct and deliberate — no
   digitised edition is reachable from this environment, and the record says so rather than
@@ -151,8 +159,9 @@ caching is on; the system block never varies between films.
 - **Rāma's complexion is "not established".** Correct, and the gate blocks *claiming* a
   source-mandated complexion — **not** depicting him.
 - **`MUSIC_PROVIDER=none`.** Deliberate. `data/music.json` is a brief for a composer.
-- **The consistency gate refuses 15 of M3's 18 shots.** Correct. No principal has an
-  approved sheet. The 3 it allows carry no principal in frame.
+- **The consistency gate refuses 122 of arc 7's 134 shots.** Correct. No principal has an
+  approved sheet. The 12 it allows carry only places or objects — the gate binds on
+  people, never on a hall or a road.
 
 ---
 

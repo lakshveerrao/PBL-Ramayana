@@ -1,0 +1,225 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": [
+    {
+      "id": "06-01",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "still, back turned — the arc at its coldest",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "06-02",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "decision; he has heard enough",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-03",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "startled — someone who never moves has moved",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-04",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "addressed, not argued at",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "06-05",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "listening, defences still up",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "06-06",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "stated as fact, no heat",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "06-07",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the room holding still",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-08",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the turn — the priest names the protection",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "06-09",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "recognition landing; he sees the sage differently",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-10",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "unmoved; he has not asked again",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-11",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "certainty",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "06-12",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the grip releasing",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-13",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "understanding, wordless, both men",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-14",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the first easy breath in four films",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-15",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "resolve — he calls, he does not concede",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-16",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the room changing state",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-17",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "no triumph; he does not smile",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-18",
+      "size": "INSERT",
+      "lens_mm": 50,
+      "height": "high",
+      "camera_move": "locked",
+      "expression": "the seat he never returned to",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-19",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "a father's hand, and letting go",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-20",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "closed eyes; it is done",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-21",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "glad — not broken. This is the correction.",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "06-22",
+      "size": "INSERT",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "empty; the boy is not in it yet",
+      "source": "generate",
+      "gate": "clear"
+    }
+  ]
+}

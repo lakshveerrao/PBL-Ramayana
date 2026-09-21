@@ -1,0 +1,215 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": [
+    {
+      "id": "07-01",
+      "size": "INSERT",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "empty, waiting",
+      "source": "reuse",
+      "gate": "clear"
+    },
+    {
+      "id": "07-02",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "young feet, unhurried",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-03",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "a blessing, and the hand withdrawing",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-04",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "plain, unheroic — a boy, not a hero",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-05",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "steady; already half a step behind",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-06",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "a mother's hands; face withheld",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-07",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "already facing the road",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-08",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "he stays. He does not follow.",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-09",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the light changing on his back",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-10",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the same light; no ceremony",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-11",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the same again",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-12",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "timber, heavy, ordinary",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "07-13",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "a city going about its day",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "07-14",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "three backs, in the fixed order",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-15",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "carried, not drawn",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-16",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "no destination visible",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "07-17",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "one look back — and forward again. The only emotion he shows.",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-18",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "smaller than they were",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "07-19",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "far off now, still standing there",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "07-20",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "empty ahead",
+      "source": "reuse",
+      "gate": "clear"
+    },
+    {
+      "id": "07-21",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "walking; nothing else",
+      "source": "generate",
+      "gate": "refused"
+    }
+  ]
+}

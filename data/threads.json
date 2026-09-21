@@ -1,8 +1,428 @@
 {
-  "_doc": "Threads run across films. A thread is a thing the audience is holding, not a plot summary.",
   "threads": [
-    { "id": "THR.THE-ASK", "name": "The ask", "films": ["M2", "M3", "M4", "M5"], "note": "Opened when the king offers anything. Closed when he yields." },
-    { "id": "THR.THE-AGE", "name": "Not yet sixteen", "films": ["M3", "M6", "M7"], "note": "Dasaratha's statement about his son's age. Carried as his statement, never as fact." },
-    { "id": "THR.THE-LAMP", "name": "The lamp", "films": ["M3", "M4", "M5"], "note": "Declared staging. It does not move in M3." }
+    {
+      "id": "THR-PROMISE-VISHVAMITRA",
+      "kind": "promise",
+      "name": "Daśaratha's word to Viśvāmitra",
+      "evidence_class": "T",
+      "opened": {
+        "node": "M1",
+        "kanda": "BALA",
+        "locator": "Bāla 17–18",
+        "what": "The king assures the sage he will do whatever is asked, before hearing it."
+      },
+      "closed": {
+        "node": "M6",
+        "what": "He gives Rāma."
+      },
+      "tested": [
+        {
+          "node": "M3",
+          "what": "He offers the army and himself instead."
+        },
+        {
+          "node": "M4",
+          "what": "He refuses a second time."
+        }
+      ],
+      "consequence": null,
+      "operates": null,
+      "span": 6,
+      "why": "The engine of the entire arc. Six films of a man trying not to pay what he already owes.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-BOONS-KAIKEYI",
+      "kind": "boon",
+      "name": "The two boons owed to Kaikeyī",
+      "evidence_class": "T",
+      "opened": {
+        "node": null,
+        "kanda": "before BALA",
+        "what": "She saved him in a battle; he granted two boons, unnamed and unspent.",
+        "class": "T",
+        "note": "Referred to, not narrated, at the point we enter."
+      },
+      "closed": {
+        "node": null,
+        "kanda": "AYODHYA",
+        "arc": "B3",
+        "what": "She names them: Bharata crowned, Rāma exiled fourteen years."
+      },
+      "tested": null,
+      "consequence": {
+        "kanda": "AYODHYA",
+        "arc": "B11",
+        "what": "The king dies of it."
+      },
+      "operates": null,
+      "span": 2,
+      "why": "The longest unpaid debt in the first two books, and the one that destroys the man who granted it. He is generous in Bāla and it kills him in Ayodhyā.",
+      "staging_note": null,
+      "echo_of": "THR-PROMISE-VISHVAMITRA",
+      "echo_note": "THE central rhyme of the first two kāṇḍas. Twice a man gives his word without counting, and twice it takes his son. Arc 7 is the rehearsal; Ayodhyā is the performance."
+    },
+    {
+      "id": "THR-BOON-RAVANA",
+      "kind": "boon",
+      "name": "Rāvaṇa's boon from Brahmā",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "BALA",
+        "locator": "Bāla 19.16",
+        "what": "Granted invulnerability to gods, dānavas, gandharvas, yakṣas and rākṣasas.",
+        "span": "⟨Bāla 19.16, GRETIL — text withheld⟩"
+      },
+      "closed": {
+        "kanda": "YUDDHA",
+        "arc": "F7",
+        "what": "A man kills him."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": 6,
+      "why": "The longest arc in the epic and its central irony. His contempt for humans is the hole in his armour, written into the boon at the moment of asking.",
+      "staging_note": "In M4 the boon is stated as a plain fact in a big room. The irony is never pointed at. It pays off five kāṇḍas later.",
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-VOW-VISHVAMITRA",
+      "kind": "vow",
+      "name": "The sage's observance",
+      "evidence_class": "T",
+      "opened": {
+        "node": "M2",
+        "locator": "Bāla 18.7",
+        "what": "Under the rite, he may not release his anger or utter a curse."
+      },
+      "closed": {
+        "node": "M2",
+        "what": "ANSWERED IN THE SAME SARGA."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "Recorded precisely because it is NOT a mystery. The source answers it where it raises it. Staging it as a withheld secret would be an invention, and this node exists to stop that.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-CURSE-TATAKA",
+      "kind": "curse",
+      "name": "Agastya's curse on Tāṭakā",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "BALA",
+        "locator": "Bāla 24",
+        "what": "After Sunda's death she attacks Agastya; he curses her to a devouring, misshapen form."
+      },
+      "closed": {
+        "kanda": "BALA",
+        "arc": "A8",
+        "what": "Rāma kills her."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "She is not born monstrous. She is made so by a curse, in grief, after her husband is killed. This is the single most important fact for her memo — the text supplies a reason for her state and a killing that follows from it.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-CURSE-MARICHA",
+      "kind": "curse",
+      "name": "Agastya's curse on Mārīca",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "BALA",
+        "locator": "Bāla 24",
+        "what": "Cursed to become a rākṣasa."
+      },
+      "closed": {
+        "kanda": "ARANYA",
+        "what": "Rāma kills him."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": 3,
+      "why": "He is driven off in Bāla and comes back in Araṇya to be the instrument of the abduction. The man who survives film 10 is the reason Sītā is taken.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-CURSE-AHALYA",
+      "kind": "curse",
+      "name": "Gautama's curse on Ahalyā",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "BALA",
+        "arc": "A12",
+        "what": "Her husband curses her after Indra's deception."
+      },
+      "closed": {
+        "kanda": "BALA",
+        "arc": "A12",
+        "what": "Released when Rāma comes to the hermitage."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "The first thing Rāma does on the road after killing is to release someone. The placement is the meaning.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-CURSE-SHRAVANA",
+      "kind": "curse",
+      "name": "The blind parents' curse on Daśaratha",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "before BALA",
+        "what": "He kills a boy by mistake, hunting by sound at a river. The boy's blind parents curse him to die as they will — grieving for a son.",
+        "class": "T",
+        "note": "Told by Daśaratha himself, in Ayodhyā, as he is dying."
+      },
+      "closed": {
+        "kanda": "AYODHYA",
+        "arc": "B11",
+        "what": "He dies of grief for Rāma."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": 2,
+      "why": "The deepest irony in the first two books. Everything he does to keep his son — the refusals in arc 7, the boons in Ayodhyā — runs toward a death that was fixed before Rāma was born.",
+      "staging_note": "NEVER foreshadowed in Bāla. He does not know. Neither should the audience until he tells it.",
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-PROMISE-SAGES",
+      "kind": "promise",
+      "name": "Rāma's promise to the forest sages",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "ARANYA",
+        "arc": "C2",
+        "what": "He promises to rid the forest of rākṣasas."
+      },
+      "closed": null,
+      "tested": null,
+      "consequence": {
+        "kanda": "ARANYA",
+        "arc": "C3",
+        "what": "Śūrpaṇakhā, Khara, and everything that follows."
+      },
+      "operates": null,
+      "span": null,
+      "why": "A promise made out of decency that brings the war. Rhymes with Bāla: a good man's word, and what it costs.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-PROMISE-SUGRIVA",
+      "kind": "promise",
+      "name": "The alliance by fire",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "KISHKINDHA",
+        "arc": "D2",
+        "what": "Rāma and Sugrīva swear friendship before fire. Each owes the other a killing."
+      },
+      "closed": [
+        {
+          "arc": "D3",
+          "what": "Rāma kills Vālin."
+        },
+        {
+          "kanda": "YUDDHA",
+          "what": "Sugrīva brings the army."
+        }
+      ],
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "The only contract in the epic between equals, and the most argued-about act in it.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-BOON-VALIN",
+      "kind": "boon",
+      "name": "Vālin's boon",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "before KISHKINDHA",
+        "what": "Half the strength of any opponent who faces him passes to him."
+      },
+      "closed": {
+        "kanda": "KISHKINDHA",
+        "arc": "D3",
+        "what": "Rāma shoots him from concealment — and is challenged for it by the dying man."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "The boon is the reason for the manner of the killing, and the manner is why it is still argued about.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-BOON-KUMBHAKARNA",
+      "kind": "boon",
+      "name": "Kumbhakarṇa's misspoken boon",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "before YUDDHA",
+        "what": "Asking for indra-āsana he says nidrā-āsana — and is granted endless sleep."
+      },
+      "closed": {
+        "kanda": "YUDDHA",
+        "arc": "F4",
+        "what": "Woken for a war he tells his brother is wrong, and fights anyway."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "A boon ruined by a slip of the tongue. The comedy of it makes his loyalty in the war unbearable.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-CURSE-NALAKUBARA",
+      "kind": "curse",
+      "name": "The curse that protects Sītā",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "UTTARA",
+        "arc": "G1",
+        "what": "Rāvaṇa is cursed that his head will split if he forces a woman who does not want him."
+      },
+      "closed": null,
+      "tested": null,
+      "consequence": null,
+      "operates": {
+        "kanda": "SUNDARA",
+        "what": "It is why Sītā, held a year in the aśoka grove, is not touched."
+      },
+      "span": 3,
+      "why": "The single most consequential curse in the epic, narrated LAST. It explains the whole of Sundara retroactively.",
+      "staging_note": "Told in Uttara but operating from Araṇya onward. A structural problem and an opportunity: the Ask can answer 'why does he not force her' long before the film that explains it.",
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-DEBT-JATAYU",
+      "kind": "debt",
+      "name": "Jaṭāyu's friendship with Daśaratha",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "before ARANYA",
+        "what": "An old friendship between the vulture king and Rāma's father."
+      },
+      "closed": {
+        "kanda": "ARANYA",
+        "arc": "C9",
+        "what": "He fights Rāvaṇa's chariot for a friend's son's wife, and dies of it."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "An old bird keeps a debt to a dead man. Rāma performs his funeral rites — the rites he could not perform for his own father.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-RING",
+      "kind": "debt",
+      "name": "The ring",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "KISHKINDHA",
+        "arc": "D6",
+        "what": "Rāma gives Hanumān his ring as a token."
+      },
+      "closed": {
+        "kanda": "SUNDARA",
+        "arc": "E4",
+        "what": "Hanumān drops it before Sītā in the aśoka grove."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": null,
+      "why": "The smallest object in the epic carrying the most. Lock it with Daśaratha's ring — same object family, one decision.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-SANDALS",
+      "kind": "debt",
+      "name": "The sandals on the throne",
+      "evidence_class": "T",
+      "opened": {
+        "kanda": "AYODHYA",
+        "arc": "B13",
+        "what": "Bharata takes Rāma's sandals and rules from outside the city with them on the throne."
+      },
+      "closed": {
+        "kanda": "YUDDHA",
+        "arc": "F9",
+        "what": "Rāma returns and takes them back."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": 4,
+      "why": "Wood on a throne for fourteen years. The most powerful object in the epic and it does nothing.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    },
+    {
+      "id": "THR-WHO-IS-VISHVAMITRA",
+      "kind": "prophecy",
+      "name": "Who Viśvāmitra was",
+      "evidence_class": "Editorial",
+      "opened": {
+        "node": "M2",
+        "what": "A sage of terrifying authority asks a king for his child, and we are told nothing of him."
+      },
+      "closed": {
+        "kanda": "BALA",
+        "arc": "A13",
+        "what": "Śatānanda tells Rāma his whole history — a king who became a brahmarṣi."
+      },
+      "tested": null,
+      "consequence": null,
+      "operates": null,
+      "span": 33,
+      "why": "The longest withheld answer inside Bāla, and the reason the arc map exists. Editorial: the source does not frame it as a question; we do, and say so.",
+      "staging_note": null,
+      "echo_of": null,
+      "echo_note": null
+    }
   ]
 }

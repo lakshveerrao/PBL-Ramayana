@@ -1,115 +1,875 @@
 {
-  "_doc": "Arc 7 - Visvamitra at Ayodhya. Seven films, ~44s each. Film M3 is the one built end to end first.",
-  "arcs": [
-    {
-      "id": "ARC7",
-      "name": "Visvamitra at Ayodhya",
-      "kanda": "BALA",
-      "sarga_range": "18-22",
-      "films": ["M1", "M2", "M3", "M4", "M5", "M6", "M7"],
-      "continuous_joins": [
-        { "from": "M2", "to": "M3" },
-        { "from": "M3", "to": "M4" },
-        { "from": "M4", "to": "M5" },
-        { "from": "M5", "to": "M6" },
-        { "from": "M6", "to": "M7" }
-      ],
-      "join_rule": "A continuous join opens on the same frame the previous film closed on, and room tone carries across with no reseat. A visible cut or an audible reseat means the assembly is wrong."
-    }
-  ],
   "films": [
     {
       "id": "M1",
-      "story_id": "STORY.BALA.SAGE-AT-THE-GATE",
-      "title_en": "A Sage at the Gate",
-      "title_hi": "द्वार पर ऋषि",
-      "title_te": "ద్వారం వద్ద ముని",
+      "n": 1,
+      "title": "The Promise",
       "kanda": "BALA",
-      "sarga": 18,
-      "duration_s": 44,
-      "order": 1,
-      "status": "claims-only",
-      "treatment": null
+      "arc": "A7",
+      "question_in": "Who has come to Ayodhyā?",
+      "answer": "The sage Viśvāmitra — and the king has promised him anything before hearing the request.",
+      "question_out": "What will he ask for?",
+      "audit_scope": "PARTIALLY AUDITED — Dutt XVIII extract only; GRETIL sarga 17 not loaded",
+      "production_ready": false,
+      "production_blocker": "Two staged elements rest on sarga 17, which is not loaded.",
+      "evidence_map": {
+        "_why": "Sarga 17 is not loaded. Dutt XVIII is held as a single-passage extract. Each element says which.",
+        "A sage came to Ayodhyā.": {
+          "status": "AWAITING SARGA 17",
+          "note": "Context only; the arrival is narrated in 17."
+        },
+        "The king came down from his seat to meet him.": {
+          "status": "ARTISTIC STAGING until 17 is read",
+          "note": "The reception is in 17. Not verified here. Do not present as sourced."
+        },
+        "He asked what the sage wanted.": {
+          "status": "SUPPORTED",
+          "source": "Dutt XVIII extract — \"Tell me, what is it that thou wouldst have\""
+        },
+        "And before the sage answered — he gave his word.": {
+          "status": "SUPPORTED",
+          "source": "Dutt XVIII extract; the request follows in XIX",
+          "claim": "CLM-0001"
+        },
+        "Whatever it was.": {
+          "status": "SUPPORTED",
+          "source": "Dutt XVIII — \"I will every way accomplish thy will\""
+        },
+        "The sage had not said it yet.": {
+          "status": "SUPPORTED BY SEQUENCE",
+          "source": "XVIII precedes XIX"
+        },
+        "beats": {
+          "water at the feet, the honouring, the seating": "ARTISTIC STAGING until 17 is read",
+          "the sage thrilled at the promise": "SOURCED at 18.1 (CLM-0018, proposed) — not yet in the film"
+        }
+      },
+      "claims": [
+        "CLM-0001"
+      ],
+      "sarga": "Bāla 17",
+      "state": "directed",
+      "duration_s": 32.1,
+      "treatment": "treatments/M1.json",
+      "shots": 16
     },
     {
       "id": "M2",
-      "story_id": "STORY.BALA.ASK-AND-I-GIVE",
-      "title_en": "Ask, and I Give",
-      "title_hi": "माँगिए, मैं दूँगा",
-      "title_te": "అడగండి, ఇస్తాను",
+      "n": 2,
+      "title": "The Ask",
       "kanda": "BALA",
-      "sarga": 18,
-      "duration_s": 44,
-      "order": 2,
-      "status": "claims-only",
-      "treatment": null
+      "arc": "A7",
+      "question_in": "What will he ask for?",
+      "answer": "Not the army. Rāma.",
+      "question_out": "Will the father give him?",
+      "audit_scope": "FORENSICALLY AUDITED — Bāla 18–21 read verse by verse, 2026-09-20",
+      "production_ready": null,
+      "production_blocker": null,
+      "evidence_map": null,
+      "claims": [
+        "CLM-0002",
+        "CLM-0003",
+        "CLM-0004",
+        "CLM-0005",
+        "CLM-0006",
+        "CLM-0007",
+        "CLM-0009"
+      ],
+      "sarga": "Bāla 18",
+      "state": "directed",
+      "duration_s": 42.1,
+      "treatment": "treatments/M2.json",
+      "shots": 18
     },
     {
       "id": "M3",
-      "story_id": "STORY.BALA.FATHER-REFUSES",
-      "title_en": "A Father Says No",
-      "title_hi": "एक पिता ने मना किया",
-      "title_te": "ఒక తండ్రి వారించాడు",
+      "n": 3,
+      "title": "A Father Says No",
       "kanda": "BALA",
-      "sarga": 20,
-      "duration_s": 44,
-      "order": 3,
-      "status": "directed",
-      "treatment": "exports/pbl-source-state-v1/treatments/M3.json",
-      "note": "The film the studio is built to finish. Dasaratha refuses Visvamitra."
+      "arc": "A7",
+      "question_in": "Will the father give him?",
+      "answer": "He offers the army. He offers to go himself. He says no.",
+      "question_out": "Who are these rākṣasas he fears?",
+      "audit_scope": "FORENSICALLY AUDITED — Bāla 18–21 read verse by verse, 2026-09-20",
+      "production_ready": null,
+      "production_blocker": null,
+      "evidence_map": null,
+      "claims": [
+        "CLM-0008",
+        "CLM-0010",
+        "CLM-0011",
+        "CLM-0012",
+        "CLM-0013",
+        "CLM-0014",
+        "CLM-0015",
+        "CLM-0016",
+        "CLM-0019"
+      ],
+      "sarga": "Bāla 19",
+      "state": "directed",
+      "duration_s": 51.4,
+      "treatment": "treatments/M3.json",
+      "shots": 23
     },
     {
       "id": "M4",
-      "story_id": "STORY.BALA.THE-PRIEST-SPEAKS",
-      "title_en": "The Priest Speaks",
-      "title_hi": "गुरु बोले",
-      "title_te": "గురువు మాట్లాడు",
+      "n": 4,
+      "title": "The Name Behind Them",
       "kanda": "BALA",
-      "sarga": 21,
-      "duration_s": 44,
-      "order": 4,
-      "status": "claims-only",
-      "treatment": null
+      "arc": "A7",
+      "question_in": "Who are these rākṣasas he fears?",
+      "answer": "Incited by Rāvaṇa. The king refuses again.",
+      "question_out": "What does the sage do now?",
+      "audit_scope": "FORENSICALLY AUDITED — Bāla 18–21 read verse by verse, 2026-09-20",
+      "production_ready": null,
+      "production_blocker": null,
+      "evidence_map": null,
+      "claims": [
+        "CLM-0020",
+        "CLM-0030",
+        "CLM-0031",
+        "CLM-0032",
+        "CLM-0034",
+        "CLM-0035"
+      ],
+      "sarga": "Bāla 19",
+      "state": "directed",
+      "duration_s": 48.7,
+      "treatment": "treatments/M4.json",
+      "shots": 18
     },
     {
       "id": "M5",
-      "story_id": "STORY.BALA.THE-KING-YIELDS",
-      "title_en": "The King Yields",
-      "title_hi": "राजा मान गए",
-      "title_te": "రాజు అంగీకరించాడు",
+      "n": 5,
+      "title": "The Sage’s Anger",
       "kanda": "BALA",
-      "sarga": 22,
-      "duration_s": 44,
-      "order": 5,
-      "status": "claims-only",
-      "treatment": null
+      "arc": "A7",
+      "question_in": "What does the sage do now?",
+      "answer": "He says the Raghus keep their word. He turns to leave. Vasiṣṭha rises.",
+      "question_out": "Can anyone change the king’s mind?",
+      "audit_scope": "FORENSICALLY AUDITED — Bāla 18–21 read verse by verse, 2026-09-20",
+      "production_ready": null,
+      "production_blocker": null,
+      "evidence_map": null,
+      "claims": [
+        "CLM-0040",
+        "CLM-0041",
+        "CLM-0042",
+        "CLM-0043"
+      ],
+      "sarga": "Bāla 20",
+      "state": "directed",
+      "duration_s": 40.4,
+      "treatment": "treatments/M5.json",
+      "shots": 16
     },
     {
       "id": "M6",
-      "story_id": "STORY.BALA.TWO-BOYS-LEAVE",
-      "title_en": "Two Boys Leave",
-      "title_hi": "दो बालक चले",
-      "title_te": "ఇద్దరు బాలురు బయలుదేరారు",
+      "n": 6,
+      "title": "Vasiṣṭha’s Word",
       "kanda": "BALA",
-      "sarga": 22,
-      "duration_s": 44,
-      "order": 6,
-      "status": "claims-only",
-      "treatment": null
+      "arc": "A7",
+      "question_in": "Can anyone change the king’s mind?",
+      "answer": "He tells the king the sage himself is Rāma’s protection. The king relents.",
+      "question_out": "How does a father send his son?",
+      "audit_scope": "FORENSICALLY AUDITED — Bāla 18–21 read verse by verse, 2026-09-20",
+      "production_ready": null,
+      "production_blocker": null,
+      "evidence_map": null,
+      "claims": [
+        "CLM-0050",
+        "CLM-0051",
+        "CLM-0052",
+        "CLM-0055",
+        "CLM-0056",
+        "CLM-0057"
+      ],
+      "sarga": "Bāla 20",
+      "state": "directed",
+      "duration_s": 44.6,
+      "treatment": "treatments/M6.json",
+      "shots": 22
     },
     {
       "id": "M7",
-      "story_id": "STORY.BALA.THE-ROAD-SOUTH",
-      "title_en": "The Road South",
-      "title_hi": "दक्षिण का मार्ग",
-      "title_te": "దక్షిణ మార్గం",
+      "n": 7,
+      "title": "Two Sons Leave",
       "kanda": "BALA",
-      "sarga": 24,
-      "duration_s": 44,
-      "order": 7,
-      "status": "claims-only",
-      "treatment": null,
-      "note": "The road only. Tataka is not designed, shown or named in frame - she carries an outstanding memo."
+      "arc": "A7",
+      "question_in": "How does a father send his son?",
+      "answer": "With blessings, Rāma and Lakṣmaṇa walk out beside the sage.",
+      "question_out": "What does the sage give the boy on the road?",
+      "audit_scope": "FORENSICALLY AUDITED — Bāla 18–21 read verse by verse, 2026-09-20",
+      "production_ready": null,
+      "production_blocker": null,
+      "evidence_map": null,
+      "claims": [
+        "CLM-0053",
+        "CLM-0054"
+      ],
+      "sarga": "Bāla 21",
+      "state": "directed",
+      "duration_s": 40.4,
+      "treatment": "treatments/M7.json",
+      "shots": 21
+    },
+    {
+      "id": "M8",
+      "n": 8,
+      "title": "The First Gift",
+      "kanda": "BALA",
+      "arc": "A8",
+      "question_in": "What does the sage give the boy on the road?",
+      "answer": "Two mantras: no hunger, no fatigue.",
+      "question_out": "Where is he taking them?",
+      "audit_scope": "PROPOSED / NOT FORENSICALLY AUDITED — Bāla 21.9–18",
+      "production_ready": false,
+      "production_blocker": "No treatment; every claim is proposed; the forensic audit did not cover Bāla 22–26.",
+      "evidence_map": null,
+      "claims": [
+        "CLM-0060",
+        "CLM-0061",
+        "CLM-0062",
+        "CLM-0063"
+      ],
+      "sarga": "Bāla 21",
+      "state": "ledger"
+    },
+    {
+      "id": "M9",
+      "n": 9,
+      "title": "The Forest Ahead",
+      "kanda": "BALA",
+      "arc": "A8",
+      "question_in": "Where is he taking them?",
+      "answer": "To a forest that was once a country.",
+      "question_out": "What lives in that forest?",
+      "audit_scope": "PROPOSED / NOT FORENSICALLY AUDITED — Bāla 23.12–16",
+      "production_ready": false,
+      "production_blocker": "No treatment; every claim is proposed; the forensic audit did not cover Bāla 22–26.",
+      "evidence_map": null,
+      "claims": [
+        "CLM-0070"
+      ],
+      "sarga": "Bāla 23",
+      "state": "ledger"
+    },
+    {
+      "id": "M10",
+      "n": 10,
+      "title": "The Order",
+      "kanda": "BALA",
+      "arc": "A8",
+      "question_in": "What lives in that forest?",
+      "answer": "A woman who kills everything. The sage tells Rāma to kill her.",
+      "question_out": "Will Rāma kill a woman?",
+      "audit_scope": "PROPOSED / NOT FORENSICALLY AUDITED — Bāla 23.24–28",
+      "production_ready": false,
+      "production_blocker": "No treatment; every claim is proposed; the forensic audit did not cover Bāla 22–26.",
+      "evidence_map": null,
+      "claims": [
+        "CLM-0080",
+        "CLM-0081",
+        "CLM-0082",
+        "CLM-0083"
+      ],
+      "sarga": "Bāla 24",
+      "state": "ledger"
+    }
+  ],
+  "arcs": [
+    {
+      "id": "A1",
+      "kanda": "BALA",
+      "title": "Nārada's summary",
+      "summary": "The whole story told in brief, before it is told at length",
+      "sargas": [
+        1,
+        1
+      ],
+      "films": []
+    },
+    {
+      "id": "A2",
+      "kanda": "BALA",
+      "title": "The first śloka",
+      "summary": "Vālmīki, the krauñca birds, grief becoming metre",
+      "sargas": [
+        2,
+        4
+      ],
+      "films": []
+    },
+    {
+      "id": "A3",
+      "kanda": "BALA",
+      "title": "Ayodhyā",
+      "summary": "The city and the king before anything goes wrong",
+      "sargas": [
+        5,
+        6
+      ],
+      "films": []
+    },
+    {
+      "id": "A4",
+      "kanda": "BALA",
+      "title": "The ministers",
+      "summary": "Counsel, and the sage who must be fetched",
+      "sargas": [
+        7,
+        11
+      ],
+      "films": []
+    },
+    {
+      "id": "A5",
+      "kanda": "BALA",
+      "title": "The sacrifices",
+      "summary": "The aśvamedha, the putreṣṭi, and what comes out of the fire",
+      "sargas": [
+        12,
+        16
+      ],
+      "films": []
+    },
+    {
+      "id": "A6",
+      "kanda": "BALA",
+      "title": "The births",
+      "summary": "Four sons; and elsewhere, an army being born for later",
+      "sargas": [
+        17,
+        17
+      ],
+      "films": []
+    },
+    {
+      "id": "A7",
+      "kanda": "BALA",
+      "title": "Viśvāmitra at Ayodhyā",
+      "summary": "The arc we have read, claimed and directed",
+      "sargas": [
+        18,
+        22
+      ],
+      "films": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ]
+    },
+    {
+      "id": "A8",
+      "kanda": "BALA",
+      "title": "The road out",
+      "summary": "Two mantras, a burnt god, and a forest with something in it",
+      "sargas": [
+        23,
+        27
+      ],
+      "films": [
+        "M8",
+        "M9",
+        "M10"
+      ]
+    },
+    {
+      "id": "A9",
+      "kanda": "BALA",
+      "title": "The weapons",
+      "summary": "What a sage gives a boy who has just killed",
+      "sargas": [
+        27,
+        28
+      ],
+      "films": []
+    },
+    {
+      "id": "A10",
+      "kanda": "BALA",
+      "title": "Siddhāśrama",
+      "summary": "The yajña guarded; the reason for the whole journey",
+      "sargas": [
+        29,
+        30
+      ],
+      "films": []
+    },
+    {
+      "id": "A11",
+      "kanda": "BALA",
+      "title": "To Mithilā",
+      "summary": "Rivers, stories, and a long walk east",
+      "sargas": [
+        31,
+        44
+      ],
+      "films": []
+    },
+    {
+      "id": "A12",
+      "kanda": "BALA",
+      "title": "Ahalyā",
+      "summary": "A hermitage nobody enters",
+      "sargas": [
+        45,
+        51
+      ],
+      "films": []
+    },
+    {
+      "id": "A13",
+      "kanda": "BALA",
+      "title": "Who Viśvāmitra was",
+      "summary": "Śatānanda tells Rāma the sage's own history — the door left open in arc 7",
+      "sargas": [
+        51,
+        65
+      ],
+      "films": []
+    },
+    {
+      "id": "A14",
+      "kanda": "BALA",
+      "title": "The bow",
+      "summary": "Mithilā, the bow, Sītā, and four weddings",
+      "sargas": [
+        66,
+        73
+      ],
+      "films": []
+    },
+    {
+      "id": "A15",
+      "kanda": "BALA",
+      "title": "Paraśurāma",
+      "summary": "On the road home, one more man with an axe",
+      "sargas": [
+        74,
+        77
+      ],
+      "films": []
+    },
+    {
+      "id": "B1",
+      "kanda": "AYODHYA",
+      "title": "The coronation prepared",
+      "summary": "A city decorating itself for the best day it will ever not have",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B2",
+      "kanda": "AYODHYA",
+      "title": "Mantharā",
+      "summary": "One woman changes one woman's mind",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B3",
+      "kanda": "AYODHYA",
+      "title": "The two boons",
+      "summary": "A debt from long ago, called in at the worst hour",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B4",
+      "kanda": "AYODHYA",
+      "title": "The king cannot speak",
+      "summary": "A promise keeping a man from his son",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B5",
+      "kanda": "AYODHYA",
+      "title": "Rāma is told",
+      "summary": "He accepts before his father can finish",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B6",
+      "kanda": "AYODHYA",
+      "title": "Sītā insists",
+      "summary": "The argument she wins",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B7",
+      "kanda": "AYODHYA",
+      "title": "Lakṣmaṇa's rage",
+      "summary": "The one who will not accept it",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B8",
+      "kanda": "AYODHYA",
+      "title": "The city follows",
+      "summary": "And is left sleeping by a river",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B9",
+      "kanda": "AYODHYA",
+      "title": "Guha and the crossing",
+      "summary": "A boatman, a river, and the end of the kingdom",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B10",
+      "kanda": "AYODHYA",
+      "title": "The charioteer returns alone",
+      "summary": "Sumantra carries an empty chariot home",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B11",
+      "kanda": "AYODHYA",
+      "title": "Daśaratha dies",
+      "summary": "Of the thing he did sixty years ago",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B12",
+      "kanda": "AYODHYA",
+      "title": "Bharata refuses",
+      "summary": "The throne offered and declined",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "B13",
+      "kanda": "AYODHYA",
+      "title": "The sandals",
+      "summary": "Wood on a throne, and a man ruling from outside the city",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C1",
+      "kanda": "ARANYA",
+      "title": "Thirteen years",
+      "summary": "A life made in the forest",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C2",
+      "kanda": "ARANYA",
+      "title": "The sages' request",
+      "summary": "A promise that will cost everything",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C3",
+      "kanda": "ARANYA",
+      "title": "Śūrpaṇakhā",
+      "summary": "A refusal, and what is done to her",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C4",
+      "kanda": "ARANYA",
+      "title": "Khara and Dūṣaṇa",
+      "summary": "Fourteen thousand",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C5",
+      "kanda": "ARANYA",
+      "title": "Rāvaṇa is told",
+      "summary": "The name arrives at last, in person",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C6",
+      "kanda": "ARANYA",
+      "title": "The golden deer",
+      "summary": "Mārīca, unwilling, sent again",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C7",
+      "kanda": "ARANYA",
+      "title": "The line",
+      "summary": "A brother made to leave",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C8",
+      "kanda": "ARANYA",
+      "title": "The taking",
+      "summary": "The centre of the epic",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C9",
+      "kanda": "ARANYA",
+      "title": "Jaṭāyu",
+      "summary": "An old bird against a flying chariot",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "C10",
+      "kanda": "ARANYA",
+      "title": "The search begins",
+      "summary": "Two men in an empty forest",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "D1",
+      "kanda": "KISHKINDHA",
+      "title": "Hanumān on the mountain",
+      "summary": "The meeting that changes the war",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "D2",
+      "kanda": "KISHKINDHA",
+      "title": "The friendship by fire",
+      "summary": "Two dispossessed kings",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "D3",
+      "kanda": "KISHKINDHA",
+      "title": "Vālin",
+      "summary": "The killing that is argued about for three thousand years",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "D4",
+      "kanda": "KISHKINDHA",
+      "title": "Tārā",
+      "summary": "A widow who speaks better than anyone in the book",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "D5",
+      "kanda": "KISHKINDHA",
+      "title": "The rains",
+      "summary": "Four months of waiting",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "D6",
+      "kanda": "KISHKINDHA",
+      "title": "The search parties",
+      "summary": "Four directions, one ring",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "D7",
+      "kanda": "KISHKINDHA",
+      "title": "Sampāti",
+      "summary": "A brother's wings, and the first sight of Laṅkā",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "E1",
+      "kanda": "SUNDARA",
+      "title": "The leap",
+      "summary": "A hundred yojanas of sea",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "E2",
+      "kanda": "SUNDARA",
+      "title": "Laṅkā at night",
+      "summary": "A city seen by someone who should not be in it",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "E3",
+      "kanda": "SUNDARA",
+      "title": "The aśoka grove",
+      "summary": "Finding her",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "E4",
+      "kanda": "SUNDARA",
+      "title": "The ring",
+      "summary": "The smallest object in the epic, carrying the most",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "E5",
+      "kanda": "SUNDARA",
+      "title": "Trijaṭā's dream",
+      "summary": "A rākṣasī who is kind",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "E6",
+      "kanda": "SUNDARA",
+      "title": "The burning",
+      "summary": "A tail, a city, and a warning",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "E7",
+      "kanda": "SUNDARA",
+      "title": "Seen her",
+      "summary": "Two words carried back across the sea",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F1",
+      "kanda": "YUDDHA",
+      "title": "Vibhīṣaṇa crosses",
+      "summary": "A brother who leaves",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F2",
+      "kanda": "YUDDHA",
+      "title": "The bridge",
+      "summary": "Stones, and a sea that yields",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F3",
+      "kanda": "YUDDHA",
+      "title": "The siege",
+      "summary": "A city closed",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F4",
+      "kanda": "YUDDHA",
+      "title": "Kumbhakarṇa",
+      "summary": "Woken for a war he says is wrong",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F5",
+      "kanda": "YUDDHA",
+      "title": "Indrajit",
+      "summary": "The son who fights unseen",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F6",
+      "kanda": "YUDDHA",
+      "title": "The healing herb",
+      "summary": "A mountain carried because the herb could not be found",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F7",
+      "kanda": "YUDDHA",
+      "title": "Rāvaṇa at last",
+      "summary": "The duel the whole epic has been walking toward",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F8",
+      "kanda": "YUDDHA",
+      "title": "The fire",
+      "summary": "What is asked of her afterwards",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "F9",
+      "kanda": "YUDDHA",
+      "title": "Returning",
+      "summary": "A flying chariot, and a brother waiting at Nandigrāma",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "G1",
+      "kanda": "UTTARA",
+      "title": "Rāvaṇa's history",
+      "summary": "Who he was before",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "G2",
+      "kanda": "UTTARA",
+      "title": "Hanumān's boyhood",
+      "summary": "The sun mistaken for fruit",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "G3",
+      "kanda": "UTTARA",
+      "title": "The rumour",
+      "summary": "A washerman, and a king who listens",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "G4",
+      "kanda": "UTTARA",
+      "title": "The second exile",
+      "summary": "The hardest thing in the epic",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "G5",
+      "kanda": "UTTARA",
+      "title": "Lava and Kuśa",
+      "summary": "Two boys singing their father's story to him",
+      "sargas": null,
+      "films": []
+    },
+    {
+      "id": "G6",
+      "kanda": "UTTARA",
+      "title": "The earth opens",
+      "summary": "The ending",
+      "sargas": null,
+      "films": []
     }
   ]
 }

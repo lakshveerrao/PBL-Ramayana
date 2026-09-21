@@ -1,0 +1,47 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "built": "2026-09-21",
+  "film": "M1",
+  "story_id": "M1",
+  "title": {
+    "en": "The Promise"
+  },
+  "duration_s": 32.1,
+  "fps": 30,
+  "frame": [
+    1080,
+    1920
+  ],
+  "shots": 16,
+  "to_generate": 14,
+  "estimate_usd": {
+    "image": 0.35,
+    "motion": 3.5,
+    "voice": 0.07056,
+    "total": 3.92056
+  },
+  "gate": {
+    "allowed": false,
+    "blocked": 15,
+    "of": 16
+  },
+  "claims": [
+    {
+      "id": "CLM-0001",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "DASHARATHA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "edition": "Dutt 1891",
+        "section": "XVIII",
+        "sarga": null,
+        "verses": null,
+        "source": "SRC.DUTT.VR",
+        "numbering": "Dutt section numbering. No Sanskrit sarga or verse equivalence is asserted."
+      },
+      "text": "Daśaratha tells Viśvāmitra he will do whatever the sage asks, before hearing the request."
+    }
+  ]
+}

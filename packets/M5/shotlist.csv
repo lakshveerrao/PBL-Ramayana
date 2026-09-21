@@ -1,0 +1,17 @@
+shot,start_s,duration_s,frames,size,lens_mm,height,camera_move,expression,source,reuse_of,entities,claims,narration,motion,gate
+05-01,0.0,3.0,90,MS,85,eye,locked,—,reuse,,VISHVAMITRA,,,NO MOTION,refused
+05-02,3.0,2.4,72,MS,85,eye,locked,calm ending,reuse,05-01,VISHVAMITRA,,L1,NO MOTION,refused
+05-03,5.4,1.4,42,MS,85,eye,locked,—,generate,,VISHVAMITRA,,L2,motion,refused
+05-04,6.8,1.7,51,INSERT,100,low,locked,—,generate,,STAFF,,L3,motion,clear
+05-05,8.5,1.0,30,INSERT,100,low,"imperceptible drift, under 1%",—,generate,,STAFF,,,motion,clear
+05-06,9.5,2.1,63,INSERT,100,low,locked,—,reuse,05-04,STAFF,,,NO MOTION,clear
+05-07,11.6,2.2,66,MS,85,eye,locked,—,generate,,DASHARATHA,,,motion,refused
+05-08,13.8,2.6,78,MS,85,eye,locked,—,generate,,VISHVAMITRA,CLM-0041,L4,motion,refused
+05-09,16.4,1.9,57,MS,85,eye,locked,—,reuse,05-08,VISHVAMITRA,CLM-0041,L5,NO MOTION,refused
+05-10,18.3,2.6,78,MS,85,eye,locked,—,reuse,05-08,VISHVAMITRA,CLM-0042,L6,NO MOTION,refused
+05-11,20.9,2.2,66,MS,50,eye,locked,—,generate,,VASISHTHA,,,motion,refused
+05-12,23.1,2.4,72,MS,85,eye,locked,—,reuse,05-08,VISHVAMITRA,CLM-0043,L7,NO MOTION,refused
+05-13,25.5,1.5,45,MS,85,eye,locked,—,reuse,05-08,VISHVAMITRA,CLM-0043,L8,NO MOTION,refused
+05-14,27.0,2.8,84,WIDE,24,eye,locked,—,generate,,VISHVAMITRA VASISHTHA THRONE SABHA,,L9,motion,refused
+05-15,29.8,2.6,78,WIDE,24,eye,locked,—,reuse,05-14,VISHVAMITRA VASISHTHA THRONE SABHA,,,NO MOTION,refused
+05-16,32.4,8.0,240,MS,85,eye,locked,—,generate,,DASHARATHA,,,motion,refused

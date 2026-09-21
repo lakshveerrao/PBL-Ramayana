@@ -1,146 +1,114 @@
 {
   "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
-  "built": "2026-09-20",
+  "built": "2026-09-21",
   "film": "M3",
-  "story_id": "STORY.BALA.FATHER-REFUSES",
+  "story_id": "M3",
   "title": {
-    "en": "A Father Says No",
-    "hi": "एक पिता ने मना किया",
-    "te": "ఒక తండ్రి వారించాడు"
+    "en": "A Father Says No"
   },
-  "duration_s": 44.0,
+  "duration_s": 51.4,
   "fps": 30,
   "frame": [
     1080,
     1920
   ],
-  "shots": 18,
-  "to_generate": 12,
+  "shots": 23,
+  "to_generate": 14,
   "estimate_usd": {
-    "image": 0.3,
-    "motion": 0.25,
-    "voice": 0.11232,
-    "total": 0.66232
+    "image": 0.35,
+    "motion": 3.5,
+    "voice": 0.2637,
+    "total": 4.1137
   },
   "gate": {
     "allowed": false,
-    "blocked": 15,
-    "of": 18
+    "blocked": 22,
+    "of": 23
   },
   "claims": [
     {
-      "id": "CLM.BALA.20.I.COURT-INTERIOR",
-      "class": "I",
-      "state": "accepted",
-      "speaker": null,
-      "locator": null,
-      "text": "The refusal is staged in a pillared court interior, post-and-lintel, on a raised plinth."
-    },
-    {
-      "id": "CLM.BALA.20.KING-STUNNED",
+      "id": "CLM-0008",
       "class": "T",
       "state": "accepted",
-      "speaker": null,
+      "speaker": "VISHVAMITRA",
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "3-4",
+        "sarga": 18,
+        "verses": "9",
         "source": "SRC.GRETIL.VR"
       },
-      "text": "Hearing the request, Dasaratha loses his senses and falls."
+      "text": "Viśvāmitra says that Rāma, protected by the sage's own power, is able to destroy the rākṣasas."
     },
     {
-      "id": "CLM.BALA.20.NAMES-THE-ENEMY",
+      "id": "CLM-0010",
       "class": "T",
       "state": "accepted",
-      "speaker": "VISVAMITRA",
+      "speaker": "DASHARATHA",
       "locator": {
         "work": "VR",
         "kanda": "BALA",
         "sarga": 19,
-        "verses": "6-9",
+        "verses": "2",
         "source": "SRC.GRETIL.VR"
       },
-      "text": "Visvamitra names Marica and Subahu, servants of Ravana, as the rakshasas troubling the sacrifice."
+      "text": "Daśaratha says Rāma is not yet sixteen."
     },
     {
-      "id": "CLM.BALA.20.NOT-YET-SIXTEEN",
+      "id": "CLM-0012",
       "class": "T",
       "state": "accepted",
-      "speaker": "DASARATHA",
+      "speaker": "DASHARATHA",
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "9-10",
+        "sarga": 19,
+        "verses": "3",
         "source": "SRC.GRETIL.VR"
       },
-      "text": "Dasaratha states that Rama is not yet sixteen."
+      "text": "Daśaratha offers to go himself at the head of his full army."
     },
     {
-      "id": "CLM.BALA.20.OFFERS-HIMSELF",
+      "id": "CLM-0013",
       "class": "T",
       "state": "accepted",
-      "speaker": "DASARATHA",
+      "speaker": "DASHARATHA",
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "11-14",
+        "sarga": 19,
+        "verses": "5",
         "source": "SRC.GRETIL.VR"
       },
-      "text": "Dasaratha offers his own army and himself in Rama's place."
+      "text": "Daśaratha offers to fight the rākṣasas himself, bow in hand, for as long as he lives."
     },
     {
-      "id": "CLM.BALA.20.REFUSAL",
+      "id": "CLM-0014",
       "class": "T",
       "state": "accepted",
-      "speaker": "DASARATHA",
+      "speaker": "DASHARATHA",
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "15-20",
+        "sarga": 19,
+        "verses": "8",
         "source": "SRC.GRETIL.VR"
       },
-      "text": "Dasaratha refuses to give Rama."
+      "text": "Daśaratha says he cannot bear to live separated from Rāma, even for a moment."
     },
     {
-      "id": "CLM.BALA.20.REQUEST-LANDS",
+      "id": "CLM-0015",
       "class": "T",
       "state": "accepted",
-      "speaker": "VISVAMITRA",
+      "speaker": "DASHARATHA",
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "1-2",
+        "sarga": 19,
+        "verses": "4,6,8,10,11",
         "source": "SRC.GRETIL.VR"
       },
-      "text": "Visvamitra asks Dasaratha to give him Rama."
-    },
-    {
-      "id": "CLM.BALA.20.S.LAMP-HELD",
-      "class": "S",
-      "state": "accepted",
-      "speaker": null,
-      "locator": null,
-      "text": "A lamp stands at the king's right hand through the refusal, and does not move."
-    },
-    {
-      "id": "CLM.BALA.20.SON-CAME-LATE",
-      "class": "T",
-      "state": "accepted",
-      "speaker": "DASARATHA",
-      "locator": {
-        "work": "VR",
-        "kanda": "BALA",
-        "sarga": 20,
-        "verses": "5-8",
-        "source": "SRC.GRETIL.VR"
-      },
-      "text": "Dasaratha states that he obtained Rama late, after long childlessness and great austerity."
+      "text": "Daśaratha tells Viśvāmitra he ought not to take Rāma."
     }
   ]
 }

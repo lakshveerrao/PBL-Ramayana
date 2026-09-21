@@ -1,0 +1,72 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "built": "2026-09-21",
+  "film": "M5",
+  "story_id": "M5",
+  "title": {
+    "en": "The Sage’s Anger"
+  },
+  "duration_s": 40.4,
+  "fps": 30,
+  "frame": [
+    1080,
+    1920
+  ],
+  "shots": 16,
+  "to_generate": 8,
+  "estimate_usd": {
+    "image": 0.2,
+    "motion": 2,
+    "voice": 0.11916,
+    "total": 2.31916
+  },
+  "gate": {
+    "allowed": false,
+    "blocked": 13,
+    "of": 16
+  },
+  "claims": [
+    {
+      "id": "CLM-0041",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 20,
+        "verses": "2",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra tells Daśaratha that Daśaratha, having first promised, now wishes to abandon that promise."
+    },
+    {
+      "id": "CLM-0042",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 20,
+        "verses": "2",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra tells Daśaratha that this is unbecoming of the house of Raghu."
+    },
+    {
+      "id": "CLM-0043",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 20,
+        "verses": "3",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra says that if this is the king's decision, he will go back as he came."
+    }
+  ]
+}

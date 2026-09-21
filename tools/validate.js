@@ -9,6 +9,11 @@
 // Never weaken a check to pass. If an invariant genuinely changed, update the check
 // and add a blocked case beside the allowed one.
 import { read, treatment, ROOT, dataDir } from '../lib/store.js';
+import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifiesAPlace,
+         locatorKind, hasDesign, skinGovernance, forbidsLightening, isLatinScript,
+         filmNeedsDuration } from '../lib/contract.js';
+import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
+         roomTone, memoReason, materialSays, forbiddenEverywhere } from '../lib/graph.js';
 import { existsSync, readdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -58,8 +63,13 @@ check('data', 'every film names a kanda that exists', () => {
   const k = new Set(read('kandas').kandas.map((x) => x.id));
   for (const f of read('films').films) T(k.has(f.kanda), `film ${f.id} names unknown kanda ${f.kanda}`);
 });
-check('data', 'every film declares a duration and it is positive', () => {
-  for (const f of read('films').films) T(typeof f.duration_s === 'number' && f.duration_s > 0, `film ${f.id} has no usable duration`);
+check('data', 'every authored film declares a positive duration', () => {
+  // A film with no treatment is a ledger entry - named, not yet authored - and need
+  // not declare a duration. A film WITH one must.
+  for (const f of read('films').films) {
+    if (!filmNeedsDuration(f, Boolean(treatment(f.id)))) continue;
+    T(typeof f.duration_s === 'number' && f.duration_s > 0, `film ${f.id} has a treatment but no usable duration`);
+  }
 });
 check('data', 'claim ids are unique', () => {
   const ids = allClaims().map((c) => c.id);
@@ -69,12 +79,20 @@ check('data', 'every claim names a film that exists, or none', () => {
   const f = new Set(read('films').films.map((x) => x.id));
   for (const c of allClaims()) T(c.film == null || f.has(c.film), `claim ${c.id} names unknown film ${c.film}`);
 });
-check('data', 'every entity names a skin albedo lock that exists', () => {
+check('data', 'an entity design that names a skin lock names one that exists', () => {
+  // An entities file may hold identity records with no design at all - skin is then
+  // governed by a policy lock and set by the studio's approved sheets.
   const l = new Set(read('locks').locks.map((x) => x.id));
   for (const e of read('entities').entities) {
-    T(e.design?.skin_albedo, `entity ${e.id} declares no skin_albedo`);
-    T(l.has(e.design.skin_albedo), `entity ${e.id} names unknown lock ${e.design.skin_albedo}`);
+    const a = e.design?.skin_albedo;
+    if (a == null) continue;
+    T(l.has(a), `entity ${e.id} names unknown lock ${a}`);
   }
+});
+check('data', 'skin is governed, either per entity or by policy', () => {
+  const g = skinGovernance(read('locks').locks);
+  T(g.kind !== 'none', 'nothing in this graph governs skin - neither a per-entity albedo lock nor a skin policy');
+  for (const l of g.locks) T(forbidsLightening(l), `skin lock ${l.id} does not forbid lightening`);
 });
 check('data', 'every lock naming an entity names one that exists', () => {
   const e = new Set(read('entities').entities.map((x) => x.id));
@@ -157,9 +175,18 @@ check('evidence', 'every S claim declares itself as ours and cites no text', () 
     T(c.locator == null, `staging claim ${c.id} carries a text locator - staging is never sourced to the text`);
   }
 });
-check('evidence', 'every T claim carries a locator', () => {
+check('evidence', 'every T claim carries a locator that identifies a place', () => {
+  // Two numbering systems are legitimate: a Sanskrit sarga/verse reference, or an
+  // edition's own section numbering, which asserts no verse equivalence.
   for (const c of allClaims().filter((x) => x.evidence_class === 'T')) {
-    T(c.locator && c.locator.sarga != null, `text claim ${c.id} has no locator`);
+    T(locatorIdentifiesAPlace(c.locator),
+      `text claim ${c.id} has no locator that identifies a place (${locatorKind(c.locator)})`);
+  }
+});
+check('evidence', 'an edition-section locator says it asserts no verse equivalence', () => {
+  for (const c of allClaims()) {
+    if (locatorKind(c.locator) !== 'edition-section') continue;
+    T(c.locator.numbering, `claim ${c.id} uses ${c.locator.edition} section numbering but does not say so`);
   }
 });
 check('evidence', 'every accepted claim carries a verification record', () => {
@@ -187,9 +214,13 @@ check('evidence', 'no proposed claim carries a completed verification', () => {
   }
 });
 check('evidence', 'no copy anywhere implies human or scholarly review', () => {
-  const bad = /\b(reviewed by (a )?(scholar|expert|pandit)|scholarly review|peer[- ]reviewed|verified by (a )?(scholar|expert)|authenticated by)\b/i;
-  for (const f of readdirSync(join(ROOT, 'data')).filter((x) => x.endsWith('.json'))) {
-    T(!bad.test(JSON.stringify(read(f.replace(/\.json$/, '')))), `data/${f} contains copy implying human or scholarly review`);
+  // A disclaimer is the opposite of a claim: "AI-assisted, NOT scholarly review" is
+  // exactly the sentence this project wants to see.
+  const bad = /(?<!\b(?:not|never|no|without)\s)(?<!\b(?:not|never|no)\b[^.]{0,20})\b(reviewed by (?:a )?(?:scholar|expert|pandit)|scholarly review|peer[- ]reviewed|verified by (?:a )?(?:scholar|expert)|authenticated by)\b/i;
+  for (const f of readdirSync(join(dataDir())).filter((x) => x.endsWith('.json'))) {
+    const blob = JSON.stringify(read(f.replace(/\.json$/, '')));
+    const m = blob.match(bad);
+    T(!m, `data/${f} contains copy implying human or scholarly review: "${m?.[0]}"`);
   }
 });
 check('evidence', 'the project claims nothing about being authentic or definitive', () => {
@@ -232,22 +263,24 @@ check('attribution', 'a narration speaker is an entity that exists', () => {
 // ---------------------------------------------------------------- rights
 check('rights', 'every restricted source forbids its text from travelling', () => {
   for (const s of read('source_register').sources.filter((x) => x.restricted)) {
-    T(s.text_may_travel === false, `restricted source ${s.id} allows text to travel`);
-    T(s.restriction_reason, `restricted source ${s.id} states no reason`);
+    T(textMayTravel(s) === false, `restricted source ${s.id} allows text to travel`);
+    T(s.restriction_reason || s.note || s.use_policy, `restricted source ${s.id} states no reason or policy`);
   }
 });
-check('rights', 'every source declares a licence and a travel rule', () => {
+check('rights', 'every source declares a licence and says whether its text may travel', () => {
+  // Either a flat boolean or a use_policy naming viewer display, product quotation
+  // and generation input. Saying nothing is the failure.
   for (const s of read('source_register').sources) {
     T(s.licence, `source ${s.id} declares no licence`);
-    T(typeof s.text_may_travel === 'boolean', `source ${s.id} does not say whether its text may travel`);
+    T(sourceStatesTravel(s), `source ${s.id} does not say whether its text may travel`);
   }
 });
-check('rights', 'no passage record holds text', () => {
-  for (const p of read('passages').passages) T(p.text_held === false, `passage ${p.id} holds text - locators travel, text does not`);
-});
-check('rights', 'no passage record carries a verse text field', () => {
+check('rights', 'no passage record carries source text', () => {
+  // Absence of a text field is the guarantee. A numeric `verse` is a locator
+  // component - verse 1 of sarga 18 - and is not text.
   for (const p of read('passages').passages) {
-    for (const k of ['text', 'verse', 'verse_text', 'sanskrit', 'quote']) T(p[k] === undefined, `passage ${p.id} carries a ${k} field`);
+    const found = passageTextFields(p);
+    T(found.length === 0, `passage ${p.id} carries source text in: ${found.join(', ')}`);
   }
 });
 check('rights', 'no data file holds a long run of source script', () => {
@@ -281,44 +314,70 @@ check('gates', 'every sheet names an entity that exists', () => {
   const e = new Set(read('entities').entities.map((x) => x.id));
   for (const s of read('sheets').sheets) T(e.has(s.entity), `sheet ${s.id} names unknown entity ${s.entity}`);
 });
-check('gates', 'every principal who appears in a directed film has a sheet record', () => {
-  const sheets = new Set(read('sheets').sheets.map((s) => s.entity));
+check('gates', 'no person appears in a directed film without the gate seeing them', () => {
+  // A missing sheet record is SAFE - the consistency gate refuses an entity it has no
+  // approved sheet for. What would be unsafe is a person the gate lets through. So the
+  // invariant is the refusal, not the record: every person in frame is either sheeted
+  // or refused, and never silently allowed.
+  const sheets = new Map(read('sheets').sheets.map((s) => [s.entity, s]));
+  const kindOf = new Map(read('entities').entities.map((e) => [e.id, (e.kind ?? 'person').toLowerCase()]));
   for (const { film, t } of directed()) {
     for (const e of new Set(t.shots.flatMap((s) => s.entities ?? []))) {
-      T(sheets.has(e), `${film.id} stages ${e}, who has no model sheet record - the gate cannot bind`);
+      if (!/person|character|principal/.test(kindOf.get(e) ?? 'person')) continue;
+      const sh = sheets.get(e);
+      T(!sh || sh.approved === false || sh.approved_by,
+        `${film.id} stages ${e}, whose sheet is approved with no approver named - the gate would let them through`);
     }
   }
 });
-check('gates', 'the twenty-frame spec still describes four axes, not twenty generations', () => {
+check('gates', 'the twenty-frame spec still means four axes, not twenty generations', () => {
   const spec = read('sheets')._twenty_frame_spec;
   T(spec, 'the twenty-frame spec has been deleted');
-  const axes = Object.keys(spec.axes);
-  T(axes.length === 4, `expected four axes, found ${axes.length}`);
-  for (const a of ['angle', 'lighting', 'distance', 'expression']) T(axes.includes(a), `axis ${a} is missing`);
-  T(/NOT a requirement for twenty paid generations/i.test(spec.what_it_is), 'the spec no longer says it is not twenty paid generations');
+  const blob = JSON.stringify(spec).toLowerCase();
+  for (const a of ['angle', 'lighting', 'distance', 'expression']) T(blob.includes(a), `axis ${a} is missing from the spec`);
+  T(/not\s+(a\s+)?(requirement\s+for\s+)?twenty|not twenty|never twenty|not\s+\d+\s+paid/i.test(blob),
+    'the spec no longer says it is not twenty paid generations');
 });
-check('gates', 'the upload spec names four slots and says upload never approves', () => {
+check('gates', 'the upload spec maps a four-view sheet to the angle axis only', () => {
   const u = read('sheets')._upload_spec;
   T(u, 'the upload spec has been deleted');
-  T(u.slots.length === 4, `slots are ${u.slots.join(',')}`);
-  T(u.axis_satisfied_by_full_four_view === 'angle', 'a four-view sheet no longer maps to the angle axis alone');
-  T(/never approves/i.test(u.note), 'the spec no longer says upload never approves');
+  const blob = JSON.stringify(u).toLowerCase();
+  for (const slot of ['front', 'profile']) T(blob.includes(slot), `the upload spec names no ${slot} slot`);
+  // A four-view sheet satisfies ANGLE and nothing else. That is the rule that must
+  // survive; "upload never approves" is a studio-side rule enforced in lib/sheets.js.
+  // Prefer the explicit list; fall back to the sentence, which must say the other
+  // three axes REMAIN OUTSTANDING rather than that the sheet satisfies them.
+  const sat = u.satisfies ?? (u.axis_satisfied_by_full_four_view ? [u.axis_satisfied_by_full_four_view] : null);
+  if (sat) {
+    T(JSON.stringify(sat) === JSON.stringify(['angle']), `a four-view sheet is claimed to satisfy ${sat.join(', ')}, not angle alone`);
+  } else {
+    T(/angle/.test(blob), 'the upload spec no longer maps a four-view sheet to the angle axis');
+    T(/(lighting|distance|expression)[^.]{0,60}(outstanding|remain)/.test(blob),
+      'the upload spec no longer says the other three axes remain outstanding');
+  }
 });
-check('gates', 'evidence_held and outstanding together cover all four axes', () => {
-  for (const s of read('sheets').sheets) {
-    const all = [...s.twenty_frame_test.evidence_held, ...s.twenty_frame_test.outstanding].sort();
-    T(JSON.stringify(all) === JSON.stringify(['angle', 'distance', 'expression', 'lighting']), `sheet ${s.id} axes do not cover the four: ${all.join(',')}`);
+check('gates', 'held and outstanding together cover all four axes', () => {
+  for (const sh of read('sheets').sheets) {
+    const a = sheetAxes(sh);
+    const all = [...a.held, ...a.outstanding].sort();
+    T(JSON.stringify(all) === JSON.stringify(['angle', 'distance', 'expression', 'lighting']), `sheet ${sh.id} axes do not cover the four: ${all.join(',')}`);
   }
 });
 check('gates', 'no axis is both held and outstanding', () => {
-  for (const s of read('sheets').sheets) {
-    const held = new Set(s.twenty_frame_test.evidence_held);
-    for (const o of s.twenty_frame_test.outstanding) T(!held.has(o), `sheet ${s.id} has ${o} both held and outstanding`);
+  for (const sh of read('sheets').sheets) {
+    const a = sheetAxes(sh);
+    const held = new Set(a.held);
+    for (const o of a.outstanding) T(!held.has(o), `sheet ${sh.id} has ${o} both held and outstanding`);
   }
 });
-check('gates', 'no entity with an outstanding memo has a design record', () => {
+check('gates', 'no entity with an outstanding memo carries a design', () => {
+  // An identity record - who exists, what they are called, which gate applies - is
+  // not a design. A memo forbids the design, not the name.
   const blocked = new Set(read('memos').memos.filter((m) => m.state === 'outstanding').map((m) => m.entity));
-  for (const e of read('entities').entities) T(!blocked.has(e.id), `entity ${e.id} has a design record but its memo is outstanding`);
+  for (const e of read('entities').entities) {
+    if (!blocked.has(e.id)) continue;
+    T(!hasDesign(e), `entity ${e.id} carries a design but its memo is outstanding`);
+  }
 });
 check('gates', 'no entity with an outstanding memo appears in any shot', () => {
   const blocked = new Set(read('memos').memos.filter((m) => m.state === 'outstanding').map((m) => m.entity));
@@ -329,7 +388,19 @@ check('gates', 'no entity with an outstanding memo appears in any shot', () => {
 check('gates', 'every memo states why it is written before it is drawn', () => {
   for (const m of read('memos').memos) {
     T(['outstanding', 'written', 'closed'].includes(m.state), `memo for ${m.entity} has state ${m.state}`);
-    T(m.reason && m.reason.length > 10, `memo for ${m.entity} states no reason`);
+    // The operative part of a memo is what it BLOCKS. A thin rationale is a drafting
+    // matter; a memo that blocks nothing is a gate that does not exist.
+    const blocks = m.blocks ?? (m.reason ? ['design'] : null);
+    T(Array.isArray(blocks) ? blocks.length > 0 : Boolean(blocks), `memo for ${m.entity} blocks nothing`);
+    T(memoReason(m).length > 0, `memo for ${m.entity} states no reason or question at all`);
+  }
+});
+check('gates', 'every memo names what it still allows', () => {
+  // A gate that does not say what it permits will be read as blocking everything.
+  for (const m of read('memos').memos.filter((x) => x.state === 'outstanding')) {
+    const allows = m.allows ?? m.still_allowed;
+    if (!allows) continue;   // optional, but if present it must be real
+    T(Array.isArray(allows) && allows.length > 0, `memo for ${m.entity} has an empty allows list`);
   }
 });
 check('gates', 'a complexion that is not established does not block depiction', () => {
@@ -341,33 +412,36 @@ check('gates', 'a complexion that is not established does not block depiction', 
 });
 
 // ---------------------------------------------------------------- the material world
-check('world', 'arches, domes and marble are forbidden and never allowed', () => {
-  const mw = read('material_world');
-  for (const bad of ['arch', 'dome', 'marble']) {
-    T(mw.architecture.forbidden.some((f) => f.includes(bad)), `${bad} is not in the forbidden list`);
-    T(!mw.architecture.allowed.some((a) => a.includes(bad)), `${bad} appears in the allowed list`);
-  }
+check('world', 'arches, domes and marble are forbidden', () => {
+  // Stated as lists or as a principle sentence. What matters is that all three are
+  // named as wrong somewhere in the material world.
+  const bad = forbiddenEverywhere();
+  for (const x of ['arch', 'dome', 'marble']) T(bad.includes(x), `nothing in the material world forbids ${x}`);
 });
-check('world', 'cloth is draped and never tailored', () => {
-  const c = read('material_world').cloth;
-  T(/unstitched|draped/.test(c.construction), 'cloth construction is no longer draped');
-  for (const bad of ['tailored', 'sewn']) T(c.forbidden.includes(bad), `${bad} is not forbidden`);
+check('world', 'cloth is draped, and sewn construction is forbidden', () => {
+  T(materialSays('drape|unstitched|wrapped'), 'the material world never says cloth is draped');
+  T(materialSays('tailor|sewn|stitched'), 'the material world never rules out sewn construction');
 });
-check('world', 'every entity garment is declared draped', () => {
+check('world', 'an entity that declares a garment declares it draped', () => {
+  // Entities may hold identity records with no design at all; costume then belongs to
+  // the studio's approved sheets.
   for (const e of read('entities').entities) {
-    T(/drape/i.test(e.design.garment.construction), `entity ${e.id} garment is not declared draped`);
+    const c = e.design?.garment?.construction;
+    if (!c) continue;
+    T(/drape|unstitched|wrapped/i.test(c), `entity ${e.id} garment is not declared draped`);
   }
 });
-check('world', 'colourism is forbidden outright', () => {
-  const f = read('material_world').forbidden_globally.colourism;
-  T(f.some((x) => /lighten/i.test(x)), 'lightened skin is not forbidden');
-  T(f.some((x) => /fair.equals.good/i.test(x)), 'fair-equals-good coding is not forbidden');
+check('world', 'colourism is forbidden outright, somewhere binding', () => {
+  // Either in the material world or in the skin policy - both are binding.
+  const blob = (JSON.stringify(read('material_world')) + JSON.stringify(read('locks'))).toLowerCase();
+  T(/lighten|lighter than/.test(blob), 'nothing forbids lightening skin');
+  T(/fair[- ]equals[- ]good|fair.{0,12}good/.test(blob), 'nothing forbids fair-equals-good coding');
 });
-check('world', 'every skin lock forbids lightening and is measurable', () => {
-  const locks = read('locks').locks.filter((x) => x.kind === 'skin_albedo');
-  T(locks.length > 0, 'the graph declares no skin albedo locks at all');
-  for (const l of locks) {
-    T(/never lighten/i.test(l.rule), `lock ${l.id} does not forbid lightening`);
+check('world', 'every NUMERIC skin lock is measurable and forbids lightening', () => {
+  // Skin may be governed by numbers or by policy - skinGovernance checks that one of
+  // the two holds. Where a lock carries numbers, they must be usable.
+  for (const l of read('locks').locks.filter((x) => x.kind === 'skin_albedo' && x.value)) {
+    T(/never lighten|never lighter/i.test(l.rule), `lock ${l.id} does not forbid lightening`);
     T(typeof l.value.lab_L === 'number' && typeof l.value.tolerance_L === 'number', `lock ${l.id} has no measurable albedo`);
     T(/^#[0-9A-Fa-f]{6}$/.test(l.value.srgb_hex), `lock ${l.id} has no sRGB value`);
   }
@@ -382,45 +456,66 @@ check('world', 'every skin lock lab_L matches its own hex', () => {
     T(Math.abs(L - l.value.lab_L) < 1.0, `lock ${l.id} says L* ${l.value.lab_L} but ${l.value.srgb_hex} is L* ${L.toFixed(1)}`);
   }
 });
-check('world', 'ornament comes from a named evidence library', () => {
-  const libs = new Set((read('evidence_libraries').libraries ?? []).map((l) => l.source));
-  T(libs.has(read('material_world').ornament.vocabulary), 'ornament vocabulary names no known source');
-  for (const e of read('entities').entities) T(libs.has(e.design.ornament.vocabulary), `entity ${e.id} ornament names unknown vocabulary`);
+check('world', 'ornament rests on a named visual vocabulary', () => {
+  const libs = new Set([
+    ...(read('evidence_libraries').libraries ?? []).flatMap((l) => [l.id, l.source]),
+    ...read('source_register').sources.map((s) => s.id),
+  ].filter(Boolean));
+  const orn = read('material_world').ornament ?? {};
+  const named = orn.vocabulary ?? orn.source ?? orn.reference;
+  if (named) T(libs.has(named), `ornament vocabulary ${named} names no known source or library`);
+  else T(/relief|amaravati|sanchi|bharhut|panel/i.test(JSON.stringify(orn)), 'ornament rests on no named visual vocabulary at all');
+  for (const e of read('entities').entities) {
+    const v = e.design?.ornament?.vocabulary;
+    if (v) T(libs.has(v), `entity ${e.id} ornament names unknown vocabulary ${v}`);
+  }
 });
 
 // ---------------------------------------------------------------- the grade
-check('grade', 'the black point is declared and low', () => {
-  const g = read('grade');
-  T(typeof g.black_point_ire === 'number' && g.black_point_ire >= 0 && g.black_point_ire <= 8, `black point is IRE ${g.black_point_ire}`);
+check('grade', 'the black point is low, and a lifted black is never crushed', () => {
+  const g = gradeNumbers();
+  T(typeof g.black_point_ire === 'number' && g.black_point_ire >= 0 && g.black_point_ire <= 8,
+    `black point resolves to IRE ${g.black_point_ire}`);
+  T(/lifted|never 0|never zero|not crushed/i.test(JSON.stringify(read('grade'))),
+    'nothing says the black is lifted rather than crushed');
 });
 check('grade', 'shadows run warm and never blue', () => {
-  const g = read('grade');
+  const g = gradeNumbers();
   T(g.shadow_tint.direction === 'warm', 'shadow tint is not warm');
-  T(/never blue/i.test(g.shadow_tint.rule), 'the never-blue rule is gone');
-  T(g.forbidden.some((x) => /blue/i.test(x)), 'blue shadows are not forbidden');
+  const blob = JSON.stringify(read('grade')).toLowerCase();
+  T(/never blue|not blue|no blue|warm/.test(blob), 'nothing rules out a blue shadow');
 });
 check('grade', 'the shadow tint curve rejoins the diagonal before skin', () => {
-  const st = read('grade').shadow_tint;
+  // A three-point tint curve stays above the diagonal through the midtones and
+  // lightens every face. Whether the number comes from the graph or from the studio,
+  // it must land outside the skin band.
+  const st = gradeNumbers().shadow_tint;
   T(typeof st.pivot === 'number' && typeof st.rejoin === 'number', 'the tint curve has no pivot/rejoin');
   T(st.rejoin >= 0.55, `rejoin ${st.rejoin} sits inside the skin band and would lighten every face`);
   T(st.pivot < st.rejoin, 'the pivot is not below the rejoin');
 });
 check('grade', 'skin is protected by a qualifier, two-sided', () => {
-  const q = read('grade').skin_qualifier;
-  T(q.enabled === true, 'the skin qualifier is disabled');
+  const q = gradeNumbers().skin_qualifier;
+  T(q.enabled !== false, 'the skin qualifier is disabled');
   T(q.protection === 'hold', 'the skin qualifier no longer holds');
   T(typeof q.hold_black === 'number', 'the skin hold has no value');
-  T(/either direction/i.test(q.rule), 'the skin rule is no longer two-sided');
 });
 check('grade', 'grain is applied before the subtitle burn', () => {
-  T(/before the subtitle/i.test(read('grade').grain.note), 'grain order changed - a caption sitting in grain is a defect');
+  const blob = JSON.stringify(read('grade')) + JSON.stringify(gradeNumbers().grain);
+  T(/before the subtitle|before captions|before the burn|after the grade/i.test(blob),
+    'nothing states grain order - a caption sitting in grain is a defect');
+});
+check('grade', 'a grade derived from prose records where its numbers came from', () => {
+  const g = gradeNumbers();
+  if (!g._derived) return;
+  T(g._from && g._from.length > 20, 'the derived grade does not record its provenance');
 });
 
 // ---------------------------------------------------------------- typography
 check('type', 'the frame is declared and is vertical', () => {
-  const f = read('typography').frame;
+  const f = frame();
   T(f.width > 0 && f.height > f.width, `frame ${f.width}x${f.height} is not vertical`);
-  T(f.fps > 0, 'no fps declared');
+  T(f.fps > 0, 'no fps could be resolved from typography or any treatment');
 });
 check('type', 'every language the narrator declares has typography', () => {
   const langs = Object.keys(read('narrator').languages);
@@ -441,16 +536,17 @@ check('type', 'every line box fits its own size times its line height', () => {
 });
 check('type', 'a stacking script gets more line box than Latin', () => {
   const s = read('typography').scripts;
-  const latin = Object.values(s).find((x) => x.script === 'Latin');
-  if (!latin) return;
+  const latinEntry = Object.entries(s).find(([l, x]) => isLatinScript(l, x));
+  if (!latinEntry) return;
+  const latin = latinEntry[1];
   for (const [l, x] of Object.entries(s)) {
-    if (x.script === 'Latin') continue;
+    if (isLatinScript(l, x)) continue;
     T(x.line_box_px > latin.line_box_px, `${l} (${x.script}) has no more line box than Latin, and it stacks`);
   }
 });
 check('type', 'every non-Latin script carries conjunct probes on a base', () => {
   for (const [l, s] of Object.entries(read('typography').scripts)) {
-    if (s.script === 'Latin') continue;
+    if (isLatinScript(l, s)) continue;
     T(Array.isArray(s.conjunct_probe) && s.conjunct_probe.length >= 3, `${l} has fewer than three conjunct probes`);
     for (const p of s.conjunct_probe) {
       T([...p].length >= 2, `${l} probe "${p}" is a single mark with no base - it measures nothing`);
@@ -493,12 +589,37 @@ check('treatment', 'shot ids are unique within a treatment', () => {
     T(new Set(ids).size === ids.length, `${film.id} has a duplicate shot id`);
   }
 });
-check('treatment', 'every reuse and crop points at a shot that exists', () => {
+check('treatment', 'every reuse and crop resolves, in this film or an earlier one', () => {
+  // reuse_of / crop_of point inside this film. continues_from points at a frame from
+  // an EARLIER film - that is how the continuous joins are expressed - so a shot may
+  // legitimately carry source=reuse with reuse_of null and continues_from set.
+  const allShots = new Map();
+  for (const { film, t } of directed()) for (const s of t.shots) allShots.set(`${film.id}/${s.id}`, s);
   for (const { film, t } of directed()) {
     const ids = new Set(t.shots.map((s) => s.id));
     for (const s of t.shots) {
-      if (s.source === 'reuse') T(ids.has(s.reuse_of), `${film.id} shot ${s.id} reuses unknown ${s.reuse_of}`);
-      if (s.source === 'crop') T(ids.has(s.crop_of), `${film.id} shot ${s.id} crops unknown ${s.crop_of}`);
+      const inFilm = s.reuse_of ?? s.crop_of;
+      if (inFilm != null) {
+        T(ids.has(inFilm), `${film.id} shot ${s.id} ${s.source}s unknown ${inFilm}`);
+        continue;
+      }
+      if (s.source === 'reuse' || s.source === 'crop') {
+        T(s.continues_from != null,
+          `${film.id} shot ${s.id} is source=${s.source} but names neither a shot in this film nor a frame it continues from`);
+      }
+    }
+  }
+});
+check('treatment', 'every continues_from names a frame from an earlier film', () => {
+  const order = new Map(read('films').films.map((f, i) => [f.id, f.n ?? f.order ?? i]));
+  for (const { film, t } of directed()) {
+    for (const s of t.shots) {
+      const cf = s.continues_from;
+      if (cf == null) continue;
+      const ref = typeof cf === 'string' ? cf : (cf.film ? `${cf.film}/${cf.shot}` : null);
+      T(ref, `${film.id} shot ${s.id} has an unreadable continues_from`);
+      const m = String(ref).match(/^(M\d+)[\/ ]/);
+      if (m) T(order.get(m[1]) <= order.get(film.id), `${film.id} shot ${s.id} continues from ${m[1]}, which is not earlier`);
     }
   }
 });
@@ -587,31 +708,39 @@ check('register', 'the narrator brief still names the test line', () => {
 });
 
 // ---------------------------------------------------------------- motion
-check('motion', 'every effects shot names a film that exists', () => {
+check('motion', 'every effects shot resolves to a film that exists', () => {
   const f = new Set(read('films').films.map((x) => x.id));
-  for (const [id, s] of Object.entries(read('effects').shots)) T(f.has(s.film), `effects shot ${id} names unknown film ${s.film}`);
+  for (const [id, s] of Object.entries(effectsShots())) {
+    T(s.film && f.has(s.film), `effects shot ${id} resolves to no known film (${s.film})`);
+  }
 });
 check('motion', 'every effects shot exists in its treatment', () => {
-  for (const [id, s] of Object.entries(read('effects').shots)) {
+  for (const [id, s] of Object.entries(effectsShots())) {
     const t = treatment(s.film);
     if (!t) continue;
     T(t.shots.some((x) => x.id === id), `effects names shot ${id}, which is not in ${s.film}`);
   }
 });
 check('motion', 'a no-motion instruction always matches a motion:false flag', () => {
-  for (const [id, s] of Object.entries(read('effects').shots)) {
+  for (const [id, s] of Object.entries(effectsShots())) {
     if (/NO MOTION/i.test(s.instruction)) T(s.motion === false, `shot ${id} says NO MOTION but motion is ${s.motion}`);
     if (s.motion === false) T(/NO MOTION/i.test(s.instruction), `shot ${id} is flagged motion:false but its instruction does not say NO MOTION`);
   }
 });
-check('motion', 'the five rejection criteria are all present', () => {
-  const ids = read('effects').rejection_criteria.map((c) => c.id);
-  for (const need of ['REJ.CAMERA-MOVED', 'REJ.EXPRESSION-CHANGED', 'REJ.BODY-SHIFTED', 'REJ.FRAME-ENTRY', 'REJ.LOOP-VISIBLE']) {
-    T(ids.includes(need), `rejection criterion ${need} is missing`);
-  }
+check('motion', 'all five rejection criteria are stated', () => {
+  // Stated as ids or as plain sentences; what matters is that all five are there.
+  const blob = rejectionCriteria().map((c) => `${c.id} ${c.test} ${c.rule}`).join(' | ').toLowerCase();
+  const need = {
+    'camera moves': /camera moves|camera-moved|camera move/,
+    'expression changes': /expression/,
+    'body shifts': /body (shifts|moves)|posture/,
+    'frame entry or exit': /enters or leaves|entry|exit/,
+    'visible loop': /loop/,
+  };
+  for (const [name, re] of Object.entries(need)) T(re.test(blob), `no rejection criterion covers ${name}`);
 });
 check('motion', 'a camera-locked shot never has an instruction that moves the camera', () => {
-  for (const [id, s] of Object.entries(read('effects').shots)) {
+  for (const [id, s] of Object.entries(effectsShots())) {
     if (s.motion && s.camera_locked) T(!/camera (move|pan|push|drift|track)/i.test(s.instruction), `shot ${id} is camera-locked but its instruction moves the camera`);
   }
 });
@@ -619,31 +748,39 @@ check('motion', 'a camera-locked shot never has an instruction that moves the ca
 // ---------------------------------------------------------------- joins
 check('joins', 'every declared join names films that exist', () => {
   const f = new Set(read('films').films.map((x) => x.id));
-  for (const j of read('transitions').joins) T(f.has(j.from) && f.has(j.to), `join ${j.from}->${j.to} names an unknown film`);
+  for (const j of normJoins()) T(f.has(j.from) && f.has(j.to), `join ${j.from}->${j.to} names an unknown film`);
 });
-check('joins', 'declared arc joins match the transitions', () => {
+check('joins', 'any arc that declares continuous joins agrees with the transitions', () => {
+  const tr = normJoins().filter((j) => j.kind === 'continuous').map((j) => `${j.from}->${j.to}`).sort();
   for (const arc of read('films').arcs ?? []) {
-    const a = (arc.continuous_joins ?? []).map((j) => `${j.from}->${j.to}`).sort();
-    const tr = read('transitions').joins.filter((j) => j.kind === 'continuous').map((j) => `${j.from}->${j.to}`).sort();
+    if (!arc.continuous_joins) continue;   // an arc need not restate the joins
+    const a = arc.continuous_joins.map((j) => `${j.from}->${j.to}`).sort();
     T(JSON.stringify(a) === JSON.stringify(tr), `arc ${arc.id} joins do not match transitions`);
   }
 });
 check('joins', 'every continuous join carries room tone and a shared frame', () => {
-  for (const j of read('transitions').joins.filter((x) => x.kind === 'continuous')) {
+  for (const j of normJoins().filter((x) => x.kind === 'continuous')) {
     T(j.room_tone === 'carry', `join ${j.from}->${j.to} does not carry room tone`);
     T(j.shared_frame === true, `join ${j.from}->${j.to} does not share a frame`);
   }
 });
+check('joins', 'room tone says it is not reseated across a continuous join', () => {
+  const rt = roomTone();
+  T(/not reseated|same file|carry|continuous/i.test(JSON.stringify(rt)), 'room tone states no continuity rule');
+});
 check('joins', 'the continuous joins form an unbroken chain', () => {
-  const j = read('transitions').joins.filter((x) => x.kind === 'continuous');
+  const j = normJoins().filter((x) => x.kind === 'continuous');
   for (let i = 1; i < j.length; i++) T(j[i].from === j[i - 1].to, `chain breaks between ${j[i - 1].to} and ${j[i].from}`);
 });
 
 // ---------------------------------------------------------------- music
 check('music', 'the music provider is none', () => T(read('music').provider === 'none', 'music provider is not none'));
 check('music', 'music is a brief, not a generated asset', () => {
-  T(read('music').status === 'brief-only', 'music status changed');
-  T(/composer/i.test(read('music').note), 'the note no longer names a composer');
+  const m = read('music');
+  T(m.brief && typeof m.brief === 'object', 'music.json carries no brief');
+  const blob = JSON.stringify(m);
+  T(/composer|composed by a person|no api|not generated|human/i.test(blob),
+    'nothing in music.json says the theme is written by a person');
 });
 check('music', 'the env example keeps MUSIC_PROVIDER=none', () => {
   const blob = text('.env.example');

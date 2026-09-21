@@ -1,12 +1,82 @@
 {
-  "_doc": "The webapp. Not built yet. This file is the standing design so that nothing is invented later.",
-  "status": "not-built",
-  "surfaces": {
-    "player": "One film at a time, vertical, three languages.",
-    "chain": "The next film, and the one before. A continuous join plays without a seam.",
-    "doors": "Sideways moves into related beats.",
-    "ledger": "Every claim behind the film on screen, with its evidence class and state, and its verification record shown in full. An accepted claim shows the method that accepted it and whether a text was consulted.",
-    "trail": "What the viewer has watched."
+  "_what": "The app's visual system. The Ledger, Trail and doors were specified as behaviour; this is how they look.",
+  "TOKENS": {
+    "bg": "#0C0A07",
+    "panel": "#141009",
+    "line": "#292217",
+    "ink": "#F0E7D9",
+    "dim": "#9A8D7A",
+    "gold": "#C9963F",
+    "accent": "#B8442F",
+    "jade": "#6FAE8A",
+    "radius": {
+      "card": 13,
+      "pill": 999,
+      "sheet": 20
+    },
+    "type": {
+      "display": "Iowan Old Style / Palatino / Georgia serif",
+      "ui": "system sans"
+    },
+    "motion": {
+      "in": "180ms ease-out",
+      "out": "140ms ease-in",
+      "never": "bounce, spring, parallax"
+    }
   },
-  "ledger_copy_rule": "The Ledger never implies human review for a claim accepted by an AI passage check. It prints the method verbatim."
+  "PLAYER": {
+    "frame": "full-bleed 9:16; on desktop centred with 20px radius and a deep shadow",
+    "chrome": "progress ticks at the top, one per beat; language pills top-right; nothing else",
+    "rule": "No scrubber, no play button overlay, no timestamp. Tap to pause.",
+    "autoplay": "the next film begins on the landing, continuous where the join is continuous"
+  },
+  "DOORS": {
+    "appearance": "appear only after the landing, as a row of pills across the bottom over a gradient",
+    "primary": "the next film — gold fill",
+    "secondary": "follow a character · ask the source · the trail — outlined",
+    "return": "a detour returns to the exact frame and timecode; a thin gold line at the top shows the held position"
+  },
+  "LEDGER": {
+    "name_on_screen": "What you know",
+    "blocks_in_order": [
+      "open promises",
+      "names you have heard but not met",
+      "questions not yet answered",
+      "what a character knows right now",
+      "what the text does not say"
+    ],
+    "type": "serif for content, sans for labels; quiet, book-like",
+    "units": "films since, never dates",
+    "never": [
+      "counters",
+      "percentages",
+      "streaks",
+      "badges",
+      "a completion bar"
+    ],
+    "the_line": "He does not know who Rāvaṇa is. Nobody has told him. — computed, not written"
+  },
+  "TRAIL": {
+    "what": "the films as a path, watched ones lit",
+    "debts": "drawn as long curves across the path; a paid promise visibly CLOSES its arc",
+    "map_view": "the same story on a map of India — Ayodhyā, Mithilā, Chitrakūṭ, Kiṣkindhā, Rāmeśvaram",
+    "reward": "the closing arc is the reward. No badge, ever."
+  },
+  "ONBOARDING": {
+    "rule": "Watch first. The email comes after the second film, never before.",
+    "copy": "Four more are coming. No account, no card, no newsletter.",
+    "never": [
+      "a tour",
+      "a splash",
+      "a permissions prompt before any content"
+    ]
+  },
+  "NEVER": [
+    "ads",
+    "streaks or shame for a missed day",
+    "engagement-ordered feeds — if the algorithm reorders the Rāmāyaṇa it stops being the Rāmāyaṇa",
+    "share-to-unlock",
+    "a comments section under the Rāmāyaṇa",
+    "autoplaying sound before a tap"
+  ]
 }

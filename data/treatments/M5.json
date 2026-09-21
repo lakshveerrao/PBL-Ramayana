@@ -1,0 +1,964 @@
+{
+  "film": "M5",
+  "duration_s": 40.4,
+  "fps": 30,
+  "frame": [
+    1080,
+    1920
+  ],
+  "shots": [
+    {
+      "id": "05-01",
+      "start_s": 0.0,
+      "duration_s": 3.0,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [],
+      "narration": null,
+      "beat": "continuing",
+      "action": "the sage, no cut from film 4",
+      "motion": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "image_prompt": null,
+      "continues_from": "M4/18",
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "continuous join",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": null
+    },
+    {
+      "id": "05-02",
+      "start_s": 3.0,
+      "duration_s": 2.4,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "calm ending",
+      "source": "reuse",
+      "reuse_of": "05-01",
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [],
+      "narration": "L1",
+      "beat": "he hasn't moved through any of it",
+      "action": "the same frame as film 2, unchanged",
+      "motion": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "image_prompt": null,
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "\"the same frame, unchanged\"",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": null
+    },
+    {
+      "id": "05-03",
+      "start_s": 5.4,
+      "duration_s": 1.4,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [],
+      "narration": "L2",
+      "beat": "now he moves",
+      "action": "first change on him in four films",
+      "motion": "almost imperceptible life only. The camera does not move.",
+      "image_prompt": "ms shot, 85mm, standing eye level, 9:16 vertical. Viśvāmitra: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Viśvāmitra (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "the movement is directing; its emotional basis is CLM-0040 (20.1, 20.4), carried as context",
+      "claims_proposed": [],
+      "context_claims": [
+        "CLM-0040"
+      ],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": true,
+      "sound": null
+    },
+    {
+      "id": "05-04",
+      "start_s": 6.8,
+      "duration_s": 1.7,
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "STAFF"
+      ],
+      "claims": [],
+      "narration": "L3",
+      "beat": "the staff, grounded",
+      "action": "floor level, room tone drops to stone",
+      "motion": "almost imperceptible life only. The camera does not move.",
+      "image_prompt": "insert shot, 100mm, floor — lens at 30cm, 9:16 vertical. IN FRAME: the base of a plain wooden staff resting on sandstone — no person in frame. a plain wooden staff: It does not move; In the strike frame it is the only thing in focus; Plain dark wood — dense, close-grained, the kind cut from a hard tree and kept; Shoulder height on a tall man; Worn pale and smooth at the grip. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "staff at rest on stone — cannot come from a medium of the sage",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": null,
+        "screen_position": null,
+        "eyeline": null,
+        "key_side": "frame-left, from the high lattice",
+        "lit": "keyed",
+        "reference_view": "in-world frame",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": true,
+      "sound": "At beat 4 it drops to floor level — closer, drier, stone."
+    },
+    {
+      "id": "05-05",
+      "start_s": 8.5,
+      "duration_s": 1.0,
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "imperceptible drift, under 1%",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "STAFF"
+      ],
+      "claims": [],
+      "narration": null,
+      "beat": "the staff, raised",
+      "action": "6-frame dissolve; two seconds of nothing",
+      "motion": "almost imperceptible life only. The camera does not move.",
+      "image_prompt": "insert shot, 100mm, floor — lens at 30cm, 9:16 vertical. IN FRAME: the base of a plain wooden staff lifted a hand's width off sandstone — no person in frame. a plain wooden staff: It does not move; In the strike frame it is the only thing in focus; Plain dark wood — dense, close-grained, the kind cut from a hard tree and kept; Shoulder height on a tall man; Worn pale and smooth at the grip. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "staff raised",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": null,
+        "screen_position": null,
+        "eyeline": null,
+        "key_side": "frame-left, from the high lattice",
+        "lit": "keyed",
+        "reference_view": "in-world frame",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": true,
+      "sound": "Beat 5 is silence, two full seconds."
+    },
+    {
+      "id": "05-06",
+      "start_s": 9.5,
+      "duration_s": 2.1,
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "reuse_of": "05-04",
+      "crop_of": null,
+      "entities": [
+        "STAFF"
+      ],
+      "claims": [],
+      "narration": null,
+      "beat": "the strike",
+      "action": "one strike of wood on stone, un-reverbed",
+      "motion": "NO MOTION. The frame is absolutely still. The stillness is the effect.",
+      "image_prompt": null,
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "the strike: the staff on stone again, NO MOTION — the sound makes it a strike. Staging of 20.4.",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": null,
+        "screen_position": null,
+        "eyeline": null,
+        "key_side": "frame-left, from the high lattice",
+        "lit": "keyed",
+        "reference_view": "in-world frame",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": " Beat 6 is the strike, tail ringing a full second."
+    },
+    {
+      "id": "05-07",
+      "start_s": 11.6,
+      "duration_s": 2.2,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "DASHARATHA"
+      ],
+      "claims": [],
+      "narration": null,
+      "beat": "the king takes it",
+      "action": "eyes do not drop this time",
+      "motion": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "image_prompt": "ms shot, 85mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "v1.0.2 CROPPED THE KING OUT OF THE STAFF INSERT",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "DASHARATHA",
+        "screen_position": "left",
+        "eyeline": "right",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": true,
+      "sound": null
+    },
+    {
+      "id": "05-08",
+      "start_s": 13.8,
+      "duration_s": 2.6,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [
+        "CLM-0041"
+      ],
+      "narration": "L4",
+      "beat": "\"you gave your word, Dasharatha\"",
+      "action": "the name is the anger — a door closing",
+      "motion": "almost imperceptible life only. The camera does not move.",
+      "image_prompt": "ms shot, 85mm, standing eye level, 9:16 vertical. Viśvāmitra: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Viśvāmitra (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "SOURCE-SUPPORTED",
+      "basis_note": "CLM-0041 — the SAGE speaking, standing. v1.0.2 listed the king and cropped from the staff.",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": true,
+      "sound": null
+    },
+    {
+      "id": "05-09",
+      "start_s": 16.4,
+      "duration_s": 1.9,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "reuse_of": "05-08",
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [
+        "CLM-0041"
+      ],
+      "narration": "L5",
+      "beat": "\"now you want to take it back\"",
+      "action": "even, each word weighed",
+      "motion": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "image_prompt": null,
+      "continues_from": null,
+      "basis": "SOURCE-SUPPORTED",
+      "basis_note": "CLM-0041",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": null
+    },
+    {
+      "id": "05-10",
+      "start_s": 18.3,
+      "duration_s": 2.6,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "reuse_of": "05-08",
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [
+        "CLM-0042"
+      ],
+      "narration": "L6",
+      "beat": "\"not the way of the Raghus\"",
+      "action": "the coldest line — OUR INTERPRETATION; the source has him seized by wrath",
+      "motion": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "image_prompt": null,
+      "continues_from": null,
+      "basis": "SOURCE-SUPPORTED",
+      "basis_note": "CLM-0042",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": null
+    },
+    {
+      "id": "05-11",
+      "start_s": 20.9,
+      "duration_s": 2.2,
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "VASISHTHA"
+      ],
+      "claims": [],
+      "narration": null,
+      "beat": "Vasiṣṭha shifts",
+      "action": "fabric; a held breath released",
+      "motion": "almost imperceptible life only. The camera does not move.",
+      "image_prompt": "ms shot, 50mm, standing eye level, 9:16 vertical. Vasiṣṭha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Vasiṣṭha (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "v1.0.2 took Vasiṣṭha from the staff insert",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": null,
+        "screen_position": null,
+        "eyeline": null,
+        "key_side": "frame-left, from the high lattice",
+        "lit": "keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": true,
+      "sound": null
+    },
+    {
+      "id": "05-12",
+      "start_s": 23.1,
+      "duration_s": 2.4,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "reuse_of": "05-08",
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [
+        "CLM-0043"
+      ],
+      "narration": "L7",
+      "beat": "\"if this is your decision, I will go\"",
+      "action": "the ellipsis is a real space",
+      "motion": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "image_prompt": null,
+      "continues_from": null,
+      "basis": "SOURCE-SUPPORTED",
+      "basis_note": "CLM-0043",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": null
+    },
+    {
+      "id": "05-13",
+      "start_s": 25.5,
+      "duration_s": 1.5,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "reuse_of": "05-08",
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA"
+      ],
+      "claims": [
+        "CLM-0043"
+      ],
+      "narration": "L8",
+      "beat": "\"the way I came\"",
+      "action": "three words, each clean",
+      "motion": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "image_prompt": null,
+      "continues_from": null,
+      "basis": "SOURCE-SUPPORTED",
+      "basis_note": "CLM-0043",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": null
+    },
+    {
+      "id": "05-14",
+      "start_s": 27.0,
+      "duration_s": 2.8,
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA",
+        "VASISHTHA",
+        "THRONE",
+        "SABHA"
+      ],
+      "claims": [],
+      "narration": "L9",
+      "beat": "he turns",
+      "action": "REVERSE WIDE from behind the empty throne; he is three paces gone, back to us; far right, Vasiṣṭha rises",
+      "motion": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "image_prompt": "wide shot, 24mm, standing eye level, 9:16 vertical. Viśvāmitra: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Viśvāmitra (studio reference package). Vasiṣṭha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Vasiṣṭha (studio reference package). The throne: Deep red cloth over the seat, the same red as his uttarīya; Frame it as one; Low teak seat, knee height — this world sits near the floor, not on a dais chair; Carved armrests with gold leaf worn thin where hands have rested for forty years. The assembly hall of Ayodhyā: Light enters from frame-left, always; The hall runs away from camera to a low dais; Timber posts and carved beams; mud-brick and lime plaster; worn sandstone floor; post-and-lintel throughout; High pierced lattice openings on one side. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "THE ONE LINE CROSSING. The sage was missing from this shot's entities.",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "in-world frame",
+        "crosses_line": true,
+        "axis_change": null,
+        "note": "Crossing the line ONCE, at the only moment the room's geometry breaks, is the point. He has turned his back on Ayodhyā and the camera turns with him."
+      },
+      "motion_allowed": true,
+      "sound": "Bare feet receding at beat 14, staff tapping every second step."
+    },
+    {
+      "id": "05-15",
+      "start_s": 29.8,
+      "duration_s": 2.6,
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "reuse_of": "05-14",
+      "crop_of": null,
+      "entities": [
+        "VISHVAMITRA",
+        "VASISHTHA",
+        "THRONE",
+        "SABHA"
+      ],
+      "claims": [],
+      "narration": null,
+      "beat": "the reverse wide holds",
+      "action": "a seat creaks",
+      "motion": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "image_prompt": null,
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "holds",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "VISHVAMITRA",
+        "screen_position": "right",
+        "eyeline": "left",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "back-keyed",
+        "reference_view": "in-world frame",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": false,
+      "sound": null
+    },
+    {
+      "id": "05-16",
+      "start_s": 32.4,
+      "duration_s": 8.0,
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "reuse_of": null,
+      "crop_of": null,
+      "entities": [
+        "DASHARATHA"
+      ],
+      "claims": [],
+      "narration": null,
+      "beat": "hold — the king",
+      "action": "footsteps fade off-screen, two more, gone. One exhale. No sting.",
+      "motion": "almost imperceptible life: a lamp flame drifting, draped cloth settling, one slow breath. The camera does not move.",
+      "image_prompt": "ms shot, 85mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.",
+      "continues_from": null,
+      "basis": "ARTISTIC-ADAPTATION",
+      "basis_note": "after the footsteps: a different state from 7",
+      "claims_proposed": [],
+      "context_claims": [],
+      "claims_means": "claims = what the IMAGE fully depicts. context_claims = sequence or basis, NOT depicted by this frame. Narration evidence is on the narration unit.",
+      "staging": {
+        "axis": "AXIS.SABHA",
+        "subject": "DASHARATHA",
+        "screen_position": "left",
+        "eyeline": "right",
+        "key_side": "frame-left, from the high lattice",
+        "lit": "keyed",
+        "reference_view": "three-quarter",
+        "crosses_line": false,
+        "axis_change": null,
+        "note": null
+      },
+      "motion_allowed": true,
+      "sound": null
+    }
+  ],
+  "narration": {
+    "L1": {
+      "shot": "05-02",
+      "en": "Viśvāmitra hadn't moved through any of it.",
+      "hi": "विश्वामित्र अब तक चुपचाप बैठे थे।",
+      "te": "విశ్వామిత్రుడు ఇప్పటిదాకా కదలలేదు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "our staging of his stillness",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L2": {
+      "shot": "05-03",
+      "en": "Now he moved.",
+      "hi": "अब वो हिले।",
+      "te": "ఇప్పుడు కదిలాడు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "the movement is ours; the anger it renders is CLM-0040, 20.1",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L3": {
+      "shot": "05-04",
+      "en": "He said —",
+      "hi": "उन्होंने कहा —",
+      "te": "అన్నాడు —",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "opens the quoted run",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L4": {
+      "shot": "05-08",
+      "en": "\"You gave your word, Dasharatha.\"",
+      "hi": "\"तुमने वचन दिया था, दशरथ।\"",
+      "te": "\"మాట ఇచ్చావు, దశరథా.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0041",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L5": {
+      "shot": "05-09",
+      "en": "\"Now you want to take it back.\"",
+      "hi": "\"अब उसे वापस लेना चाहते हो।\"",
+      "te": "\"ఇప్పుడు వెనక్కి తీసుకోవాలని చూస్తున్నావు.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0041",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L6": {
+      "shot": "05-10",
+      "en": "\"That is not the way of the Raghus.\"",
+      "hi": "\"रघुवंश में ऐसा नहीं होता।\"",
+      "te": "\"రఘువంశంలో ఇలా జరగదు.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0042",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L7": {
+      "shot": "05-12",
+      "en": "\"If this is your decision... I will go.\"",
+      "hi": "\"अगर यही तुम्हारा फ़ैसला है... तो मैं जाता हूँ।\"",
+      "te": "\"ఇదే నీ నిర్ణయం అయితే... నేను వెళ్తాను.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0043",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L8": {
+      "shot": "05-13",
+      "en": "\"The way I came.\"",
+      "hi": "\"जैसे आया था।\"",
+      "te": "\"వచ్చినట్టే.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0043",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L9": {
+      "shot": "05-14",
+      "en": "He turned.",
+      "hi": "वो मुड़ गए।",
+      "te": "ఆయన వెనక్కి తిరిగాడు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "renders 20.3; the turning is ours",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    }
+  },
+  "screenplay": [
+    {
+      "kind": "line",
+      "unit": "L1",
+      "en": "Viśvāmitra hadn't moved through any of it.",
+      "shot": "05-02"
+    },
+    {
+      "kind": "silence",
+      "label": "pause",
+      "seconds": 1.2
+    },
+    {
+      "kind": "line",
+      "unit": "L2",
+      "en": "Now he moved.",
+      "shot": "05-03"
+    },
+    {
+      "kind": "silence",
+      "label": "two seconds",
+      "seconds": 2.0
+    },
+    {
+      "kind": "line",
+      "unit": "L3",
+      "en": "He said —",
+      "shot": "05-04"
+    },
+    {
+      "kind": "line",
+      "unit": "L4",
+      "en": "\"You gave your word, Dasharatha.\"",
+      "shot": "05-08"
+    },
+    {
+      "kind": "silence",
+      "label": "pause",
+      "seconds": 1.2
+    },
+    {
+      "kind": "line",
+      "unit": "L5",
+      "en": "\"Now you want to take it back.\"",
+      "shot": "05-09"
+    },
+    {
+      "kind": "silence",
+      "label": "pause",
+      "seconds": 1.2
+    },
+    {
+      "kind": "line",
+      "unit": "L6",
+      "en": "\"That is not the way of the Raghus.\"",
+      "shot": "05-10"
+    },
+    {
+      "kind": "silence",
+      "label": "two seconds",
+      "seconds": 2.0
+    },
+    {
+      "kind": "line",
+      "unit": "L7",
+      "en": "\"If this is your decision... I will go.\"",
+      "shot": "05-12"
+    },
+    {
+      "kind": "line",
+      "unit": "L8",
+      "en": "\"The way I came.\"",
+      "shot": "05-13"
+    },
+    {
+      "kind": "silence",
+      "label": "pause",
+      "seconds": 1.2
+    },
+    {
+      "kind": "line",
+      "unit": "L9",
+      "en": "He turned.",
+      "shot": "05-14"
+    }
+  ],
+  "sound": {
+    "design": "Room tone and lamp. At beat 4 it drops to floor level — closer, drier, stone. Beat 5 is **silence, two full seconds.** Beat 6 is the strike, tail ringing a full second. Bare feet receding at beat 14, staff tapping every second step. **No music at any point.**",
+    "room_tone": "continues across a continuous join; never reseated",
+    "cues": [
+      {
+        "shot": "05-04",
+        "at_s": 6.8,
+        "cue": "At beat 4 it drops to floor level — closer, drier, stone."
+      },
+      {
+        "shot": "05-05",
+        "at_s": 8.5,
+        "cue": "Beat 5 is silence, two full seconds."
+      },
+      {
+        "shot": "05-06",
+        "at_s": 9.5,
+        "cue": " Beat 6 is the strike, tail ringing a full second."
+      },
+      {
+        "shot": "05-14",
+        "at_s": 27.0,
+        "cue": "Bare feet receding at beat 14, staff tapping every second step."
+      }
+    ]
+  },
+  "hero_frame": {
+    "shot": "05-14",
+    "beat": "he turns",
+    "why": "Every other hero frame faces the camera; this one faces away. That is exactly the anger — a holy man turning his back on Ayodhya.",
+    "use": "poster, share card, and the frame a stranger sees first"
+  },
+  "share_cut": {
+    "entry_signature": true,
+    "landing_hold_s": 5.0,
+    "dim_pct": 40,
+    "question_may_be_spoken": true,
+    "connect_line": "What does the sage do now?"
+  },
+  "staging": {
+    "axis": "AXIS.SABHA",
+    "continuity": {
+      "_what": "What must not change between cuts.",
+      "standing_rules": [
+        "The lamp stays where it is. Its flame moves; its position does not.",
+        "Daśaratha's ring is on the right hand in every hand detail, in every film.",
+        "The throne is occupied in films 1–2 and empty from film 3 onward. It is never re-occupied.",
+        "Viśvāmitra's staff is planted at his right through films 1–4. It moves once, in film 5.",
+        "The sage's cloth and seated posture do not change across four films — that stillness is the performance and a shifted fold breaks it.",
+        "Once the king steps down in film 3, he does not return to the dais in any later shot."
+      ],
+      "per_join": {
+        "continuous": "The frame is IDENTICAL across the join — same plate, same grade, same room tone. Not a similar frame: the same one.",
+        "hard": "Location or time has changed. Room tone changes with it."
+      }
+    }
+  },
+  "never": [
+    "Do not raise the narrator's voice for the quoted lines. Lower it.",
+    "Do not cast a second voice for the sage. One storyteller, one register shift.",
+    "Do not shake the frame or crack the floor. One strike of wood on stone is the trembling earth.",
+    "Do not let him point or step toward the king. He turns his head, then his back.",
+    "Do not make him storm out. Even footsteps.",
+    "Do not let Vasiṣṭha speak. He rises. That is the next film.",
+    "Never imply this anger is in every telling. It is not in Tulsīdās.",
+    "DECLARED INTERPRETATION. Vālmīki has him seized by wrath, the earth shaking and the gods afraid. We render that wrath as stillness breaking once. That is our choice, not the text. Ask must say so; share copy must never call him calm."
+  ]
+}

@@ -1,73 +1,133 @@
 {
-  "_doc": "The narrator. Plain speech, short sentences, no fake-epic vocabulary, no translation register. The test line is 'He said no.' - three level words. If a line could not be said aloud to a friend, it is written wrong. Speaker attribution survives everywhere: a statement by a character is never rendered as narrator fact.",
   "voice_settings": {
-    "stability": 0.82,
-    "similarity_boost": 0.75,
+    "stability": 0.62,
+    "similarity": 0.8,
     "style": 0.0,
-    "use_speaker_boost": false,
-    "rule": "High stability on purpose. Low stability lets the model perform, and the direction forbids performance. If a read sounds performed, the settings or the voice are wrong - do not fix it by rewriting the line."
-  },
-  "per_line_rule": "Lines are generated one at a time, never the whole script in one call. The edit owns the silences, not the model.",
-  "delivery_notes": {
-    "M3": {
-      "overall": "A room where something is being refused. The narrator does not plead and does not judge. Level.",
-      "lines": {
-        "03-05": "Flat. The king is standing; do not announce it.",
-        "03-09": "This is Dasaratha's statement, not ours. Attribute it in the read - a shade of quotation, not an impersonation.",
-        "05-06": "The staff strike. Say nothing over it. The line before ends clean and the line after starts late.",
-        "07-02": "'He said no.' Three level words. No fall on 'no'. Do not land it."
-      }
-    }
+    "why": "Low stability lets the model perform, which the direction forbids."
   },
   "languages": {
     "en": {
       "voice_env": "ELEVEN_VOICE_EN",
-      "register": "plain modern English. No archaism, no 'thee', no inversion.",
+      "register": "plain speech. If a line could not be said aloud to a friend, it is written wrong.",
+      "persona": "Indian English, unhurried, mid-forties. Not RP, not American, not newsreader.",
       "attribution_markers": [
         "said",
-        "says",
-        "told",
         "asked",
+        "told",
         "answered",
         "replied",
-        "offered",
-        "refused",
-        "begged",
-        "pleaded",
-        "promised",
-        "warned",
-        "called",
-        "admitted",
-        "claimed",
-        "insisted"
+        "had no doubt",
+        "The way his father saw it",
+        "\""
+      ],
+      "forbidden": [
+        "fake-epic vocabulary",
+        "translation register",
+        "rising inflection on a reveal",
+        "smiling through the voice"
       ]
     },
     "hi": {
       "voice_env": "ELEVEN_VOICE_HI",
-      "register": "plain spoken Hindi. Not Sanskritised, not Urdu-leaning. The register of speech, not of recitation.",
+      "register": "natural spoken Hindi with everyday Urdu-origin words where they are the natural word — ज़िंदगी, इंतज़ार, फ़ैसला.",
+      "persona": "A well-read Hindi speaker from a Hindi-belt city, forties, in a quiet room.",
       "attribution_markers": [
         "कहा",
-        "बोला",
-        "बोले",
         "पूछा",
-        "जवाब",
-        "मना किया",
-        "दी",
-        "वापस"
+        "पूछी",
+        "बताया",
+        "जवाब दिया",
+        "को कोई शक नहीं था",
+        "पिता की नज़र में",
+        "\"",
+        "कह दिया"
+      ],
+      "forbidden": [
+        "pravachan or Doordarshan register",
+        "कदापि, अतः, तत्पश्चात्",
+        "प्रभु श्रीराम in narration",
+        "devotional lift on a name"
       ]
     },
     "te": {
       "voice_env": "ELEVEN_VOICE_TE",
-      "register": "plain spoken Telugu. Not grandhika. The register of speech.",
+      "register": "natural vyavaharika Telugu. Names as said at home: రాముడు, దశరథుడు.",
+      "persona": "A Telugu speaker from Hyderabad or the coast, forties, telling this at home.",
       "attribution_markers": [
         "అన్నాడు",
-        "అంటూ",
         "అడిగాడు",
         "చెప్పాడు",
-        "వద్దన్నాడు",
-        "ఇచ్చాడు"
+        "ఇస్తానన్నాడు",
+        "ఏ సందేహం లేదు",
+        "తండ్రి దృష్టిలో",
+        "\"",
+        "కాదన్నాడు"
+      ],
+      "forbidden": [
+        "granthika endings — చేసెను, పలికెను",
+        "కావున, అనంతరం",
+        "pravachanam register",
+        "శ్రీ prefix in narration"
       ]
     }
   },
-  "_attribution_rule": "A narration line whose speaker is set must carry one of that language's attribution markers. Without it a character's statement becomes narrator fact. An incoming graph supplies its own markers here; the studio does not hardcode one language's grammar."
+  "delivery_notes": {
+    "M1": {
+      "note": "Warm. This is the only film where nothing has gone wrong yet. The last line — 'The sage had not said it yet' — is a plain fact, not a warning. DO NOT perform it.",
+      "pace": "slowest in the arc",
+      "key_line": {
+        "en": "Whatever it was.",
+        "direction": "no weight on it at all"
+      }
+    },
+    "M2": {
+      "note": "Reporting, not building. The sage's problem is stated the way you would state an illness.",
+      "key_line": {
+        "en": "Rāma.",
+        "direction": "one word, level, no rise, no reverb. The same delivery as 'Rāvaṇa' in film 4."
+      }
+    },
+    "M3": {
+      "note": "The only film where the narrator is allowed to hesitate. 'Dasharatha... had only fear' — the ellipsis is a real pause.",
+      "key_line": {
+        "en": "He said no.",
+        "direction": "three level words, equal weight. This is the audition line. If it lands, the casting is right."
+      },
+      "care": "'The way his father saw it' must sound like attribution, not hedging."
+    },
+    "M4": {
+      "note": "Tired, not curious, on the question. Three plain facts about Rāvaṇa in three plain breaths — no awe.",
+      "key_line": {
+        "en": "Rāvaṇa.",
+        "direction": "dry, level, identical to 'Rāma' in film 2. No reverb, ever."
+      }
+    },
+    "M5": {
+      "note": "LOWER the voice for the quoted lines, do not raise it. One storyteller, one register shift — never a second voice for the sage.",
+      "key_line": {
+        "en": "He turned.",
+        "direction": "the smallest line in seven films. Almost thrown away."
+      }
+    },
+    "M6": {
+      "note": "Release, not triumph. The king is glad. The narrator is glad with him and does not celebrate.",
+      "key_line": {
+        "en": "And gave him.",
+        "direction": "two words, quiet, final"
+      }
+    },
+    "M7": {
+      "note": "Plain reportage. The order of the three men is stated as fact — it is the source's own (21.6).",
+      "key_line": {
+        "en": "Then Lakṣmaṇa, following his brother.",
+        "direction": "the last line of narration in the film. After it, ten beats of picture and sound only."
+      }
+    }
+  },
+  "casting": {
+    "rule": "CREATIVE-PROPOSAL: keep one narrator per language consistent within a release. \"For the life of the product\" was an assistant suggestion, not an approved rule.",
+    "audition_line": "He said no. / उन्होंने ना कह दिया। / ఆయన కాదన్నాడు.",
+    "reject": "Anyone who PERFORMS it. The line is three level words. A reading that finds drama in it is the wrong voice.",
+    "want": "A speaking voice, not a broadcast voice. Someone who sounds like they are telling you this, not reading it."
+  }
 }

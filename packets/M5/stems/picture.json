@@ -1,0 +1,165 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": [
+    {
+      "id": "05-01",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-02",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "calm ending",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-03",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "05-04",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "05-05",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "imperceptible drift, under 1%",
+      "expression": "—",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "05-06",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "clear"
+    },
+    {
+      "id": "05-07",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "05-08",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "05-09",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-10",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-11",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "05-12",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-13",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-14",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "05-15",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "05-16",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    }
+  ]
+}

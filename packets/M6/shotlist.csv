@@ -1,0 +1,23 @@
+shot,start_s,duration_s,frames,size,lens_mm,height,camera_move,expression,source,reuse_of,entities,claims,narration,motion,gate
+06-01,0.0,3.0,90,MS,85,eye,locked,"still, back turned — the arc at its coldest",reuse,,DASHARATHA,,L1,NO MOTION,refused
+06-02,3.0,2.0,60,MS,50,eye,locked,decision; he has heard enough,generate,,VASISHTHA,,L2,motion,refused
+06-03,5.0,1.6,48,CU,85,eye,locked,startled — someone who never moves has moved,generate,,DASHARATHA,,,motion,refused
+06-04,6.6,2.2,66,MS,50,eye,locked,"addressed, not argued at",reuse,06-02,VASISHTHA,CLM-0050,L3,NO MOTION,refused
+06-05,8.8,1.8,54,MS,85,eye,locked,"listening, defences still up",reuse,06-01,DASHARATHA,,,NO MOTION,refused
+06-06,10.6,2.4,72,MS,50,eye,locked,"stated as fact, no heat",reuse,06-02,VASISHTHA,CLM-0050,,NO MOTION,refused
+06-07,13.0,1.4,42,WIDE,35,eye,locked,the room holding still,generate,,COURT SABHA,,,motion,refused
+06-08,14.4,2.6,78,MS,50,eye,locked,the turn — the priest names the protection,reuse,06-02,VASISHTHA,CLM-0051,L4,NO MOTION,refused
+06-09,17.0,2.0,60,MS,85,eye,locked,recognition landing; he sees the sage differently,generate,,DASHARATHA,,,motion,refused
+06-10,19.0,1.8,54,WIDE,35,eye,locked,unmoved; he has not asked again,generate,,VISHVAMITRA SABHA,,,motion,refused
+06-11,20.8,2.2,66,MS,50,eye,locked,certainty,reuse,06-02,VASISHTHA,,,NO MOTION,refused
+06-12,23.0,1.6,48,INSERT,100,eye,locked,the grip releasing,generate,,DASHARATHA,,,motion,refused
+06-13,24.6,2.4,72,MS,50,eye,locked,"understanding, wordless, both men",generate,,VASISHTHA DASHARATHA,,,motion,refused
+06-14,27.0,1.2,36,MS,85,eye,locked,the first easy breath in four films,generate,,DASHARATHA,,,motion,refused
+06-15,28.2,2.0,60,MS,85,eye,locked,"resolve — he calls, he does not concede",generate,,DASHARATHA,CLM-0056,L5,motion,refused
+06-16,30.2,1.8,54,WIDE,35,eye,locked,the room changing state,generate,,COURT SABHA,,,motion,refused
+06-17,32.0,2.2,66,MS,85,eye,locked,no triumph; he does not smile,generate,,VISHVAMITRA,,,motion,refused
+06-18,34.2,1.4,42,INSERT,50,high,locked,the seat he never returned to,generate,,VASISHTHA KAUSALYA RAMA DASHARATHA,CLM-0057,,motion,refused
+06-19,35.6,2.6,78,MS,50,eye,locked,"a father's hand, and letting go",generate,,DASHARATHA RAMA,CLM-0055,L6,motion,refused
+06-20,38.2,1.0,30,INSERT,100,eye,locked,closed eyes; it is done,generate,,VASISHTHA,,,motion,refused
+06-21,39.2,1.4,42,MS,85,eye,locked,glad — not broken. This is the correction.,generate,,DASHARATHA,,,motion,refused
+06-22,40.6,4.0,120,INSERT,35,eye,locked,empty; the boy is not in it yet,generate,,SABHA,,,motion,clear

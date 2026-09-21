@@ -1,0 +1,13 @@
+{
+  "restricted_sources": [
+    "SRC.GRETIL.VR (CC BY-NC-SA 4.0 digitisation)",
+    "SRC.TULSI and other Sanskrit Documents / Project Madurai files (permission-dependent)"
+  ],
+  "rule": {
+    "withheld": "Any run of TWO OR MORE consecutive words matching a restricted verse, and any line from a restricted telling, is withheld from EVERY file in the handoff — the changelog included. It is replaced by source + locator.",
+    "permitted": "A single Sanskrit word used as a gloss (for example muhūrtam, saṃcoditau) is vocabulary of the ancient language, not a reproduction of a digitisation. Single words may travel.",
+    "boundary": "A run of two or more consecutive words from a restricted verse is withheld IF at least one word is distinctive — longer than three letters or carrying a diacritic. Two bare particles (hi te, na ca, sa me) are not a reproduction of anything and may occur in ordinary text. Legal review recommended on this boundary.",
+    "dutt": "Dutt 1891 text may travel with attribution; basis recorded, legal review recommended."
+  },
+  "verified_by": "contradictions.py checks every string in every file, INCLUDING forensic_changelog.json, against the full restricted index — not a phrase list."
+}

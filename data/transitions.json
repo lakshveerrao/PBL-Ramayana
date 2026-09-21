@@ -1,12 +1,96 @@
 {
-  "_doc": "How films join. A continuous join opens on the frame the previous film closed on and carries room tone across with no reseat.",
-  "default": { "kind": "cut", "duration_frames": 0 },
   "joins": [
-    { "from": "M2", "to": "M3", "kind": "continuous", "shared_frame": true, "room_tone": "carry", "note": "M3 opens on M2's closing frame. No reseat." },
-    { "from": "M3", "to": "M4", "kind": "continuous", "shared_frame": true, "room_tone": "carry" },
-    { "from": "M4", "to": "M5", "kind": "continuous", "shared_frame": true, "room_tone": "carry" },
-    { "from": "M5", "to": "M6", "kind": "continuous", "shared_frame": true, "room_tone": "carry" },
-    { "from": "M6", "to": "M7", "kind": "continuous", "shared_frame": true, "room_tone": "carry" }
+    {
+      "from": "M2",
+      "to": "M3",
+      "kind": "continuous"
+    },
+    {
+      "from": "M3",
+      "to": "M4",
+      "kind": "continuous"
+    },
+    {
+      "from": "M4",
+      "to": "M5",
+      "kind": "continuous"
+    },
+    {
+      "from": "M5",
+      "to": "M6",
+      "kind": "continuous"
+    },
+    {
+      "from": "M6",
+      "to": "M7",
+      "kind": "continuous"
+    },
+    {
+      "from": "M1",
+      "to": "M2",
+      "kind": "hard"
+    }
   ],
-  "room_tone": { "id": "TONE.COURT.INTERIOR", "lufs": -38, "rule": "One continuous bed across a continuous join. A reseat - a restart of the tone at the join - is audible and is a defect." }
+  "room_tone": {
+    "continuous": "not reseated across the cut — same file, same level",
+    "hard": "changes with the location"
+  },
+  "structure": {
+    "order": [
+      "entry signature",
+      "connect line (share cut only)",
+      "body",
+      "the landing",
+      "exit signature (standalone only)"
+    ],
+    "entry_signature": {
+      "duration_s": 1.35,
+      "visual": "RAMAYANA, letter-spaced, on black",
+      "audio": "conch with a bell on its attack",
+      "rule": "Shown ONLY on a standalone open — the first film of a session, or a share cut. Never between consecutive films."
+    },
+    "landing": {
+      "what": "the final hold — 8s where something has landed, 4s where a sentence is unfinished",
+      "rule": "Never captioned. Never scored. The question-out is delivered as a FACT in-app, and may be spoken as a question only in a share cut."
+    },
+    "exit_signature": {
+      "duration_s": 1.1,
+      "visual": "PBL Ramayana / Kathaa worth following.",
+      "audio": "an answering conch, softer",
+      "rule": "Standalone close only."
+    }
+  },
+  "hook": {
+    "principle": "The question-out of one film IS the question-in of the next, word for word. That identity is the chain and it is checked mechanically.",
+    "in_app": "The next film autoplays on the landing. The hook is structural, not stated.",
+    "share_cut": "The landing question may be SPOKEN aloud, once, as the last line.",
+    "never": [
+      "cutting a film short to manufacture a cliffhanger — every film lands its own payoff",
+      "a question the source answers, staged as withheld",
+      "a card asking the question the film just posed"
+    ]
+  },
+  "doors": {
+    "when": "After the landing, never during.",
+    "what": "Follow a character · ask the source · see the trail",
+    "return": "A detour returns you to the EXACT frame you left, at the exact timecode.",
+    "rule": "Doors appear only once the film has finished paying. They never interrupt."
+  },
+  "share_cut": {
+    "differs_by": [
+      "entry signature always shown",
+      "a connect line of minimum context, never the payoff",
+      "the landing hold shortened (proposed 5s) and dimmed 40%",
+      "the exit card over the dimmed frame",
+      "the question-out may be spoken"
+    ],
+    "never": "share-to-unlock; the story is never gated behind a share"
+  },
+  "forbidden": [
+    "cross-dissolve between films",
+    "fade to black between films in continuous play",
+    "a recap",
+    "a 'previously' card",
+    "an episode number on screen"
+  ]
 }

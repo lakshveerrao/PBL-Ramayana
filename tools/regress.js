@@ -19,6 +19,9 @@ import { chain as gradeChain, grainChain } from '../lib/grade.js';
 import { plan as assemblePlan } from '../lib/assemble.js';
 import { reconcile, parseJson, briefFor } from '../lib/direct.js';
 import { checkNarration } from '../lib/register.js';
+import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifiesAPlace,
+         locatorKind, hasDesign, skinGovernance, forbidsLightening, isLatinScript,
+         filmNeedsDuration } from '../lib/contract.js';
 import { uploadSheet, approveSheet } from '../lib/sheets.js';
 
 // A 1x1 PNG and a 1x1 GIF - enough bytes to exercise storage and hashing without
@@ -517,6 +520,57 @@ t('the director brief carries locators and never text', () => {
 t('the director brief names the speaker on every attributed claim', () => {
   const b = briefFor('M3');
   ok(/SPOKEN BY DASARATHA/.test(b), 'the brief does not carry speaker attribution');
+});
+
+// --- the contract: every loosened rule keeps its blocked case ----------------------
+t('a numeric verse is a locator; a verse holding text is caught', () => {
+  ok(passageTextFields({ id: 'p', sarga: 18, verse: 1 }).length === 0, 'a numeric verse number was read as text');
+  ok(passageTextFields({ id: 'p', verse: '1-9' }).length === 0, 'a verse range was read as text');
+  ok(passageTextFields({ id: 'p', verse: '\u0930\u093e\u092e\u094b \u0930\u093e\u091c\u0940\u0935\u0932\u094b\u091a\u0928\u0903' }).includes('verse'), 'verse text was not caught');
+  ok(passageTextFields({ id: 'p', verse_text: 'anything' }).includes('verse_text'), 'verse_text was not caught');
+  ok(passageTextFields({ id: 'p', text_held: true }).length > 0, 'text_held:true was not caught');
+});
+t('a use_policy that permits display, quotation or generation input means text travels', () => {
+  ok(textMayTravel({ use_policy: { display_to_viewer: false, quote_in_product: false, generation_input: false } }) === false, 'a fully closed policy read as travelling');
+  for (const k of ['display_to_viewer', 'quote_in_product', 'generation_input']) {
+    ok(textMayTravel({ use_policy: { [k]: true } }) === true, `a policy permitting ${k} did not read as travelling`);
+  }
+  ok(textMayTravel({ id: 'x' }) === null, 'a source that says nothing did not read as unstated');
+  ok(!sourceStatesTravel({ id: 'x' }), 'a silent source counted as having stated its policy');
+});
+t('a Dutt section locator identifies a place; an empty one does not', () => {
+  ok(locatorIdentifiesAPlace({ sarga: 20, verses: '1-9' }), 'a sarga locator was rejected');
+  ok(locatorIdentifiesAPlace({ sarga: null, section: 'XVIII', edition: 'Dutt 1891' }), 'an edition-section locator was rejected');
+  ok(!locatorIdentifiesAPlace({ work: 'VR', kanda: 'BALA' }), 'a locator naming no place was accepted');
+  ok(!locatorIdentifiesAPlace(null), 'a missing locator was accepted');
+  ok(locatorKind({ sarga: null, section: 'XVIII', edition: 'Dutt 1891' }) === 'edition-section', 'edition-section was not recognised');
+});
+t('an identity record is not a design, but a design is', () => {
+  ok(!hasDesign({ id: 'TATAKA', name: 'Tataka', kind: 'person', gate: 'depiction', design: null }), 'an identity record counted as a design');
+  ok(!hasDesign({ id: 'X' }), 'an entity with no design key counted as designed');
+  ok(hasDesign({ id: 'X', design: { garment: { lower: 'antariya' } } }), 'a real design did not count');
+  ok(hasDesign({ id: 'X', design: { skin_albedo: 'LOCK.SKIN.X' } }), 'a skin albedo did not count as design');
+});
+t('skin must be governed somehow, and whatever governs it forbids lightening', () => {
+  const policy = [{ id: 'LOCK.SKIN.POLICY', kind: 'skin_policy', value: null, rule: 'Never lighter than the approved model sheet.' }];
+  ok(skinGovernance(policy).kind === 'policy', 'a policy lock was not recognised as governance');
+  ok(skinGovernance(policy).measurable === false, 'a policy lock claimed to be measurable');
+  ok(forbidsLightening(policy[0]), 'the policy wording was not read as forbidding lightening');
+  const perEntity = [{ id: 'L', kind: 'skin_albedo', value: { lab_L: 34 }, rule: 'Never lighten.' }];
+  ok(skinGovernance(perEntity).measurable === true, 'a numeric lock was not measurable');
+  ok(skinGovernance([]).kind === 'none', 'a graph governing skin nowhere passed');
+  ok(!forbidsLightening({ rule: 'Use tasteful skin tones.' }), 'vague wording counted as forbidding lightening');
+});
+t('Latin is exempt from conjunct probes whether or not it declares a script', () => {
+  ok(isLatinScript('en', { script: 'Latin' }), 'declared Latin was not exempt');
+  ok(isLatinScript('en', { size_px: 44 }), 'undeclared English was not treated as Latin');
+  ok(!isLatinScript('te', { script: 'Telugu' }), 'Telugu was treated as Latin');
+  ok(!isLatinScript('hi', {}), 'undeclared Hindi was treated as Latin');
+});
+t('only an authored film must declare a duration', () => {
+  ok(filmNeedsDuration({ id: 'M8', status: 'claims-only' }, false) === false, 'a ledger film was required to have a duration');
+  ok(filmNeedsDuration({ id: 'M3', status: 'claims-only' }, true) === true, 'a film with a treatment escaped the duration rule');
+  ok(filmNeedsDuration({ id: 'M3', status: 'directed' }, false) === true, 'a film marked directed escaped the duration rule');
 });
 
 // --- graph independence: the studio must run on a graph it has never seen ---------

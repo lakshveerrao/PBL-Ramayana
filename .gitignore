@@ -12,3 +12,4 @@ corpus/restricted/
 node_modules/
 out/
 renders/
+.graph-backups/

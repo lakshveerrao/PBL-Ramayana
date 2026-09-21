@@ -2,6 +2,7 @@
 // dryrun - exercise the pipeline end to end with mock responses. No key, no spend.
 // This is what proves the wiring before a key is ever used.
 import { read, treatment, firstDirected } from '../lib/store.js';
+import { effectsShots } from '../lib/graph.js';
 import { estimate, shotOf, renderMotion } from '../lib/render.js';
 import { assemble } from '../lib/prompt.js';
 import { checkFilm } from '../lib/consistency.js';
@@ -38,8 +39,10 @@ line(`   still allowed: ${gate.still_allowed[0] ?? 'n/a'}`);
 head('4. prompt assembly, from data');
 const sample = t.shots.find((s) => s.source === 'generate' && (s.entities ?? []).length);
 const asm = assemble(sample, FILM);
-line(`   shot ${sample.id}: ${asm.prompt.split('\n').length} lines, ${asm.negatives.length} negatives`);
-line(`   carries locked albedo: ${/#[0-9A-F]{6}/i.test(asm.prompt)}   forbids arch/dome/marble: ${['arch', 'dome', 'marble'].every((b) => asm.prompt.includes(b))}`);
+line(`   shot ${sample.id}: prompt from ${asm.source}, ${asm.negatives.length} negatives`);
+line(`   source: ${asm.assembled_from.join(' + ')}`);
+const guarded = ['arch', 'dome', 'marble', 'stitched garment', 'lightened skin'].filter((b) => (asm.negative + asm.prompt).toLowerCase().includes(b));
+line(`   guarded against: ${guarded.join(', ')}`);
 
 head('5. the fal adapter against three response shapes');
 for (const [name, body] of [
@@ -53,7 +56,7 @@ for (const [name, body] of [
 line(`   video shape                  -> ${normaliseVideo({ video: { url: 'https://mock/v.mp4' } }).url}`);
 
 head('6. the motion refusal');
-for (const id of Object.keys(read('effects').shots).filter((k) => read('effects').shots[k].film === FILM)) {
+for (const id of Object.keys(effectsShots()).filter((k) => effectsShots()[k].film === FILM)) {
   try { await renderMotion(FILM, id, { allow_spend: false }); line(`   ${id}: permitted`); }
   catch (e) { line(`   ${id}: ${e.name} - ${e.name === 'MotionRefusal' ? 'refuses, correctly' : e.message.slice(0, 60)}`); }
 }

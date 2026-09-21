@@ -2,295 +2,189 @@
   "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
   "claims": [
     {
-      "id": "CLM.BALA.20.I.COURT-INTERIOR",
-      "class": "I",
-      "state": "accepted",
-      "speaker": null,
-      "attribution_note": null,
-      "locator": null,
-      "verification": {
-        "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Inference is recorded against a named visual source, not a text locator. Accepted as an inference, never as text.",
-        "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
-      }
-    },
-    {
-      "id": "CLM.BALA.20.KING-STUNNED",
+      "id": "CLM-0008",
       "class": "T",
       "state": "accepted",
-      "speaker": null,
+      "speaker": "VISHVAMITRA",
       "attribution_note": null,
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "3-4",
+        "sarga": 18,
+        "verses": "9",
         "source": "SRC.GRETIL.VR"
       },
       "verification": {
         "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Model knowledge of Balakanda sarga 20: the king is described as losing consciousness (murcchita) on hearing the request. No digitised edition was open.",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
         "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
       }
     },
     {
-      "id": "CLM.BALA.20.NAMES-THE-ENEMY",
+      "id": "CLM-0010",
       "class": "T",
       "state": "accepted",
-      "speaker": "VISVAMITRA",
+      "speaker": "DASHARATHA",
       "attribution_note": null,
       "locator": {
         "work": "VR",
         "kanda": "BALA",
         "sarga": 19,
-        "verses": "6-9",
+        "verses": "2",
         "source": "SRC.GRETIL.VR"
       },
       "verification": {
         "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Model knowledge of Balakanda sarga 19, where the sage names the two rakshasas and their master. Carried into M3 as the pressure the refusal answers. No digitised edition was open.",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
         "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
       }
     },
     {
-      "id": "CLM.BALA.20.NOT-YET-SIXTEEN",
+      "id": "CLM-0012",
       "class": "T",
       "state": "accepted",
-      "speaker": "DASARATHA",
-      "attribution_note": "This is Dasaratha's statement, never narrator fact. Any surface that renders this claim must carry the speaker. A caption or a line of narration that drops the speaker is a defect.",
-      "locator": {
-        "work": "VR",
-        "kanda": "BALA",
-        "sarga": 20,
-        "verses": "9-10",
-        "source": "SRC.GRETIL.VR"
-      },
-      "verification": {
-        "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Model knowledge of Balakanda sarga 20, the una-sodasa-varsa line, spoken by Dasaratha. No digitised edition was open.",
-        "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
-      }
-    },
-    {
-      "id": "CLM.BALA.20.OFFERS-HIMSELF",
-      "class": "T",
-      "state": "accepted",
-      "speaker": "DASARATHA",
+      "speaker": "DASHARATHA",
       "attribution_note": null,
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "11-14",
+        "sarga": 19,
+        "verses": "3",
         "source": "SRC.GRETIL.VR"
       },
       "verification": {
         "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Model knowledge of Balakanda sarga 20: the king offers the aksauhini and his own person. No digitised edition was open.",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
         "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
       }
     },
     {
-      "id": "CLM.BALA.20.REFUSAL",
+      "id": "CLM-0013",
       "class": "T",
       "state": "accepted",
-      "speaker": "DASARATHA",
+      "speaker": "DASHARATHA",
       "attribution_note": null,
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "15-20",
+        "sarga": 19,
+        "verses": "5",
         "source": "SRC.GRETIL.VR"
       },
       "verification": {
         "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Model knowledge of Balakanda sarga 20: the refusal is explicit and is the sarga's outcome. No digitised edition was open.",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
         "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
       }
     },
     {
-      "id": "CLM.BALA.20.REQUEST-LANDS",
+      "id": "CLM-0014",
       "class": "T",
       "state": "accepted",
-      "speaker": "VISVAMITRA",
+      "speaker": "DASHARATHA",
       "attribution_note": null,
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "1-2",
+        "sarga": 19,
+        "verses": "8",
         "source": "SRC.GRETIL.VR"
       },
       "verification": {
         "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Model knowledge of Balakanda sarga 20. No digitised edition was open: this environment's egress policy blocks the hosts carrying the public-domain translation, and the GRETIL text is restricted and must not be ingested.",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
         "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
       }
     },
     {
-      "id": "CLM.BALA.20.S.LAMP-HELD",
-      "class": "S",
-      "state": "accepted",
-      "speaker": null,
-      "attribution_note": null,
-      "locator": null,
-      "verification": {
-        "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "No source claimed. This is a declared staging choice under class S and is accepted as ours, not as text.",
-        "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
-      }
-    },
-    {
-      "id": "CLM.BALA.20.SON-CAME-LATE",
+      "id": "CLM-0015",
       "class": "T",
       "state": "accepted",
-      "speaker": "DASARATHA",
+      "speaker": "DASHARATHA",
       "attribution_note": null,
       "locator": {
         "work": "VR",
         "kanda": "BALA",
-        "sarga": 20,
-        "verses": "5-8",
+        "sarga": 19,
+        "verses": "4,6,8,10,11",
         "source": "SRC.GRETIL.VR"
       },
       "verification": {
         "method": "ai-passage-check",
-        "text_consulted": false,
-        "basis": "Model knowledge of Balakanda sarga 20: the king pleads his age and the lateness of his sons. No digitised edition was open.",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
         "attested_at": "2026-09-20",
-        "attested_by": "claude-code-session"
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
       }
     }
   ],
   "locks": [
     {
-      "id": "LOCK.SKIN.DASARATHA",
-      "entity": "DASARATHA",
-      "kind": "skin_albedo",
-      "value": {
-        "srgb_hex": "#6B4A33",
-        "lab_L": 34.5,
-        "tolerance_L": 2
-      },
-      "rule": "Never lighten. A grade move that raises lab_L beyond tolerance is a defect, not a look."
+      "id": "LOCK.SKIN.POLICY",
+      "entity": null,
+      "kind": "skin_policy",
+      "value": null,
+      "rule": "Never lighter than the approved model sheet, in any grade, for any character. Fair-equals-good coding is forbidden outright. Exact skin values are production design, set by the studio's approved sheets — not by this workspace."
     },
     {
-      "id": "LOCK.SKIN.VISVAMITRA",
-      "entity": "VISVAMITRA",
-      "kind": "skin_albedo",
-      "value": {
-        "srgb_hex": "#70503A",
-        "lab_L": 36.9,
-        "tolerance_L": 2
-      },
-      "rule": "Never lighten."
-    },
-    {
-      "id": "LOCK.SKIN.RAMA",
+      "id": "LOCK.CLAIM.RAMA-COMPLEXION",
       "entity": "RAMA",
-      "kind": "skin_albedo",
+      "kind": "claim_gate",
       "value": {
-        "srgb_hex": "#5E4130",
-        "lab_L": 30.3,
-        "tolerance_L": 2
+        "may_depict": true
       },
-      "rule": "Never lighten. This is a design lock and carries NO claim about a source-mandated complexion - see entities.json RAMA.complexion_claim."
+      "rule": "Rāma may be depicted under the approved design. No complexion may be presented as source-mandated in narration, captions or Ask."
     },
     {
-      "id": "LOCK.SKIN.LAKSMANA",
-      "entity": "LAKSMANA",
-      "kind": "skin_albedo",
+      "id": "LOCK.DEPICT.RAVANA",
+      "entity": "RAVANA",
+      "kind": "depiction_gate",
       "value": {
-        "srgb_hex": "#66462F",
-        "lab_L": 32.7,
-        "tolerance_L": 2
+        "may_depict": false
       },
-      "rule": "Never lighten."
+      "rule": "DO NOT DEPICT. No frame, no silhouette, no shadow, no hand, no throne, no Laṅkā, no ten heads. The room widening on the name is the whole effect.",
+      "scope": {}
     },
     {
-      "id": "LOCK.SKIN.VASISTHA",
-      "entity": "VASISTHA",
-      "kind": "skin_albedo",
+      "id": "LOCK.DEPICT.MARICHA",
+      "entity": "MARICHA",
+      "kind": "depiction_gate",
       "value": {
-        "srgb_hex": "#735439",
-        "lab_L": 38.3,
-        "tolerance_L": 2
+        "may_depict": false
       },
-      "rule": "Never lighten."
+      "rule": "DO NOT DEPICT in this arc. Named in films 2 and 4, seen in neither.",
+      "scope": {}
     },
     {
-      "id": "LOCK.ARCH.NO-ARCH",
-      "entity": null,
-      "kind": "architecture",
+      "id": "LOCK.DEPICT.TATAKA",
+      "entity": "TATAKA",
+      "kind": "depiction_gate",
       "value": {
-        "allowed": [
-          "post-and-lintel",
-          "railing",
-          "torana",
-          "flat corbel"
+        "may_depict": false
+      },
+      "rule": "DO NOT DEPICT. A high-risk decision memo is required before she is ever designed.",
+      "scope": {
+        "blocks": [
+          "any frame depicting Tāṭakā",
+          "film 10 visual production"
         ],
-        "forbidden": [
-          "arch",
-          "dome",
-          "vault",
-          "marble",
-          "onion dome",
-          "cusped arch"
-        ]
-      },
-      "rule": "Post-and-lintel only. An arch or a dome in frame is a rejection."
-    },
-    {
-      "id": "LOCK.CLOTH.DRAPED",
-      "entity": null,
-      "kind": "garment",
-      "value": {
-        "allowed": [
-          "draped",
-          "tucked",
-          "wrapped",
-          "unstitched"
+        "does_not_block": [
+          "films 1–7 (court and departure) — she does not appear",
+          "claim work, direction, adaptation, or narration anywhere",
+          "any other character's design"
         ],
-        "forbidden": [
-          "tailored",
-          "sewn",
-          "fitted",
-          "stitched seam",
-          "buttoned",
-          "collar",
-          "lapel"
-        ]
-      },
-      "rule": "Cloth is woven, cut from the loom and draped. Anything that reads as sewn is a rejection."
-    },
-    {
-      "id": "LOCK.LAMP.M3",
-      "entity": null,
-      "kind": "prop",
-      "film": "M3",
-      "value": {
-        "prop": "oil lamp, terracotta, single wick",
-        "position": "king's right hand side, on the plinth",
-        "moves": false
-      },
-      "rule": "Declared staging (see CLM.BALA.20.S.LAMP-HELD). Held for the whole film. It does not move."
+        "reason": "The gate exists for one entity's depiction. It is not a project-wide stop."
+      }
     }
   ],
   "rule": "A restricted source travels as a locator. Its text does not travel at all."

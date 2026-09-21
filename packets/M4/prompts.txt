@@ -1,0 +1,26 @@
+GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.
+
+Prompts are ASSEMBLED from data/entities.json, data/material_world.json and
+data/locks.json by lib/prompt.js. They are never written by hand. If a frame
+comes back wrong, the fix is in the data.
+
+--- 04-02 -------------------------------------------------------------
+ms shot, 85mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 04-07 -------------------------------------------------------------
+ms shot, 85mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 04-08 -------------------------------------------------------------
+wide shot, 24mm, high — looking down 15°, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). The ministers and court: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for The ministers and court (studio reference package). The assembly hall of Ayodhyā: Light enters from frame-left, always; The hall runs away from camera to a low dais; Timber posts and carved beams; mud-brick and lime plaster; worn sandstone floor; post-and-lintel throughout; High pierced lattice openings on one side. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 04-11 -------------------------------------------------------------
+ms shot, 50mm, standing eye level, 9:16 vertical. The ministers and court: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for The ministers and court (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 04-12 -------------------------------------------------------------
+cu shot, 85mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 04-14 -------------------------------------------------------------
+cu shot, 85mm, standing eye level, 9:16 vertical. Daśaratha: identity, face, skin, costume and ornament exactly as the APPROVED MODEL SHEET for Daśaratha (studio reference package). one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.
+
+--- 04-15 -------------------------------------------------------------
+insert shot, 100mm, standing eye level, 9:16 vertical. IN FRAME: the king's joined hands, fingers pressing whiter — hands only, no face. Daśaratha: skin, costume and ornament as the APPROVED MODEL SHEET — face NOT shown. one motivated source: high lattice openings — long bars across stone. palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. uncut draped handloom, no stitched garment. post-and-lintel timber and lime plaster, no arches or domes. photoreal, film grain.

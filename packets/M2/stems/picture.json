@@ -1,0 +1,185 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": [
+    {
+      "id": "02-01",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-02",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-03",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "calm authority",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-04",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "crop",
+      "gate": "refused"
+    },
+    {
+      "id": "02-05",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-06",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "crop",
+      "gate": "refused"
+    },
+    {
+      "id": "02-07",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-08",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-09",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "restraint",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-10",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "restraint",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "02-11",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-12",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "crop",
+      "gate": "refused"
+    },
+    {
+      "id": "02-13",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "confidence",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "02-14",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-15",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "02-16",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "02-17",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "02-18",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "shock",
+      "source": "generate",
+      "gate": "refused"
+    }
+  ]
+}

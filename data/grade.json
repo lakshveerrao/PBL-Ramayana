@@ -1,53 +1,77 @@
 {
-  "_doc": "The grade. Black point sits at IRE 3, shadows run warm, and the image is never blue. Skin is protected by a qualifier so that no global move lightens a face - the skin locks in locks.json are the authority and the grade may not override them.",
-  "black_point_ire": 3,
-  "white_point_ire": 92,
+  "levels": {
+    "black_point": "IRE 3 — lifted. Never 0. Crushed blacks read as video.",
+    "shadow_roll": "long and soft; shadow detail retained to IRE 8",
+    "midtone": "gamma 1.05, slightly open — faces sit in the upper mids",
+    "highlight_roll": "compressed from IRE 85; nothing clips to 100",
+    "white_point": "IRE 96 on the brightest lamp flame only"
+  },
   "shadow_tint": {
-    "direction": "warm",
-    "hue_deg": 38,
-    "strength": 0.14,
-    "pivot": 0.18,
-    "rejoin": 0.6,
-    "rule": "Never blue. A blue shadow is a rejection, not a taste difference.",
-    "shape_note": "The tint curve is pinned at 0 and at 1, lifted at the pivot, and RETURNED to the diagonal at the rejoin point. A three-point curve stays above the diagonal all the way through the midtones and lightens every face in the film. A shadow tint must be finished before it reaches skin."
-  },
-  "highlight_rolloff": {
-    "knee": 0.78,
-    "softness": 0.35
-  },
-  "saturation": {
-    "global": 0.94,
-    "shadows": 0.88
+    "hue": "warm neutral, a trace of ochre",
+    "hex_ref": "#2A2114",
+    "note": "NEVER blue. Blue shadows are the single clearest tell of a Western grade."
   },
   "skin_qualifier": {
-    "enabled": true,
-    "hue_range_deg": [
-      18,
-      44
-    ],
-    "sat_range": [
-      0.18,
-      0.62
-    ],
-    "luma_range": [
-      0.12,
-      0.55
-    ],
-    "protection": "hold",
-    "hold_black": -0.03,
-    "rule": "Inside the qualifier the global move is compensated back out, so skin leaves the grade at the albedo it entered with. No global move may take skin outside the tolerance in the entity's skin lock, in either direction. tools/gradecheck.js measures this; it is not a promise.",
-    "measured": "With the current chain every locked albedo lands between -0.65 and +1.48 L* of its lock, inside the +/-2.0 tolerance."
+    "rule": "Skin is protected. No global saturation or luminance move may lighten a face. A qualifier holds skin at its locked albedo.",
+    "check": "Sample a face before and after grade. If the albedo moved, revert."
   },
   "grain": {
-    "enabled": true,
-    "strength": 0.035,
-    "size": 1.4,
-    "note": "Applied last, after the grade and before the subtitle burn, so the caption does not sit in the grain."
+    "required": true,
+    "strength": 6,
+    "size": "fine, 35mm-equivalent",
+    "why": "Generated frames are too clean and read as synthetic without it. Grain is not a style choice here; it is what makes the image look photographed."
   },
-  "forbidden": [
+  "palette": {
+    "sandstone": "#A8967A",
+    "teak": "#5A3F22",
+    "undyed_cream": "#E8DCC4",
+    "deep_red": "#8F2F24",
+    "ochre": "#B8791F",
+    "brass": "#C79A3C",
+    "lime_plaster": "#CFC6B6"
+  },
+  "per_location": {
+    "PLC-SABHA": {
+      "key": "high lattice, frame-left, hard-edged bars across stone",
+      "fill": "bounce off lime plaster, warm",
+      "ratio": "4:1",
+      "temp": "5200K key, 2700K lamps",
+      "time": "M1–M6: one audience, from morning. M7 interiors: afternoon through the same lattice, frame-left kept for continuity. Artistic."
+    },
+    "PLC-GATE": {
+      "key": "afternoon sun from frame-left, lower in the west",
+      "ratio": "3:1",
+      "temp": "5000K",
+      "time": "M7 TIME CONTINUITY — ARTISTIC, NOT SOURCED: the afternoon of the same day. M1–M6 is one audience that begins in the morning; the source gives no hour for the departure, and they reach the Sarayū by nightfall (21.9)."
+    },
+    "PLC-ROAD": {
+      "key": "afternoon sun from frame-left, lower in the west as they walk",
+      "ratio": "5:1",
+      "temp": "4800K",
+      "time": "M7 TIME CONTINUITY — ARTISTIC, NOT SOURCED: the afternoon of the same day. M1–M6 is one audience that begins in the morning; the source gives no hour for the departure, and they reach the Sarayū by nightfall (21.9)."
+    },
+    "PLC-FOREST-DRY": {
+      "key": "hard high sun through bare branch",
+      "ratio": "8:1",
+      "temp": "5600K",
+      "note": "the harshest light in the arc"
+    }
+  },
+  "pipeline": {
+    "working_space": "ACEScct",
+    "output": "Rec.709 / sRGB",
+    "bit_depth": 10,
+    "lut": "PBL_Bala_v1.cube"
+  },
+  "never": [
+    "teal and orange",
     "blue shadows",
-    "global lift applied through skin",
-    "bleach bypass",
-    "teal-and-orange split tone"
+    "day-for-night blue",
+    "crushed blacks",
+    "clipped whites",
+    "a global move that lightens skin",
+    "bloom",
+    "halation on highlights",
+    "vignette beyond 0.2 stops"
   ]
 }

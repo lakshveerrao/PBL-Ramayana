@@ -1,0 +1,34 @@
+{
+  "frame": {
+    "aspect": "9:16",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "negative_prompt": "glow, aura, god rays, lens flare, haze, fog, bloom, dome, arch, marble, chandelier, glass window, carpet, stitched garment, shirt, coat, blouse, trousers, boots, buttons, european crown, laurel, tiara, plate armour, breastplate, longsword, crossbow, halo, blue skin, horns, fangs, cloven feet, plastic skin, airbrushed skin, lightened skin, symmetrical model face, gym physique, printed fabric, machine-even dye, faceted cut gems, modern eyewear, watch, text, letters, watermark, signature, teal and orange grade, crowd of identical faces, mist, rainforest, falling autumn leaves",
+  "seed": {
+    "see": "seed_policy.json",
+    "rule": "Production chooses seeds. Same set-ups may share. Record every seed."
+  },
+  "identity": {
+    "method": "reference-conditioned; never text-only",
+    "reference": "the approved model sheet for every principal in frame",
+    "rule": "Every generation references the AUTHORED SHEET, never a previous frame. Drift compounds; a variation of a variation is a cousin."
+  },
+  "reuse": {
+    "crop": "crop the named shot; never regenerate",
+    "edit": "edit the named shot conditioned on the sheet; never regenerate"
+  },
+  "acceptance": {
+    "face_distance_max": 0.35,
+    "skin": "never lighter than the approved model sheet (see LOCK.SKIN.POLICY)",
+    "reject_if": [
+      "camera moves on a locked shot",
+      "expression changes",
+      "body shifts position",
+      "anything enters or leaves frame",
+      "visible loop",
+      "any forbidden item from material_world.forbidden"
+    ]
+  }
+}

@@ -4,14 +4,15 @@
 // force_style, the same font, onto the same 1080x1920 frame the film is cut at.
 // Measuring through drawtext would test a renderer the film never uses.
 import { read, treatment, firstDirected } from '../lib/store.js';
-import { burnPlan, burnFilter, wrap, assDoc } from '../lib/subtitle.js';
+import { burnPlan, burnFilter, wrap, assDoc, fontProvenance } from '../lib/subtitle.js';
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, writeFileSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
+import { frame as graphFrame } from '../lib/graph.js';
 const typo = read('typography');
-const W = typo.frame.width, H = typo.frame.height;
+const { width: W, height: H } = graphFrame();
 
 // Burn one line and return the ink bounding box of the caption.
 function burnBox(text, lang) {
@@ -52,7 +53,9 @@ console.log(`\nTYPECHECK ${filmId} - burned through libass at ${W}x${H}, measure
 for (const lang of Object.keys(typo.scripts)) {
   const spec = typo.scripts[lang];
   const plan = burnPlan(lang);
-  console.log(`  ${lang}  ${spec.script}  ${spec.size_px}px x ${spec.line_height}  line box ${spec.line_box_px}px  ${plan.font_file.split('/').pop()}`);
+  const fp = fontProvenance(lang);
+  console.log(`  ${lang}  ${spec.script ?? '(script not declared)'}  ${spec.size_px}px x ${spec.line_height}  line box ${spec.line_box_px}px`);
+  console.log(`     font: asked "${fp.asked}", using ${fp.used}${fp.exact ? '' : '  <- SUBSTITUTED, the graph did not get the face it asked for'}`);
 
   for (const probe of spec.conjunct_probe ?? ['Hg']) {
     checked++;

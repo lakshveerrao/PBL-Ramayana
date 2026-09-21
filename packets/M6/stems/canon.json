@@ -1,0 +1,170 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "claims": [
+    {
+      "id": "CLM-0050",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VASISHTHA",
+      "attribution_note": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 20,
+        "verses": "6-8",
+        "source": "SRC.GRETIL.VR"
+      },
+      "verification": {
+        "method": "ai-passage-check",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+        "attested_at": "2026-09-20",
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
+      }
+    },
+    {
+      "id": "CLM-0051",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VASISHTHA",
+      "attribution_note": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 20,
+        "verses": "9",
+        "source": "SRC.GRETIL.VR"
+      },
+      "verification": {
+        "method": "ai-passage-check",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+        "attested_at": "2026-09-20",
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
+      }
+    },
+    {
+      "id": "CLM-0055",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "attribution_note": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "3",
+        "source": "SRC.GRETIL.VR"
+      },
+      "verification": {
+        "method": "ai-passage-check",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+        "attested_at": "2026-09-20",
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
+      }
+    },
+    {
+      "id": "CLM-0056",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "attribution_note": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "1",
+        "source": "SRC.GRETIL.VR"
+      },
+      "verification": {
+        "method": "ai-passage-check",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+        "attested_at": "2026-09-20",
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
+      }
+    },
+    {
+      "id": "CLM-0057",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "attribution_note": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "2",
+        "source": "SRC.GRETIL.VR"
+      },
+      "verification": {
+        "method": "ai-passage-check",
+        "text_consulted": true,
+        "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+        "attested_at": "2026-09-20",
+        "attested_by": "PBL canon pipeline (AI-assisted, not human review)"
+      }
+    }
+  ],
+  "locks": [
+    {
+      "id": "LOCK.SKIN.POLICY",
+      "entity": null,
+      "kind": "skin_policy",
+      "value": null,
+      "rule": "Never lighter than the approved model sheet, in any grade, for any character. Fair-equals-good coding is forbidden outright. Exact skin values are production design, set by the studio's approved sheets — not by this workspace."
+    },
+    {
+      "id": "LOCK.CLAIM.RAMA-COMPLEXION",
+      "entity": "RAMA",
+      "kind": "claim_gate",
+      "value": {
+        "may_depict": true
+      },
+      "rule": "Rāma may be depicted under the approved design. No complexion may be presented as source-mandated in narration, captions or Ask."
+    },
+    {
+      "id": "LOCK.DEPICT.RAVANA",
+      "entity": "RAVANA",
+      "kind": "depiction_gate",
+      "value": {
+        "may_depict": false
+      },
+      "rule": "DO NOT DEPICT. No frame, no silhouette, no shadow, no hand, no throne, no Laṅkā, no ten heads. The room widening on the name is the whole effect.",
+      "scope": {}
+    },
+    {
+      "id": "LOCK.DEPICT.MARICHA",
+      "entity": "MARICHA",
+      "kind": "depiction_gate",
+      "value": {
+        "may_depict": false
+      },
+      "rule": "DO NOT DEPICT in this arc. Named in films 2 and 4, seen in neither.",
+      "scope": {}
+    },
+    {
+      "id": "LOCK.DEPICT.TATAKA",
+      "entity": "TATAKA",
+      "kind": "depiction_gate",
+      "value": {
+        "may_depict": false
+      },
+      "rule": "DO NOT DEPICT. A high-risk decision memo is required before she is ever designed.",
+      "scope": {
+        "blocks": [
+          "any frame depicting Tāṭakā",
+          "film 10 visual production"
+        ],
+        "does_not_block": [
+          "films 1–7 (court and departure) — she does not appear",
+          "claim work, direction, adaptation, or narration anywhere",
+          "any other character's design"
+        ],
+        "reason": "The gate exists for one entity's depiction. It is not a project-wide stop."
+      }
+    }
+  ],
+  "rule": "A restricted source travels as a locator. Its text does not travel at all."
+}

@@ -1,79 +1,104 @@
 {
-  "_doc": "Per-script subtitle metrics. Scripts are not interchangeable: Devanagari stacks conjuncts above and below the line, Telugu stacks further still. A single line-height for all three clips the tall scripts, and the clip never shows up in the English cut.",
   "frame": {
-    "width": 1080,
-    "height": 1920,
-    "fps": 30
+    "aspect": "9:16",
+    "resolution": "1080x1920",
+    "safe_bottom_px": 240,
+    "safe_sides_px": 64
   },
   "scripts": {
     "en": {
-      "script": "Latin",
-      "font_family": "Noto Sans",
-      "font_file_candidates": [
-        "NotoSans-Regular.ttf",
-        "DejaVuSans.ttf",
-        "LiberationSans-Regular.ttf"
-      ],
       "size_px": 44,
       "line_height": 1.3,
-      "line_box_px": 58,
-      "max_chars_per_line": 42,
+      "max_chars_per_line": 30,
       "max_lines": 2,
-      "safe_bottom_px": 220
+      "line_box_px": 59,
+      "safe_bottom_px": 240,
+      "font_family": "Source Sans 3",
+      "font_file_candidates": [
+        "SourceSans3-Medium.ttf",
+        "Inter-Medium.ttf",
+        "NotoSans-Medium.ttf"
+      ]
     },
     "hi": {
-      "script": "Devanagari",
-      "font_family": "Noto Sans Devanagari",
-      "font_file_candidates": [
-        "NotoSansDevanagari-Regular.ttf",
-        "Lohit-Devanagari.ttf"
-      ],
       "size_px": 46,
       "line_height": 1.55,
-      "line_box_px": 72,
-      "max_chars_per_line": 38,
+      "max_chars_per_line": 26,
       "max_lines": 2,
-      "safe_bottom_px": 220,
+      "line_box_px": 75,
+      "safe_bottom_px": 240,
+      "font_family": "Noto Sans Devanagari",
+      "font_file_candidates": [
+        "NotoSansDevanagari-Medium.ttf",
+        "Mukta-Medium.ttf"
+      ],
       "conjunct_probe": [
         "ष्ट्र",
         "क्ष",
         "ज्ञ",
-        "कर्क",
-        "ह्मी",
-        "कृ"
-      ],
-      "probe_note": "Conjuncts and base+mark pairs, as they occur in running text. ra-repha rides above the line; the u-matra and the ya-phala hang below. An isolated combining mark is not a probe - it has no base to sit on."
+        "द्ध",
+        "श्री",
+        "हिं"
+      ]
     },
     "te": {
-      "script": "Telugu",
-      "font_family": "Noto Sans Telugu",
-      "font_file_candidates": [
-        "NotoSansTelugu-Regular.ttf",
-        "Lohit-Telugu.ttf"
-      ],
       "size_px": 48,
       "line_height": 1.7,
-      "line_box_px": 82,
-      "max_chars_per_line": 34,
+      "max_chars_per_line": 24,
       "max_lines": 2,
-      "safe_bottom_px": 220,
+      "line_box_px": 88,
+      "safe_bottom_px": 240,
+      "font_family": "Noto Sans Telugu",
+      "font_file_candidates": [
+        "NotoSansTelugu-Medium.ttf",
+        "Gautami.ttf"
+      ],
       "conjunct_probe": [
         "ఖ్య",
         "క్ర",
-        "కై",
-        "స్త్ర",
-        "ఙ్క",
-        "జ్ఞ"
-      ],
-      "probe_note": "Telugu stacks the subscript consonant below the base and the vowel sign above, so a single glyph can occupy nearly twice the base height. This is the script most likely to clip and the one least likely to be checked. Marks are probed on a base, never alone."
+        "ల్ల",
+        "తై",
+        "కౌ",
+        "ద్ధ"
+      ]
     }
   },
   "style": {
-    "colour": "#F2EBE0",
-    "outline": "#000000",
-    "outline_px": 3,
-    "shadow": false,
-    "alignment": "bottom-centre",
-    "rule": "No box, no plate, no drop shadow. Outline only, so the frame stays visible behind the line."
+    "fill": "#FFFFFF at 96% opacity",
+    "shadow": "0 2px 14px rgba(0,0,0,0.92) — a soft drop, never a hard outline",
+    "outline": "none. Outlined captions read as television.",
+    "background": "none. No pill, no bar, no scrim.",
+    "fade": "120ms in, 160ms out",
+    "placement": {
+      "anchor": "bottom-centre, baseline 240px above frame bottom",
+      "rule": "The caption never covers a face. If a beat's subject sits low in frame, raise the caption to 320px or cut the caption — the frame wins.",
+      "silence": "A beat with no narration carries NO caption. Silence with a caption is not silence.",
+      "reveal_word": "A one-word reveal sits alone on its card at 1.6x the body size. Rāma. Rāvaṇa. रावण। రావణుడు.",
+      "hold": "The final hold is never captioned in any language. Its length is a creative proposal (see authority.json)."
+    },
+    "signatures": {
+      "entry": {
+        "text": "RAMAYANA",
+        "script": "latin",
+        "tracking": "0.42em",
+        "size_px": 26,
+        "colour": "#E6DBC9",
+        "duration_s": 1.35,
+        "note": "Never localised. The word is the same in every language version."
+      },
+      "exit_brand": {
+        "text": "PBL Ramayana",
+        "size_px": 40,
+        "face": "the serif, not the sans"
+      },
+      "exit_line": {
+        "text": "Kathaa worth following.",
+        "size_px": 22,
+        "style": "italic",
+        "colour": "#BFAE95",
+        "hi": "कहानी, जो चलती रहे।",
+        "te": "కథ, ఆగని కథ."
+      }
+    }
   }
 }

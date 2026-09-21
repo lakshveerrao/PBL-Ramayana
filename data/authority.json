@@ -1,0 +1,151 @@
+{
+  "_why": "A rule in this bundle does not gain authority by being here. This says where each came from and who may override it.",
+  "classes": {
+    "SOURCE-AUTHORITATIVE": "What the text says. Changes only with new evidence.",
+    "EDITORIAL-AUTHORITATIVE": "A decision about what we claim or how we attribute. Changes only by an editor.",
+    "CREATIVE-PROPOSAL": "A default the studio may override unless the user has approved it.",
+    "PRODUCTION-LOCAL": "Belongs to the studio. Carried here for convenience only.",
+    "UNKNOWN-EXTERNAL": "State held outside this workspace."
+  },
+  "files": {
+    "claims.json": "SOURCE-AUTHORITATIVE (Text) / EDITORIAL-AUTHORITATIVE (state, speaker, attribution)",
+    "passages.json": "SOURCE-AUTHORITATIVE — locators only",
+    "source_register.json": "EDITORIAL-AUTHORITATIVE — a rights BASIS, legal review recommended",
+    "traditions.json": "SOURCE-AUTHORITATIVE for what each telling says; EDITORIAL for how it is handled",
+    "films.json": "EDITORIAL-AUTHORITATIVE for questions, answers and claims; CREATIVE-PROPOSAL for boundaries",
+    "treatments/*": "CREATIVE-PROPOSAL — direction. Claims inside them are SOURCE; everything else can be redirected.",
+    "entities.json": "mixed — T fields SOURCE, Tr fields SOURCE-for-that-telling, I and S fields CREATIVE-PROPOSAL",
+    "material_world.json": "CREATIVE-PROPOSAL grounded in the material record",
+    "staging.json": "CREATIVE-PROPOSAL",
+    "effects.json": "CREATIVE-PROPOSAL",
+    "grade.json": "CREATIVE-PROPOSAL",
+    "music.json": "CREATIVE-PROPOSAL — see conflict below",
+    "narrator.json": "CREATIVE-PROPOSAL; attribution markers are EDITORIAL-AUTHORITATIVE",
+    "typography.json": "CREATIVE-PROPOSAL",
+    "transitions.json": "CREATIVE-PROPOSAL",
+    "locks.json": "CREATIVE-PROPOSAL; depiction gates are EDITORIAL-AUTHORITATIVE",
+    "sheets.json": "PRODUCTION-LOCAL",
+    "memos.json": "EDITORIAL-AUTHORITATIVE",
+    "assets_expected.json": "UNKNOWN-EXTERNAL",
+    "branding.json": "CREATIVE-PROPOSAL — user-owned business decision",
+    "spend.json": "PRODUCTION-LOCAL",
+    "app_design.json": "CREATIVE-PROPOSAL — the experience layer; the studio owns it",
+    "coverage_audit.json": "EDITORIAL-AUTHORITATIVE — what the covered range contains and what we omit",
+    "episodes.json": "EDITORIAL-AUTHORITATIVE for the arc map; titles beyond M1–M10 are placeholders, not decisions",
+    "evidence_libraries.json": "EDITORIAL-AUTHORITATIVE — what an inference may cite",
+    "forensic_changelog.json": "HISTORY — never read as current truth. claims.json and the other records are current.",
+    "incidents.json": "EDITORIAL-AUTHORITATIVE for which events connect; CREATIVE-PROPOSAL for their framing",
+    "kandas.json": "EDITORIAL-AUTHORITATIVE for the arc map; sarga counts are NOT asserted",
+    "render_policy.json": "CREATIVE-PROPOSAL — generation defaults; defers to seed_policy and LOCK.SKIN.POLICY",
+    "rhythm_policy.json": "CREATIVE-PROPOSAL — advisory house style, never a gate",
+    "seed_policy.json": "PRODUCTION-LOCAL — the studio chooses seeds",
+    "semantics.json": "EDITORIAL-AUTHORITATIVE for what a field MEANS; never for whether it is mandatory (authority.json decides)",
+    "threads.json": "EDITORIAL-AUTHORITATIVE; the disclosure rule is mandatory",
+    "scope.json": "EDITORIAL-AUTHORITATIVE — what was audited",
+    "rights_policy.json": "EDITORIAL-AUTHORITATIVE — legal review recommended",
+    "narration (treatments[].narration)": "EDITORIAL-AUTHORITATIVE for wording and speaker; generated from data/narration_units.py",
+    "MANIFEST.json": "the identity of this package",
+    "MIGRATION-*.md": "HISTORY",
+    "authority.json": "EDITORIAL-AUTHORITATIVE — classifies every file and sets precedence (level 2)"
+  },
+  "hardened_rules": [
+    {
+      "rule": "8-second landing hold",
+      "origin": "ASSISTANT-INVENTED",
+      "where": "episode template (file 32), carried into treatments",
+      "status": "CREATIVE-PROPOSAL",
+      "note": "The user approved holding on faces; never the number 8."
+    },
+    {
+      "rule": "\"never shortened except in the share cut\"",
+      "origin": "ASSISTANT-INVENTED",
+      "where": "semantics.json, written during the audit",
+      "status": "withdrawn as a rule — now a default"
+    },
+    {
+      "rule": "5-second share landing",
+      "origin": "ASSISTANT-INVENTED",
+      "where": "file 32",
+      "status": "CREATIVE-PROPOSAL"
+    },
+    {
+      "rule": "one narrator per language for life",
+      "origin": "ASSISTANT-INVENTED",
+      "where": "sound canon (file 31)",
+      "status": "CREATIVE-PROPOSAL",
+      "note": "Consistency is the intent. \"For life\" is not approved."
+    },
+    {
+      "rule": "the theme resolves once in the whole product",
+      "origin": "ASSISTANT-INVENTED",
+      "where": "music.json",
+      "status": "CREATIVE-PROPOSAL"
+    },
+    {
+      "rule": "no percussion in arc 7",
+      "origin": "ASSISTANT-INVENTED",
+      "where": "music.json",
+      "status": "CREATIVE-PROPOSAL"
+    },
+    {
+      "rule": "black point IRE 3, shadow tint, grain 6, LUT name",
+      "origin": "ASSISTANT-INVENTED",
+      "where": "grade.json",
+      "status": "CREATIVE-PROPOSAL"
+    },
+    {
+      "rule": "~2.0s per beat",
+      "origin": "ASSISTANT-PROPOSED; user accepted the direction approach",
+      "where": "file 32",
+      "status": "CREATIVE-PROPOSAL (house style)"
+    },
+    {
+      "rule": "1.7–2.3s rhythm band as a gate",
+      "origin": "EXPERIMENT",
+      "status": "retired in 1.0.0"
+    },
+    {
+      "rule": "twenty-frame identity test",
+      "origin": "ASSISTANT-INVENTED",
+      "status": "CREATIVE-PROPOSAL; the studio owns acceptance"
+    },
+    {
+      "rule": "music provider must be \"none\" — composed by a person, never generated",
+      "origin": "ASSISTANT-INVENTED",
+      "status": "CONFLICTS WITH USER DIRECTION",
+      "conflict": "The user said \"everything AI\" for production. The assistant proposed human-composed music and that proposal became a hard refusal in the studio contract (HANDOFF.md). It was never approved.",
+      "handling": "Shipped as \"none\" only because the studio's importer currently requires it. USER DECISION REQUIRED."
+    }
+  ],
+  "user_approved": [
+    "the graph is the source of truth",
+    "no proprietary sources are stored or quoted",
+    "not claiming academic authority or 100% authenticity",
+    "production is AI-driven",
+    "the candidate name PBL Ramayana",
+    "the Ledger / hook / chain concept",
+    "restrained, face-led direction in principle"
+  ],
+  "precedence": {
+    "_rule": "When two files control the same behaviour, the higher entry wins. No file may silently override a higher one.",
+    "order": [
+      "1 · claims.json, memos.json, scope.json, rights_policy.json — what is true, gated, audited and permitted",
+      "2 · authority.json — who may override what",
+      "3 · semantics.json — what a field means",
+      "4 · seed_policy.json, rhythm_policy.json, LOCK.SKIN.POLICY — the specific policy for their concept",
+      "5 · treatments (shots and narration) — per-film direction",
+      "6 · render_policy.json — generation defaults",
+      "7 · grade, music, typography, transitions, effects, staging, material_world — creative proposals",
+      "8 · branding.json, sheets.json, spend.json — production-local"
+    ],
+    "resolved_conflicts": {
+      "seed": "seed_policy (4) over render_policy (6). Per-shot seeds removed.",
+      "skin": "LOCK.SKIN.POLICY (4): never lighter than the approved sheet. No numeric skin values ship.",
+      "hold length": "authority (2): creative proposal. typography, semantics and transitions no longer state a fixed value.",
+      "share landing": "authority (2): integrity fixed, length proposed.",
+      "Rāma depiction": "the claim gate (1): depiction allowed under the approved design; no mandated complexion.",
+      "narrator": "authority (2): consistency within a release, proposed.",
+      "production design": "external. The studio's approved model sheets override every appearance detail."
+    }
+  }
+}

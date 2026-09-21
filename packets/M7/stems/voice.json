@@ -1,0 +1,133 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "settings": {
+    "stability": 0.62,
+    "similarity": 0.8,
+    "style": 0.0,
+    "why": "Low stability lets the model perform, which the direction forbids."
+  },
+  "per_line_rule": null,
+  "delivery": {
+    "note": "Plain reportage. The order of the three men is stated as fact — it is the source's own (21.6).",
+    "key_line": {
+      "en": "Then Lakṣmaṇa, following his brother.",
+      "direction": "the last line of narration in the film. After it, ten beats of picture and sound only."
+    }
+  },
+  "languages": {
+    "en": {
+      "voice_env": "ELEVEN_VOICE_EN",
+      "register": "plain speech. If a line could not be said aloud to a friend, it is written wrong.",
+      "persona": "Indian English, unhurried, mid-forties. Not RP, not American, not newsreader.",
+      "attribution_markers": [
+        "said",
+        "asked",
+        "told",
+        "answered",
+        "replied",
+        "had no doubt",
+        "The way his father saw it",
+        "\""
+      ],
+      "forbidden": [
+        "fake-epic vocabulary",
+        "translation register",
+        "rising inflection on a reveal",
+        "smiling through the voice"
+      ]
+    },
+    "hi": {
+      "voice_env": "ELEVEN_VOICE_HI",
+      "register": "natural spoken Hindi with everyday Urdu-origin words where they are the natural word — ज़िंदगी, इंतज़ार, फ़ैसला.",
+      "persona": "A well-read Hindi speaker from a Hindi-belt city, forties, in a quiet room.",
+      "attribution_markers": [
+        "कहा",
+        "पूछा",
+        "पूछी",
+        "बताया",
+        "जवाब दिया",
+        "को कोई शक नहीं था",
+        "पिता की नज़र में",
+        "\"",
+        "कह दिया"
+      ],
+      "forbidden": [
+        "pravachan or Doordarshan register",
+        "कदापि, अतः, तत्पश्चात्",
+        "प्रभु श्रीराम in narration",
+        "devotional lift on a name"
+      ]
+    },
+    "te": {
+      "voice_env": "ELEVEN_VOICE_TE",
+      "register": "natural vyavaharika Telugu. Names as said at home: రాముడు, దశరథుడు.",
+      "persona": "A Telugu speaker from Hyderabad or the coast, forties, telling this at home.",
+      "attribution_markers": [
+        "అన్నాడు",
+        "అడిగాడు",
+        "చెప్పాడు",
+        "ఇస్తానన్నాడు",
+        "ఏ సందేహం లేదు",
+        "తండ్రి దృష్టిలో",
+        "\"",
+        "కాదన్నాడు"
+      ],
+      "forbidden": [
+        "granthika endings — చేసెను, పలికెను",
+        "కావున, అనంతరం",
+        "pravachanam register",
+        "శ్రీ prefix in narration"
+      ]
+    }
+  },
+  "lines": {
+    "L1": {
+      "shot": "07-02",
+      "en": "Then they left.",
+      "hi": "फिर वो निकल पड़े।",
+      "te": "ఆ తర్వాత బయలుదేరారు.",
+      "speaker": null,
+      "assertion": "SOURCE_FACT",
+      "evidence": "21.6 — the departure; no hour is given",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L2": {
+      "shot": "07-09",
+      "en": "Viśvāmitra went first.",
+      "hi": "आगे विश्वामित्र।",
+      "te": "ముందు విశ్వామిత్రుడు.",
+      "speaker": null,
+      "assertion": "SOURCE_FACT",
+      "evidence": "CLM-0054",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L3": {
+      "shot": "07-10",
+      "en": "Then Rāma.",
+      "hi": "फिर राम।",
+      "te": "తర్వాత రాముడు.",
+      "speaker": null,
+      "assertion": "SOURCE_FACT",
+      "evidence": "CLM-0054",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L4": {
+      "shot": "07-11",
+      "en": "Then Lakṣmaṇa, following his brother.",
+      "hi": "फिर लक्ष्मण, भाई के पीछे-पीछे।",
+      "te": "తర్వాత లక్ష్మణుడు, అన్నయ్య వెంటే.",
+      "speaker": null,
+      "assertion": "SOURCE_FACT",
+      "evidence": "CLM-0053",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    }
+  }
+}

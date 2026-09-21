@@ -1,0 +1,88 @@
+{
+  "_why": "The studio will obey these literally. Every term below has exactly one meaning.",
+  "claim.state": {
+    "means": "Where a factual assertion stands. accepted = passed an AI-assisted passage check. proposed = found, not disposed.",
+    "does_not_mean": "accepted is NOT scholarly or human review. Nothing here has been checked by a qualified person.",
+    "mandatory": true,
+    "override": "never — only an editor changes it"
+  },
+  "claim.speaker": {
+    "means": "This assertion is a character's statement, not the narrator's.",
+    "does_not_mean": "It does not mean the statement is false. It means it must be attributed wherever it is voiced.",
+    "mandatory": true,
+    "override": "never"
+  },
+  "gate": {
+    "means": "An operation that may not proceed until a named condition is met. Every gate names what it still allows.",
+    "does_not_mean": "A gate on one entity never blocks unrelated work, and no gate blocks writing.",
+    "mandatory": true,
+    "override": "never from a render route"
+  },
+  "lock": {
+    "means": "A visual decision held constant across every shot.",
+    "does_not_mean": "A lock is not a source claim. Most locks are artistic. Skin albedo locks are PROVISIONAL until sampled from an approved sheet.",
+    "mandatory": true,
+    "override": "by a new approved sheet only"
+  },
+  "visual_interpretation": {
+    "means": "A detail the source does not specify, chosen by us and declared.",
+    "does_not_mean": "It is never presented to a viewer as what the text says.",
+    "mandatory": false,
+    "override": "production may refine"
+  },
+  "source_locator": {
+    "means": "Kāṇḍa, sarga and verse in the GRETIL numbering, or a Dutt section label. Each edition keeps its own numbering.",
+    "does_not_mean": "It is not an exact verse equivalence between editions. No global offset exists.",
+    "mandatory": true,
+    "override": "never"
+  },
+  "difference": {
+    "means": "Two sources disagree, recorded and unresolved.",
+    "does_not_mean": "It is not a verdict on which is right. Narration avoids asserting either.",
+    "mandatory": true,
+    "override": "never"
+  },
+  "never_rule": {
+    "means": "A thing that must not appear. Each is grounded in source, direction or policy.",
+    "does_not_mean": "A never-rule grounded only in taste must not override a sourced event. Where it did, it has been narrowed.",
+    "mandatory": true,
+    "override": "direction-grounded rules may be refined by the director"
+  },
+  "shot_instruction": {
+    "means": "What the frame shows, how it is lensed, lit and moved.",
+    "does_not_mean": "It is not a guarantee a model will obey it.",
+    "mandatory": true,
+    "override": "production may reframe; must not change what the shot asserts"
+  },
+  "reuse / crop": {
+    "means": "This shot comes from the named earlier shot. Nothing is generated.",
+    "does_not_mean": "It is not permission to repeat an expression that no longer matches. Re-check the face.",
+    "mandatory": true,
+    "override": "production may promote to generate if the crop degrades"
+  },
+  "hold": {
+    "means": "A shot held on screen, still, for its full duration. The film keeps playing.",
+    "does_not_mean": "It is NOT a pause of the player, a freeze-frame effect, or a gap in the audio.",
+    "mandatory": false,
+    "override": "CREATIVE-PROPOSAL. Proposed 8s in-app, 4s where a sentence is unfinished. The studio may change both."
+  },
+  "share_cut": {
+    "means": "A standalone version for sending: entry signature, a connect line of minimum context, a shortened landing.",
+    "does_not_mean": "It must never drop attribution, qualification or cause. Shortening must not create false history.",
+    "mandatory": true,
+    "override": "The INTEGRITY rules are fixed: never drop attribution, qualification or cause. The landing length (proposed 5s) is a CREATIVE-PROPOSAL the studio may change."
+  },
+  "rhythm": {
+    "means": "A description of the house style.",
+    "does_not_mean": "NOT a constraint. Story determines duration.",
+    "mandatory": false,
+    "override": "always"
+  },
+  "seed": {
+    "means": "The generation seed, recorded for reproduction.",
+    "does_not_mean": "It does not carry identity — the sheet does. Seeds may repeat within a set-up.",
+    "mandatory": false,
+    "override": "production chooses"
+  },
+  "_authority": "See authority.json. A field defined here is not thereby mandatory."
+}

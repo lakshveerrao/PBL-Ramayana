@@ -1,15 +1,1125 @@
 {
-  "_doc": "Locators only. Bala 18-26. No verse text lives here: the Sanskrit source is restricted (CC BY-NC-SA) and text must never enter a payload, a generation input or an export. Locators travel; text does not. Nothing is proposed from memory - a passage appears here only when a claim cites it.",
-  "_range_note": "This file holds only Bala 18-26. That is correct, not an omission. Films 8-10 have proposed claims and no treatment because an editor has not disposed of them.",
   "passages": [
-    { "id": "PSG.BALA.18", "kanda": "BALA", "sarga": 18, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage comes to Ayodhya; the king receives him and offers him what he asks." },
-    { "id": "PSG.BALA.19", "kanda": "BALA", "sarga": 19, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage states his need and names the two rakshasas and their master." },
-    { "id": "PSG.BALA.20", "kanda": "BALA", "sarga": 20, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The king is stunned, pleads his son's youth and his own late fatherhood, offers himself and his army, and refuses." },
-    { "id": "PSG.BALA.21", "kanda": "BALA", "sarga": 21, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage's anger; Vasistha counsels the king." },
-    { "id": "PSG.BALA.22", "kanda": "BALA", "sarga": 22, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The king yields. The boys are given the vidyas and set out." },
-    { "id": "PSG.BALA.23", "kanda": "BALA", "sarga": 23, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The first night on the road; the confluence." },
-    { "id": "PSG.BALA.24", "kanda": "BALA", "sarga": 24, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The road south; the wood is described." },
-    { "id": "PSG.BALA.25", "kanda": "BALA", "sarga": 25, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The sage tells the history of the wood.", "design_block": "TATAKA" },
-    { "id": "PSG.BALA.26", "kanda": "BALA", "sarga": 26, "source": "SRC.GRETIL.VR", "text_held": false, "summary_class": "I", "summary": "The encounter in the wood.", "design_block": "TATAKA" }
-  ]
+    {
+      "id": "PSG-Bala-018-001",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 1,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-003",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 3,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-005",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 5,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-006",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 6,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-007",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 7,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-008",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 8,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-009",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 9,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-010",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 10,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-016",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 16,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-017",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 17,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-018",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 18,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-019",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 19,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-018-020",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 18,
+      "verse": 20,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-001",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 1,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-003",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 3,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-005",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 5,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-006",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 6,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-007",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 7,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-008",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 8,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-009",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 9,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-010",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 10,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-016",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 16,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-017",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 17,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-018",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 18,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-019",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 19,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-020",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 20,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-021",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 21,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-022",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 22,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-023",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 23,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-024",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 24,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-019-025",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 19,
+      "verse": 25,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-001",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 1,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-003",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 3,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-005",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 5,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-006",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 6,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-007",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 7,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-008",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 8,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-009",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 9,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-010",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 10,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-016",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 16,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-017",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 17,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-018",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 18,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-020-019",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 20,
+      "verse": 19,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-001",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 1,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-003",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 3,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-005",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 5,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-006",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 6,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-007",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 7,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-008",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 8,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-009",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 9,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-010",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 10,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-016",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 16,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-017",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 17,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-018",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 18,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-021-019",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 21,
+      "verse": 19,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-001",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 1,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-003",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 3,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-005",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 5,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-006",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 6,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-007",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 7,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-008",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 8,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-009",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 9,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-010",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 10,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-016",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 16,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-017",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 17,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-018",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 18,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-022-019",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 22,
+      "verse": 19,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-016",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 16,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-024",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 24,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-025",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 25,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-026",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 26,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-027",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 27,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-028",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 28,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-023-029",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 23,
+      "verse": 29,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-005",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 5,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-006",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 6,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-008",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 8,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-009",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 9,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-024-016",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 24,
+      "verse": 16,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-006",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 6,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-009",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 9,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-010",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 10,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-011",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 11,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-012",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 12,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-013",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 13,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-014",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 14,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-025-015",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 25,
+      "verse": 15,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-026-002",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 26,
+      "verse": 2,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-026-004",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 26,
+      "verse": 4,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-026-021",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 26,
+      "verse": 21,
+      "source": "SRC.GRETIL.VR"
+    },
+    {
+      "id": "PSG-Bala-026-024",
+      "work": "VR",
+      "kanda": "BALA",
+      "sarga": 26,
+      "verse": 24,
+      "source": "SRC.GRETIL.VR"
+    }
+  ],
+  "_note": "Locators only. Verse text is deliberately absent — the digitisation is CC BY-NC-SA."
 }

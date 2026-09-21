@@ -1,0 +1,109 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": {
+    "05-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 3.0,
+      "source": "reuse"
+    },
+    "05-02": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.4,
+      "source": "reuse"
+    },
+    "05-03": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "05-04": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.7,
+      "source": "generate"
+    },
+    "05-05": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "05-06": {
+      "instruction": "NO MOTION. The frame is absolutely still. The stillness is the effect.",
+      "motion": false,
+      "duration_s": 2.1,
+      "source": "reuse"
+    },
+    "05-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "05-08": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.6,
+      "source": "generate"
+    },
+    "05-09": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.9,
+      "source": "reuse"
+    },
+    "05-10": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.6,
+      "source": "reuse"
+    },
+    "05-11": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "05-12": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.4,
+      "source": "reuse"
+    },
+    "05-13": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.5,
+      "source": "reuse"
+    },
+    "05-14": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.8,
+      "source": "generate"
+    },
+    "05-15": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.6,
+      "source": "reuse"
+    },
+    "05-16": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, one slow breath. The camera does not move.",
+      "motion": true,
+      "duration_s": 8.0,
+      "source": "generate"
+    }
+  },
+  "rejection_criteria": [
+    "the camera moves when the shot is marked locked",
+    "a face changes expression",
+    "a body shifts position",
+    "anything enters or leaves frame",
+    "the motion loops visibly"
+  ],
+  "rule": "A shot marked NO MOTION refuses at the render layer, in code. It is not a note for the eye."
+}

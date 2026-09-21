@@ -1,11 +1,171 @@
 {
   "kandas": [
-    { "id": "BALA", "name": "Bala-kanda", "order": 1, "sargas": 77, "status": "in-production" },
-    { "id": "AYODHYA", "name": "Ayodhya-kanda", "order": 2, "sargas": 119, "status": "not-started" },
-    { "id": "ARANYA", "name": "Aranya-kanda", "order": 3, "sargas": 75, "status": "not-started" },
-    { "id": "KISHKINDHA", "name": "Kishkindha-kanda", "order": 4, "sargas": 67, "status": "not-started" },
-    { "id": "SUNDARA", "name": "Sundara-kanda", "order": 5, "sargas": 68, "status": "not-started" },
-    { "id": "YUDDHA", "name": "Yuddha-kanda", "order": 6, "sargas": 128, "status": "not-started" },
-    { "id": "UTTARA", "name": "Uttara-kanda", "order": 7, "sargas": 111, "status": "not-started", "note": "Later stratum. Flagged at the arc level, never silently folded into the spine." }
+    {
+      "id": "BALA",
+      "n": 1,
+      "name": "Bāla Kāṇḍa",
+      "devanagari": "बालकाण्ड",
+      "gloss": "the book of childhood",
+      "sargas_provisional": null,
+      "registered": "18–26 (140 verses)",
+      "sargas_note": "Not established in this workspace. Sarga counts differ between editions; an earlier 77-chapter corroboration for Bāla was found unsafe and retracted. Not asserted.",
+      "sargas_working_estimate": 77,
+      "sargas_working_estimate_status": "assistant working estimate for layout only — not a source claim",
+      "arcs": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A8",
+        "A9",
+        "A10",
+        "A11",
+        "A12",
+        "A13",
+        "A14",
+        "A15"
+      ]
+    },
+    {
+      "id": "AYODHYA",
+      "n": 2,
+      "name": "Ayodhyā Kāṇḍa",
+      "devanagari": "अयोध्याकाण्ड",
+      "gloss": "the book of Ayodhyā",
+      "sargas_provisional": null,
+      "registered": null,
+      "sargas_note": "Not established in this workspace. Sarga counts differ between editions; an earlier 77-chapter corroboration for Bāla was found unsafe and retracted. Not asserted.",
+      "sargas_working_estimate": 119,
+      "sargas_working_estimate_status": "assistant working estimate for layout only — not a source claim",
+      "arcs": [
+        "B1",
+        "B2",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7",
+        "B8",
+        "B9",
+        "B10",
+        "B11",
+        "B12",
+        "B13"
+      ]
+    },
+    {
+      "id": "ARANYA",
+      "n": 3,
+      "name": "Araṇya Kāṇḍa",
+      "devanagari": "अरण्यकाण्ड",
+      "gloss": "the book of the forest",
+      "sargas_provisional": null,
+      "registered": null,
+      "sargas_note": "Not established in this workspace. Sarga counts differ between editions; an earlier 77-chapter corroboration for Bāla was found unsafe and retracted. Not asserted.",
+      "sargas_working_estimate": 75,
+      "sargas_working_estimate_status": "assistant working estimate for layout only — not a source claim",
+      "arcs": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10"
+      ]
+    },
+    {
+      "id": "KISHKINDHA",
+      "n": 4,
+      "name": "Kiṣkindhā Kāṇḍa",
+      "devanagari": "किष्किन्धाकाण्ड",
+      "gloss": "the book of Kiṣkindhā",
+      "sargas_provisional": null,
+      "registered": null,
+      "sargas_note": "Not established in this workspace. Sarga counts differ between editions; an earlier 77-chapter corroboration for Bāla was found unsafe and retracted. Not asserted.",
+      "sargas_working_estimate": 67,
+      "sargas_working_estimate_status": "assistant working estimate for layout only — not a source claim",
+      "arcs": [
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7"
+      ]
+    },
+    {
+      "id": "SUNDARA",
+      "n": 5,
+      "name": "Sundara Kāṇḍa",
+      "devanagari": "सुन्दरकाण्ड",
+      "gloss": "the beautiful book",
+      "sargas_provisional": null,
+      "registered": null,
+      "note": "The kāṇḍa people read alone, on Tuesdays, for its own sake. Treat accordingly.",
+      "sargas_note": "Not established in this workspace. Sarga counts differ between editions; an earlier 77-chapter corroboration for Bāla was found unsafe and retracted. Not asserted.",
+      "sargas_working_estimate": 68,
+      "sargas_working_estimate_status": "assistant working estimate for layout only — not a source claim",
+      "arcs": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7"
+      ]
+    },
+    {
+      "id": "YUDDHA",
+      "n": 6,
+      "name": "Yuddha Kāṇḍa",
+      "devanagari": "युद्धकाण्ड",
+      "gloss": "the book of war",
+      "sargas_provisional": null,
+      "registered": null,
+      "sargas_note": "Not established in this workspace. Sarga counts differ between editions; an earlier 77-chapter corroboration for Bāla was found unsafe and retracted. Not asserted.",
+      "sargas_working_estimate": 128,
+      "sargas_working_estimate_status": "assistant working estimate for layout only — not a source claim",
+      "arcs": [
+        "F1",
+        "F2",
+        "F3",
+        "F4",
+        "F5",
+        "F6",
+        "F7",
+        "F8",
+        "F9"
+      ]
+    },
+    {
+      "id": "UTTARA",
+      "n": 7,
+      "name": "Uttara Kāṇḍa",
+      "devanagari": "उत्तरकाण्ड",
+      "gloss": "the later book",
+      "sargas_provisional": null,
+      "registered": null,
+      "flagged": "Authorship debated. Included, and said so plainly when asked.",
+      "sargas_note": "Not established in this workspace. Sarga counts differ between editions; an earlier 77-chapter corroboration for Bāla was found unsafe and retracted. Not asserted.",
+      "sargas_working_estimate": 111,
+      "sargas_working_estimate_status": "assistant working estimate for layout only — not a source claim",
+      "arcs": [
+        "G1",
+        "G2",
+        "G3",
+        "G4",
+        "G5",
+        "G6"
+      ]
+    }
   ]
 }

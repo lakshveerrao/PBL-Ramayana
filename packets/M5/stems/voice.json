@@ -1,0 +1,193 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "settings": {
+    "stability": 0.62,
+    "similarity": 0.8,
+    "style": 0.0,
+    "why": "Low stability lets the model perform, which the direction forbids."
+  },
+  "per_line_rule": null,
+  "delivery": {
+    "note": "LOWER the voice for the quoted lines, do not raise it. One storyteller, one register shift — never a second voice for the sage.",
+    "key_line": {
+      "en": "He turned.",
+      "direction": "the smallest line in seven films. Almost thrown away."
+    }
+  },
+  "languages": {
+    "en": {
+      "voice_env": "ELEVEN_VOICE_EN",
+      "register": "plain speech. If a line could not be said aloud to a friend, it is written wrong.",
+      "persona": "Indian English, unhurried, mid-forties. Not RP, not American, not newsreader.",
+      "attribution_markers": [
+        "said",
+        "asked",
+        "told",
+        "answered",
+        "replied",
+        "had no doubt",
+        "The way his father saw it",
+        "\""
+      ],
+      "forbidden": [
+        "fake-epic vocabulary",
+        "translation register",
+        "rising inflection on a reveal",
+        "smiling through the voice"
+      ]
+    },
+    "hi": {
+      "voice_env": "ELEVEN_VOICE_HI",
+      "register": "natural spoken Hindi with everyday Urdu-origin words where they are the natural word — ज़िंदगी, इंतज़ार, फ़ैसला.",
+      "persona": "A well-read Hindi speaker from a Hindi-belt city, forties, in a quiet room.",
+      "attribution_markers": [
+        "कहा",
+        "पूछा",
+        "पूछी",
+        "बताया",
+        "जवाब दिया",
+        "को कोई शक नहीं था",
+        "पिता की नज़र में",
+        "\"",
+        "कह दिया"
+      ],
+      "forbidden": [
+        "pravachan or Doordarshan register",
+        "कदापि, अतः, तत्पश्चात्",
+        "प्रभु श्रीराम in narration",
+        "devotional lift on a name"
+      ]
+    },
+    "te": {
+      "voice_env": "ELEVEN_VOICE_TE",
+      "register": "natural vyavaharika Telugu. Names as said at home: రాముడు, దశరథుడు.",
+      "persona": "A Telugu speaker from Hyderabad or the coast, forties, telling this at home.",
+      "attribution_markers": [
+        "అన్నాడు",
+        "అడిగాడు",
+        "చెప్పాడు",
+        "ఇస్తానన్నాడు",
+        "ఏ సందేహం లేదు",
+        "తండ్రి దృష్టిలో",
+        "\"",
+        "కాదన్నాడు"
+      ],
+      "forbidden": [
+        "granthika endings — చేసెను, పలికెను",
+        "కావున, అనంతరం",
+        "pravachanam register",
+        "శ్రీ prefix in narration"
+      ]
+    }
+  },
+  "lines": {
+    "L1": {
+      "shot": "05-02",
+      "en": "Viśvāmitra hadn't moved through any of it.",
+      "hi": "विश्वामित्र अब तक चुपचाप बैठे थे।",
+      "te": "విశ్వామిత్రుడు ఇప్పటిదాకా కదలలేదు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "our staging of his stillness",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L2": {
+      "shot": "05-03",
+      "en": "Now he moved.",
+      "hi": "अब वो हिले।",
+      "te": "ఇప్పుడు కదిలాడు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "the movement is ours; the anger it renders is CLM-0040, 20.1",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L3": {
+      "shot": "05-04",
+      "en": "He said —",
+      "hi": "उन्होंने कहा —",
+      "te": "అన్నాడు —",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "opens the quoted run",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L4": {
+      "shot": "05-08",
+      "en": "\"You gave your word, Dasharatha.\"",
+      "hi": "\"तुमने वचन दिया था, दशरथ।\"",
+      "te": "\"మాట ఇచ్చావు, దశరథా.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0041",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L5": {
+      "shot": "05-09",
+      "en": "\"Now you want to take it back.\"",
+      "hi": "\"अब उसे वापस लेना चाहते हो।\"",
+      "te": "\"ఇప్పుడు వెనక్కి తీసుకోవాలని చూస్తున్నావు.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0041",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L6": {
+      "shot": "05-10",
+      "en": "\"That is not the way of the Raghus.\"",
+      "hi": "\"रघुवंश में ऐसा नहीं होता।\"",
+      "te": "\"రఘువంశంలో ఇలా జరగదు.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0042",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L7": {
+      "shot": "05-12",
+      "en": "\"If this is your decision... I will go.\"",
+      "hi": "\"अगर यही तुम्हारा फ़ैसला है... तो मैं जाता हूँ।\"",
+      "te": "\"ఇదే నీ నిర్ణయం అయితే... నేను వెళ్తాను.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0043",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L8": {
+      "shot": "05-13",
+      "en": "\"The way I came.\"",
+      "hi": "\"जैसे आया था।\"",
+      "te": "\"వచ్చినట్టే.\"",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0043",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L9": {
+      "shot": "05-14",
+      "en": "He turned.",
+      "hi": "वो मुड़ गए।",
+      "te": "ఆయన వెనక్కి తిరిగాడు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "renders 20.3; the turning is ours",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    }
+  }
+}

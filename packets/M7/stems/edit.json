@@ -1,0 +1,113 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "fps": 30,
+  "total_frames": 1212,
+  "cuts": [
+    {
+      "at_frame": 0,
+      "shot": "07-01",
+      "frames": 90
+    },
+    {
+      "at_frame": 90,
+      "shot": "07-02",
+      "frames": 66
+    },
+    {
+      "at_frame": 156,
+      "shot": "07-03",
+      "frames": 54
+    },
+    {
+      "at_frame": 210,
+      "shot": "07-04",
+      "frames": 72
+    },
+    {
+      "at_frame": 282,
+      "shot": "07-05",
+      "frames": 42
+    },
+    {
+      "at_frame": 324,
+      "shot": "07-06",
+      "frames": 60
+    },
+    {
+      "at_frame": 384,
+      "shot": "07-07",
+      "frames": 48
+    },
+    {
+      "at_frame": 432,
+      "shot": "07-08",
+      "frames": 66
+    },
+    {
+      "at_frame": 498,
+      "shot": "07-09",
+      "frames": 54
+    },
+    {
+      "at_frame": 552,
+      "shot": "07-10",
+      "frames": 36
+    },
+    {
+      "at_frame": 588,
+      "shot": "07-11",
+      "frames": 30
+    },
+    {
+      "at_frame": 618,
+      "shot": "07-12",
+      "frames": 78
+    },
+    {
+      "at_frame": 696,
+      "shot": "07-13",
+      "frames": 60
+    },
+    {
+      "at_frame": 756,
+      "shot": "07-14",
+      "frames": 54
+    },
+    {
+      "at_frame": 810,
+      "shot": "07-15",
+      "frames": 42
+    },
+    {
+      "at_frame": 852,
+      "shot": "07-16",
+      "frames": 66
+    },
+    {
+      "at_frame": 918,
+      "shot": "07-17",
+      "frames": 48
+    },
+    {
+      "at_frame": 966,
+      "shot": "07-18",
+      "frames": 30
+    },
+    {
+      "at_frame": 996,
+      "shot": "07-19",
+      "frames": 66
+    },
+    {
+      "at_frame": 1062,
+      "shot": "07-20",
+      "frames": 30
+    },
+    {
+      "at_frame": 1092,
+      "shot": "07-21",
+      "frames": 120
+    }
+  ],
+  "rule": "Timings are frame counts, not seconds. A 44s film that ends at 44.03s is a defect."
+}

@@ -1,122 +1,111 @@
 {
-  "_doc": "Model sheets. No principal may be rendered until their sheet is approved by a named human. The consistency gate reads this file and nothing else.",
-  "_twenty_frame_spec": {
-    "name": "The twenty-frame test",
-    "what_it_is": "A requirement for identity evidence across four axes. It is NOT a requirement for twenty paid generations, and must never be reinterpreted as one, nor deleted to make production green.",
-    "axes": {
-      "angle": "The face is resolved from more than one direction. A four-view sheet (front, three-quarter, profile, in-world) satisfies this axis on its own.",
-      "lighting": "The face holds identity under at least two lighting conditions - not one key repeated. A sheet shot under a single light does not satisfy this.",
-      "distance": "Identity survives at close and at wide. A sheet that is all head-and-shoulders does not satisfy this.",
-      "expression": "The face is still the same face when it is not neutral. A sheet of four neutral views does not satisfy this."
-    },
-    "why_twenty": "Twenty is the number of frames it took, in practice, to see a drift the eye missed at four. It is a description of how much evidence tends to be needed, not a purchase order.",
-    "satisfaction_rule": "A four-view artist-drawn sheet satisfies ANGLE. lighting, distance and expression remain outstanding until evidence for each is supplied. Production may proceed on an approved sheet with outstanding axes, but the outstanding axes stay visible in every surface that shows the sheet."
-  },
   "sheets": [
     {
-      "id": "DASARATHA",
-      "entity": "DASARATHA",
+      "id": "SHEET.DASHARATHA",
+      "entity": "DASHARATHA",
       "approved": false,
-      "approved_by": null,
-      "approved_at": null,
       "files": [],
       "hashes": [],
-      "uploaded_at": null,
-      "twenty_frame_test": {
-        "evidence_held": [],
-        "outstanding": [
-          "angle",
-          "lighting",
-          "distance",
-          "expression"
-        ]
+      "axes": {
+        "angle": false,
+        "lighting": false,
+        "distance": false,
+        "expression": false
       }
     },
     {
-      "id": "VISVAMITRA",
-      "entity": "VISVAMITRA",
+      "id": "SHEET.VISHVAMITRA",
+      "entity": "VISHVAMITRA",
       "approved": false,
-      "approved_by": null,
-      "approved_at": null,
       "files": [],
       "hashes": [],
-      "uploaded_at": null,
-      "twenty_frame_test": {
-        "evidence_held": [],
-        "outstanding": [
-          "angle",
-          "lighting",
-          "distance",
-          "expression"
-        ]
+      "axes": {
+        "angle": false,
+        "lighting": false,
+        "distance": false,
+        "expression": false
       }
     },
     {
-      "id": "RAMA",
+      "id": "SHEET.RAMA",
       "entity": "RAMA",
       "approved": false,
-      "approved_by": null,
-      "approved_at": null,
       "files": [],
       "hashes": [],
-      "uploaded_at": null,
-      "twenty_frame_test": {
-        "evidence_held": [],
-        "outstanding": [
-          "angle",
-          "lighting",
-          "distance",
-          "expression"
-        ]
+      "axes": {
+        "angle": false,
+        "lighting": false,
+        "distance": false,
+        "expression": false
       }
     },
     {
-      "id": "LAKSMANA",
-      "entity": "LAKSMANA",
+      "id": "SHEET.LAKSHMANA",
+      "entity": "LAKSHMANA",
       "approved": false,
-      "approved_by": null,
-      "approved_at": null,
       "files": [],
       "hashes": [],
-      "uploaded_at": null,
-      "twenty_frame_test": {
-        "evidence_held": [],
-        "outstanding": [
-          "angle",
-          "lighting",
-          "distance",
-          "expression"
-        ]
+      "axes": {
+        "angle": false,
+        "lighting": false,
+        "distance": false,
+        "expression": false
       }
     },
     {
-      "id": "VASISTHA",
-      "entity": "VASISTHA",
+      "id": "SHEET.VASISHTHA",
+      "entity": "VASISHTHA",
       "approved": false,
-      "approved_by": null,
-      "approved_at": null,
       "files": [],
       "hashes": [],
-      "uploaded_at": null,
-      "twenty_frame_test": {
-        "evidence_held": [],
-        "outstanding": [
-          "angle",
-          "lighting",
-          "distance",
-          "expression"
-        ]
+      "axes": {
+        "angle": false,
+        "lighting": false,
+        "distance": false,
+        "expression": false
       }
     }
   ],
-  "_upload_spec": {
-    "slots": [
-      "front",
-      "three_quarter",
-      "profile",
-      "in_world"
+  "_twenty_frame_spec": {
+    "_source": "37_consistency_protocol.md, rule 5",
+    "_as_written": "Generate the same face under twenty conditions and look at them together. Pass: a stranger, shown all twenty shuffled, says it is one person.",
+    "_legitimate_intent": "Obtain evidence that one identity holds across lighting, angle, distance and expression BEFORE committing to a kāṇḍa — so drift is discovered for the price of a day, not at film forty.",
+    "_what_it_is_NOT": [
+      "It is NOT a requirement for twenty new paid generations.",
+      "The protocol's own Rule 1 makes the AUTHORED MODEL SHEET the anchor. A sheet drawn front, three-quarter, profile and in-world already supplies the angle evidence the test was designed to obtain.",
+      "It is NOT deletable. Removing it to make production green would defeat the only mechanism that catches drift."
     ],
-    "axis_satisfied_by_full_four_view": "angle",
-    "note": "Uploading four files records evidence for ANGLE only. approved stays false until a named human approves. Upload never approves."
+    "accepted_evidence": [
+      {
+        "type": "authored model sheet",
+        "covers": "angle (front, 3/4, profile), wardrobe, in-world light",
+        "cost": "commission, not generation"
+      },
+      {
+        "type": "reference shoot frames",
+        "covers": "lighting and material behaviour on a real body",
+        "cost": "one shoot day, already planned"
+      },
+      {
+        "type": "generated conditions",
+        "covers": "expression and distance not present in the sheet",
+        "cost": "a small number of generations, NOT twenty by default"
+      }
+    ],
+    "rule": "The test is satisfied when the four axes — lighting, angle, distance, expression — each have inspection evidence from any accepted type, and a human has judged the set as one person.",
+    "status_here": "NO evidence of any type exists. No sheet is commissioned, no reference shoot has happened, no frame has been generated. The requirement is UNSATISFIED because there is nothing to inspect — not because twenty generations are owed."
+  },
+  "_upload_spec": {
+    "files_required": 4,
+    "views": [
+      "front",
+      "three-quarter",
+      "profile",
+      "in-world frame"
+    ],
+    "satisfies": [
+      "angle"
+    ],
+    "note": "A four-view authored sheet satisfies the angle axis only. Lighting, distance and expression remain outstanding. This is NOT twenty paid generations."
   }
 }

@@ -1,112 +1,215 @@
 {
   "_doc": "Public export. Carries locators, never source text. Every accepted claim prints how it was accepted.",
-  "built": "2026-09-20",
+  "built": "2026-09-21",
   "arc": {
-    "id": "ARC7",
-    "name": "Visvamitra at Ayodhya",
+    "id": "A1",
     "kanda": "BALA",
-    "sarga_range": "18-22",
-    "films": [
-      "M1",
-      "M2",
-      "M3",
-      "M4",
-      "M5",
-      "M6",
-      "M7"
+    "title": "Nārada's summary",
+    "summary": "The whole story told in brief, before it is told at length",
+    "sargas": [
+      1,
+      1
     ],
-    "continuous_joins": [
-      {
-        "from": "M2",
-        "to": "M3"
-      },
-      {
-        "from": "M3",
-        "to": "M4"
-      },
-      {
-        "from": "M4",
-        "to": "M5"
-      },
-      {
-        "from": "M5",
-        "to": "M6"
-      },
-      {
-        "from": "M6",
-        "to": "M7"
-      }
-    ],
-    "join_rule": "A continuous join opens on the same frame the previous film closed on, and room tone carries across with no reseat. A visible cut or an audible reseat means the assembly is wrong."
+    "films": []
   },
   "films": [
     {
       "id": "M1",
-      "story_id": "STORY.BALA.SAGE-AT-THE-GATE",
-      "title": {
-        "en": "A Sage at the Gate",
-        "hi": "द्वार पर ऋषि",
-        "te": "ద్వారం వద్ద ముని"
-      },
+      "title": {},
       "kanda": "BALA",
-      "sarga": 18,
-      "duration_s": 44,
-      "status": "claims-only",
-      "shots": 0,
-      "gate": null,
-      "narration": null,
+      "sarga": "Bāla 17",
+      "duration_s": 32.1,
+      "shots": 16,
+      "gate": {
+        "blocked": 15,
+        "of": 16
+      },
+      "narration": {
+        "L1": {
+          "shot": "01-02",
+          "en": "A sage came to Ayodhyā.",
+          "hi": "अयोध्या में एक ऋषि आए।",
+          "te": "అయోధ్యకు ఒక ఋషి వచ్చాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L2": {
+          "shot": "01-07",
+          "en": "He asked what the sage wanted.",
+          "hi": "उन्होंने पूछा — आपको क्या चाहिए?",
+          "te": "మీకేం కావాలి అని అడిగాడు.",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        },
+        "L3": {
+          "shot": "01-11",
+          "en": "And before the sage answered — he gave his word.",
+          "hi": "और ऋषि के कुछ कहने से पहले ही — वचन दे दिया।",
+          "te": "ఋషి చెప్పకముందే — మాట ఇచ్చేశాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L4": {
+          "shot": "01-13",
+          "en": "Whatever it was.",
+          "hi": "जो भी हो।",
+          "te": "ఏదైనా సరే.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L5": {
+          "shot": "01-14",
+          "en": "The sage had not said it yet.",
+          "hi": "ऋषि ने अभी कहा ही नहीं था।",
+          "te": "ఋషి ఇంకా చెప్పనే లేదు.",
+          "speaker": null,
+          "attribution_required": false
+        }
+      },
       "claims": [
         {
-          "id": "CLM.BALA.18.SAGE-ARRIVES",
-          "text": "Visvamitra comes to the gate of Ayodhya and is announced.",
+          "id": "CLM-0001",
+          "text": "Daśaratha tells Viśvāmitra he will do whatever the sage asks, before hearing the request.",
           "evidence_class": "T",
-          "state": "proposed",
-          "speaker": null,
+          "state": "accepted",
+          "speaker": "DASHARATHA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 18,
-            "verses": "40-48",
-            "source": "SRC.GRETIL.VR",
+            "sarga": null,
+            "verses": null,
+            "source": "SRC.DUTT.VR",
             "text": null
           },
-          "restricted_source": true,
+          "restricted_source": false,
           "inferred_from": null,
           "inference_basis": null,
           "staging_note": null,
           "tradition": null,
           "silence_note": null,
-          "accepted_how": null
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check against a bounded reading extract. NOT qualified independent human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
         }
       ]
     },
     {
       "id": "M2",
-      "story_id": "STORY.BALA.ASK-AND-I-GIVE",
-      "title": {
-        "en": "Ask, and I Give",
-        "hi": "माँगिए, मैं दूँगा",
-        "te": "అడగండి, ఇస్తాను"
-      },
+      "title": {},
       "kanda": "BALA",
-      "sarga": 18,
-      "duration_s": 44,
-      "status": "claims-only",
-      "shots": 0,
-      "gate": null,
-      "narration": null,
+      "sarga": "Bāla 18",
+      "duration_s": 42.1,
+      "shots": 18,
+      "gate": {
+        "blocked": 18,
+        "of": 18
+      },
+      "narration": {
+        "L1": {
+          "shot": "02-01",
+          "en": "In the court of Ayodhyā, the sage sat before the king.",
+          "hi": "अयोध्या के दरबार में ऋषि विश्वामित्र राजा के सामने बैठे थे।",
+          "te": "అయోధ్య సభలో విశ్వామిత్రుడు రాజు ముందు కూర్చున్నాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L2": {
+          "shot": "02-02",
+          "en": "And Dasharatha had already given his word.",
+          "hi": "और दशरथ वचन दे चुके थे — ऋषि जो माँगेंगे, वो देंगे।",
+          "te": "దశరథుడు అప్పటికే మాట ఇచ్చేశాడు — ఋషి ఏం అడిగినా ఇస్తానని.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L3": {
+          "shot": "02-03",
+          "en": "Before he asked, the sage told him: keep your word.",
+          "hi": "माँगने से पहले ऋषि ने कहा — अपना वचन निभाना।",
+          "te": "అడిగే ముందే ఋషి అన్నాడు — మాట నిలబెట్టుకో.",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L4": {
+          "shot": "02-04",
+          "en": "Far from here, in the forest, Viśvāmitra had begun a yajña.",
+          "hi": "दूर, जंगल में, विश्वामित्र ने एक यज्ञ शुरू किया था।",
+          "te": "ఇక్కడికి దూరంగా, అడవిలో, విశ్వామిత్రుడు ఒక యజ్ఞం మొదలుపెట్టాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L5": {
+          "shot": "02-06",
+          "en": "Two rākṣasas kept breaking it. Mārīca. Subāhu.",
+          "hi": "दो राक्षस उसे बार-बार तोड़ देते थे। मारीच। सुबाहु।",
+          "te": "ఇద్దరు రాక్షసులు దాన్ని పదే పదే పాడు చేసేవారు. మారీచుడు. సుబాహుడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L6": {
+          "shot": "02-08",
+          "en": "They poured flesh and blood over the altar.",
+          "hi": "वो वेदी पर माँस और ख़ून उँडेल देते थे।",
+          "te": "వేదిక మీద మాంసం, రక్తం పోసేవారు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L7": {
+          "shot": "02-10",
+          "en": "He was under a vow. He couldn't curse them.",
+          "hi": "ऋषि व्रत में थे। शाप दे नहीं सकते थे।",
+          "te": "ఆయన వ్రతంలో ఉన్నాడు. శాపం పెట్టలేడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L8": {
+          "shot": "02-12",
+          "en": "So he had come to the king.",
+          "hi": "इसलिए वो राजा के पास आए थे।",
+          "te": "అందుకే రాజు దగ్గరికి వచ్చాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L9": {
+          "shot": "02-13",
+          "en": "Ten nights. That was all he asked.",
+          "hi": "दस रातें। बस इतना ही माँगा था।",
+          "te": "పది రాత్రులు. అంతే అడిగాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L10": {
+          "shot": "02-15",
+          "en": "He did not ask for the army.",
+          "hi": "उन्होंने सेना नहीं माँगी।",
+          "te": "సైన్యం అడగలేదు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L11": {
+          "shot": "02-17",
+          "en": "Rāma.",
+          "hi": "राम।",
+          "te": "రాముడు.",
+          "speaker": null,
+          "attribution_required": false
+        }
+      },
       "claims": [
         {
-          "id": "CLM.BALA.18.KING-OFFERS-ANYTHING",
-          "text": "Dasaratha receives the sage with honour and offers him whatever he asks.",
+          "id": "CLM-0002",
+          "text": "Viśvāmitra says he had undertaken an observance.",
           "evidence_class": "T",
-          "state": "proposed",
-          "speaker": "DASARATHA",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
             "sarga": 18,
-            "verses": "50-59",
+            "verses": "5",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -116,97 +219,297 @@
           "staging_note": null,
           "tradition": null,
           "silence_note": null,
-          "accepted_how": null
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0003",
+          "text": "Viśvāmitra says the rākṣasas Mārīca and Subāhu broke his observance as it neared completion.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "5",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0004",
+          "text": "Viśvāmitra says Mārīca and Subāhu poured flesh and blood over the altar.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "5",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0005",
+          "text": "Viśvāmitra says that, bound by the observance, he cannot release his anger or utter a curse.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "7",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0006",
+          "text": "Viśvāmitra asks Daśaratha to give him his eldest son, Rāma.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "8",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0007",
+          "text": "Viśvāmitra asks for Rāma for the ten nights of the sacrifice.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "17",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0009",
+          "text": "Before stating his request, Viśvāmitra asks Daśaratha to be true to his promise.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "3",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
         }
       ]
     },
     {
       "id": "M3",
-      "story_id": "STORY.BALA.FATHER-REFUSES",
-      "title": {
-        "en": "A Father Says No",
-        "hi": "एक पिता ने मना किया",
-        "te": "ఒక తండ్రి వారించాడు"
-      },
+      "title": {},
       "kanda": "BALA",
-      "sarga": 20,
-      "duration_s": 44,
-      "status": "directed",
-      "shots": 18,
+      "sarga": "Bāla 19",
+      "duration_s": 51.4,
+      "shots": 23,
       "gate": {
-        "blocked": 15,
-        "of": 18
+        "blocked": 22,
+        "of": 23
       },
       "narration": {
         "L1": {
-          "shot": "01-02",
-          "en": "The sage asked for the boy.",
-          "hi": "ऋषि ने लड़के को माँगा।",
-          "te": "ముని ఆ కుర్రాడిని అడిగాడు.",
-          "speaker": null,
-          "attribution_required": false
+          "shot": "03-02",
+          "en": "Viśvāmitra had no doubt. With him there, Rāma would finish them.",
+          "hi": "विश्वामित्र को कोई शक नहीं था — वो साथ रहें तो राम उन दोनों को ख़त्म कर देंगे।",
+          "te": "విశ్వామిత్రుడికి ఏ సందేహం లేదు — ఆయన తోడు ఉంటే రాముడు ఆ ఇద్దరినీ చంపేస్తాడు.",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
         },
         "L2": {
-          "shot": "02-01",
-          "en": "The king heard it and lost himself.",
-          "hi": "राजा ने सुना और होश खो बैठा।",
-          "te": "రాజు విని స్పృహ కోల్పోయాడు.",
+          "shot": "03-03",
+          "en": "He said: if Vasiṣṭha and the counsellors agreed, let Rāma go.",
+          "hi": "उन्होंने कहा — अगर वसिष्ठ और मंत्री मान जाएँ, तो राम को जाने दो।",
+          "te": "వసిష్ఠుడూ, మంత్రులూ ఒప్పుకుంటే రాముణ్ణి పంపించు, అన్నాడు.",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L3": {
+          "shot": "03-04",
+          "en": "Ten nights. That was all he asked.",
+          "hi": "दस रातें। बस इतना ही माँगा था।",
+          "te": "పది రాత్రులు. అంతే అడిగాడు.",
           "speaker": null,
           "attribution_required": false
         },
-        "L3": {
-          "shot": "03-05",
-          "en": "He said he had waited a long time for this son.",
-          "hi": "उसने कहा कि इस बेटे के लिए बहुत इंतज़ार किया।",
-          "te": "ఈ కొడుకు కోసం చాలా కాలం ఎదురుచూశానని అతను అన్నాడు.",
-          "speaker": "DASARATHA",
-          "attribution_required": true
-        },
         "L4": {
-          "shot": "03-09",
-          "en": "He said the boy was not yet sixteen.",
-          "hi": "उसने कहा कि लड़का अभी सोलह का नहीं हुआ।",
-          "te": "కుర్రాడికి ఇంకా పదహారు నిండలేదని అతను అన్నాడు.",
-          "speaker": "DASARATHA",
-          "attribution_required": true
+          "shot": "03-07",
+          "en": "Dasharatha... had only fear. Not of Rāma. For him.",
+          "hi": "दशरथ को... सिर्फ़ डर था। राम पर नहीं। राम के लिए।",
+          "te": "దశరథుడికి... భయం మాత్రమే. రాముడి మీద కాదు. రాముడి కోసం.",
+          "speaker": null,
+          "attribution_required": false
         },
         "L5": {
-          "shot": "04-01",
-          "en": "He offered his army instead. And himself.",
-          "hi": "उसने बदले में अपनी सेना दी। और खुद को।",
-          "te": "బదులుగా తన సైన్యాన్ని ఇచ్చాడు. తననూ.",
-          "speaker": "DASARATHA",
+          "shot": "03-08",
+          "en": "He said Rāma was not yet sixteen.",
+          "hi": "उन्होंने कहा — राम अभी सोलह के भी नहीं थे।",
+          "te": "రాముడికి ఇంకా పదహారు కూడా నిండలేదు, అన్నాడు.",
+          "speaker": "DASHARATHA",
           "attribution_required": true
         },
         "L6": {
-          "shot": "06-01",
-          "en": "The sage waited.",
-          "hi": "ऋषि रुका रहा।",
-          "te": "ముని ఆగాడు.",
+          "shot": "03-09",
+          "en": "The way his father saw it, he hadn't finished learning weapons.",
+          "hi": "पिता की नज़र में, अभी उसने हथियार पूरे सीखे भी नहीं थे।",
+          "te": "తండ్రి దృష్టిలో — ముక్కుపచ్చలారని పిల్లాడికి ఇంకా ఆయుధాలు పూర్తిగా రావు.",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        },
+        "L7": {
+          "shot": "03-11",
+          "en": "The king offered his army.",
+          "hi": "राजा ने अपनी सेना देने को कहा।",
+          "te": "రాజు తన సైన్యాన్ని ఇస్తానన్నాడు.",
           "speaker": null,
           "attribution_required": false
         },
-        "L7": {
-          "shot": "07-02",
+        "L8": {
+          "shot": "03-14",
+          "en": "He said he'd go himself, bow in hand, while he lived.",
+          "hi": "कहा — मैं ख़ुद चलूँगा। धनुष लेकर। जब तक साँस है।",
+          "te": "నేనే వస్తాను అన్నాడు. విల్లు పట్టుకుని. ఊపిరి ఉన్నంతవరకు.",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        },
+        "L9": {
+          "shot": "03-16",
+          "en": "Anything. Anything but Rāma.",
+          "hi": "कुछ भी। बस राम नहीं।",
+          "te": "ఏదైనా. రాముడు తప్ప.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L10": {
+          "shot": "03-19",
+          "en": "He said he couldn't live without Rāma. Not for a moment.",
+          "hi": "उन्होंने कहा — राम के बिना वो एक पल नहीं रह सकते।",
+          "te": "రాముడు లేకుండా ఒక్క క్షణం కూడా ఉండలేనని అన్నాడు.",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        },
+        "L11": {
+          "shot": "03-21",
           "en": "He said no.",
-          "hi": "उसने मना किया।",
-          "te": "అతను వద్దన్నాడు.",
-          "speaker": "DASARATHA",
+          "hi": "उन्होंने ना कह दिया।",
+          "te": "ఆయన కాదన్నాడు.",
+          "speaker": "DASHARATHA",
           "attribution_required": true
         }
       },
       "claims": [
         {
-          "id": "CLM.BALA.20.REQUEST-LANDS",
-          "text": "Visvamitra asks Dasaratha to give him Rama.",
+          "id": "CLM-0008",
+          "text": "Viśvāmitra says that Rāma, protected by the sage's own power, is able to destroy the rākṣasas.",
           "evidence_class": "T",
           "state": "accepted",
-          "speaker": "VISVAMITRA",
+          "speaker": "VISHVAMITRA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 20,
-            "verses": "1-2",
+            "sarga": 18,
+            "verses": "9",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -218,135 +521,23 @@
           "silence_note": null,
           "accepted_how": {
             "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Model knowledge of Balakanda sarga 20. No digitised edition was open: this environment's egress policy blocks the hosts carrying the public-domain translation, and the GRETIL text is restricted and must not be ingested.",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
             "attested_at": "2026-09-20",
             "not_human_review": "An AI-assisted passage check. This is not qualified human review."
           }
         },
         {
-          "id": "CLM.BALA.20.KING-STUNNED",
-          "text": "Hearing the request, Dasaratha loses his senses and falls.",
+          "id": "CLM-0010",
+          "text": "Daśaratha says Rāma is not yet sixteen.",
           "evidence_class": "T",
           "state": "accepted",
-          "speaker": null,
-          "locator": {
-            "work": "VR",
-            "kanda": "BALA",
-            "sarga": 20,
-            "verses": "3-4",
-            "source": "SRC.GRETIL.VR",
-            "text": null
-          },
-          "restricted_source": true,
-          "inferred_from": null,
-          "inference_basis": null,
-          "staging_note": null,
-          "tradition": null,
-          "silence_note": null,
-          "accepted_how": {
-            "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Model knowledge of Balakanda sarga 20: the king is described as losing consciousness (murcchita) on hearing the request. No digitised edition was open.",
-            "attested_at": "2026-09-20",
-            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
-          }
-        },
-        {
-          "id": "CLM.BALA.20.NOT-YET-SIXTEEN",
-          "text": "Dasaratha states that Rama is not yet sixteen.",
-          "evidence_class": "T",
-          "state": "accepted",
-          "speaker": "DASARATHA",
-          "locator": {
-            "work": "VR",
-            "kanda": "BALA",
-            "sarga": 20,
-            "verses": "9-10",
-            "source": "SRC.GRETIL.VR",
-            "text": null
-          },
-          "restricted_source": true,
-          "inferred_from": null,
-          "inference_basis": null,
-          "staging_note": null,
-          "tradition": null,
-          "silence_note": null,
-          "accepted_how": {
-            "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Model knowledge of Balakanda sarga 20, the una-sodasa-varsa line, spoken by Dasaratha. No digitised edition was open.",
-            "attested_at": "2026-09-20",
-            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
-          }
-        },
-        {
-          "id": "CLM.BALA.20.SON-CAME-LATE",
-          "text": "Dasaratha states that he obtained Rama late, after long childlessness and great austerity.",
-          "evidence_class": "T",
-          "state": "accepted",
-          "speaker": "DASARATHA",
-          "locator": {
-            "work": "VR",
-            "kanda": "BALA",
-            "sarga": 20,
-            "verses": "5-8",
-            "source": "SRC.GRETIL.VR",
-            "text": null
-          },
-          "restricted_source": true,
-          "inferred_from": null,
-          "inference_basis": null,
-          "staging_note": null,
-          "tradition": null,
-          "silence_note": null,
-          "accepted_how": {
-            "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Model knowledge of Balakanda sarga 20: the king pleads his age and the lateness of his sons. No digitised edition was open.",
-            "attested_at": "2026-09-20",
-            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
-          }
-        },
-        {
-          "id": "CLM.BALA.20.OFFERS-HIMSELF",
-          "text": "Dasaratha offers his own army and himself in Rama's place.",
-          "evidence_class": "T",
-          "state": "accepted",
-          "speaker": "DASARATHA",
-          "locator": {
-            "work": "VR",
-            "kanda": "BALA",
-            "sarga": 20,
-            "verses": "11-14",
-            "source": "SRC.GRETIL.VR",
-            "text": null
-          },
-          "restricted_source": true,
-          "inferred_from": null,
-          "inference_basis": null,
-          "staging_note": null,
-          "tradition": null,
-          "silence_note": null,
-          "accepted_how": {
-            "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Model knowledge of Balakanda sarga 20: the king offers the aksauhini and his own person. No digitised edition was open.",
-            "attested_at": "2026-09-20",
-            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
-          }
-        },
-        {
-          "id": "CLM.BALA.20.NAMES-THE-ENEMY",
-          "text": "Visvamitra names Marica and Subahu, servants of Ravana, as the rakshasas troubling the sacrifice.",
-          "evidence_class": "T",
-          "state": "accepted",
-          "speaker": "VISVAMITRA",
+          "speaker": "DASHARATHA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
             "sarga": 19,
-            "verses": "6-9",
+            "verses": "2",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -358,23 +549,23 @@
           "silence_note": null,
           "accepted_how": {
             "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Model knowledge of Balakanda sarga 19, where the sage names the two rakshasas and their master. Carried into M3 as the pressure the refusal answers. No digitised edition was open.",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
             "attested_at": "2026-09-20",
             "not_human_review": "An AI-assisted passage check. This is not qualified human review."
           }
         },
         {
-          "id": "CLM.BALA.20.REFUSAL",
-          "text": "Dasaratha refuses to give Rama.",
+          "id": "CLM-0011",
+          "text": "Daśaratha says Rāma is a boy whose training is incomplete and who is not skilled in battle.",
           "evidence_class": "T",
           "state": "accepted",
-          "speaker": "DASARATHA",
+          "speaker": "DASHARATHA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 20,
-            "verses": "15-20",
+            "sarga": 19,
+            "verses": "7",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -386,80 +577,135 @@
           "silence_note": null,
           "accepted_how": {
             "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Model knowledge of Balakanda sarga 20: the refusal is explicit and is the sarga's outcome. No digitised edition was open.",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
             "attested_at": "2026-09-20",
             "not_human_review": "An AI-assisted passage check. This is not qualified human review."
           }
         },
         {
-          "id": "CLM.BALA.20.S.LAMP-HELD",
-          "text": "A lamp stands at the king's right hand through the refusal, and does not move.",
-          "evidence_class": "S",
-          "state": "accepted",
-          "speaker": null,
-          "locator": null,
-          "restricted_source": false,
-          "inferred_from": null,
-          "inference_basis": null,
-          "staging_note": "Ours. The text specifies no lamp. Declared as a staging choice so the Ledger can show it as ours and not as the text's.",
-          "tradition": null,
-          "silence_note": null,
-          "accepted_how": {
-            "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "No source claimed. This is a declared staging choice under class S and is accepted as ours, not as text.",
-            "attested_at": "2026-09-20",
-            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
-          }
-        },
-        {
-          "id": "CLM.BALA.20.I.COURT-INTERIOR",
-          "text": "The refusal is staged in a pillared court interior, post-and-lintel, on a raised plinth.",
-          "evidence_class": "I",
-          "state": "accepted",
-          "speaker": null,
-          "locator": null,
-          "restricted_source": false,
-          "inferred_from": "SRC.AMARAVATI",
-          "inference_basis": "Amaravati, 2nd-3rd c. CE, court panels: pillared hall, raised plinth, post-and-lintel construction, vedika railing motif. The inference rests on those named panels and their dated vocabulary, not on a region or an era.",
-          "staging_note": null,
-          "tradition": null,
-          "silence_note": null,
-          "accepted_how": {
-            "method": "ai-passage-check",
-            "text_consulted": false,
-            "basis": "Inference is recorded against a named visual source, not a text locator. Accepted as an inference, never as text.",
-            "attested_at": "2026-09-20",
-            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
-          }
-        },
-        {
-          "id": "CLM.BALA.20.TR.KING-WEEPS",
-          "text": "The king weeps as he refuses.",
-          "evidence_class": "Tr",
-          "state": "disputed",
-          "speaker": null,
-          "locator": null,
-          "restricted_source": false,
-          "inferred_from": null,
-          "inference_basis": null,
-          "staging_note": null,
-          "tradition": "Commentarial and performance tradition (Ramayana katha performance, various). Not the Valmiki spine.",
-          "silence_note": null,
-          "accepted_how": null
-        },
-        {
-          "id": "CLM.BALA.20.U.RAMA-PRESENT",
-          "text": "Whether Rama is present in the hall during the refusal.",
+          "id": "CLM-0012",
+          "text": "Daśaratha offers to go himself at the head of his full army.",
           "evidence_class": "T",
-          "state": "unresolved",
+          "state": "accepted",
+          "speaker": "DASHARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "3",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0013",
+          "text": "Daśaratha offers to fight the rākṣasas himself, bow in hand, for as long as he lives.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASHARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "5",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0014",
+          "text": "Daśaratha says he cannot bear to live separated from Rāma, even for a moment.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASHARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "8",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0015",
+          "text": "Daśaratha tells Viśvāmitra he ought not to take Rāma.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASHARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "4,6,8,10,11",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0016",
+          "text": "Hearing the request, Daśaratha is seized by great fear and lurches from his seat.",
+          "evidence_class": "T",
+          "state": "accepted",
           "speaker": null,
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 20,
-            "verses": "1-20",
+            "sarga": 18,
+            "verses": "20",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -468,38 +714,142 @@
           "inference_basis": null,
           "staging_note": null,
           "tradition": null,
-          "silence_note": "The passage does not settle it. We say so rather than choosing and calling it text. The direction may show the hall without resolving the question.",
-          "accepted_how": null
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0019",
+          "text": "Viśvāmitra says he knows Rāma's worth, as does Vasiṣṭha, and tells Daśaratha to release Rāma if his ministers led by Vasiṣṭha agree.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 18,
+            "verses": "14-16",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
         }
       ]
     },
     {
       "id": "M4",
-      "story_id": "STORY.BALA.THE-PRIEST-SPEAKS",
-      "title": {
-        "en": "The Priest Speaks",
-        "hi": "गुरु बोले",
-        "te": "గురువు మాట్లాడు"
-      },
+      "title": {},
       "kanda": "BALA",
-      "sarga": 21,
-      "duration_s": 44,
-      "status": "claims-only",
-      "shots": 0,
-      "gate": null,
-      "narration": null,
+      "sarga": "Bāla 19",
+      "duration_s": 48.7,
+      "shots": 18,
+      "gate": {
+        "blocked": 18,
+        "of": 18
+      },
+      "narration": {
+        "L1": {
+          "shot": "04-02",
+          "en": "The king asked who they were. Whose they were.",
+          "hi": "राजा ने पूछा — ये कौन हैं? किसके हैं?",
+          "te": "రాజు అడిగాడు — వాళ్ళు ఎవరు? ఎవరి మనుషులు?",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        },
+        "L2": {
+          "shot": "04-04",
+          "en": "Viśvāmitra answered slowly.",
+          "hi": "विश्वामित्र ने धीरे से जवाब दिया।",
+          "te": "విశ్వామిత్రుడు నెమ్మదిగా చెప్పాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L3": {
+          "shot": "04-05",
+          "en": "They don't come on their own, he said. Someone sets them on.",
+          "hi": "उन्होंने कहा — वो अपने आप नहीं आते। कोई उन्हें उकसाता है।",
+          "te": "వాళ్ళంతట వాళ్ళు రారు, అన్నాడు. ఎవరో వాళ్ళని ఉసిగొలుపుతారు.",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L4": {
+          "shot": "04-08",
+          "en": "Rāvaṇa.",
+          "hi": "रावण।",
+          "te": "రావణుడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L5": {
+          "shot": "04-09",
+          "en": "King of the rākṣasas. Brother of Kubera. He has a boon.",
+          "hi": "राक्षसों का राजा। कुबेर का भाई। उसे वरदान मिला हुआ है।",
+          "te": "రాక్షసుల రాజు. కుబేరుడి తమ్ముడు. వాడికి వరం ఉంది.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L6": {
+          "shot": "04-12",
+          "en": "Dasharatha heard the name.",
+          "hi": "दशरथ ने नाम सुना।",
+          "te": "దశరథుడు ఆ పేరు విన్నాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L7": {
+          "shot": "04-13",
+          "en": "He said he couldn't stand against Rāvaṇa, nor could his army.",
+          "hi": "उन्होंने कहा — रावण के सामने वो ख़ुद नहीं टिक सकते। न उनकी सेना।",
+          "te": "రావణుడి ముందు తను నిలబడలేడు, తన సైన్యం కూడా — అన్నాడు.",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        },
+        "L8": {
+          "shot": "04-16",
+          "en": "How, he asked, could a boy?",
+          "hi": "उन्होंने पूछा — तो एक बच्चा कैसे?",
+          "te": "ఇంక ఒక పిల్లాడు ఎలా, అని అడిగాడు.",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        },
+        "L9": {
+          "shot": "04-17",
+          "en": "Once more... he said no.",
+          "hi": "एक बार फिर... उन्होंने ना कह दिया।",
+          "te": "మళ్ళీ... ఆయన కాదన్నాడు.",
+          "speaker": "DASHARATHA",
+          "attribution_required": true
+        }
+      },
       "claims": [
         {
-          "id": "CLM.BALA.21.VASISTHA-COUNSELS",
-          "text": "Vasistha counsels Dasaratha to let Rama go.",
+          "id": "CLM-0020",
+          "text": "Daśaratha asks who the rākṣasas are, whose sons they are, and how strong.",
           "evidence_class": "T",
-          "state": "proposed",
-          "speaker": "VASISTHA",
+          "state": "accepted",
+          "speaker": "DASHARATHA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 21,
-            "verses": "1-20",
+            "sarga": 19,
+            "verses": "12",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -509,37 +859,253 @@
           "staging_note": null,
           "tradition": null,
           "silence_note": null,
-          "accepted_how": null
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0030",
+          "text": "Viśvāmitra says Rāvaṇa, of the line of Pulastya, is lord of the rākṣasas and brother of Vaiśravaṇa.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "15-17",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0031",
+          "text": "Viśvāmitra says that Rāvaṇa, not acting himself, incites Mārīca and Subāhu to obstruct the sacrifice.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "18",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0032",
+          "text": "Viśvāmitra says Rāvaṇa was granted a boon by Brahmā.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "16",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0034",
+          "text": "Daśaratha says he cannot stand in battle against Rāvaṇa or his forces, even with his army.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASHARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "19-22",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0035",
+          "text": "Daśaratha says again that he will not give his young son.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "DASHARATHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 19,
+            "verses": "23-24",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
         }
       ]
     },
     {
       "id": "M5",
-      "story_id": "STORY.BALA.THE-KING-YIELDS",
-      "title": {
-        "en": "The King Yields",
-        "hi": "राजा मान गए",
-        "te": "రాజు అంగీకరించాడు"
-      },
+      "title": {},
       "kanda": "BALA",
-      "sarga": 22,
-      "duration_s": 44,
-      "status": "claims-only",
-      "shots": 0,
-      "gate": null,
-      "narration": null,
+      "sarga": "Bāla 20",
+      "duration_s": 40.4,
+      "shots": 16,
+      "gate": {
+        "blocked": 13,
+        "of": 16
+      },
+      "narration": {
+        "L1": {
+          "shot": "05-02",
+          "en": "Viśvāmitra hadn't moved through any of it.",
+          "hi": "विश्वामित्र अब तक चुपचाप बैठे थे।",
+          "te": "విశ్వామిత్రుడు ఇప్పటిదాకా కదలలేదు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L2": {
+          "shot": "05-03",
+          "en": "Now he moved.",
+          "hi": "अब वो हिले।",
+          "te": "ఇప్పుడు కదిలాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L3": {
+          "shot": "05-04",
+          "en": "He said —",
+          "hi": "उन्होंने कहा —",
+          "te": "అన్నాడు —",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L4": {
+          "shot": "05-08",
+          "en": "\"You gave your word, Dasharatha.\"",
+          "hi": "\"तुमने वचन दिया था, दशरथ।\"",
+          "te": "\"మాట ఇచ్చావు, దశరథా.\"",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L5": {
+          "shot": "05-09",
+          "en": "\"Now you want to take it back.\"",
+          "hi": "\"अब उसे वापस लेना चाहते हो।\"",
+          "te": "\"ఇప్పుడు వెనక్కి తీసుకోవాలని చూస్తున్నావు.\"",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L6": {
+          "shot": "05-10",
+          "en": "\"That is not the way of the Raghus.\"",
+          "hi": "\"रघुवंश में ऐसा नहीं होता।\"",
+          "te": "\"రఘువంశంలో ఇలా జరగదు.\"",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L7": {
+          "shot": "05-12",
+          "en": "\"If this is your decision... I will go.\"",
+          "hi": "\"अगर यही तुम्हारा फ़ैसला है... तो मैं जाता हूँ।\"",
+          "te": "\"ఇదే నీ నిర్ణయం అయితే... నేను వెళ్తాను.\"",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L8": {
+          "shot": "05-13",
+          "en": "\"The way I came.\"",
+          "hi": "\"जैसे आया था।\"",
+          "te": "\"వచ్చినట్టే.\"",
+          "speaker": "VISHVAMITRA",
+          "attribution_required": true
+        },
+        "L9": {
+          "shot": "05-14",
+          "en": "He turned.",
+          "hi": "वो मुड़ गए।",
+          "te": "ఆయన వెనక్కి తిరిగాడు.",
+          "speaker": null,
+          "attribution_required": false
+        }
+      },
       "claims": [
         {
-          "id": "CLM.BALA.22.KING-YIELDS",
-          "text": "Dasaratha gives Rama to Visvamitra.",
+          "id": "CLM-0040",
+          "text": "Viśvāmitra is seized by anger at Daśaratha's refusal.",
           "evidence_class": "T",
-          "state": "proposed",
+          "state": "accepted",
           "speaker": null,
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 22,
-            "verses": "1-5",
+            "sarga": 20,
+            "verses": "1,4",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -549,37 +1115,456 @@
           "staging_note": null,
           "tradition": null,
           "silence_note": null,
-          "accepted_how": null
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0041",
+          "text": "Viśvāmitra tells Daśaratha that Daśaratha, having first promised, now wishes to abandon that promise.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "2",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0042",
+          "text": "Viśvāmitra tells Daśaratha that this is unbecoming of the house of Raghu.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "2",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0043",
+          "text": "Viśvāmitra says that if this is the king's decision, he will go back as he came.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "3",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
         }
       ]
     },
     {
       "id": "M6",
-      "story_id": "STORY.BALA.TWO-BOYS-LEAVE",
-      "title": {
-        "en": "Two Boys Leave",
-        "hi": "दो बालक चले",
-        "te": "ఇద్దరు బాలురు బయలుదేరారు"
-      },
+      "title": {},
       "kanda": "BALA",
-      "sarga": 22,
-      "duration_s": 44,
-      "status": "claims-only",
+      "sarga": "Bāla 20",
+      "duration_s": 44.6,
+      "shots": 22,
+      "gate": {
+        "blocked": 21,
+        "of": 22
+      },
+      "narration": {
+        "L1": {
+          "shot": "06-01",
+          "en": "Viśvāmitra had turned to go.",
+          "hi": "विश्वामित्र जाने को मुड़ चुके थे।",
+          "te": "విశ్వామిత్రుడు వెళ్ళిపోవడానికి తిరిగాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L2": {
+          "shot": "06-02",
+          "en": "Vasiṣṭha stood up.",
+          "hi": "वसिष्ठ खड़े हो गए।",
+          "te": "వసిష్ఠుడు లేచి నిలబడ్డాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L3": {
+          "shot": "06-04",
+          "en": "He told the king: a man of this house keeps his word.",
+          "hi": "उन्होंने राजा को बताया — इस घर का आदमी वचन निभाता है।",
+          "te": "రాజుకి చెప్పాడు — ఈ ఇంటి మనిషి మాట తప్పడు.",
+          "speaker": "VASISHTHA",
+          "attribution_required": true
+        },
+        "L4": {
+          "shot": "06-08",
+          "en": "Then he told him: the sage he refused was Rāma's protection.",
+          "hi": "फिर बताया — जिस ऋषि को वो मना कर रहे थे, वही राम की रक्षा थे।",
+          "te": "తర్వాత చెప్పాడు — ఎవరిని కాదంటున్నాడో, ఆ ఋషే రాముడికి రక్ష.",
+          "speaker": "VASISHTHA",
+          "attribution_required": true
+        },
+        "L5": {
+          "shot": "06-15",
+          "en": "Dasharatha called for his son.",
+          "hi": "दशरथ ने बेटे को बुलाया।",
+          "te": "దశరథుడు కొడుకుని పిలిచాడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L6": {
+          "shot": "06-19",
+          "en": "And gave him.",
+          "hi": "और दे दिया।",
+          "te": "ఇచ్చేశాడు.",
+          "speaker": null,
+          "attribution_required": false
+        }
+      },
+      "claims": [
+        {
+          "id": "CLM-0050",
+          "text": "Vasiṣṭha tells Daśaratha not to abandon dharma: one who promises and does not act loses his merit.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VASISHTHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "6-8",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0051",
+          "text": "Vasiṣṭha says that, protected by Viśvāmitra, Rāma cannot be harmed by the rākṣasas, trained in weapons or not.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": "VASISHTHA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 20,
+            "verses": "9",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check: phrase tests authored after reading the section, establishing that the corresponding passage was located and speaker attribution is consistent. NOT blind independent verification and NOT qualified human review.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0052",
+          "text": "Daśaratha gives Rāma to Viśvāmitra, well pleased within.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "3",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "passage read in full; actor, action, speaker and qualifications recorded individually",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0055",
+          "text": "Daśaratha smells the crown of his son's head before giving him to the sage.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "3",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0056",
+          "text": "With a joyful face, Daśaratha summons Rāma together with Lakṣmaṇa.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "1",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0057",
+          "text": "Before he is given to the sage, Rāma is blessed with auspicious rites by his mother, his father and the priest Vasiṣṭha.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "2",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "AI-assisted passage check against GRETIL and the Dutt reading copy; editorially accepted.",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        }
+      ]
+    },
+    {
+      "id": "M7",
+      "title": {},
+      "kanda": "BALA",
+      "sarga": "Bāla 21",
+      "duration_s": 40.4,
+      "shots": 21,
+      "gate": {
+        "blocked": 15,
+        "of": 21
+      },
+      "narration": {
+        "L1": {
+          "shot": "07-02",
+          "en": "Then they left.",
+          "hi": "फिर वो निकल पड़े।",
+          "te": "ఆ తర్వాత బయలుదేరారు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L2": {
+          "shot": "07-09",
+          "en": "Viśvāmitra went first.",
+          "hi": "आगे विश्वामित्र।",
+          "te": "ముందు విశ్వామిత్రుడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L3": {
+          "shot": "07-10",
+          "en": "Then Rāma.",
+          "hi": "फिर राम।",
+          "te": "తర్వాత రాముడు.",
+          "speaker": null,
+          "attribution_required": false
+        },
+        "L4": {
+          "shot": "07-11",
+          "en": "Then Lakṣmaṇa, following his brother.",
+          "hi": "फिर लक्ष्मण, भाई के पीछे-पीछे।",
+          "te": "తర్వాత లక్ష్మణుడు, అన్నయ్య వెంటే.",
+          "speaker": null,
+          "attribution_required": false
+        }
+      },
+      "claims": [
+        {
+          "id": "CLM-0053",
+          "text": "Lakṣmaṇa follows Rāma.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "6",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "passage read in full; actor, action, speaker and qualifications recorded individually",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        },
+        {
+          "id": "CLM-0054",
+          "text": "Viśvāmitra goes in front; Rāma and Lakṣmaṇa follow.",
+          "evidence_class": "T",
+          "state": "accepted",
+          "speaker": null,
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "6",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": {
+            "method": "ai-passage-check",
+            "text_consulted": true,
+            "basis": "passage read in full; actor, action, speaker and qualifications recorded individually",
+            "attested_at": "2026-09-20",
+            "not_human_review": "An AI-assisted passage check. This is not qualified human review."
+          }
+        }
+      ]
+    },
+    {
+      "id": "M8",
+      "title": {},
+      "kanda": "BALA",
+      "sarga": "Bāla 21",
       "shots": 0,
       "gate": null,
       "narration": null,
       "claims": [
         {
-          "id": "CLM.BALA.22.LAKSMANA-GOES-TOO",
-          "text": "Laksmana goes with Rama.",
+          "id": "CLM-0060",
+          "text": "Viśvāmitra tells Rāma to take water and receive the mantras balā and atibalā.",
           "evidence_class": "T",
           "state": "proposed",
-          "speaker": null,
+          "speaker": "VISHVAMITRA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 22,
-            "verses": "6-10",
+            "sarga": 21,
+            "verses": "10",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -592,16 +1577,60 @@
           "accepted_how": null
         },
         {
-          "id": "CLM.BALA.22.BALA-ATIBALA",
-          "text": "Visvamitra gives Rama the vidyas Bala and Atibala.",
+          "id": "CLM-0061",
+          "text": "Viśvāmitra says that with these mantras Rāma will suffer no fatigue or fever.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "11",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        },
+        {
+          "id": "CLM-0062",
+          "text": "Viśvāmitra says that with these mantras Rāma will know no hunger or thirst.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 21,
+            "verses": "15",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        },
+        {
+          "id": "CLM-0063",
+          "text": "Having touched water, Rāma receives the two mantras from the sage.",
           "evidence_class": "T",
           "state": "proposed",
           "speaker": null,
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 22,
-            "verses": "11-20",
+            "sarga": 21,
+            "verses": "18",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -616,32 +1645,124 @@
       ]
     },
     {
-      "id": "M7",
-      "story_id": "STORY.BALA.THE-ROAD-SOUTH",
-      "title": {
-        "en": "The Road South",
-        "hi": "दक्षिण का मार्ग",
-        "te": "దక్షిణ మార్గం"
-      },
+      "id": "M9",
+      "title": {},
       "kanda": "BALA",
-      "sarga": 24,
-      "duration_s": 44,
-      "status": "claims-only",
+      "sarga": "Bāla 23",
       "shots": 0,
       "gate": null,
       "narration": null,
       "claims": [
         {
-          "id": "CLM.BALA.24.THE-ROAD",
-          "text": "They travel south along the Sarayu and come to a wood.",
+          "id": "CLM-0070",
+          "text": "Viśvāmitra says this forest was once two prosperous lands, Malada and Karūṣa.",
           "evidence_class": "T",
           "state": "proposed",
-          "speaker": null,
+          "speaker": "VISHVAMITRA",
           "locator": {
             "work": "VR",
             "kanda": "BALA",
-            "sarga": 24,
-            "verses": "1-12",
+            "sarga": 23,
+            "verses": "16",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        }
+      ]
+    },
+    {
+      "id": "M10",
+      "title": {},
+      "kanda": "BALA",
+      "sarga": "Bāla 24",
+      "shots": 0,
+      "gate": null,
+      "narration": null,
+      "claims": [
+        {
+          "id": "CLM-0080",
+          "text": "Viśvāmitra says Tāṭakā, a yakṣī who could change her form, had the strength of a thousand elephants.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 23,
+            "verses": "24",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        },
+        {
+          "id": "CLM-0081",
+          "text": "Viśvāmitra says Tāṭakā continually lays waste to Malada and Karūṣa.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 23,
+            "verses": "26",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        },
+        {
+          "id": "CLM-0082",
+          "text": "Viśvāmitra tells Rāma to kill Tāṭakā and free the land.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 23,
+            "verses": "28",
+            "source": "SRC.GRETIL.VR",
+            "text": null
+          },
+          "restricted_source": true,
+          "inferred_from": null,
+          "inference_basis": null,
+          "staging_note": null,
+          "tradition": null,
+          "silence_note": null,
+          "accepted_how": null
+        },
+        {
+          "id": "CLM-0083",
+          "text": "Viśvāmitra says Mārīca is Tāṭakā's son.",
+          "evidence_class": "T",
+          "state": "proposed",
+          "speaker": "VISHVAMITRA",
+          "locator": {
+            "work": "VR",
+            "kanda": "BALA",
+            "sarga": 23,
+            "verses": "25",
             "source": "SRC.GRETIL.VR",
             "text": null
           },
@@ -658,48 +1779,57 @@
   ],
   "sources": [
     {
-      "id": "SRC.VR.CRITICAL",
-      "work": "Valmiki Ramayana",
-      "edition": "Critical Edition, Oriental Institute, Baroda, 1960-1975",
-      "licence": "in-copyright",
-      "restricted": true,
-      "what_travels": "locators only",
-      "restriction_reason": "Critical edition apparatus is in copyright. Locators only."
-    },
-    {
       "id": "SRC.GRETIL.VR",
       "work": "Valmiki Ramayana",
-      "edition": "GRETIL digitisation (Goettingen Register of Electronic Texts in Indian Languages)",
-      "licence": "CC BY-NC-SA",
+      "edition": "GRETIL e-text (Tokunaga, rev. J. D. Smith)",
+      "licence": "CC BY-NC-SA 4.0",
       "restricted": true,
       "what_travels": "locators only",
-      "restriction_reason": "CC BY-NC-SA. Verse text must never enter a public payload, a generation input, or an export. Locators travel; text does not. Verification against it remains valid - verification is not redistribution."
-    },
-    {
-      "id": "SRC.DUTT.1891",
-      "work": "Ramayana of Valmiki",
-      "edition": "Manmatha Nath Dutt, Calcutta, 1891",
-      "licence": "public-domain",
-      "restricted": false,
-      "what_travels": "text and locators",
       "restriction_reason": null
     },
     {
-      "id": "SRC.AMARAVATI",
-      "work": "Amaravati stupa relief panels",
-      "edition": "2nd-3rd c. CE, Andhra. Government Museum Chennai / British Museum holdings.",
-      "licence": "museum-photography-varies",
+      "id": "SRC.DUTT.VR",
+      "work": "Valmiki Ramayana",
+      "edition": "M. N. Dutt, English prose, Deva Press, Calcutta, 1891",
+      "licence": "public domain (author d.1912; India life+60; USA per Project Gutenberg)",
       "restricted": false,
-      "what_travels": "text and locators",
+      "what_travels": "locators only",
       "restriction_reason": null
     },
     {
-      "id": "SRC.SANCHI",
-      "work": "Sanchi stupa gateway reliefs",
-      "edition": "1st c. BCE - 1st c. CE, Madhya Pradesh",
-      "licence": "museum-photography-varies",
-      "restricted": false,
-      "what_travels": "text and locators",
+      "id": "SRC.TULSI",
+      "work": "Rāmcaritmānas",
+      "edition": "Rāmcaritmānas",
+      "licence": "public domain",
+      "restricted": true,
+      "what_travels": "locators only",
+      "restriction_reason": null
+    },
+    {
+      "id": "SRC.RANGANATHA",
+      "work": "Ranganātha Rāmāyaṇamu",
+      "edition": "Ranganātha Rāmāyaṇamu",
+      "licence": "public domain",
+      "restricted": true,
+      "what_travels": "locators only",
+      "restriction_reason": null
+    },
+    {
+      "id": "SRC.MOLLA",
+      "work": "Molla Rāmāyaṇamu",
+      "edition": "Molla Rāmāyaṇamu",
+      "licence": "public domain",
+      "restricted": true,
+      "what_travels": "locators only",
+      "restriction_reason": null
+    },
+    {
+      "id": "SRC.KAMBAN",
+      "work": "Irāmāvatāram",
+      "edition": "Irāmāvatāram",
+      "licence": "public domain",
+      "restricted": true,
+      "what_travels": "locators only",
       "restriction_reason": null
     }
   ],

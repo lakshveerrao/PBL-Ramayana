@@ -1,0 +1,86 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "built": "2026-09-21",
+  "film": "M2",
+  "story_id": "M2",
+  "title": {
+    "en": "The Ask"
+  },
+  "duration_s": 42.1,
+  "fps": 30,
+  "frame": [
+    1080,
+    1920
+  ],
+  "shots": 18,
+  "to_generate": 11,
+  "estimate_usd": {
+    "image": 0.275,
+    "motion": 2.75,
+    "voice": 0.22914,
+    "total": 3.25414
+  },
+  "gate": {
+    "allowed": false,
+    "blocked": 18,
+    "of": 18
+  },
+  "claims": [
+    {
+      "id": "CLM-0002",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 18,
+        "verses": "5",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra says he had undertaken an observance."
+    },
+    {
+      "id": "CLM-0003",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 18,
+        "verses": "5",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra says the rākṣasas Mārīca and Subāhu broke his observance as it neared completion."
+    },
+    {
+      "id": "CLM-0007",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 18,
+        "verses": "17",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra asks for Rāma for the ten nights of the sacrifice."
+    },
+    {
+      "id": "CLM-0009",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VISHVAMITRA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 18,
+        "verses": "3",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Before stating his request, Viśvāmitra asks Daśaratha to be true to his promise."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+shot,start_s,duration_s,frames,size,lens_mm,height,camera_move,expression,source,reuse_of,entities,claims,narration,motion,gate
+02-01,0.0,2.8,84,WIDE,24,eye,locked,—,generate,,VISHVAMITRA DASHARATHA SABHA,,L1,motion,refused
+02-02,2.8,2.4,72,INSERT,100,eye,locked,—,generate,,DASHARATHA THRONE,,L2,motion,refused
+02-03,5.2,2.0,60,MS,85,eye,locked,calm authority,generate,,VISHVAMITRA,CLM-0009,L3,motion,refused
+02-04,7.2,2.2,66,CU,85,eye,locked,—,crop,02-03,VISHVAMITRA,CLM-0002,L4,NO MOTION,refused
+02-05,9.4,1.8,54,MS,85,eye,locked,—,generate,,VISHVAMITRA,,,motion,refused
+02-06,11.2,1.5,45,CU,85,eye,locked,—,crop,02-05,VISHVAMITRA,CLM-0003,L5,NO MOTION,refused
+02-07,12.7,2.0,60,CU,85,eye,locked,—,generate,,DASHARATHA,,,motion,refused
+02-08,14.7,1.9,57,MS,85,eye,locked,—,generate,,DASHARATHA,,L6,motion,refused
+02-09,16.6,2.2,66,INSERT,100,eye,locked,restraint,generate,,VISHVAMITRA,,,motion,refused
+02-10,18.8,1.6,48,INSERT,100,eye,locked,restraint,reuse,02-09,VISHVAMITRA,,L7,NO MOTION,refused
+02-11,20.4,2.1,63,WIDE,35,eye,locked,—,generate,,COURT VASISHTHA SABHA,,,motion,refused
+02-12,22.5,2.4,72,WIDE,24,eye,locked,—,crop,02-01,VISHVAMITRA DASHARATHA SABHA,,L8,NO MOTION,refused
+02-13,24.9,1.8,54,MS,85,eye,locked,confidence,reuse,02-03,VISHVAMITRA,CLM-0007,L9,NO MOTION,refused
+02-14,26.7,2.2,66,MS,85,eye,locked,—,generate,,DASHARATHA,,,motion,refused
+02-15,28.9,2.9,87,MS,85,eye,locked,—,reuse,02-14,DASHARATHA,,L10,NO MOTION,refused
+02-16,31.8,1.2,36,INSERT,100,eye,locked,—,generate,,VISHVAMITRA,,,motion,refused
+02-17,33.0,1.1,33,MS,85,eye,locked,—,reuse,02-15,DASHARATHA,,L11,NO MOTION,refused
+02-18,34.1,8.0,240,CU,85,eye,locked,shock,generate,,DASHARATHA,,,motion,refused

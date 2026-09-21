@@ -5,13 +5,17 @@ The graph pages are VIEWS. They are generated from data/ and can never drift, be
 nothing is written here by hand. Every generated file carries a banner, and
 tools/validate.js fails if a graph page loses it.
 """
+import sys, pathlib
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import _graph as G
+
 import json, pathlib, html, datetime
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 D = ROOT / "data"
 
 def load(name):
-    return json.loads((D / f"{name}.json").read_text())
+    return G.load(name)
 
 def esc(s):
     return html.escape(str(s))
@@ -55,9 +59,9 @@ def build():
         fc = [c for c in claims["claims"] if c.get("film") == f["id"]]
         acc = sum(1 for c in fc if c["state"] == "accepted")
         rows.append(
-            f'<tr><td>{esc(f["id"])}</td><td>{esc(f["title_en"])}</td>'
-            f'<td class="d">{esc(f["kanda"])} {esc(f["sarga"])}</td>'
-            f'<td>{esc(f["status"])}</td>'
+            f'<tr><td>{esc(f["id"])}</td><td>{esc(G.title_en(f))}</td>'
+            f'<td class="d">{esc(f["kanda"])} {esc(f.get("sarga", ""))}</td>'
+            f'<td>{esc(G.film_status(f))}</td>'
             f'<td class="d">{acc} accepted / {len(fc)} claims</td>'
             f'<td class="{"ok" if f.get("treatment") else "d"}">{"directed" if f.get("treatment") else "-"}</td></tr>'
         )
@@ -91,11 +95,11 @@ def build():
         f'<tr><td>{esc(s["id"])}</td><td>{len(s["files"])}</td>'
         f'<td class="{"ok" if s["approved"] else "no"}">{"yes" if s["approved"] else "no"}</td>'
         f'<td class="d">{esc(s.get("approved_by") or "-")}</td>'
-        f'<td class="w">{esc(", ".join(s["twenty_frame_test"]["outstanding"]) or "none")}</td></tr>'
+        f'<td class="w">{esc(", ".join(G.sheet_axes(s)[1]) or "none")}</td></tr>'
         for s in sheets["sheets"])
 
     memo_rows = "".join(
-        f'<tr><td class="no">{esc(m["entity"])}</td><td class="d">{esc(m["reason"])}</td></tr>'
+        f'<tr><td class="no">{esc(m["entity"])}</td><td class="d">{esc(G.memo_reason(m))}</td></tr>'
         for m in memos["memos"] if m["state"] == "outstanding")
 
     src_rows = "".join(

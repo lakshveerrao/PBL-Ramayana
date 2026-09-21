@@ -1,0 +1,43 @@
+{
+  "forensically_audited": {
+    "ranges": [
+      "Bāla 18.1–20",
+      "Bāla 19.1–24",
+      "Bāla 20.1–9 (20.10–18 read for coverage, not used in any film)",
+      "Bāla 21.1–6"
+    ],
+    "films": [
+      "M2",
+      "M3",
+      "M4",
+      "M5",
+      "M6",
+      "M7"
+    ],
+    "method": "every accepted claim re-read against its verse; AI-assisted, not scholarly review"
+  },
+  "partially_audited": {
+    "films": [
+      "M1"
+    ],
+    "basis": "Dutt SECTION XVIII, held as a one-passage extract. GRETIL sarga 17 is NOT loaded.",
+    "consequence": "M1's reception staging is unverified; see films.json M1.evidence_map"
+  },
+  "loaded_but_not_audited": {
+    "ranges": [
+      "Bāla 21.7–26"
+    ],
+    "films": {
+      "M8": "Bāla 21.9–18 (the mantras on the Sarayū bank)",
+      "M9": "Bāla 23.12–16",
+      "M10": "Bāla 23.24–28"
+    },
+    "status": "claims PROPOSED; no treatment; NOT FORENSICALLY AUDITED"
+  },
+  "not_loaded": "everything outside Bāla 18–26, including sarga 17",
+  "not_claimed": [
+    "the complete Bāla Kāṇḍa",
+    "the complete Rāmāyaṇa",
+    "scholarly verification of anything"
+  ]
+}

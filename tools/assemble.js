@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { assemble, probe, plan } from '../lib/assemble.js';
 import { firstDirected, read } from '../lib/store.js';
+import { frame as graphFrame } from '../lib/graph.js';
 import { treatment } from '../lib/store.js';
 
 const filmId = process.argv[2] ?? firstDirected();
@@ -15,7 +16,7 @@ for (const lang of langs) {
   const r = await assemble(filmId, lang);
   const pr = probe(r.file);
   const expected = Math.round(t.duration_s * t.fps);
-  const fr = read('typography').frame;
+  const fr = graphFrame();
   const ok = pr.width === fr.width && pr.height === fr.height && pr.fps === t.fps && pr.frames === expected;
   console.log(`  ${r.file.padEnd(18)} ${pr.width}x${pr.height} ${pr.fps}fps  ${pr.frames} frames (want ${expected})  ${pr.duration_s.toFixed(3)}s  ${ok ? 'OK' : 'MISMATCH'}`);
 }

@@ -1,0 +1,100 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "built": "2026-09-21",
+  "film": "M6",
+  "story_id": "M6",
+  "title": {
+    "en": "Vasiṣṭha’s Word"
+  },
+  "duration_s": 44.6,
+  "fps": 30,
+  "frame": [
+    1080,
+    1920
+  ],
+  "shots": 22,
+  "to_generate": 16,
+  "estimate_usd": {
+    "image": 0.4,
+    "motion": 4,
+    "voice": 0.10872,
+    "total": 4.50872
+  },
+  "gate": {
+    "allowed": false,
+    "blocked": 21,
+    "of": 22
+  },
+  "claims": [
+    {
+      "id": "CLM-0050",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VASISHTHA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 20,
+        "verses": "6-8",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Vasiṣṭha tells Daśaratha not to abandon dharma: one who promises and does not act loses his merit."
+    },
+    {
+      "id": "CLM-0051",
+      "class": "T",
+      "state": "accepted",
+      "speaker": "VASISHTHA",
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 20,
+        "verses": "9",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Vasiṣṭha says that, protected by Viśvāmitra, Rāma cannot be harmed by the rākṣasas, trained in weapons or not."
+    },
+    {
+      "id": "CLM-0055",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "3",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Daśaratha smells the crown of his son's head before giving him to the sage."
+    },
+    {
+      "id": "CLM-0056",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "1",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "With a joyful face, Daśaratha summons Rāma together with Lakṣmaṇa."
+    },
+    {
+      "id": "CLM-0057",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "2",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Before he is given to the sage, Rāma is blessed with auspicious rites by his mother, his father and the priest Vasiṣṭha."
+    }
+  ]
+}

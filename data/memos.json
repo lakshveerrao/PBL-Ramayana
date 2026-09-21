@@ -1,15 +1,144 @@
 {
-  "_doc": "An entity with an outstanding memo may not be designed, prompted or shown in frame. The memo is written first. This is a hard gate and no packet, prompt or render may pass it.",
   "memos": [
-    { "entity": "TATAKA", "state": "outstanding", "reason": "A woman turned monstrous. How she is shown decides what the series says about women and monstrousness. Written before drawn." },
-    { "entity": "RAVANA", "state": "outstanding", "reason": "Ten heads are a design problem and a theological one. Not a costume." },
-    { "entity": "SURPANAKHA", "state": "outstanding", "reason": "The mutilation scene. The memo settles what is shown and what is not, before any line is drawn." },
-    { "entity": "MANTHARA", "state": "outstanding", "reason": "Deformity has been used as moral signal for a century of illustration. We will not." },
-    { "entity": "AHALYA", "state": "outstanding", "reason": "The curse and the stone. Consent is at issue in the passage and in every retelling." },
-    { "entity": "SITA", "state": "outstanding", "reason": "The largest design decision in the project. Not taken in passing." },
-    { "entity": "VANARAS", "state": "outstanding", "reason": "The line between person and animal. Every choice here is read racially whether we intend it or not." },
-    { "entity": "LANKA", "state": "outstanding", "reason": "Gold city. Every prior depiction imports an orientalism we have to decide about first." },
-    { "entity": "ASTRAS", "state": "outstanding", "reason": "Weapons that are also persons. A VFX answer would be the wrong answer." },
-    { "entity": "FIGURE-FROM-THE-FIRE", "state": "outstanding", "reason": "The being that rises from the sacrificial fire in Bala. Its form is not settled in the text." }
+    {
+      "id": "MEMO.RISHYASHRINGA",
+      "entity": "RISHYASHRINGA",
+      "state": "outstanding",
+      "question": "His story is about innocence, not comedy. Handle with restraint.",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.SITA",
+      "entity": "SITA",
+      "state": "outstanding",
+      "question": "required before her first frame",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.AHALYA",
+      "entity": "AHALYA",
+      "state": "outstanding",
+      "question": "HIGH RISK — required",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.RAVANA",
+      "entity": "RAVANA",
+      "state": "outstanding",
+      "question": "required before Araṇya. The ten heads are an iconographic convention needing its own decision, not a default.",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.HANUMAN",
+      "entity": "HANUMAN",
+      "state": "outstanding",
+      "question": "vānara depiction — required",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.MANTHARA",
+      "entity": "MANTHARA",
+      "state": "outstanding",
+      "question": "required",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.SURPANAKHA",
+      "entity": "SURPANAKHA",
+      "state": "outstanding",
+      "question": "HIGH RISK — required",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.KISHKINDHA",
+      "entity": "KISHKINDHA",
+      "state": "outstanding",
+      "question": "with the vānara memo",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.LANKA",
+      "entity": "LANKA",
+      "state": "outstanding",
+      "question": "required",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    },
+    {
+      "id": "MEMO.PAYASA",
+      "entity": "PAYASA",
+      "state": "outstanding",
+      "question": "the figure who brings it — required",
+      "blocks": [
+        "any design or depiction of this entity"
+      ],
+      "allows": [
+        "naming the entity in narration",
+        "all writing and claim work",
+        "every film in which the entity is not in frame"
+      ]
+    }
   ]
 }

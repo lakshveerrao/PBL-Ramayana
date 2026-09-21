@@ -1,0 +1,20 @@
+{
+  "_status": "CANDIDATE — CONFIGURABLE. Not frozen. The user has not locked product naming.",
+  "product_name": {
+    "value": "PBL Ramayana",
+    "alternatives_seen": [
+      "RamKathaa",
+      "PBL Ramayan"
+    ],
+    "owner": "the user"
+  },
+  "tagline": {
+    "value": "Kathaa worth following.",
+    "status": "candidate"
+  },
+  "entry_word": {
+    "value": "RAMAYANA",
+    "status": "candidate"
+  },
+  "rule": "Studio reads these as defaults. Changing them requires no editorial review."
+}

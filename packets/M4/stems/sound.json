@@ -1,0 +1,20 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "room_tone": {
+    "continuous": "not reseated across the cut — same file, same level",
+    "hard": "changes with the location"
+  },
+  "joins": [
+    {
+      "from": "M3",
+      "to": "M4",
+      "kind": "continuous"
+    },
+    {
+      "from": "M4",
+      "to": "M5",
+      "kind": "continuous"
+    }
+  ],
+  "rule": "One continuous bed across a continuous join. A reseat at the join is audible and is a defect."
+}

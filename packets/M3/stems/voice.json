@@ -1,126 +1,218 @@
 {
   "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
   "settings": {
-    "stability": 0.82,
-    "similarity_boost": 0.75,
+    "stability": 0.62,
+    "similarity": 0.8,
     "style": 0.0,
-    "use_speaker_boost": false,
-    "rule": "High stability on purpose. Low stability lets the model perform, and the direction forbids performance. If a read sounds performed, the settings or the voice are wrong - do not fix it by rewriting the line."
+    "why": "Low stability lets the model perform, which the direction forbids."
   },
-  "per_line_rule": "Lines are generated one at a time, never the whole script in one call. The edit owns the silences, not the model.",
+  "per_line_rule": null,
   "delivery": {
-    "overall": "A room where something is being refused. The narrator does not plead and does not judge. Level.",
-    "lines": {
-      "03-05": "Flat. The king is standing; do not announce it.",
-      "03-09": "This is Dasaratha's statement, not ours. Attribute it in the read - a shade of quotation, not an impersonation.",
-      "05-06": "The staff strike. Say nothing over it. The line before ends clean and the line after starts late.",
-      "07-02": "'He said no.' Three level words. No fall on 'no'. Do not land it."
-    }
+    "note": "The only film where the narrator is allowed to hesitate. 'Dasharatha... had only fear' — the ellipsis is a real pause.",
+    "key_line": {
+      "en": "He said no.",
+      "direction": "three level words, equal weight. This is the audition line. If it lands, the casting is right."
+    },
+    "care": "'The way his father saw it' must sound like attribution, not hedging."
   },
   "languages": {
     "en": {
       "voice_env": "ELEVEN_VOICE_EN",
-      "register": "plain modern English. No archaism, no 'thee', no inversion.",
+      "register": "plain speech. If a line could not be said aloud to a friend, it is written wrong.",
+      "persona": "Indian English, unhurried, mid-forties. Not RP, not American, not newsreader.",
       "attribution_markers": [
         "said",
-        "says",
-        "told",
         "asked",
+        "told",
         "answered",
         "replied",
-        "offered",
-        "refused",
-        "begged",
-        "pleaded",
-        "promised",
-        "warned",
-        "called",
-        "admitted",
-        "claimed",
-        "insisted"
+        "had no doubt",
+        "The way his father saw it",
+        "\""
+      ],
+      "forbidden": [
+        "fake-epic vocabulary",
+        "translation register",
+        "rising inflection on a reveal",
+        "smiling through the voice"
       ]
     },
     "hi": {
       "voice_env": "ELEVEN_VOICE_HI",
-      "register": "plain spoken Hindi. Not Sanskritised, not Urdu-leaning. The register of speech, not of recitation.",
+      "register": "natural spoken Hindi with everyday Urdu-origin words where they are the natural word — ज़िंदगी, इंतज़ार, फ़ैसला.",
+      "persona": "A well-read Hindi speaker from a Hindi-belt city, forties, in a quiet room.",
       "attribution_markers": [
         "कहा",
-        "बोला",
-        "बोले",
         "पूछा",
-        "जवाब",
-        "मना किया",
-        "दी",
-        "वापस"
+        "पूछी",
+        "बताया",
+        "जवाब दिया",
+        "को कोई शक नहीं था",
+        "पिता की नज़र में",
+        "\"",
+        "कह दिया"
+      ],
+      "forbidden": [
+        "pravachan or Doordarshan register",
+        "कदापि, अतः, तत्पश्चात्",
+        "प्रभु श्रीराम in narration",
+        "devotional lift on a name"
       ]
     },
     "te": {
       "voice_env": "ELEVEN_VOICE_TE",
-      "register": "plain spoken Telugu. Not grandhika. The register of speech.",
+      "register": "natural vyavaharika Telugu. Names as said at home: రాముడు, దశరథుడు.",
+      "persona": "A Telugu speaker from Hyderabad or the coast, forties, telling this at home.",
       "attribution_markers": [
         "అన్నాడు",
-        "అంటూ",
         "అడిగాడు",
         "చెప్పాడు",
-        "వద్దన్నాడు",
-        "ఇచ్చాడు"
+        "ఇస్తానన్నాడు",
+        "ఏ సందేహం లేదు",
+        "తండ్రి దృష్టిలో",
+        "\"",
+        "కాదన్నాడు"
+      ],
+      "forbidden": [
+        "granthika endings — చేసెను, పలికెను",
+        "కావున, అనంతరం",
+        "pravachanam register",
+        "శ్రీ prefix in narration"
       ]
     }
   },
   "lines": {
     "L1": {
-      "shot": "01-02",
-      "en": "The sage asked for the boy.",
-      "hi": "ऋषि ने लड़के को माँगा।",
-      "te": "ముని ఆ కుర్రాడిని అడిగాడు.",
-      "speaker": null
+      "shot": "03-02",
+      "en": "Viśvāmitra had no doubt. With him there, Rāma would finish them.",
+      "hi": "विश्वामित्र को कोई शक नहीं था — वो साथ रहें तो राम उन दोनों को ख़त्म कर देंगे।",
+      "te": "విశ్వామిత్రుడికి ఏ సందేహం లేదు — ఆయన తోడు ఉంటే రాముడు ఆ ఇద్దరినీ చంపేస్తాడు.",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0008; ⟨Bāla 18.10, GRETIL — text withheld⟩ 18.10",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
     },
     "L2": {
-      "shot": "02-01",
-      "en": "The king heard it and lost himself.",
-      "hi": "राजा ने सुना और होश खो बैठा।",
-      "te": "రాజు విని స్పృహ కోల్పోయాడు.",
-      "speaker": null
+      "shot": "03-03",
+      "en": "He said: if Vasiṣṭha and the counsellors agreed, let Rāma go.",
+      "hi": "उन्होंने कहा — अगर वसिष्ठ और मंत्री मान जाएँ, तो राम को जाने दो।",
+      "te": "వసిష్ఠుడూ, మంత్రులూ ఒప్పుకుంటే రాముణ్ణి పంపించు, అన్నాడు.",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0019, 18.16; Dutt XIX — the condition M6 pays off",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
     },
     "L3": {
-      "shot": "03-05",
-      "en": "He said he had waited a long time for this son.",
-      "hi": "उसने कहा कि इस बेटे के लिए बहुत इंतज़ार किया।",
-      "te": "ఈ కొడుకు కోసం చాలా కాలం ఎదురుచూశానని అతను అన్నాడు.",
-      "speaker": "DASARATHA",
-      "speaker_rule": "MANDATORY attribution. This is Dasaratha's account of himself, not the narrator's. Without 'He said' it reads as narrator fact, which it is not."
+      "shot": "03-04",
+      "en": "Ten nights. That was all he asked.",
+      "hi": "दस रातें। बस इतना ही माँगा था।",
+      "te": "పది రాత్రులు. అంతే అడిగాడు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0007, recalled from M2",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
     },
     "L4": {
-      "shot": "03-09",
-      "en": "He said the boy was not yet sixteen.",
-      "hi": "उसने कहा कि लड़का अभी सोलह का नहीं हुआ।",
-      "te": "కుర్రాడికి ఇంకా పదహారు నిండలేదని అతను అన్నాడు.",
-      "speaker": "DASARATHA",
-      "speaker_rule": "MANDATORY attribution. 'He said' may never be dropped. Without it this becomes narrator fact, which it is not."
+      "shot": "03-07",
+      "en": "Dasharatha... had only fear. Not of Rāma. For him.",
+      "hi": "दशरथ को... सिर्फ़ डर था। राम पर नहीं। राम के लिए।",
+      "te": "దశరథుడికి... భయం మాత్రమే. రాముడి మీద కాదు. రాముడి కోసం.",
+      "speaker": null,
+      "assertion": "INTERPRETATION",
+      "evidence": "the fear is SOURCE_FACT at 18.20 — CLM-0016 (Dutt: sorrow, apprehension); \"not of Rāma, for him\" is ours",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
     },
     "L5": {
-      "shot": "04-01",
-      "en": "He offered his army instead. And himself.",
-      "hi": "उसने बदले में अपनी सेना दी। और खुद को।",
-      "te": "బదులుగా తన సైన్యాన్ని ఇచ్చాడు. తననూ.",
-      "speaker": "DASARATHA",
-      "speaker_rule": "Attributed."
+      "shot": "03-08",
+      "en": "He said Rāma was not yet sixteen.",
+      "hi": "उन्होंने कहा — राम अभी सोलह के भी नहीं थे।",
+      "te": "రాముడికి ఇంకా పదహారు కూడా నిండలేదు, అన్నాడు.",
+      "speaker": "DASHARATHA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0010",
+      "original_speaker": "DASHARATHA",
+      "depends_on_proposed": [],
+      "speaker_rule": "DASHARATHA's statement, not narrator fact. Attributed in every language."
     },
     "L6": {
-      "shot": "06-01",
-      "en": "The sage waited.",
-      "hi": "ऋषि रुका रहा।",
-      "te": "ముని ఆగాడు.",
-      "speaker": null
+      "shot": "03-09",
+      "en": "The way his father saw it, he hadn't finished learning weapons.",
+      "hi": "पिता की नज़र में, अभी उसने हथियार पूरे सीखे भी नहीं थे।",
+      "te": "తండ్రి దృష్టిలో — ముక్కుపచ్చలారని పిల్లాడికి ఇంకా ఆయుధాలు పూర్తిగా రావు.",
+      "speaker": "DASHARATHA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0011",
+      "original_speaker": "DASHARATHA",
+      "depends_on_proposed": [],
+      "speaker_rule": "DASHARATHA's statement, not narrator fact. Attributed in every language."
     },
     "L7": {
-      "shot": "07-02",
+      "shot": "03-11",
+      "en": "The king offered his army.",
+      "hi": "राजा ने अपनी सेना देने को कहा।",
+      "te": "రాజు తన సైన్యాన్ని ఇస్తానన్నాడు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0012",
+      "original_speaker": "DASHARATHA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L8": {
+      "shot": "03-14",
+      "en": "He said he'd go himself, bow in hand, while he lived.",
+      "hi": "कहा — मैं ख़ुद चलूँगा। धनुष लेकर। जब तक साँस है।",
+      "te": "నేనే వస్తాను అన్నాడు. విల్లు పట్టుకుని. ఊపిరి ఉన్నంతవరకు.",
+      "speaker": "DASHARATHA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0013",
+      "original_speaker": "DASHARATHA",
+      "depends_on_proposed": [],
+      "speaker_rule": "DASHARATHA's statement, not narrator fact. Attributed in every language."
+    },
+    "L9": {
+      "shot": "03-16",
+      "en": "Anything. Anything but Rāma.",
+      "hi": "कुछ भी। बस राम नहीं।",
+      "te": "ఏదైనా. రాముడు తప్ప.",
+      "speaker": null,
+      "assertion": "INTERPRETATION",
+      "evidence": "summarises 19.3–11",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L10": {
+      "shot": "03-19",
+      "en": "He said he couldn't live without Rāma. Not for a moment.",
+      "hi": "उन्होंने कहा — राम के बिना वो एक पल नहीं रह सकते।",
+      "te": "రాముడు లేకుండా ఒక్క క్షణం కూడా ఉండలేనని అన్నాడు.",
+      "speaker": "DASHARATHA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0014",
+      "original_speaker": "DASHARATHA",
+      "depends_on_proposed": [],
+      "speaker_rule": "DASHARATHA's statement, not narrator fact. Attributed in every language."
+    },
+    "L11": {
+      "shot": "03-21",
       "en": "He said no.",
-      "hi": "उसने मना किया।",
-      "te": "అతను వద్దన్నాడు.",
-      "speaker": "DASARATHA",
-      "speaker_rule": "Attributed.",
-      "is_test_line": true
+      "hi": "उन्होंने ना कह दिया।",
+      "te": "ఆయన కాదన్నాడు.",
+      "speaker": "DASHARATHA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0015",
+      "original_speaker": "DASHARATHA",
+      "depends_on_proposed": [],
+      "speaker_rule": "DASHARATHA's statement, not narrator fact. Attributed in every language."
     }
   }
 }

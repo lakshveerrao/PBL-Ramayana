@@ -3,6 +3,7 @@
 // the whole pipeline? Measured on the finished video, not on a test patch.
 import { read, treatment, ROOT, firstDirected } from '../lib/store.js';
 import { plan } from '../lib/assemble.js';
+import { frame as graphFrame } from '../lib/graph.js';
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -10,7 +11,7 @@ import { join } from 'node:path';
 
 const film = process.argv[2] ?? firstDirected();
 const file = process.argv[3] ?? `out/${film}.en.mp4`;
-const W = read('typography').frame.width, H = read('typography').frame.height;
+const { width: W, height: H } = graphFrame();
 
 // Pull one exact frame by index and sample the middle of the swatch band.
 function sampleFrame(idx) {

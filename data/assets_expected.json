@@ -1,0 +1,53 @@
+{
+  "_scope": "NOT PRESENT IN THIS SOURCE HANDOFF. Production repository state is UNKNOWN to this workspace. An asset missing here is not evidence that it does not exist elsewhere.",
+  "expected_by_the_studio": [
+    {
+      "id": "AST.SHEETS",
+      "what": "Approved model sheets for the five principals",
+      "in_this_package": "not present",
+      "if_absent_in_production": "the studio's consistency gate will refuse generation for those principals"
+    },
+    {
+      "id": "AST.VOICE",
+      "what": "Narrator voices for en, hi, te",
+      "in_this_package": "not present"
+    },
+    {
+      "id": "AST.ROOMTONE",
+      "what": "Continuous room tone for the sabhā",
+      "in_this_package": "not present",
+      "why_it_matters": "Five joins are specified as continuous and must not reseat it."
+    },
+    {
+      "id": "AST.FOLEY",
+      "what": "Recorded foley, including wood on sandstone for 05-06",
+      "in_this_package": "not present"
+    },
+    {
+      "id": "AST.SIGNATURE",
+      "what": "Entry and exit signature sound",
+      "in_this_package": "not present"
+    },
+    {
+      "id": "AST.SCORE",
+      "what": "Score, if the studio adopts the music proposal",
+      "in_this_package": "not present"
+    },
+    {
+      "id": "AST.FONTS",
+      "what": "Font files for three scripts",
+      "in_this_package": "not present",
+      "note": "The typography proposal names SIL-licensed candidates."
+    },
+    {
+      "id": "AST.REFERENCE",
+      "what": "Reference photography",
+      "in_this_package": "not present"
+    }
+  ],
+  "not_claimed": [
+    "that any of these are missing from production",
+    "that generation is blocked globally",
+    "any acquisition plan or instruction to commission"
+  ]
+}

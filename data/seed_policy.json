@@ -1,0 +1,12 @@
+{
+  "origin": "An assistant-invented per-shot seed formula, with a validator asserting every seed was unique. Retired in 1.0.1; per-shot seeds removed in 1.0.2.",
+  "problem": "Uniqueness was being checked as though it were a quality. It is not. Identity comes from the model sheet, not the seed; and two shots of the SAME set-up should be able to share a seed so they match.",
+  "policy": {
+    "identity": "conditioned on the approved sheet — the seed never carries identity",
+    "same_setup": "shots that are the same set-up at a different moment MAY share a seed; that is how they stay consistent",
+    "edits_and_variations": "use the base shot's seed plus the edit instruction",
+    "reuse_and_crop": "no seed — nothing is generated",
+    "record": "every generated frame records its seed so it can be reproduced"
+  },
+  "validator_change": "Uniqueness is no longer asserted. Presence and reproducibility are."
+}

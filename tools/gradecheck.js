@@ -4,6 +4,8 @@
 // chain, and measures L* out against the lock's tolerance. The colourism rule is a
 // measurement here, not a promise.
 import { read } from '../lib/store.js';
+import { skinGovernance } from '../lib/contract.js';
+import { gradeNumbers } from '../lib/graph.js';
 import { chain } from '../lib/grade.js';
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, readFileSync } from 'node:fs';
@@ -32,7 +34,29 @@ function lstar({ r, g, b }) {
   return Y <= 0.008856 ? 903.3 * Y : 116 * Math.cbrt(Y) - 16;
 }
 
-const locks = read('locks').locks.filter((l) => l.kind === 'skin_albedo');
+const gov = skinGovernance(read('locks').locks);
+const locks = gov.locks.filter((l) => l.kind === 'skin_albedo' && l.value);
+
+if (!gov.measurable) {
+  // Skin is governed by policy: the studio's approved model sheets set it, not the
+  // graph. There is nothing numeric to measure until those sheets exist. Say so
+  // plainly rather than passing vacuously or crashing.
+  console.log('\nGRADECHECK - skin is governed by POLICY, not by numbers\n');
+  for (const l of gov.locks) console.log(`  ${l.id}: ${l.rule}`);
+  const g = gradeNumbers();
+  console.log(`\n  The grade chain still checks out on its own terms:`);
+  const shadow = throughGrade('#202020');
+  const black = throughGrade('#000000');
+  const ire = (black.r / 255) * 100;
+  const blueShift = shadow.b - shadow.r;
+  console.log(`    neutral shadow #202020 -> rgb(${shadow.r},${shadow.g},${shadow.b})  b-r ${blueShift >= 0 ? '+' : ''}${blueShift}  ${blueShift <= 0 ? 'warm, correct' : 'BLUE - forbidden'}`);
+  console.log(`    black #000000 -> IRE ${ire.toFixed(1)} (target ${g.black_point_ire})  ${Math.abs(ire - g.black_point_ire) <= 1.5 ? 'on target' : 'OFF TARGET'}`);
+  const bad = blueShift > 0 || Math.abs(ire - g.black_point_ire) > 1.5;
+  console.log(bad
+    ? `\n  the grade chain itself is wrong - fix that before the sheets arrive\n`
+    : `\n  NOT MEASURED: no face can be checked until the approved model sheets exist.\n  Re-run this once they do - it is the check that catches a lightened face.\n`);
+  process.exit(bad ? 1 : 0);
+}
 let failures = 0;
 console.log('\nGRADECHECK - locked skin albedo through the real grade chain\n');
 console.log('  entity        locked        L* in    L* out   delta   tol   verdict');
@@ -62,7 +86,7 @@ console.log(`\n  neutral shadow #202020 -> rgb(${shadow.r},${shadow.g},${shadow.
 // And the black point.
 const black = throughGrade('#000000');
 const ire = (black.r / 255) * 100;
-const target = read('grade').black_point_ire;
+const target = gradeNumbers().black_point_ire;
 const blackOk = Math.abs(ire - target) <= 1.5;
 if (!blackOk) failures++;
 console.log(`  black #000000 -> IRE ${ire.toFixed(1)} (target ${target})  ${blackOk ? 'on target' : 'OFF TARGET'}`);

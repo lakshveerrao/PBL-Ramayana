@@ -17,7 +17,7 @@ npm run validate && node tools/regress.js
 ```
 
 `import_graph.js` never overwrites without `--install`, and it backs up whatever is
-already in `data/` to `data/_replaced/<timestamp>/` first. It reports every missing
+already in `data/` to `.graph-backups/<timestamp>/` first. It reports every missing
 file, every missing required field, and every broken reference **before** it installs
 anything.
 

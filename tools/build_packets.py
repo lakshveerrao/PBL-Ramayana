@@ -9,6 +9,8 @@ Prompts are assembled by lib/prompt.js, so this shells out to node rather than
 reimplementing assembly in Python - two assemblers would drift.
 """
 import json, pathlib, csv, subprocess, datetime, io
+import sys; sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import _graph as G
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 load = lambda n: json.loads((ROOT / "data" / f"{n}.json").read_text())
@@ -32,7 +34,7 @@ def build(film_id):
     film = next(f for f in films if f["id"] == film_id)
     if not film.get("treatment"):
         return None
-    t = json.loads((ROOT / film["treatment"]).read_text())
+    t = G.treatment(film_id)
 
     out = ROOT / "packets" / film_id
     (out / "stems").mkdir(parents=True, exist_ok=True)
@@ -65,9 +67,9 @@ def build(film_id):
         "_generated": BANNER,
         "built": datetime.date.today().isoformat(),
         "film": film_id,
-        "story_id": film["story_id"],
-        "title": {k[len("title_"):]: v for k, v in film.items() if k.startswith("title_")},
-        "duration_s": t["duration_s"], "fps": t["fps"], "frame": t["frame"],
+        "story_id": film.get("story_id") or film["id"],
+        "title": G.titles(film),
+        "duration_s": t["duration_s"], "fps": t.get("fps", G.frame()["fps"]), "frame": t.get("frame", [G.frame()["width"], G.frame()["height"]]),
         "shots": len(t["shots"]),
         "to_generate": sum(1 for s in t["shots"] if s["source"] == "generate"),
         "estimate_usd": data["estimate"]["usd"],
@@ -131,21 +133,21 @@ def write_stems(d, film_id, film, t, data, effects):
          "gate": "clear" if next(r for r in data["gate"]["results"] if r["shot"] == s["id"])["allowed"] else "refused"}
         for s in t["shots"]]})
 
-    w("sound", {"_generated": BANNER, "room_tone": tr["room_tone"],
+    w("sound", {"_generated": BANNER, "room_tone": tr.get("room_tone"),
                 "joins": [j for j in tr["joins"] if film_id in (j["from"], j["to"])],
                 "rule": "One continuous bed across a continuous join. A reseat at the join is audible and is a defect."})
 
-    w("music", {"_generated": BANNER, "provider": mu["provider"], "status": mu["status"],
-                "brief": mu["brief"], "for_this_film": mu["brief"].get(film_id),
-                "rule": mu["note"]})
+    w("music", {"_generated": BANNER, "provider": mu["provider"], "status": mu.get("status", "brief-only"),
+                "brief": mu["brief"], "for_this_film": mu.get("brief", {}).get(film_id),
+                "rule": mu.get("note") or mu.get("_note") or "Composed by a person. No generator fallback."})
 
-    w("voice", {"_generated": BANNER, "settings": n["voice_settings"],
-                "per_line_rule": n["per_line_rule"],
-                "delivery": n["delivery_notes"].get(film_id),
-                "languages": n["languages"],
+    w("voice", {"_generated": BANNER, "settings": n.get("voice_settings") or n.get("settings"),
+                "per_line_rule": n.get("per_line_rule"),
+                "delivery": (n.get("delivery_notes") or {}).get(film_id),
+                "languages": n.get("languages", {}),
                 "lines": {k: v for k, v in t["narration"].items()}})
 
-    w("subtitles", {"_generated": BANNER, "per_script": ty["scripts"], "style": ty["style"],
+    w("subtitles", {"_generated": BANNER, "per_script": ty["scripts"], "style": ty.get("style"),
                     "rule": "Burned from ASS with PlayRes pinned to 1080x1920. An SRT with force_style is "
                             "scaled by libass against an assumed resolution and renders at roughly three "
                             "times the specified size."})
@@ -166,7 +168,7 @@ def write_stems(d, film_id, film, t, data, effects):
                 "rule": "A restricted source travels as a locator. Its text does not travel at all."})
 
     w("effects", {"_generated": BANNER,
-                  "shots": {k: v for k, v in effects["shots"].items() if v["film"] == film_id},
+                  "shots": {k: v for k, v in effects["shots"].items() if G.film_of_shot_id(k, load("films")["films"]) == film_id},
                   "rejection_criteria": effects["rejection_criteria"],
                   "rule": "A shot marked NO MOTION refuses at the render layer, in code. It is not a note for the eye."})
 

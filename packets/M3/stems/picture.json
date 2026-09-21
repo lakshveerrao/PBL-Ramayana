@@ -2,183 +2,233 @@
   "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
   "shots": [
     {
-      "id": "01-01",
-      "size": "WIDE",
-      "lens_mm": 35,
-      "height": "eye",
-      "camera_move": "locked",
-      "expression": "n/a",
-      "source": "generate",
-      "gate": "refused"
-    },
-    {
-      "id": "01-02",
+      "id": "03-01",
       "size": "CU",
       "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "settled, unhurried",
-      "source": "generate",
-      "gate": "refused"
-    },
-    {
-      "id": "01-03",
-      "size": "INSERT",
-      "lens_mm": 100,
-      "height": "high",
-      "camera_move": "locked",
-      "expression": "n/a",
-      "source": "generate",
-      "gate": "refused"
-    },
-    {
-      "id": "02-01",
-      "size": "MS",
-      "lens_mm": 50,
-      "height": "eye",
-      "camera_move": "locked",
-      "expression": "hearing it",
-      "source": "generate",
-      "gate": "refused"
-    },
-    {
-      "id": "02-02",
-      "size": "MCU",
-      "lens_mm": 85,
-      "height": "slightly low",
-      "camera_move": "locked",
-      "expression": "gone out of himself",
-      "source": "generate",
-      "gate": "refused"
-    },
-    {
-      "id": "03-01",
-      "size": "INSERT",
-      "lens_mm": 100,
-      "height": "high",
-      "camera_move": "locked",
-      "expression": "n/a",
+      "expression": "shock, settling",
       "source": "reuse",
-      "gate": "clear"
+      "gate": "refused"
     },
     {
       "id": "03-02",
       "size": "MS",
-      "lens_mm": 50,
+      "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "not intervening",
-      "source": "generate",
+      "expression": "calm authority",
+      "source": "reuse",
       "gate": "refused"
     },
     {
       "id": "03-03",
-      "size": "CU",
-      "lens_mm": 85,
+      "size": "INSERT",
+      "lens_mm": 100,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "n/a",
-      "source": "generate",
-      "gate": "clear"
+      "expression": "calm authority",
+      "source": "reuse",
+      "gate": "refused"
     },
     {
       "id": "03-04",
-      "size": "MCU",
+      "size": "MS",
       "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "gathering himself",
-      "source": "crop",
+      "expression": "confidence",
+      "source": "reuse",
       "gate": "refused"
     },
     {
       "id": "03-05",
       "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "concern → fear",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-06",
+      "size": "INSERT",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "03-07",
+      "size": "CU",
       "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "level, decided",
+      "expression": "fatherly fear",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-08",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "fear",
       "source": "generate",
       "gate": "refused"
     },
     {
       "id": "03-09",
-      "size": "CU",
+      "size": "MS",
       "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "speaking, contained",
-      "source": "generate",
+      "expression": "restrained patience",
+      "source": "reuse",
       "gate": "refused"
     },
     {
-      "id": "04-01",
+      "id": "03-10",
       "size": "WIDE",
       "lens_mm": 35,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "n/a",
+      "expression": "—",
       "source": "generate",
       "gate": "refused"
     },
     {
-      "id": "04-02",
-      "size": "MCU",
+      "id": "03-11",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "kingly resolve",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-12",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "kingly resolve",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-13",
+      "size": "CU",
       "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "unmoved",
-      "source": "reuse",
-      "gate": "refused"
-    },
-    {
-      "id": "05-06",
-      "size": "MS",
-      "lens_mm": 50,
-      "height": "low",
-      "camera_move": "locked",
-      "expression": "n/a",
-      "source": "generate",
-      "gate": "refused"
-    },
-    {
-      "id": "06-01",
-      "size": "MS",
-      "lens_mm": 50,
-      "height": "eye",
-      "camera_move": "locked",
-      "expression": "waiting",
+      "expression": "resolve",
       "source": "crop",
       "gate": "refused"
     },
     {
-      "id": "06-02",
-      "size": "CU",
+      "id": "03-14",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "resolve",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-15",
+      "size": "MS",
       "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "decided",
+      "expression": "restrained patience",
       "source": "reuse",
       "gate": "refused"
     },
     {
-      "id": "07-01",
-      "size": "INSERT",
-      "lens_mm": 100,
-      "height": "eye",
-      "camera_move": "locked",
-      "expression": "n/a",
-      "source": "reuse",
-      "gate": "clear"
-    },
-    {
-      "id": "07-02",
+      "id": "03-16",
       "size": "CU",
       "lens_mm": 85,
       "height": "eye",
       "camera_move": "locked",
-      "expression": "does not change",
+      "expression": "resolve breaking",
       "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-17",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the break",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-18",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "seriousness",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-19",
+      "size": "CU",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "fatherly fear at full",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-20",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-21",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "firm refusal",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "03-22",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "refusal complete",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "03-23",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "—",
+      "source": "reuse",
       "gate": "refused"
     }
   ]

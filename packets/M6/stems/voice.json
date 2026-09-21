@@ -1,0 +1,157 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "settings": {
+    "stability": 0.62,
+    "similarity": 0.8,
+    "style": 0.0,
+    "why": "Low stability lets the model perform, which the direction forbids."
+  },
+  "per_line_rule": null,
+  "delivery": {
+    "note": "Release, not triumph. The king is glad. The narrator is glad with him and does not celebrate.",
+    "key_line": {
+      "en": "And gave him.",
+      "direction": "two words, quiet, final"
+    }
+  },
+  "languages": {
+    "en": {
+      "voice_env": "ELEVEN_VOICE_EN",
+      "register": "plain speech. If a line could not be said aloud to a friend, it is written wrong.",
+      "persona": "Indian English, unhurried, mid-forties. Not RP, not American, not newsreader.",
+      "attribution_markers": [
+        "said",
+        "asked",
+        "told",
+        "answered",
+        "replied",
+        "had no doubt",
+        "The way his father saw it",
+        "\""
+      ],
+      "forbidden": [
+        "fake-epic vocabulary",
+        "translation register",
+        "rising inflection on a reveal",
+        "smiling through the voice"
+      ]
+    },
+    "hi": {
+      "voice_env": "ELEVEN_VOICE_HI",
+      "register": "natural spoken Hindi with everyday Urdu-origin words where they are the natural word — ज़िंदगी, इंतज़ार, फ़ैसला.",
+      "persona": "A well-read Hindi speaker from a Hindi-belt city, forties, in a quiet room.",
+      "attribution_markers": [
+        "कहा",
+        "पूछा",
+        "पूछी",
+        "बताया",
+        "जवाब दिया",
+        "को कोई शक नहीं था",
+        "पिता की नज़र में",
+        "\"",
+        "कह दिया"
+      ],
+      "forbidden": [
+        "pravachan or Doordarshan register",
+        "कदापि, अतः, तत्पश्चात्",
+        "प्रभु श्रीराम in narration",
+        "devotional lift on a name"
+      ]
+    },
+    "te": {
+      "voice_env": "ELEVEN_VOICE_TE",
+      "register": "natural vyavaharika Telugu. Names as said at home: రాముడు, దశరథుడు.",
+      "persona": "A Telugu speaker from Hyderabad or the coast, forties, telling this at home.",
+      "attribution_markers": [
+        "అన్నాడు",
+        "అడిగాడు",
+        "చెప్పాడు",
+        "ఇస్తానన్నాడు",
+        "ఏ సందేహం లేదు",
+        "తండ్రి దృష్టిలో",
+        "\"",
+        "కాదన్నాడు"
+      ],
+      "forbidden": [
+        "granthika endings — చేసెను, పలికెను",
+        "కావున, అనంతరం",
+        "pravachanam register",
+        "శ్రీ prefix in narration"
+      ]
+    }
+  },
+  "lines": {
+    "L1": {
+      "shot": "06-01",
+      "en": "Viśvāmitra had turned to go.",
+      "hi": "विश्वामित्र जाने को मुड़ चुके थे।",
+      "te": "విశ్వామిత్రుడు వెళ్ళిపోవడానికి తిరిగాడు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "renders 20.3",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L2": {
+      "shot": "06-02",
+      "en": "Vasiṣṭha stood up.",
+      "hi": "वसिष्ठ खड़े हो गए।",
+      "te": "వసిష్ఠుడు లేచి నిలబడ్డాడు.",
+      "speaker": null,
+      "assertion": "ARTISTIC_BRIDGE",
+      "evidence": "renders 20.5; standing is ours",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L3": {
+      "shot": "06-04",
+      "en": "He told the king: a man of this house keeps his word.",
+      "hi": "उन्होंने राजा को बताया — इस घर का आदमी वचन निभाता है।",
+      "te": "రాజుకి చెప్పాడు — ఈ ఇంటి మనిషి మాట తప్పడు.",
+      "speaker": "VASISHTHA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0050",
+      "original_speaker": "VASISHTHA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VASISHTHA's statement, not narrator fact. Attributed in every language."
+    },
+    "L4": {
+      "shot": "06-08",
+      "en": "Then he told him: the sage he refused was Rāma's protection.",
+      "hi": "फिर बताया — जिस ऋषि को वो मना कर रहे थे, वही राम की रक्षा थे।",
+      "te": "తర్వాత చెప్పాడు — ఎవరిని కాదంటున్నాడో, ఆ ఋషే రాముడికి రక్ష.",
+      "speaker": "VASISHTHA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0051",
+      "original_speaker": "VASISHTHA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VASISHTHA's statement, not narrator fact. Attributed in every language."
+    },
+    "L5": {
+      "shot": "06-15",
+      "en": "Dasharatha called for his son.",
+      "hi": "दशरथ ने बेटे को बुलाया।",
+      "te": "దశరథుడు కొడుకుని పిలిచాడు.",
+      "speaker": null,
+      "assertion": "SOURCE_FACT",
+      "evidence": "21.1 — CLM-0056; Dutt XXII",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L6": {
+      "shot": "06-19",
+      "en": "And gave him.",
+      "hi": "और दे दिया।",
+      "te": "ఇచ్చేశాడు.",
+      "speaker": null,
+      "assertion": "SOURCE_FACT",
+      "evidence": "CLM-0052, 21.3",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    }
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "_what": "Where people are in the room, which way they look, and which side the light comes from. Without this a 23-shot scene in one room cuts into nonsense, however good each frame is.",
+  "_principle": "One axis per location, declared once, never crossed. Every shot inherits its screen position, eyeline and key side from the axis — nothing is decided at render time.",
+  "AXES": {
+    "AXIS.SABHA": {
+      "location": "PLC-SABHA",
+      "line": "Runs between the dais and the sage's seat. The camera stays on the window side of it for the whole arc.",
+      "positions": {
+        "DASHARATHA": {
+          "screen": "left",
+          "faces": "right",
+          "note": "On the dais in films 1–2; standing below it from film 3. He keeps frame-left throughout."
+        },
+        "VISHVAMITRA": {
+          "screen": "right",
+          "faces": "left",
+          "note": "Seated, unmoving, for four films."
+        },
+        "VASISTHA": {
+          "screen": "right, deeper",
+          "faces": "left",
+          "note": "Among the ministers until he rises in film 5."
+        },
+        "COURT": {
+          "screen": "right and behind the sage",
+          "faces": "left"
+        },
+        "RAMA": {
+          "screen": "centre",
+          "faces": "right",
+          "note": "First appears in M7; before the threshold he is inside the hall's geometry."
+        },
+        "LAKSMANA": {
+          "screen": "centre, behind Rama",
+          "faces": "right"
+        }
+      },
+      "eyeline_rule": "Daśaratha looks camera-right. Viśvāmitra looks camera-left. A shot that reverses either is wrong even if the frame is beautiful.",
+      "the_one_crossing": {
+        "shot": "05-14",
+        "what": "The reverse wide from behind the empty throne, when the sage turns to leave.",
+        "why": "Crossing the line ONCE, at the only moment the room's geometry breaks, is the point. He has turned his back on Ayodhyā and the camera turns with him.",
+        "rule": "This is the only permitted crossing in the arc. Anywhere else it is an error."
+      },
+      "key_light": {
+        "side": "frame-left, from the high lattice",
+        "consequence": "Daśaratha is KEYED — light falls on the side we see. Viśvāmitra is BACK-KEYED — the light is behind and past him, his face carried by bounce off lime plaster.",
+        "why": "The father is lit and readable; the sage is harder to read. That is character, done with one window."
+      }
+    },
+    "AXIS.ROAD": {
+      "location": "PLC-ROAD",
+      "line": "Travel is left to right across frame, for the whole journey out.",
+      "positions": {
+        "VISHVAMITRA": {
+          "screen": "leading, frame-right",
+          "faces": "right"
+        },
+        "RAMA": {
+          "screen": "centre",
+          "faces": "right"
+        },
+        "LAKSMANA": {
+          "screen": "trailing, frame-left",
+          "faces": "right"
+        }
+      },
+      "eyeline_rule": "Everyone faces the direction of travel. The one look back at 07-17 is the only reversal and it is the emotional beat of the film.",
+      "key_light": {
+        "side": "afternoon sun from frame-left, lower in the west",
+        "consequence": "shadows thrown to frame-right, ahead of them as they walk",
+        "time": "M7 TIME CONTINUITY — ARTISTIC, NOT SOURCED: the afternoon of the same day. M1–M6 is one audience that begins in the morning; the source gives no hour for the departure, and they reach the Sarayū by nightfall (21.9)."
+      }
+    }
+  },
+  "REFERENCE_VIEW": {
+    "_what": "Which view of the approved model sheet a shot conditions on. Never left to the renderer.",
+    "rule": "size + the entity's screen position decides the view.",
+    "map": {
+      "CU|left-facing-right": "three-quarter",
+      "CU|right-facing-left": "three-quarter",
+      "MS|left-facing-right": "three-quarter",
+      "MS|right-facing-left": "three-quarter",
+      "WIDE|any": "in-world frame",
+      "INSERT|any": "in-world frame",
+      "back|any": "in-world frame — the sheet has no back view; generate from the in-world plate"
+    },
+    "never": "Do not condition on a previously generated frame. Always the sheet."
+  },
+  "CONTINUITY": {
+    "_what": "What must not change between cuts.",
+    "standing_rules": [
+      "The lamp stays where it is. Its flame moves; its position does not.",
+      "Daśaratha's ring is on the right hand in every hand detail, in every film.",
+      "The throne is occupied in films 1–2 and empty from film 3 onward. It is never re-occupied.",
+      "Viśvāmitra's staff is planted at his right through films 1–4. It moves once, in film 5.",
+      "The sage's cloth and seated posture do not change across four films — that stillness is the performance and a shifted fold breaks it.",
+      "Once the king steps down in film 3, he does not return to the dais in any later shot."
+    ],
+    "per_join": {
+      "continuous": "The frame is IDENTICAL across the join — same plate, same grade, same room tone. Not a similar frame: the same one.",
+      "hard": "Location or time has changed. Room tone changes with it."
+    }
+  },
+  "PER_SHOT_DERIVATION": {
+    "note": "These are computed onto every shot at export, so the renderer never decides them.",
+    "fields": [
+      "axis",
+      "screen_position",
+      "eyeline",
+      "key_side",
+      "reference_view",
+      "crosses_line"
+    ]
+  },
+  "AXIS_TRANSITIONS": {
+    "_what": "The declared points where the axis changes. A change of axis is not a reversal error — but it must be named, and it must happen on a physical move the audience sees.",
+    "TR.THRESHOLD": {
+      "film": "M7",
+      "at_shot": "07-09",
+      "beat": "the threshold",
+      "from": "AXIS.SABHA",
+      "to": "AXIS.ROAD",
+      "motivated_by": "They physically cross a threshold, out of the hall and into the open. The audience sees the world change, so the geometry may change with it.",
+      "rule": "Everything at or after 07-09 is on AXIS.ROAD, travelling left to right. Everything before it is on AXIS.SABHA. There is no other axis change in the arc.",
+      "craft": "This is the only moment in seven films where the room stops being the world. Six films of one hall, then air. The axis change is how that lands without a word."
+    }
+  }
+}

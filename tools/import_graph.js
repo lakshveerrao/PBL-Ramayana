@@ -8,6 +8,9 @@
 // handoff is reported rather than half-installed. Nothing is overwritten without
 // --install, and whatever is currently in data/ is copied to data/_replaced/<ts>/ first.
 import { ROOT } from '../lib/store.js';
+import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifiesAPlace,
+         locatorKind, hasDesign, skinGovernance, forbidsLightening, isLatinScript,
+         filmNeedsDuration } from '../lib/contract.js';
 import { existsSync, readdirSync, readFileSync, mkdirSync, copyFileSync, writeFileSync, rmSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
@@ -74,9 +77,19 @@ if (problems.length === 0) {
 
   const need = (cond, msg) => { if (!cond) problems.push(msg); };
 
+  const treatmentFilms = new Set();
+  {
+    const td = join(src, 'treatments');
+    if (existsSync(td)) for (const f of readdirSync(td).filter((x) => x.endsWith('.json'))) {
+      try { treatmentFilms.add(JSON.parse(readFileSync(join(td, f), 'utf8')).film); } catch { /* reported below */ }
+    }
+  }
   for (const f of loaded.films.films) {
     need(kandaIds.has(f.kanda), `film ${f.id} names unknown kanda ${f.kanda}`);
-    need(typeof f.duration_s === 'number' && f.duration_s > 0, `film ${f.id} has no usable duration_s`);
+    // A film with no treatment is a ledger entry and need not declare a duration.
+    if (filmNeedsDuration(f, treatmentFilms.has(f.id))) {
+      need(typeof f.duration_s === 'number' && f.duration_s > 0, `film ${f.id} has a treatment but no usable duration_s`);
+    }
   }
   for (const c of loaded.claims.claims) {
     need(['T', 'Tr', 'I', 'S'].includes(c.evidence_class), `claim ${c.id} has class ${c.evidence_class}`);
@@ -87,7 +100,13 @@ if (problems.length === 0) {
     if (c.evidence_class === 'Tr') need(c.tradition, `Tr claim ${c.id} names no tradition`);
     if (c.speech_act) need(c.speaker, `speech-act claim ${c.id} names no speaker`);
     if (c.locator?.source) need(sourceIds.has(c.locator.source), `claim ${c.id} cites unknown source ${c.locator.source}`);
-    if (c.evidence_class === 'T') need(c.locator?.sarga != null, `text claim ${c.id} carries no locator`);
+    if (c.evidence_class === 'T') {
+      need(locatorIdentifiesAPlace(c.locator),
+        `text claim ${c.id} has no locator that identifies a place (${locatorKind(c.locator)})`);
+    }
+    if (locatorKind(c.locator) === 'edition-section') {
+      need(c.locator.numbering, `claim ${c.id} uses ${c.locator.edition} section numbering but does not say so`);
+    }
     if (c.evidence_class === 'S') need(c.locator == null, `staging claim ${c.id} carries a locator`);
     if (c.evidence_class === 'I') {
       need(c.inferred_from && (sourceIds.has(c.inferred_from) || libIds.has(c.inferred_from)),
@@ -106,12 +125,21 @@ if (problems.length === 0) {
       need(c.verification.method === 'none', `proposed claim ${c.id} carries method "${c.verification.method}"`);
     }
   }
+  // An entities file may hold identity records with no design; skin is then governed
+  // by a policy lock and set by the studio's approved sheets.
   for (const e of loaded.entities.entities) {
-    need(e.design?.skin_albedo && lockIds.has(e.design.skin_albedo), `entity ${e.id} names unknown skin lock ${e.design?.skin_albedo}`);
+    const a = e.design?.skin_albedo;
+    if (a != null) need(lockIds.has(a), `entity ${e.id} names unknown skin lock ${a}`);
+  }
+  {
+    const g = skinGovernance(loaded.locks.locks);
+    need(g.kind !== 'none', 'nothing in this graph governs skin - neither a per-entity albedo lock nor a skin policy');
+    for (const l of g.locks) need(forbidsLightening(l), `skin lock ${l.id} does not forbid lightening`);
+    if (!g.measurable) notes.push('skin is governed by policy, not numbers - gradecheck has nothing to measure until the approved sheets exist');
   }
   for (const l of loaded.locks.locks) {
     need(l.entity == null || entityIds.has(l.entity), `lock ${l.id} names unknown entity ${l.entity}`);
-    if (l.kind === 'skin_albedo') {
+    if (l.kind === 'skin_albedo' && l.value) {
       const h = (l.value?.srgb_hex ?? '').replace('#', '');
       if (/^[0-9A-Fa-f]{6}$/.test(h)) {
         const lin = (c) => { const v = c / 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
@@ -120,7 +148,6 @@ if (problems.length === 0) {
         const L = Y <= 0.008856 ? 903.3 * Y : 116 * Math.cbrt(Y) - 16;
         need(Math.abs(L - (l.value.lab_L ?? -99)) < 1.0, `lock ${l.id} says L* ${l.value.lab_L} but ${l.value.srgb_hex} is L* ${L.toFixed(1)}`);
       } else problems.push(`lock ${l.id} has no valid srgb_hex`);
-      need(/never lighten/i.test(l.rule ?? ''), `skin lock ${l.id} does not forbid lightening`);
     }
   }
   for (const s of loaded.sheets.sheets) {
@@ -128,14 +155,12 @@ if (problems.length === 0) {
     if (s.approved) problems.push(`sheet ${s.id} arrives pre-approved - only a named human may approve, through the studio`);
   }
   for (const s of loaded.source_register.sources) {
-    need(typeof s.text_may_travel === 'boolean', `source ${s.id} does not say whether its text may travel`);
-    if (s.restricted) need(s.text_may_travel === false, `restricted source ${s.id} allows text to travel`);
+    need(sourceStatesTravel(s), `source ${s.id} does not say whether its text may travel`);
+    if (s.restricted) need(textMayTravel(s) === false, `restricted source ${s.id} allows text to travel`);
   }
   for (const p of loaded.passages.passages) {
-    need(p.text_held === false, `passage ${p.id} holds text - locators travel, text does not`);
-    for (const k of ['text', 'verse', 'verse_text', 'sanskrit']) {
-      if (p[k] !== undefined) problems.push(`passage ${p.id} carries a ${k} field`);
-    }
+    const found = passageTextFields(p);
+    if (found.length) problems.push(`passage ${p.id} carries source text in: ${found.join(', ')}`);
   }
   need(loaded.music.provider === 'none', `music.provider is "${loaded.music.provider}" - it must be none`);
 
@@ -146,7 +171,7 @@ if (problems.length === 0) {
   }
   for (const [lang, s] of Object.entries(loaded.typography.scripts ?? {})) {
     need(s.line_box_px >= Math.ceil(s.size_px * s.line_height) - 1, `typography ${lang}: line box ${s.line_box_px} is smaller than ${s.size_px}x${s.line_height}`);
-    if (s.script !== 'Latin') {
+    if (!isLatinScript(lang, s)) {
       need((s.conjunct_probe ?? []).length >= 3, `typography ${lang} has fewer than three conjunct probes`);
       for (const p of s.conjunct_probe ?? []) need([...p].length >= 2, `typography ${lang} probe "${p}" is a lone mark and measures nothing`);
     }
@@ -214,9 +239,10 @@ if (problems.length === 0) {
   }
 
   // Memo gate, across the incoming bundle.
+  // A memo forbids the DESIGN, not the identity record.
   const blocked = new Set(loaded.memos.memos.filter((m) => m.state === 'outstanding').map((m) => m.entity));
   for (const e of loaded.entities.entities) {
-    if (blocked.has(e.id)) problems.push(`entity ${e.id} has a design record but its memo is outstanding`);
+    if (blocked.has(e.id) && hasDesign(e)) problems.push(`entity ${e.id} carries a design but its memo is outstanding`);
   }
 }
 
@@ -245,7 +271,10 @@ if (!install) {
 
 // ---- install ---------------------------------------------------------------------
 const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-const backup = join(ROOT, 'data', '_replaced', stamp);
+// The backup lives OUTSIDE the graph directory. A previous graph sitting inside data/
+// is picked up by anything that scans the graph - the package's own contradictions.py
+// globs **/*.json - and reports the old graph's contents as defects in the new one.
+const backup = join(ROOT, '.graph-backups', stamp);
 mkdirSync(backup, { recursive: true });
 for (const f of readdirSync(join(ROOT, 'data')).filter((x) => x.endsWith('.json'))) {
   copyFileSync(join(ROOT, 'data', f), join(backup, f));
@@ -284,25 +313,25 @@ if (existsSync(stale)) { rmSync(stale); console.log('  cleared exports/public.js
 const tdir = join(src, 'treatments');
 let tcount = 0;
 if (existsSync(tdir)) {
-  const dest = join(ROOT, 'exports', 'treatments');
+  const dest = join(ROOT, 'data', 'treatments');
   mkdirSync(dest, { recursive: true });
   for (const f of readdirSync(tdir).filter((x) => x.endsWith('.json'))) {
     copyFileSync(join(tdir, f), join(dest, f));
     tcount++;
   }
-  console.log(`  installed ${tcount} treatment(s) to exports/treatments/`);
-  console.log(`  NOTE: films[].treatment must point at these paths, repo-relative.`);
+  console.log(`  installed ${tcount} treatment(s) to data/treatments/`);
+  console.log(`  films[].treatment paths are resolved against the graph directory, so the`);
+  console.log(`  package's own "treatments/<FILM>.json" works unedited.`);
 }
 
 // The scaffold marker goes once a real graph is in.
 rmSync(join(ROOT, 'data', '_SCAFFOLD.md'), { force: true });
 writeFileSync(join(ROOT, 'data', '_IMPORTED.md'),
   `# Imported graph\n\nInstalled ${new Date().toISOString()} from \`${src}\`.\n\n` +
-  `${installed} data files, ${tcount} treatment(s). Previous graph in \`data/_replaced/${stamp}/\`.\n\n` +
+  `${installed} data files, ${tcount} treatment(s). Previous graph in \`.graph-backups/${stamp}/\`.\n\n` +
   `Run \`npm run validate && node tools/regress.js\` before doing anything else.\n`, 'utf8');
 
 console.log(`  installed ${installed} data file(s)${removed ? `, removed ${removed} stale` : ''}`);
 console.log(`\n  next:`);
-console.log(`    1. point films[].treatment at exports/treatments/<FILM>.json`);
-console.log(`    2. npm run validate && node tools/regress.js`);
-console.log(`    3. python3 tools/build_graph.py && python3 tools/build_brain.py && python3 tools/build_packets.py\n`);
+console.log(`    1. npm run validate && node tools/regress.js`);
+console.log(`    2. python3 tools/build_graph.py && python3 tools/build_brain.py && python3 tools/build_packets.py\n`);

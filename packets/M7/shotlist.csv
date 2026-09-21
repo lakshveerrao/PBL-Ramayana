@@ -1,0 +1,22 @@
+shot,start_s,duration_s,frames,size,lens_mm,height,camera_move,expression,source,reuse_of,entities,claims,narration,motion,gate
+07-01,0.0,3.0,90,INSERT,35,eye,locked,"empty, waiting",reuse,,SABHA,,,NO MOTION,clear
+07-02,3.0,2.2,66,INSERT,100,low,locked,"young feet, unhurried",generate,,RAMA LAKSHMANA,,L1,motion,refused
+07-03,5.2,1.8,54,MS,50,eye,locked,"a blessing, and the hand withdrawing",generate,,DASHARATHA RAMA,,,motion,refused
+07-04,7.0,2.4,72,MS,85,eye,locked,"plain, unheroic — a boy, not a hero",generate,,RAMA,,,motion,refused
+07-05,9.4,1.4,42,MS,85,eye,locked,steady; already half a step behind,generate,,LAKSHMANA,,,motion,refused
+07-06,10.8,2.0,60,INSERT,100,eye,locked,a mother's hands; face withheld,generate,,KAUSALYA,,,motion,refused
+07-07,12.8,1.6,48,WIDE,35,eye,locked,already facing the road,generate,,VISHVAMITRA SABHA,,,motion,refused
+07-08,14.4,2.2,66,WIDE,35,eye,locked,he stays. He does not follow.,generate,,DASHARATHA SABHA,,,motion,refused
+07-09,16.6,1.8,54,MS,50,eye,locked,the light changing on his back,generate,,VISHVAMITRA,,L2,motion,refused
+07-10,18.4,1.2,36,MS,50,eye,locked,the same light; no ceremony,generate,,RAMA,,L3,motion,refused
+07-11,19.6,1.0,30,MS,50,eye,locked,the same again,generate,,LAKSHMANA,,L4,motion,refused
+07-12,20.6,2.6,78,WIDE,35,eye,locked,"timber, heavy, ordinary",generate,,GATE,,,motion,clear
+07-13,23.2,2.0,60,WIDE,24,eye,locked,a city going about its day,generate,,AYODHYA,,,motion,clear
+07-14,25.2,1.8,54,WIDE,35,eye,locked,"three backs, in the fixed order",generate,,VISHVAMITRA RAMA LAKSHMANA,CLM-0053 CLM-0054,,motion,refused
+07-15,27.0,1.4,42,INSERT,100,eye,locked,"carried, not drawn",generate,,RAMA,,,motion,refused
+07-16,28.4,2.2,66,WIDE,24,eye,locked,no destination visible,generate,,ROAD,,,motion,clear
+07-17,30.6,1.6,48,CU,85,eye,locked,one look back — and forward again. The only emotion he shows.,generate,,RAMA,,,motion,refused
+07-18,32.2,1.0,30,WIDE,24,eye,locked,smaller than they were,generate,,AYODHYA,,,motion,clear
+07-19,33.2,2.2,66,WIDE,35,eye,locked,"far off now, still standing there",generate,,DASHARATHA SABHA,,,motion,refused
+07-20,35.4,1.0,30,WIDE,24,eye,locked,empty ahead,reuse,07-16,ROAD,,,NO MOTION,clear
+07-21,36.4,4.0,120,WIDE,24,eye,locked,walking; nothing else,generate,,VISHVAMITRA RAMA LAKSHMANA ROAD,,,motion,refused

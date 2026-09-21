@@ -1,0 +1,217 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "settings": {
+    "stability": 0.62,
+    "similarity": 0.8,
+    "style": 0.0,
+    "why": "Low stability lets the model perform, which the direction forbids."
+  },
+  "per_line_rule": null,
+  "delivery": {
+    "note": "Reporting, not building. The sage's problem is stated the way you would state an illness.",
+    "key_line": {
+      "en": "Rāma.",
+      "direction": "one word, level, no rise, no reverb. The same delivery as 'Rāvaṇa' in film 4."
+    }
+  },
+  "languages": {
+    "en": {
+      "voice_env": "ELEVEN_VOICE_EN",
+      "register": "plain speech. If a line could not be said aloud to a friend, it is written wrong.",
+      "persona": "Indian English, unhurried, mid-forties. Not RP, not American, not newsreader.",
+      "attribution_markers": [
+        "said",
+        "asked",
+        "told",
+        "answered",
+        "replied",
+        "had no doubt",
+        "The way his father saw it",
+        "\""
+      ],
+      "forbidden": [
+        "fake-epic vocabulary",
+        "translation register",
+        "rising inflection on a reveal",
+        "smiling through the voice"
+      ]
+    },
+    "hi": {
+      "voice_env": "ELEVEN_VOICE_HI",
+      "register": "natural spoken Hindi with everyday Urdu-origin words where they are the natural word — ज़िंदगी, इंतज़ार, फ़ैसला.",
+      "persona": "A well-read Hindi speaker from a Hindi-belt city, forties, in a quiet room.",
+      "attribution_markers": [
+        "कहा",
+        "पूछा",
+        "पूछी",
+        "बताया",
+        "जवाब दिया",
+        "को कोई शक नहीं था",
+        "पिता की नज़र में",
+        "\"",
+        "कह दिया"
+      ],
+      "forbidden": [
+        "pravachan or Doordarshan register",
+        "कदापि, अतः, तत्पश्चात्",
+        "प्रभु श्रीराम in narration",
+        "devotional lift on a name"
+      ]
+    },
+    "te": {
+      "voice_env": "ELEVEN_VOICE_TE",
+      "register": "natural vyavaharika Telugu. Names as said at home: రాముడు, దశరథుడు.",
+      "persona": "A Telugu speaker from Hyderabad or the coast, forties, telling this at home.",
+      "attribution_markers": [
+        "అన్నాడు",
+        "అడిగాడు",
+        "చెప్పాడు",
+        "ఇస్తానన్నాడు",
+        "ఏ సందేహం లేదు",
+        "తండ్రి దృష్టిలో",
+        "\"",
+        "కాదన్నాడు"
+      ],
+      "forbidden": [
+        "granthika endings — చేసెను, పలికెను",
+        "కావున, అనంతరం",
+        "pravachanam register",
+        "శ్రీ prefix in narration"
+      ]
+    }
+  },
+  "lines": {
+    "L1": {
+      "shot": "02-01",
+      "en": "In the court of Ayodhyā, the sage sat before the king.",
+      "hi": "अयोध्या के दरबार में ऋषि विश्वामित्र राजा के सामने बैठे थे।",
+      "te": "అయోధ్య సభలో విశ్వామిత్రుడు రాజు ముందు కూర్చున్నాడు.",
+      "speaker": null,
+      "assertion": "SOURCE_INFERRED",
+      "evidence": "the audience is Dutt XIX; the seating is inferred",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L2": {
+      "shot": "02-02",
+      "en": "And Dasharatha had already given his word.",
+      "hi": "और दशरथ वचन दे चुके थे — ऋषि जो माँगेंगे, वो देंगे।",
+      "te": "దశరథుడు అప్పటికే మాట ఇచ్చేశాడు — ఋషి ఏం అడిగినా ఇస్తానని.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0001",
+      "original_speaker": "DASHARATHA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L3": {
+      "shot": "02-03",
+      "en": "Before he asked, the sage told him: keep your word.",
+      "hi": "माँगने से पहले ऋषि ने कहा — अपना वचन निभाना।",
+      "te": "అడిగే ముందే ఋషి అన్నాడు — మాట నిలబెట్టుకో.",
+      "speaker": "VISHVAMITRA",
+      "assertion": "CHARACTER_SPEECH",
+      "evidence": "CLM-0009, 18.3; Dutt XIX \"prove firm in promise\"",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": "VISHVAMITRA's statement, not narrator fact. Attributed in every language."
+    },
+    "L4": {
+      "shot": "02-04",
+      "en": "Far from here, in the forest, Viśvāmitra had begun a yajña.",
+      "hi": "दूर, जंगल में, विश्वामित्र ने एक यज्ञ शुरू किया था।",
+      "te": "ఇక్కడికి దూరంగా, అడవిలో, విశ్వామిత్రుడు ఒక యజ్ఞం మొదలుపెట్టాడు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0002",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L5": {
+      "shot": "02-06",
+      "en": "Two rākṣasas kept breaking it. Mārīca. Subāhu.",
+      "hi": "दो राक्षस उसे बार-बार तोड़ देते थे। मारीच। सुबाहु।",
+      "te": "ఇద్దరు రాక్షసులు దాన్ని పదే పదే పాడు చేసేవారు. మారీచుడు. సుబాహుడు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0003",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L6": {
+      "shot": "02-08",
+      "en": "They poured flesh and blood over the altar.",
+      "hi": "वो वेदी पर माँस और ख़ून उँडेल देते थे।",
+      "te": "వేదిక మీద మాంసం, రక్తం పోసేవారు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0004 — onto the altar, 18.5",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L7": {
+      "shot": "02-10",
+      "en": "He was under a vow. He couldn't curse them.",
+      "hi": "ऋषि व्रत में थे। शाप दे नहीं सकते थे।",
+      "te": "ఆయన వ్రతంలో ఉన్నాడు. శాపం పెట్టలేడు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0005",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L8": {
+      "shot": "02-12",
+      "en": "So he had come to the king.",
+      "hi": "इसलिए वो राजा के पास आए थे।",
+      "te": "అందుకే రాజు దగ్గరికి వచ్చాడు.",
+      "speaker": null,
+      "assertion": "SOURCE_FACT",
+      "evidence": "18.6–8 — he is there, stating his need",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L9": {
+      "shot": "02-13",
+      "en": "Ten nights. That was all he asked.",
+      "hi": "दस रातें। बस इतना ही माँगा था।",
+      "te": "పది రాత్రులు. అంతే అడిగాడు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0007, 18.17",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L10": {
+      "shot": "02-15",
+      "en": "He did not ask for the army.",
+      "hi": "उन्होंने सेना नहीं माँगी।",
+      "te": "సైన్యం అడగలేదు.",
+      "speaker": null,
+      "assertion": "INTERPRETATION",
+      "evidence": "true by omission: 18.8 asks for Rāma, not an army",
+      "original_speaker": null,
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    },
+    "L11": {
+      "shot": "02-17",
+      "en": "Rāma.",
+      "hi": "राम।",
+      "te": "రాముడు.",
+      "speaker": null,
+      "assertion": "NARRATOR_PARAPHRASE",
+      "evidence": "CLM-0006",
+      "original_speaker": "VISHVAMITRA",
+      "depends_on_proposed": [],
+      "speaker_rule": null
+    }
+  }
+}

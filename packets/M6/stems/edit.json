@@ -1,0 +1,118 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "fps": 30,
+  "total_frames": 1338,
+  "cuts": [
+    {
+      "at_frame": 0,
+      "shot": "06-01",
+      "frames": 90
+    },
+    {
+      "at_frame": 90,
+      "shot": "06-02",
+      "frames": 60
+    },
+    {
+      "at_frame": 150,
+      "shot": "06-03",
+      "frames": 48
+    },
+    {
+      "at_frame": 198,
+      "shot": "06-04",
+      "frames": 66
+    },
+    {
+      "at_frame": 264,
+      "shot": "06-05",
+      "frames": 54
+    },
+    {
+      "at_frame": 318,
+      "shot": "06-06",
+      "frames": 72
+    },
+    {
+      "at_frame": 390,
+      "shot": "06-07",
+      "frames": 42
+    },
+    {
+      "at_frame": 432,
+      "shot": "06-08",
+      "frames": 78
+    },
+    {
+      "at_frame": 510,
+      "shot": "06-09",
+      "frames": 60
+    },
+    {
+      "at_frame": 570,
+      "shot": "06-10",
+      "frames": 54
+    },
+    {
+      "at_frame": 624,
+      "shot": "06-11",
+      "frames": 66
+    },
+    {
+      "at_frame": 690,
+      "shot": "06-12",
+      "frames": 48
+    },
+    {
+      "at_frame": 738,
+      "shot": "06-13",
+      "frames": 72
+    },
+    {
+      "at_frame": 810,
+      "shot": "06-14",
+      "frames": 36
+    },
+    {
+      "at_frame": 846,
+      "shot": "06-15",
+      "frames": 60
+    },
+    {
+      "at_frame": 906,
+      "shot": "06-16",
+      "frames": 54
+    },
+    {
+      "at_frame": 960,
+      "shot": "06-17",
+      "frames": 66
+    },
+    {
+      "at_frame": 1026,
+      "shot": "06-18",
+      "frames": 42
+    },
+    {
+      "at_frame": 1068,
+      "shot": "06-19",
+      "frames": 78
+    },
+    {
+      "at_frame": 1146,
+      "shot": "06-20",
+      "frames": 30
+    },
+    {
+      "at_frame": 1176,
+      "shot": "06-21",
+      "frames": 42
+    },
+    {
+      "at_frame": 1218,
+      "shot": "06-22",
+      "frames": 120
+    }
+  ],
+  "rule": "Timings are frame counts, not seconds. A 44s film that ends at 44.03s is a defect."
+}

@@ -1,0 +1,58 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "built": "2026-09-21",
+  "film": "M7",
+  "story_id": "M7",
+  "title": {
+    "en": "Two Sons Leave"
+  },
+  "duration_s": 40.4,
+  "fps": 30,
+  "frame": [
+    1080,
+    1920
+  ],
+  "shots": 21,
+  "to_generate": 19,
+  "estimate_usd": {
+    "image": 0.475,
+    "motion": 4.75,
+    "voice": 0.04374,
+    "total": 5.26874
+  },
+  "gate": {
+    "allowed": false,
+    "blocked": 15,
+    "of": 21
+  },
+  "claims": [
+    {
+      "id": "CLM-0053",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "6",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Lakṣmaṇa follows Rāma."
+    },
+    {
+      "id": "CLM-0054",
+      "class": "T",
+      "state": "accepted",
+      "speaker": null,
+      "locator": {
+        "work": "VR",
+        "kanda": "BALA",
+        "sarga": 21,
+        "verses": "6",
+        "source": "SRC.GRETIL.VR"
+      },
+      "text": "Viśvāmitra goes in front; Rāma and Lakṣmaṇa follow."
+    }
+  ]
+}

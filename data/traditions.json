@@ -1,7 +1,127 @@
 {
-  "_doc": "Named traditions. A tradition is cited by name and is never promoted to Text.",
   "traditions": [
-    { "id": "TRD.KATHA-PERFORMANCE", "name": "Ramayana katha performance tradition", "note": "Oral performance. Named, dated where possible, never folded into the spine." },
-    { "id": "TRD.COMMENTARIAL", "name": "Sanskrit commentarial tradition on the Valmiki Ramayana", "note": "Tilaka, Bhusana and others. Cited individually, never as 'tradition says'." }
+    {
+      "id": "TRD-TULSI",
+      "work": "Rāmcaritmānas",
+      "author": "Tulsīdās",
+      "language": "Awadhi",
+      "composed": "c. 1574",
+      "rights": "public domain",
+      "role": "comparison telling, Awadhi — widely known to Hindi-speaking audiences",
+      "section": "Bālkāṇḍ, after dohā 205 — विश्वामित्र का राजा दशरथ से राम-लक्ष्मण को माँगना",
+      "source": "Ramcharitmanas text in common circulation (Gita Press recension); verses quoted from public presentations",
+      "not": "Not the default. The default is the identified Vālmīki spine. No regional telling has been chosen as canonical for any language.",
+      "divergences": [
+        {
+          "id": "TRD-T-001",
+          "about": "CLM-0003",
+          "agrees": true,
+          "span": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "Mārīca and Subāhu disturb the sage's rites — the same two, same act."
+        },
+        {
+          "id": "TRD-T-002",
+          "about": "CLM-0006",
+          "agrees": "partly",
+          "risk": "red",
+          "span": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "Viśvāmitra asks for Rāma because he KNOWS Rāma is Hari incarnate — 'without Hari these demons will not die.'",
+          "divergence": "In Vālmīki he asks for a capable prince and says nothing of divinity. Tulsī makes the request theological. Our films follow the spine: the sage asks for a boy he is certain of, not for a god he has recognised."
+        },
+        {
+          "id": "TRD-T-003",
+          "about": "CLM-0015",
+          "agrees": true,
+          "span": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "'Where are those terrible cruel rākṣasas, and where is my tender son of very young age' — the father's refusal, same beat, different words.",
+          "note": "Confirms the emotional shape of film 3 across both traditions."
+        },
+        {
+          "id": "TRD-T-004",
+          "about": "CLM-0040",
+          "agrees": false,
+          "risk": "red",
+          "span": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "Hearing the king's love-soaked words, the wise sage was DELIGHTED in his heart. Then Vasiṣṭha explained at length.",
+          "divergence": "MAJOR. In Vālmīki the sage is angered (samanyuḥ) and the earth shakes (⟨Bāla 20.4, GRETIL — text withheld⟩, Bāla 20.4). In Tulsī he is pleased by the father's love and there is no anger at all. Film 5 — 'The Sage's Anger' — exists only in the spine.",
+          "consequence": "A Hindi viewer raised on Tulsī may not recognise the anger. Ask must answer this the moment it is asked, and the film must never imply the anger is universal."
+        },
+        {
+          "id": "TRD-T-005",
+          "about": "L-RAMA / L-LAKSH",
+          "agrees": "adds",
+          "risk": "red",
+          "span": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "'The two beautiful brothers, dark and fair' — Rāma śyāma, Lakṣmaṇa gaura.",
+          "consequence": "A Tradition-class datum for the complexion locks. Corroborates dark Rāma, but the spine's own term must still be located and verified before L-RAMA is unlocked. Tradition never substitutes for Text."
+        },
+        {
+          "id": "TRD-T-006",
+          "about": "film 10",
+          "agrees": "adds",
+          "span": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "With a single arrow he took her life, and knowing her wretched, gave her his own abode.",
+          "divergence": "Tulsī grants Tāṭakā liberation at death. Vālmīki does not. A devotional softening of the killing — and directly relevant to the Tāṭakā memo.",
+          "handling": "Separately attributed telling difference. NOT added to default narration, visuals or the causal graph. No decision to blend traditions is made. Surfaced only if a viewer asks."
+        },
+        {
+          "id": "TRD-T-007",
+          "about": "film 8",
+          "agrees": true,
+          "span": "⟨Tulsīdās, Rāmcaritmānas — text withheld, see SRC.TULSI⟩",
+          "gloss": "The sage gave the knowledge by which hunger and thirst do not come — bala and atibala, as in the spine (Bāla 21.10–15)."
+        }
+      ]
+    },
+    {
+      "id": "TRD-RANGANATHA",
+      "work": "Ranganātha Rāmāyaṇamu",
+      "author": "Gōna Buddhā Reḍḍi",
+      "language": "Telugu (dvipada)",
+      "composed": "c. 1294–1300",
+      "rights": "public domain",
+      "role": "comparison telling, Telugu",
+      "status": "NOT LOADED",
+      "why_not": "Available as scanned page images (Digital Library of India / archive.org), not as machine-readable text. The dvipada verses for this arc could not be extracted reliably, and I will not paraphrase a tradition I have not read.",
+      "needed": [
+        "A Telugu reader to transcribe the Viśvāmitra episode from the scan",
+        "or a machine-readable edition if one exists",
+        "then the same divergence pass we ran on Tulsīdās"
+      ],
+      "not": "Not the default. The default is the identified Vālmīki spine. No regional telling has been chosen as canonical for any language.",
+      "divergences": []
+    },
+    {
+      "id": "TRD-MOLLA",
+      "work": "Molla Rāmāyaṇamu",
+      "author": "Ātukūri Molla",
+      "language": "Telugu",
+      "composed": "16th c.",
+      "rights": "public domain",
+      "role": "second Telugu voice — a woman poet's telling",
+      "status": "NOT LOADED",
+      "why_not": "Same: scans, not text.",
+      "needed": [
+        "A Telugu reader to transcribe the Viśvāmitra episode from the archive.org scan",
+        "then the same divergence pass we ran on Tulsīdās",
+        "Worth doing after Ranganātha — her telling is shorter and her choices are her own"
+      ],
+      "divergences": []
+    },
+    {
+      "id": "TRD-KAMBAN",
+      "work": "Irāmāvatāram",
+      "author": "Kampaṉ",
+      "language": "Tamil",
+      "composed": "c. 12th c.",
+      "rights": "public domain",
+      "role": "variant readings of character and motive",
+      "status": "NOT LOADED",
+      "why_not": "Project Madurai and the Tamil Virtual Academy hold the text, but the specific padalam for this arc was not located in a form I could verify.",
+      "needed": [
+        "A Tamil reader, or the located padalam text"
+      ],
+      "divergences": []
+    }
   ]
 }

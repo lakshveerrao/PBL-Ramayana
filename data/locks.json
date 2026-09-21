@@ -1,117 +1,61 @@
 {
-  "_doc": "A lock is a visual fact that may not drift between shots or between films. A render that departs from a lock is rejected by lib/consistency.js, not by the eye. Skin albedo is locked specifically so that no global grade move can lighten a face.",
   "locks": [
     {
-      "id": "LOCK.SKIN.DASARATHA",
-      "entity": "DASARATHA",
-      "kind": "skin_albedo",
-      "value": {
-        "srgb_hex": "#6B4A33",
-        "lab_L": 34.5,
-        "tolerance_L": 2
-      },
-      "rule": "Never lighten. A grade move that raises lab_L beyond tolerance is a defect, not a look."
+      "id": "LOCK.SKIN.POLICY",
+      "entity": null,
+      "kind": "skin_policy",
+      "value": null,
+      "rule": "Never lighter than the approved model sheet, in any grade, for any character. Fair-equals-good coding is forbidden outright. Exact skin values are production design, set by the studio's approved sheets — not by this workspace."
     },
     {
-      "id": "LOCK.SKIN.VISVAMITRA",
-      "entity": "VISVAMITRA",
-      "kind": "skin_albedo",
-      "value": {
-        "srgb_hex": "#70503A",
-        "lab_L": 36.9,
-        "tolerance_L": 2
-      },
-      "rule": "Never lighten."
-    },
-    {
-      "id": "LOCK.SKIN.RAMA",
+      "id": "LOCK.CLAIM.RAMA-COMPLEXION",
       "entity": "RAMA",
-      "kind": "skin_albedo",
+      "kind": "claim_gate",
       "value": {
-        "srgb_hex": "#5E4130",
-        "lab_L": 30.3,
-        "tolerance_L": 2
+        "may_depict": true
       },
-      "rule": "Never lighten. This is a design lock and carries NO claim about a source-mandated complexion - see entities.json RAMA.complexion_claim."
+      "rule": "Rāma may be depicted under the approved design. No complexion may be presented as source-mandated in narration, captions or Ask."
     },
     {
-      "id": "LOCK.SKIN.LAKSMANA",
-      "entity": "LAKSMANA",
-      "kind": "skin_albedo",
+      "id": "LOCK.DEPICT.RAVANA",
+      "entity": "RAVANA",
+      "kind": "depiction_gate",
       "value": {
-        "srgb_hex": "#66462F",
-        "lab_L": 32.7,
-        "tolerance_L": 2
+        "may_depict": false
       },
-      "rule": "Never lighten."
+      "rule": "DO NOT DEPICT. No frame, no silhouette, no shadow, no hand, no throne, no Laṅkā, no ten heads. The room widening on the name is the whole effect.",
+      "scope": {}
     },
     {
-      "id": "LOCK.SKIN.VASISTHA",
-      "entity": "VASISTHA",
-      "kind": "skin_albedo",
+      "id": "LOCK.DEPICT.MARICHA",
+      "entity": "MARICHA",
+      "kind": "depiction_gate",
       "value": {
-        "srgb_hex": "#735439",
-        "lab_L": 38.3,
-        "tolerance_L": 2
+        "may_depict": false
       },
-      "rule": "Never lighten."
+      "rule": "DO NOT DEPICT in this arc. Named in films 2 and 4, seen in neither.",
+      "scope": {}
     },
     {
-      "id": "LOCK.ARCH.NO-ARCH",
-      "entity": null,
-      "kind": "architecture",
+      "id": "LOCK.DEPICT.TATAKA",
+      "entity": "TATAKA",
+      "kind": "depiction_gate",
       "value": {
-        "allowed": [
-          "post-and-lintel",
-          "railing",
-          "torana",
-          "flat corbel"
+        "may_depict": false
+      },
+      "rule": "DO NOT DEPICT. A high-risk decision memo is required before she is ever designed.",
+      "scope": {
+        "blocks": [
+          "any frame depicting Tāṭakā",
+          "film 10 visual production"
         ],
-        "forbidden": [
-          "arch",
-          "dome",
-          "vault",
-          "marble",
-          "onion dome",
-          "cusped arch"
-        ]
-      },
-      "rule": "Post-and-lintel only. An arch or a dome in frame is a rejection."
-    },
-    {
-      "id": "LOCK.CLOTH.DRAPED",
-      "entity": null,
-      "kind": "garment",
-      "value": {
-        "allowed": [
-          "draped",
-          "tucked",
-          "wrapped",
-          "unstitched"
+        "does_not_block": [
+          "films 1–7 (court and departure) — she does not appear",
+          "claim work, direction, adaptation, or narration anywhere",
+          "any other character's design"
         ],
-        "forbidden": [
-          "tailored",
-          "sewn",
-          "fitted",
-          "stitched seam",
-          "buttoned",
-          "collar",
-          "lapel"
-        ]
-      },
-      "rule": "Cloth is woven, cut from the loom and draped. Anything that reads as sewn is a rejection."
-    },
-    {
-      "id": "LOCK.LAMP.M3",
-      "entity": null,
-      "kind": "prop",
-      "film": "M3",
-      "value": {
-        "prop": "oil lamp, terracotta, single wick",
-        "position": "king's right hand side, on the plinth",
-        "moves": false
-      },
-      "rule": "Declared staging (see CLM.BALA.20.S.LAMP-HELD). Held for the whole film. It does not move."
+        "reason": "The gate exists for one entity's depiction. It is not a project-wide stop."
+      }
     }
   ]
 }

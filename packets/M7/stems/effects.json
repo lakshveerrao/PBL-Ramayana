@@ -1,0 +1,139 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": {
+    "07-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 3.0,
+      "source": "reuse"
+    },
+    "07-02": {
+      "instruction": "almost imperceptible life: dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-03": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "07-04": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "07-05": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "07-06": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "07-07": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust turning in the light shaft, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "07-08": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-09": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "07-10": {
+      "instruction": "almost imperceptible life: dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.2,
+      "source": "generate"
+    },
+    "07-11": {
+      "instruction": "almost imperceptible life: dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "07-12": {
+      "instruction": "almost imperceptible life: dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.6,
+      "source": "generate"
+    },
+    "07-13": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "07-14": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.8,
+      "source": "generate"
+    },
+    "07-15": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.4,
+      "source": "generate"
+    },
+    "07-16": {
+      "instruction": "almost imperceptible life: dust turning in the light shaft, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-17": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "07-18": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "07-19": {
+      "instruction": "almost imperceptible life: draped cloth settling, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "07-20": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.0,
+      "source": "reuse"
+    },
+    "07-21": {
+      "instruction": "almost imperceptible life: draped cloth settling, one slow breath, dust lifted by a footfall. The camera does not move.",
+      "motion": true,
+      "duration_s": 4.0,
+      "source": "generate"
+    }
+  },
+  "rejection_criteria": [
+    "the camera moves when the shot is marked locked",
+    "a face changes expression",
+    "a body shifts position",
+    "anything enters or leaves frame",
+    "the motion loops visibly"
+  ],
+  "rule": "A shot marked NO MOTION refuses at the render layer, in code. It is not a note for the eye."
+}

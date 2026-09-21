@@ -1,33 +1,539 @@
 {
-  "_doc": "The physical world the films are made of. Every prompt is assembled from this file and entities.json. Prompts are never written by hand.",
   "architecture": {
-    "system": "post-and-lintel",
-    "reference": "SRC.SANCHI",
-    "allowed": ["squared stone pillar with flat bracket capital", "flat stone lintel", "raised plinth with moulded edge", "vedika railing with lens-shaped uprights", "flat corbelled ceiling", "timber roof beams"],
-    "forbidden": ["arch", "true arch", "cusped arch", "dome", "onion dome", "vault", "marble", "minaret", "pointed window", "scalloped niche"],
-    "surface": "dressed sandstone and lime plaster, warm buff, worn at the edges. Never polished marble."
+    "id": "SYS-ARCH",
+    "principle": "Post and lintel. Timber, brick, plaster, sandstone. If a frame contains a true arch, a dome or marble, it is wrong.",
+    "construction": {
+      "structure": "timber posts, carved brackets, heavy beams; mud-brick and lime plaster; sandstone floors, steps, plinths",
+      "roofs": "thatched or tiled timber",
+      "openings": "pierced lattice screens of wood or stone (jālī); rectangular doorways, sometimes corbelled",
+      "gateways": "toraṇa — ceremonial, post-and-lintel, carved crossbars",
+      "interiors": "low furniture only — floor seating, low stools, a dais. Brass oil lamps on stands. Undyed cotton drapes, unpatterned. Earth-pigment painted plaster, restrained."
+    },
+    "never": [
+      "true arches of later vocabulary",
+      "domes",
+      "minarets",
+      "marble",
+      "glass",
+      "chandeliers",
+      "carpets",
+      "thrones on high pedestals",
+      "temple gopurams inside a palace",
+      "anything Mughal, Rajput-palace, Victorian or fantasy-castle"
+    ]
   },
   "cloth": {
-    "construction": "unstitched. Woven, cut from the loom, draped and tucked.",
-    "forbidden": ["tailored", "sewn", "fitted bodice", "stitched seam", "button", "collar", "lapel", "zip"],
-    "garments": {
-      "antariya": "lower cloth, wrapped at the waist, tucked, falling between knee and mid-calf",
-      "uttariya": "upper cloth, one length, over a shoulder or across the chest",
-      "kayabandha": "a sash at the waist, tied, ends hanging"
+    "id": "SYS-DRESS",
+    "principle": "Cloth is woven, cut from the loom, and DRAPED. It is not tailored, not fitted, not buttoned. This single fact removes most anglicisation before a character is named.",
+    "garments": [
+      {
+        "name": "antarīya",
+        "devanagari": "अन्तरीय",
+        "who": "everyone",
+        "how": "lower cloth, wrapped and tucked at the waist; length by rank and activity",
+        "class": "I"
+      },
+      {
+        "name": "uttarīya",
+        "devanagari": "उत्तरीय",
+        "who": "everyone",
+        "how": "upper cloth over one shoulder or both, loose, never pinned",
+        "class": "I"
+      },
+      {
+        "name": "kāyabandha",
+        "devanagari": "कायबन्ध",
+        "who": "men of rank, warriors",
+        "how": "a sash or woven band at the waist holding the antarīya",
+        "class": "I"
+      },
+      {
+        "name": "stanapaṭṭa",
+        "devanagari": "स्तनपट्ट",
+        "who": "women",
+        "how": "a wrapped breast-band — NOT a stitched blouse, which is centuries later",
+        "class": "I"
+      },
+      {
+        "name": "valkala / ajina",
+        "devanagari": "वल्कल",
+        "who": "ascetics, exiles",
+        "how": "bark cloth or deerskin, coarse, undyed, wrapped",
+        "class": "T",
+        "note": "Vālmīki names bark cloth for forest life."
+      },
+      {
+        "name": "cīra",
+        "who": "the exiled",
+        "how": "the rough cloth of renunciation — the garment that makes Ayodhyā unbearable to look at",
+        "class": "T"
+      }
+    ],
+    "register": {
+      "king_at_court": "fine cotton, near-white, dyed upper cloth with a woven border; ankle length",
+      "queen": "fine cotton or silk, dyed, bordered; more cloth, more fall",
+      "prince_on_the_road": "plain, shorter, practical, undyed",
+      "ascetic": "ochre or undyed; often one cloth only",
+      "brahmin_minister": "cream or undyed white, upper cloth, restrained",
+      "forest_dweller": "coarse weave, bark, hide",
+      "rakshasa": "MEMO REQUIRED — dress must not be used to mark monstrousness"
     },
-    "weaves": ["fine cotton, undyed", "fine cotton, pale ochre", "coarse unbleached cotton", "bark cloth"]
+    "dyes": {
+      "permitted": [
+        "indigo (nīla)",
+        "madder red (mañjiṣṭhā)",
+        "turmeric yellow (haridrā)",
+        "kusumbha orange (safflower)",
+        "lac crimson (lākṣā)",
+        "myrobalan grey-black (harītakī)",
+        "undyed cream"
+      ],
+      "forbidden": [
+        "neon",
+        "pastel",
+        "synthetic black as a fashion colour",
+        "printed pattern",
+        "machine-even colour"
+      ],
+      "borders": "woven, never printed"
+    },
+    "never": [
+      "shirt",
+      "coat",
+      "blouse",
+      "trousers",
+      "jacket",
+      "waistcoat",
+      "buttons",
+      "zips",
+      "hooks",
+      "boots",
+      "turban of later vocabulary",
+      "stitched bodice",
+      "sari pleated in the modern nivi style"
+    ]
   },
   "ornament": {
-    "vocabulary": "SRC.AMARAVATI",
-    "forms": ["broad flat torque", "plain high armlet", "heavy lobe-distending ear ornament", "flat beaded girdle", "anklet, plain"],
-    "rule": "Flat planes and broad forms, worn into the body. No faceted stones, no filigree, no jewellery-shop sparkle."
+    "id": "SYS-ORNAMENT",
+    "principle": "Drawn from what stone reliefs actually show — Bharhut, Sanchi, Amaravati — not from later jewellery. Gold gleams; it does not glitter.",
+    "forms": [
+      {
+        "name": "kuṇḍala",
+        "devanagari": "कुण्डल",
+        "who": "almost everyone of rank, men and women",
+        "note": "Heavy enough to pull and lengthen the lobe. The signature Indian ornament of this period and the single fastest way to get the look right.",
+        "class": "I"
+      },
+      {
+        "name": "hāra / niṣka",
+        "who": "rank",
+        "note": "flat gold collar or twisted torque",
+        "class": "I"
+      },
+      {
+        "name": "keyūra / aṅgada",
+        "devanagari": "केयूर",
+        "who": "men of rank, warriors",
+        "note": "armlet on the upper arm, above the bicep — inferred from the relief record (Bharhut). No loaded text in this workspace names it.",
+        "class": "I"
+      },
+      {
+        "name": "kaṅkaṇa / valaya",
+        "who": "women in numbers, men one or two",
+        "note": "metal, sometimes conch shell",
+        "class": "I"
+      },
+      {
+        "name": "mekhalā",
+        "devanagari": "मेखला",
+        "who": "women",
+        "note": "girdle of linked plates or beads at the hip",
+        "class": "I"
+      },
+      {
+        "name": "nūpura",
+        "devanagari": "नूपुर",
+        "who": "women",
+        "note": "heavy anklets — a SOUND cue as much as an image. Hearing them precede a woman entering is period-correct and free.",
+        "class": "I"
+      },
+      {
+        "name": "mukuṭa / kirīṭa",
+        "who": "king",
+        "note": "a low band or modest crest — NOT a European peaked crown",
+        "class": "S"
+      },
+      {
+        "name": "rudrākṣa",
+        "who": "ascetics",
+        "note": "seed beads, worn plain, never displayed",
+        "class": "Tr"
+      },
+      {
+        "name": "yajñopavīta",
+        "devanagari": "यज्ञोपवीत",
+        "who": "brahmins",
+        "note": "sacred thread over the left shoulder",
+        "class": "I"
+      },
+      {
+        "name": "tilaka",
+        "who": "many",
+        "note": "sandal paste or vermilion; small, not a pattern",
+        "class": "I"
+      },
+      {
+        "name": "flowers",
+        "who": "everyone",
+        "note": "real flowers as ornament — a class and season marker, not decoration",
+        "class": "I"
+      }
+    ],
+    "materials": [
+      "gold",
+      "silver",
+      "copper",
+      "conch shell",
+      "seed",
+      "ivory",
+      "semi-precious stone (uncut)"
+    ],
+    "never": [
+      "faceted cut gems",
+      "peaked crowns",
+      "tiaras",
+      "nose rings of later forms",
+      "rings on every finger",
+      "matched sets",
+      "anything that glitters rather than gleams",
+      "diamond"
+    ]
+  },
+  "body": {
+    "id": "SYS-BODY",
+    "principle": "Indian faces, in their real variety. Not one face lightened or sharpened toward a European mean, and not one regional type standing for a subcontinent.",
+    "faces": {
+      "requirement": "Features from the actual range of the subcontinent — nose bridges that vary, eye shapes that vary, jaw and cheek structures that vary. A court should look like a place people came to from different regions, because it was.",
+      "forbidden": [
+        "a single beauty standard applied to every face",
+        "narrowed or sharpened features to read 'noble'",
+        "broadened features to read 'lowly' — this is caste and race coding and we do not do it",
+        "symmetrical model faces",
+        "airbrushed skin"
+      ],
+      "wanted": [
+        "pores, oil sheen, sun damage where a life has been lived outdoors",
+        "asymmetry",
+        "teeth that are real",
+        "age in the neck and hands, not only the face"
+      ]
+    },
+    "complexion": {
+      "method": "Locked as albedo and undertone, never judged from rendered pixels — the same skin reads differently under a lamp and a morning shaft.",
+      "range": "The full South Asian range, mid-brown through deep brown, warm and olive undertones. Variation across a crowd is the point.",
+      "prohibited_absolutely": [
+        "lightening at any stage, for any reason",
+        "smoothing",
+        "beautification",
+        "lighting a face paler than its lock",
+        "fair = good, dark = evil coding of any kind"
+      ]
+    },
+    "hair": {
+      "men": "long, oiled, bound in a knot or tied back; beards on elders and ascetics",
+      "women": "long, oiled, braided or coiled, flowers worked in. Loose hair means grief or violence and is never neutral.",
+      "ascetics": "jaṭā — matted, piled; ash on the skin",
+      "boys": "kākapakṣa — the side-locks. TEXTUAL: the spine calls Rāma kākapakṣadhara at the moment he is asked for. This is the clearest signal in the whole arc that he is a child, and it must be visible."
+    },
+    "bodies": "Real. Soft where age softens, hard where work hardens. Feet bare and dusty on every road. Hands that have done something.",
+    "never": [
+      "gym-sculpted physiques",
+      "hairless chests as default",
+      "everyone the same height and build",
+      "children played as small adults"
+    ]
   },
   "light": {
-    "sources": ["oil lamp, terracotta, single wick", "daylight through a pillared opening", "brazier"],
-    "rule": "Warm, low, directional. Light falls; it is never sourceless fill."
+    "id": "SYS-LIGHT",
+    "principle": "One source, always motivated by something in frame.",
+    "sources": [
+      "high lattice openings — long bars across stone",
+      "brass oil lamps — small, warm, close",
+      "open sky — hard and high at noon, raking at dawn"
+    ],
+    "palette": [
+      "sandstone",
+      "teak brown",
+      "undyed cream",
+      "one deep red",
+      "one ochre",
+      "brass"
+    ],
+    "grade": {
+      "blacks": "soft and deep, never crushed",
+      "highlights": "warm, never clipped white",
+      "saturation": "restrained; colour comes from dyed cloth, not from the grade",
+      "grain": "film grain on every frame — generated images are too clean and read as fake without it"
+    },
+    "never": [
+      "teal-and-orange",
+      "glow",
+      "aura",
+      "god rays",
+      "lens flare",
+      "haze",
+      "fog",
+      "bloom",
+      "day-for-night blue"
+    ]
   },
-  "forbidden_globally": {
-    "anglicisation": ["tailored clothing", "european court posture", "arches and domes", "marble", "gothic or mughal ornament"],
-    "colourism": ["lightened skin", "fair-equals-good coding", "villain darkened relative to hero", "hero lit brighter than his household for moral reasons"]
-  }
+  "weapons": {
+    "id": "SYS-WEAPONS",
+    "principle": "Indian forms. The silhouette is the tell — a European cruciform hilt destroys a frame instantly.",
+    "forms": [
+      {
+        "name": "dhanuṣ",
+        "devanagari": "धनुष्",
+        "what": "bow — recurved, wood and horn, UNSTRUNG at rest, strung only to use",
+        "class": "T"
+      },
+      {
+        "name": "bāṇa / śara",
+        "what": "arrows — back quiver, fletched, iron-tipped",
+        "class": "T"
+      },
+      {
+        "name": "khaḍga",
+        "what": "sword — Indian blade profile, leaf or straight with a broadening tip",
+        "class": "T"
+      },
+      {
+        "name": "gadā",
+        "what": "mace — heavy head on a shaft",
+        "class": "T"
+      },
+      {
+        "name": "śakti",
+        "what": "spear — long, iron head",
+        "class": "T"
+      },
+      {
+        "name": "paraśu",
+        "what": "axe — Paraśurāma's, in Bāla 15",
+        "class": "T"
+      },
+      {
+        "name": "jyā",
+        "what": "bowstring — its SOUND is a weapon in itself; Rāma twangs it and the forest empties",
+        "class": "T",
+        "note": "Textual in Bāla 25. Use it."
+      },
+      {
+        "name": "godhāṅgulitrāṇa",
+        "what": "the archer's finger guard of guana skin — Dutt names it at the departure",
+        "class": "T"
+      }
+    ],
+    "astras": {
+      "what": "Divine weapons, named in the text and given to Rāma in arc 9.",
+      "staging": "An astra is a MANTRA, not a prop. The effect is in what happens, not in a shining object in a hand.",
+      "memo": "required before any depiction"
+    },
+    "never": [
+      "longsword",
+      "crossbow",
+      "European shield",
+      "plate armour",
+      "breastplate",
+      "cruciform hilt",
+      "katana",
+      "glowing edges",
+      "sparks on impact"
+    ]
+  },
+  "objects": {
+    "id": "SYS-OBJECTS",
+    "principle": "Brass, copper, clay, wood, leaf. Everything shows use.",
+    "everyday": [
+      "brass standing oil lamps with a shallow dish and single wick",
+      "water pots (kalaśa)",
+      "offering vessels (arghya pātra)",
+      "low seats",
+      "palm-leaf",
+      "brick fire altar (vedi)",
+      "cloth bundles",
+      "grinding stones",
+      "rope"
+    ],
+    "ritual": [
+      "darbha grass",
+      "ghee in a small vessel",
+      "flowers, rice, sandal paste",
+      "conch (śaṅkha)",
+      "the sacrificial post (yūpa) — carved, wrapped in cloth, garlanded"
+    ],
+    "never": [
+      "glass",
+      "candles",
+      "lanterns",
+      "plastic sheen",
+      "machine-perfect symmetry",
+      "anything unused-looking"
+    ]
+  },
+  "landscape": {
+    "id": "SYS-LANDSCAPE",
+    "types": [
+      {
+        "name": "city",
+        "reads_as": "packed earth streets, timber and plaster buildings, water tanks, gardens within walls, rammed-earth and brick wall with timber gates"
+      },
+      {
+        "name": "river",
+        "reads_as": "wide, shallow, sandy banks, earth-and-stone ghats, timber boats"
+      },
+      {
+        "name": "cultivated land",
+        "reads_as": "fields, bunds, groves, wells"
+      },
+      {
+        "name": "dry forest",
+        "reads_as": "thorn, bare branches, hard shadow, dust. SILENT rather than lush."
+      },
+      {
+        "name": "deep forest",
+        "reads_as": "tall trees, closed canopy, green shade, still air"
+      },
+      {
+        "name": "hermitage",
+        "reads_as": "a clearing, thatched huts, a fire altar, cattle, students"
+      },
+      {
+        "name": "mountain",
+        "reads_as": "rock, scrub, cold light"
+      },
+      {
+        "name": "sea and island",
+        "reads_as": "Sundara and Yuddha — its own memo"
+      }
+    ],
+    "never": [
+      "rainforest vines where the text means dry forest",
+      "mist as atmosphere",
+      "manicured lawns",
+      "European woodland",
+      "autumn colour",
+      "conifers",
+      "anything that reads as fantasy wilderness"
+    ]
+  },
+  "animals": {
+    "id": "SYS-ANIMALS",
+    "principle": "Indian breeds, ordinary behaviour.",
+    "list": [
+      "horses — Indian breeds, smaller, not warmbloods",
+      "elephants with cloth and rope, not showy caparison",
+      "cattle everywhere, ordinary",
+      "deer, peacocks, monkeys as animals",
+      "krauñca birds (Bāla 2) — the sarus crane, and the pair matters"
+    ],
+    "never": [
+      "European draught horses",
+      "Arabian show tack",
+      "fantasy beasts where the text means an animal"
+    ]
+  },
+  "crowds": {
+    "id": "SYS-CROWDS",
+    "principle": "Individuals, always. Different ages, builds, complexions, dress conditions. A crowd reacts as several people, never as one.",
+    "never": [
+      "matched costumes",
+      "identical faces",
+      "synchronised movement",
+      "a wall of extras facing camera"
+    ]
+  },
+  "sound": {
+    "id": "SYS-SOUND",
+    "principle": "Recorded, never library. Library foley is Western foley — boots, leather, hinged doors — and audiences feel it without naming it.",
+    "palette": [
+      "bare feet on stone and packed earth",
+      "uncut cotton and silk moving",
+      "brass on brass",
+      "teak under weight",
+      "wood on sandstone",
+      "water poured",
+      "fire",
+      "a bowstring",
+      "nūpura anklets",
+      "conch",
+      "cattle at distance",
+      "dry leaves"
+    ],
+    "never": [
+      "boots",
+      "leather creak",
+      "hinged door",
+      "metal clang of European armour",
+      "library crowd walla in any language but ours"
+    ]
+  },
+  "forbidden": [
+    "European shield",
+    "European woodland",
+    "anything Mughal, Rajput-palace, Victorian or fantasy-castle",
+    "anything that glitters rather than gleams",
+    "anything that reads as fantasy wilderness",
+    "aura",
+    "autumn colour",
+    "bloom",
+    "blouse",
+    "boots",
+    "breastplate",
+    "buttons",
+    "carpets",
+    "chandeliers",
+    "coat",
+    "conifers",
+    "crossbow",
+    "cruciform hilt",
+    "day-for-night blue",
+    "diamond",
+    "domes",
+    "faceted cut gems",
+    "fog",
+    "glass",
+    "glow",
+    "glowing edges",
+    "god rays",
+    "haze",
+    "hooks",
+    "jacket",
+    "katana",
+    "lens flare",
+    "longsword",
+    "manicured lawns",
+    "marble",
+    "matched sets",
+    "minarets",
+    "mist as atmosphere",
+    "nose rings of later forms",
+    "peaked crowns",
+    "plate armour",
+    "rainforest vines where the text means dry forest",
+    "rings on every finger",
+    "sari pleated in the modern nivi style",
+    "shirt",
+    "sparks on impact",
+    "stitched bodice",
+    "teal-and-orange",
+    "temple gopurams inside a palace",
+    "thrones on high pedestals",
+    "tiaras",
+    "trousers",
+    "true arches of later vocabulary",
+    "turban of later vocabulary",
+    "waistcoat",
+    "zips"
+  ]
 }

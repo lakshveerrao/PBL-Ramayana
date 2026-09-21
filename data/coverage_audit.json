@@ -1,0 +1,97 @@
+{
+  "_scope": "Bāla 18–21, the range covered by films M1–M7. Read verse by verse against the roster.",
+  "_rule": "Nothing here is added automatically. It is audited material for the studio and the editor.",
+  "MISSING_ESSENTIAL": [
+    {
+      "what": "The sage demands a re-commitment BEFORE asking: \"be true to your promise\"",
+      "where": "18.3",
+      "why": "It is the setup of the trap. Without it M2 plays as an ambush; with it the king walks in with his eyes open.",
+      "claim": "CLM-0009 (proposed)"
+    },
+    {
+      "what": "The sage names Vasiṣṭha as someone who knows Rāma's worth, and says: if your ministers led by Vasiṣṭha agree, send him",
+      "where": "18.14–16",
+      "why": "This is WHY Vasiṣṭha speaks in M6. Without it, his intervention arrives unmotivated for a new viewer."
+    }
+  ],
+  "MISSING_USEFUL": [
+    {
+      "what": "\"Be happy with your kin, you who broke your word\" — the sage's parting sarcasm",
+      "where": "20.3",
+      "why": "⟨Bāla 20.3, GRETIL — text withheld⟩. The most devastating line in the arc, and we cut it."
+    },
+    {
+      "what": "\"Whether trained in weapons or not, the rākṣasas cannot harm him\"",
+      "where": "20.9",
+      "why": "Vasiṣṭha answers the father's exact objection from M3 (akṛtavidya). A callback the source already wrote."
+    },
+    {
+      "what": "The king offers to go WITH the army and his four sons, and says he got Rāma with difficulty at great age",
+      "where": "19.9–11",
+      "why": "Deepens the father without inventing anything."
+    },
+    {
+      "what": "The sage tells Rāma to touch water before receiving the mantras",
+      "where": "21.10",
+      "why": "A ritual gesture, specific and filmable, for M8."
+    }
+  ],
+  "DELIBERATELY_OMITTED": [
+    {
+      "what": "Rain of flowers, divine drums and conches as they depart",
+      "where": "21.4–5",
+      "why": "OMITTED BY DIRECTION, not by oversight. M7 plays the departure plain on purpose. But it IS in the text, and a knowledgeable viewer will know it. Declared here; Ask must answer it.",
+      "class": "the text has a miraculous register here that our staging chooses not to render"
+    },
+    {
+      "what": "Vasiṣṭha's account of the sage's divine weapons, the sons of Kṛśāśva",
+      "where": "20.10–18",
+      "why": "Rich but expository. Belongs to arc 9, when the weapons are actually given."
+    }
+  ],
+  "SAFE_TO_OMIT": [
+    {
+      "what": "Epithets and forms of address",
+      "where": "throughout",
+      "why": "Carried by performance, not narration."
+    }
+  ],
+  "UNVERIFIED_IN_THE_FILMS": [
+    {
+      "what": "M1: \"The king came down from his seat to meet him\"",
+      "why": "The reception is in sarga 17, which is NOT loaded. Dutt XVIII is held only as a one-passage extract. This line is currently unsourced in this workspace — treat as staging until 17 is read."
+    }
+  ],
+  "RICHNESS_OPPORTUNITIES": [
+    {
+      "detail": "⟨Bāla 21.3, GRETIL — text withheld⟩ — he smells the crown of his son's head",
+      "where": "21.3",
+      "applied": "yes, M6"
+    },
+    {
+      "detail": "hṛṣṭaromā — the sage's hair stands on end with delight at the promise",
+      "where": "18.1"
+    },
+    {
+      "detail": "⟨Bāla 18.20, GRETIL — text withheld⟩ — the king lurches from his seat",
+      "where": "18.20",
+      "applied": "direction note, M2"
+    },
+    {
+      "detail": "⟨Bāla 21.6, GRETIL — text withheld⟩ — Rāma with side-locks, carrying a bow, at the departure",
+      "where": "21.6"
+    },
+    {
+      "detail": "prahṛṣṭavadano — the king's face is joyful as he summons them",
+      "where": "21.1"
+    },
+    {
+      "detail": "⟨Bāla 21.2, GRETIL — text withheld⟩ — the mother performs the blessing rite",
+      "where": "21.2"
+    },
+    {
+      "detail": "⟨Bāla 21.9, GRETIL — text withheld⟩ — they rest the night on the Sarayū's bank",
+      "where": "21.9, 21.19"
+    }
+  ]
+}

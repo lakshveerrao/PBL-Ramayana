@@ -1,0 +1,165 @@
+{
+  "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
+  "shots": [
+    {
+      "id": "01-01",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "still, before anything",
+      "source": "generate",
+      "gate": "clear"
+    },
+    {
+      "id": "01-02",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the room notices",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-03",
+      "size": "WIDE",
+      "lens_mm": 24,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "curiosity",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-04",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "warmth, recognition",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-05",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "open, unguarded",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-06",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "low",
+      "camera_move": "locked",
+      "expression": "honouring, at ease",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-07",
+      "size": "MS",
+      "lens_mm": 50,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "open face, open hands",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-08",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "patient, unreadable",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-09",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "generous, unthinking",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-10",
+      "size": "WIDE",
+      "lens_mm": 35,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the only flicker of unease in the film",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-11",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "certainty, and no idea what it costs",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-12",
+      "size": "INSERT",
+      "lens_mm": 100,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "still receiving",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-13",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "relief, almost pleasure",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-14",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "the turn beginning",
+      "source": "generate",
+      "gate": "refused"
+    },
+    {
+      "id": "01-15",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "unguarded",
+      "source": "reuse",
+      "gate": "refused"
+    },
+    {
+      "id": "01-16",
+      "size": "MS",
+      "lens_mm": 85,
+      "height": "eye",
+      "camera_move": "locked",
+      "expression": "composed; the film ends mid-sentence",
+      "source": "reuse",
+      "gate": "refused"
+    }
+  ]
+}

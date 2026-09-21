@@ -1,52 +1,151 @@
 {
   "_generated": "GENERATED - built by tools/build_packets.py. Never hand-edit. Edit data/ or the treatment, then rebuild.",
   "shots": {
+    "03-01": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 4.0,
+      "source": "reuse"
+    },
+    "03-02": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 2.2,
+      "source": "reuse"
+    },
+    "03-03": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.9,
+      "source": "reuse"
+    },
+    "03-04": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.8,
+      "source": "reuse"
+    },
     "03-05": {
-      "film": "M3",
-      "instruction": "Lamp flame only. Two or three degrees of drift at the wick. Nothing else in frame moves. The king does not breathe visibly.",
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
       "motion": true,
-      "camera_locked": true
+      "duration_s": 2.4,
+      "source": "generate"
     },
-    "05-06": {
-      "film": "M3",
-      "instruction": "NO MOTION. The frame is absolutely still. The stillness is the effect.",
-      "motion": false,
-      "camera_locked": true,
-      "refusal_note": "This shot must refuse motion at the render layer. If it does not refuse, that is a bug in lib/render.js, not a rule to relax."
+    "03-06": {
+      "instruction": "almost imperceptible life: a lamp flame drifting. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.2,
+      "source": "generate"
     },
-    "07-02": {
-      "film": "M3",
-      "instruction": "NO MOTION. Eight seconds on a face that does not move.",
+    "03-07": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.7,
+      "source": "generate"
+    },
+    "03-08": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "03-09": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
       "motion": false,
-      "camera_locked": true
+      "duration_s": 2.6,
+      "source": "reuse"
+    },
+    "03-10": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.1,
+      "source": "generate"
+    },
+    "03-11": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "03-12": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, dust turning in the light shaft. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.4,
+      "source": "generate"
+    },
+    "03-13": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.1,
+      "source": "crop"
+    },
+    "03-14": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.0,
+      "source": "generate"
+    },
+    "03-15": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.4,
+      "source": "reuse"
+    },
+    "03-16": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "03-17": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.9,
+      "source": "generate"
+    },
+    "03-18": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.6,
+      "source": "generate"
+    },
+    "03-19": {
+      "instruction": "almost imperceptible life only. The camera does not move.",
+      "motion": true,
+      "duration_s": 2.2,
+      "source": "generate"
+    },
+    "03-20": {
+      "instruction": "almost imperceptible life: a lamp flame drifting, draped cloth settling, one slow breath. The camera does not move.",
+      "motion": true,
+      "duration_s": 3.1,
+      "source": "generate"
+    },
+    "03-21": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 1.4,
+      "source": "reuse"
+    },
+    "03-22": {
+      "instruction": "almost imperceptible life: draped cloth settling. The camera does not move.",
+      "motion": true,
+      "duration_s": 1.0,
+      "source": "generate"
+    },
+    "03-23": {
+      "instruction": "NO MOTION. Reuse or crop of an approved frame — nothing is animated on this shot.",
+      "motion": false,
+      "duration_s": 8.0,
+      "source": "reuse"
     }
   },
   "rejection_criteria": [
-    {
-      "id": "REJ.CAMERA-MOVED",
-      "test": "camera moves on a locked shot",
-      "rule": "A shot whose camera is locked must show zero camera translation or rotation."
-    },
-    {
-      "id": "REJ.EXPRESSION-CHANGED",
-      "test": "a face changes expression",
-      "rule": "Motion may not re-perform the face. The expression is set in the frame."
-    },
-    {
-      "id": "REJ.BODY-SHIFTED",
-      "test": "a body shifts position",
-      "rule": "Posture is a design fact. Motion does not restage it."
-    },
-    {
-      "id": "REJ.FRAME-ENTRY",
-      "test": "anything enters or leaves frame",
-      "rule": "Entry and exit are cuts, not motion."
-    },
-    {
-      "id": "REJ.LOOP-VISIBLE",
-      "test": "the loop is visible",
-      "rule": "A visible seam at the loop point is a rejection."
-    }
+    "the camera moves when the shot is marked locked",
+    "a face changes expression",
+    "a body shifts position",
+    "anything enters or leaves frame",
+    "the motion loops visibly"
   ],
   "rule": "A shot marked NO MOTION refuses at the render layer, in code. It is not a note for the eye."
 }

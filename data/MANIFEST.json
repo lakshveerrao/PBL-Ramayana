@@ -1,0 +1,159 @@
+{
+  "version": "1.0.6",
+  "supersedes": "1.0.5 (not modified)",
+  "status": "ARC 7 FROZEN — M1–M7 production-ready",
+  "reopened_by": "the editor (the user), 2026-09-21, to accept six claims and apply three film decisions",
+  "reopen_only_on": [
+    "new source evidence",
+    "an actual production failure",
+    "an explicit editorial decision"
+  ],
+  "generated": "2026-09-21T07:17:18+00:00",
+  "readiness": {
+    "studio_ingestion_ready": true,
+    "production_ready_by_film": {
+      "M1": {
+        "ready": true,
+        "why": "safe to render"
+      },
+      "M2": {
+        "ready": true,
+        "why": "safe to render"
+      },
+      "M3": {
+        "ready": true,
+        "why": "safe to render"
+      },
+      "M4": {
+        "ready": true,
+        "why": "safe to render"
+      },
+      "M5": {
+        "ready": true,
+        "why": "safe to render"
+      },
+      "M6": {
+        "ready": true,
+        "why": "safe to render"
+      },
+      "M7": {
+        "ready": true,
+        "why": "safe to render"
+      },
+      "M8": {
+        "ready": false,
+        "why": "PROPOSED / NOT FORENSICALLY AUDITED — Bāla 21.9–18; no treatment"
+      },
+      "M9": {
+        "ready": false,
+        "why": "PROPOSED / NOT FORENSICALLY AUDITED — Bāla 23.12–16; no treatment"
+      },
+      "M10": {
+        "ready": false,
+        "why": "PROPOSED / NOT FORENSICALLY AUDITED — Bāla 23.24–28; no treatment"
+      }
+    }
+  },
+  "scope": {
+    "forensically_audited": {
+      "ranges": [
+        "Bāla 18.1–20",
+        "Bāla 19.1–24",
+        "Bāla 20.1–9 (20.10–18 read for coverage, not used in any film)",
+        "Bāla 21.1–6"
+      ],
+      "films": [
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7"
+      ],
+      "method": "every accepted claim re-read against its verse; AI-assisted, not scholarly review"
+    },
+    "partially_audited": {
+      "films": [
+        "M1"
+      ],
+      "basis": "Dutt SECTION XVIII, held as a one-passage extract. GRETIL sarga 17 is NOT loaded.",
+      "consequence": "M1's reception staging is unverified; see films.json M1.evidence_map"
+    },
+    "loaded_but_not_audited": {
+      "ranges": [
+        "Bāla 21.7–26"
+      ],
+      "films": {
+        "M8": "Bāla 21.9–18 (the mantras on the Sarayū bank)",
+        "M9": "Bāla 23.12–16",
+        "M10": "Bāla 23.24–28"
+      },
+      "status": "claims PROPOSED; no treatment; NOT FORENSICALLY AUDITED"
+    },
+    "not_loaded": "everything outside Bāla 18–26, including sarga 17",
+    "not_claimed": [
+      "the complete Bāla Kāṇḍa",
+      "the complete Rāmāyaṇa",
+      "scholarly verification of anything"
+    ]
+  },
+  "contents": {
+    "claims": 46,
+    "accepted": 35,
+    "proposed": 11
+  },
+  "review_provenance": {
+    "claims": "AI-assisted passage checks against GRETIL and Dutt; editorial acceptance by the user. NOT scholarly review.",
+    "language": "AI language review. NOT native-speaker verified.",
+    "rights": "Recorded basis. LEGAL REVIEW RECOMMENDED."
+  },
+  "checksums": {
+    "MIGRATION-1.0.5-to-1.0.6.md": "68f8eda3f7c45d6bbe3a730459ba934185aef08f3efc7bea34c4bc88994d1c5d",
+    "app_design.json": "4a2985112a1ba1236214ab2ae45770fd919e7b9264e9b1326cd91447d76222b2",
+    "assets_expected.json": "da9c554f6f7f1b061a0cbe0176871ab2e9c679618378ed22e1624058df7fea20",
+    "authority.json": "0137b3c142478c648e34233e120b284ac054d2ff162f86ff9972c2e306f42f81",
+    "branding.json": "d8425116a3e8223dced2ee157756cfb9bffe898387be0592897dd4924e6a8760",
+    "claims.json": "2d9a5b338db494ae58d23ed470ed499a8e7f2156a07fa52cd169cff731cae297",
+    "contradictions.py": "d44db276b362d161f347d9ce907d3d669aab3d90eacde64f69f73a2d757b0aae",
+    "coverage_audit.json": "520dbe75230f3579b07d1d30c0e3cb5b4bb48d9033b3e333f89bde7ba6a95fcc",
+    "effects.json": "0dad68c2a93705e91eb80609ff870a205a2df5825d5e07bb223c94eb57c8934c",
+    "entities.json": "099b870eaf9b163dfa4583aebde5d59e2107b9bbe55450a645e4d1519da610e8",
+    "episodes.json": "dc2655d91edfdcbaa2a607b769e32b2f901dd63d51ef593d6c50fd2a6dbe4911",
+    "evidence_libraries.json": "02c5de1fe9c370763f763fb895331b32ad260ef946bdf393d853af305992586b",
+    "execution_graph.py": "9c397c3f30309320e1514fad4dc02618f764f45f7481f940ac707ed3f4d554cc",
+    "films.json": "2ec460696dd549cfefbfa7b051f113979a994bf1bac5bacbf855cebeec229d35",
+    "forensic_changelog.json": "f43358012540017ddb7754cb2d55b9eb0f39f3dbf9cd56c9684650b173782ce2",
+    "grade.json": "62afa3f6646d1f62b8e9d93646b54b929d55651f5c0dbd4ddaa2ad5662f40386",
+    "incidents.json": "fb62cb0d3f0574b7b493127132f0999159cdecf9f00010e3c0fd334a2a36bddf",
+    "kandas.json": "9be4c58f8eabefd706ab71dd87499a5faab6dee4f55e1af5a998b4091a4fcfbe",
+    "locks.json": "0e61435832d27887b8c0d134f56b45e3af48f2bea8202c9de15a8d46e1babfa6",
+    "material_world.json": "47da29baffce63a149d765fd3335efc41cd6ce161f9b44c1817abef9003ae545",
+    "memos.json": "9cf39bd5eeadee08135b2ce5874b747a71f2f127cd0549b67f4f6228cd6498ea",
+    "music.json": "fdbb42382f3bf9d8c5430ba603a182697c043a3b18be72067605d1522747486e",
+    "narration_units.py": "6f7453567c3c6bcb4644ed6a7cb874ae6850e29eb628fb542676592e5b52bb30",
+    "narrator.json": "dbc24ee06cac9917a4ef465b6d78e2be7de88a7678e71fcbf35684022aae86c3",
+    "passages.json": "b65f1e101bd6aa36b69fb10830d146d4967c739cb4544c559b9e7fd376c2429e",
+    "render_policy.json": "f9e66e3f605a6a58bca5ce07406bc1e3c273571931c2c20aace049ccd2afd6a8",
+    "restricted_index.json": "74ddd91650651b7e596d6489f9372c47422f97b5f4bcc22c75de9e9816f034ad",
+    "rhythm_policy.json": "9b0f560c189270436c1f0147e0531169d75453b8895daf9282572ee5d8ae422d",
+    "rights_policy.json": "c4388d54dcd6a7715d1c139b60f225ecb791149fdb4f33c9d58f8fe55bb41c25",
+    "scope.json": "41b4a03b74d29b5f9ea66404dac0b6091c912edf7de8d1672fed23f21bfefc3d",
+    "seed_policy.json": "eea3c3bc659552479ddfc71a288e01ce323ebc28c912a67c3f7c1cdf0b66a3c6",
+    "semantics.json": "e291840d05b6d5682746ed6946c07eacc11d20b548608fe4f10a608d164891a6",
+    "sheets.json": "626c80f4ef0bd518eacd81ba00a08188e5b0eebbac06bc35f6ed570f7ecd18d4",
+    "source_register.json": "082e2eda84f3c1f1e93162e183cd3c25a7c1a9a80fd73e7bd457e105c2c3d99d",
+    "spend.json": "6e3606e5875c5ee793d0a9b81b50d1936cb223e0776a09366800af570b1e31dc",
+    "staging.json": "c9f67ddc2108b9f50bdd1d36a710423c27ac316e62588d9879dd2069515d3f9f",
+    "threads.json": "d3e271ad8facd28653ff26627467db1dbf712b154603c46817904c5d8fe4265e",
+    "traditions.json": "70d092b91de72a1bc12b25c8891d5d0b327f6349bd26ae976047266e9c69932d",
+    "transitions.json": "584cafd5693d22dd58d77544aa3f281707a29ed829a3281d68d053885dbf00f9",
+    "treatments/M1.json": "00a77533e28a68d1a8adaaa0802f72eb2a76ce2da19202e69f655735bc696b3a",
+    "treatments/M2.json": "c50f850c8e132376c54555eae80bc89f4dbacf0438f303aa7c6381d0c4eedd62",
+    "treatments/M3.json": "ea163b4e7f26f194663e65b1cc0949daff113bb20bb971056c599947e40135ed",
+    "treatments/M4.json": "d00320d97916c3814e92b9e2889c9a51374de20f3efeb6e255298d3fdec7a990",
+    "treatments/M5.json": "9cd360d686c5936f5c605e27188e91f06e6fd3e596f90b97d5cbc9baed5fc319",
+    "treatments/M6.json": "9ea3b7c9a0875d31c8c282ed2724f30195c4c9cd0592235ff99f329d8175691d",
+    "treatments/M7.json": "e4000e65a87ae990b39191053920aa46dad2124e7d91781a2279c7e3045f3632",
+    "typography.json": "32a7dd9972b255d4e8fc4dab0dc103f01f26909ec8da597ae0cb69c9c4a70088"
+  }
+}

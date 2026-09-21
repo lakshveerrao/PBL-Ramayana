@@ -1,0 +1,13 @@
+{
+  "origin": "Proposed by the assistant in the episode template (file 32) as \"2.0s average, never metronomic\". The user approved the principle. The 1.7–2.3s BAND and its enforcement as a pass/fail validator were invented by the assistant during implementation. That turned a guideline into grammar.",
+  "status": "ADVISORY. Not a gate.",
+  "what_it_means": "Most body shots will land between one and three seconds because that is how this material cuts. It is a description of the house style, not a constraint.",
+  "explicitly_allowed": [
+    "shots under one second when a cut must land fast",
+    "shots of three to four seconds for a stretch before a reveal",
+    "holds of four to eight seconds, and longer with a continuation cue",
+    "a film whose average falls outside any band, if its story needs it"
+  ],
+  "what_would_actually_be_wrong": "metronomic cutting — every shot the same length — and a hold that is not earned.",
+  "validator_change": "The rhythm band now reports; it never fails a film."
+}

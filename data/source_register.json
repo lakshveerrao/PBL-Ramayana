@@ -1,58 +1,100 @@
 {
-  "_doc": "Every edition, translation and visual reference the project may cite. 'restricted' sources may be cited by locator but their text must never enter a payload, a generation input or an export.",
   "sources": [
     {
-      "id": "SRC.VR.CRITICAL",
-      "kind": "text",
-      "work": "Valmiki Ramayana",
-      "edition": "Critical Edition, Oriental Institute, Baroda, 1960-1975",
-      "language": "sa",
-      "licence": "in-copyright",
-      "restricted": true,
-      "restriction_reason": "Critical edition apparatus is in copyright. Locators only.",
-      "text_may_travel": false
-    },
-    {
       "id": "SRC.GRETIL.VR",
-      "kind": "text",
       "work": "Valmiki Ramayana",
-      "edition": "GRETIL digitisation (Goettingen Register of Electronic Texts in Indian Languages)",
-      "language": "sa",
-      "licence": "CC BY-NC-SA",
+      "edition": "GRETIL e-text (Tokunaga, rev. J. D. Smith)",
+      "language": "sanskrit",
+      "licence": "CC BY-NC-SA 4.0",
       "restricted": true,
-      "restriction_reason": "CC BY-NC-SA. Verse text must never enter a public payload, a generation input, or an export. Locators travel; text does not. Verification against it remains valid - verification is not redistribution.",
-      "text_may_travel": false
+      "use_policy": {
+        "display_to_viewer": false,
+        "quote_in_product": false,
+        "internal_editorial_use": true,
+        "generation_input": false,
+        "redistribute": false
+      },
+      "note": "The verses are ancient and unencumbered. This digitisation is not. Locators travel; text does not."
     },
     {
-      "id": "SRC.DUTT.1891",
-      "kind": "translation",
-      "work": "Ramayana of Valmiki",
-      "edition": "Manmatha Nath Dutt, Calcutta, 1891",
-      "language": "en",
-      "licence": "public-domain",
+      "id": "SRC.DUTT.VR",
+      "work": "Valmiki Ramayana",
+      "edition": "M. N. Dutt, English prose, Deva Press, Calcutta, 1891",
+      "language": "english",
+      "licence": "public domain (author d.1912; India life+60; USA per Project Gutenberg)",
       "restricted": false,
-      "text_may_travel": true,
-      "availability": "NOT INGESTED. No digitised copy is present in this repository and this environment's egress policy blocks the hosts that carry it. See corpus/README.md."
+      "use_policy": {
+        "display_to_viewer": true,
+        "quote_in_product": true,
+        "internal_editorial_use": true,
+        "generation_input": true,
+        "redistribute": "with attribution and the Gutenberg header"
+      },
+      "note": "Reading copies only. source_byte_equivalence false on every section."
     },
     {
-      "id": "SRC.AMARAVATI",
-      "kind": "visual",
-      "work": "Amaravati stupa relief panels",
-      "edition": "2nd-3rd c. CE, Andhra. Government Museum Chennai / British Museum holdings.",
-      "licence": "museum-photography-varies",
-      "restricted": false,
-      "text_may_travel": true,
-      "note": "Primary relief vocabulary for ornament, drape and posture. An inference citing this must name the panel, not the period."
+      "id": "SRC.TULSI",
+      "work": "Rāmcaritmānas",
+      "edition": "Rāmcaritmānas",
+      "language": "Awadhi",
+      "licence": "public domain",
+      "restricted": true,
+      "use_policy": {
+        "display_to_viewer": false,
+        "quote_in_product": false,
+        "internal_editorial_use": true,
+        "generation_input": false,
+        "redistribute": false
+      },
+      "note": "Named tradition. Never merged into the spine."
     },
     {
-      "id": "SRC.SANCHI",
-      "kind": "visual",
-      "work": "Sanchi stupa gateway reliefs",
-      "edition": "1st c. BCE - 1st c. CE, Madhya Pradesh",
-      "licence": "museum-photography-varies",
-      "restricted": false,
-      "text_may_travel": true,
-      "note": "Architecture: post-and-lintel, railing, torana. No arch, no dome, no marble."
+      "id": "SRC.RANGANATHA",
+      "work": "Ranganātha Rāmāyaṇamu",
+      "edition": "Ranganātha Rāmāyaṇamu",
+      "language": "Telugu (dvipada)",
+      "licence": "public domain",
+      "restricted": true,
+      "use_policy": {
+        "display_to_viewer": false,
+        "quote_in_product": false,
+        "internal_editorial_use": true,
+        "generation_input": false,
+        "redistribute": false
+      },
+      "note": "Named tradition. Never merged into the spine."
+    },
+    {
+      "id": "SRC.MOLLA",
+      "work": "Molla Rāmāyaṇamu",
+      "edition": "Molla Rāmāyaṇamu",
+      "language": "Telugu",
+      "licence": "public domain",
+      "restricted": true,
+      "use_policy": {
+        "display_to_viewer": false,
+        "quote_in_product": false,
+        "internal_editorial_use": true,
+        "generation_input": false,
+        "redistribute": false
+      },
+      "note": "Named tradition. Never merged into the spine."
+    },
+    {
+      "id": "SRC.KAMBAN",
+      "work": "Irāmāvatāram",
+      "edition": "Irāmāvatāram",
+      "language": "Tamil",
+      "licence": "public domain",
+      "restricted": true,
+      "use_policy": {
+        "display_to_viewer": false,
+        "quote_in_product": false,
+        "internal_editorial_use": true,
+        "generation_input": false,
+        "redistribute": false
+      },
+      "note": "Named tradition. Never merged into the spine."
     }
   ]
 }
