@@ -1,0 +1,85 @@
+{
+  "character": "VISHVAMITRA",
+  "generated": "2026-09-21T17:38:35.439Z",
+  "prompt": "Character model sheet, front view, full figure and head-and-shoulders, neutral standing, even light. 9:16 vertical. SUBJECT: an ascetic sage in his sixties, of the line of Kusika. Build: lean and physically hard - the shoulders of a man who once trained. Hair: matted and piled high in a jata, ash-grey beard. Complexion: deep warm brown, sun-weathered, ash on the skin. Dress: ochre cloth draped at the waist, a single upper cloth, bare torso otherwise. Ornament: a worn string of rudraksha, never displayed. No other ornament. Carries: a plain dark dense-wood staff, shoulder-height, worn pale at the grip, blunt and splayed at the base from years on stone. No carving, no finial. The one thing to get right: his eyes REST on what they look at. They do not search. Must be distinct from VASISHTHA at a glance: matted, ash-grey, lean, sun-dark, ochre - against combed, white, softer, undyed white. Cloth is woven, cut from the loom, and draped: antariya at the waist, uttariya over the shoulder. Never tailored, never buttoned. Ornament from the relief vocabulary - Bharhut, Sanchi, Amaravati: heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems. Faces from the real range of the subcontinent. Nose bridges, eye shapes, jaws and cheeks that vary. Pores, oil sheen, sun on skin that has lived outdoors, age in the neck and hands. Bodies are real. No gym physiques. Barefoot on stone. Never sharpen features to read noble or broaden them to read lowly. photoreal, film grain. uncut draped handloom - no stitched garment.",
+  "negative": "glow, aura, god rays, lens flare, haze, fog, bloom, dome, arch, marble, chandelier, glass window, carpet, stitched garment, shirt, coat, blouse, trousers, boots, buttons, european crown, laurel, tiara, plate armour, breastplate, longsword, crossbow, halo, blue skin, horns, fangs, cloven feet, plastic skin, airbrushed skin, lightened skin, symmetrical model face, gym physique, printed fabric, machine-even dye, faceted cut gems, modern eyewear, watch, text, letters, watermark, signature, teal and orange grade, crowd of identical faces, mist, rainforest, falling autumn leaves, a glow or aura, floating, wind in the hair, a trident, a rosary held up, a beatific smile, narrowed eyes, a shadowed face, a low menacing angle, villain coding",
+  "assembled_from": [
+    "direction/sheet-briefs.json",
+    "direction/design-decisions.json",
+    "data/render_policy.json",
+    "direction/sheet-briefs.json never list"
+  ],
+  "acceptance": [
+    "a stranger, shown the four views shuffled, says it is one person",
+    "the age reads correctly at thumbnail size",
+    "it cannot be mistaken for another principal at a glance",
+    "the cloth hangs like cloth, not like a garment",
+    "no dome, arch or marble anywhere behind",
+    "the skin is at least as deep as intended",
+    "the ornament looks like a temple relief, not a jewellery shop",
+    "a named person signs it off"
+  ],
+  "candidates": [
+    {
+      "n": 1,
+      "url": "https://v3b.fal.media/files/b/0aab5786/MyWOYsz6rsvYqoq_I5Qe1.jpg",
+      "seed": 1037879020,
+      "model_version": null
+    },
+    {
+      "n": 2,
+      "url": "https://v3b.fal.media/files/b/0aab5787/f4MF0umm9ijrvnLCw8xb7.jpg",
+      "seed": 771018946,
+      "model_version": null
+    },
+    {
+      "n": 3,
+      "url": "https://v3b.fal.media/files/b/0aab5788/j1xMmaV64aPI551HgoYWe.jpg",
+      "seed": 378272410,
+      "model_version": null
+    },
+    {
+      "n": 4,
+      "url": "https://v3b.fal.media/files/b/0aab5789/PON9R_cPD8WMNlcsbftHI.jpg",
+      "seed": 258981719,
+      "model_version": null
+    },
+    {
+      "n": 5,
+      "url": "https://v3b.fal.media/files/b/0aab578a/W9bc9xgKZOKEIFyInDmp9.jpg",
+      "seed": 1450055290,
+      "model_version": null
+    },
+    {
+      "n": 6,
+      "url": "https://v3b.fal.media/files/b/0aab578a/ur6VqNU99uGj7wRbkaknR.jpg",
+      "seed": 1295521031,
+      "model_version": null
+    },
+    {
+      "n": 7,
+      "url": "https://v3b.fal.media/files/b/0aab578b/4hpaPy_n5hfhVE2m1N5rN.jpg",
+      "seed": 572027198,
+      "model_version": null
+    },
+    {
+      "n": 8,
+      "url": "https://v3b.fal.media/files/b/0aab578c/DdJ5NEBkG6b4tEWDXAIp5.jpg",
+      "seed": 1301187586,
+      "model_version": null
+    },
+    {
+      "n": 9,
+      "url": "https://v3b.fal.media/files/b/0aab578d/8BJaPDc5mPf_O9mqYE2s5.jpg",
+      "seed": 1688867443,
+      "model_version": null
+    },
+    {
+      "n": 10,
+      "url": "https://v3b.fal.media/files/b/0aab578e/hfUVWpTfzOH1Iieg_MB_I.jpg",
+      "seed": 1061327324,
+      "model_version": null
+    }
+  ],
+  "next": "Choose ONE anchor. Generate the three other views conditioned on it, never on each other. Then approve by name."
+}

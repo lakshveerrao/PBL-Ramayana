@@ -1,7 +1,158 @@
 {
-  "rows": [],
+  "rows": [
+    {
+      "at": "2026-09-21T17:37:13.543Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:37:22.388Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-2",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:37:30.975Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-3",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:37:39.948Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-4",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:37:48.632Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-5",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:37:57.434Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-6",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:38:05.859Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-7",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:38:14.214Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-8",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:38:23.634Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-9",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    },
+    {
+      "at": "2026-09-21T17:38:35.439Z",
+      "provider": "fal",
+      "route": "sheet-anchor",
+      "model": null,
+      "label": "VISHVAMITRA/anchor-10",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.025,
+      "usd": 0.025
+    }
+  ],
   "totals": {
-    "usd": 0,
-    "calls": 0
+    "usd": 0.25,
+    "calls": 10
   }
 }
