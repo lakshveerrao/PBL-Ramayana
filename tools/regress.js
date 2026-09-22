@@ -2,6 +2,11 @@
 // Point the store at the frozen test fixture BEFORE anything imports it, so the
 // regressions never depend on whatever graph is installed in data/.
 process.env.PBL_GRAPH ??= 'tools/fixtures/graph';
+// Test uploads go to a scratch directory, never into assets/, which is where a human
+// looks at the real sheet evidence and approves from. They had been landing there for
+// some time: 1x1 GIFs named front.png, beside the actual portraits. Relative, because
+// ensureDir resolves against the repo root; gitignored, and cleared on every run.
+process.env.PBL_ASSETS ??= '.test-assets';
 // regress - behaviour, not data shape. Every regression that guards a rule pairs the
 // allowed case with the blocked one, so a rule cannot be loosened without a test noticing.
 import { read, write, treatment, clearCache, ROOT, dataDir, firstDirected } from '../lib/store.js';
@@ -1304,6 +1309,13 @@ for (const test of tests) {
   try { await test.fn(); pass++; }
   catch (e) { failures.push({ name: test.name, error: e.message }); }
 }
+// Leave nothing behind.
+try {
+  const { rmSync } = await import('node:fs');
+  const { join: j } = await import('node:path');
+  if (process.env.PBL_ASSETS === '.test-assets') rmSync(j(ROOT, '.test-assets'), { recursive: true, force: true });
+} catch { /* a leftover scratch directory is not worth failing a run over */ }
+
 console.log(`\nREGRESS - ${tests.length} regressions\n`);
 if (failures.length) {
   console.log(`  ${failures.length} FAILED\n`);

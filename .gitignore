@@ -13,3 +13,4 @@ node_modules/
 out/
 renders/
 .graph-backups/
+.test-assets/
