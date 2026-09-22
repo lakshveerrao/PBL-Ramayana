@@ -23,8 +23,8 @@ import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
 import { chain as gradeChain, grainChain, exposureTrim, trimChain, lighteningBlockedBecause } from '../lib/grade.js';
-import { sampleFace, lstar as lstarOf } from './skinsample.js';
-import { measurable as skinMeasurable, raisesSkin } from '../lib/skin.js';
+import { cheekOf } from './skinsample.js';
+import { measurable as skinMeasurable, raisesSkin, albedos as skinAlbedos, reportBandL, toleranceL } from '../lib/skin.js';
 import { chooseWindow } from './motion_film.js';
 import { execFileSync as _exec } from 'node:child_process';
 import { mkdirSync as _mkdir } from 'node:fs';
@@ -125,31 +125,54 @@ t('assembling a prompt for a memo-blocked entity refuses', async () => {
   await throws(() => assemble(fake, 'M3'), 'GateRefusal', 'a prompt was assembled for TATAKA');
 });
 
-// --- the skin sampler must find a face, and must not be fooled by a backdrop -------
-t('the skin sampler separates a face from a warm dark backdrop', () => {
-  // The first version assumed the head was in the upper third and read Vasistha's
-  // studio backdrop - hue 25, saturation 0.3, value 0.17 - as his face, calling his
-  // skin L* 14.9. Texture is what separates them, and it must never be brightness: a
-  // tool that excludes dark pixels to find a face is a colourist tool.
-  const flat = mkTestImage('color=c=#2C241F:s=240x400');       // a flat warm-dark backdrop
-  const r = sampleFace(flat);
-  ok(!r.ok, `the sampler found a "face" in a flat backdrop: ${JSON.stringify(r)}`);
+// --- the cheek is measured at the same place on a sheet and in a frame -----------
+t('a flat backdrop yields no cheek at all', () => {
+  // The whole failure this replaced: a warm dark backdrop at hue 25, saturation 0.3,
+  // value 0.17 is inside any honest skin window, and the old sampler read Vasistha's
+  // backdrop as his face at L* 14.9. A cheek placed from a detected pair of eyes cannot
+  // be supplied by a wall.
+  const flat = mkTestImage('color=c=#2C241F:s=400x600');
+  const r = cheekOf([flat])[flat];
+  ok(!r.ok, `a cheek was found in a flat backdrop: ${JSON.stringify(r)}`);
 });
-t('the skin sampler reads a textured patch in the skin band', () => {
-  const noisy = mkTestImage('color=c=#8D694C:s=240x400,noise=alls=12:allf=t+u');
-  const r = sampleFace(noisy);
-  ok(r.ok, `the sampler found nothing in a textured skin patch: ${r.reason}`);
-  const L = lstarOf(r);
-  ok(Math.abs(L - 47.35) < 6, `read L* ${L.toFixed(1)} from a patch whose albedo is L* 47.4`);
+t('every recorded albedo reproduces from the sheet it names', () => {
+  // The number in direction/skin-albedo.json is not a number somebody typed: re-reading
+  // the named view has to give it back.
+  const a = skinAlbedos();
+  if (!(a.entities ?? []).length) return;
+  const files = a.entities.map((e) => join(ROOT, 'assets', 'sheets', `SHEET.${e.entity}`, e.from_view));
+  const res = cheekOf(files);
+  for (const e of a.entities) {
+    const f = join(ROOT, 'assets', 'sheets', `SHEET.${e.entity}`, e.from_view);
+    const r = res[f];
+    ok(r?.ok, `${e.entity}: re-reading ${e.from_view} found no cheek (${r?.reason})`);
+    ok(Math.abs(r.L - e.lab_L) < 0.5, `${e.entity}: recorded L* ${e.lab_L}, re-read ${r.L}`);
+  }
+});
+t('the measurement agrees with the one the director made by hand', () => {
+  // The director measured the king's cheek on his sheet at 57.4 on 2026-09-22. If this
+  // code cannot reproduce a human's reading of the same patch, it is measuring
+  // something else.
+  const e = (skinAlbedos().entities ?? []).find((x) => x.entity === 'DASHARATHA');
+  if (!e) return;
+  ok(Math.abs(e.lab_L - 57.4) <= 1.0,
+     `the king's cheek reads ${e.lab_L} where it was measured by hand at 57.4`);
 });
 t('a lightening trim is cleared now that the sheets carry numbers', () => {
-  // The rule is not "never lighten" - the director moved the protection onto skin. What
-  // blocks is a grade op that RAISES skin, and gradecheck measures that.
   ok(skinMeasurable(), 'direction/skin-albedo.json holds no numbers');
   ok(raisesSkin(3.0, 2.0), 'a +3 L* move was not counted as raising skin');
   ok(!raisesSkin(-3.0, 2.0), 'a -3 L* move was counted as raising skin - the check is two-sided');
   ok(!raisesSkin(1.0, 2.0), 'a move inside tolerance was counted as raising skin');
 });
+t('the reporting band is wide and the grade tolerance is not', () => {
+  // Two different jobs. Ordinary lighting moves a cheek by several L*, so the frame
+  // report is banded at 10. A grade op is meant to move skin by zero, so its tolerance
+  // is a quantisation allowance.
+  ok(reportBandL() >= 5, `the frame reporting band is ${reportBandL()}`);
+  ok(toleranceL() <= 3, `the grade-op tolerance is ${toleranceL()}`);
+  ok(reportBandL() > toleranceL(), 'the frame band is no wider than the grade tolerance - they are not the same test');
+});
+
 t('the window chooser takes the busiest window for action and the quietest for subtle', () => {
   //                 quiet          busy            quiet
   const prof = [1, 1, 1, 1, 1, 9, 9, 9, 9, 9, 1, 1, 1, 1, 1];

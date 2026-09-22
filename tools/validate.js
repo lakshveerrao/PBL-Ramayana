@@ -817,15 +817,37 @@ check('grade', 'every measured skin albedo names the sheet it was read from', ()
       `${e.entity}'s albedo cites ${e.from_view}, which is not in assets/sheets/SHEET.${e.entity}/`);
   }
 });
-check('grade', 'where a sheet has several views, the albedo is the darkest', () => {
-  // "Never lighter than the approved model sheet" needs a FLOOR. Taking the brightest
-  // view would license lightening by one lamp.
+check('grade', 'the albedo comes from the head-and-shoulders view, and is a cheek', () => {
+  // The reference is the view whose face fills the most frame - the tight portrait,
+  // where a cheek has the most pixels and the least chance of catching something that
+  // is not a face. An earlier rule took the DARKEST view, as a floor for "never lighter
+  // than the approved model sheet". That is the right test for "is this face lighter
+  // than it should be" and the wrong one for "is this the same skin", which is what a
+  // frame-to-sheet comparison asks. Compare like with like.
   for (const e of skinAlbedos().entities ?? []) {
+    T(e.region === 'cheek', `${e.entity}'s albedo is a ${e.region ?? 'unnamed region'}, not a cheek`);
     if (!(e.views_L ?? []).length) continue;
-    const darkest = Math.min(...e.views_L.map((v) => v.L));
-    T(Math.abs(e.lab_L - darkest) < 0.01,
-      `${e.entity} took L* ${e.lab_L} when its darkest view is ${darkest} - a brighter view would license lightening`);
+    const tightest = e.views_L.reduce((a, x) => (x.face_fraction > a.face_fraction ? x : a));
+    T(tightest.view === e.from_view,
+      `${e.entity} took ${e.from_view} when ${tightest.view} is the head-and-shoulders view`);
   }
+});
+check('grade', 'a cheek reads the same across a sheet\'s views', () => {
+  // The test that the measurement is sound: the same cheek under different studio
+  // lighting must come back the same. A spread of several L* means the patch is
+  // wandering off the face, which is how the first attempt read a backdrop at 14.9 and
+  // a gold necklace at 68.
+  for (const e of skinAlbedos().entities ?? []) {
+    if ((e.views_L ?? []).length < 2) continue;
+    T(e.spread_L <= 3,
+      `${e.entity}'s cheek reads ${e.spread_L} L* apart across its views - the patch is not landing on the same skin`);
+  }
+});
+check('grade', 'the reporting band is the director\'s, and is not a blocking tolerance', () => {
+  const a = skinAlbedos();
+  if (!(a.entities ?? []).length) return;
+  T(a.report_band_L >= 5, `the frame reporting band is ${a.report_band_L} L* - ordinary lighting moves a cheek further than that`);
+  T(a.grade_tolerance_L <= 3, `the grade-op tolerance is ${a.grade_tolerance_L} L* - that is a licence, not a quantisation allowance`);
 });
 check('grade', 'a lightening trim is cleared on skin, never on exposure alone', () => {
   // The protection belongs on skin, not on exposure (the director, 2026-09-22): a shot

@@ -1679,10 +1679,100 @@
       },
       "estimate_usd": 0.35,
       "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:12:23.781Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-05",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:16:18.788Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-06",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:20:11.819Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-07",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:24:26.859Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-08",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:31:07.600Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-10",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:35:03.225Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-11",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
     }
   ],
   "totals": {
-    "usd": 8.3722,
-    "calls": 112
+    "usd": 10.4722,
+    "calls": 118
   }
 }
