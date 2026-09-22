@@ -1015,6 +1015,18 @@ t('a probe uses a route that would refuse - not one that answers anybody', async
      `the ElevenLabs ping fetches ${pingFetch.trim()}; /v1/voices answers 200 to anyone and proves nothing`);
 });
 
+t('the three unauthorised cases are told apart, not collapsed into two', async () => {
+  // Three different jobs for the user, all arriving as 401: nothing attached, attached
+  // in the wrong header, and the right header with a rejected key. The middle one was
+  // caught first; the third was then reported as "no credential configured", which
+  // sends the user back to a form they had already filled in correctly.
+  const el = libSrc('eleven.js');
+  ok(/invalid_authorization_header/.test(el), 'the wrong-header case is not detected');
+  ok(/invalid_api_key/.test(el), 'a rejected key is not told apart from a missing credential');
+  ok(/Nothing about the header needs changing/.test(el),
+     'the rejected-key diagnostic does not say what NOT to change');
+});
+
 t('an attached-but-misconfigured credential is not reported as a missing one', async () => {
   // The two failures look identical from a status code and are completely different
   // jobs for the user: one is "add a credential", the other is "you added it with the
