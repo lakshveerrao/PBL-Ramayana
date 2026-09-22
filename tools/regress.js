@@ -963,6 +963,23 @@ t('BLOCKED: a face-withheld character gets no portrait framing', async () => {
   }
 });
 
+t('BLOCKED: a placeholder cannot approve a sheet', async () => {
+  // Three approvals in a row arrived as "[YOUR NAME]" and then "NAME". The old check
+  // only measured length, so "NAME" would have gone into the permanent record as the
+  // person who approved every frame the sheet conditions.
+  const { looksLikePlaceholder, approveSheet } = await import('../lib/sheets.js');
+  for (const bad of ['NAME', '[YOUR NAME]', '<name>', 'your name', 'TODO', 'TBD', 'xxxx', 'approver', 'placeholder', '---', 'N/A']) {
+    ok(looksLikePlaceholder(bad), `"${bad}" was accepted as a name`);
+  }
+  for (const good of ['Laksh', 'Jo', 'R. K. Narayan', 'Anita Desai']) {
+    ok(!looksLikePlaceholder(good), `"${good}" was refused as a placeholder`);
+  }
+  // And it refuses at the door, not just in the helper.
+  let threw = null;
+  try { approveSheet('SHEET.ANY', { approver: 'NAME' }); } catch (e) { threw = e; }
+  ok(threw && /placeholder, not a name/.test(threw.message), 'approveSheet accepted a placeholder');
+});
+
 // --- places and crowds --------------------------------------------------------------
 // An entity with a look and no identity. The exemption is narrow on purpose.
 
