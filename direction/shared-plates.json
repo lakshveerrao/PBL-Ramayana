@@ -1,0 +1,82 @@
+{
+  "_doc": "The frames shared ACROSS films, from HANDOFF §7. The treatments encode reuse inside a film - reuse_of and crop_of - but eight shots are marked source=reuse with no source named at all, because the frame they reuse lives in a different film and a treatment only knows its own shots. Without this the assembler falls back to a shot's own id, finds no render, and lays down a placeholder card: the still sage, the most reused plate in the arc, would have been a placeholder in M3, M4 and M5.",
+  "_rule": "This resolves WHICH FRAME a reuse shows. It never makes a new frame, never changes a claim, and never opens a gate. A plate is generated once, in the film HANDOFF names, and every later film shows that same file - which is the point: a shifted fold in the sage's cloth across four films breaks the stillness that is the performance.",
+  "_source": "HANDOFF.md §7, 'Frames are shared across films'.",
+  "plates": [
+    {
+      "plate": "The still sage",
+      "made_in": "M2",
+      "shot": "02-03",
+      "shown_in": [
+        [
+          "M3",
+          "03-02"
+        ],
+        [
+          "M4",
+          "04-01"
+        ],
+        [
+          "M5",
+          "05-01"
+        ]
+      ]
+    },
+    {
+      "plate": "The sage's open hand",
+      "made_in": "M2",
+      "shot": "02-09",
+      "shown_in": [
+        [
+          "M3",
+          "03-03"
+        ]
+      ]
+    },
+    {
+      "plate": "The king's shock",
+      "made_in": "M2",
+      "shot": "02-18",
+      "shown_in": [
+        [
+          "M3",
+          "03-01"
+        ]
+      ]
+    },
+    {
+      "plate": "The silent king",
+      "made_in": "M3",
+      "shot": "03-20",
+      "shown_in": [
+        [
+          "M4",
+          "04-17"
+        ]
+      ]
+    },
+    {
+      "plate": "The spent king",
+      "made_in": "M5",
+      "shot": "05-16",
+      "shown_in": [
+        [
+          "M6",
+          "06-01"
+        ]
+      ]
+    },
+    {
+      "plate": "The empty doorway",
+      "made_in": "M6",
+      "shot": "06-22",
+      "shown_in": [
+        [
+          "M7",
+          "07-01"
+        ]
+      ]
+    }
+  ],
+  "_note": "HANDOFF §7 also lists M6/05 under the spent king. It needs no entry here: M6/06-05 names reuse_of=06-01, and 06-01 is listed above, so the chain resolves through it to M5/05-16. Only the eight shots that name no source at all are listed."
+}

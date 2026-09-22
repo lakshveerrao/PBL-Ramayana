@@ -17,6 +17,7 @@ import { ENDPOINTS, referenceConditioned, textToImage } from '../lib/endpoints.j
 import { endpointCost } from '../lib/cost.js';
 import { identityPolicy } from '../lib/render.js';
 import { assemble, directionOverrides } from '../lib/prompt.js';
+import { unresolvedReuses, sharedPlateFor } from '../lib/graph.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
          roomTone, memoReason, materialSays, forbiddenEverywhere } from '../lib/graph.js';
@@ -1119,6 +1120,53 @@ check('render', 'a render record separates what was sent from what merely exists
   const src = text('lib/render.js');
   T(/conditioned_on/.test(src), 'the render record does not record what was actually sent');
   T(/text_only/.test(src), 'the render record does not say when a still was generated text-only');
+});
+
+check('treatment', 'every reuse resolves to a frame that is actually made', () => {
+  // A treatment only knows its own shots, so a shot reusing a frame from another film
+  // names no source at all. HANDOFF §7 has the chains; direction/shared-plates.json
+  // records them. Unresolved, the assembler falls back to the shot's own id, finds no
+  // render and lays a placeholder - the still sage would have been a placeholder card
+  // in three films.
+  for (const u of unresolvedReuses()) {
+    T(u.resolved, `${u.film}/${u.shot} is a reuse that names no source and no shared plate resolves it`);
+    const t = treatment(u.resolved.film);
+    const src = t?.shots?.find((x) => x.id === u.resolved.shot);
+    T(src, `${u.film}/${u.shot} resolves to ${u.resolved.film}/${u.resolved.shot}, which is not in that film`);
+    T(src.source === 'generate',
+      `${u.film}/${u.shot} resolves to ${u.resolved.film}/${u.resolved.shot}, which is itself a ${src.source} - a plate must be made somewhere`);
+  }
+});
+
+check('treatment', 'no shot in any film resolves to a placeholder for want of a chain', () => {
+  // Distinct from the check above: this one follows the WHOLE chain, hops included, and
+  // proves every frame lands on a shot that is generated somewhere.
+  for (const f of read('films').films) {
+    let t; try { t = treatment(f.id); } catch { continue; }
+    for (const shot of t?.shots ?? []) {
+      let film = f.id, id = shot.reuse_of ?? shot.crop_of ?? null;
+      if (!id && shot.source !== 'generate') {
+        const sp = sharedPlateFor(f.id, shot.id);
+        if (sp) { film = sp.film; id = sp.shot; }
+      }
+      id = id ?? shot.id;
+      let hops = 0, cur = { film, id };
+      while (hops++ < 8) {
+        const tt = treatment(cur.film);
+        const ss = tt?.shots?.find((x) => x.id === cur.id);
+        if (!ss || ss.source === 'generate') break;
+        const next = ss.reuse_of ?? ss.crop_of ?? null;
+        if (next) { cur = { film: cur.film, id: next }; continue; }
+        const sp2 = sharedPlateFor(cur.film, ss.id);
+        if (!sp2) break;
+        cur = { film: sp2.film, id: sp2.shot };
+      }
+      const tt = treatment(cur.film);
+      const ss = tt?.shots?.find((x) => x.id === cur.id);
+      T(ss && ss.source === 'generate',
+        `${f.id}/${shot.id} chains to ${cur.film}/${cur.id}, which is not a generated shot`);
+    }
+  }
 });
 
 // ---------------------------------------------------------------- run
