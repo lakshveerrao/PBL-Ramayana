@@ -932,6 +932,22 @@ t('BLOCKED: a world-line replacement that no longer matches the brief refuses', 
      'the adjustment and the brief drifted apart and the replacement silently did nothing');
 });
 
+t('BLOCKED: a face-withheld character gets no portrait framing', async () => {
+  // validate caught this the first time: the portrait framing carried the word
+  // "portrait" into the plate of a character whose own never-list forbids one.
+  const sp = await import('../lib/sheetprompt.js');
+  const withheld = sp.briefs().characters.filter((c) => c.face_withheld);
+  if (!withheld.length) return;
+  const f = sp.adjustments()._framing;
+  if (!f?.with) return;
+  for (const c of withheld) {
+    const p = sp.viewPrompt(c.id, 'front').prompt;
+    ok(!p.includes(f.with.split('{shot}')[0].trim().slice(0, 30)),
+       `${c.id} withholds the face and was given the portrait framing anyway`);
+    ok(p.includes('FACE NOT SHOWN'), `${c.id} lost its face-withheld instruction`);
+  }
+});
+
 t('platecheck finds a frame with no picture in it', async () => {
   // fal bills for a black frame when its filter rejects a generation. One of ten came
   // back black and was filed as a candidate because nothing looked at the bytes.
