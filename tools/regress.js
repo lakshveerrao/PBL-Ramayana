@@ -635,9 +635,14 @@ t('an override replaces the phrase it names', () => {
   ok(r.applied.length === 1 && r.applied[0].reason, 'the override was applied without recording why');
 });
 t('an override leaves other shots alone', () => {
-  const r = applyOverrides('01-01', 'a wide shot with a sleeve in it');
-  ok(r.text.includes('sleeve'), 'an override for 07-06 altered a different shot');
+  // Deliberately a shot id no override names. This used 01-01, which has since acquired
+  // a framing override of its own - the invariant did not change, the example did.
+  const r = applyOverrides('99-99', 'a wide shot with a sleeve in it');
+  ok(r.text.includes('sleeve'), 'an override for another shot altered this one');
   ok(r.applied.length === 0, 'an override reported itself applied to the wrong shot');
+  // And a shot that DOES have one gets it, so the test above is not passing vacuously.
+  const mine = applyOverrides('01-01', 'wide shot, 24mm. photoreal, film grain.');
+  ok(mine.applied.length === 1 && /OUT OF FRAME/.test(mine.text), '01-01 did not receive its framing override');
 });
 t('an override that claims to change truth is refused', async () => {
   const o = directionOverrides();

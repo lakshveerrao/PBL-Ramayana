@@ -755,7 +755,13 @@ check('prompt', 'every direction override declares a reason and changes no truth
   const o = directionOverrides();
   for (const kind of ['prompt_overrides', 'action_overrides']) {
     for (const x of o[kind] ?? []) {
-      T(x.shot && x.find && x.replace !== undefined, `an override in ${kind} is incomplete`);
+      // An override either REPLACES text in the package's prompt, or APPENDS a
+      // constraint the package never stated. One or the other, never neither.
+      const replaces = Boolean(x.find) && x.replace !== undefined;
+      const appends = Boolean(x.append);
+      T(x.shot && (replaces || appends),
+        `an override in ${kind} is incomplete - it neither replaces (find + replace) nor appends`);
+      T(!(replaces && appends), `override for ${x.shot} both replaces and appends - split it into two, so each is readable on its own`);
       T(x.reason && x.reason.length > 20, `override for ${x.shot} states no reason`);
       T(x.changes_truth === false, `override for ${x.shot} does not declare changes_truth: false - direction may never change what is true`);
       T(x.class === 'creative', `override for ${x.shot} is classed ${x.class}, not creative`);
@@ -770,6 +776,12 @@ check('prompt', 'every direction override still finds its target', () => {
     const shot = t.shots.find((s) => s.id === x.shot);
     T(shot, `override names shot ${x.shot}, which is not in ${x.film}`);
     const raw = shot.image_prompt ?? '';
+    // An APPEND has nothing to find: it adds a constraint the package never stated, so
+    // it cannot be a no-op and there is no target to drift away from.
+    if (x.append) {
+      T(String(x.append).trim().length > 0, `override for ${x.shot} appends nothing`);
+      continue;
+    }
     const hits = [x.find, ...(x.also_find ?? [])].some((f) => raw.includes(f));
     T(hits || raw.includes(x.replace), `override for ${x.shot} matches nothing - the package may have changed and the override is now a silent no-op`);
   }

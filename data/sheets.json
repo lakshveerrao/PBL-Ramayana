@@ -3,7 +3,7 @@
     {
       "id": "SHEET.DASHARATHA",
       "entity": "DASHARATHA",
-      "approved": false,
+      "approved": true,
       "files": [
         "assets/sheets/SHEET.DASHARATHA/front.png",
         "assets/sheets/SHEET.DASHARATHA/in_world.png"
@@ -18,7 +18,7 @@
         "distance": false,
         "expression": false
       },
-      "uploaded_at": "2026-09-22T10:43:42.699Z",
+      "uploaded_at": "2026-09-22T12:36:14.926Z",
       "twenty_frame_test": {
         "evidence_held": [],
         "outstanding": [
@@ -27,20 +27,38 @@
           "distance",
           "expression"
         ]
-      }
+      },
+      "approved_by": "Venkat",
+      "approved_at": "2026-09-22T12:36:14.927Z"
     },
     {
       "id": "SHEET.VISHVAMITRA",
       "entity": "VISHVAMITRA",
-      "approved": false,
-      "files": [],
-      "hashes": [],
+      "approved": true,
+      "files": [
+        "assets/sheets/SHEET.VISHVAMITRA/front.png"
+      ],
+      "hashes": [
+        "e7539ff036c32cb7f0fa29f81b52b078216af9df3122ce044562ac09008bd578"
+      ],
       "axes": {
         "angle": false,
         "lighting": false,
         "distance": false,
         "expression": false
-      }
+      },
+      "uploaded_at": "2026-09-22T12:36:14.945Z",
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
+      },
+      "approved_by": "Venkat",
+      "approved_at": "2026-09-22T12:36:14.945Z"
     },
     {
       "id": "SHEET.RAMA",
@@ -71,14 +89,12 @@
     {
       "id": "SHEET.VASISHTHA",
       "entity": "VASISHTHA",
-      "approved": false,
+      "approved": true,
       "files": [
-        "assets/sheets/SHEET.VASISHTHA/front.png",
-        "assets/sheets/SHEET.VASISHTHA/in_world.png"
+        "assets/sheets/SHEET.VASISHTHA/front.jpg"
       ],
       "hashes": [
-        "7833052d4192382bd56d5d9d171a55572958bde8f5c77a08b12d37f436013c52",
-        "074887ae20d956b1db5b7781e6db978ba08079809b96718fd00327b15e12036f"
+        "f18b0b7349a006239723ca8da7d228a9b4b790438dbc6e0376440157e2cf7259"
       ],
       "axes": {
         "angle": false,
@@ -86,7 +102,7 @@
         "distance": false,
         "expression": false
       },
-      "uploaded_at": "2026-09-22T10:43:43.564Z",
+      "uploaded_at": "2026-09-22T12:36:14.948Z",
       "twenty_frame_test": {
         "evidence_held": [],
         "outstanding": [
@@ -95,7 +111,9 @@
           "distance",
           "expression"
         ]
-      }
+      },
+      "approved_by": "Venkat",
+      "approved_at": "2026-09-22T12:36:14.948Z"
     }
   ],
   "_twenty_frame_spec": {

@@ -2,18 +2,22 @@
   "_doc": "References for entities that carry a look but not an identity: places and crowds. The studio has always conditioned a shot on the SHEETS of the people in it. A hall and a body of ministers have no face to lock and no model sheet, and until now that meant they contributed nothing to a generation and - for the crowd - blocked the gate outright.",
   "_rule": "These are NOT sheets and never become them. The consistency gate binds on PEOPLE and must keep binding only on people; nothing here clears a principal or stands in for one. A reference here changes how a shot is DRAWN, never who is allowed in it.",
   "_source": "references/court/README.md, chosen by the user on 2026-09-22 from OpenAI candidates.",
-
   "entities": {
     "SABHA": {
       "kind": "place",
-      "files": ["references/court/court_hall.png"],
+      "files": [
+        "references/court/court_hall.png"
+      ],
       "applies_to": "every hall shot, M1-M7",
       "why": "one hall across seven films. Lattice windows on the LEFT wall only - the key light is frame-left, and a candidate with windows on both walls was rejected for it.",
       "carries": "the throne dais, the sun disc, the chamara attendants, the guards"
     },
     "COURT": {
       "kind": "crowd",
-      "files": ["references/court/court_row_left.png", "references/court/court_row_right.png"],
+      "files": [
+        "references/court/court_row_left.png",
+        "references/court/court_row_right.png"
+      ],
       "applies_to": "every shot containing COURT",
       "why": "a crowd cannot have a model sheet. These two plates are the court, and no minister needs one of his own.",
       "rules": [
@@ -23,5 +27,26 @@
         "If a single minister is ever seen close, condition that shot on one chosen face from the row plates, so he stays the same man if seen again."
       ]
     }
+  },
+  "_approval": {
+    "approved_by": "Venkat",
+    "approved_at": "2026-09-22T12:36:14.907Z",
+    "files": [
+      {
+        "entity": "SABHA",
+        "file": "references/court/court_hall.png",
+        "sha256": "fee07993f82d644654d5ac318b65bd5608e70699f3ae663a459c69810061df4f"
+      },
+      {
+        "entity": "COURT",
+        "file": "references/court/court_row_left.png",
+        "sha256": "ee560cd00a6baad9447288941de44a5fd24e5769d1729673a9090d0030a6b86b"
+      },
+      {
+        "entity": "COURT",
+        "file": "references/court/court_row_right.png",
+        "sha256": "28a15cd7cf8bc94fcf3eb6ca129b6f109fc4c0fe5b98c88e2a6e3dd0b8a59508"
+      }
+    ]
   }
 }

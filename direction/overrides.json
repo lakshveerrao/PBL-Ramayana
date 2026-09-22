@@ -16,6 +16,24 @@
       "class": "creative",
       "changes_truth": false,
       "authority": "directing packs, M7 pack section 8 - the one stale note that affects a prompt"
+    },
+    {
+      "shot": "01-01",
+      "film": "M1",
+      "append": "FRAMING: the throne and the dais are OUT OF FRAME. Hold on the lattice light falling across the stone floor and the timber posts. No throne, no dais, no people.",
+      "reason": "The throne must not be seen before the king rises. Venkat, 2026-09-22: he is ON the throne until 01-04 (he rises) and steps down at 01-05; from 01-05 the throne behind them is empty, which 01-07's own action line already says - 'two men on the same level, the empty throne behind'. He is back on it in M2 and leaves it for good at M3/05. The first render of 01-03 showed a wide hall with an EMPTY dais, which would spend film 3's emptying before film 1 has finished. Reframing costs nothing; seating him in shots he is not in would be inventing a presence.",
+      "class": "creative",
+      "changes_truth": false,
+      "authority": "the director, 2026-09-22; and the treatment's own standing rule that the throne is occupied in films 1-2"
+    },
+    {
+      "shot": "01-03",
+      "film": "M1",
+      "append": "FRAMING: the throne and the dais are OUT OF FRAME. Frame a ROW of ministers along one wall, close, turning their heads toward the entrance at frame-left - as in the row reference plates. The camera is level with them and the far end of the hall is not seen.",
+      "reason": "The throne must not be seen before the king rises. Venkat, 2026-09-22: he is ON the throne until 01-04 (he rises) and steps down at 01-05; from 01-05 the throne behind them is empty, which 01-07's own action line already says - 'two men on the same level, the empty throne behind'. He is back on it in M2 and leaves it for good at M3/05. The first render of 01-03 showed a wide hall with an EMPTY dais, which would spend film 3's emptying before film 1 has finished. Reframing costs nothing; seating him in shots he is not in would be inventing a presence.",
+      "class": "creative",
+      "changes_truth": false,
+      "authority": "the director, 2026-09-22"
     }
   ],
   "action_overrides": [
@@ -65,5 +83,11 @@
       "at_s_was": 12.4,
       "at_s": "the start of the cue shot"
     }
-  ]
+  ],
+  "_continuity_correction": {
+    "what": "The treatment's standing rule reads 'The throne is occupied in films 1-2 and empty from film 3 onward.' Inside M1 that is slightly off.",
+    "correct": "Occupied until 01-04, when he rises. He steps down at 01-05, and from 01-05 the throne behind them is empty - 01-07's action line says so. Occupied again in M2. Empty for good from M3/05.",
+    "by": "Venkat, 2026-09-22",
+    "affects": "framing only. No claim, locator, attribution or gate moves."
+  }
 }
