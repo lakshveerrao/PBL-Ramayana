@@ -4,13 +4,29 @@
       "id": "SHEET.DASHARATHA",
       "entity": "DASHARATHA",
       "approved": false,
-      "files": [],
-      "hashes": [],
+      "files": [
+        "assets/sheets/SHEET.DASHARATHA/front.png",
+        "assets/sheets/SHEET.DASHARATHA/in_world.png"
+      ],
+      "hashes": [
+        "7405b990641696aa9af03c442f4dab3a97266193ea9c1d1ad0b0f197300c0221",
+        "2a2a8dd6f2556bffaab6be3c77201f4ba264004b2ca5f37158436b12ee088d7c"
+      ],
       "axes": {
         "angle": false,
         "lighting": false,
         "distance": false,
         "expression": false
+      },
+      "uploaded_at": "2026-09-22T07:42:45.381Z",
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
       }
     },
     {
@@ -56,13 +72,29 @@
       "id": "SHEET.VASISHTHA",
       "entity": "VASISHTHA",
       "approved": false,
-      "files": [],
-      "hashes": [],
+      "files": [
+        "assets/sheets/SHEET.VASISHTHA/front.png",
+        "assets/sheets/SHEET.VASISHTHA/in_world.png"
+      ],
+      "hashes": [
+        "7833052d4192382bd56d5d9d171a55572958bde8f5c77a08b12d37f436013c52",
+        "074887ae20d956b1db5b7781e6db978ba08079809b96718fd00327b15e12036f"
+      ],
       "axes": {
         "angle": false,
         "lighting": false,
         "distance": false,
         "expression": false
+      },
+      "uploaded_at": "2026-09-22T07:42:45.470Z",
+      "twenty_frame_test": {
+        "evidence_held": [],
+        "outstanding": [
+          "angle",
+          "lighting",
+          "distance",
+          "expression"
+        ]
       }
     }
   ],

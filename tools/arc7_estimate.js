@@ -63,8 +63,11 @@ console.log(`  PHASE E  assembly                         ${usd(0).padStart(9)}  
 console.log(`\n  TOTAL, phases A-D                        ${usd(phaseA + phaseB + phaseC + phaseD).padStart(9)}`);
 console.log(`\n  VERIFIED: the per-token prices (OpenAI's published table, 2026-09-22), the shot and`);
 console.log(`  reference counts (the installed graph), the narration character count.`);
-console.log(`  NOT VERIFIED: how many output tokens one ${openaiImageCost({ model, quality: QUALITY }).size} image costs. It is scaled by area`);
-console.log(`  from gpt-image-1's published count and could be wrong in either direction. ONE real`);
-console.log(`  generation returns the exact number in \`usage\` and settles it.`);
+console.log(`  MEASURED: the image token counts, from real responses at quality=auto on 2026-09-22.`);
+console.log(`  They replaced a scaled guess that was eleven times too high - $0.29 an image against`);
+console.log(`  the measured $0.03. Scaling gpt-image-1's published counts by pixel area was simply`);
+console.log(`  not how this model prices an image.`);
+console.log(`  NOT MEASURED: quality=high, which is what the finished stills will use. It is priced`);
+console.log(`  here as auto, so PHASE A and B could both rise. One high-quality image settles it.`);
 console.log(`  Motion is fal's list price for a ~3s clip; the model is chosen by test at Phase C.`);
 console.log(`  Retries are not included: a rejected candidate costs the same as an accepted one.\n`);

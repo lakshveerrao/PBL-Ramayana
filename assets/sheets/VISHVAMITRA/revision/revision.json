@@ -1,0 +1,76 @@
+{
+  "character": "VISHVAMITRA",
+  "generated": "2026-09-22T07:45:54.864Z",
+  "conditioned_on": "references/codex-portraits/01_Visvamitra_Head_Shoulders.png",
+  "change": "Seated cross-legged on a black antelope skin, spine straight, the full figure in frame. His expression is composed and commanding: the eyes at rest, the brow smooth and level, the mouth easy. This is the still sage, used in fourteen shots - design him for stillness. Keep the same man exactly: the same face, the same jata bun, the same saffron cloth, the same rudraksa, the same staff and kamandalu, the same warm light on a plain dark ground.",
+  "why": "the still sage carries 14 shots across four films; the original is scowling, which is his M5 anger and not his M1 composure",
+  "model": "gpt-image-2",
+  "prompt": "Seated cross-legged on a black antelope skin, spine straight, the full figure in frame. His expression is composed and commanding: the eyes at rest, the brow smooth and level, the mouth easy. This is the still sage, used in fourteen shots - design him for stillness. Keep the same man exactly: the same face, the same jata bun, the same saffron cloth, the same rudraksa, the same staff and kamandalu, the same warm light on a plain dark ground.\n\nThe subject, unchanged from the reference image: A formal portrait in the recognisable mythological register, lit by one warm light that finds the subject first, against a plain dark backdrop: front view, full figure and head-and-shoulders, standing straight and still, evenly exposed. Composed, still, and made to honour its subject. 9:16 vertical. SUBJECT: an ascetic sage in his sixties, of the line of Kusika. Build: lean and physically hard - the shoulders of a man who once trained. Hair: matted and piled high in a jata, ash-grey beard. Complexion: deep warm brown, sun-weathered, ash on the skin. Dress: ochre cloth draped at the waist, a single upper cloth, bare torso otherwise. Ornament: a worn string of rudraksha, never displayed. No other ornament. Carries: a plain dark dense-wood staff, shoulder-height, worn pale at the grip, blunt and splayed at the base from years on stone. No carving, no finial. The one thing to get right: his eyes REST on what they look at. They do not search. Must be distinct from VASISHTHA at a glance: matted, ash-grey, lean, sun-dark, ochre - against combed, white, softer, undyed white. Cloth is woven, cut from the loom, and draped: antariya at the waist, uttariya over the shoulder. Never tailored, never buttoned. Any ornament a character wears comes from the relief vocabulary - Bharhut, Sanchi, Amaravati: heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems. A character whose dress names no ornament wears none. Faces from the real range of the subcontinent. Nose bridges, eye shapes, jaws and cheeks that vary. Pores, oil sheen, sun on skin that has lived outdoors, age in the neck and hands. Bodies are real. No gym physiques. Barefoot on stone. Never sharpen features to read noble or broaden them to read lowly. photoreal, film grain. uncut draped handloom - no stitched garment.",
+  "candidates": [
+    {
+      "n": 1,
+      "file": "revision-01.png",
+      "sha256": "10d3016b3e3258661583136a8a578f3030a0782a17e9d89aec9c019440b64a0f",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2115,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 579
+        },
+        "output_tokens": 367,
+        "output_tokens_details": {
+          "image_tokens": 367,
+          "text_tokens": 0
+        },
+        "total_tokens": 2482
+      },
+      "revised_prompt": null
+    },
+    {
+      "n": 2,
+      "file": "revision-02.png",
+      "sha256": "31ecbaa057e08e051749590a2cf8a148c94d27a2a723eb42cd341e2e888aee35",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2115,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 579
+        },
+        "output_tokens": 157,
+        "output_tokens_details": {
+          "image_tokens": 157,
+          "text_tokens": 0
+        },
+        "total_tokens": 2272
+      },
+      "revised_prompt": null
+    },
+    {
+      "n": 3,
+      "file": "revision-03.png",
+      "sha256": "e7539ff036c32cb7f0fa29f81b52b078216af9df3122ce044562ac09008bd578",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2115,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 579
+        },
+        "output_tokens": 157,
+        "output_tokens_details": {
+          "image_tokens": 157,
+          "text_tokens": 0
+        },
+        "total_tokens": 2272
+      },
+      "revised_prompt": null
+    }
+  ],
+  "approved": false,
+  "next": "A named human approves. Until then the consistency gate stays shut for this character."
+}
