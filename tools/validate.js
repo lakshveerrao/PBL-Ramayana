@@ -17,7 +17,7 @@ import { ENDPOINTS, referenceConditioned, textToImage } from '../lib/endpoints.j
 import { endpointCost } from '../lib/cost.js';
 import { identityPolicy } from '../lib/render.js';
 import { assemble, directionOverrides, statesItsFrame } from '../lib/prompt.js';
-import { gradeTrims } from '../lib/grade.js';
+import { gradeTrims, lighteningBlockedBecause } from '../lib/grade.js';
 import { unresolvedReuses, sharedPlateFor } from '../lib/graph.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
@@ -753,12 +753,19 @@ check('prompt', 'no prompt describes cloth that is stitched', () => {
   }
   T(offenders.length === 0, `cloth described as stitched: ${offenders.join(', ')}`);
 });
-check('grade', 'no exposure trim lightens a frame', () => {
-  // Lightening is the colourism defect the grade exists to prevent. A continuity
-  // argument does not outrank it: bring the brighter shot down, never lift the darker.
+check('grade', 'a lightening trim is cleared on skin, never on exposure alone', () => {
+  // The protection belongs on skin, not on exposure (the director, 2026-09-22): a shot
+  // can be genuinely too dark, and lifting it is allowed when the skin check clears it.
+  // But the skin check has to be LOOKING. While skin is governed by policy and carries
+  // no numbers, it is not, so a lightening trim cannot be cleared by anything.
   for (const t of gradeTrims().trims ?? []) {
-    T(typeof t.gain === 'number' && t.gain > 0 && t.gain <= 1,
-      `trim ${t.film}/${t.shot} has gain ${t.gain} - a trim may only darken`);
+    T(typeof t.gain === 'number' && t.gain > 0, `trim ${t.film}/${t.shot} has gain ${t.gain}`);
+    if (t.gain <= 1) continue;
+    let shot = null;
+    try { shot = treatment(t.film).shots.find((x) => x.id === t.shot); } catch { /* named below */ }
+    const why = lighteningBlockedBecause(shot);
+    T(!why, `trim ${t.film}/${t.shot} lightens, and ${why}`);
+    T(t.gradecheck_passed_on_skin, `trim ${t.film}/${t.shot} lightens without recording that gradecheck passed on skin`);
   }
 });
 check('grade', 'every exposure trim names a real shot, a reason and an authority', () => {
@@ -780,7 +787,9 @@ check('grade', 'an exposure trim is measured, not estimated', () => {
       `trim ${t.film}/${t.shot} records no measurement`);
     T(Math.abs(m.after_yavg - m.target_yavg) <= 2,
       `trim ${t.film}/${t.shot} lands at ${m.after_yavg} against a target of ${m.target_yavg}`);
-    T(m.after_yavg < m.before_yavg, `trim ${t.film}/${t.shot} did not darken anything`);
+    T(m.after_yavg !== m.before_yavg, `trim ${t.film}/${t.shot} moved nothing`);
+    T((t.gain < 1) === (m.after_yavg < m.before_yavg),
+      `trim ${t.film}/${t.shot} has gain ${t.gain} but measured ${m.before_yavg} -> ${m.after_yavg} - the gain and the measurement disagree about which way it went`);
     T(m.colour_held, `trim ${t.film}/${t.shot} never checked that colour held`);
   }
 });

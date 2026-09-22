@@ -43,6 +43,15 @@
    "class": "creative",
    "changes_truth": false,
    "authority": "the treatment's own action line for 02-03, 'seated, level, unhurried'"
+  },
+  {
+   "shot": "01-10",
+   "film": "M1",
+   "append": "Vasiṣṭha is WATCHING, and nothing more: attentive, unreadable, at ease. Not uneasy, not troubled, not knowing.",
+   "reason": "The treatment's expression field for 01-10 reads 'the only flicker of unease in the film'. The M1 directing pack strikes it outright: 'The treatment calls this the only flicker of unease, which is foreshadowing, and M1 forbids foreshadowing. He is watching. That is all.' The pack's own story intent says M1 must play completely open - 'the horror arrives retroactively, in M2, and only if M1 refuses to hint at it'. This stopped being only a performance note when the studio began appending a shot's expression to its image prompt: the frozen field would put foreshadowing into the frame itself.",
+   "class": "creative",
+   "changes_truth": false,
+   "authority": "the M1 directing pack, section B, which wins on performance and framing intent"
   }
  ],
  "action_overrides": [

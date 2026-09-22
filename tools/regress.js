@@ -22,7 +22,7 @@ import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder
 import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
-import { chain as gradeChain, grainChain, exposureTrim, trimChain } from '../lib/grade.js';
+import { chain as gradeChain, grainChain, exposureTrim, trimChain, lighteningBlockedBecause } from '../lib/grade.js';
 import { plan as assemblePlan } from '../lib/assemble.js';
 import { reconcile, parseJson, briefFor } from '../lib/direct.js';
 import { checkNarration } from '../lib/register.js';
@@ -120,9 +120,29 @@ t('an exposure trim below 1 builds a filter', () => {
   const r = f.match(/r='([^']+)'/)[1], g = f.match(/g='([^']+)'/)[1], b = f.match(/b='([^']+)'/)[1];
   ok(r === g && g === b, 'the three channels are not moved identically - that is a colour move');
 });
-t('an exposure trim that would LIGHTEN is refused', () => {
-  throws(() => exposureTrim(1.2), 'Error', 'a trim was allowed to lighten a frame');
-  throws(() => exposureTrim(1.0001), 'Error', 'a trim was allowed to lighten a frame');
+t('a lightening trim builds a filter - the protection is not on exposure', () => {
+  // The director's rule: a shot can be genuinely too dark, and the protection belongs
+  // on skin, not on exposure. So the maths itself refuses nothing above 1.
+  ok(/^lutrgb=/.test(exposureTrim(1.2)), 'a lightening trim was refused by the maths');
+});
+t('a lightening trim is cleared where skin carries numbers', () => {
+  // The fixture graph locks a skin albedo per entity, so the check can see a face.
+  const locks = read('locks').locks;
+  ok(lighteningBlockedBecause({ entities: ['DASARATHA'] }, locks) === null,
+     'a lightening trim was blocked on a graph whose skin IS measurable');
+});
+t('a lightening trim is refused where skin is governed by policy alone', () => {
+  // The installed v1.0.6 graph is this case: gradecheck prints NOT MEASURED and
+  // cutcheck prints "(no principal)" on every shot. A check that is not looking cannot
+  // clear anything, and the refusal has to say that is why - not that lightening is
+  // banned, which it is not.
+  const policyOnly = [{ id: 'LOCK.SKIN.POLICY', kind: 'skin_policy', rule: 'Never lighter than the approved model sheet.' }];
+  const why = lighteningBlockedBecause({ entities: ['DASARATHA'] }, policyOnly);
+  ok(why, 'a lightening trim was cleared by a skin check that measures nothing');
+  ok(/NOT MEASURED|no numbers|not looking|looking/i.test(why),
+     `the refusal does not say the check is missing: ${why}`);
+  ok(!/forbidden|never lighten|not allowed/i.test(why),
+     `the refusal reads as a ban on lightening rather than a missing check: ${why}`);
 });
 t('a trim of exactly 1 is nothing, not a filter', () => {
   ok(exposureTrim(1) === null, 'a no-op trim built a filter anyway');

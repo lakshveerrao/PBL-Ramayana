@@ -1439,10 +1439,160 @@
       },
       "estimate_usd": 0.0257,
       "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T16:58:54.481Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/wan/v2.2-a14b/image-to-video",
+      "label": "M1/01-04",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.1,
+      "usd": 0.1
+    },
+    {
+      "at": "2026-09-22T17:00:06.541Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/wan/v2.2-a14b/image-to-video",
+      "label": "M1/01-13",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.1,
+      "usd": 0.1
+    },
+    {
+      "at": "2026-09-22T17:01:18.355Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/wan/v2.2-a14b/image-to-video",
+      "label": "M1/01-02",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.1,
+      "usd": 0.1
+    },
+    {
+      "at": "2026-09-22T17:02:53.075Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-04",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T17:05:07.293Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/minimax/hailuo-02/standard/image-to-video",
+      "label": "M1/01-04",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.27,
+      "usd": 0.27
+    },
+    {
+      "at": "2026-09-22T17:08:23.165Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/kling-video/v1.6/standard/image-to-video",
+      "label": "M1/01-04",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.23,
+      "usd": 0.23
+    },
+    {
+      "at": "2026-09-22T17:09:19.888Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-13",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T17:11:02.477Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/minimax/hailuo-02/standard/image-to-video",
+      "label": "M1/01-13",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.27,
+      "usd": 0.27
+    },
+    {
+      "at": "2026-09-22T17:14:01.934Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/kling-video/v1.6/standard/image-to-video",
+      "label": "M1/01-13",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.23,
+      "usd": 0.23
+    },
+    {
+      "at": "2026-09-22T17:14:58.265Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-02",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
     }
   ],
   "totals": {
-    "usd": 4.1222,
-    "calls": 96
+    "usd": 6.4722,
+    "calls": 106
   }
 }

@@ -17,7 +17,9 @@
     "typecheck": "NODE_USE_ENV_PROXY=1 node tools/typecheck.js",
     "gradecheck": "NODE_USE_ENV_PROXY=1 node tools/gradecheck.js",
     "cutcheck": "NODE_USE_ENV_PROXY=1 node tools/cutcheck.js",
-    "assemble": "NODE_USE_ENV_PROXY=1 node tools/assemble.js"
+    "assemble": "NODE_USE_ENV_PROXY=1 node tools/assemble.js",
+    "audition": "NODE_USE_ENV_PROXY=1 node tools/audition.js",
+    "motiontest": "NODE_USE_ENV_PROXY=1 node tools/motiontest.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.127.0",
