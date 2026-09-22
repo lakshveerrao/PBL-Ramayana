@@ -8,16 +8,16 @@
     "node": ">=20"
   },
   "scripts": {
-    "validate": "node tools/validate.js",
-    "regress": "node tools/regress.js",
-    "dryrun": "node tools/dryrun.js",
-    "preflight": "node tools/preflight.js",
-    "start": "node server.js",
-    "check": "node tools/validate.js && node tools/regress.js && node tools/typecheck.js && node tools/gradecheck.js",
-    "typecheck": "node tools/typecheck.js",
-    "gradecheck": "node tools/gradecheck.js",
-    "cutcheck": "node tools/cutcheck.js",
-    "assemble": "node tools/assemble.js"
+    "validate": "NODE_USE_ENV_PROXY=1 node tools/validate.js",
+    "regress": "NODE_USE_ENV_PROXY=1 node tools/regress.js",
+    "dryrun": "NODE_USE_ENV_PROXY=1 node tools/dryrun.js",
+    "preflight": "NODE_USE_ENV_PROXY=1 node tools/preflight.js",
+    "start": "NODE_USE_ENV_PROXY=1 node server.js",
+    "check": "NODE_USE_ENV_PROXY=1 node tools/validate.js && NODE_USE_ENV_PROXY=1 node tools/regress.js && NODE_USE_ENV_PROXY=1 node tools/typecheck.js && NODE_USE_ENV_PROXY=1 node tools/gradecheck.js",
+    "typecheck": "NODE_USE_ENV_PROXY=1 node tools/typecheck.js",
+    "gradecheck": "NODE_USE_ENV_PROXY=1 node tools/gradecheck.js",
+    "cutcheck": "NODE_USE_ENV_PROXY=1 node tools/cutcheck.js",
+    "assemble": "NODE_USE_ENV_PROXY=1 node tools/assemble.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.127.0",

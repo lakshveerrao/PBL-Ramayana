@@ -14,15 +14,7 @@ import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifies
 import { existsSync, readdirSync, readFileSync, mkdirSync, copyFileSync, writeFileSync, rmSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 
-const REQUIRED = {
-  films: ['films'], claims: ['claims'], entities: ['entities'], locks: ['locks'],
-  sheets: ['sheets'], memos: ['memos'], passages: ['passages'],
-  source_register: ['sources'], kandas: ['kandas'], episodes: ['episodes'],
-  material_world: [], typography: ['scripts'], grade: [], effects: ['shots'],
-  transitions: ['joins'], narrator: ['languages'], music: [],
-  evidence_libraries: ['libraries'], traditions: ['traditions'], spend: ['rows'],
-};
-const OPTIONAL = ['threads', 'incidents', 'app_design'];
+import { REQUIRED, OPTIONAL, READ_IF_PRESENT } from '../lib/graphcontract.js';
 
 const dir = process.argv[2];
 const install = process.argv.includes('--install');
@@ -56,10 +48,11 @@ for (const [name, keys] of Object.entries(REQUIRED)) {
   }
 }
 for (const o of OPTIONAL) if (existsSync(join(src, `${o}.json`))) notes.push(`optional file present: ${o}.json`);
+for (const o of READ_IF_PRESENT) if (existsSync(join(src, `${o}.json`))) notes.push(`${o}.json present - the studio reads it`);
 
 // Anything extra the studio does not know about.
 if (existsSync(src)) {
-  const known = new Set([...Object.keys(REQUIRED), ...OPTIONAL].map((n) => `${n}.json`));
+  const known = new Set([...Object.keys(REQUIRED), ...OPTIONAL, ...READ_IF_PRESENT].map((n) => `${n}.json`));
   for (const f of readdirSync(src).filter((x) => x.endsWith('.json'))) {
     if (!known.has(f)) warnings.push(`${f} is not a file the studio reads - it will be installed but nothing uses it`);
   }

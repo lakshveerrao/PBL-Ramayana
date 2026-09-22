@@ -10,6 +10,17 @@
 
 ---
 
+## The visual register — decided
+
+**The characters look the way Indian audiences recognise them** — the iconography of the great Hindi TV mythologicals, and behind them temple sculpture, calendar art and Ravi Varma. Saffron-robed rishis with a jaṭā bun, rudrākṣa and tilak; kings in golden mukuṭas; a radiant, dignified, clean world. **Recognition wins** over archaeological reconstruction wherever the two disagree.
+
+**Three guardrails on that register:**
+1. **Describe the tradition, never name a production or an actor.** No prompt, brief or reference board names a serial or casts a lookalike of an actor. PBL's characters are its own. The shared iconography is free; a specific production's costume designs and its actors' faces are not.
+2. **Photographic, never plastic.** Real skin and real cloth. No halos, glows or CGI shine — the devotional-poster look was ruled out at the start.
+3. **Skin is never lighter than the sheet chooses.** This is the one convention of the old serials not to follow: they often cast fair actors. The complexions in these briefs stand.
+
+---
+
 ## Part 1 — What every sheet must be
 
 **Deliverables per character**
@@ -24,11 +35,12 @@
 
 **Rules every sheet obeys**
 - **Cloth is woven, cut from the loom, and draped.** Never tailored, never buttoned, never a stitched blouse or shirt. The antarīya at the waist, the uttarīya over the shoulder. The single fastest test of any sheet: *does the cloth hang like cloth, or sit like a garment?*
-- **Ornament from the relief vocabulary** — Bharhut, Sanchi, Amarāvatī: heavy kuṇḍala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems. No European regalia.
+- **Ornament in the recognisable mythological tradition** — kuṇḍala earrings, armlets, necklaces, bangles, gold mukuṭas for royalty, rudrākṣa for sages. Rich, but real metal that gleams. No European regalia.
 - **Faces from the real range of the subcontinent.** Not one beauty standard. Nose bridges, eye shapes, jaws and cheeks that vary. Pores, oil sheen, sun on skin that has lived outdoors, age in the neck and hands.
 - **Never sharpen features to read "noble" or broaden them to read "lowly."** That is caste and race coding, and it is forbidden.
 - **Skin is never lightened** — not on the sheet, not in any later grade. The approved sheet sets each character's skin; nothing afterwards may lift it.
 - **Bodies are real.** No gym physiques. Everyone barefoot on stone.
+- **Austere is not poor.** Nobody in Arc 7 is destitute — a king, two princes, the royal priest, and the greatest sage alive. Simple cloth is still **clean, deliberately draped and cared for**. Nothing torn, grimy or ragged, on anyone. An image model asked for "authentic" will reach for documentary poverty; the briefs must pull the other way.
 
 **The eye test for every candidate sheet:** is the cloth draped? Is there a dome, an arch or marble anywhere behind him? Is the skin at least as deep as intended? Does the ornament look like a temple relief or a jewellery shop?
 
@@ -61,11 +73,9 @@
 - **Age:** late sixties in appearance. A broad frame gone soft — a man long a king, who has not fought in years. Age in the hands and neck, not only the face.
 - **Hair:** long, oiled, silver-white, bound. A full beard, grey-white, trimmed.
 - **Complexion:** warm mid-brown.
-- **Dress:** a near-white antarīya; a deep red uttarīya with a thin woven gold border. The red becomes the throne's cloth too — the king and his seat share a colour until he leaves it.
-- **Headdress — your decision.**
-  - **Option A (recommended): the relief-period royal headdress** — a wound turban with a crest ornament, as kings wear on the Bharhut and Sanchi reliefs. It's the most period-faithful choice available, and almost no screen Rāmāyaṇa has used it.
-  - **Option B: a low mukuṭa** — a band rising to a modest crest, recognisable to audiences from later iconography.
-  - **Never:** a peaked European crown, a tiara, a jewelled tower.
+- **Dress:** rich royal silk — a near-white or gold antarīya; a deep red uttarīya with a broad gold border. Heavy gold ornament: necklaces, armlets, kuṇḍala, bangles, rings. The red becomes the throne's cloth too — the king and his seat share a colour until he leaves it.
+- **Headdress — changes with the register.** The earlier recommendation was the relief-period turban. **Under the recognisable register, it's a golden mukuṭa** — the king's crown Indian audiences know, tall and ornate, worked gold with a crest. Worn over long hair. *This reverses decision 1 — confirm it.*
+  - **Never:** a peaked European crown, a tiara, a crown of cut gems.
 
 **The face must carry**
 A face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-set eyes. The arc asks more range of him than of anyone:
@@ -92,29 +102,36 @@ A face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-se
 ### VIŚVĀMITRA · The sage
 **In frame:** M1 through M7. **The most important plate in the arc is his:** the still sage, seated (M2/03), is reused or cropped in **fourteen shots across four films**. Design him for stillness first.
 
-**The text says**
-- An ascetic, under an observance that stops him cursing those who break his rite.
-- Of the line of Kuśika. *(That he was once a king is told in a later arc — in Arc 7 it may show in his bearing, never be stated.)*
-- **Thrilled** when the king gives his word — his hair stands on end (18.1).
-- **Seized by wrath** at the refusal (20.1, 20.4).
+**The text says — and this is who he is**
+- **"Dharma in bodily form; the foremost of the mighty; greatest in wisdom in the world, and the very summit of austerity."** — Vasiṣṭha, describing him to the king (20.10; Dutt XXI: *"Virtue incarnate… the foremost of those possessing prowess… the refuge of asceticism"*).
+- **He knows every weapon in the three worlds**, and no one else knows them (20.11).
+- **Mahātejā** — of great radiance, *"highly-energetic"* in Dutt (18.1). He protects Rāma *"by his own divine power"* (18.9).
+- He guards the boy **as blazing fire guards nectar** (20.9).
+- **Kuśika's son** — born a king. *(How he became a sage is told in a later arc. In Arc 7 it shows in his bearing, never in words.)*
+- **Thrilled** when the king gives his word — his hair stands on end (18.1). **Seized by wrath** at the refusal (20.1, 20.4).
+- The text **says nothing** about his clothes, his hair or his body. Everything below on those is our choice.
 
-**The world requires**
-- Ascetic dress: uncut, undyed or ochre, draped. Often one cloth.
-- A plain wooden staff — no carving, no finial.
+**The design problem, named.** An image model's idea of "a photograph of an Indian ascetic" comes from documentary photos of poor modern sadhus. Asked to be authentic, it makes him **destitute**. The text makes him **magnificent**. The whole sheet turns on this: **austere, never poor. Simple, never shabby. A king who chose to own nothing — not a man who has nothing.**
 
-**We propose**
-- **Age:** sixties. Lean and physically hard — the shoulders of a man who once trained.
-- **Hair:** matted, piled high (jaṭā). Ash-grey beard.
-- **Complexion:** deep warm brown, sun-weathered. Ash on the skin.
-- **Dress:** ochre cloth at the waist; a single upper cloth; bare torso otherwise. A string of rudrākṣa — worn, never displayed.
-- **The staff:** dark, dense wood, shoulder-height, worn pale at the grip, blunt and splayed at the base from years on stone. It is planted at his right through M1–M4.
-- **The one thing to get right:** his eyes **rest** on what they look at. They do not search.
+**We propose — the recognisable mythological rishi**
+- **Presence first.** The foremost of the mighty and a born king: **upright, broad-shouldered, strong**, majestic even seated. A man a king rises from his throne to receive.
+- **Radiance without a glow.** *Tejas* is presence: clear, burning eyes, a clean and healthy face, one warm light that finds him first. Never a halo.
+- **Temperament in the face.** In the tradition he is the fierce sage — intense, commanding, quick to wrath (the text agrees: *seized by wrath*, 20.1). His eyes **command**; they don't menace. Fierce, never sinister.
+- **Hair — the jaṭā bun.** Long matted locks gathered into a **high bun on the crown of the head** (jaṭā-juṭa), bound with a strand of rudrākṣa. Some locks fall to the shoulders. Grey-white.
+- **Beard:** long, full, flowing white, clean and combed.
+- **Complexion:** deep warm brown, healthy.
+- **Dress — saffron.** A **saffron-orange dhoti**, and a saffron upper cloth draped over one shoulder, the other bare. Rich, clean, well-dyed cloth — the colour of the tradition, not faded, not ragged. A **black antelope skin** may be his seat, or hang from one shoulder.
+- **Rudrākṣa:** two or three strands on the chest; bands on the upper arms and wrists.
+- **Tilak:** a clean sandal-paste tilak on the forehead with a vermilion mark — neat and deliberate, not a smear.
+- **In his hands:** a **kamaṇḍalu** (brass or gourd water pot) and a tall **daṇḍa** staff of dark polished wood.
+- **Setting for the in-world frame:** the hall's warm lamplight — or, for the anchor, a plain dark backdrop that lets the saffron glow.
+- **The one thing to get right:** his eyes **rest** on what they look at, with complete authority.
 
 **The face must carry**
 
 | State | Where |
 |---|---|
-| **Seated, composed, unreadable — the still sage** | M1–M4, and 14 reuses |
+| **Seated, composed, commanding — the still sage** | M1–M4, and 14 reuses |
 | About to speak — a smallest intake of breath | M1/14 |
 | Two fingers raised, once | M2/05 |
 | **Eyes down to the king's hands, and back up** | M3/18 |
@@ -124,9 +141,11 @@ A face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-se
 | Turning back, slowly; no smile | M6/17 |
 | At the door, facing the road; walking out first | M7 |
 
-**Must be distinct from Vasiṣṭha at a glance.** Viśvāmitra: matted, ash-grey, lean, sun-dark, ochre. Vasiṣṭha: combed, white, softer, undyed white.
+**Must be distinct from Vasiṣṭha at a glance.** Viśvāmitra: saffron, the jaṭā bun, the fierce eyes, the warrior's frame. Vasiṣṭha: white cloth, gentler, older — the serene royal guru to Viśvāmitra's fire.
 
-**Never:** a glow or aura · floating · wind in the hair · a trident · a rosary held up · a beatific smile · **villain coding** — narrowed eyes, a shadowed face, a low menacing angle. He is a man with a problem, not a threat.
+**Never:** a beggar, a vagrant, a street ascetic — **nothing torn, grimy or faded** · rope-like hair · a gaunt or starving body · a glow, halo or CGI shine · floating · a trident · a beatific smile · **villain coding** — a sinister, shadowed face, a menacing low angle. Fierce, not evil. He is a man with a problem, not a threat.
+
+**The eye test for this sheet:** would a king rise from his throne to receive this man? If the answer is no, reject it.
 
 ---
 
@@ -138,6 +157,7 @@ A face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-se
 - He counsels the king to keep his word: one who promises and does not act loses his merit (20.6–8).
 - He tells the king the sage is Rāma's protection (20.9).
 - He utters the mantras at the blessing rite before the giving (21.2).
+- He too is **mahātejā** — of great radiance (18.14). The royal priest of the Ikṣvākus: honoured, cared for, dignified. White cloth that is **clean**, not worn.
 
 **The world requires**
 - Brahmin dress: undyed white, draped, one shoulder bare. The sacred thread across the chest.
@@ -145,7 +165,8 @@ A face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-se
 
 **We propose**
 - **Age:** older than the king — seventies.
-- **Hair:** white, combed, tied at the crown. A white beard cut short. Clean where Viśvāmitra is matted.
+- **Hair:** white, gathered in a neat knot at the crown. A long, soft white beard. Serene where Viśvāmitra burns.
+- **Dress:** clean white dhoti and upper cloth — the royal guru's white — with the sacred thread; a single rudrākṣa strand; a sandal-paste tilak. The gentle, radiant guru of the tradition.
 - **Complexion:** warm mid-brown, aged, softer than the sage's.
 - **Ornament:** one plain ring and the thread. Nothing else.
 - **Bearing:** he sits lower than everyone and is listened to by all of them. When he finally stands, the whole room registers it.
@@ -185,7 +206,7 @@ A face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-se
 - **Complexion — your decision, and it must be deliberate.**
   - **Recommended: a deep brown.** The long tradition holds Rāma as *śyāma* — dark (Tulsīdās; and the older iconographic habit, whose blue we exclude as a later convention). A deep brown honours that tradition within the real human range.
   - Whatever is chosen is **ours, from tradition — never presented as what the text says.** No caption, narration or share copy may state his colour.
-- **Dress:** plain, undyed, shorter at the knee for walking. A small quiver at the back. Bare feet.
+- **Dress:** plain, undyed, shorter at the knee for walking. A small quiver at the back. Bare feet. **Plain, but a prince's plain** — fine handloom, clean, a pair of small gold kuṇḍala. Never a poor boy's clothes.
 - **Face:** open, unguarded, a boy's. Neither sweet nor stern.
 
 **The face must carry**
@@ -266,7 +287,9 @@ A face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-se
 
 **Order:** Viśvāmitra first — the still sage carries fourteen shots, and M1's checkpoint depends on him. Then Daśaratha, then Vasiṣṭha, Rāma, Lakṣmaṇa, Kausalyā's hands.
 
-**Every candidate prompt carries** the negative prompt from `render_policy.json` and the world rules above. The one line that must be in every character prompt: **"uncut draped handloom — no stitched garment."**
+**Every candidate prompt carries** the negative prompt from `render_policy.json` and the world rules above. Two lines must be in every character prompt: **"uncut draped handloom — no stitched garment"** and **"clean, dignified, well-kept — never ragged or impoverished."**
+
+**Frame it as a portrait of a revered figure, not a documentary street portrait.** The photographic register to aim for is a formal, dignified portrait under a single warm light — the way one would photograph a great teacher — not reportage.
 
 ### Route B — commission an artist
 Supply this document and the relief references it names (Bharhut, Sanchi, Amarāvatī, Ajanta). Deliverables as in Part 1, at production resolution. **Work-for-hire, company-owned**, with the right to use the sheets as generation references.
@@ -278,7 +301,7 @@ A sheet can be revised later — but every frame generated from it inherits the 
 
 ## Part 4 — Decisions to make before the first sheet
 
-1. **Daśaratha's headdress** — the relief-period royal turban (recommended) or a low mukuṭa.
+1. **Daśaratha's headdress** — **now recommended: a golden mukuṭa**, the recognisable king's crown. This reverses the earlier turban decision; confirm it.
 2. **Rāma's complexion** — deep brown, from the tradition of Rāma as dark (recommended). Declared as our choice, never as the text's.
 3. **Lakṣmaṇa against Rāma** — follow Tulsīdās's dark-and-fair contrast, or distinguish them by build and hair alone.
 4. **Route** — generate (A) or commission (B).

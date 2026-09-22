@@ -735,12 +735,19 @@ t('validate.js references no specific claim, film or entity id', () => {
     ok(!src.includes(bad), `tools/validate.js hardcodes ${bad} - it would fail on a real graph`);
   }
 });
-t('the handoff contract exists and names the required files', () => {
-  const h = readFileSync(join(ROOT, 'HANDOFF.md'), 'utf8');
-  for (const f of ['films.json', 'claims.json', 'entities.json', 'locks.json', 'sheets.json', 'memos.json']) {
-    ok(h.includes(f), `HANDOFF.md does not name ${f}`);
+t('the contract names every file the importer requires, and cannot drift from it', async () => {
+  // HANDOFF.md now arrives with the kit and is the kit's document. The studio's half of
+  // the contract is generated from the importer's own list, so a required file added in
+  // code and not in prose fails here instead of surprising the next handoff.
+  const { contractText } = await import('../tools/build_contract.js');
+  const { REQUIRED } = await import('../lib/graphcontract.js');
+  const onDisk = readFileSync(join(ROOT, 'CONTRACT.md'), 'utf8');
+  ok(onDisk === contractText(), 'CONTRACT.md is stale - run node tools/build_contract.js');
+  for (const name of Object.keys(REQUIRED)) {
+    ok(onDisk.includes(`${name}.json`), `CONTRACT.md does not name ${name}.json`);
   }
-  ok(/import_graph/.test(h), 'HANDOFF.md does not say how to hand a graph over');
+  ok(/import_graph/.test(onDisk), 'CONTRACT.md does not say how to hand a graph over');
+  ok(/import_graph/.test(readFileSync(join(ROOT, 'HANDOFF.md'), 'utf8')), 'HANDOFF.md does not point at the importer');
 });
 
 // --- the treatment holds -----------------------------------------------------------
@@ -879,7 +886,8 @@ t('BLOCKED: an adjustment that does not declare class S refuses', async () => {
   const f = join(ROOT, 'direction', 'anchor-adjustments.json');
   const original = readFileSync(f, 'utf8');
   const d = JSON.parse(original);
-  const id = Object.keys(d.characters)[0];
+  const id = Object.keys(d.characters ?? {})[0];
+  if (!id) return;                       // no character adjustment declared: nothing to block
   const field = Object.keys(d.characters[id]).find((k) => !k.startsWith('_') && k !== 'never_add');
   d.characters[id][field] = { value: 'x', reason: 'y' };            // class removed
   writeFileSync(f, JSON.stringify(d));
@@ -899,7 +907,8 @@ t('BLOCKED: an adjustment cannot reach a field that is not descriptive', async (
   const f = join(ROOT, 'direction', 'anchor-adjustments.json');
   const original = readFileSync(f, 'utf8');
   const d = JSON.parse(original);
-  const id = Object.keys(d.characters)[0];
+  const id = Object.keys(d.characters ?? {})[0];
+  if (!id) return;                       // no character adjustment declared
   d.characters[id].evidence_class = { class: 'S', value: 'T', reason: 'promote it' };
   writeFileSync(f, JSON.stringify(d));
   let threw = null;
@@ -919,13 +928,14 @@ t('BLOCKED: a world-line replacement that no longer matches the brief refuses', 
   const f = join(ROOT, 'direction', 'anchor-adjustments.json');
   const original = readFileSync(f, 'utf8');
   const d = JSON.parse(original);
-  if (!d._world) return;
+  const anyChar = Object.keys(d.characters ?? {})[0];
+  if (!d._world || !anyChar) return;     // nothing to assemble a prompt for
   d._world.replaces = 'a line that is not in the brief';
   writeFileSync(f, JSON.stringify(d));
   let threw = null;
   try {
     const sp = await import('../lib/sheetprompt.js?nocache3=' + Date.now());
-    sp.viewPrompt(Object.keys(d.characters)[0], 'front');
+    sp.viewPrompt(anyChar, 'front');
   } catch (e) { threw = e; }
   writeFileSync(f, original);
   ok(threw && /drifted apart/.test(threw.message),

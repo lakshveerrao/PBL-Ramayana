@@ -3,91 +3,13 @@
   "_rule": "An adjustment may change how something is SHOWN. It may never change what is claimed, who said it, or which evidence class a thing belongs to.",
   "_framing": {
     "class": "S",
-    "reason": "Probe C proved the register question is real, and the first round of ten proved the answer was wrong. 'Photographic reference plate' bought photography and brought documentary with it: ten portraits of poor modern ascetics, shot like street photography. The text's Visvamitra is magnificent. A formal portrait under one warm light is a photograph too, and it is the right one.",
-    "replaces": "Character model sheet, {shot}. 9:16 vertical.",
-    "with": "A formal, dignified portrait photograph of a revered master, under one warm light: {shot}. Studio-lit, composed and still, in the manner of a portrait made to honour its subject. Not documentary, not street photography, not reportage, not concept art, not an illustration, not a painting. 9:16 vertical.",
+    "reason": "The brief asks for one warm light that finds him first, and for the anchor a plain dark backdrop that lets the saffron glow. It also names the failure to avoid: an image model's idea of a photograph of an Indian ascetic comes from documentary photos of poor modern sadhus. So the framing says what the plate IS rather than what it is not.",
     "applies_to": "characters whose face is shown",
-    "excludes": "A character whose brief withholds the face is not a portrait subject - Kausalya's plate is her hands, and her own never-list forbids a portrait. She keeps the plate framing."
+    "excludes": "A character whose brief withholds the face is not a portrait subject - Kausalya's plate is her hands, and her own never-list forbids a portrait. She keeps the plate framing.",
+    "replaces": "Character model sheet, {shot}. 9:16 vertical.",
+    "with": "A formal portrait in the recognisable mythological register, lit by one warm light that finds the subject first, against a plain dark backdrop: {shot}. Composed, still, and made to honour its subject. 9:16 vertical."
   },
-  "characters": {
-    "VISHVAMITRA": {
-      "_reason": "The first round of ten failed at the brief, not the wording. Every candidate read as a poor modern ascetic - ragged, ash-caked, shot like reportage - because the brief asked for 'ash on the skin', 'matted', 'ochre', 'sun-weathered', and the framing asked for a documentary plate. The text does not describe a beggar. The description at Bala 20.10 (Dutt XXI) - dharma in bodily form, the foremost of the mighty, greatest in wisdom, the summit of austerity, mahateja, of great radiance - is spoken by VASISTHA to Dasaratha, not narrated, and the graph carries the locator with no claim on it. So the magnificence is a staging choice we take FROM a statement in the text, attributed to its speaker, and never presented as the narrator's description. He was born a king of the line of Kusika, and it should show.",
-      "_direction_from": "Laksh, 2026-09-22. The eye test is his: would a king rise from his throne to receive this man?",
-      "_speaker_attribution": "Bala 20.10 / Dutt XXI is VASISTHA speaking about Visvamitra. Nothing downstream may render it as narrator fact, and no copy may say 'the text describes him as' without naming Vasistha.",
-      "subject": {
-        "class": "S",
-        "value": "a revered master in his sixties - a great sage who was born a king, of the line of Kusika. He carries himself like a man who ruled before he renounced",
-        "reason": "Replaces 'an ascetic sage'. The bearing is the whole correction: kingship before renunciation is textual and it is what the ten candidates had none of."
-      },
-      "build": {
-        "class": "S",
-        "value": "upright and broad-shouldered, physically strong. Lean from discipline, never gaunt and never starved. He holds his full height",
-        "reason": "'Lean and physically hard' drifted to emaciated on flux-pro, especially with ash. Naming the uprightness and the shoulders is what separates austerity from deprivation."
-      },
-      "hair": {
-        "class": "S",
-        "value": "long grey-white hair gathered and BOUND HIGH AS A CROWN at the top of the head - kept, ordered, dignified, tied close. A long full beard, grey-white, clean and well combed",
-        "reason": "'Matted', and my own 'coiled rope-like locks', produced literal rope on nine of ten. Bound-as-a-crown is the same jata as a kept thing, which is what a master of austerity would have."
-      },
-      "complexion": {
-        "class": "S",
-        "value": "deep warm brown, even and healthy, and NONE LIGHTER. Skin that is looked after: no caking, no powder, nothing applied to it anywhere. His forehead is bare and clean",
-        "reason": "The ash is gone entirely. It was the single worst instruction in the old brief: it lightened four of ten faces, caked two to grey-white, and pulled every candidate toward a street ascetic. The forehead is described as bare rather than by listing what must not be on it - naming a marking to forbid it put one on all ten."
-      },
-      "dress": {
-        "class": "S",
-        "value": "a black antelope skin over one shoulder; below it a simple bark-toned lower cloth, clean, deliberately draped and well kept. Clean, dignified, well-kept - never ragged, never torn, never impoverished. No saffron and no orange anywhere",
-        "reason": "Replaces the ochre cloth outright. Ochre read as modern saffron in every probe. The black antelope skin is the traditional ascetic's krsnajina: a named tradition, not something these sargas specify for him, and recorded as ours."
-      },
-      "ornament": {
-        "class": "S",
-        "value": "almost nothing. No jewellery, no beads across the chest, no pendant, no metal at the throat or wrist",
-        "reason": "Three of ten hung mala and a brass pendant on him, because the brief named a rudraksa strand and the model rendered it as a display. Naming no chest ornament at all is more reliable than naming a discreet one."
-      },
-      "the_one_thing": {
-        "class": "S",
-        "value": "his eyes REST on what they look at, and there is authority in them. They do not search, they do not glare, and they do not plead.",
-        "reason": "Kept from the brief, with authority added. Several candidates resolved 'resting eyes' as either a stare or a weary gaze; neither is a man a king rises for."
-      },
-      "distinct_from": {
-        "class": "S",
-        "value": {
-          "who": "VASISHTHA",
-          "how": "hair bound high as a crown against hair combed and tied flat at the crown; a long full beard against a beard cut short; a black antelope skin over the shoulder against the sacred thread on a bare shoulder; bark-toned cloth against undyed white; broad and strong against older and softer"
-        },
-        "reason": "Both men are now clean and dignified, so the contrast can no longer ride on dirty-against-clean or ochre-against-white. It moves to silhouette, beard length, the antelope skin and the thread - all of which survive at thumbnail size."
-      },
-      "never_add": [
-        "ash on the skin",
-        "powder on the skin",
-        "a painted mark",
-        "a forehead marking",
-        "ragged cloth",
-        "torn cloth",
-        "a patched garment",
-        "an impoverished man",
-        "a beggar",
-        "gaunt",
-        "emaciated",
-        "starved",
-        "a stooped back",
-        "loose hanging dreadlocks",
-        "rope",
-        "cordage",
-        "twine",
-        "a turban",
-        "a head wrap",
-        "saffron",
-        "bright orange",
-        "layered malas",
-        "beads displayed on the chest",
-        "a modern sadhu",
-        "documentary photography",
-        "street photography",
-        "a candid snapshot"
-      ]
-    }
-  },
+  "characters": {},
   "judging": {
     "_doc": "How a candidate is chosen, and in what order. Recorded because the order is a decision: a plate can be right in every listed particular and still be the wrong man.",
     "order": [
@@ -112,5 +34,13 @@
     "slot": "front",
     "replaces": "front view, full figure and head-and-shoulders, neutral standing, even light",
     "with": "front view, full figure and head-and-shoulders, standing straight and still, evenly exposed"
+  },
+  "_superseded": {
+    "2026-09-22": {
+      "what": "Every VISHVAMITRA field adjustment, and the documentary framing.",
+      "why": "The rewritten character brief arrived in the kit of 2026-09-22 (sha a6c57863...). It carries the direction itself, and reverses mine on four points: saffron is CORRECT, the tilak is CORRECT, rudraksa strands on the chest are CORRECT, and the kamandalu is his. I had built from an interim message that said none of those things. The brief is the source; an adjustment that argues with it is just a second opinion in the prompt.",
+      "kept": "The judging order, because the brief states the eye test and not the sequence, and the framing, rewritten to match the brief's own words.",
+      "learned": "Two rounds of ten established, by count and not by opinion, that naming a thing in order to forbid it summons it: forehead markings went from 10 of 10 to 4 of 10 when the forbidding sentence was replaced by a positive description of a bare forehead. Saffron and a turban still came through 5 and 2 times out of ten while both were forbidden by name in the prompt body AND the negative. This is now a property of the prompt assembler, recorded in direction/prompt-findings.md, and it applies to whatever the brief asks for."
+    }
   }
 }
