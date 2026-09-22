@@ -1634,10 +1634,55 @@
       },
       "estimate_usd": 0.35,
       "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T17:58:39.617Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-02",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:02:26.820Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-03",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T18:06:49.487Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-04",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
     }
   ],
   "totals": {
-    "usd": 7.3222,
-    "calls": 109
+    "usd": 8.3722,
+    "calls": 112
   }
 }

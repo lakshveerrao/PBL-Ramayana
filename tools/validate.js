@@ -754,6 +754,54 @@ check('prompt', 'no prompt describes cloth that is stitched', () => {
   }
   T(offenders.length === 0, `cloth described as stitched: ${offenders.join(', ')}`);
 });
+check('motion', 'no shot the graph refuses motion on has been animated', () => {
+  // 01-15 and 01-16 are frames by instruction - a reuse, and the film's final hold.
+  // A clip sitting beside them would be cut in by the assembler without a word.
+  for (const { film, t } of directed()) {
+    for (const shot of t.shots) {
+      const refused = shot.motion_allowed === false || effectsShots()[shot.id]?.motion === false;
+      if (!refused) continue;
+      T(!existsSync(join(ROOT, 'renders', film.id, 'motion', `${shot.id}.json`)),
+        `${film.id} ${shot.id} refuses motion and yet has a motion record`);
+    }
+  }
+});
+check('motion', 'every animated clip was made from the still that is installed now', () => {
+  // Re-render a still and its old clip is a picture of a frame that no longer exists.
+  // The assembler drops such a clip; this says so out loud rather than silently
+  // falling back to the still and leaving a shot unaccountably static.
+  for (const { film, t } of directed()) {
+    for (const shot of t.shots) {
+      const rec = join(ROOT, 'renders', film.id, 'motion', `${shot.id}.json`);
+      if (!existsSync(rec)) continue;
+      const m = JSON.parse(readFileSync(rec, 'utf8'));
+      T(existsSync(join(ROOT, m.clip)), `${film.id} ${shot.id}'s motion record names ${m.clip}, which is not there`);
+      const stillRec = join(ROOT, 'renders', film.id, `${shot.id}.json`);
+      if (!existsSync(stillRec)) continue;
+      const still = JSON.parse(readFileSync(stillRec, 'utf8'));
+      T(m.still_sha256 === still.sha256,
+        `${film.id} ${shot.id}'s clip was made from a still that has since been replaced - re-animate it or the assembler will quietly use the frame`);
+    }
+  }
+});
+check('motion', 'an animated clip is the frame size, 30fps, and exactly its shot length', () => {
+  for (const { film, t } of directed()) {
+    for (const shot of t.shots) {
+      const rec = join(ROOT, 'renders', film.id, 'motion', `${shot.id}.json`);
+      if (!existsSync(rec)) continue;
+      const m = JSON.parse(readFileSync(rec, 'utf8'));
+      T(m.window?.frames === Math.round(shot.duration_s * t.fps),
+        `${film.id} ${shot.id}'s clip is ${m.window?.frames} frames where the shot is ${Math.round(shot.duration_s * t.fps)}`);
+      T(m.asked_fps === t.fps, `${film.id} ${shot.id} was not asked for the film's frame rate`);
+      // Match on what it IS, not on whether the word appears: the honest record reads
+      // "optical flow ... - never duplication", which a naive search for "duplicat"
+      // fails on the strength of its own disclaimer.
+      const how = String(m.fps_conversion ?? '');
+      T(/^optical flow/i.test(how) || /^none needed/i.test(how),
+        `${film.id} ${shot.id} reached ${t.fps}fps by "${how}" - the director asked for optical flow, never duplication`);
+    }
+  }
+});
 check('grade', 'every measured skin albedo names the sheet it was read from', () => {
   // The number is production design, read off a sheet a named person approved. If it
   // cannot say which sheet and which view, it is a number somebody typed.
