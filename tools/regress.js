@@ -1015,6 +1015,19 @@ t('a probe uses a route that would refuse - not one that answers anybody', async
      `the ElevenLabs ping fetches ${pingFetch.trim()}; /v1/voices answers 200 to anyone and proves nothing`);
 });
 
+t('an attached-but-misconfigured credential is not reported as a missing one', async () => {
+  // The two failures look identical from a status code and are completely different
+  // jobs for the user: one is "add a credential", the other is "you added it with the
+  // wrong header name". ElevenLabs' error vocabulary distinguishes them, so the adapter
+  // must too - proven by sending our own xi-api-key, which makes ElevenLabs answer
+  // "Only one of xi-api-key and authorization headers must be provided. Received both."
+  const el = libSrc('eleven.js');
+  ok(/invalid_authorization_header/.test(el),
+     'the ElevenLabs ping cannot tell an attached-but-wrong header from a missing credential');
+  ok(/xi-api-key with NO prefix|Header to xi-api-key/.test(el),
+     'the ElevenLabs diagnostic does not say what to change');
+});
+
 t('no key-like string is committed anywhere in the tree', async () => {
   const { execFileSync } = await import('node:child_process');
   // git grep exits 1 when it finds nothing, which is the outcome we want.
