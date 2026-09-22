@@ -963,6 +963,62 @@ t('BLOCKED: a face-withheld character gets no portrait framing', async () => {
   }
 });
 
+// --- places and crowds --------------------------------------------------------------
+// An entity with a look and no identity. The exemption is narrow on purpose.
+
+t('BLOCKED: an entity the studio knows nothing about is still refused', async () => {
+  // CLAUDE.md's rule, unchanged: unknown means treat as a person and refuse. Only an
+  // entity a human DECLARED as a place or a crowd, in writing and with files, is exempt.
+  const { checkShot } = await import('../lib/consistency.js');
+  const g = checkShot({ id: 'x', entities: ['SOME_UNDECLARED_ENTITY'] });
+  ok(g.allowed === false, 'an undeclared entity cleared the gate');
+});
+
+t('BLOCKED: a declaration with no reference files exempts nothing', async () => {
+  const { readFileSync, writeFileSync, existsSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const f = join(ROOT, 'direction', 'references.json');
+  if (!existsSync(f)) return;
+  const saved = readFileSync(f, 'utf8');
+  const d = JSON.parse(saved);
+  const id = Object.keys(d.entities)[0];
+  d.entities[id].files = [];
+  writeFileSync(f, JSON.stringify(d));
+  let allowed = null;
+  try {
+    const c = await import('../lib/consistency.js?p=' + Date.now());
+    allowed = c.checkShot({ id: 'x', entities: [id] }).allowed;
+  } finally { writeFileSync(f, saved); }
+  ok(allowed === false, 'an entity declared with no files was exempted from the sheet gate');
+});
+
+t('a place reference is sent but never clears a principal', async () => {
+  // The whole point: a hall changes how a shot is DRAWN, never who is allowed in it.
+  const { entityReferences } = await import('../lib/graph.js');
+  const refs = entityReferences(['SABHA']);
+  if (!refs.length) return;
+  ok(refs.every((r) => r.kind === 'place' || r.kind === 'crowd'), 'a person was declared as a reference entity');
+  const { checkShot } = await import('../lib/consistency.js');
+  // A place in frame beside an uncleared principal must NOT rescue the shot.
+  const { read } = await import('../lib/store.js');
+  const unapproved = read('sheets', { fresh: true }).sheets.find((x) => !x.approved);
+  if (!unapproved) return;
+  const g = checkShot({ id: 'x', entities: ['SABHA', unapproved.entity] });
+  ok(g.allowed === false, 'a hall reference cleared a principal who has no approved sheet');
+});
+
+t('every file direction/references.json names exists', async () => {
+  const { entityReferences } = await import('../lib/graph.js');
+  const { readFileSync, existsSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const f = join(ROOT, 'direction', 'references.json');
+  if (!existsSync(f)) return;
+  const d = JSON.parse(readFileSync(f, 'utf8'));
+  // entityReferences throws on a missing file; this asserts it does not throw.
+  entityReferences(Object.keys(d.entities ?? {}));
+  ok(true, 'checked');
+});
+
 // --- references -------------------------------------------------------------------
 
 t('every portrait a tool names actually exists', async () => {
