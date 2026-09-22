@@ -59,3 +59,50 @@ accepting it — the negatives belong in the prompt body now.
 One of round 1's ten came back a black frame — billed, and filed as a candidate beside
 the other nine, because nothing looked. `tools/platecheck.js` now measures blankness and
 face-band lightness on every set before anyone judges it.
+
+## 6 · A shot size must be SAID, or the reference decides the frame
+
+Measured on M2, 2026-09-22, eleven paid shots on `gpt-image-2` conditioned on the
+approved sheets.
+
+| prompt says the frame | shots | framed as the shot list asks |
+|---|---|---|
+| opens `cu shot` / `ms shot` / `wide shot` and nothing more | 8 | **0** |
+| carries an explicit `IN FRAME: …` sentence | 3 | **3** |
+
+All eight came back as the reference sheet's own full-length standing studio pose.
+02-07 is a **close-up of the king's face receiving the news**; 02-18 is a **close-up of
+his shock**, held eight seconds in true silence. They came back as the same full-length
+standing portrait as each other, in a verandah with green foliage, both expressions mild.
+02-03 is a **medium shot of the sage seated**; it came back standing, full length.
+
+The three that held are the package's INSERTs — the only shots it ships an `IN FRAME`
+clause for, because those are the shots where it has to withhold a face.
+
+The reading: a reference image *states a framing*, and a two-word token at the head of a
+prompt does not outrank it. A sentence does. This is the same shape as finding 1 — the
+weight a prompt gives a thing is carried by how it is said, not by whether it is said.
+
+The fix is in `lib/prompt.js`: where the package's prompt does not state its frame, the
+studio appends one sentence built from the shot list's **own** `size` and `expression`,
+last, where `direction/overrides.json` puts a framing note and for the same reason. It
+invents nothing. `action` is deliberately left out — it is a mixed field, and 02-18's
+action is `8 s, no move, true silence 0.7 s`, a timing note with no business in an image
+prompt. Staging a shot beyond its size stays a director's call, one shot at a time, under
+a name.
+
+Guarded by two checks in `validate` (every generate shot states its frame; a note never
+carries a duration or the action) and four regressions.
+
+## 7 · Place conditioning did not hold, and `marble` may be summoning marble
+
+02-01 was conditioned on the approved `court_hall.png` — mud-brick and lime plaster,
+worn sandstone floor, timber posts — and on a prompt that describes that hall in full.
+It came back as a gilded temple-palace: carved figurative pillars, swagged curtains with
+tassels, sun emblems, an elephant banner, and a **polished marble floor**.
+
+`marble` is on the negative list, and the prompt's closing line names it. Finding 1 says
+naming a thing to forbid it summons it, measured. This is the same shape and is now the
+open question: the positive statement *worn sandstone floor* is already in the prompt and
+lost to the negative that names the stone we do not want. Not yet tested — changing the
+framing and the negative list in the same round would measure nothing.

@@ -16,7 +16,7 @@ import * as fal from '../lib/fal.js';
 import { ENDPOINTS, referenceConditioned, textToImage } from '../lib/endpoints.js';
 import { endpointCost } from '../lib/cost.js';
 import { identityPolicy } from '../lib/render.js';
-import { assemble, directionOverrides } from '../lib/prompt.js';
+import { assemble, directionOverrides, statesItsFrame } from '../lib/prompt.js';
 import { unresolvedReuses, sharedPlateFor } from '../lib/graph.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
@@ -751,6 +751,49 @@ check('prompt', 'no prompt describes cloth that is stitched', () => {
     }
   }
   T(offenders.length === 0, `cloth described as stitched: ${offenders.join(', ')}`);
+});
+check('prompt', 'every generate shot states what is in its frame', () => {
+  // M2 measured it: a prompt that opens "cu shot" and says nothing further about the
+  // frame comes back as the reference sheet's own full-length standing pose. 02-07 and
+  // 02-18 - a close-up of a face receiving news, and a close-up of shock - came back as
+  // the same full-length standing portrait. The shot size has to be SAID, in a sentence,
+  // or reference conditioning decides the frame instead of the shot list.
+  const offenders = [];
+  for (const { film, t } of directed()) {
+    for (const shot of t.shots) {
+      if (shot.source !== 'generate') continue;
+      let a;
+      try { a = assemble(shot, film.id); } catch { continue; }
+      if (!statesItsFrame(a.prompt)) offenders.push(`${film.id} ${shot.id} (${shot.size})`);
+    }
+  }
+  T(offenders.length === 0, `prompts that never say what is in frame: ${offenders.join(', ')}`);
+});
+check('prompt', 'a framing note carries the shot list\'s size, and never its timing notes', () => {
+  // The note is derived, so it must stay derived. It may carry size and expression -
+  // both are the treatment's own fields about the frame. It may not carry `action`,
+  // which is a mixed field: 02-18's action is "8 s, no move, true silence 0.7 s", a
+  // timing note that has no business in an image prompt.
+  const offenders = [];
+  for (const { film, t } of directed()) {
+    for (const shot of t.shots) {
+      if (shot.source !== 'generate') continue;
+      let a;
+      try { a = assemble(shot, film.id); } catch { continue; }
+      const note = a.framing_note;
+      if (!note) continue;
+      // M7 07-18 writes the same words in both fields - "smaller than they were" is
+      // that shot's expression AND its action - so an action that IS the expression is
+      // not the action leaking through.
+      if (shot.action && shot.action !== shot.expression && note.includes(shot.action)) {
+        offenders.push(`${film.id} ${shot.id}: framing note carries the shot's action verbatim`);
+      }
+      if (/\b\d+(\.\d+)?\s?s\b/.test(note)) {
+        offenders.push(`${film.id} ${shot.id}: framing note carries a duration - "${note}"`);
+      }
+    }
+  }
+  T(offenders.length === 0, offenders.join(', '));
 });
 check('prompt', 'every direction override declares a reason and changes no truth', () => {
   const o = directionOverrides();

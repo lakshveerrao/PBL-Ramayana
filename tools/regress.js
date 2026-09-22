@@ -16,7 +16,7 @@ import { checkShot, checkFilm, entityCleared, assertNoMemoBlocked, GateRefusal, 
 import { assertNoRestrictedText, RightsError, isRestricted, locatorOf } from '../lib/sources.js';
 import { normaliseImage, normaliseVideo, buildImagePayload, decodeInline } from '../lib/fal.js';
 import { renderMotion, MotionRefusal, estimate, shotOf } from '../lib/render.js';
-import { assemble, applyOverrides, directionOverrides } from '../lib/prompt.js';
+import { assemble, applyOverrides, directionOverrides, statesItsFrame } from '../lib/prompt.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder,
          viewPrompt, plan as sheetPlan } from '../lib/sheetprompt.js';
 import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
@@ -109,6 +109,47 @@ t('an entity with no memo passes the memo gate', () => {
 t('assembling a prompt for a memo-blocked entity refuses', async () => {
   const fake = { ...shotOf('M3', '03-05'), entities: ['TATAKA'] };
   await throws(() => assemble(fake, 'M3'), 'GateRefusal', 'a prompt was assembled for TATAKA');
+});
+
+// --- the frame is SAID, or the reference decides it ------------------------------
+// M2 measured this on eleven paid shots: 8 of 8 prompts that opened "cu shot" or
+// "ms shot" and said nothing further about the frame came back as the reference
+// sheet's full-length standing studio pose - 02-07 (a close-up of the king's face
+// receiving the news) and 02-18 (a close-up of his shock) came back as the same
+// full-length portrait. 3 of 3 that carried an "IN FRAME:" sentence framed right.
+t('a prompt that does not state its frame gets the shot size said in a sentence', () => {
+  const shot = { ...shotOf('M3', '01-02'), image_prompt: 'cu shot, 85mm. photoreal.' };
+  const a = assemble(shot, 'M3');
+  ok(statesItsFrame(a.prompt), 'the assembled prompt never says what is in frame');
+  ok(/close-up/.test(a.prompt), 'the close-up was never said in words');
+  ok(a.framing_note, 'no framing note was recorded');
+  ok(a.assembled_from.some((x) => /size and expression/.test(x)),
+     'the framing note is not declared in assembled_from');
+});
+t('a prompt that already states its frame is left alone', () => {
+  const body = 'insert shot, 100mm. IN FRAME: the hand only, no face. photoreal.';
+  const shot = { ...shotOf('M3', '01-02'), image_prompt: body };
+  const a = assemble(shot, 'M3');
+  ok(a.framing_note === null, `a note was appended to a prompt that already states its frame: ${a.framing_note}`);
+  ok(a.prompt === body, 'a prompt that states its own frame was altered');
+});
+t('the framing note carries size and expression, and never the shot\'s timing', () => {
+  const shot = {
+    ...shotOf('M3', '01-02'),
+    size: 'CU',
+    expression: 'shock',
+    action: '8 s, no move, true silence 0.7 s',
+    image_prompt: 'cu shot, 85mm. photoreal.',
+  };
+  const a = assemble(shot, 'M3');
+  ok(/shock/.test(a.framing_note), 'the expression did not reach the frame');
+  ok(!/0\.7 s/.test(a.framing_note), `a timing note reached the image prompt: ${a.framing_note}`);
+  ok(!a.framing_note.includes(shot.action), 'the action leaked into the image prompt');
+});
+t('an em-dash expression is not written into the frame as text', () => {
+  const shot = { ...shotOf('M3', '01-02'), expression: '\u2014', image_prompt: 'ms shot. photoreal.' };
+  const a = assemble(shot, 'M3');
+  ok(!/expression/i.test(a.framing_note), `an empty expression was written out: ${a.framing_note}`);
 });
 
 // --- sheet intake: upload records evidence, only a human approves -----------------

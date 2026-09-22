@@ -1,93 +1,102 @@
 {
-  "_doc": "Creative direction that supersedes the frozen source package.",
-  "_precedence": "v1.0.6 wins on SOURCE TRUTH - claims, locators, evidence, attribution, rights, gates, and the sourced-versus-artistic classification. The directing packs win on CREATIVE DIRECTION - performance, framing intent, sound, rhythm. An override may never change what is true, only how it is shown. Anything here that would alter a claim, a locator, an attribution or a gate is a defect in this file.",
-  "_why_this_file_exists": "The package is frozen and must never be edited. Where a pack corrects a stale creative note in it, the correction lives here and is applied at prompt-assembly time, so the package stays byte-identical and the correction is still impossible to forget.",
-  "source": "direction/pbl-ramayana-arc7-directing-packs.md, section 8 of the M7 pack",
-  "prompt_overrides": [
-    {
-      "shot": "07-06",
-      "film": "M7",
-      "find": "the edge of a sleeve",
-      "replace": "the edge of her son's draped upper cloth",
-      "also_find": [
-        "a sleeve"
-      ],
-      "reason": "A sleeve is stitched. Everything in this world is draped, and the same prompt's own negative list says 'no stitched garment'. A model given both will draw the sleeve.",
-      "class": "creative",
-      "changes_truth": false,
-      "authority": "directing packs, M7 pack section 8 - the one stale note that affects a prompt"
-    },
-    {
-      "shot": "01-01",
-      "film": "M1",
-      "append": "FRAMING: the throne and the dais are OUT OF FRAME. Hold on the lattice light falling across the stone floor and the timber posts. No throne, no dais, no people.",
-      "reason": "The throne must not be seen before the king rises. Venkat, 2026-09-22: he is ON the throne until 01-04 (he rises) and steps down at 01-05; from 01-05 the throne behind them is empty, which 01-07's own action line already says - 'two men on the same level, the empty throne behind'. He is back on it in M2 and leaves it for good at M3/05. The first render of 01-03 showed a wide hall with an EMPTY dais, which would spend film 3's emptying before film 1 has finished. Reframing costs nothing; seating him in shots he is not in would be inventing a presence.",
-      "class": "creative",
-      "changes_truth": false,
-      "authority": "the director, 2026-09-22; and the treatment's own standing rule that the throne is occupied in films 1-2"
-    },
-    {
-      "shot": "01-03",
-      "film": "M1",
-      "append": "FRAMING: the throne and the dais are OUT OF FRAME. Frame a ROW of ministers along one wall, close, turning their heads toward the entrance at frame-left - as in the row reference plates. The camera is level with them and the far end of the hall is not seen.",
-      "reason": "The throne must not be seen before the king rises. Venkat, 2026-09-22: he is ON the throne until 01-04 (he rises) and steps down at 01-05; from 01-05 the throne behind them is empty, which 01-07's own action line already says - 'two men on the same level, the empty throne behind'. He is back on it in M2 and leaves it for good at M3/05. The first render of 01-03 showed a wide hall with an EMPTY dais, which would spend film 3's emptying before film 1 has finished. Reframing costs nothing; seating him in shots he is not in would be inventing a presence.",
-      "class": "creative",
-      "changes_truth": false,
-      "authority": "the director, 2026-09-22"
-    }
-  ],
-  "action_overrides": [
-    {
-      "shot": "07-06",
-      "film": "M7",
-      "find": "a sleeve",
-      "replace": "the edge of her son's draped upper cloth",
-      "reason": "Same correction, in the shot's action line, so the two never disagree.",
-      "class": "creative",
-      "changes_truth": false
-    }
-  ],
-  "_noted_not_applied": [
-    {
-      "shot": "01-10",
-      "note": "'the only flicker of unease' contradicts M1's own rule against foreshadowing. Direct as unreadable.",
-      "affects": "performance, not a prompt"
-    },
-    {
-      "shot": "02-08",
-      "note": "beat label 'flesh and blood on the fire'; the source and the narration say the altar.",
-      "affects": "a beat label"
-    },
-    {
-      "shot": "06-01",
-      "note": "expression note describes the sage's back; the shot is the king.",
-      "affects": "an expression note"
-    },
-    {
-      "shot": "06-18",
-      "note": "expression note describes the empty throne; the shot is the blessing rite.",
-      "affects": "an expression note"
-    }
-  ],
-  "sound_overrides": [
-    {
-      "film": "M1",
-      "cue_shot_was": "01-07",
-      "cue_shot": "01-06",
-      "find": "Water in beat 7",
-      "replace": "Water in beat 6",
-      "reason": "The treatment's sound cue puts the water on shot 01-07 at 12.4s. Beat 6 IS the honouring - shot 01-06, 'water at the feet', a vessel, hands, water poured, the sage's nod. 01-07 is the king asking. The directing packs say so outright: 'M1 sound - puts the water at beat 7; it is beat 6.' Confirmed by Laksh on 2026-09-22. Put the richest sound in the film on the gesture it belongs to. The cue's at_s of 12.4s is 01-07's start; it moves with the cue to 01-06's start.",
-      "class": "creative",
-      "changes_truth": false,
-      "authority": "directing packs, M1 pack line 81 and the stale-notes list; confirmed by the director",
-      "at_s_was": 12.4,
-      "at_s": "the start of the cue shot"
-    }
-  ],
-  "_continuity_correction": {
-    "what": "The treatment's standing rule reads 'The throne is occupied in films 1-2 and empty from film 3 onward.' Inside M1 that is slightly off.",
-    "correct": "Occupied until 01-04, when he rises. He steps down at 01-05, and from 01-05 the throne behind them is empty - 01-07's action line says so. Occupied again in M2. Empty for good from M3/05.",
-    "by": "Venkat, 2026-09-22",
-    "affects": "framing only. No claim, locator, attribution or gate moves."
+ "_doc": "Creative direction that supersedes the frozen source package.",
+ "_precedence": "v1.0.6 wins on SOURCE TRUTH - claims, locators, evidence, attribution, rights, gates, and the sourced-versus-artistic classification. The directing packs win on CREATIVE DIRECTION - performance, framing intent, sound, rhythm. An override may never change what is true, only how it is shown. Anything here that would alter a claim, a locator, an attribution or a gate is a defect in this file.",
+ "_why_this_file_exists": "The package is frozen and must never be edited. Where a pack corrects a stale creative note in it, the correction lives here and is applied at prompt-assembly time, so the package stays byte-identical and the correction is still impossible to forget.",
+ "source": "direction/pbl-ramayana-arc7-directing-packs.md, section 8 of the M7 pack",
+ "prompt_overrides": [
+  {
+   "shot": "07-06",
+   "film": "M7",
+   "find": "the edge of a sleeve",
+   "replace": "the edge of her son's draped upper cloth",
+   "also_find": [
+    "a sleeve"
+   ],
+   "reason": "A sleeve is stitched. Everything in this world is draped, and the same prompt's own negative list says 'no stitched garment'. A model given both will draw the sleeve.",
+   "class": "creative",
+   "changes_truth": false,
+   "authority": "directing packs, M7 pack section 8 - the one stale note that affects a prompt"
+  },
+  {
+   "shot": "01-01",
+   "film": "M1",
+   "append": "FRAMING: the throne and the dais are OUT OF FRAME. Hold on the lattice light falling across the stone floor and the timber posts. No throne, no dais, no people.",
+   "reason": "The throne must not be seen before the king rises. Venkat, 2026-09-22: he is ON the throne until 01-04 (he rises) and steps down at 01-05; from 01-05 the throne behind them is empty, which 01-07's own action line already says - 'two men on the same level, the empty throne behind'. He is back on it in M2 and leaves it for good at M3/05. The first render of 01-03 showed a wide hall with an EMPTY dais, which would spend film 3's emptying before film 1 has finished. Reframing costs nothing; seating him in shots he is not in would be inventing a presence.",
+   "class": "creative",
+   "changes_truth": false,
+   "authority": "the director, 2026-09-22; and the treatment's own standing rule that the throne is occupied in films 1-2"
+  },
+  {
+   "shot": "01-03",
+   "film": "M1",
+   "append": "FRAMING: the throne and the dais are OUT OF FRAME. Frame a ROW of ministers along one wall, close, turning their heads toward the entrance at frame-left - as in the row reference plates. The camera is level with them and the far end of the hall is not seen.",
+   "reason": "The throne must not be seen before the king rises. Venkat, 2026-09-22: he is ON the throne until 01-04 (he rises) and steps down at 01-05; from 01-05 the throne behind them is empty, which 01-07's own action line already says - 'two men on the same level, the empty throne behind'. He is back on it in M2 and leaves it for good at M3/05. The first render of 01-03 showed a wide hall with an EMPTY dais, which would spend film 3's emptying before film 1 has finished. Reframing costs nothing; seating him in shots he is not in would be inventing a presence.",
+   "class": "creative",
+   "changes_truth": false,
+   "authority": "the director, 2026-09-22"
+  },
+  {
+   "shot": "02-03",
+   "film": "M2",
+   "append": "IN FRAME: he is SEATED, level and unhurried, on a low seat - not standing. Waist up. The staff is at rest, not planted for walking.",
+   "reason": "The shot list says 'seated, level, unhurried' and the render stands him up. The framing note the studio now appends carries size and expression, not `action` - action is a mixed field across the arc (02-18's is '8 s, no move, true silence 0.7 s', a timing note), so it is not pasted into prompts automatically. This shot needs it said, because 02-03 is the still sage: HANDOFF.md §7 carries this one frame into 02-04, 02-13 and into M3/03-02, M4/04-01 and M5/05-01 - 14 shots across four films. A standing sage here is a standing sage in four films. Nothing is invented: the words are the treatment's own.",
+   "class": "creative",
+   "changes_truth": false,
+   "authority": "the treatment's own action line for 02-03, 'seated, level, unhurried'"
   }
+ ],
+ "action_overrides": [
+  {
+   "shot": "07-06",
+   "film": "M7",
+   "find": "a sleeve",
+   "replace": "the edge of her son's draped upper cloth",
+   "reason": "Same correction, in the shot's action line, so the two never disagree.",
+   "class": "creative",
+   "changes_truth": false
+  }
+ ],
+ "_noted_not_applied": [
+  {
+   "shot": "01-10",
+   "note": "'the only flicker of unease' contradicts M1's own rule against foreshadowing. Direct as unreadable.",
+   "affects": "performance, not a prompt"
+  },
+  {
+   "shot": "02-08",
+   "note": "beat label 'flesh and blood on the fire'; the source and the narration say the altar.",
+   "affects": "a beat label"
+  },
+  {
+   "shot": "06-01",
+   "note": "expression note describes the sage's back; the shot is the king.",
+   "affects": "an expression note"
+  },
+  {
+   "shot": "06-18",
+   "note": "expression note describes the empty throne; the shot is the blessing rite.",
+   "affects": "an expression note"
+  }
+ ],
+ "sound_overrides": [
+  {
+   "film": "M1",
+   "cue_shot_was": "01-07",
+   "cue_shot": "01-06",
+   "find": "Water in beat 7",
+   "replace": "Water in beat 6",
+   "reason": "The treatment's sound cue puts the water on shot 01-07 at 12.4s. Beat 6 IS the honouring - shot 01-06, 'water at the feet', a vessel, hands, water poured, the sage's nod. 01-07 is the king asking. The directing packs say so outright: 'M1 sound - puts the water at beat 7; it is beat 6.' Confirmed by Laksh on 2026-09-22. Put the richest sound in the film on the gesture it belongs to. The cue's at_s of 12.4s is 01-07's start; it moves with the cue to 01-06's start.",
+   "class": "creative",
+   "changes_truth": false,
+   "authority": "directing packs, M1 pack line 81 and the stale-notes list; confirmed by the director",
+   "at_s_was": 12.4,
+   "at_s": "the start of the cue shot"
+  }
+ ],
+ "_continuity_correction": {
+  "what": "The treatment's standing rule reads 'The throne is occupied in films 1-2 and empty from film 3 onward.' Inside M1 that is slightly off.",
+  "correct": "Occupied until 01-04, when he rises. He steps down at 01-05, and from 01-05 the throne behind them is empty - 01-07's action line says so. Occupied again in M2. Empty for good from M3/05.",
+  "by": "Venkat, 2026-09-22",
+  "affects": "framing only. No claim, locator, attribution or gate moves."
+ }
 }
