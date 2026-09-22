@@ -1589,10 +1589,40 @@
       },
       "estimate_usd": 0.35,
       "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T17:18:45.009Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/minimax/hailuo-02/standard/image-to-video",
+      "label": "M1/01-02",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.27,
+      "usd": 0.27
+    },
+    {
+      "at": "2026-09-22T17:21:14.119Z",
+      "provider": "fal",
+      "route": "motion-test",
+      "model": "fal-ai/kling-video/v1.6/standard/image-to-video",
+      "label": "M1/01-02",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.23,
+      "usd": 0.23
     }
   ],
   "totals": {
-    "usd": 6.4722,
-    "calls": 106
+    "usd": 6.9722,
+    "calls": 108
   }
 }

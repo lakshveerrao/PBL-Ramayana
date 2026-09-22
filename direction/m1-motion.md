@@ -49,11 +49,14 @@ motion on, and the only two the director holds.
 
 ## What the pack settles
 
-**01-02 walks TOWARD camera.** The director's action list says *up the aisle*; the same
-message's provider-test brief says *walking away down the aisle*. The pack is
-unambiguous — *"He arrives … a door opening far off; the sage small in frame"* — and the
-treatment's beat agrees. Taken as **up the aisle, toward camera**, and the motion test was
-run that way.
+**01-02 walks AWAY from camera — and an earlier draft of this file had it backwards.**
+The director's action list says *up the aisle*; the same message's provider-test brief
+says *walking away down the aisle*. I read the pack's *"a door opening far off; the sage
+small in frame"* as him arriving toward camera. The approved still settles it and the
+brief was right: we see the sage **from behind**, walking up the hall toward the dais. The
+camera stands at the entrance he has just come through, so *"a door opening far off"*
+describes where the camera is, not where he is heading. All four motion providers ignored
+my prompt and followed the still, which is the conditioning working as it should.
 
 **01-07's asking gesture is not an addition.** The pack's action column says *the king
 asks* outright. A gesture is a rendering of it.
