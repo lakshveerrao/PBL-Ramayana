@@ -1,0 +1,29 @@
+{
+  "_doc": "M1's motion instructions, rewritten. The graph's own motion field carries the same lamp-flame sentence on all fourteen generate shots and animates none of the film's beats - PRODUCTION_ORDERS calls for the 89 to be rewritten and these are M1's fourteen. data/ is untouched.",
+  "_shape": "Every instruction says three things in this order: the beat, what does NOT move, and the ambient life last and smallest. The order is deliberate - the beat first because it is the shot, the negative second because reference-conditioned video will invent a camera move if nobody forbids one, and the ambient last because it is the least important thing in the frame and a prompt weights what it says first.",
+  "_camera": "The pack marks all sixteen shots `locked`. Every instruction says the camera does not move, in words, every time.",
+  "_must_not_drift": "The pack: 'the king's costume from 04 onward; the sage's seated posture from 07.' Both are named in the shots they govern.",
+  "_approved_by": "the action list accepted by Venkat, 2026-09-22, with the sage's nod cut from 01-06 and 01-09 and 01-11 kept as small hand moves",
+  "film": "M1",
+  "endpoint": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+  "shots": {
+    "01-01": { "kind": "subtle", "instruction": "An empty hall in morning light. Nothing enters and no one appears. The only movement is dust turning slowly in the shafts of lattice light, and one lamp flame drifting. The camera does not move. The walls, floor, pillars and light do not change." },
+    "01-02": { "kind": "action", "instruction": "The sage walks away from the camera, up the hall toward the distant dais, seen from behind. An unhurried walk, staff planted with each second step, his draped cloth swinging and settling as he goes. The seated ministers on both sides stay still and do not turn. The camera does not move. The hall, the pillars and the light do not change." },
+    "01-03": { "kind": "action", "instruction": "Seated ministers turn their heads toward the entrance, one after another, unhurried - curiosity, not alarm. Nobody stands. Nobody speaks. Their draped cloth settles as they turn. The camera does not move. The hall and the light do not change." },
+    "01-04": { "kind": "action", "instruction": "The king rises to his feet from the throne in one unhurried movement, straightening to standing. His draped lower cloth and the cloth over his shoulder fall and settle as he stands. His crown, his necklaces, his belt and his face do not change. Nobody else moves. The camera does not move." },
+    "01-05": { "kind": "action", "instruction": "The king walks down the steps of the dais, one step at a time, opening his arms as he comes. His draped cloth moves with each step and settles. His crown, ornament, costume and face do not change. Nobody else moves. The camera does not move. The hall and the light do not change." },
+    "01-06": { "kind": "action", "instruction": "Water pours in a steady stream from a vessel over a pair of bare feet on stone, splashing and running away across the floor. Hands hold the vessel and tilt it. No face is visible and none enters the frame. The camera does not move. Nothing else in the frame changes." },
+    "01-07": { "kind": "subtle", "instruction": "Two men seated facing each other on the same level, both still. The king's head inclines very slightly as he asks. The sage does not move; his seated posture does not change. The empty throne behind them does not change. The only other movement is a lamp flame drifting and draped cloth settling. The camera does not move." },
+    "01-08": { "kind": "subtle", "instruction": "The sage waits, seated, and does not answer. His seated posture does not change and his hands do not move. The smallest life only: breath, one lamp flame drifting, draped cloth settling. The camera does not move." },
+    "01-09": { "kind": "action", "instruction": "The king, seated, opens one hand a small distance - an easy, unthinking, generous gesture, no larger than a hand's width. Nothing else about him moves; his crown, ornament, costume and face do not change. The camera does not move. A lamp flame drifts." },
+    "01-10": { "kind": "subtle", "instruction": "Ministers seated along the hall, watching, attentive and at ease. Nobody is troubled and nobody reacts. Almost no movement at all: breath, a lamp flame drifting, draped cloth settling. The camera does not move." },
+    "01-11": { "kind": "action", "instruction": "The king lifts one hand a small distance, palm opening upward, level and unforced - a small movement, no larger than a hand's width, and it stops. Nothing else about him moves; his crown, ornament, costume and face do not change. The camera does not move. A lamp flame drifts." },
+    "01-12": { "kind": "subtle", "instruction": "A pair of open hands resting on knees, palms up, completely unchanged. The fingers do not close and do not move. No face is visible. The only movement is draped cloth settling and the light shifting very slightly. The camera does not move." },
+    "01-13": { "kind": "subtle", "instruction": "A man's face at ease, almost pleased, held nearly still. Breath only, and one slow blink. His crown, ornament and costume do not change. The camera does not move. A lamp flame drifts behind him." },
+    "01-14": { "kind": "subtle", "instruction": "The sage's face, about to speak: the smallest intake of breath, his lips parting slightly, and it stops there. He does not speak. His seated posture does not change. The camera does not move. A lamp flame drifts." }
+  },
+  "_no_motion": {
+    "01-15": "motion_allowed: false - a reuse of 01-13. Nothing is animated.",
+    "01-16": "motion_allowed: false - a reuse of 01-14, and the film's final hold. Nothing is animated."
+  }
+}

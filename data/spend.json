@@ -1619,10 +1619,25 @@
       },
       "estimate_usd": 0.23,
       "usd": 0.23
+    },
+    {
+      "at": "2026-09-22T17:54:55.561Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-01",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
     }
   ],
   "totals": {
-    "usd": 6.9722,
-    "calls": 108
+    "usd": 7.3222,
+    "calls": 109
   }
 }

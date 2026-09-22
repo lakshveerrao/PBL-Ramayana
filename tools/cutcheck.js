@@ -2,6 +2,7 @@
 // cutcheck - do the cuts land on the frames the shot list says, and does skin survive
 // the whole pipeline? Measured on the finished video, not on a test patch.
 import { read, treatment, ROOT, firstDirected } from '../lib/store.js';
+import { albedoForShot, toleranceL } from '../lib/skin.js';
 import { plan } from '../lib/assemble.js';
 import { frame as graphFrame } from '../lib/graph.js';
 import { execFileSync } from 'node:child_process';
@@ -56,6 +57,46 @@ function sampleFrame(idx) {
   return { r: r / n, g: g / n, b: bl / n };
 }
 
+// The SKIN sample for a shot: the same textured-skin-hue median tools/skinsample.js
+// reads off a sheet, run on the delivered frame. The band above is the frame's midtone
+// and is not a face - a wide of an empty hall and a close-up of one man are not
+// comparable numbers, and reporting one as the other is how a check stops meaning
+// anything. This looks for the face.
+function faceAt(idx) {
+  const b = rawFrame(idx);
+  const lum = new Float32Array(W * H);
+  for (let i = 0, k = 0; i < b.length; i += 3, k++) lum[k] = 0.2126 * b[i] + 0.7152 * b[i + 1] + 0.0722 * b[i + 2];
+  const hits = [];
+  const STEP = 2;
+  for (let y = STEP; y < H - STEP; y += STEP) for (let x = STEP; x < W - STEP; x += STEP) {
+    const i = (y * W + x) * 3;
+    const r = b[i], g = b[i + 1], bb = b[i + 2];
+    const mx = Math.max(r, g, bb), mn = Math.min(r, g, bb);
+    if (mx / 255 > 0.92) continue;
+    const sat = mx === 0 ? 0 : (mx - mn) / mx;
+    if (sat < 0.15 || sat > 0.55) continue;
+    if (!(r > g && g >= bb)) continue;
+    let s1 = 0, s2 = 0, n = 0;
+    for (let dy = -STEP; dy <= STEP; dy += STEP) for (let dx = -STEP; dx <= STEP; dx += STEP) {
+      const v = lum[(y + dy) * W + (x + dx)]; s1 += v; s2 += v * v; n++;
+    }
+    if (Math.sqrt(Math.max(0, s2 / n - (s1 / n) ** 2)) < 2.0) continue;
+    const d = mx - mn;
+    let hue = 0;
+    if (d !== 0) hue = mx === r ? 60 * (((g - bb) / d) % 6) : mx === g ? 60 * ((bb - r) / d + 2) : 60 * ((r - g) / d + 4);
+    if (hue < 0) hue += 360;
+    if (hue < 5 || hue > 40) continue;
+    hits.push({ r, g, b: bb, y });
+  }
+  if (hits.length < 150) return null;
+  const rows = hits.map((h) => h.y).sort((a, c) => a - c);
+  const cut = rows[Math.floor(rows.length * 0.25)];
+  let head = hits.filter((h) => h.y <= cut);
+  if (head.length < 80) head = hits;
+  const med = (k) => { const a = head.map((h) => h[k]).sort((x, y) => x - y); return a[a.length >> 1]; };
+  return { r: med('r'), g: med('g'), b: med('b'), pixels: head.length };
+}
+
 // A coarse average-pooled grid of the whole frame. Grain averages out; composition does not.
 const GRID_X = 12, GRID_Y = 20;
 function signatureAt(idx) {
@@ -94,9 +135,12 @@ const locks = read('locks').locks;
 let failures = 0;
 
 console.log(`\nCUTCHECK ${film} - ${file}\n`);
-console.log('  shot    start  frames   entity        swatch L*   lock L*   delta   verdict');
+console.log('  a frame outside its sheet is REPORTED, not failed - lighting differs from a sheet');
+console.log('  legitimately. What blocks is a grade op that raises skin: see gradecheck.\n');
+console.log('  shot    start  frames   entity        frame L*   sheet L*   delta   note');
 console.log('  ' + '-'.repeat(76));
 
+let reported = 0;
 let cursor = 0;
 const boundaries = [];
 for (const s of p.shots) {
@@ -106,18 +150,51 @@ for (const s of p.shots) {
   boundaries.push({ shot: s.id, start, end: cursor - 1, mid, entities: s.entities ?? [] });
 }
 
+// A FRAME outside its sheet is REPORTED, never blocked - the director set this on
+// 2026-09-22 and the reason is sound: a face in shadow, or in the lattice light, or
+// three-quarters to a window differs from its sheet legitimately, and failing on that
+// would be measuring the lighting and calling it colourism. What blocks is a grade op
+// that raises skin, and tools/gradecheck.js is where that is measured.
+//
+// This band is also the WHOLE FRAME's midtone, not a face: a wide of an empty hall and
+// a close-up of one man are not comparable numbers. So the column says what it is.
+// CALIBRATION, from the film's own shots. faceAt() looks for textured skin-hue pixels,
+// and warm sandstone, lime plaster and gold pass that test: run on 01-01, an empty hall
+// with no person in it, it happily returns a "face". So the film's no-principal shots
+// are the control. A sample that is indistinguishable from them is architecture, and
+// saying so is the only honest thing to print - a column that reported every shot as
+// "above sheet" because the walls are warm would cry colourism sixteen times and mean
+// nothing.
+// "No principal" is not "no entities" - 01-01's entity list is ['SABHA'], a place. The
+// control is the shots for which no CHARACTER albedo resolves at all.
+const control = boundaries
+  .filter((b) => !albedoForShot(b.entities ?? []) && !(b.entities ?? []).some((e) => locks.some((l) => l.kind === 'skin_albedo' && l.entity === e)))
+  .map((b) => { const f = faceAt(b.mid); return f ? lstar(f) : null; })
+  .filter((x) => x !== null);
+const baseline = control.length ? control.reduce((a, x) => a + x, 0) / control.length : null;
+if (baseline !== null) {
+  console.log(`  control: ${control.length} shot(s) with no principal sample at L* ${baseline.toFixed(1)} - that is this film's`);
+  console.log(`  warm architecture, not a face. A sample within 3 of it is not isolable from the set.\n`);
+}
+
 for (const b of boundaries) {
-  const sample = sampleFrame(b.mid);
+  const face = faceAt(b.mid);
+  const sample = face ?? sampleFrame(b.mid);
   const entity = b.entities[0];
   const lock = entity ? locks.find((l) => l.kind === 'skin_albedo' && l.entity === entity) : null;
-  if (!lock) {
+  const sheet = lock ? { lab_L: lock.value.lab_L, tol: lock.value.tolerance_L, id: entity }
+              : (albedoForShot(b.entities) ? { lab_L: albedoForShot(b.entities).lab_L, tol: toleranceL(), id: albedoForShot(b.entities).entity } : null);
+  if (!sheet) {
     console.log(`  ${b.shot.padEnd(7)} ${String(b.start).padStart(5)}  ${String(b.end - b.start + 1).padStart(6)}   ${'(no principal)'.padEnd(13)} ${lstar(sample).toFixed(1).padStart(8)}       -         -     -`);
     continue;
   }
-  const out = lstar(sample), want = lock.value.lab_L, d = out - want, tol = lock.value.tolerance_L;
-  const ok = Math.abs(d) <= tol;
-  if (!ok) failures++;
-  console.log(`  ${b.shot.padEnd(7)} ${String(b.start).padStart(5)}  ${String(b.end - b.start + 1).padStart(6)}   ${entity.padEnd(13)} ${out.toFixed(1).padStart(8)}  ${want.toFixed(1).padStart(8)}  ${(d >= 0 ? '+' : '') + d.toFixed(2).padStart(5)}   ${ok ? 'held' : (d > 0 ? 'LIGHTENED' : 'DARK')}`);
+  const out = lstar(sample), want = sheet.lab_L, d = out - want;
+  const architectural = baseline !== null && Math.abs(out - baseline) <= 3;
+  const note = !face ? 'no face found'
+             : architectural ? 'not isolable from the set'
+             : (Math.abs(d) <= sheet.tol ? 'at sheet' : (d > 0 ? 'above sheet' : 'below sheet'));
+  reported += (face && !architectural && Math.abs(d) > sheet.tol) ? 1 : 0;
+  console.log(`  ${b.shot.padEnd(7)} ${String(b.start).padStart(5)}  ${String(b.end - b.start + 1).padStart(6)}   ${sheet.id.padEnd(13)} ${out.toFixed(1).padStart(8)}  ${want.toFixed(1).padStart(8)}  ${(d >= 0 ? '+' : '') + d.toFixed(2).padStart(5)}   ${note}`);
 }
 
 // Cuts: the frame before a boundary must differ from the frame at it; frames inside a

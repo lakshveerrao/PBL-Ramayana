@@ -32,12 +32,12 @@ was never written to carry them.
 | 01-03 | ministers' heads turning — **curiosity**; individuals, not extras | a stir that is not alarm | ACTION: heads turn toward the entrance | ✓ |
 | 01-04 | **he rises — the first time we see him move** | Daśaratha stands | ACTION: the king rises | ✓ |
 | 01-05 | he steps off the dais **to meet a guest** | a king does not do this | ACTION: descends, **arms opening** | ✓ see below |
-| 01-06 | water poured over the sage's feet; **the sage's nod**. *Hands and feet only, no faces.* | a vessel, hands, water poured; the sage's nod | ACTION: water pours over the feet | ✓ + a beat |
+| 01-06 | water poured over the sage's feet; *hands and feet only, no faces* | a vessel, hands, water poured | ACTION: water pours over the feet | ✓ nod cut |
 | 01-07 | seated, facing; the empty throne behind; **the king asks** | *"Tell me what you want."* | ACTION: the king's asking gesture | ✓ |
 | 01-08 | he does not answer yet | he does not answer yet | subtle | ✓ |
-| 01-09 | the king, **generous, unthinking** | *"Whatever it is, I'll do it."* | ACTION: **his hand opens** | added |
+| 01-09 | the king, **generous, unthinking** | *"Whatever it is, I'll do it."* | ACTION: **his hand opens**, small | ours, accepted |
 | 01-10 | Vasiṣṭha watching — **unreadable, NOT uneasy** | Vasiṣṭha among them, unreadable | subtle | ✓ + see below |
-| 01-11 | **level, warm, unforced** | *"You have my word."* | ACTION: **his hand lifts, palm open** | added |
+| 01-11 | **level, warm, unforced** | *"You have my word."* | ACTION: **hand lifts, palm open**, small | ours, accepted |
 | 01-12 | the sage's hands open on his knees, **unchanged**. Hands only. | resting open, unchanged | subtle | ✓ |
 | 01-13 | the king at ease, almost pleased | lighter for it | subtle | ✓ |
 | 01-14 | the smallest intake of breath | the smallest intake of breath | subtle + **lips parting** | ✓ |
@@ -65,18 +65,17 @@ asks* outright. A gesture is a rendering of it.
 dais *to meet a guest*. Opening the arms is the physical statement that beat is about.
 Declared as **S**, our staging, but well inside what the pack asks for.
 
-**01-06 has a second beat nobody listed: the sage's nod.** Both the pack and the
-treatment put it there. It is the only acknowledgement he gives in the film and it
-answers the king's gesture. Add it or cut it deliberately. The pack also fixes the frame:
-**hands and feet only, no faces** — so the nod has to read without a face in shot.
+**01-06: the nod is CUT.** Both the pack and the treatment put a nod there, and the
+director cut it on 2026-09-22 for the reason the pack itself supplies two lines later:
+*hands and feet only, no faces*. A nod cannot read without a face. The beat stays what it
+is — a vessel, hands, water.
 
-**01-09 and 01-11 are the only true additions.** The pack gives both as expression only —
-*generous, unthinking*, and *level, warm, unforced*. The hand opening and the hand lifting
-are ours: **S**, declared, not absorbed as though the treatment asked for them. Worth
-weighing once: in a 32-second film whose register is stillness, two hand moves on the same
-man inside three shots is the busiest the film gets, and 01-12 is deliberately the sage's
-hands **unchanged**. The contrast only reads if the king's hands are the only ones
-moving — which is an argument *for* them, and an argument for making them small.
+**01-09 and 01-11 stay, as small hand moves.** Accepted by the director on 2026-09-22.
+They are the only true additions in the film — the pack gives both as expression only,
+*generous, unthinking* and *level, warm, unforced*. They are **S**, ours, declared. Small
+is the instruction: in a 32-second film whose register is stillness, these are the busiest
+it gets, and 01-12 is deliberately the sage's hands **unchanged**. The contrast only reads
+if the king's hands are the only ones moving.
 
 ## Two things the pack overrides in the graph
 

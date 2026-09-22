@@ -6,19 +6,21 @@
 import { read } from '../lib/store.js';
 import { skinGovernance } from '../lib/contract.js';
 import { gradeNumbers } from '../lib/graph.js';
-import { chain } from '../lib/grade.js';
+import { chain, gradeTrims, exposureTrim } from '../lib/grade.js';
+import { albedos, measurable as skinMeasurable, toleranceL, raisesSkin } from '../lib/skin.js';
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, readFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
-function throughGrade(hex) {
+function throughGrade(hex, trimGain = null) {
   const dir = mkdtempSync(join(tmpdir(), 'pbl-grade-'));
   const raw = join(dir, 'p.rgb');
   try {
+    const vf = [trimGain ? exposureTrim(trimGain) : null, chain()].filter(Boolean).join(',');
     execFileSync('ffmpeg', ['-hide_banner', '-loglevel', 'error',
       '-f', 'lavfi', '-i', `color=c=${hex}:s=64x64:d=1`,
-      '-vf', chain(), '-frames:v', '1', '-pix_fmt', 'rgb24', '-f', 'rawvideo', '-y', raw],
+      '-vf', vf, '-frames:v', '1', '-pix_fmt', 'rgb24', '-f', 'rawvideo', '-y', raw],
       { stdio: ['ignore', 'ignore', 'pipe'] });
     const b = readFileSync(raw);
     // Sample the middle of the patch.
@@ -35,9 +37,22 @@ function lstar({ r, g, b }) {
 }
 
 const gov = skinGovernance(read('locks').locks);
-const locks = gov.locks.filter((l) => l.kind === 'skin_albedo' && l.value);
+// The graph holds the RULE; the studio's approved sheets hold the NUMBER. Where the
+// graph ships numeric locks, use them. Otherwise read direction/skin-albedo.json, which
+// tools/skinsample.js measured off the sheets a named person approved. Only when there
+// is neither is there nothing to measure.
+let locks = gov.locks.filter((l) => l.kind === 'skin_albedo' && l.value);
+let source = 'data/locks.json';
+if (!locks.length && skinMeasurable()) {
+  locks = albedos().entities.map((e) => ({
+    id: `SHEET.${e.entity}`, entity: e.entity, kind: 'skin_albedo',
+    value: { srgb_hex: e.srgb_hex, lab_L: e.lab_L, tolerance_L: toleranceL() },
+    rule: gov.locks[0]?.rule ?? 'Never lighter than the approved model sheet.',
+  }));
+  source = `direction/skin-albedo.json, read from the approved sheets on ${albedos().measured_on}`;
+}
 
-if (!gov.measurable) {
+if (!locks.length) {
   // Skin is governed by policy: the studio's approved model sheets set it, not the
   // graph. There is nothing numeric to measure until those sheets exist. Say so
   // plainly rather than passing vacuously or crashing.
@@ -58,8 +73,12 @@ if (!gov.measurable) {
   process.exit(bad ? 1 : 0);
 }
 let failures = 0;
-console.log('\nGRADECHECK - locked skin albedo through the real grade chain\n');
-console.log('  entity        locked        L* in    L* out   delta   tol   verdict');
+console.log('\nGRADECHECK - approved skin albedo through the real grade chain\n');
+console.log(`  numbers from ${source}`);
+console.log('  HARD FAIL is one-sided, by direction: a grade op that RAISES skin. Drifting');
+console.log('  dark is reported, not blocked - it is a consistency note, not the defect');
+console.log('  this rule exists for.\n');
+console.log('  entity        albedo        L* in    L* out   delta   tol   verdict');
 console.log('  ' + '-'.repeat(70));
 
 for (const l of locks) {
@@ -68,12 +87,27 @@ for (const l of locks) {
   const lin = lstar(inRgb), lout = lstar(out);
   const delta = lout - lin;
   const tol = l.value.tolerance_L;
-  // Two-sided. Lightening is the colourism defect the rule exists for; drifting dark
-  // is a consistency defect against the same lock. Neither is acceptable.
-  const ok = Math.abs(delta) <= tol;
-  if (!ok) failures++;
-  const verdict = ok ? 'held' : (delta > 0 ? 'LIGHTENED' : 'DRIFTED DARK');
+  const lifted = raisesSkin(delta, tol);
+  if (lifted) failures++;
+  const verdict = lifted ? 'RAISES SKIN' : (delta < -tol ? 'drifted dark (reported)' : 'held');
   console.log(`  ${l.entity.padEnd(13)} ${l.value.srgb_hex}      ${lin.toFixed(1).padStart(5)}   ${lout.toFixed(1).padStart(6)}  ${(delta >= 0 ? '+' : '') + delta.toFixed(2)}   ${tol.toFixed(1)}   ${verdict}`);
+}
+
+// Per-shot exposure trims, reported separately and never hidden. A trim is one declared
+// act on one shot under a name - not a process quietly lightening every face - so a
+// lightening trim does not fail this check. Its effect on skin is stated every time.
+const trims = gradeTrims().trims ?? [];
+if (trims.length) {
+  console.log('\n  exposure trims, through the same albedos:');
+  for (const t of trims) {
+    const dir = t.gain > 1 ? 'LIFTS' : 'lowers';
+    for (const l of locks) {
+      const before = lstar(hexRgb(l.value.srgb_hex));
+      const after = lstar(throughGrade(l.value.srgb_hex, t.gain));
+      const d = after - before;
+      console.log(`    ${t.film}/${t.shot} gain ${t.gain}  ${l.entity.padEnd(12)} ${before.toFixed(1)} -> ${after.toFixed(1)}  ${(d >= 0 ? '+' : '') + d.toFixed(2)}  ${dir} the frame${t.gain > 1 ? ' - declared, reported, not blocked' : ''}`);
+    }
+  }
 }
 
 // And the never-blue rule, measured: a neutral shadow must not come out bluer.

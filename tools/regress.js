@@ -23,6 +23,20 @@ import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
 import { chain as gradeChain, grainChain, exposureTrim, trimChain, lighteningBlockedBecause } from '../lib/grade.js';
+import { sampleFace, lstar as lstarOf } from './skinsample.js';
+import { measurable as skinMeasurable, raisesSkin } from '../lib/skin.js';
+import { chooseWindow } from './motion_film.js';
+import { execFileSync as _exec } from 'node:child_process';
+import { mkdirSync as _mkdir } from 'node:fs';
+// A tiny generated image for the skin-sampler regressions. Goes to the scratch assets
+// directory, never into assets/, where a human looks at real sheet evidence.
+const mkTestImage = (lavfi) => {
+  const d = join(ROOT, process.env.PBL_ASSETS ?? '.test-assets');
+  _mkdir(d, { recursive: true });
+  const p = join(d, `t_${Math.random().toString(36).slice(2)}.png`);
+  _exec('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-f', 'lavfi', '-i', lavfi, '-frames:v', '1', '-y', p], { stdio: ['ignore', 'ignore', 'pipe'] });
+  return p;
+};
 import { plan as assemblePlan } from '../lib/assemble.js';
 import { reconcile, parseJson, briefFor } from '../lib/direct.js';
 import { checkNarration } from '../lib/register.js';
@@ -109,6 +123,39 @@ t('an entity with no memo passes the memo gate', () => {
 t('assembling a prompt for a memo-blocked entity refuses', async () => {
   const fake = { ...shotOf('M3', '03-05'), entities: ['TATAKA'] };
   await throws(() => assemble(fake, 'M3'), 'GateRefusal', 'a prompt was assembled for TATAKA');
+});
+
+// --- the skin sampler must find a face, and must not be fooled by a backdrop -------
+t('the skin sampler separates a face from a warm dark backdrop', () => {
+  // The first version assumed the head was in the upper third and read Vasistha's
+  // studio backdrop - hue 25, saturation 0.3, value 0.17 - as his face, calling his
+  // skin L* 14.9. Texture is what separates them, and it must never be brightness: a
+  // tool that excludes dark pixels to find a face is a colourist tool.
+  const flat = mkTestImage('color=c=#2C241F:s=240x400');       // a flat warm-dark backdrop
+  const r = sampleFace(flat);
+  ok(!r.ok, `the sampler found a "face" in a flat backdrop: ${JSON.stringify(r)}`);
+});
+t('the skin sampler reads a textured patch in the skin band', () => {
+  const noisy = mkTestImage('color=c=#8D694C:s=240x400,noise=alls=12:allf=t+u');
+  const r = sampleFace(noisy);
+  ok(r.ok, `the sampler found nothing in a textured skin patch: ${r.reason}`);
+  const L = lstarOf(r);
+  ok(Math.abs(L - 47.35) < 6, `read L* ${L.toFixed(1)} from a patch whose albedo is L* 47.4`);
+});
+t('a lightening trim is cleared now that the sheets carry numbers', () => {
+  // The rule is not "never lighten" - the director moved the protection onto skin. What
+  // blocks is a grade op that RAISES skin, and gradecheck measures that.
+  ok(skinMeasurable(), 'direction/skin-albedo.json holds no numbers');
+  ok(raisesSkin(3.0, 2.0), 'a +3 L* move was not counted as raising skin');
+  ok(!raisesSkin(-3.0, 2.0), 'a -3 L* move was counted as raising skin - the check is two-sided');
+  ok(!raisesSkin(1.0, 2.0), 'a move inside tolerance was counted as raising skin');
+});
+t('the window chooser takes the busiest window for action and the quietest for subtle', () => {
+  //                 quiet          busy            quiet
+  const prof = [1, 1, 1, 1, 1, 9, 9, 9, 9, 9, 1, 1, 1, 1, 1];
+  ok(chooseWindow(prof, 5, 'action') === 5, `action took window ${chooseWindow(prof, 5, 'action')}, not the busy one at 5`);
+  const q = chooseWindow(prof, 5, 'subtle');
+  ok(q === 0 || q === 10, `subtle took window ${q}, which is not one of the quiet ones`);
 });
 
 // --- an exposure trim darkens, in linear light, and never lightens ---------------

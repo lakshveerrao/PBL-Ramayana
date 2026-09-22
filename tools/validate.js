@@ -18,6 +18,7 @@ import { endpointCost } from '../lib/cost.js';
 import { identityPolicy } from '../lib/render.js';
 import { assemble, directionOverrides, statesItsFrame } from '../lib/prompt.js';
 import { gradeTrims, lighteningBlockedBecause } from '../lib/grade.js';
+import { albedos as skinAlbedos } from '../lib/skin.js';
 import { unresolvedReuses, sharedPlateFor } from '../lib/graph.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
@@ -752,6 +753,31 @@ check('prompt', 'no prompt describes cloth that is stitched', () => {
     }
   }
   T(offenders.length === 0, `cloth described as stitched: ${offenders.join(', ')}`);
+});
+check('grade', 'every measured skin albedo names the sheet it was read from', () => {
+  // The number is production design, read off a sheet a named person approved. If it
+  // cannot say which sheet and which view, it is a number somebody typed.
+  const a = skinAlbedos();
+  if (!(a.entities ?? []).length) return; // nothing measured yet is a valid state
+  T(a.sheets_approved_by, 'direction/skin-albedo.json names nobody who approved the sheets');
+  T(a.measured_on, 'direction/skin-albedo.json does not say when it was measured');
+  for (const e of a.entities) {
+    T(e.from_view, `${e.entity}'s albedo does not name the view it came from`);
+    T(/^#[0-9A-F]{6}$/.test(e.srgb_hex), `${e.entity}'s albedo is not a hex colour: ${e.srgb_hex}`);
+    T(typeof e.lab_L === 'number' && e.lab_L > 0 && e.lab_L < 100, `${e.entity}'s L* is ${e.lab_L}`);
+    T(existsSync(join(ROOT, 'assets', 'sheets', `SHEET.${e.entity}`, e.from_view)),
+      `${e.entity}'s albedo cites ${e.from_view}, which is not in assets/sheets/SHEET.${e.entity}/`);
+  }
+});
+check('grade', 'where a sheet has several views, the albedo is the darkest', () => {
+  // "Never lighter than the approved model sheet" needs a FLOOR. Taking the brightest
+  // view would license lightening by one lamp.
+  for (const e of skinAlbedos().entities ?? []) {
+    if (!(e.views_L ?? []).length) continue;
+    const darkest = Math.min(...e.views_L.map((v) => v.L));
+    T(Math.abs(e.lab_L - darkest) < 0.01,
+      `${e.entity} took L* ${e.lab_L} when its darkest view is ${darkest} - a brighter view would license lightening`);
+  }
 });
 check('grade', 'a lightening trim is cleared on skin, never on exposure alone', () => {
   // The protection belongs on skin, not on exposure (the director, 2026-09-22): a shot

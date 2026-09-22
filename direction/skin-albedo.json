@@ -1,0 +1,73 @@
+{
+  "_doc": "The measured face albedo of each APPROVED model sheet. LOCK.SKIN.POLICY says this number is production design, set by the studio's approved sheets and not by the graph - so it lives here, beside the sheets it was read from, and data/ stays byte-identical.",
+  "_how": "tools/skinsample.js, median of the skin-hue pixels in the upper third of the sheet. Saturation 0.15-0.55 is what separates a face from the saffron and the red-and-gold beside it. Re-run it to reproduce any number here.",
+  "_which_view": "Where a sheet has several views, the DARKEST is taken. A view lit brighter reads lighter, and the rule is \"never lighter than the approved model sheet\" - taking the brightest would license lightening by one lamp.",
+  "_what_it_is_for": "Two different checks, and they are not the same test. (1) A FRAME measured outside this is REPORTED, never blocked: a face in shadow or in the lattice light differs from its sheet legitimately. (2) A GRADE OP that raises skin relative to the ungraded frame is a HARD FAIL. That is the defect the rule exists for.",
+  "_class": "S - our staging. Read from sheets a named person approved; not a claim, and not the text's.",
+  "measured_on": "2026-09-22",
+  "sheets_approved_by": "Venkat",
+  "tolerance_L": 2,
+  "_tolerance_means": "For the grade-op check only: the grade may not raise a skin L* by more than this. It is a quantisation allowance, not a licence - the grade chain is meant to move skin by zero.",
+  "entities": [
+    {
+      "entity": "DASHARATHA",
+      "srgb_hex": "#A37459",
+      "lab_L": 52.95,
+      "from_view": "front.png",
+      "pixels": 4237,
+      "views_L": [
+        {
+          "view": "front.png",
+          "hex": "#A37459",
+          "L": 52.95
+        },
+        {
+          "view": "in_world.png",
+          "hex": "#C68A63",
+          "L": 62.58
+        }
+      ],
+      "spread_L": 9.63
+    },
+    {
+      "entity": "VASISHTHA",
+      "srgb_hex": "#8B6A50",
+      "lab_L": 47.46,
+      "from_view": "front.png",
+      "pixels": 6434,
+      "views_L": [
+        {
+          "view": "front.jpg",
+          "hex": "#B37F5B",
+          "L": 57.58
+        },
+        {
+          "view": "front.png",
+          "hex": "#8B6A50",
+          "L": 47.46
+        },
+        {
+          "view": "in_world.png",
+          "hex": "#B28D74",
+          "L": 61.46
+        }
+      ],
+      "spread_L": 14
+    },
+    {
+      "entity": "VISHVAMITRA",
+      "srgb_hex": "#8D694C",
+      "lab_L": 47.35,
+      "from_view": "front.png",
+      "pixels": 1907,
+      "views_L": [
+        {
+          "view": "front.png",
+          "hex": "#8D694C",
+          "L": 47.35
+        }
+      ],
+      "spread_L": 0
+    }
+  ]
+}
