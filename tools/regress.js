@@ -864,6 +864,23 @@ t('the endpoint is read per call, not captured at import', async () => {
   ok(got === 'fal-ai/bytedance/seedream/v4/edit', 'FAL_IMAGE_MODEL was captured at module load and cannot be changed');
 });
 
+t('the reference capability comes from the PROVIDER, not fal\'s endpoint table', async () => {
+  // lib/endpoints.js is a FAL registry. Asking it about "gpt-image-2" returns false and
+  // every shot with a person in it was refused as text-to-image. It is not text-to-image.
+  const { referencePlan } = await import('../lib/render.js');
+  const policy = { reference_conditioned: true, method: 'reference-conditioned; never text-only' };
+  const cond = { people: ['P'], missing: [], files: ['sheet.png'], place_files: [] };
+  const r = referencePlan({ policy, cond, endpoint: 'gpt-image-2', accepts: true });
+  ok(r.use === true && !r.refusal, `an OpenAI endpoint was refused as text-to-image: ${r.refusal}`);
+  // And an honest false still refuses.
+  const no = referencePlan({ policy, cond, endpoint: 'gpt-image-2', accepts: false });
+  ok(no.use === false && /text-to-image/.test(no.refusal ?? ''), 'a genuinely text-only endpoint was allowed');
+  // The configured provider must answer for itself.
+  const providers = await import('../lib/providers.js');
+  const c = providers.image.cost({ references: 1 });
+  ok(typeof c.reference_conditioned === 'boolean', 'the provider does not report whether it takes a reference');
+});
+
 t('BLOCKED: a mandated graph plus a text-only endpoint refuses the render', async () => {
   const { referencePlan } = await import('../lib/render.js');
   const policy = { reference_conditioned: true, method: 'reference-conditioned; never text-only', rule: 'r' };

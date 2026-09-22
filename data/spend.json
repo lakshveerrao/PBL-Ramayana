@@ -899,10 +899,250 @@
       },
       "estimate_usd": 0.0503,
       "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:38:03.743Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-01",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T12:38:43.790Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-03",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:48:54.497Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-01",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T12:49:27.176Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-02",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.038,
+      "usd": 0.038
+    },
+    {
+      "at": "2026-09-22T12:50:02.026Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-03",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:50:38.076Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-04",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.038,
+      "usd": 0.038
+    },
+    {
+      "at": "2026-09-22T12:52:02.835Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-05",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:52:41.902Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-06",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:53:15.474Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-07",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:53:48.401Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-08",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T12:54:20.673Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-09",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.038,
+      "usd": 0.038
+    },
+    {
+      "at": "2026-09-22T12:55:48.049Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-10",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0626,
+      "usd": 0.0626
+    },
+    {
+      "at": "2026-09-22T12:56:19.977Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-11",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.038,
+      "usd": 0.038
+    },
+    {
+      "at": "2026-09-22T12:56:35.763Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-12",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T12:57:10.530Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-13",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.038,
+      "usd": 0.038
+    },
+    {
+      "at": "2026-09-22T12:57:31.016Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-14",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
     }
   ],
   "totals": {
-    "usd": 2.7173,
-    "calls": 60
+    "usd": 3.3499,
+    "calls": 76
   }
 }
