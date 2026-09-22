@@ -1,0 +1,21 @@
+{
+  "_doc": "The music decision, recorded here because PRODUCTION_ORDERS §2 requires it and because it OVERRIDES the installed graph. data/music.json says \"provider\": \"none\" and is frozen; it is never edited. This file is where the override lives, and it is the only thing that licenses the studio to run a music provider at all.",
+  "id": "DD-MUSIC",
+  "decided_on": "2026-09-22",
+  "decided_by": "Laksh",
+  "class": "S",
+  "decision": "generated",
+  "chosen": "Generated. ElevenLabs music, or another generative provider if better.",
+  "overrides": {
+    "file": "data/music.json",
+    "field": "provider",
+    "was": "none",
+    "why_the_graph_is_not_edited": "v1.0.6 is frozen and byte-identical to the package. A decision that reverses one of its fields belongs in direction/, where it can be read beside its reason, not written into the source of truth."
+  },
+  "what_does_not_change": [
+    "data/music.json's BRIEF is still the brief. The ensemble, the four descending notes, the theme resolving once in the product under M6/13-14, and the silences - no music at all in M1 and M5, nothing under the name Ravana in M4, nothing under the refusal in M3 - are all still binding. Only who plays it has changed.",
+    "The theme remains OURS and is declared as ours. A generated theme is class S exactly as a composed one would be: the source establishes no music, and nothing in any payload, export or caption may present it as traditional or as the text's.",
+    "Nothing generated is presented as performed by a named musician or in a named gharana."
+  ],
+  "note": "This reverses a choice the studio previously stated as deliberate - CLAUDE.md says MUSIC_PROVIDER=none is deliberate and that no API writes the theme. That line is now out of date and says so."
+}

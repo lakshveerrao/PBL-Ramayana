@@ -945,7 +945,30 @@ check('joins', 'the continuous joins form an unbroken chain', () => {
 });
 
 // ---------------------------------------------------------------- music
-check('music', 'the music provider is none', () => T(read('music').provider === 'none', 'music provider is not none'));
+// The graph says provider "none" and is frozen. PRODUCTION_ORDERS §2 settles it the
+// other way - music is generated - and requires the studio contract to stop refusing a
+// provider. So the invariant is no longer "the provider is none". It is that a provider
+// may only run where the reversal is RECORDED, with its class, beside the brief it does
+// not replace. A configured provider and no record is the blocked case.
+check('music', 'a music provider runs only where the decision is recorded', () => {
+  const configured = process.env.MUSIC_PROVIDER ?? 'none';
+  const f = join(ROOT, 'direction', 'music-decision.json');
+  if (configured === 'none') return;
+  T(existsSync(f), `MUSIC_PROVIDER=${configured} and direction/music-decision.json does not exist. The graph says "none"; a reversal has to be written down.`);
+  const d = JSON.parse(text('direction/music-decision.json'));
+  T(d.class === 'S', 'the music decision does not declare class S - a generated theme is ours and says so');
+  T(d.decided_by && d.decided_on, 'the music decision names no one and no date');
+  T(d.overrides?.file === 'data/music.json', 'the music decision does not name what it overrides');
+});
+check('music', 'the recorded decision never claims the graph was changed', () => {
+  const f = join(ROOT, 'direction', 'music-decision.json');
+  if (!existsSync(f)) return;
+  const d = JSON.parse(text('direction/music-decision.json'));
+  T(read('music').provider === 'none',
+    'data/music.json no longer says "none" - the frozen package was edited instead of overridden');
+  T(d.overrides?.was === read('music').provider,
+    'the decision misstates what the graph says, so the record and the source disagree');
+});
 check('music', 'music is a brief, not a generated asset', () => {
   const m = read('music');
   T(m.brief && typeof m.brief === 'object', 'music.json carries no brief');
@@ -953,10 +976,18 @@ check('music', 'music is a brief, not a generated asset', () => {
   T(/composer|composed by a person|no api|not generated|human/i.test(blob),
     'nothing in music.json says the theme is written by a person');
 });
-check('music', 'the env example keeps MUSIC_PROVIDER=none', () => {
-  const blob = text('.env.example');
-  T(blob.length > 0, '.env.example is missing');
-  T(/MUSIC_PROVIDER=none/.test(blob), '.env.example no longer sets MUSIC_PROVIDER=none');
+check('music', 'the brief still binds, whoever plays it', () => {
+  // What the decision changed is who plays the theme. Everything the brief specifies -
+  // the ensemble, the four descending notes, where it resolves, and above all the
+  // silences - is untouched by it.
+  const m = read('music');
+  T(m.brief && typeof m.brief === 'object', 'music.json carries no brief');
+  const f = join(ROOT, 'direction', 'music-decision.json');
+  if (!existsSync(f)) return;
+  const d = JSON.parse(text('direction/music-decision.json'));
+  const kept = JSON.stringify(d.what_does_not_change ?? []);
+  T(/brief/i.test(kept), 'the decision does not say the brief still binds');
+  T(/ours|class S/i.test(kept), 'the decision does not keep the theme declared as ours');
 });
 
 // ---------------------------------------------------------------- spend

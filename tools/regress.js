@@ -958,6 +958,143 @@ t('BLOCKED: a face-withheld character gets no portrait framing', async () => {
   }
 });
 
+// --- music -------------------------------------------------------------------------
+// The contract changed on the user's decision of 2026-09-22: it used to refuse any
+// music provider outright. It now refuses one that no recorded decision licenses.
+
+t('BLOCKED: a music provider with no recorded decision refuses', async () => {
+  const { readFileSync, writeFileSync, unlinkSync, existsSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const f = join(ROOT, 'direction', 'music-decision.json');
+  const saved = existsSync(f) ? readFileSync(f, 'utf8') : null;
+  const before = process.env.MUSIC_PROVIDER;
+  process.env.MUSIC_PROVIDER = 'elevenlabs';
+  if (saved) unlinkSync(f);
+  let threw = null;
+  try {
+    const pr = await import('../lib/providers.js?m=' + Date.now());
+    await pr.music.generate({});
+  } catch (e) { threw = e; }
+  if (saved) writeFileSync(f, saved);
+  if (before === undefined) delete process.env.MUSIC_PROVIDER; else process.env.MUSIC_PROVIDER = before;
+  ok(threw && /has to be written down|does not record/.test(threw.message),
+     `an unlicensed music provider was allowed to generate: ${threw?.message}`);
+});
+
+t('ALLOWED: with the decision recorded, the contract no longer refuses the provider', async () => {
+  // It must get PAST the contract. Phase D has not built the route, so the refusal it
+  // reaches must be about the route not existing - not about the provider being banned.
+  const before = process.env.MUSIC_PROVIDER;
+  process.env.MUSIC_PROVIDER = 'elevenlabs';
+  let threw = null;
+  try {
+    const pr = await import('../lib/providers.js?m2=' + Date.now());
+    await pr.music.generate({});
+  } catch (e) { threw = e; }
+  if (before === undefined) delete process.env.MUSIC_PROVIDER; else process.env.MUSIC_PROVIDER = before;
+  ok(threw && /not built yet/.test(threw.message),
+     `expected "not built yet" from the Phase D stub, got: ${threw?.message}`);
+  ok(!/composed by a person|there is no generator fallback/.test(threw.message),
+     'the old blanket refusal is still in the path');
+});
+
+t('the decision overrides the graph without editing it', async () => {
+  const { read } = await import('../lib/store.js');
+  const { readFileSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const d = JSON.parse(readFileSync(join(ROOT, 'direction', 'music-decision.json'), 'utf8'));
+  ok(d.class === 'S', 'the music decision is not declared as ours');
+  ok(d.overrides?.file === 'data/music.json', 'the decision does not name what it overrides');
+  // data/ is frozen. The override is a record, never an edit.
+  const graphDefault = (() => { try { return read('music').provider; } catch { return null; } })();
+  if (graphDefault !== null) {
+    ok(d.overrides.was === graphDefault, 'the record and the installed graph disagree about what was overridden');
+  }
+});
+
+t('the music brief survives the decision', async () => {
+  const { readFileSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const d = JSON.parse(readFileSync(join(ROOT, 'direction', 'music-decision.json'), 'utf8'));
+  const kept = JSON.stringify(d.what_does_not_change ?? []);
+  ok(/brief/i.test(kept), 'the decision does not say the brief still binds');
+  ok(/M1 and M5|silence/i.test(kept), 'the decision does not carry the silences forward');
+  ok(/ours/i.test(kept), 'the decision does not keep the theme declared as ours');
+});
+
+// --- OpenAI images ------------------------------------------------------------------
+// No negative_prompt field, no seed, and it cannot make the frame. All three probed
+// live on 2026-09-22 against the real API; none of it is assumed.
+
+t('the frame maps to a size the model can actually make', async () => {
+  const { generationSize } = await import('../lib/openai.js');
+  // Probed: gpt-image-2 refuses 1080x1920 with "Width and height must both be divisible
+  // by 16". 1152x2048 is exactly 9:16, on the grid, and reduces to the frame.
+  const g2 = generationSize(1080, 1920, 'gpt-image-2');
+  ok(g2.size === '1152x2048', `gpt-image-2 mapped 1080x1920 to ${g2.size}`);
+  ok(g2.exact === true, 'the mapped size is not the frame aspect');
+  ok(g2.then_scale < 1, 'the frame is reached by enlarging, which softens every shot');
+  ok(g2.size.split('x').every((n) => Number(n) % 16 === 0), 'the mapped size is off the divisible-by-16 grid');
+
+  // Probed: gpt-image-1 offers only 1024x1024, 1024x1536, 1536x1024. None is 9:16.
+  const g1 = generationSize(1080, 1920, 'gpt-image-1');
+  ok(g1.exact === false, 'gpt-image-1 was reported as able to make a 9:16 frame');
+  ok(g1.crop_to === '864x1536', `expected a 864x1536 crop, got ${g1.crop_to}`);
+  ok(g1.then_scale > 1, 'the gpt-image-1 route was not reported as an enlargement');
+  ok(/cannot make/.test(g1.note ?? ''), 'the gpt-image-1 cost is not stated');
+});
+
+t('BLOCKED: no payload ever carries the frame size the API refuses', async () => {
+  const { buildGeneratePayload, buildEditForm } = await import('../lib/openai.js');
+  for (const model of ['gpt-image-1', 'gpt-image-2', 'gpt-image-2.5-sunburst']) {
+    ok(buildGeneratePayload({ prompt: 'p', model }).size !== '1080x1920',
+       `${model} would be sent 1080x1920, which it refuses outright`);
+    const { size } = buildEditForm({ prompt: 'p', references: ['data:image/png;base64,AA'], model });
+    ok(size !== '1080x1920', `${model} edit would be sent 1080x1920`);
+  }
+});
+
+t('BLOCKED: a negative prompt is refused rather than dropped', async () => {
+  // There is no field for it. Accepting one and discarding it is exactly the defect
+  // this codebase shipped once already, for weeks.
+  const openai = await import('../lib/openai.js');
+  for (const call of ['image', 'imageFromReference']) {
+    let threw = null;
+    try { await openai[call]({ prompt: 'p', references: ['data:image/png;base64,AA'], negative: 'plastic skin' }); }
+    catch (e) { threw = e; }
+    ok(threw && /no negative_prompt field/.test(threw.message), `${call} accepted a negative it cannot send`);
+  }
+});
+
+t('folding negatives keeps the list short and never repeats the body', async () => {
+  const { foldNegatives } = await import('../lib/prompt.js');
+  const f = foldNegatives('A hall with a flat lintel.', 'dome, arch, marble, flat lintel', { limit: 2 });
+  ok(!f.folded.includes('flat lintel'), 'a term the body already states was added back as a negative');
+  ok(f.dropped_as_already_stated === 1, 'the already-stated term was not counted');
+  ok(f.folded.length === 2 && f.dropped_for_length === 1, 'the limit was not applied');
+  ok(f.all_negatives.length === 4, 'the full list is not recorded');
+  ok(/Not in this picture/.test(f.prompt), 'the folded terms did not reach the prompt');
+  ok(f.prompt.startsWith('A hall with a flat lintel.'), 'the body was altered rather than appended to');
+});
+
+t('a dropped negative never looks like an enforced one', async () => {
+  // The whole reason the fold records four separate numbers.
+  const { foldNegatives } = await import('../lib/prompt.js');
+  const f = foldNegatives('x', 'a, b, c, d, e', { limit: 2 });
+  ok(f.folded.length + f.dropped_for_length + f.dropped_as_already_stated === f.all_negatives.length,
+     'the folded, dropped and total counts do not add up, so a term is unaccounted for');
+  ok(/left out/.test(f.note), 'the note does not say terms were left out');
+});
+
+t('a seed is reported as absent, not invented', async () => {
+  // OpenAI images has no seed. A run cannot be reproduced, which is why the output is
+  // the record of reference. Claiming a seed would make a record look reproducible.
+  const { normaliseImage } = await import('../lib/openai.js');
+  const out = normaliseImage({ data: [{ b64_json: 'AA' }] }, 'gpt-image-2');
+  ok(out.seed === null, 'a seed was invented for a provider that has none');
+  ok(out.inline === true, 'the image did not come back inline');
+});
+
 // --- credentials ------------------------------------------------------------------
 const libSrc = (f) => readFileSync(join(ROOT, 'lib', f), 'utf8');
 // PRODUCTION_ORDERS §0.11: the environment holds the keys and the proxy attaches them.
