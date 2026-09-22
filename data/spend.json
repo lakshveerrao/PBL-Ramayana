@@ -1799,10 +1799,40 @@
       },
       "estimate_usd": 0.35,
       "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T19:05:46.618Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-09",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
+    },
+    {
+      "at": "2026-09-22T19:09:35.975Z",
+      "provider": "fal",
+      "route": "motion",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "label": "M1/01-13",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.35,
+      "usd": 0.35
     }
   ],
   "totals": {
-    "usd": 11.1722,
-    "calls": 120
+    "usd": 11.8722,
+    "calls": 122
   }
 }
