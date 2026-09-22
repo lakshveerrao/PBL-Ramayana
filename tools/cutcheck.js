@@ -207,5 +207,16 @@ for (const b of boundaries.slice(1)) {
   console.log(`  ${boundaries[boundaries.indexOf(b) - 1].shot} -> ${b.shot.padEnd(7)} at frame ${String(b.start).padStart(4)}   delta across cut ${cut.toFixed(1).padStart(6)}   within shot ${stable.toFixed(1).padStart(5)}   ${sameSwatch ? 'reuse of the shot before - same picture by design' : clean ? 'cut lands' : 'NO CUT'}`);
 }
 
-console.log(failures === 0 ? `\n  every cut lands on its frame and no face drifts outside its lock\n` : `\n  ${failures} FAILED\n`);
+// Say what was actually checked. This line used to read "no face drifts outside its
+// lock" while the skin column was printing "(no principal)" on every shot - a summary
+// claiming a check that was not looking. What this tool blocks on is cut placement;
+// skin here is a report, and the count of what it reported belongs in the summary.
+const skinLine = noFace === boundaries.length
+  ? 'no frame had a face to measure'
+  : reported === 0
+    ? `${boundaries.length - noFace} cheek(s) measured, all inside the ${BAND} L* band`
+    : `${reported} of ${boundaries.length - noFace} measured cheek(s) outside the ${BAND} L* band - REPORTED, not failed`;
+console.log(failures === 0
+  ? `\n  every cut lands on its frame\n  ${skinLine}\n`
+  : `\n  ${failures} FAILED\n  ${skinLine}\n`);
 process.exit(failures === 0 ? 0 : 1);
