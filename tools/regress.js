@@ -958,6 +958,76 @@ t('BLOCKED: a face-withheld character gets no portrait framing', async () => {
   }
 });
 
+// --- credentials ------------------------------------------------------------------
+const libSrc = (f) => readFileSync(join(ROOT, 'lib', f), 'utf8');
+// PRODUCTION_ORDERS §0.11: the environment holds the keys and the proxy attaches them.
+// Nothing in this container sends one.
+
+t('no adapter sends a credential of its own by default', async () => {
+  const { authHeader, envKeysAllowed } = await import('../lib/auth.js');
+  ok(envKeysAllowed() === false, 'PBL_ALLOW_ENV_KEYS defaults to on - a stale key would be sent');
+  for (const [h, v, p] of [['Authorization', 'FAL_KEY', 'Key'],
+                           ['Authorization', 'OPENAI_API_KEY', 'Bearer'],
+                           ['xi-api-key', 'ELEVENLABS_API_KEY', '']]) {
+    ok(Object.keys(authHeader(h, v, p)).length === 0, `${v} would still be sent as ${h}`);
+  }
+});
+
+t('ALLOWED: the escape hatch sends the key, and says it is the old arrangement', async () => {
+  const before = process.env.PBL_ALLOW_ENV_KEYS, key = process.env.FAL_KEY;
+  process.env.PBL_ALLOW_ENV_KEYS = '1'; process.env.FAL_KEY = 'test-key';
+  const { authHeader, describeAuth } = await import('../lib/auth.js?k=' + Date.now());
+  const h = authHeader('Authorization', 'FAL_KEY', 'Key');
+  const d = describeAuth('FAL_KEY');
+  if (before === undefined) delete process.env.PBL_ALLOW_ENV_KEYS; else process.env.PBL_ALLOW_ENV_KEYS = before;
+  if (key === undefined) delete process.env.FAL_KEY; else process.env.FAL_KEY = key;
+  ok(h.Authorization === 'Key test-key', 'the escape hatch did not send the key');
+  ok(d.mode === 'key' && /moving away from/.test(d.detail), 'the escape hatch did not say what it is');
+});
+
+t('an unauthorised answer is reported as a missing credential, never as a bad key', async () => {
+  const { explainUnauthorised } = await import('../lib/auth.js');
+  const m = explainUnauthorised(401, 'fal', 'fal.run');
+  ok(/no API credential is configured/.test(m), 'a 401 with no key sent was blamed on a key');
+  ok(explainUnauthorised(200, 'fal', 'fal.run') === null, 'a 200 was reported as unauthorised');
+  ok(explainUnauthorised(422, 'fal', 'fal.run') === null, 'a 422 - authenticated, bad payload - was reported as unauthorised');
+});
+
+t('no ping claims a key is valid for a request that carried no key', async () => {
+  // "reachable, key valid" was the old wording, and it would now be a lie: the request
+  // carries nothing. Whatever a ping says, it must not say the key is good.
+  for (const f of ['fal.js', 'openai.js', 'eleven.js']) {
+    const src = libSrc(f);
+    ok(!/reason:\s*'reachable, key valid'/.test(src), `${f} still reports "key valid" for a keyless request`);
+  }
+});
+
+t('a probe uses a route that would refuse - not one that answers anybody', async () => {
+  // Two pings were wrong this way: fal.run/ returns 404 authenticated or not, and
+  // ElevenLabs /v1/voices returns 200 to anyone. Both read as success.
+  ok(!/fetch\('https:\/\/fal\.run\/'/.test(libSrc('fal.js')),
+     'the fal ping is back on the bare host, which answers 404 to anyone');
+  // Check the fetch, not the prose around it - the first version of this check matched
+  // the comment explaining the fix and failed on a file that was already correct.
+  const el = libSrc('eleven.js');
+  const pingFetch = el.slice(el.indexOf('export async function ping()')).match(/fetch\(([^)]*)/)?.[1] ?? '';
+  ok(/\$\{BASE\}\/user/.test(pingFetch),
+     `the ElevenLabs ping fetches ${pingFetch.trim()}; /v1/voices answers 200 to anyone and proves nothing`);
+});
+
+t('no key-like string is committed anywhere in the tree', async () => {
+  const { execFileSync } = await import('node:child_process');
+  // git grep exits 1 when it finds nothing, which is the outcome we want.
+  let out = '';
+  try {
+    out = execFileSync('git', ['grep', '-lIE', 'sk-[A-Za-z0-9_-]{20,}|xi-[A-Za-z0-9]{28,}', '--', '.'],
+      { cwd: ROOT, encoding: 'utf8' }).trim();
+  } catch (e) {
+    if (e.status !== 1) throw e;
+  }
+  ok(out === '', `a key-like string is committed in: ${out}`);
+});
+
 t('platecheck finds a frame with no picture in it', async () => {
   // fal bills for a black frame when its filter rejects a generation. One of ten came
   // back black and was filed as a candidate because nothing looked at the bytes.

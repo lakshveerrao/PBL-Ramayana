@@ -29,6 +29,7 @@ What the kit does **not** contain: character designs, footage, voices, music or 
 | `pbl-ramayana-arc7-directing-packs.md` | Creative direction for M1–M7: intent, performance, every shot, sound, language. | Yes — it's direction. |
 | `pbl-ramayana-arc7-character-briefs.md` | Design briefs for the five principals and Kausalyā's hands — what each model sheet must be. | Yes — creative proposals until a sheet is approved. |
 | `PRODUCTION_ORDERS.md` | **The operative production sequence** — providers, phases and gates, from setup to the finished films. Start here once the package is installed. | Yes. |
+| `references/codex-portraits/` | The character reference portraits — twelve images, not yet approved. | Yes, until approved. |
 | `HANDOFF.md` | This document — the reference for the package, its fields and its rules. | Yes. |
 | `CHECKSUMS.txt` | SHA-256 of every item in the kit. | — |
 

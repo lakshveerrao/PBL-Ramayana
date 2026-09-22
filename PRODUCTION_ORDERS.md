@@ -20,21 +20,26 @@ Work through the phases in order. **Every phase ends at a gate where you stop an
 8. **All cloth is draped. Nothing is stitched** — no sleeves, shirts, blouses or buttons, anywhere.
 9. **Faces withheld stay withheld:** Rāma's face first appears at **M7/04** (his FIRST FACE REVEAL); in M6 he is a bowed head only. Kausalyā is only ever her hands.
 10. **05-06 never moves.** Reuses and crops are held stills.
-11. **Keys live in `.env` only.** Never print them, commit them, or ask for them in chat.
+11. **Keys are held by the environment's API credentials, not by the session.** The agent proxy attaches them to requests for the listed hosts; the session never sees them. Never ask for a key in chat, never print one, never write one to a file.
 
 ---
 
 ## 1 · Setup
 
-**The user will:**
-- put `OPENAI_API_KEY` in `.env` alongside `FAL_KEY` and `ELEVENLABS_API_KEY`;
-- allow these domains in the environment's network settings: `api.openai.com`, `fal.run`, `queue.fal.run`, `api.elevenlabs.io`;
-- start a new session;
-- rotate the fal, ElevenLabs and Anthropic keys that were pasted into earlier chats.
+**The user will** add each key as an **API credential** on the cloud environment (claude.ai/code → cloud icon → environment settings → API credentials → Add credential):
+
+| Name | Allowed websites | Header | Prefix |
+|---|---|---|---|
+| OpenAI | `api.openai.com` | `Authorization` | `Bearer` |
+| fal | `fal.run`, `queue.fal.run` | `Authorization` | `Key` |
+| ElevenLabs | `api.elevenlabs.io` | `xi-api-key` | *(none)* |
+
+The user will also rotate the keys that were pasted into earlier chats, remove any keys from `.env`, and start a new session.
 
 **You:**
-- run preflight. Every provider must show **reachable and key accepted** — a blocked host is never reported as ok;
-- confirm `.env` is git-ignored and not staged.
+- **Change every provider adapter so it works with no key in the environment.** Send requests without an auth header of your own; the proxy attaches it. Don't fail at startup because `OPENAI_API_KEY`, `FAL_KEY` or `ELEVENLABS_API_KEY` is unset. First verify whether the proxy replaces a header you send or only adds one when none is present, and build to that.
+- **Update preflight:** a provider is ok when a real request to its host is **answered as authenticated**. A blocked host is never ok. A rejected key is reported as rejected. "No key in the environment" is expected, not an error.
+- Remove any leftover keys from `.env` and confirm nothing key-like is committed.
 
 **Gate 1 — report:** preflight results for all four providers.
 
@@ -69,7 +74,7 @@ Work through the phases in order. **Every phase ends at a gate where you stop an
 
 ## 3 · Phase A — The characters
 
-The Codex portraits in `Ramayana_Character_Portraits.zip` match the register the user wants — the recognisable mythological look. Install them as **references, not approved sheets**. Nothing is approved until the user approves it by name.
+The Codex portraits in the kit at `references/codex-portraits/` match the register the user wants — the recognisable mythological look. **Commit them to the repo** (cloud sessions start from a fresh clone), and treat them as **references, not approved sheets**. Nothing is approved until the user approves it by name. The folder's README says what to keep and what to revise.
 
 **Keep as they are:** Daśaratha (the image **without** the bow — he carries no bow in Arc 7), and Vasiṣṭha.
 
