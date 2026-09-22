@@ -111,6 +111,27 @@ t('assembling a prompt for a memo-blocked entity refuses', async () => {
   await throws(() => assemble(fake, 'M3'), 'GateRefusal', 'a prompt was assembled for TATAKA');
 });
 
+// --- an estimate prices the references each shot will actually send ---------------
+// A flat `references: 1` under-reported M2 by 48% - $0.2827 estimated against $0.4180
+// billed - because four of eleven shots carry two references and two carry four.
+t('a film estimate prices every shot on its own reference count', () => {
+  const e = estimate(firstDirected());
+  ok(Array.isArray(e.per_shot) && e.per_shot.length === e.shots_to_generate,
+     'the estimate does not break down per shot');
+  const summed = e.per_shot.reduce((a, x) => a + x.usd, 0);
+  ok(Math.abs(summed - e.usd.image) < 0.01,
+     `the image total ${e.usd.image} is not the sum of its shots ${summed.toFixed(4)}`);
+  ok(e.per_shot.every((x) => x.references >= 1), 'a shot was priced on no references at all');
+});
+t('a shot carrying more references is estimated to cost more', () => {
+  const e = estimate(firstDirected());
+  const one = e.per_shot.filter((x) => x.references === 1);
+  const many = e.per_shot.filter((x) => x.references > 1);
+  if (!one.length || !many.length) return; // this fixture does not exercise both
+  ok(Math.max(...many.map((x) => x.usd)) > Math.max(...one.map((x) => x.usd)),
+     'a multi-reference shot is priced no higher than a single-reference one');
+});
+
 // --- the frame is SAID, or the reference decides it ------------------------------
 // M2 measured this on eleven paid shots: 8 of 8 prompts that opened "cu shot" or
 // "ms shot" and said nothing further about the frame came back as the reference
