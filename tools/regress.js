@@ -771,6 +771,18 @@ t('the fixture M3 still runs 44 seconds - the FIXTURE, not the installed graph',
   ok(sum === 44.0, `the fixture's M3 runs ${sum}s`);
 });
 
+t('every assembled segment is the frame size', async () => {
+  // The concat demuxer cannot carry a resolution change. Two shots came from an earlier
+  // render at 1152x2048 while twelve supplied stills were 1080x1920, and the encode came
+  // out at 132 Mbps - 507MiB for 32 seconds of held stills, where one shot alone
+  // compresses to about a megabyte. The frame count was still right, so every length
+  // check passed.
+  const src = readFileSync(join(ROOT, 'lib', 'assemble.js'), 'utf8');
+  ok(/scale=\$\{graphFrame\(\)\.width\}/.test(src), 'segments are not normalised to the frame size');
+  ok(/the concat demuxer cannot carry a resolution change/.test(src),
+     'the segment builder does not verify its own output size');
+});
+
 t('every film assembles to exactly the length its treatment declares', () => {
   // Graph-agnostic, and the check that would have caught the claim above: an assembly
   // may never run to a length the treatment did not ask for. Durations are summed in
