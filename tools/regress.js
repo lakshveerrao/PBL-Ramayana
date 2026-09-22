@@ -26,6 +26,7 @@ import { chain as gradeChain, grainChain } from '../lib/grade.js';
 import { plan as assemblePlan } from '../lib/assemble.js';
 import { reconcile, parseJson, briefFor } from '../lib/direct.js';
 import { checkNarration } from '../lib/register.js';
+import * as assembleMod from '../lib/assemble.js';
 import { passageTextFields, sourceStatesTravel, textMayTravel, locatorIdentifiesAPlace,
          locatorKind, hasDesign, skinGovernance, forbidsLightening, isLatinScript,
          filmNeedsDuration } from '../lib/contract.js';
@@ -756,9 +757,29 @@ t('the contract names every file the importer requires, and cannot drift from it
 });
 
 // --- the treatment holds -----------------------------------------------------------
-t('M3 still runs 44 seconds', () => {
+// These are pinned to the BUNDLED FIXTURE (tools/fixtures/graph), not to the installed
+// package. The fixture's M3 runs 44s; the real v1.0.6 M3 runs 51.4s and its M1 runs
+// 32.1s. Saying "44 seconds" about the product is wrong, and I said it - the number
+// came from here.
+t('the fixture M3 still runs 44 seconds - the FIXTURE, not the installed graph', () => {
   const sum = Math.round(treatment('M3').shots.reduce((a, s) => a + s.duration_s, 0) * 1e6) / 1e6;
-  ok(sum === 44.0, `M3 runs ${sum}s`);
+  ok(sum === 44.0, `the fixture's M3 runs ${sum}s`);
+});
+
+t('every film assembles to exactly the length its treatment declares', () => {
+  // Graph-agnostic, and the check that would have caught the claim above: an assembly
+  // may never run to a length the treatment did not ask for. Durations are summed in
+  // FRAMES, because a concat of seconds drifts.
+  const { plan } = require_assemble();
+  for (const f of read('films').films) {
+    let t2; try { t2 = treatment(f.id); } catch { continue; }
+    if (!t2?.shots?.length || typeof t2.duration_s !== 'number') continue;
+    const p = plan(f.id);
+    const want = Math.round(t2.duration_s * t2.fps);
+    ok(p.totalFrames === want, `${f.id}: the assembler plans ${p.totalFrames} frames, the treatment declares ${want}`);
+    const shotSum = Math.round(t2.shots.reduce((a, s2) => a + s2.duration_s, 0) * 1e6) / 1e6;
+    ok(Math.abs(shotSum - t2.duration_s) < 1e-6, `${f.id}: the shots sum to ${shotSum}s but the treatment declares ${t2.duration_s}s`);
+  }
 });
 t('the closing line is still three words', () => {
   const t3 = treatment('M3');
@@ -1230,6 +1251,9 @@ t('a seed is reported as absent, not invented', async () => {
 
 // --- credentials ------------------------------------------------------------------
 const libSrc = (f) => readFileSync(join(ROOT, 'lib', f), 'utf8');
+// the assembler, imported once at module scope so a sync test can use it
+let _assemble = null;
+const require_assemble = () => assembleMod;
 // PRODUCTION_ORDERS §0.11: the environment holds the keys and the proxy attaches them.
 // Nothing in this container sends one.
 
