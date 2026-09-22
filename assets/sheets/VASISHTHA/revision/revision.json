@@ -1,0 +1,77 @@
+{
+  "character": "VASISHTHA",
+  "generated": "2026-09-22T11:14:34.284Z",
+  "conditioned_on": "references/codex-portraits/03_Vasistha_Full_Length.png",
+  "change": "Change ONE thing: how the upper cloth is worn. The undyed white uttariya is draped over the LEFT shoulder only. The RIGHT shoulder, the right upper arm and the right side of the chest are BARE, with the sacred thread running plainly across the bare chest from the left shoulder to the right hip. The cloth hangs as a single free-falling drape - a length of woven cloth laid over one shoulder, its end falling loose - so the upper arms are open and uncovered. Everything else is unchanged: the same face, the same white hair tied at the crown, the same white beard, the same rudraksa strand, the same white and gold lower cloth, the same folded hands, the same stance, the same warm light on a dark ground.",
+  "why": "the portrait folds the cloth over BOTH shoulders and reads as a short-sleeved garment at the upper arms. Standing rule 8: all cloth is draped, nothing is stitched, no sleeves. His own brief asks for one shoulder bare with the sacred thread across the chest. The new Dasaratha brief draws the same line - \"never wrapped across the chest or over both shoulders like a sari\". Confirmed by Laksh on 2026-09-22.",
+  "model": "gpt-image-2",
+  "prompt": "Change ONE thing: how the upper cloth is worn. The undyed white uttariya is draped over the LEFT shoulder only. The RIGHT shoulder, the right upper arm and the right side of the chest are BARE, with the sacred thread running plainly across the bare chest from the left shoulder to the right hip. The cloth hangs as a single free-falling drape - a length of woven cloth laid over one shoulder, its end falling loose - so the upper arms are open and uncovered. Everything else is unchanged: the same face, the same white hair tied at the crown, the same white beard, the same rudraksa strand, the same white and gold lower cloth, the same folded hands, the same stance, the same warm light on a dark ground.\n\nThe subject, unchanged from the reference image: A formal portrait in the recognisable mythological register, lit by one warm light that finds the subject first, against a plain dark backdrop: front view, full figure and head-and-shoulders, standing straight and still, evenly exposed. Composed, still, and made to honour its subject. 9:16 vertical. SUBJECT: the family priest of the Raghus, in his seventies, older than the king. Build: upright, contained, sits lower than everyone and is listened to by all of them. Hair: white, combed, tied at the crown. A white beard cut short. Clean where Vishvamitra is matted. Complexion: warm mid-brown, aged, softer than the sage's. Dress: undyed white, draped, one shoulder bare. The sacred thread across the chest. Ornament: one plain ring and the thread. Nothing else. The one thing to get right: when he finally stands, the whole room registers it. Must be distinct from VISHVAMITRA at a glance: combed white and undyed white, softer - against matted ash-grey and ochre. Cloth is woven, cut from the loom, and draped: antariya at the waist, uttariya over the shoulder. Never tailored, never buttoned. Any ornament a character wears comes from the relief vocabulary - Bharhut, Sanchi, Amaravati: heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems. A character whose dress names no ornament wears none. Faces from the real range of the subcontinent. Nose bridges, eye shapes, jaws and cheeks that vary. Pores, oil sheen, sun on skin that has lived outdoors, age in the neck and hands. Bodies are real. No gym physiques. Barefoot on stone. Never sharpen features to read noble or broaden them to read lowly. photoreal, film grain. uncut draped handloom - no stitched garment.",
+  "candidates": [
+    {
+      "n": 1,
+      "file": "revision-01.jpg",
+      "sha256": "8e727d4c90650571c9b6592056e440b2341f1aca5f864c7cc90e91e6fa58dce7",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2050,
+        "input_tokens_details": {
+          "image_tokens": 1456,
+          "text_tokens": 594
+        },
+        "output_tokens": 1413,
+        "output_tokens_details": {
+          "image_tokens": 1413,
+          "text_tokens": 0
+        },
+        "total_tokens": 3463
+      },
+      "revised_prompt": null
+    },
+    {
+      "n": 2,
+      "file": "revision-02.jpg",
+      "sha256": "f18b0b7349a006239723ca8da7d228a9b4b790438dbc6e0376440157e2cf7259",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2050,
+        "input_tokens_details": {
+          "image_tokens": 1456,
+          "text_tokens": 594
+        },
+        "output_tokens": 1413,
+        "output_tokens_details": {
+          "image_tokens": 1413,
+          "text_tokens": 0
+        },
+        "total_tokens": 3463
+      },
+      "revised_prompt": null
+    },
+    {
+      "n": 3,
+      "file": "revision-03.jpg",
+      "sha256": "3aaf879185f2a6fa05e4706457f2b59c09a4a0bcd36c5972a289d60de40bc897",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2050,
+        "input_tokens_details": {
+          "image_tokens": 1456,
+          "text_tokens": 594
+        },
+        "output_tokens": 1413,
+        "output_tokens_details": {
+          "image_tokens": 1413,
+          "text_tokens": 0
+        },
+        "total_tokens": 3463
+      },
+      "revised_prompt": null
+    }
+  ],
+  "failed": [],
+  "approved": false,
+  "next": "A named human approves. Until then the consistency gate stays shut for this character."
+}

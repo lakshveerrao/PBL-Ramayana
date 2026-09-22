@@ -1,0 +1,163 @@
+{
+  "entity": "COURT",
+  "generated": "2026-09-22T11:17:53.033Z",
+  "model": "gpt-image-2",
+  "prompt": "A formal reference plate of the ministers and court of Ayodhya, seated along the hall. Eight to ten men of varied ages and varied faces - some grey, some middle-aged, none young - seated on the floor in two receding rows along one wall, in three-quarter view, all attending to something out of frame at the left. They wear draped cream and undyed white silk, one shoulder bare in the manner of the court. Modest gold: a plain collar, a single armlet, a ring - visibly LESS than a king would wear, and no crown or mukuta on any of them. Bare feet. The hall: post-and-lintel timber and lime plaster, sandstone, one motivated source - high lattice openings throwing long bars of light across stone from frame-left - and one brass lamp. Palette sandstone, teak brown, undyed cream, one deep red, one ochre, brass. They are a body, not a portrait: no single face dominates and none is the subject.\n\nNot in this picture: glow, aura, god rays, lens flare, haze, fog, bloom, dome, arch, marble, chandelier, glass window, carpet, stitched garment, shirt, coat, blouse, trousers.",
+  "negatives_folded": [
+    "glow",
+    "aura",
+    "god rays",
+    "lens flare",
+    "haze",
+    "fog",
+    "bloom",
+    "dome",
+    "arch",
+    "marble",
+    "chandelier",
+    "glass window",
+    "carpet",
+    "stitched garment",
+    "shirt",
+    "coat",
+    "blouse",
+    "trousers"
+  ],
+  "negatives_all": [
+    "glow",
+    "aura",
+    "god rays",
+    "lens flare",
+    "haze",
+    "fog",
+    "bloom",
+    "dome",
+    "arch",
+    "marble",
+    "chandelier",
+    "glass window",
+    "carpet",
+    "stitched garment",
+    "shirt",
+    "coat",
+    "blouse",
+    "trousers",
+    "boots",
+    "buttons",
+    "european crown",
+    "laurel",
+    "tiara",
+    "plate armour",
+    "breastplate",
+    "longsword",
+    "crossbow",
+    "halo",
+    "blue skin",
+    "horns",
+    "fangs",
+    "cloven feet",
+    "plastic skin",
+    "airbrushed skin",
+    "lightened skin",
+    "symmetrical model face",
+    "gym physique",
+    "printed fabric",
+    "machine-even dye",
+    "faceted cut gems",
+    "modern eyewear",
+    "watch",
+    "text",
+    "letters",
+    "watermark",
+    "signature",
+    "teal and orange grade",
+    "crowd of identical faces",
+    "mist",
+    "rainforest",
+    "falling autumn leaves"
+  ],
+  "conditions_shots": [
+    "01-03",
+    "01-10",
+    "02-11",
+    "04-08"
+  ],
+  "why": "a crowd cannot have a model sheet, and the gate will not pass a person without one. A plate approved like a character keeps the gate honest and gives the arc one consistent court across six shots.",
+  "candidates": [
+    {
+      "n": 1,
+      "file": "plate-01.jpg",
+      "sha256": "99fd797b3ff8a5f5c93e2bf4fdb2f8a4b1740db9615707112dc4dc22ac3418a6",
+      "usage": {
+        "input_tokens": 255,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 255
+        },
+        "output_tokens": 628,
+        "output_tokens_details": {
+          "image_tokens": 628,
+          "text_tokens": 0
+        },
+        "total_tokens": 883
+      }
+    },
+    {
+      "n": 2,
+      "file": "plate-02.jpg",
+      "sha256": "d476b29851de9d6c51ef9c4b0ff45bb6d5a546876f8afd34ce99f67efbf17ba5",
+      "usage": {
+        "input_tokens": 255,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 255
+        },
+        "output_tokens": 628,
+        "output_tokens_details": {
+          "image_tokens": 628,
+          "text_tokens": 0
+        },
+        "total_tokens": 883
+      }
+    },
+    {
+      "n": 3,
+      "file": "plate-03.jpg",
+      "sha256": "d7c1780e1375f3a55cbec2aeadd9fb5d1ac132727470dd5f2a227f119518feb2",
+      "usage": {
+        "input_tokens": 255,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 255
+        },
+        "output_tokens": 628,
+        "output_tokens_details": {
+          "image_tokens": 628,
+          "text_tokens": 0
+        },
+        "total_tokens": 883
+      }
+    },
+    {
+      "n": 4,
+      "file": "plate-04.jpg",
+      "sha256": "cd73b44eb1e33ba752dd19663487ecd52807096ab74ea8e8023c41b47491fc3c",
+      "usage": {
+        "input_tokens": 255,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 255
+        },
+        "output_tokens": 628,
+        "output_tokens_details": {
+          "image_tokens": 628,
+          "text_tokens": 0
+        },
+        "total_tokens": 883
+      }
+    }
+  ],
+  "failed": [],
+  "approved": false,
+  "next": "A named human approves one. Every court shot is then conditioned on it."
+}

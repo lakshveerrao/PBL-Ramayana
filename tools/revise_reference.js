@@ -32,6 +32,22 @@ export const REVISIONS = {
           + 'the same staff and kamandalu, the same warm light on a plain dark ground.',
     why: 'the still sage carries 14 shots across four films; the original is scowling, which is his M5 anger and not his M1 composure',
   },
+  VASISHTHA: {
+    reference: 'references/codex-portraits/03_Vasistha_Full_Length.png',
+    change: 'Change ONE thing: how the upper cloth is worn. The undyed white uttariya is draped over the LEFT '
+          + 'shoulder only. The RIGHT shoulder, the right upper arm and the right side of the chest are BARE, '
+          + 'with the sacred thread running plainly across the bare chest from the left shoulder to the right hip. '
+          + 'The cloth hangs as a single free-falling drape - a length of woven cloth laid over one shoulder, its '
+          + 'end falling loose - so the upper arms are open and uncovered. '
+          + 'Everything else is unchanged: the same face, the same white hair tied at the crown, the same white '
+          + 'beard, the same rudraksa strand, the same white and gold lower cloth, the same folded hands, the same '
+          + 'stance, the same warm light on a dark ground.',
+    why: 'the portrait folds the cloth over BOTH shoulders and reads as a short-sleeved garment at the upper arms. '
+       + 'Standing rule 8: all cloth is draped, nothing is stitched, no sleeves. His own brief asks for one '
+       + 'shoulder bare with the sacred thread across the chest. The new Dasaratha brief draws the same line - '
+       + '"never wrapped across the chest or over both shoulders like a sari". Confirmed by Laksh on 2026-09-22.',
+  },
+
   // DASHARATHA was here, and is retired. The user chose new reference portraits on
   // 2026-09-22 in which he is already bare-chested under heavy gold, with the red
   // uttariya falling from one shoulder - the sari-like wrap that prompted the revision

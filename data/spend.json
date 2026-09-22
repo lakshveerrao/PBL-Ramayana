@@ -749,10 +749,115 @@
       },
       "estimate_usd": 0.0257,
       "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T11:13:35.307Z",
+      "provider": "openai",
+      "route": "sheet-revision",
+      "model": "gpt-image-2",
+      "label": "VASISHTHA/revision-1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T11:14:05.468Z",
+      "provider": "openai",
+      "route": "sheet-revision",
+      "model": "gpt-image-2",
+      "label": "VASISHTHA/revision-2",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T11:14:34.283Z",
+      "provider": "openai",
+      "route": "sheet-revision",
+      "model": "gpt-image-2",
+      "label": "VASISHTHA/revision-3",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T11:15:37.601Z",
+      "provider": "openai",
+      "route": "plate",
+      "model": "gpt-image-2",
+      "label": "COURT/plate-1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0134,
+      "usd": 0.0134
+    },
+    {
+      "at": "2026-09-22T11:16:02.258Z",
+      "provider": "openai",
+      "route": "plate",
+      "model": "gpt-image-2",
+      "label": "COURT/plate-2",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0134,
+      "usd": 0.0134
+    },
+    {
+      "at": "2026-09-22T11:16:57.407Z",
+      "provider": "openai",
+      "route": "plate",
+      "model": "gpt-image-2",
+      "label": "COURT/plate-3",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0134,
+      "usd": 0.0134
+    },
+    {
+      "at": "2026-09-22T11:17:53.029Z",
+      "provider": "openai",
+      "route": "plate",
+      "model": "gpt-image-2",
+      "label": "COURT/plate-4",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0134,
+      "usd": 0.0134
     }
   ],
   "totals": {
-    "usd": 2.4357,
-    "calls": 50
+    "usd": 2.5664,
+    "calls": 57
   }
 }
