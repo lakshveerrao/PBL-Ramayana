@@ -1015,6 +1015,27 @@ t('a probe uses a route that would refuse - not one that answers anybody', async
      `the ElevenLabs ping fetches ${pingFetch.trim()}; /v1/voices answers 200 to anyone and proves nothing`);
 });
 
+t('a mis-pasted key is named as mis-pasted, not sent back for a new one', async () => {
+  // Found on 2026-09-22: an Anthropic key rejected as invalid was the SAME key that had
+  // worked an hour earlier, pasted into a form field that already held "sk-ant-". The
+  // value began "sk-ant-sk-ant-api03-..." - seven characters too long and unreadable by
+  // eye. Telling the user to get a new key would not have fixed it.
+  const { malformedKeyHint } = await import('../lib/auth.js');
+  const P = 'sk-' + 'ant-';                 // built, not written: a key-shaped literal
+  const BODY = 'api03-' + 'abcdefghijklmnop';
+  ok(new RegExp(`begins with "${P}" twice`).test(malformedKeyHint(P + P + BODY) ?? ''),
+     'a doubled multi-segment prefix is not detected - the first version could only match "sk-"');
+  ok(/whitespace/.test(malformedKeyHint(P + BODY + '\n') ?? ''), 'a trailing newline is not detected');
+  ok(/quotes/.test(malformedKeyHint('"' + P + BODY + '"') ?? ''), 'surrounding quotes are not detected');
+  ok(malformedKeyHint(P + BODY) === null, 'a well-formed key was called malformed');
+  ok(malformedKeyHint('') === null && malformedKeyHint(null) === null, 'an absent key was called malformed');
+  // Never leaks the key itself.
+  const SECRET = 'SECRET' + 'VALUE';
+  for (const bad of [P + P + SECRET, '  ' + P + SECRET + '  ', '"' + P + SECRET + '"']) {
+    ok(!(malformedKeyHint(bad) ?? '').includes(SECRET), 'the hint quoted part of the key back');
+  }
+});
+
 t('the three unauthorised cases are told apart, not collapsed into two', async () => {
   // Three different jobs for the user, all arriving as 401: nothing attached, attached
   // in the wrong header, and the right header with a rejected key. The middle one was
