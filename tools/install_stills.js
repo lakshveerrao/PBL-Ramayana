@@ -26,7 +26,7 @@ const probe = (f) => execFileSync('ffprobe', ['-v', 'error', '-show_entries', 's
   '-of', 'csv=p=0:s=x', f], { encoding: 'utf8' }).trim().split('x').map(Number);
 
 const t = treatment(filmId);
-const files = readdirSync(srcDir).filter((f) => /\.(png|jpe?g)$/i.test(f));
+const files = readdirSync(srcDir).filter((f) => /\.(png|jpe?g|webp)$/i.test(f));
 const byShot = new Map();
 for (const f of files) {
   const m = f.match(/(\d{2}-\d{2})/);

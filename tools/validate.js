@@ -17,6 +17,7 @@ import { ENDPOINTS, referenceConditioned, textToImage } from '../lib/endpoints.j
 import { endpointCost } from '../lib/cost.js';
 import { identityPolicy } from '../lib/render.js';
 import { assemble, directionOverrides, statesItsFrame } from '../lib/prompt.js';
+import { gradeTrims } from '../lib/grade.js';
 import { unresolvedReuses, sharedPlateFor } from '../lib/graph.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
 import { frame, gradeNumbers, sheetAxes, effectsShots, rejectionCriteria, joins as normJoins,
@@ -751,6 +752,37 @@ check('prompt', 'no prompt describes cloth that is stitched', () => {
     }
   }
   T(offenders.length === 0, `cloth described as stitched: ${offenders.join(', ')}`);
+});
+check('grade', 'no exposure trim lightens a frame', () => {
+  // Lightening is the colourism defect the grade exists to prevent. A continuity
+  // argument does not outrank it: bring the brighter shot down, never lift the darker.
+  for (const t of gradeTrims().trims ?? []) {
+    T(typeof t.gain === 'number' && t.gain > 0 && t.gain <= 1,
+      `trim ${t.film}/${t.shot} has gain ${t.gain} - a trim may only darken`);
+  }
+});
+check('grade', 'every exposure trim names a real shot, a reason and an authority', () => {
+  for (const t of gradeTrims().trims ?? []) {
+    let shot = null;
+    try { shot = treatment(t.film).shots.find((x) => x.id === t.shot); } catch { /* reported below */ }
+    T(shot, `trim ${t.film}/${t.shot} names a shot that film does not have`);
+    T(t.reason && t.reason.length > 20, `trim ${t.film}/${t.shot} gives no reason`);
+    T(t.authority, `trim ${t.film}/${t.shot} names no authority`);
+    T(t.changes_truth === false, `trim ${t.film}/${t.shot} does not declare changes_truth: false`);
+  }
+});
+check('grade', 'an exposure trim is measured, not estimated', () => {
+  // A trim's whole job is to make one shot sit with another. If nobody measured that it
+  // does, it is a guess with a decimal point on it.
+  for (const t of gradeTrims().trims ?? []) {
+    const m = t.measured;
+    T(m && typeof m.before_yavg === 'number' && typeof m.after_yavg === 'number' && typeof m.target_yavg === 'number',
+      `trim ${t.film}/${t.shot} records no measurement`);
+    T(Math.abs(m.after_yavg - m.target_yavg) <= 2,
+      `trim ${t.film}/${t.shot} lands at ${m.after_yavg} against a target of ${m.target_yavg}`);
+    T(m.after_yavg < m.before_yavg, `trim ${t.film}/${t.shot} did not darken anything`);
+    T(m.colour_held, `trim ${t.film}/${t.shot} never checked that colour held`);
+  }
 });
 check('prompt', 'every generate shot states what is in its frame', () => {
   // M2 measured it: a prompt that opens "cu shot" and says nothing further about the

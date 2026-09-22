@@ -22,7 +22,7 @@ import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder
 import { priceOf, modelFor, estimateFilm, RATES } from '../lib/cost.js';
 import { assertWithinCeiling, CeilingError } from '../lib/state.js';
 import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
-import { chain as gradeChain, grainChain } from '../lib/grade.js';
+import { chain as gradeChain, grainChain, exposureTrim, trimChain } from '../lib/grade.js';
 import { plan as assemblePlan } from '../lib/assemble.js';
 import { reconcile, parseJson, briefFor } from '../lib/direct.js';
 import { checkNarration } from '../lib/register.js';
@@ -109,6 +109,38 @@ t('an entity with no memo passes the memo gate', () => {
 t('assembling a prompt for a memo-blocked entity refuses', async () => {
   const fake = { ...shotOf('M3', '03-05'), entities: ['TATAKA'] };
   await throws(() => assemble(fake, 'M3'), 'GateRefusal', 'a prompt was assembled for TATAKA');
+});
+
+// --- an exposure trim darkens, in linear light, and never lightens ---------------
+t('an exposure trim below 1 builds a filter', () => {
+  const f = exposureTrim(0.6773);
+  ok(/^lutrgb=/.test(f), `a trim did not build a lut: ${String(f).slice(0, 40)}`);
+  ok(f.includes("r='") && f.includes("g='") && f.includes("b='"),
+     'a trim does not move all three channels - that would be a colour move, not an exposure');
+  const r = f.match(/r='([^']+)'/)[1], g = f.match(/g='([^']+)'/)[1], b = f.match(/b='([^']+)'/)[1];
+  ok(r === g && g === b, 'the three channels are not moved identically - that is a colour move');
+});
+t('an exposure trim that would LIGHTEN is refused', () => {
+  throws(() => exposureTrim(1.2), 'Error', 'a trim was allowed to lighten a frame');
+  throws(() => exposureTrim(1.0001), 'Error', 'a trim was allowed to lighten a frame');
+});
+t('a trim of exactly 1 is nothing, not a filter', () => {
+  ok(exposureTrim(1) === null, 'a no-op trim built a filter anyway');
+});
+t('a trim rejects a gain that is not a positive number', () => {
+  for (const bad of [0, -1, 'bright', null, NaN]) {
+    throws(() => exposureTrim(bad), 'Error', `a trim accepted ${JSON.stringify(bad)} as a gain`);
+  }
+});
+t('a trim decodes sRGB before it multiplies', () => {
+  // A gain applied to the encoded value is a gamma move wearing an exposure's name.
+  const f = exposureTrim(0.5);
+  ok(f.includes('0.04045') && f.includes('12.92') && f.includes('1.055'),
+     'the trim never decodes sRGB - it is multiplying encoded values');
+  ok(f.includes('2.4'), 'the trim uses no sRGB exponent');
+});
+t('a shot with no trim gets no filter', () => {
+  ok(trimChain('M1', 'no-such-shot') === null, 'a shot with no trim was given a filter');
 });
 
 // --- an estimate prices the references each shot will actually send ---------------

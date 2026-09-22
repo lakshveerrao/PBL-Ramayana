@@ -1,0 +1,24 @@
+{
+  "_doc": "Per-shot EXPOSURE trims, applied to a shot's own segment before the film's grade. A still that arrives brighter than the shot beside it breaks the cut: two frames of the same room at the same hour read as two mornings. This is the only per-shot move the studio makes, and it is exposure only.",
+  "_rule": "A gain in LINEAR light, applied identically to R, G and B. That scales luminance and leaves chromaticity where it was. A gain above 1 is refused by lib/grade.js outright - lightening is the colourism defect the grade exists to prevent, and no continuity argument outranks it. Bring the brighter shot down; never lift the darker one.",
+  "_never": "A trim is not a grade. It cannot warm, cool, saturate, or touch a face on its own. The film's grade runs on top of it unchanged, and tools/gradecheck.js still measures the locked skin albedo through the whole chain afterwards.",
+  "trims": [
+    {
+      "film": "M1",
+      "shot": "01-01",
+      "gain": 0.6773,
+      "reason": "The approved 01-01 arrives about 20% brighter than 01-02 - measured YAVG 118.66 against 100.96 on the scaled 1080x1920 frames. 01-01 cuts straight to 01-02 and they are the same hall at the same hour, so the brightness reads as a second morning. Venkat, 2026-09-22: 'bring it down to sit with 01-02 so the cut reads as one room, one morning. Don't change its colour, only its exposure.'",
+      "measured": {
+        "before_yavg": 118.655,
+        "after_yavg": 101.056,
+        "target_yavg": 100.964,
+        "target_is": "01-02, the shot it cuts to",
+        "how": "solved by bisection on the real filter, not estimated from the ratio - a display-space ratio of 0.851 is a 0.6773 gain in linear light",
+        "colour_held": "linear channel means all scaled 0.670-0.672; R:G moved 2.03881 -> 2.04242 and B:G 0.49355 -> 0.49251, both under a quarter of one percent, which is 8-bit LUT quantisation and not a colour move"
+      },
+      "class": "creative",
+      "changes_truth": false,
+      "authority": "the director, 2026-09-22"
+    }
+  ]
+}
