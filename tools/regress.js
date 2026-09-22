@@ -1229,6 +1229,32 @@ t('a dropped negative never looks like an enforced one', async () => {
   ok(/left out/.test(f.note), 'the note does not say terms were left out');
 });
 
+t('every image request streams, and a truncated stream is a failure', async () => {
+  // The 502s were an IDLE timeout at ~30s, not request size: one 356KB reference failed
+  // exactly like three, and quality=low succeeded at the same size. A stream emits
+  // partial images while it works, so an 86-second high-quality edit completes.
+  const oa = await import('../lib/openai.js');
+  ok(oa.streamRequested() === true, 'streaming is off by default - edits above quality=low will time out');
+  ok(oa.buildGeneratePayload({ prompt: 'p' }).stream === true, 'a generation does not stream');
+  const { body } = oa.buildEditForm({ prompt: 'p', references: ['references/court/court_hall.png'] });
+  ok(/name="stream"/.test(body.toString('latin1')), 'an edit does not stream');
+
+  // A stream that ends without a completed event must FAIL. Returning the last partial
+  // would put a half-rendered frame into the film.
+  let threw = null;
+  try { oa.parseImageStream('data: {"type":"image_edit.partial_image","b64_json":"AA"}\n'); }
+  catch (e) { threw = e; }
+  ok(threw && /without a completed image/.test(threw.message), 'a truncated stream was accepted');
+  ok(threw.status === 502, 'a truncated stream is not retryable');
+
+  // And the completed event is what is used, not the last partial.
+  const good = oa.parseImageStream(
+    'data: {"type":"image_edit.partial_image","b64_json":"PARTIAL"}\n\n'
+    + 'data: {"type":"image_edit.completed","b64_json":"FINAL","usage":{"output_tokens":7}}\n');
+  ok(good.data[0].b64_json === 'FINAL', 'a partial image was used instead of the completed one');
+  ok(good.usage.output_tokens === 7, 'usage was lost from the stream');
+});
+
 t('a gateway error is retried; a refusal is not', async () => {
   // Measured 2026-09-22: the proxy returns 502 "upstream request failed" intermittently
   // - the identical request failed then succeeded. Over 89 shots that is a certainty,

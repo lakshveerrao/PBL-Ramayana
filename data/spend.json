@@ -854,10 +854,55 @@
       },
       "estimate_usd": 0.0134,
       "usd": 0.0134
+    },
+    {
+      "at": "2026-09-22T12:30:41.216Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-03",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:31:42.040Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-03",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
+    },
+    {
+      "at": "2026-09-22T12:32:25.360Z",
+      "provider": "fal",
+      "route": "image",
+      "model": "gpt-image-2",
+      "label": "M1/01-03",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0503,
+      "usd": 0.0503
     }
   ],
   "totals": {
-    "usd": 2.5664,
-    "calls": 57
+    "usd": 2.7173,
+    "calls": 60
   }
 }
