@@ -1044,8 +1044,12 @@ t('the three unauthorised cases are told apart, not collapsed into two', async (
   const el = libSrc('eleven.js');
   ok(/invalid_authorization_header/.test(el), 'the wrong-header case is not detected');
   ok(/invalid_api_key/.test(el), 'a rejected key is not told apart from a missing credential');
-  ok(/Nothing about the header needs changing/.test(el),
+  ok(/HEADER is correct and needs no further change/.test(el),
      'the rejected-key diagnostic does not say what NOT to change');
+  // And it must not send the user off for a new key first. The Anthropic key that
+  // failed this way was a WORKING key pasted into a field that already held its prefix.
+  ok(/doubled prefix/.test(el),
+     'the rejected-key diagnostic recommends a new key before checking how the value was pasted');
 });
 
 t('an attached-but-misconfigured credential is not reported as a missing one', async () => {
