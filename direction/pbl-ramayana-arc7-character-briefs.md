@@ -73,7 +73,7 @@
 - **Age:** late sixties in appearance. A broad frame gone soft — a man long a king, who has not fought in years. Age in the hands and neck, not only the face.
 - **Hair:** long, oiled, silver-white, bound. A full beard, grey-white, trimmed.
 - **Complexion:** warm mid-brown.
-- **Dress:** rich royal silk — a near-white or gold antarīya; a deep red uttarīya with a broad gold border. Heavy gold ornament: necklaces, armlets, kuṇḍala, bangles, rings. The red becomes the throne's cloth too — the king and his seat share a colour until he leaves it.
+- **Dress — chosen by the user:** **bare-chested under heavy gold** — layered necklaces, armlets, a jewelled waist belt, bangles, kuṇḍala with pearls, rings. A near-white and gold silk dhoti draped in pleats. A deep red silk uttarīya with a broad gold border, **falling from one shoulder — never wrapped across the chest or over both shoulders like a sari.** The red becomes the throne's cloth too — the king and his seat share a colour until he leaves it.
 - **Headdress — changes with the register.** The earlier recommendation was the relief-period turban. **Under the recognisable register, it's a golden mukuṭa** — the king's crown Indian audiences know, tall and ornate, worked gold with a crest. Worn over long hair. *This reverses decision 1 — confirm it.*
   - **Never:** a peaked European crown, a tiara, a crown of cut gems.
 

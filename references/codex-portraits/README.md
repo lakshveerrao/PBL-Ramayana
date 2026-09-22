@@ -4,7 +4,7 @@ These are **references, not approved sheets.** Nothing here is approved until th
 
 | File | Status |
 |---|---|
-| `02_Dasaratha_*` | Keep as is |
+| `02_Dasaratha_*` | **Chosen by the user as Daśaratha** (replaces the earlier upper-cloth-wrapped version). Keep as is. Final approval by name still happens at Gate 3b, on the full sheet. |
 | `03_Vasistha_*` | Keep as is |
 | `01_Visvamitra_*` | Revise: seated, composed. Keep the scowling original as the reference for M5 only |
 | `04_Rama_*` | Revise: add the boy's side-locks; add a back view |

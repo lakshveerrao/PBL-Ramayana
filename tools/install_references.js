@@ -20,7 +20,7 @@ const DIR = 'references/codex-portraits';
 // Neither is a three-quarter or a profile, so ANGLE stays unsatisfied and the record
 // says so rather than quietly counting two views as four.
 const KEEP_AS_IS = {
-  DASHARATHA: { front: '02_Dasaratha_Head_Shoulders.png', in_world: '02_Dasaratha_Full_Length_Final.png' },
+  DASHARATHA: { front: '02_Dasaratha_Head_Shoulders.png', in_world: '02_Dasaratha_Full_Length.png' },
   VASISHTHA:  { front: '03_Vasistha_Head_Shoulders.png',  in_world: '03_Vasistha_Full_Length.png' },
 };
 

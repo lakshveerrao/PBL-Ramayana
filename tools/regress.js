@@ -958,6 +958,50 @@ t('BLOCKED: a face-withheld character gets no portrait framing', async () => {
   }
 });
 
+// --- references -------------------------------------------------------------------
+
+t('every portrait a tool names actually exists', async () => {
+  // References get replaced: the user chose a different Dasaratha on 2026-09-22 and the
+  // old 02_Dasaratha_Full_Length_Final.png was deleted. A tool still naming a deleted
+  // file fails at generation time, after an estimate has been shown and a run started.
+  const { readFileSync, existsSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  for (const t2 of ['install_references.js', 'revise_reference.js']) {
+    const src = readFileSync(join(ROOT, 'tools', t2), 'utf8');
+    for (const m of src.matchAll(/'(references\/codex-portraits\/[^']+)'/g)) {
+      ok(existsSync(join(ROOT, m[1])), `tools/${t2} names ${m[1]}, which is not in the repo`);
+    }
+    for (const m of src.matchAll(/'(\d\d_[A-Za-z]+_[A-Za-z_]+\.png)'/g)) {
+      ok(existsSync(join(ROOT, 'references/codex-portraits', m[1])),
+         `tools/${t2} names ${m[1]}, which is not in references/codex-portraits`);
+    }
+  }
+});
+
+t('installed sheet evidence still matches the portrait it came from', async () => {
+  // A replaced reference must not leave a sheet holding the old bytes. Approval records
+  // hashes, and a hash that no longer corresponds to any portrait in the repo means the
+  // sheet and its source have silently diverged.
+  const { readFileSync, existsSync, readdirSync } = await import('node:fs');
+  const { createHash } = await import('node:crypto');
+  const { join } = await import('node:path');
+  const { read } = await import('../lib/store.js');
+  const dir = join(ROOT, 'references/codex-portraits');
+  if (!existsSync(dir)) return;
+  const known = new Set(readdirSync(dir).filter((f) => /\.png$/i.test(f))
+    .map((f) => createHash('sha256').update(readFileSync(join(dir, f))).digest('hex')));
+  for (const sheet of read('sheets', { fresh: true }).sheets) {
+    for (let i = 0; i < (sheet.files ?? []).length; i++) {
+      const abs = join(ROOT, sheet.files[i]);
+      if (!existsSync(abs)) { ok(false, `${sheet.entity}: ${sheet.files[i]} is recorded and missing`); continue; }
+      const h = createHash('sha256').update(readFileSync(abs)).digest('hex');
+      ok(h === sheet.hashes[i], `${sheet.entity}: ${sheet.files[i]} does not match its recorded hash`);
+      // Installed FROM a portrait, so it must still be one of them.
+      ok(known.has(h), `${sheet.entity}: ${sheet.files[i]} matches no portrait in references/codex-portraits - the reference it came from was replaced or deleted`);
+    }
+  }
+});
+
 // --- music -------------------------------------------------------------------------
 // The contract changed on the user's decision of 2026-09-22: it used to refuse any
 // music provider outright. It now refuses one that no recorded decision licenses.

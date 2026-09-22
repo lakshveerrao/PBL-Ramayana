@@ -32,21 +32,12 @@ export const REVISIONS = {
           + 'the same staff and kamandalu, the same warm light on a plain dark ground.',
     why: 'the still sage carries 14 shots across four films; the original is scowling, which is his M5 anger and not his M1 composure',
   },
-  DASHARATHA: {
-    reference: 'references/codex-portraits/02_Dasaratha_Full_Length_Final.png',
-    change: 'Change ONE thing: the lower garment. He wears a man\'s ANTARIYA - a long cloth wrapped at the waist, '
-          + 'gathered into a fan of pleats at the centre front that fall between the knees, with one end drawn back '
-          + 'between the legs and tucked at the spine in the kaccha manner of a kshatriya. It sits below the gold '
-          + 'waistbelt he already wears, and the two bare calves and ankles are visible and separate. '
-          + 'The red and gold brocade stays exactly where it is, over the left shoulder, as an uttariya. '
-          + 'Everything else is unchanged: the same face, the same golden mukuta, the same earrings, collars, chains, '
-          + 'armlets, bangles and rings, the same white and gold cloth, the same stance, the same warm light on a '
-          + 'dark ground.',
-    why: 'the portrait\'s lower drape falls as a single pleated column to the ankles with a saree border, and reads '
-       + 'as a saree rather than an antariya. Laksh flagged it on 2026-09-22. This DEPARTS from the kit README\'s '
-       + '"keep as is" for Dasaratha, on the director\'s instruction - PRODUCTION_ORDERS standing rule 2 gives the '
-       + 'briefs and the director the creative call, and nothing about source truth changes.',
-  },
+  // DASHARATHA was here, and is retired. The user chose new reference portraits on
+  // 2026-09-22 in which he is already bare-chested under heavy gold, with the red
+  // uttariya falling from one shoulder - the sari-like wrap that prompted the revision
+  // is gone from the source. The brief now says so in its own words, and the kit's
+  // README says keep the new references as they are. A revision that is no longer
+  // needed must not sit here waiting to be re-run.
 };
 
 const who = process.argv.find((a) => !a.startsWith('--') && a === a.toUpperCase() && a.length > 2);
