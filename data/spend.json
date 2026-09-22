@@ -689,10 +689,70 @@
       },
       "estimate_usd": 0.2943,
       "usd": 0.2943
+    },
+    {
+      "at": "2026-09-22T08:13:00.427Z",
+      "provider": "openai",
+      "route": "sheet-revision",
+      "model": "gpt-image-2",
+      "label": "DASHARATHA/revision-1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T08:17:39.539Z",
+      "provider": "openai",
+      "route": "sheet-revision",
+      "model": "gpt-image-2",
+      "label": "DASHARATHA/revision-1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T08:30:24.717Z",
+      "provider": "openai",
+      "route": "sheet-revision",
+      "model": "gpt-image-2",
+      "label": "DASHARATHA/revision-2",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
+    },
+    {
+      "at": "2026-09-22T08:32:30.758Z",
+      "provider": "openai",
+      "route": "sheet-revision",
+      "model": "gpt-image-2",
+      "label": "DASHARATHA/revision-3",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.0257,
+      "usd": 0.0257
     }
   ],
   "totals": {
-    "usd": 2.3329,
-    "calls": 46
+    "usd": 2.4357,
+    "calls": 50
   }
 }

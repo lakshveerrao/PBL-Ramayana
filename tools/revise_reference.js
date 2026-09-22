@@ -32,6 +32,21 @@ export const REVISIONS = {
           + 'the same staff and kamandalu, the same warm light on a plain dark ground.',
     why: 'the still sage carries 14 shots across four films; the original is scowling, which is his M5 anger and not his M1 composure',
   },
+  DASHARATHA: {
+    reference: 'references/codex-portraits/02_Dasaratha_Full_Length_Final.png',
+    change: 'Change ONE thing: the lower garment. He wears a man\'s ANTARIYA - a long cloth wrapped at the waist, '
+          + 'gathered into a fan of pleats at the centre front that fall between the knees, with one end drawn back '
+          + 'between the legs and tucked at the spine in the kaccha manner of a kshatriya. It sits below the gold '
+          + 'waistbelt he already wears, and the two bare calves and ankles are visible and separate. '
+          + 'The red and gold brocade stays exactly where it is, over the left shoulder, as an uttariya. '
+          + 'Everything else is unchanged: the same face, the same golden mukuta, the same earrings, collars, chains, '
+          + 'armlets, bangles and rings, the same white and gold cloth, the same stance, the same warm light on a '
+          + 'dark ground.',
+    why: 'the portrait\'s lower drape falls as a single pleated column to the ankles with a saree border, and reads '
+       + 'as a saree rather than an antariya. Laksh flagged it on 2026-09-22. This DEPARTS from the kit README\'s '
+       + '"keep as is" for Dasaratha, on the director\'s instruction - PRODUCTION_ORDERS standing rule 2 gives the '
+       + 'briefs and the director the creative call, and nothing about source truth changes.',
+  },
 };
 
 const who = process.argv.find((a) => !a.startsWith('--') && a === a.toUpperCase() && a.length > 2);
@@ -65,8 +80,14 @@ if (!spendAllowed()) { console.log(`\n  ALLOW_SPEND is not 1. This run would spe
 
 const refBytes = readFileSync(join(ROOT, spec.reference));
 const dir = ensureDir(`assets/sheets/${who}/revision`);
+// A failure must not lose the candidates that already succeeded. The edits endpoint is
+// returning 502 for roughly two calls in three today - from curl as well as from here,
+// and the proxy's own relay log is clean, so it is upstream. Over 89 shots, aborting the
+// batch on one failure would mean never finishing one.
 const made = [];
+const failed = [];
 for (let i = 1; i <= n; i++) {
+ try {
   const out = await providers.image.generateFromReference({
     prompt,
     references: [{ bytes: refBytes, contentType: 'image/png', name: 'reference.png' }],
@@ -76,7 +97,8 @@ for (let i = 1; i <= n; i++) {
   recordSpend({ provider: 'openai', route: 'sheet-revision', model: out.model_version, label: `${who}/revision-${i}`, usd, estimate_usd: usd });
   const m = String(out.url).match(/^data:([^;]+);base64,(.*)$/s);
   const bytes = m ? Buffer.from(m[2], 'base64') : Buffer.from(await (await fetch(out.url)).arrayBuffer());
-  const file = `revision-${String(i).padStart(2, '0')}.png`;
+  const ext = m && /jpeg/.test(m[1]) ? 'jpg' : 'png';
+  const file = `revision-${String(i).padStart(2, '0')}.${ext}`;
   writeFileSync(join(dir, file), bytes);
   made.push({
     n: i, file, sha256: createHash('sha256').update(bytes).digest('hex'),
@@ -84,13 +106,24 @@ for (let i = 1; i <= n; i++) {
     usage: out.usage ?? null, revised_prompt: out.revised_prompt ?? null,
   });
   console.log(`    ${i}/${n}  ${file}  ${out.generated_size}  tokens=${JSON.stringify(out.usage ?? {})}`);
+ } catch (e) {
+  // A content refusal is recorded exactly, as PRODUCTION_ORDERS §2 requires. Anything
+  // else is named for what it is.
+  failed.push({ n: i, status: e.status ?? null, refusal: e.refusal ?? null, message: String(e.message).slice(0, 200) });
+  console.log(`    ${i}/${n}  FAILED after every retry: ${e.status ?? ''} ${String(e.message).slice(0, 90)}`);
+ }
 }
 
 writeFileSync(join(dir, 'revision.json'), JSON.stringify({
   character: who, generated: new Date().toISOString(),
   conditioned_on: spec.reference, change: spec.change, why: spec.why,
-  model, prompt, candidates: made,
+  model, prompt, candidates: made, failed,
   approved: false,
   next: 'A named human approves. Until then the consistency gate stays shut for this character.',
 }, null, 2) + '\n', 'utf8');
-console.log(`\n  ${made.length} candidates in assets/sheets/${who}/revision/. Nothing is approved.\n`);
+console.log(`\n  ${made.length} of ${n} candidates in assets/sheets/${who}/revision/.`);
+if (failed.length) {
+  console.log(`  ${failed.length} failed after every retry - upstream 502s, not refusals. Re-run to fill them in.`);
+  for (const f of failed) if (f.refusal) console.log(`    candidate ${f.n} was REFUSED: ${JSON.stringify(f.refusal)}`);
+}
+console.log('  Nothing is approved.\n');

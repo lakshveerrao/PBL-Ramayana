@@ -1,0 +1,63 @@
+{
+  "character": "DASHARATHA",
+  "generated": "2026-09-22T08:32:30.760Z",
+  "conditioned_on": "references/codex-portraits/02_Dasaratha_Full_Length_Final.png",
+  "change": "Change ONE thing: the lower garment. He wears a man's ANTARIYA - a long cloth wrapped at the waist, gathered into a fan of pleats at the centre front that fall between the knees, with one end drawn back between the legs and tucked at the spine in the kaccha manner of a kshatriya. It sits below the gold waistbelt he already wears, and the two bare calves and ankles are visible and separate. The red and gold brocade stays exactly where it is, over the left shoulder, as an uttariya. Everything else is unchanged: the same face, the same golden mukuta, the same earrings, collars, chains, armlets, bangles and rings, the same white and gold cloth, the same stance, the same warm light on a dark ground.",
+  "why": "the portrait's lower drape falls as a single pleated column to the ankles with a saree border, and reads as a saree rather than an antariya. Laksh flagged it on 2026-09-22. This DEPARTS from the kit README's \"keep as is\" for Dasaratha, on the director's instruction - PRODUCTION_ORDERS standing rule 2 gives the briefs and the director the creative call, and nothing about source truth changes.",
+  "model": "gpt-image-2",
+  "prompt": "Change ONE thing: the lower garment. He wears a man's ANTARIYA - a long cloth wrapped at the waist, gathered into a fan of pleats at the centre front that fall between the knees, with one end drawn back between the legs and tucked at the spine in the kaccha manner of a kshatriya. It sits below the gold waistbelt he already wears, and the two bare calves and ankles are visible and separate. The red and gold brocade stays exactly where it is, over the left shoulder, as an uttariya. Everything else is unchanged: the same face, the same golden mukuta, the same earrings, collars, chains, armlets, bangles and rings, the same white and gold cloth, the same stance, the same warm light on a dark ground.\n\nThe subject, unchanged from the reference image: A formal portrait in the recognisable mythological register, lit by one warm light that finds the subject first, against a plain dark backdrop: front view, full figure and head-and-shoulders, standing straight and still, evenly exposed. Composed, still, and made to honour its subject. 9:16 vertical. SUBJECT: the king of Ayodhya, old - Rama is the son of his old age. Build: a broad frame gone soft, a man long a king who has not fought in years. Age in the hands and neck, not only the face. Hair: long, oiled, silver-white, bound. A full grey-white beard, trimmed. Complexion: warm mid-brown. Dress: a near-white antariya; a deep red uttariya with a thin woven gold border. Headdress: a wound relief-period royal turban with a crest ornament, in the Bharhut and Sanchi vocabulary. Ornament: kundala, a flat collar, armlets, bangles, one ring - relief vocabulary. The one thing to get right: a face that has smiled a great deal and isn't smiling now. Heavy-lidded, deep-set eyes. Cloth is woven, cut from the loom, and draped: antariya at the waist, uttariya over the shoulder. Never tailored, never buttoned. Any ornament a character wears comes from the relief vocabulary - Bharhut, Sanchi, Amaravati: heavy kundala earrings that pull the lobe, flat collars and torques, armlets above the bicep, bangles. Gold that gleams, never glitters. No faceted gems. A character whose dress names no ornament wears none. Faces from the real range of the subcontinent. Nose bridges, eye shapes, jaws and cheeks that vary. Pores, oil sheen, sun on skin that has lived outdoors, age in the neck and hands. Bodies are real. No gym physiques. Barefoot on stone. Never sharpen features to read noble or broaden them to read lowly. photoreal, film grain. uncut draped handloom - no stitched garment.",
+  "candidates": [
+    {
+      "n": 2,
+      "file": "revision-02.jpg",
+      "sha256": "daebc8243ad0d119ca8fced6096103d27b2de5816d3a4fefb0dd2e2775b42c45",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2144,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 608
+        },
+        "output_tokens": 628,
+        "output_tokens_details": {
+          "image_tokens": 628,
+          "text_tokens": 0
+        },
+        "total_tokens": 2772
+      },
+      "revised_prompt": null
+    },
+    {
+      "n": 3,
+      "file": "revision-03.jpg",
+      "sha256": "372ed897f23b4f137ae5a00d963003398111c805c246ac83812fb57edf996292",
+      "generated_size": "1152x2048",
+      "needs_scale_to_frame": true,
+      "usage": {
+        "input_tokens": 2144,
+        "input_tokens_details": {
+          "image_tokens": 1536,
+          "text_tokens": 608
+        },
+        "output_tokens": 628,
+        "output_tokens_details": {
+          "image_tokens": 628,
+          "text_tokens": 0
+        },
+        "total_tokens": 2772
+      },
+      "revised_prompt": null
+    }
+  ],
+  "failed": [
+    {
+      "n": 1,
+      "status": 502,
+      "refusal": null,
+      "message": "openai /images/edits returned 502:"
+    }
+  ],
+  "approved": false,
+  "next": "A named human approves. Until then the consistency gate stays shut for this character."
+}

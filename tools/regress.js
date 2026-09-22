@@ -1086,6 +1086,17 @@ t('a dropped negative never looks like an enforced one', async () => {
   ok(/left out/.test(f.note), 'the note does not say terms were left out');
 });
 
+t('a gateway error is retried; a refusal is not', async () => {
+  // Measured 2026-09-22: the proxy returns 502 "upstream request failed" intermittently
+  // - the identical request failed then succeeded. Over 89 shots that is a certainty,
+  // not an edge case. But a content refusal must be recorded exactly, never retried
+  // into a different answer at more cost.
+  const { shouldRetry, MAX_ATTEMPTS } = await import('../lib/openai.js');
+  for (const s2 of [429, 500, 502, 503, 504]) ok(shouldRetry(s2), `${s2} is not retried`);
+  for (const s2 of [400, 401, 403, 404, 422]) ok(!shouldRetry(s2), `${s2} would be retried, and it should not be`);
+  ok(MAX_ATTEMPTS >= 2, 'retries are disabled');
+});
+
 t('a seed is reported as absent, not invented', async () => {
   // OpenAI images has no seed. A run cannot be reproduced, which is why the output is
   // the record of reference. Claiming a seed would make a record look reproducible.
