@@ -1964,10 +1964,145 @@
       },
       "estimate_usd": 0.35,
       "usd": 0.35
+    },
+    {
+      "at": "2026-09-23T09:02:45.705Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-04#1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:04:01.000Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-04#2",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:05:20.718Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-04#3",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:06:37.146Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-06#1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:07:52.056Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-06#2",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:09:06.987Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-06#3",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:11:23.535Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-13#1",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:12:34.637Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-13#2",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
+    },
+    {
+      "at": "2026-09-23T09:13:46.661Z",
+      "provider": "fal",
+      "route": "rigid-test",
+      "model": "fal-ai/bytedance/seedance/v1/pro/image-to-video",
+      "label": "M1/01-13#3",
+      "usage": {
+        "input_tokens": null,
+        "output_tokens": null,
+        "cache_creation_input_tokens": null,
+        "cache_read_input_tokens": null
+      },
+      "estimate_usd": 0.62,
+      "usd": 0.62
     }
   ],
   "totals": {
-    "usd": 15.0222,
-    "calls": 131
+    "usd": 20.6022,
+    "calls": 140
   }
 }
