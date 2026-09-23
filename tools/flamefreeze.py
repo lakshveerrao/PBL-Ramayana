@@ -53,73 +53,72 @@ FEATHER = 9           # px of soft edge - odd, for the Gaussian
 def luma(bgr):
     return (0.0722 * bgr[..., 0] + 0.7152 * bgr[..., 1] + 0.2126 * bgr[..., 2])
 
-MAX_MASK_FRACTION = 0.02   # of the frame. Past this it is not a lamp, it is the shot.
+MAX_MASK_FRACTION = 0.10   # of the frame, across ALL regions in a shot.
+# Raised from 6% for 01-14, whose left third genuinely IS a row of standing lamps: the
+# mask came to 6.3% and the ceiling refused a correct freeze. A declared region is the
+# bound that matters; this ceiling only catches a box drawn catastrophically wrong.
+REGION_MOTION_MAX = 6.0    # mean abs frame-to-frame change inside a declared region
 
-def moving_lamps(clip):
-    """The bright compact blobs in a clip whose centroid wanders. Shares its arithmetic
-    with tools/flamecheck.py, which is also what verifies the result - one definition of
-    "moves" for the fix and for the test."""
-    from flamecheck import analyse, DRIFT_OK
-    r = analyse(clip)
-    if not r.get('ok'):
-        return None, []
+def region_motion(clip, regions, still_bgr=None):
+    """How much NON-FLAME motion is inside each declared region.
+
+    A box drawn by eye off a still can land on something that is supposed to move - a
+    hand, an arm, cloth - and freezing that is worse than the flame it was meant to
+    stop. So every region is measured before anything is pasted.
+
+    But the first version measured ALL motion, and a wildly moving flame is the loudest
+    thing in its own box: 01-09's flame peaks at 19.35 in the strip where it moves most,
+    and the guard refused to freeze the very defect it exists to help fix. The fix is to
+    look away from the fire. Pixels that are warm and bright in the APPROVED STILL - the
+    flame and its halo - are excluded, so what is measured is whether anything ELSE in
+    the box moves. A hand crossing a lamp still trips it; the lamp alone does not."""
     cap = cv2.VideoCapture(clip)
     fs = []
     while True:
         ok, f = cap.read()
         if not ok:
             break
-        fs.append(f)
+        fs.append(luma(f))
     cap.release()
-    peak = np.stack([luma(f) for f in fs]).max(axis=0)
+    H, W = fs[0].shape
+    # "Fire" for the guard's purposes is anything warm and bright in the still OR
+    # anywhere in the clip. Looking only at the still missed the worst flame in the
+    # film: 01-09's is not in the approved still at all - the motion model invented a
+    # large flame floating free in mid-air against the steps, with no lamp under it. The
+    # guard could not see it as fire, measured its thrashing as "something else moving",
+    # and refused to freeze the one region that most needed it. What the guard is
+    # actually looking for is a PERFORMER, and a performer is not a clipping warm core.
+    cap2 = cv2.VideoCapture(clip)
+    flame = np.zeros((H, W), np.uint8)
+    while True:
+        ok, f = cap2.read()
+        if not ok:
+            break
+        hsv = cv2.cvtColor(f, cv2.COLOR_BGR2HSV)
+        hue = hsv[..., 0].astype(np.float32) * 2
+        flame |= ((hsv[..., 2] > 200) & (hue >= 5) & (hue <= 55)).astype(np.uint8)
+    cap2.release()
+    if still_bgr is not None:
+        hsv = cv2.cvtColor(still_bgr, cv2.COLOR_BGR2HSV)
+        hue = hsv[..., 0].astype(np.float32) * 2
+        flame |= ((hsv[..., 2] > 200) & (hue >= 5) & (hue <= 55)).astype(np.uint8)
+    notflame = cv2.dilate(flame, np.ones((41, 41), np.uint8)) == 0   # the halo too
     out = []
-    for b in r['blobs']:
-        if b['drift_px'] < MIN_DRIFT:
+    for (x, y, w, h) in regions:
+        x0, y0 = max(0, x), max(0, y)
+        x1, y1 = min(W, x + w), min(H, y + h)
+        sel = notflame[y0:y1, x0:x1]
+        if sel.sum() < 50:
+            out.append(0.0)      # the box is all flame: nothing else can be moving in it
             continue
-        if not (MIN_AREA <= b['union_area'] <= MAX_AREA) or max(b['w'], b['h']) > MAX_DIM:
-            continue
-        pk = float(peak[b['y']:b['y'] + b['h'], b['x']:b['x'] + b['w']].max())
-        if pk < PEAK_L:
-            continue
-        # THE TEST THAT SEPARATES A FLAME FROM A GOLD NECKLACE, and it is the
-        # director's own description of the defect: "the lamp and bowl are steady; only
-        # the fire moves". Brightness and drift alone kept eleven blobs in 01-03, and
-        # seven of them were ornament on ministers who are TURNING THEIR HEADS - that
-        # gold is supposed to move, and freezing it would freeze the men wearing it.
-        #
-        # So compare the blob's drift with the motion of the ring around it. A loose
-        # flame wanders while its lamp holds. A highlight on a moving man travels with
-        # the man, and the ring travels with him too.
-        ring = surround_motion(fs, b)
-        if ring > SURROUND_STILL:
-            continue
-        b = dict(b, peak_L=round(pk, 1), surround_motion=round(ring, 2))
-        out.append(b)
-    return r, out
-
-def surround_motion(fs, b, grow=2.0):
-    """Mean absolute frame-to-frame change in the ring around a blob, excluding the blob."""
-    H, W = fs[0].shape[:2]
-    cx, cy = b['x'] + b['w'] / 2, b['y'] + b['h'] / 2
-    rw, rh = b['w'] * grow, b['h'] * grow
-    x0, x1 = max(0, int(cx - rw)), min(W, int(cx + rw))
-    y0, y1 = max(0, int(cy - rh)), min(H, int(cy + rh))
-    inner = (slice(max(0, b['y'] - 3), min(H, b['y'] + b['h'] + 3)),
-             slice(max(0, b['x'] - 3), min(W, b['x'] + b['w'] + 3)))
-    ring = np.ones((H, W), bool)
-    ring[:] = False
-    ring[y0:y1, x0:x1] = True
-    ring[inner] = False
-    if ring.sum() < 50:
-        return 0.0
-    prev = None
-    tot, n = 0.0, 0
-    for f in fs:
-        g = luma(f)
-        if prev is not None:
-            tot += float(np.abs(g[ring] - prev[ring]).mean()); n += 1
-        prev = g
-    return tot / max(1, n)
+        tot, n = 0.0, 0
+        for i in range(1, len(fs)):
+            a = fs[i][y0:y1, x0:x1]; b = fs[i - 1][y0:y1, x0:x1]
+            if a.size == 0:
+                continue
+            tot += float(np.abs(a[sel] - b[sel]).mean()); n += 1
+        out.append(round(tot / max(1, n), 2))
+    return out
 
 def _fit_still(path, W, H):
     """The stills are 1152x2048; the clips are the frame size. Cover and centre-crop,
@@ -208,8 +207,12 @@ def lamp_mask(shape, blobs, clip_bright_union, regions=None):
             cx, cy = x + w / 2, y + h / 2
             if not any(r[0] <= cx <= r[0] + r[2] and r[1] <= cy <= r[1] + r[3] for r in regions):
                 continue
-            if not (MIN_AREA <= int(st[i, cv2.CC_STAT_AREA]) <= MAX_AREA) or max(w, h) > MAX_DIM:
-                continue
+            # NO SIZE CAP inside a declared region. The caps exist to stop an automatic
+            # pass freezing a window; a box a person drew around a lamp is already the
+            # bound. Applying them here left the lamp COLUMN out of the mask - 01-05's
+            # is one bright blob 139x598, far past the flame-sized ceiling - so the
+            # brass under the flame kept redrawing, and the ring test kept reporting a
+            # 23 px mover that was the lamp itself, just outside its own mask.
         elif (x, y, w, h) not in wanted:
             continue
         seed[lab == i] = 255
@@ -242,6 +245,13 @@ def freeze(clip, still, out, fps=30, regions=None):
         if m is None:
             return {'ok': True, 'frozen': False, 'reason': 'nothing bright changed between the still and the clip - nothing to freeze'}
     else:
+        motion = region_motion(clip, regions, still_bgr)
+        hot = [(i, mv) for i, mv in enumerate(motion) if mv > REGION_MOTION_MAX]
+        if hot:
+            return {'ok': False, 'frozen': False,
+                    'reason': 'a declared region has real motion in it - freezing it would paste a still over a performance',
+                    'regions_with_motion': [{'region': regions[i], 'motion': mv} for i, mv in hot],
+                    'region_motion': motion}
         m = lamp_mask((H, W), blobs, bright_union(clip), regions)
     if m is None:
         return {'ok': False, 'reason': 'the moving blobs could not be matched back to the clip'}
@@ -279,6 +289,7 @@ def freeze(clip, still, out, fps=30, regions=None):
             'lamps_frozen': [{'x': b['x'], 'y': b['y'], 'w': b['w'], 'h': b['h'],
                               'drift_px': b['drift_px'], 'area': b['union_area']} for b in blobs],
             'mask_px': int((m > 0.5).sum()), 'mask_fraction': round(frac, 5),
+            'region_motion': region_motion(clip, regions, still_bgr) if regions else None,
             'mask_png': mask_png, 'grow_px': GROW, 'feather_px': FEATHER}
 
 def preview(clip, out, regions=None, still=None):

@@ -57,7 +57,12 @@ def verify(clip, regions, mask_png=None):
     if mask_png:
         m = cv2.imread(mask_png, cv2.IMREAD_GRAYSCALE)
         if m is not None:
-            inside = cv2.resize(m, (W, H), interpolation=cv2.INTER_NEAREST) > 127
+            # The mask's HARD CORE, where the still fully replaces the clip. The mask is
+            # feathered, so at its edge the two are blended and the clip still shows
+            # through at 20-80% - bright pixels there move a little, and measuring
+            # across them reports 0.2 to 1.4 px of "drift" on shots that are in fact
+            # perfectly frozen. The core is where the promise "this is the still" holds.
+            inside = cv2.resize(m, (W, H), interpolation=cv2.INTER_NEAREST) >= 250
     for x, y, w, h in regions:
         if not mask_png:
             inside[max(0, y):min(H, y + h), max(0, x):min(W, x + w)] = True

@@ -71,7 +71,8 @@
     "01-16": "motion_allowed: false - a reuse of 01-14, and the film's final hold. Nothing is animated."
   },
   "standing_rules": [
-    "Flames stay on their wicks. They may flicker in place; they never slide, drift, detach, multiply or change count."
+    "Flames stay on their wicks. They may flicker in place; they never slide, drift, detach, multiply or change count.",
+    "No new flame, lamp, fire or glowing light appears anywhere in the frame. Nothing burns that is not already burning in the first frame."
   ],
-  "_standing_rules_why": "A standing rule is appended to EVERY instruction this file sends, by tools/motion_film.js, rather than pasted into each one by hand - a rule that has to be remembered fourteen times is a rule that will be forgotten once. The flame rule was set by the director on 2026-09-23 after M1's first motion pass: a generative video model does not know a flame is attached to a wick, and in 01-03 the diya's flames slid along the rim and one detached. The three shots already made were fixed by freezing (direction/m1-flame-freeze.json); this is so the next one does not need fixing."
+  "_standing_rules_why": "A standing rule is appended to EVERY instruction this file sends, by tools/motion_film.js, rather than pasted into each one by hand - a rule that has to be remembered fourteen times is a rule that will be forgotten once. The flame rule was set by the director on 2026-09-23 after M1's first motion pass: a generative video model does not know a flame is attached to a wick, and in 01-03 the diya's flames slid along the rim and one detached. The three shots already made were fixed by freezing (direction/m1-flame-freeze.json); this is so the next one does not need fixing. A second rule was added on 2026-09-23. The first rule tells a flame to stay on its wick and says nothing about a flame that never had one: 01-09 came back with a large flame the model INVENTED, floating free in mid-air against the steps with nothing holding it, changing shape across the whole shot. It is not in the approved still. A rule against drifting cannot catch a flame that was never there to drift."
 }
