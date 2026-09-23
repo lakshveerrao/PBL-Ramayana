@@ -1,0 +1,52 @@
+{
+  "_doc": "A test, not a decision. One shot - 01-13, the king at ease - carried through four treatments so the director can see what a still can be made to do without asking a generative model to move anything. Nothing here is wired into the film. tools/assemble.js does not read this file.",
+  "_why_this_shot": "01-13 is the shot that failed on both providers. kling floated the crown; Seedance held the crown and slid the camera 43-48 px. It is a held still in the current cut, and it is the hardest case, which is why it is the one to test on.",
+  "_the_claim_being_tested": "That the three things worth borrowing from a plate-and-element film - air between the planes, a camera move that ramps and then settles, and one committed light - can all be done in post on an approved still, touching no face, no crown and no flame.",
+  "film": "M1",
+  "shot": "01-13",
+  "still": "assets/stills/M1/01-13.png",
+  "treatments": {
+    "plain": "the approved still, held. What is in the film now.",
+    "atmos": "eased push 1.000 -> 1.052 about (0.36, 0.33), plus drifting warm haze, raking bars out of the high lattice at frame-left, and motes in the bars. Shadows lifted warm; highlights rolled DOWN.",
+    "parallax": "the same, with the background carried to 1.094 against the figure's 1.052, split on a feathered GrabCut matte.",
+    "snyder": "a 300-leaning grade over the atmos pass: bleach-bypass overlay, blacks crushed, desaturated to 0.30, ochre pushed into the highlights."
+  },
+  "masks": {
+    "protect": "assets/atmos/M1/01-13_protect.png - three ellipses placed BY EYE over the face, the bare chest and the near arm, feathered 46 px. The air is held off skin at 0.92. Haar was tried first and refused: find_face() returned a 75 px box on the THRONE at (792, 312), and find_eyes() then returned None. A detector that finds the furniture is not a detector for this frame.",
+    "matte": "assets/atmos/M1/01-13_matte.png - GrabCut, feathered 18 px. Used ONLY to split near from far for the parallax treatment. It is not the skin protection and must not be used as one: it covers 67.9% of the frame, including the lattice window, and masking the air by it put the light out entirely on the first attempt."
+  },
+  "measured": {
+    "_cheek": "A disc of radius 0.026 W at (0.324, 0.365) of frame, placed by eye on the cheek under his eye. The SAME disc in every treatment - the like-with-like rule from tools/cheek.py, which is the whole reason that tool exists.",
+    "_lock": "The director's hand measurement of the king's sheet: L* 57.4.",
+    "cheek_L": {
+      "still_ungraded": 58.43,
+      "atmos": 58.43,
+      "parallax": 58.43,
+      "snyder": 45.88
+    },
+    "cheek_ab": {
+      "still_ungraded": [30.0, 40.0],
+      "atmos": [29.0, 40.0],
+      "snyder": [10.0, 15.0]
+    },
+    "_cheek_reading": "The atmosphere pass does not move skin at all - 0.00 L*, and the one intermediate frame that moved went DOWN 0.39, which is a single LAB step. The 300 grade moves it -12.55, past the +/-10 report band against the lock. It fails DARK, not light: it is a consistency defect against the lock, not a colourism one. The larger loss is not in L* at all - a falls 30 -> 10 and b falls 40 -> 15, so the warmth comes out of the skin, the gold reads as silver and the deep red drape reads as black.",
+    "camera_drift_px": {
+      "_tool": "tools/cameracheck.py, the same phase correlation used on the generative clips.",
+      "atmos_max": 18.87,
+      "atmos_end": 18.26,
+      "_reading": "18.9 px, and the trail rises monotonically and is flat for the last 30 frames. This is the opposite of what the tool was built to catch: 01-06 slid 561 px and 01-08 slid 13.8 px, neither asked for and neither stopping. A move that is authored arrives and holds."
+    },
+    "crown_deviation": {
+      "_tool": "tools/ornament.py",
+      "max": 0.072,
+      "_reading": "Uniform scale as the camera pushes in, plus single-frame spikes off the grain. The crown cannot deform here: it is one bitmap being warped by one affine. That is the argument - not that we solved the rigid-object problem, but that we stopped asking a model to."
+    }
+  },
+  "_not_decided": "Which treatment, if any, the film uses. The director has approved none of this.",
+  "_honest_limits": [
+    "The source is 941x1672 upscaled to 1080x1920. A 5.2% push is inside what that survives. A 15% push is not, and a real 2.5D programme needs Codex to re-supply at 2x.",
+    "The protection region is hand-placed for this one frame. Fourteen shots means fourteen of them, or a detector that works on a crowned, bearded man seen in profile.",
+    "The parallax matte is GrabCut on a 270x480 proxy. It holds at 5% because the displacement is small. It will show at the silhouette if pushed further."
+  ],
+  "_author": "the studio, 2026-09-23, as a test for the director"
+}
