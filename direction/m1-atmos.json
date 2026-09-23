@@ -1,0 +1,638 @@
+{
+  "_doc": "M1's atmosphere pass, shot by shot. The air, the light and the camera; nothing in any frame is regenerated. Approved by the director on 2026-09-23 as treatment 3 - parallax - after four treatments of 01-13 were measured side by side in direction/m1-atmos-test.json.",
+  "_what_this_replaces": "Nothing. The four generative clips of 2026-09-23 stay exactly as they are; this pass runs OVER them, air and grade only, with the camera left alone. What it replaces is eleven shots sitting completely dead.",
+  "_the_rule": "We do not animate what the model cannot hold. This pass holds everything: the crown, the lamps, the gold and every face are the approved still, warped by one affine. A bitmap cannot float and cannot grow a flame.",
+  "_the_key": "Every M1 shot declares the same key - frame-left, from the high lattice - so the bars come from the same place in all fifteen and the film reads as one room on one morning. What varies is which side of it the subject stands on: the king's shots are keyed and carry less air, the sage's are back-keyed and carry 1.55x, because backlit air glows and frontlit air does not.",
+  "_protection": "Skin is protected at 0.92 by ellipses placed BY EYE off a 10% coordinate grid on each still - the same method the director set for the lamps. Haar was tried and refused: on 01-13 it returned a 75 px face box on the THRONE, then no eyes at all.",
+  "_parallax": "Two kinds, because one does not fit every frame. `matte` splits near from far on a GrabCut cut-out and is used where there is one clear subject. `ramp` varies the scale smoothly with height instead, and is used where a cut-out is meaningless - a wide of fifteen seated men has no foreground, and an insert of a vessel and two feet has no silhouette worth cutting.",
+  "_moves_are_authored": "Each move is written against the shot's own beat, not applied uniformly. Eleven identical pushes would be a mechanism, not direction. The king rises and we push in; he steps off the dais and we pull back to let him; the sage waits and we very nearly stop.",
+  "film": "M1",
+  "approved_by": "the director, 2026-09-23",
+  "shots": {
+    "01-02": {
+      "kind": "clip",
+      "lit": "back-keyed",
+      "seed": 102,
+      "_beat": "a door opening far off",
+      "_move": "locked - the sage is walking, the camera is not",
+      "protect": [
+        [
+          0.08,
+          0.52,
+          0.13,
+          0.11
+        ],
+        [
+          0.27,
+          0.43,
+          0.1,
+          0.05
+        ],
+        [
+          0.325,
+          0.5,
+          0.05,
+          0.08
+        ],
+        [
+          0.32,
+          0.68,
+          0.05,
+          0.05
+        ],
+        [
+          0.45,
+          0.5,
+          0.11,
+          0.09
+        ]
+      ]
+    },
+    "01-03": {
+      "kind": "clip",
+      "lit": "back-keyed",
+      "seed": 103,
+      "_beat": "the court turns",
+      "_move": "locked - the heads are the movement",
+      "protect": [
+        [
+          0.16,
+          0.5,
+          0.15,
+          0.14
+        ],
+        [
+          0.145,
+          0.33,
+          0.07,
+          0.06
+        ],
+        [
+          0.52,
+          0.45,
+          0.28,
+          0.14
+        ],
+        [
+          0.45,
+          0.73,
+          0.28,
+          0.12
+        ]
+      ]
+    },
+    "01-04": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 104,
+      "_beat": "the king rises",
+      "_move": "push in 5.0% - the first time we see him move, so the camera goes with him",
+      "zoom_from": 1.0,
+      "zoom_to": 1.05,
+      "anchor": [
+        0.46,
+        0.26
+      ],
+      "parallax_kind": "none",
+      "protect": [
+        [
+          0.46,
+          0.26,
+          0.16,
+          0.1
+        ],
+        [
+          0.29,
+          0.49,
+          0.24,
+          0.16
+        ],
+        [
+          0.08,
+          0.5,
+          0.1,
+          0.14
+        ],
+        [
+          0.13,
+          0.88,
+          0.11,
+          0.08
+        ],
+        [
+          0.83,
+          0.86,
+          0.13,
+          0.08
+        ],
+        [
+          0.04,
+          0.55,
+          0.08,
+          0.12
+        ]
+      ],
+      "_parallax_why": "no parallax. The ramp assumes higher in frame means further away, which is true of a receding hall and false here: his head is high because he is CLOSE. tools/atmoscamera.py measured his subject scaling 1.066 against the 1.050 asked for - the ramp was treating his face as part of the far plane. A tight MS gets a plain push."
+    },
+    "01-05": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 105,
+      "_beat": "he comes down",
+      "_move": "pull BACK 4.8% - a king stepping off his own dais needs the room to open for him, not close in",
+      "zoom_from": 1.048,
+      "zoom_to": 1.0,
+      "bg_from": 1.084,
+      "bg_to": 1.0,
+      "anchor": [
+        0.38,
+        0.28
+      ],
+      "parallax_kind": "matte",
+      "grabcut": [
+        0.18,
+        0.1,
+        0.95,
+        1.0
+      ],
+      "protect": [
+        [
+          0.38,
+          0.235,
+          0.12,
+          0.09
+        ],
+        [
+          0.33,
+          0.42,
+          0.18,
+          0.14
+        ],
+        [
+          0.12,
+          0.54,
+          0.12,
+          0.14
+        ],
+        [
+          0.82,
+          0.61,
+          0.12,
+          0.09
+        ]
+      ]
+    },
+    "01-06": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 106,
+      "_beat": "water at the feet",
+      "_move": "push in 4.5% toward the pour. Ramp, not matte - a vessel and two feet have no silhouette worth cutting out",
+      "zoom_from": 1.0,
+      "zoom_to": 1.045,
+      "anchor": [
+        0.35,
+        0.45
+      ],
+      "parallax_kind": "none",
+      "protect": [
+        [
+          0.15,
+          0.3,
+          0.22,
+          0.12
+        ],
+        [
+          0.56,
+          0.66,
+          0.17,
+          0.08
+        ]
+      ],
+      "_parallax_why": "no parallax, for the same reason as 01-04 and more so: the pouring hands are the NEAREST thing in the shot and they are at the top of the frame. Measured 1.064 against 1.045. The floor behind them does recede, but not enough to be worth pushing the hands away with it."
+    },
+    "01-07": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 107,
+      "_beat": "seated, facing, and the king asks",
+      "_move": "push in 3.5%, slow. Two men on the same level; the move should not take sides",
+      "zoom_from": 1.0,
+      "zoom_to": 1.035,
+      "bg_from": 1.0,
+      "bg_to": 1.065,
+      "anchor": [
+        0.52,
+        0.6
+      ],
+      "parallax_kind": "ramp",
+      "protect": [
+        [
+          0.23,
+          0.595,
+          0.12,
+          0.08
+        ],
+        [
+          0.17,
+          0.78,
+          0.15,
+          0.12
+        ],
+        [
+          0.36,
+          0.81,
+          0.1,
+          0.06
+        ],
+        [
+          0.82,
+          0.57,
+          0.12,
+          0.09
+        ],
+        [
+          0.79,
+          0.76,
+          0.13,
+          0.12
+        ],
+        [
+          0.7,
+          0.87,
+          0.1,
+          0.08
+        ],
+        [
+          0.05,
+          0.82,
+          0.09,
+          0.09
+        ]
+      ]
+    },
+    "01-08": {
+      "kind": "still",
+      "lit": "back-keyed",
+      "seed": 108,
+      "_beat": "the sage waits",
+      "_move": "1.5%, almost nothing. This is the shot where nobody does anything, and it should be the stillest in the film",
+      "zoom_from": 1.0,
+      "zoom_to": 1.015,
+      "bg_from": 1.0,
+      "bg_to": 1.03,
+      "anchor": [
+        0.6,
+        0.4
+      ],
+      "parallax_kind": "matte",
+      "grabcut": [
+        0.15,
+        0.15,
+        0.98,
+        1.0
+      ],
+      "protect": [
+        [
+          0.6,
+          0.37,
+          0.14,
+          0.11
+        ],
+        [
+          0.45,
+          0.64,
+          0.2,
+          0.14
+        ],
+        [
+          0.3,
+          0.7,
+          0.12,
+          0.11
+        ],
+        [
+          0.24,
+          0.58,
+          0.11,
+          0.11
+        ]
+      ]
+    },
+    "01-09": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 109,
+      "_beat": "the king again",
+      "_move": "push in 5.5% - \"whatever it is, I'll do it\"",
+      "zoom_from": 1.0,
+      "zoom_to": 1.055,
+      "bg_from": 1.0,
+      "bg_to": 1.097,
+      "anchor": [
+        0.4,
+        0.38
+      ],
+      "parallax_kind": "matte",
+      "grabcut": [
+        0.0,
+        0.15,
+        0.62,
+        1.0
+      ],
+      "protect": [
+        [
+          0.4,
+          0.37,
+          0.14,
+          0.09
+        ],
+        [
+          0.27,
+          0.58,
+          0.2,
+          0.15
+        ],
+        [
+          0.32,
+          0.71,
+          0.15,
+          0.09
+        ],
+        [
+          0.08,
+          0.6,
+          0.1,
+          0.12
+        ]
+      ]
+    },
+    "01-10": {
+      "kind": "still",
+      "lit": "back-keyed",
+      "seed": 110,
+      "_beat": "the ministers still",
+      "_move": "the only lateral in the film - a slow drift right along the row, 1.0% of frame. Eleven pushes in a row would be a mechanism",
+      "zoom_from": 1.03,
+      "zoom_to": 1.05,
+      "bg_from": 1.03,
+      "bg_to": 1.078,
+      "anchor": [
+        0.4,
+        0.5
+      ],
+      "pan": [
+        0.01,
+        0.0
+      ],
+      "parallax_kind": "ramp",
+      "protect": [
+        [
+          0.45,
+          0.46,
+          0.47,
+          0.11
+        ],
+        [
+          0.45,
+          0.58,
+          0.47,
+          0.09
+        ],
+        [
+          0.4,
+          0.79,
+          0.38,
+          0.11
+        ]
+      ]
+    },
+    "01-11": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 111,
+      "_beat": "the word given",
+      "_move": "push in 6.0%, the strongest in the film. This is the line the whole episode is for",
+      "zoom_from": 1.0,
+      "zoom_to": 1.06,
+      "bg_from": 1.0,
+      "bg_to": 1.108,
+      "anchor": [
+        0.39,
+        0.42
+      ],
+      "parallax_kind": "matte",
+      "grabcut": [
+        0.0,
+        0.15,
+        0.68,
+        1.0
+      ],
+      "protect": [
+        [
+          0.39,
+          0.39,
+          0.13,
+          0.09
+        ],
+        [
+          0.3,
+          0.6,
+          0.18,
+          0.14
+        ],
+        [
+          0.52,
+          0.65,
+          0.12,
+          0.09
+        ],
+        [
+          0.1,
+          0.62,
+          0.1,
+          0.12
+        ]
+      ]
+    },
+    "01-12": {
+      "kind": "clip",
+      "lit": "back-keyed",
+      "seed": 112,
+      "_beat": "the sage's hands",
+      "_move": "locked - the breath in the cloth is the movement",
+      "protect": [
+        [
+          0.36,
+          0.57,
+          0.26,
+          0.1
+        ],
+        [
+          0.7,
+          0.51,
+          0.15,
+          0.08
+        ],
+        [
+          0.14,
+          0.62,
+          0.12,
+          0.09
+        ]
+      ]
+    },
+    "01-13": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 113,
+      "_beat": "the king, at ease",
+      "_move": "push in 5.2% - the move the director approved on the test",
+      "zoom_from": 1.0,
+      "zoom_to": 1.052,
+      "bg_from": 1.0,
+      "bg_to": 1.094,
+      "anchor": [
+        0.36,
+        0.33
+      ],
+      "parallax_kind": "matte",
+      "grabcut": [
+        0.02,
+        0.07,
+        0.8,
+        1.0
+      ],
+      "protect": [
+        [
+          0.39,
+          0.38,
+          0.165,
+          0.135
+        ],
+        [
+          0.285,
+          0.72,
+          0.275,
+          0.265
+        ],
+        [
+          0.065,
+          0.69,
+          0.13,
+          0.175
+        ]
+      ]
+    },
+    "01-14": {
+      "kind": "clip",
+      "lit": "back-keyed",
+      "seed": 114,
+      "_beat": "the sage, about to speak",
+      "_move": "locked - the intake of breath is the movement",
+      "protect": [
+        [
+          0.65,
+          0.36,
+          0.15,
+          0.12
+        ],
+        [
+          0.49,
+          0.64,
+          0.19,
+          0.14
+        ],
+        [
+          0.35,
+          0.69,
+          0.12,
+          0.12
+        ],
+        [
+          0.2,
+          0.56,
+          0.15,
+          0.13
+        ]
+      ]
+    },
+    "01-15": {
+      "kind": "still",
+      "lit": "keyed",
+      "seed": 113,
+      "_beat": "the king, waiting",
+      "_move": "CONTINUES 01-13. Both planes resume exactly where that shot left them and keep going at the same speed - linear, no second ease-in. After a cut away to the sage this reads as one shot resumed, not a jump back to the top of a move",
+      "zoom_from": 1.052,
+      "zoom_to": 1.075,
+      "bg_from": 1.094,
+      "bg_to": 1.135,
+      "anchor": [
+        0.36,
+        0.33
+      ],
+      "parallax_kind": "matte",
+      "matte_of": "01-13",
+      "ease": "linear",
+      "hold": 1.0,
+      "protect": [
+        [
+          0.39,
+          0.38,
+          0.165,
+          0.135
+        ],
+        [
+          0.285,
+          0.72,
+          0.275,
+          0.265
+        ],
+        [
+          0.065,
+          0.69,
+          0.13,
+          0.175
+        ]
+      ]
+    },
+    "01-16": {
+      "kind": "still",
+      "lit": "back-keyed",
+      "seed": 116,
+      "_beat": "hold - the sage",
+      "_move": "LOCKED. The shot list says `4 s, no move. He has not spoken. Cut.` and it means it. After fourteen shots that all move a little, four seconds that do not is the ending. Only the air moves",
+      "zoom_from": 1.0,
+      "zoom_to": 1.0,
+      "protect": [
+        [
+          0.65,
+          0.36,
+          0.15,
+          0.12
+        ],
+        [
+          0.49,
+          0.64,
+          0.19,
+          0.14
+        ],
+        [
+          0.35,
+          0.69,
+          0.12,
+          0.12
+        ],
+        [
+          0.2,
+          0.56,
+          0.15,
+          0.13
+        ]
+      ]
+    }
+  },
+  "_how_the_regions_were_read": "Every region was read off a 380 px grid overlay of the still itself, one shot at a time. A first pass read them from a four-up contact sheet at 300 px and got 01-04, 01-05, 01-07, 01-08, 01-09, 01-11 and 01-14 wrong, in three cases badly - 01-09's king was placed at frame-right when the staging block says screen_position: left, and the GrabCut rectangle built from that reading selected the steps behind him instead of the man. The staging field was right and the contact sheet was too small to read. Placing a region is not a task to do four at a time.",
+  "_the_audit": "Every shot's protection was drawn onto its own still and looked at - tools/atmoscheck.py, one sheet of fifteen. It found four misses that the render had already shown on one of them: the sage's FAR shoulder and upper arm in 01-14 and 01-16, lit by a raking bar with his face, chest and near arm all correctly protected; his hand in 01-07; the king's far arm in 01-04 and 01-07; a wrist in 01-12. No measurement was going to find these. A skin detector that reads warm sandstone and gold as skin would flag half the room, and one tight enough not to leaves a bare shoulder in the light. Protection is drawn and a person looks at it.",
+  "_ramp_is_not_universal": "The depth ramp holds where the frame is a receding hall and fails where it is a person close to camera. Measured, not assumed: 01-07 and 01-10 are wides whose subjects sit low in frame and came back at 1.036 and 1.019 against 1.035 and 1.019 asked. 01-04 and 01-06 are a tight MS and an insert whose nearest objects are at the TOP of frame, and they came back 1.6 and 1.9 percent over. Both are now plain pushes."
+}
