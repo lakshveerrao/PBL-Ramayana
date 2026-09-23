@@ -10,7 +10,7 @@ process.env.PBL_ASSETS ??= '.test-assets';
 // regress - behaviour, not data shape. Every regression that guards a rule pairs the
 // allowed case with the blocked one, so a rule cannot be loosened without a test noticing.
 import { read, write, treatment, clearCache, ROOT, dataDir, firstDirected } from '../lib/store.js';
-import { writeFileSync, rmSync, readFileSync } from 'node:fs';
+import { writeFileSync, rmSync, readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { checkShot, checkFilm, entityCleared, assertNoMemoBlocked, GateRefusal, stillAllowed } from '../lib/consistency.js';
 import { assertNoRestrictedText, RightsError, isRestricted, locatorOf } from '../lib/sources.js';
@@ -25,7 +25,7 @@ import { burnPlan, fitsBox, wrap, ass } from '../lib/subtitle.js';
 import { chain as gradeChain, grainChain, exposureTrim, trimChain, lighteningBlockedBecause } from '../lib/grade.js';
 import { cheekOf } from './skinsample.js';
 import { measurable as skinMeasurable, raisesSkin, albedos as skinAlbedos, reportBandL, toleranceL } from '../lib/skin.js';
-import { chooseWindow } from './motion_film.js';
+import { chooseWindow, promptFor } from './motion_film.js';
 import { execFileSync as _exec } from 'node:child_process';
 import { mkdirSync as _mkdir } from 'node:fs';
 // A tiny generated image for the skin-sampler regressions. Goes to the scratch assets
@@ -179,6 +179,50 @@ t('the window chooser takes the busiest window for action and the quietest for s
   ok(chooseWindow(prof, 5, 'action') === 5, `action took window ${chooseWindow(prof, 5, 'action')}, not the busy one at 5`);
   const q = chooseWindow(prof, 5, 'subtle');
   ok(q === 0 || q === 10, `subtle took window ${q}, which is not one of the quiet ones`);
+});
+
+// --- flames stay on their wicks ---------------------------------------------------
+t('a standing rule is appended to every motion instruction', () => {
+  // The flame rule exists because nothing in M1's fourteen instructions told the model
+  // that a flame is attached to a wick. A rule that has to be remembered fourteen times
+  // is a rule that will be forgotten once, so it rides on every prompt by construction.
+  const p = promptFor({ instruction: 'The king rises.' }, ['Flames stay on their wicks.']);
+  ok(p.startsWith('The king rises.'), 'the shot lost its own instruction');
+  ok(/Flames stay on their wicks\.$/.test(p), `the standing rule is not last: ${p}`);
+});
+t('a film with no standing rules still builds a prompt', () => {
+  ok(promptFor({ instruction: 'A held face.' }, []) === 'A held face.', 'an empty rule list changed the prompt');
+});
+t('every film that ships motion instructions carries the flame rule', () => {
+  const dir = join(ROOT, 'direction');
+  for (const f of readdirSync(dir).filter((x) => /-motion-instructions\.json$/.test(x))) {
+    const spec = JSON.parse(readFileSync(join(dir, f), 'utf8'));
+    const rules = spec.standing_rules ?? [];
+    ok(rules.some((r) => /flame/i.test(r) && /wick/i.test(r)), `${f} has no flame rule`);
+    ok(rules.some((r) => /never/i.test(r) && /(slide|drift|detach)/i.test(r)),
+       `${f}'s flame rule forbids nothing`);
+  }
+});
+t('a frozen lamp is declared, and its clip and mask are both on disk', () => {
+  const dir = join(ROOT, 'direction');
+  for (const f of readdirSync(dir).filter((x) => /-flame-freeze\.json$/.test(x))) {
+    const spec = JSON.parse(readFileSync(join(dir, f), 'utf8'));
+    ok(spec._authority, `${f} names no authority`);
+    for (const [shot, s2] of Object.entries(spec.shots ?? {})) {
+      ok(s2.what && s2.why, `${f} ${shot} does not say what was frozen and why`);
+      ok(existsSync(join(ROOT, 'assets', 'motion', spec.film, 'frozen', `${shot}.mp4`)),
+         `${spec.film} ${shot} is declared frozen with no clip`);
+      ok(existsSync(join(ROOT, 'assets', 'motion', spec.film, 'frozen', `${shot}.mask.png`)),
+         `${spec.film} ${shot} has no mask beside its frozen clip - nothing could verify it`);
+    }
+  }
+});
+t('the assembler prefers a frozen clip over the raw one', () => {
+  // The raw clip stays on disk deliberately - it is what the provider returned, and the
+  // record points at it. What must not happen is the assembler quietly cutting it in.
+  const src = readFileSync(join(ROOT, 'lib', 'assemble.js'), 'utf8');
+  ok(/frozen/.test(src) && /existsSync\(frozen\)/.test(src),
+     'lib/assemble.js does not look for a frozen clip at all');
 });
 
 // --- an exposure trim darkens, in linear light, and never lightens ---------------

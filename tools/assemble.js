@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import { assemble, probe, plan } from '../lib/assemble.js';
-import { firstDirected, read } from '../lib/store.js';
+import { existsSync, readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { firstDirected, read, ROOT } from '../lib/store.js';
 import { frame as graphFrame } from '../lib/graph.js';
 import { treatment } from '../lib/store.js';
 
@@ -24,6 +26,10 @@ for (const lang of langs) {
     console.log(`  ${r.animated.length} shot(s) animated: ${r.animated.join(', ')}`);
     const held = p.shots.filter((s) => !r.animated.includes(s.id)).map((s) => s.id);
     if (held.length) console.log(`  ${held.length} held as frames: ${held.join(', ')}`);
+    const fz = existsSync(join(ROOT, 'direction', `${filmId.toLowerCase()}-flame-freeze.json`))
+      ? Object.keys(JSON.parse(readFileSync(join(ROOT, 'direction', `${filmId.toLowerCase()}-flame-freeze.json`), 'utf8')).shots ?? {})
+      : [];
+    if (fz.length) console.log(`  ${fz.length} with a lamp frozen: ${fz.join(', ')}`);
     reported = true;
   }
 }

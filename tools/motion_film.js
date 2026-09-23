@@ -26,6 +26,18 @@ import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 loadEnv();
 
+// A standing rule is appended to EVERY instruction the film sends, rather than pasted
+// into each one by hand. A rule that has to be remembered fourteen times is a rule that
+// will be forgotten once - and the flame rule exists because of exactly that class of
+// omission: nothing in M1's fourteen instructions told the model that a flame is
+// attached to its wick, so in 01-03 the diya's flames slid along the rim and one came
+// off it. The instruction stays the shot's; the rule rides last, where a prompt reads
+// it as the final word.
+export function promptFor(inst, rules = null) {
+  const standing = rules ?? (spec.standing_rules ?? []);
+  return [inst.instruction, ...standing].join(' ').replace(/\s+/g, ' ').trim();
+}
+
 // The best window of `frames` frames: the busiest for an action shot, the quietest for
 // subtle life. Returns the start frame.
 export function chooseWindow(prof, frames, kind) {
@@ -118,7 +130,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const frames = Math.round(s.duration_s * fps);
     try {
       const j = await throughQueue(endpoint, {
-        prompt: inst.instruction,
+        prompt: promptFor(inst),
         image_url: dataUri(join(ROOT, rec.local_path)),
         duration: String(price.seconds),
         fps,                       // asked for; kling may ignore it, and the record says which
@@ -147,6 +159,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       recordSpend({ provider: 'fal', route: 'motion', model: endpoint, label: `${filmId}/${s.id}`, usd: price.usd, estimate_usd: price.usd });
       writeFileSync(join(recDir, `${s.id}.json`), JSON.stringify({
         film: filmId, shot: s.id, endpoint, kind: inst.kind, instruction: inst.instruction,
+      prompt_sent: promptFor(inst), standing_rules: spec.standing_rules ?? [],
         still: rec.local_path, still_sha256: rec.sha256,
         clip: `assets/motion/${filmId}/${s.id}.mp4`,
         asked_fps: fps, returned: { size: `${got[0]}x${got[1]}`, fps: gotFps },
