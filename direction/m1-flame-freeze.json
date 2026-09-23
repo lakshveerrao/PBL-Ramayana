@@ -9,19 +9,6 @@
   "grow_px": 18,
   "feather_px": 9,
   "shots": {
-    "01-03": {
-      "regions": [
-        [
-          0,
-          1480,
-          230,
-          440
-        ]
-      ],
-      "what": "the bottom-left diya, and the second diya below it among the marigolds",
-      "why": "the director named this one: flames sliding along the rim, one detaching around 5.2 s. Measured centroid drift before the freeze: 25.4 px.",
-      "drift_before_px": 25.413
-    },
     "01-07": {
       "regions": [
         [
@@ -57,7 +44,8 @@
       ],
       "what": "the two gold standing lamps in the hall, mid-frame",
       "why": "found by the sweep of every other shot the director asked for. Their flames drift 9.7 and 7.0 px. Nobody is in this shot at all - it is the empty hall - so nothing but the lamps can be touched.",
-      "drift_before_px": 9.66
+      "drift_before_px": 9.66,
+      "note": "01-01 was CUT from the film on 2026-09-23, after this freeze was made. The entry is kept because it records work that was done and verified, and the clip and mask are still on disk; the assembler lists only frozen shots that are still in the film, so it does not report work on a shot nobody will see."
     },
     "01-02": {
       "regions": [
@@ -72,12 +60,18 @@
           808,
           68,
           68
+        ],
+        [
+          55,
+          1450,
+          105,
+          135
         ]
       ],
-      "what": "the gold standing lamp behind the sage's shoulder, and the small flame beside it",
+      "what": "the gold standing lamp behind the sage's shoulder, the small flame beside it, and the small diya at bottom-left with its marigold ring",
       "why": "found by the sweep. Its flame drifts 18.9 px, the worst in the film after 01-03. The box stops short of the sage.",
       "drift_before_px": 18.86,
-      "note": "A blob at (788,999) still drifts 9 px after the freeze. It was looked at: it is gold ornament on a seated minister, in a shot where the sage is walking and the whole composition shifts relative to him. Extending the lamp region down to reach it made the shot worse, not better - it pulled in the staff, a tall thin bright thing that travels 41 px because it is supposed to. It is not a flame and it is not frozen."
+      "note": "A blob at (788,999) still drifts 9 px after the freeze. It was looked at: it is gold ornament on a seated minister, in a shot where the sage is walking and the whole composition shifts relative to him. Extending the lamp region down to reach it made the shot worse, not better - it pulled in the staff, a tall thin bright thing that travels 41 px because it is supposed to. It is not a flame and it is not frozen. The third region is the small diya at bottom-left, added by the director on 2026-09-23: a tight box on the lamp and its marigold ring only, nothing extended downward - extending downward is what pulled in the sage's staff before."
     }
   },
   "_swept": "Every animated shot was swept for bright compact blobs that move. The sweep proposed candidates in ten of fourteen; five turned out to be lamps and are frozen here. The other five - 01-04, 01-06, 01-09, 01-11 and 01-13 - are the KING'S GOLD: crown ornaments, necklaces, an armband, a ring, a belt. It moves because he moves, which is the shot working, and freezing any of it would freeze part of him. 01-05's single candidate is his belt too. 01-08, 01-10, 01-12 and 01-14 proposed nothing.",
@@ -116,5 +110,8 @@
       "nothing_loose": true
     }
   },
-  "_edges": "Every frozen shot was looked at across two widely separated frames. No freeze edge shows on any of them, so none needed re-rendering."
+  "_edges": "Every frozen shot was looked at across two widely separated frames. No freeze edge shows on any of them, so none needed re-rendering.",
+  "_removed": {
+    "01-03": "Not frozen any more, and not frozen at all: the director had the foreground diya REMOVED from the still instead. Codex supplied a no-lamp 01-03 on 2026-09-23 and the clip was re-rendered from it, so there is no flame in that shot to come loose. A lamp taken out of the frame beats a lamp pasted back over it."
+  }
 }

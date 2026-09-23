@@ -18,6 +18,7 @@ import { endpointCost } from '../lib/cost.js';
 import { identityPolicy } from '../lib/render.js';
 import { assemble, directionOverrides, statesItsFrame } from '../lib/prompt.js';
 import { gradeTrims, lighteningBlockedBecause } from '../lib/grade.js';
+import { directedTreatment } from '../lib/cut.js';
 import { albedos as skinAlbedos } from '../lib/skin.js';
 import { unresolvedReuses, sharedPlateFor } from '../lib/graph.js';
 import { briefs as sheetBriefs, decisions as sheetDecisions, order as sheetOrder, viewPrompt } from '../lib/sheetprompt.js';
@@ -753,6 +754,49 @@ check('prompt', 'no prompt describes cloth that is stitched', () => {
     }
   }
   T(offenders.length === 0, `cloth described as stitched: ${offenders.join(', ')}`);
+});
+check('treatment', 'every cut names real shots, a reason and an authority', () => {
+  for (const f of readdirSync(join(ROOT, 'direction')).filter((x) => /-cut\.json$/.test(x))) {
+    const c = JSON.parse(readFileSync(join(ROOT, 'direction', f), 'utf8'));
+    T(c.film, `${f} names no film`);
+    T(Array.isArray(c.cut) && c.cut.length, `${f} cuts nothing`);
+    T(c.why && c.why.length > 20, `${f} gives no reason`);
+    T(c.authority, `${f} names no authority`);
+    T(c.changes_truth === false, `${f} does not declare changes_truth: false`);
+    const t = treatment(c.film);
+    for (const id of c.cut) T(t.shots.some((s) => s.id === id), `${f} cuts ${id}, which ${c.film} does not have`);
+  }
+});
+check('treatment', 'a cut retimes the film, and the arithmetic is the film\'s own', () => {
+  // The length a cut DECLARES has to be the length the retime actually produces. A cut
+  // that says 29.5 s and yields 29.7 would ship a film whose captions sit late.
+  for (const f of readdirSync(join(ROOT, 'direction')).filter((x) => /-cut\.json$/.test(x))) {
+    const c = JSON.parse(readFileSync(join(ROOT, 'direction', f), 'utf8'));
+    const d = directedTreatment(c.film);
+    const frames = d.shots.reduce((a, s) => a + Math.round(s.duration_s * d.fps), 0);
+    if (c.length?.now_frames) T(frames === c.length.now_frames,
+      `${f} declares ${c.length.now_frames} frames; the retime gives ${frames}`);
+    if (c.length?.now_s) T(Math.abs(d.duration_s - c.length.now_s) < 0.001,
+      `${f} declares ${c.length.now_s}s; the retime gives ${d.duration_s}s`);
+    T(d.shots[0].start_s === 0, `${d.shots[0].id} does not start at zero after the cut`);
+    let at = 0;
+    for (const s of d.shots) {
+      T(Math.abs(s.start_s - at) < 0.001, `${s.id} starts at ${s.start_s}, not ${at} - the retime left a gap`);
+      at += s.duration_s;
+    }
+  }
+});
+check('treatment', 'no caption is left pointing at a cut shot', () => {
+  // Moving a line onto a frame it was not written for is a rewrite, not a cut. So a
+  // caption whose shot is gone goes with it - and nothing may still name a cut shot.
+  for (const f of readdirSync(join(ROOT, 'direction')).filter((x) => /-cut\.json$/.test(x))) {
+    const c = JSON.parse(readFileSync(join(ROOT, 'direction', f), 'utf8'));
+    const d = directedTreatment(c.film);
+    const ids = new Set(d.shots.map((s) => s.id));
+    for (const [k, n] of Object.entries(d.narration ?? {})) {
+      T(ids.has(n.shot), `${c.film} narration ${k} points at ${n.shot}, which is cut`);
+    }
+  }
 });
 check('motion', 'the flame rule stands over every motion instruction', () => {
   // Set by the director on 2026-09-23, after M1's first motion pass put a diya's flames

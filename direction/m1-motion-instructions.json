@@ -17,11 +17,13 @@
     },
     "01-03": {
       "kind": "action",
-      "instruction": "Seated ministers turn their heads toward the entrance, one after another, unhurried - curiosity, not alarm. Nobody stands. Nobody speaks. Their draped cloth settles as they turn. The camera does not move. The hall and the light do not change."
+      "instruction": "Seated ministers turn their heads toward the entrance, one after another, unhurried - curiosity, not alarm. Nobody stands. Nobody speaks. Their draped cloth settles as they turn. The camera does not move. The hall and the light do not change.",
+      "_why": "Re-rendered on 2026-09-23 from a new still with the foreground diya removed, so there is no flame in the shot to come loose. The instruction is unchanged."
     },
     "01-04": {
-      "kind": "action",
-      "instruction": "The king rises to his feet from the throne in one unhurried movement, straightening to standing. His draped lower cloth and the cloth over his shoulder fall and settle as he stands. His crown, his necklaces, his belt and his face do not change. Nobody else moves. The camera does not move."
+      "kind": "stable",
+      "instruction": "The seated king leans forward and BEGINS to rise, lifting a little - he does not complete the stand and does not reach his full height. The crown is rigid. It is fixed on his head and moves exactly with it. Its shape, size and ornament never change. His draped cloth shifts a little as he leans. His face, necklaces and armbands do not change. Nobody else moves. The camera does not move.",
+      "_why": "Re-written by the director on 2026-09-23. The first clip floated the crown: it stayed at the same height while his head rose under it, and its silhouette changed across the shot. Two changes - the crown is stated as a rigid object fixed to the head, and the movement is made smaller, because a smaller move gives the model less to redraw. The window is chosen for the LEAST crown deformation rather than the most movement; `kind: stable` selects that."
     },
     "01-05": {
       "kind": "action",

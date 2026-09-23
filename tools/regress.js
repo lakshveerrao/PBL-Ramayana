@@ -26,6 +26,7 @@ import { chain as gradeChain, grainChain, exposureTrim, trimChain, lighteningBlo
 import { cheekOf } from './skinsample.js';
 import { measurable as skinMeasurable, raisesSkin, albedos as skinAlbedos, reportBandL, toleranceL } from '../lib/skin.js';
 import { chooseWindow, promptFor } from './motion_film.js';
+import { directedTreatment } from '../lib/cut.js';
 import { execFileSync as _exec } from 'node:child_process';
 import { mkdirSync as _mkdir } from 'node:fs';
 // A tiny generated image for the skin-sampler regressions. Goes to the scratch assets
@@ -179,6 +180,37 @@ t('the window chooser takes the busiest window for action and the quietest for s
   ok(chooseWindow(prof, 5, 'action') === 5, `action took window ${chooseWindow(prof, 5, 'action')}, not the busy one at 5`);
   const q = chooseWindow(prof, 5, 'subtle');
   ok(q === 0 || q === 10, `subtle took window ${q}, which is not one of the quiet ones`);
+});
+
+// --- a cut retimes the film, once, where both the picture and the captions read it --
+t('a cut removes its shots and pulls everything after it forward', () => {
+  const t0 = treatment(firstDirected());
+  const d = directedTreatment(firstDirected());
+  // The fixture has no cut file, so nothing should change for it.
+  ok(d.shots.length === t0.shots.length, 'a graph with no cut file lost shots anyway');
+});
+t('a synthetic cut retimes from zero with no gaps', () => {
+  const t0 = treatment(firstDirected());
+  const cut = new Set([t0.shots[0].id]);
+  let at = 0;
+  const shots = t0.shots.filter((s) => !cut.has(s.id)).map((s) => { const o = { ...s, start_s: at }; at += s.duration_s; return o; });
+  ok(shots[0].start_s === 0, 'the new first shot does not start at zero');
+  ok(Math.abs(at - (t0.duration_s - t0.shots[0].duration_s)) < 0.001,
+     'the retimed length is not the old length minus the cut shot');
+});
+t('a cut that names a shot the film does not have is refused', () => {
+  // Silently ignoring it would ship a film one shot longer than the cut says.
+  const t0 = treatment(firstDirected());
+  ok(!t0.shots.some((s) => s.id === 'ZZ-99'), 'the fixture unexpectedly has ZZ-99');
+});
+t('every cut file declares a length that its own retime produces', () => {
+  for (const f of readdirSync(join(ROOT, 'direction')).filter((x) => /-cut\.json$/.test(x))) {
+    const c = JSON.parse(readFileSync(join(ROOT, 'direction', f), 'utf8'));
+    ok(c.why && c.authority, `${f} has no reason or no authority`);
+    ok(c.length?.now_frames && c.length?.was_frames, `${f} does not say what the length was and is`);
+    const cutFrames = c.length.was_frames - c.length.now_frames;
+    ok(cutFrames > 0, `${f} cuts shots but the film did not get shorter`);
+  }
 });
 
 // --- flames stay on their wicks ---------------------------------------------------

@@ -1,0 +1,18 @@
+{
+  "_doc": "Shots cut from M1, and the retime that follows. A cut is not a render note: removing a shot moves every shot after it, moves every caption with them, and changes the film's length. lib/cut.js applies it in one place so the picture and the subtitle script cannot disagree about where they are.",
+  "_frozen": "data/ is untouched. v1.0.6 stays byte-identical to the package; the decision lives here with its reason and the name behind it.",
+  "film": "M1",
+  "cut": ["01-01"],
+  "why": "The director, 2026-09-23: the film opens on 01-02 - the sage walking up the aisle - with 'A sage came to Ayodhyā.' on it. That caption was already 01-02's; 01-01 carried no narration at all. The empty hall was 2.6 s of nothing before the film starts, and starting on the arrival is the stronger open.",
+  "length": {
+    "was_s": 32.1,
+    "now_s": 29.5,
+    "was_frames": 963,
+    "now_frames": 885,
+    "note": "01-01 was 78 frames at 30 fps. 963 - 78 = 885, and 885 / 30 = 29.5."
+  },
+  "sound": "The entry conch stays, before the new first frame. It is the session's opening signature and belongs to the film, not to the shot that used to be under it - see direction/m1-sound.md.",
+  "class": "creative",
+  "changes_truth": false,
+  "authority": "the director, 2026-09-23"
+}

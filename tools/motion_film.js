@@ -33,9 +33,25 @@ loadEnv();
 // attached to its wick, so in 01-03 the diya's flames slid along the rim and one came
 // off it. The instruction stays the shot's; the rule rides last, where a prompt reads
 // it as the final word.
-export function promptFor(inst, rules = null) {
-  const standing = rules ?? (spec.standing_rules ?? []);
-  return [inst.instruction, ...standing].join(' ').replace(/\s+/g, ' ').trim();
+export function promptFor(inst, rules = []) {
+  // The rules are passed IN rather than read from a module-level `spec`: this function
+  // lives outside the script's main body so the regressions can call it, and reaching
+  // for a variable that only exists inside that body failed both re-renders at zero
+  // seconds with "spec is not defined".
+  return [inst.instruction, ...(rules ?? [])].join(' ').replace(/\s+/g, ' ').trim();
+}
+
+// How much does a rigid ornament DEFORM across a clip?
+//
+// 01-04's first clip floated the crown: it held its height while the king's head rose
+// under it, and its silhouette changed shot to shot. A crown is a rigid object, and a
+// model that treats it as texture will reshape it. "Least movement" does not catch
+// that - a clip can be almost still and still breathe the crown - so measure the thing
+// itself: the largest bright-gold blob in the upper part of the frame, frame by frame,
+// and how much its area and bounding box wobble.
+function ornamentProfile(file) {
+  const out = execFileSync('python3', [join(ROOT, 'tools', 'ornament.py'), file], { encoding: 'utf8', maxBuffer: 1 << 24 });
+  return JSON.parse(out);
 }
 
 // The best window of `frames` frames: the busiest for an action shot, the quietest for
@@ -45,6 +61,10 @@ export function chooseWindow(prof, frames, kind) {
   let best = null;
   for (let i = 0; i + frames <= prof.length; i++) {
     const sum = prof.slice(i, i + frames).reduce((a, x) => a + x, 0);
+    // 'action' wants the beat, 'subtle' and 'stable' want quiet - but for 'stable' the
+    // profile handed in is an ORNAMENT-DEFORMATION profile, not a movement one, so the
+    // same "smallest sum wins" picks the window where the crown holds its shape rather
+    // than the window where least happens.
     if (best === null || (kind === 'action' ? sum > best.sum : sum < best.sum)) best = { i, sum };
   }
   return best.i;
@@ -130,7 +150,7 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     const frames = Math.round(s.duration_s * fps);
     try {
       const j = await throughQueue(endpoint, {
-        prompt: promptFor(inst),
+        prompt: promptFor(inst, spec.standing_rules ?? []),
         image_url: dataUri(join(ROOT, rec.local_path)),
         duration: String(price.seconds),
         fps,                       // asked for; kling may ignore it, and the record says which
@@ -159,12 +179,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
       recordSpend({ provider: 'fal', route: 'motion', model: endpoint, label: `${filmId}/${s.id}`, usd: price.usd, estimate_usd: price.usd });
       writeFileSync(join(recDir, `${s.id}.json`), JSON.stringify({
         film: filmId, shot: s.id, endpoint, kind: inst.kind, instruction: inst.instruction,
-      prompt_sent: promptFor(inst), standing_rules: spec.standing_rules ?? [],
+      prompt_sent: promptFor(inst, spec.standing_rules ?? []), standing_rules: spec.standing_rules ?? [],
         still: rec.local_path, still_sha256: rec.sha256,
         clip: `assets/motion/${filmId}/${s.id}.mp4`,
         asked_fps: fps, returned: { size: `${got[0]}x${got[1]}`, fps: gotFps },
         fps_conversion: converted ? 'optical flow (minterpolate mci/aobmc/bidir/vsbmc) - never duplication' : 'none needed, returned at 30',
-        window: { start_frame: start, frames, of: prof.length, chosen: inst.kind === 'action' ? 'the busiest window in the clip' : 'the quietest window in the clip' },
+        window: { start_frame: start, frames, of: prof.length,
+                chosen: inst.kind === 'action' ? 'the busiest window in the clip'
+                      : inst.kind === 'stable' ? 'the window where the rigid ornament deforms least'
+                      : 'the quietest window in the clip' },
         sha256: createHash('sha256').update(readFileSync(cut)).digest('hex'),
         approved: false,
         at: new Date().toISOString(),
