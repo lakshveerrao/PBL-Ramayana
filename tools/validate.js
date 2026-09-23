@@ -798,6 +798,26 @@ check('treatment', 'no caption is left pointing at a cut shot', () => {
     }
   }
 });
+check('motion', 'a shot held as a still has no clip, and every animated shot has an instruction', () => {
+  // The director's rule for M1, 2026-09-23: we do not animate what the model cannot
+  // hold. The crown floated twice and lamps came loose in nearly every shot, so the
+  // shots carrying them are stills. A stray clip left on disk for one of them would be
+  // cut straight back in by the assembler without a word.
+  for (const f of readdirSync(join(ROOT, 'direction')).filter((x) => /-motion-instructions\.json$/.test(x))) {
+    const spec = JSON.parse(readFileSync(join(ROOT, 'direction', f), 'utf8'));
+    const held = Object.keys(spec.held_as_stills ?? {}).filter((k) => k[0] !== '_');
+    for (const shot of held) {
+      T(!existsSync(join(ROOT, 'renders', spec.film, 'motion', `${shot}.json`)),
+        `${spec.film} ${shot} is held as a still and yet has a motion record`);
+      T(!existsSync(join(ROOT, 'assets', 'motion', spec.film, `${shot}.mp4`)),
+        `${spec.film} ${shot} is held as a still and yet has a clip on disk`);
+    }
+    for (const shot of Object.keys(spec.shots ?? {})) {
+      T(!held.includes(shot), `${spec.film} ${shot} is both animated and held as a still`);
+      T(spec.shots[shot].instruction, `${spec.film} ${shot} has no instruction`);
+    }
+  }
+});
 check('motion', 'the flame rule stands over every motion instruction', () => {
   // Set by the director on 2026-09-23, after M1's first motion pass put a diya's flames
   // sliding along the rim with one coming off it. A generative video model has no idea
@@ -812,33 +832,6 @@ check('motion', 'the flame rule stands over every motion instruction', () => {
       `${f}'s standing rules do not carry the flame rule`);
     T(rules.some((r) => /never.*(slide|drift|detach)/i.test(r)),
       `${f}'s flame rule does not forbid sliding, drifting or detaching`);
-  }
-});
-check('motion', 'every frozen lamp names a region, a reason and an authority', () => {
-  // Freezing pastes an approved still over part of a shot. It has to be as accountable
-  // as any other override: what was frozen, why, and on whose say-so.
-  for (const f of readdirSync(join(ROOT, 'direction')).filter((x) => /-flame-freeze\.json$/.test(x))) {
-    const spec = JSON.parse(readFileSync(join(ROOT, 'direction', f), 'utf8'));
-    T(spec._authority, `${f} names no authority`);
-    for (const [shot, s2] of Object.entries(spec.shots ?? {})) {
-      T(Array.isArray(s2.regions) && s2.regions.length, `${f} ${shot} declares no region`);
-      for (const r of s2.regions) {
-        T(Array.isArray(r) && r.length === 4 && r.every((v) => Number.isFinite(v)),
-          `${f} ${shot} has a malformed region ${JSON.stringify(r)}`);
-      }
-      T(s2.what && s2.why, `${f} ${shot} does not say what was frozen and why`);
-    }
-  }
-});
-check('motion', 'a frozen clip exists for every shot the freeze file names', () => {
-  for (const f of readdirSync(join(ROOT, 'direction')).filter((x) => /-flame-freeze\.json$/.test(x))) {
-    const spec = JSON.parse(readFileSync(join(ROOT, 'direction', f), 'utf8'));
-    for (const shot of Object.keys(spec.shots ?? {})) {
-      T(existsSync(join(ROOT, 'assets', 'motion', spec.film, 'frozen', `${shot}.mp4`)),
-        `${spec.film} ${shot} is declared frozen but no frozen clip is there`);
-      T(existsSync(join(ROOT, 'assets', 'motion', spec.film, 'frozen', `${shot}.mask.png`)),
-        `${spec.film} ${shot} has a frozen clip but no mask beside it - nothing can verify it`);
-    }
   }
 });
 check('motion', 'no shot the graph refuses motion on has been animated', () => {

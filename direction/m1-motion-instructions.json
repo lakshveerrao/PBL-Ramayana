@@ -1,78 +1,63 @@
 {
-  "_doc": "M1's motion instructions, rewritten. The graph's own motion field carries the same lamp-flame sentence on all fourteen generate shots and animates none of the film's beats - PRODUCTION_ORDERS calls for the 89 to be rewritten and these are M1's fourteen. data/ is untouched.",
-  "_shape": "Every instruction says three things in this order: the beat, what does NOT move, and the ambient life last and smallest. The order is deliberate - the beat first because it is the shot, the negative second because reference-conditioned video will invent a camera move if nobody forbids one, and the ambient last because it is the least important thing in the frame and a prompt weights what it says first.",
-  "_camera": "The pack marks all sixteen shots `locked`. Every instruction says the camera does not move, in words, every time.",
-  "_must_not_drift": "The pack: 'the king's costume from 04 onward; the sage's seated posture from 07.' Both are named in the shots they govern.",
-  "_approved_by": "the action list accepted by Venkat, 2026-09-22, with the sage's nod cut from 01-06 and 01-09 and 01-11 kept as small hand moves",
+  "_doc": "M1's motion, rebuilt from scratch on 2026-09-23. Six shots move; eight are held stills. The graph's own motion field carries the same lamp-flame sentence on all fourteen generate shots and animates none of the film's beats, so these are written from the directing pack and the director's action list.",
+  "_the_rule_that_decided_it": "We do not animate what the model cannot hold. Two things it could not hold: the king's crown, which floated - it stayed at the same height while his head rose under it and changed silhouette across the shot - and lit lamps, whose flames slid along their rims, detached, and in one case were invented outright, a large flame burning in mid-air against the steps with nothing under it. So the crown and the lamps are simply not in any moving shot. Every shot with the king in his crown is a still, and every moving shot is made from a lamp-free frame.",
+  "_why_not_patch_it": "It was patched, for two rounds: 35 lamps frozen across 13 shots by compositing the approved still back over each one, masked and feathered. It worked - every mask measured 0.000 to 0.49 px of drift - and it was the wrong shape of answer. A patch layer has to be maintained, re-verified on every re-render, and it hid the real question, which is whether a shot should move at all. A held still in a film of held stills is not a defect.",
+  "_shape": "Every instruction says three things in this order: the beat, what does NOT move, and the ambient life last and smallest. The order is deliberate - the beat first because it is the shot, the negative second because reference-conditioned video will invent a camera move if nobody forbids one, and the ambient last because it is the least important thing in the frame.",
+  "_approved_by": "the director, 2026-09-23",
   "film": "M1",
   "endpoint": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+  "standing_rules": [
+    "Flames stay on their wicks. They may flicker in place; they never slide, drift, detach, multiply or change count.",
+    "No new flame, lamp, fire or glowing light appears anywhere in the frame. Nothing burns that is not already burning in the first frame.",
+    "The camera does not move. Nothing enters the frame and nothing leaves it. No face, costume, jewellery or ornament changes shape, size or design."
+  ],
+  "_standing_rules_why": "A standing rule is appended to EVERY instruction this film sends, by tools/motion_film.js, rather than pasted into each one by hand - a rule that has to be remembered six times is a rule that will be forgotten once. The flame rules were written after flames slid and then after one was invented from nothing; the third is the director's blanket condition for this rebuild and is a backstop, not a substitute for keeping the crown and the lamps out of the moving shots.",
   "shots": {
-    "01-01": {
-      "kind": "subtle",
-      "instruction": "An empty hall in morning light. Nothing enters and no one appears. The only movement is dust turning slowly in the shafts of lattice light, and one lamp flame drifting. The camera does not move. The walls, floor, pillars and light do not change."
-    },
     "01-02": {
       "kind": "action",
-      "instruction": "The sage walks away from the camera, up the hall toward the distant dais, seen from behind. An unhurried walk, staff planted with each second step, his draped cloth swinging and settling as he goes. The seated ministers on both sides stay still and do not turn. The camera does not move. The hall, the pillars and the light do not change."
+      "instruction": "The sage walks away from the camera, up the long hall toward the distant dais, seen from behind. An unhurried walk. His draped robe swings and settles with each step and his staff is planted with each second step. The seated ministers on both sides stay completely still and do not turn. Nobody else moves.",
+      "still": "the lamp-free 01-02"
     },
     "01-03": {
       "kind": "action",
-      "instruction": "Seated ministers turn their heads toward the entrance, one after another, unhurried - curiosity, not alarm. Nobody stands. Nobody speaks. Their draped cloth settles as they turn. The camera does not move. The hall and the light do not change.",
-      "_why": "Re-rendered on 2026-09-23 from a new still with the foreground diya removed, so there is no flame in the shot to come loose. The instruction is unchanged."
-    },
-    "01-04": {
-      "kind": "stable",
-      "instruction": "The seated king leans forward and BEGINS to rise, lifting a little - he does not complete the stand and does not reach his full height. The crown is rigid. It is fixed on his head and moves exactly with it. Its shape, size and ornament never change. His draped cloth shifts a little as he leans. His face, necklaces and armbands do not change. Nobody else moves. The camera does not move.",
-      "_why": "Re-written by the director on 2026-09-23. The first clip floated the crown: it stayed at the same height while his head rose under it, and its silhouette changed across the shot. Two changes - the crown is stated as a rigid object fixed to the head, and the movement is made smaller, because a smaller move gives the model less to redraw. The window is chosen for the LEAST crown deformation rather than the most movement; `kind: stable` selects that."
-    },
-    "01-05": {
-      "kind": "action",
-      "instruction": "The king walks down the steps of the dais, one step at a time, opening his arms as he comes. His draped cloth moves with each step and settles. His crown, ornament, costume and face do not change. Nobody else moves. The camera does not move. The hall and the light do not change."
-    },
-    "01-06": {
-      "kind": "action",
-      "instruction": "Water pours in a steady stream from a vessel over a pair of bare feet on stone, splashing and running away across the floor. Hands hold the vessel and tilt it. No face is visible and none enters the frame. The camera does not move. Nothing else in the frame changes."
-    },
-    "01-07": {
-      "kind": "subtle",
-      "instruction": "Two men seated facing each other on the same level, both still. The king's head inclines very slightly as he asks. The sage does not move; his seated posture does not change. The empty throne behind them does not change. The only other movement is a lamp flame drifting and draped cloth settling. The camera does not move."
-    },
-    "01-08": {
-      "kind": "subtle",
-      "instruction": "The sage waits, seated, and does not answer. His seated posture does not change and his hands do not move. The smallest life only: breath, one lamp flame drifting, draped cloth settling. The camera does not move."
-    },
-    "01-09": {
-      "kind": "action",
-      "instruction": "The king, seated, opens one hand a small distance - an easy, unthinking, generous gesture, no larger than a hand's width. Nothing else about him moves; his crown, ornament, costume and face do not change. The camera does not move. A lamp flame drifts."
-    },
-    "01-10": {
-      "kind": "subtle",
-      "instruction": "Ministers seated along the hall, watching, attentive and at ease. Nobody is troubled and nobody reacts. Almost no movement at all: breath, a lamp flame drifting, draped cloth settling. The camera does not move."
-    },
-    "01-11": {
-      "kind": "action",
-      "instruction": "The king lifts one hand a small distance, palm opening upward, level and unforced - a small movement, no larger than a hand's width, and it stops. Nothing else about him moves; his crown, ornament, costume and face do not change. The camera does not move. A lamp flame drifts."
+      "instruction": "Seated ministers turn their heads toward the entrance, one after another, unhurried - curiosity, not alarm. Nobody stands, nobody speaks, nobody raises a hand. Their draped cloth settles as they turn. Nothing else in the hall changes.",
+      "still": "the lamp-free 01-03, installed 2026-09-23"
     },
     "01-12": {
       "kind": "subtle",
-      "instruction": "A pair of open hands resting on knees, palms up, completely unchanged. The fingers do not close and do not move. No face is visible. The only movement is draped cloth settling and the light shifting very slightly. The camera does not move."
-    },
-    "01-13": {
-      "kind": "subtle",
-      "instruction": "A man's face at ease, almost pleased, held nearly still. Breath only, and one slow blink. His crown, ornament and costume do not change. The camera does not move. A lamp flame drifts behind him."
+      "instruction": "A pair of open hands resting on knees, palms up, completely unchanged. The fingers do not close and do not move. No face is visible. The only movement anywhere is the faintest breath in the draped cloth beneath them.",
+      "still": "the lamp-free 01-12"
     },
     "01-14": {
       "kind": "subtle",
-      "instruction": "The sage's face, about to speak: the smallest intake of breath, his lips parting slightly, and it stops there. He does not speak. His seated posture does not change. The camera does not move. A lamp flame drifts."
+      "instruction": "A seated sage's face: the smallest intake of breath, his lips parting slightly, and it stops there. He does not speak. His head does not turn, his seated posture does not change, his beard and hair do not move beyond a single strand settling.",
+      "still": "the lamp-free 01-14"
     }
   },
-  "_no_motion": {
-    "01-15": "motion_allowed: false - a reuse of 01-13. Nothing is animated.",
-    "01-16": "motion_allowed: false - a reuse of 01-14, and the film's final hold. Nothing is animated."
+  "held_as_stills": {
+    "_why": "Every one of these has the king in his crown, which the model cannot hold rigid, or a lamp that cannot be removed without remaking the frame. The director's call, 2026-09-23: a held still in a film of held stills is not a defect.",
+    "_not_in_either_list": "01-10 appears in neither of the director lists of 2026-09-23 - not among the six to animate, not among the eight to hold. It is held, which is what the rule gives: it is the wide of the ministers with Vasistha and it carries two tall standing lamps and a diya at bottom-right, none of them removed from its still. Flagged rather than decided quietly.",
+    "01-04": "the king rises - the crown floated here, twice",
+    "01-05": "he comes down the steps - the king in his crown",
+    "01-07": "the two men seated - the king in his crown",
+    "01-09": "the king again - his crown, and where the model invented a flame in mid-air",
+    "01-10": "the wide of the ministers - two standing lamps and a diya, still in the frame",
+    "01-11": "the word given - the king in his crown",
+    "01-13": "the king at ease - his crown",
+    "01-15": "motion_allowed: false in the graph. A reuse of 01-13.",
+    "01-16": "motion_allowed: false in the graph. A reuse of 01-14, and the film's final hold.",
+    "01-06": "the water at the feet. Animated and then demoted on 2026-09-23: the camera slid 561 px across the shot, the water stopped pouring two thirds of the way through, and two tall gold lamps appeared from nothing at frame-right in the last third - despite the rule against exactly that.",
+    "01-08": "the sage waits. Animated and then demoted: the camera slid 13.8 px. It looked fine frame by frame and the measurement caught it, which is the argument for measuring the camera rather than trusting an eye on a slow drift."
   },
-  "standing_rules": [
-    "Flames stay on their wicks. They may flicker in place; they never slide, drift, detach, multiply or change count.",
-    "No new flame, lamp, fire or glowing light appears anywhere in the frame. Nothing burns that is not already burning in the first frame."
-  ],
-  "_standing_rules_why": "A standing rule is appended to EVERY instruction this file sends, by tools/motion_film.js, rather than pasted into each one by hand - a rule that has to be remembered fourteen times is a rule that will be forgotten once. The flame rule was set by the director on 2026-09-23 after M1's first motion pass: a generative video model does not know a flame is attached to a wick, and in 01-03 the diya's flames slid along the rim and one detached. The three shots already made were fixed by freezing (direction/m1-flame-freeze.json); this is so the next one does not need fixing. A second rule was added on 2026-09-23. The first rule tells a flame to stay on its wick and says nothing about a flame that never had one: 01-09 came back with a large flame the model INVENTED, floating free in mid-air against the steps with nothing holding it, changing shape across the whole shot. It is not in the approved still. A rule against drifting cannot catch a flame that was never there to drift."
+  "_camera_drift": {
+    "_doc": "Measured with tools/cameracheck.py - phase correlation of every frame against the first. Every M1 shot is marked `locked` and every instruction says so in words; a generative model drifts the frame anyway, and a slow slide is the hardest defect to see one frame at a time.",
+    "_threshold_px": 3,
+    "01-02": 0.15,
+    "01-03": 0.25,
+    "01-06": 561.27,
+    "01-08": 13.84,
+    "01-12": 0.39,
+    "01-14": 2.92,
+    "_corrected_my_eye_twice": "Watching four frames side by side, I read 01-03 as sliding and 01-08 as clean. It is the other way round: 01-03 measures 0.25 px and 01-08 measures 13.84. The eye finds an invented lamp and a stopped stream; the measurement finds a slow drift."
+  }
 }

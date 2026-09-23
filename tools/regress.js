@@ -225,6 +225,30 @@ t('a standing rule is appended to every motion instruction', () => {
 t('a film with no standing rules still builds a prompt', () => {
   ok(promptFor({ instruction: 'A held face.' }, []) === 'A held face.', 'an empty rule list changed the prompt');
 });
+t('a held still and an animated shot are never the same shot', () => {
+  // We do not animate what the model cannot hold. A shot cannot be in both lists, and
+  // a clip left behind for a held shot would be cut straight back in by the assembler.
+  const dir = join(ROOT, 'direction');
+  for (const f of readdirSync(dir).filter((x) => /-motion-instructions\.json$/.test(x))) {
+    const spec = JSON.parse(readFileSync(join(dir, f), 'utf8'));
+    const held = new Set(Object.keys(spec.held_as_stills ?? {}).filter((k) => k[0] !== '_'));
+    for (const shot of Object.keys(spec.shots ?? {})) {
+      ok(!held.has(shot), `${f}: ${shot} is both animated and held as a still`);
+    }
+    for (const shot of held) {
+      ok(!existsSync(join(ROOT, 'assets', 'motion', spec.film, `${shot}.mp4`)),
+         `${f}: ${shot} is held as a still and has a clip on disk`);
+    }
+  }
+});
+t('the third standing rule forbids a camera move and a costume change', () => {
+  const dir = join(ROOT, 'direction');
+  for (const f of readdirSync(dir).filter((x) => /-motion-instructions\.json$/.test(x))) {
+    const rules = (JSON.parse(readFileSync(join(dir, f), 'utf8')).standing_rules ?? []).join(' ');
+    ok(/camera does not move/i.test(rules), `${f} does not forbid a camera move`);
+    ok(/(costume|jewellery|ornament)/i.test(rules), `${f} does not forbid a costume change`);
+  }
+});
 t('every film that ships motion instructions carries the flame rule', () => {
   const dir = join(ROOT, 'direction');
   for (const f of readdirSync(dir).filter((x) => /-motion-instructions\.json$/.test(x))) {
@@ -235,29 +259,6 @@ t('every film that ships motion instructions carries the flame rule', () => {
        `${f}'s flame rule forbids nothing`);
   }
 });
-t('a frozen lamp is declared, and its clip and mask are both on disk', () => {
-  const dir = join(ROOT, 'direction');
-  for (const f of readdirSync(dir).filter((x) => /-flame-freeze\.json$/.test(x))) {
-    const spec = JSON.parse(readFileSync(join(dir, f), 'utf8'));
-    ok(spec._authority, `${f} names no authority`);
-    for (const [shot, s2] of Object.entries(spec.shots ?? {})) {
-      ok(s2.what && s2.why, `${f} ${shot} does not say what was frozen and why`);
-      ok(existsSync(join(ROOT, 'assets', 'motion', spec.film, 'frozen', `${shot}.mp4`)),
-         `${spec.film} ${shot} is declared frozen with no clip`);
-      ok(existsSync(join(ROOT, 'assets', 'motion', spec.film, 'frozen', `${shot}.mask.png`)),
-         `${spec.film} ${shot} has no mask beside its frozen clip - nothing could verify it`);
-    }
-  }
-});
-t('the assembler prefers a frozen clip over the raw one', () => {
-  // The raw clip stays on disk deliberately - it is what the provider returned, and the
-  // record points at it. What must not happen is the assembler quietly cutting it in.
-  const src = readFileSync(join(ROOT, 'lib', 'assemble.js'), 'utf8');
-  ok(/frozen/.test(src) && /existsSync\(frozen\)/.test(src),
-     'lib/assemble.js does not look for a frozen clip at all');
-});
-
-// --- an exposure trim darkens, in linear light, and never lightens ---------------
 t('an exposure trim below 1 builds a filter', () => {
   const f = exposureTrim(0.6773);
   ok(/^lutrgb=/.test(f), `a trim did not build a lut: ${String(f).slice(0, 40)}`);

@@ -18,7 +18,7 @@ const t = directedTreatment(filmId);
 for (const lang of langs) {
   const r = await assemble(filmId, lang);
   const pr = probe(r.file);
-  // The DIRECTED treatment's length, not the frozen package's. Cutting 01-01 took M1
+  // The DIRECTED treatment's length, not the package's. Cutting 01-01 took M1
   // from 963 frames to 885, and checking the delivered film against 963 reported a
   // MISMATCH on a film that is exactly the length the cut says it should be.
   const expected = Math.round(t.duration_s * t.fps);
@@ -29,13 +29,6 @@ for (const lang of langs) {
     console.log(`  ${r.animated.length} shot(s) animated: ${r.animated.join(', ')}`);
     const held = p.shots.filter((s) => !r.animated.includes(s.id)).map((s) => s.id);
     if (held.length) console.log(`  ${held.length} held as frames: ${held.join(', ')}`);
-    // Only shots that are still IN the film. 01-01's lamp was frozen and then 01-01 was
-    // cut; listing it would report work on a shot nobody will see.
-    const inFilm = new Set(p.shots.map((s) => s.id));
-    const fz = (existsSync(join(ROOT, 'direction', `${filmId.toLowerCase()}-flame-freeze.json`))
-      ? Object.keys(JSON.parse(readFileSync(join(ROOT, 'direction', `${filmId.toLowerCase()}-flame-freeze.json`), 'utf8')).shots ?? {})
-      : []).filter((id) => inFilm.has(id)).sort();
-    if (fz.length) console.log(`  ${fz.length} with a lamp frozen: ${fz.join(', ')}`);
     if (p.cut?.length) console.log(`  ${p.cut.length} cut: ${p.cut.join(', ')}`);
     reported = true;
   }

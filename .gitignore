@@ -18,3 +18,5 @@ renders/
 
 tools/__pycache__/
 __pycache__/
+assets/motion/*/_enc/
+assets/motion/_enc/
